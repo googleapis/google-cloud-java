@@ -146,7 +146,9 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object text_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
     /**
      *
      *
@@ -394,8 +396,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         text_ = "";
-
         return this;
       }
 
@@ -423,9 +425,18 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema buildPartial() {
         com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema result =
             new com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema(this);
-        result.text_ = text_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = text_;
+        }
       }
 
       @java.lang.Override
@@ -478,6 +489,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -509,7 +521,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   text_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -528,6 +540,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object text_ = "";
       /**
@@ -590,8 +604,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -607,8 +621,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearText() {
-
         text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -629,8 +643,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -779,7 +793,9 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object text_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
     /**
      *
      *
@@ -1027,8 +1043,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         text_ = "";
-
         return this;
       }
 
@@ -1057,9 +1073,19 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema buildPartial() {
         com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema result =
             new com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema(this);
-        result.text_ = text_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datacatalog.v1.PhysicalSchema.ThriftSchema result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = text_;
+        }
       }
 
       @java.lang.Override
@@ -1113,6 +1139,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1144,7 +1171,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   text_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1163,6 +1190,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object text_ = "";
       /**
@@ -1225,8 +1254,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1242,8 +1271,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearText() {
-
         text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1264,8 +1293,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1415,7 +1444,9 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object text_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
     /**
      *
      *
@@ -1663,8 +1694,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         text_ = "";
-
         return this;
       }
 
@@ -1693,9 +1724,19 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema buildPartial() {
         com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema result =
             new com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema(this);
-        result.text_ = text_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datacatalog.v1.PhysicalSchema.ProtobufSchema result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = text_;
+        }
       }
 
       @java.lang.Override
@@ -1750,6 +1791,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1781,7 +1823,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   text_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1800,6 +1842,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object text_ = "";
       /**
@@ -1862,8 +1906,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1879,8 +1923,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearText() {
-
         text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1901,8 +1945,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         text_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3920,6 +3964,7 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (avroBuilder_ != null) {
         avroBuilder_.clear();
       }
@@ -3967,51 +4012,39 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.PhysicalSchema buildPartial() {
       com.google.cloud.datacatalog.v1.PhysicalSchema result =
           new com.google.cloud.datacatalog.v1.PhysicalSchema(this);
-      if (schemaCase_ == 1) {
-        if (avroBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = avroBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (schemaCase_ == 2) {
-        if (thriftBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = thriftBuilder_.build();
-        }
-      }
-      if (schemaCase_ == 3) {
-        if (protobufBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = protobufBuilder_.build();
-        }
-      }
-      if (schemaCase_ == 4) {
-        if (parquetBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = parquetBuilder_.build();
-        }
-      }
-      if (schemaCase_ == 5) {
-        if (orcBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = orcBuilder_.build();
-        }
-      }
-      if (schemaCase_ == 6) {
-        if (csvBuilder_ == null) {
-          result.schema_ = schema_;
-        } else {
-          result.schema_ = csvBuilder_.build();
-        }
-      }
-      result.schemaCase_ = schemaCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.PhysicalSchema result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.PhysicalSchema result) {
+      result.schemaCase_ = schemaCase_;
+      result.schema_ = this.schema_;
+      if (schemaCase_ == 1 && avroBuilder_ != null) {
+        result.schema_ = avroBuilder_.build();
+      }
+      if (schemaCase_ == 2 && thriftBuilder_ != null) {
+        result.schema_ = thriftBuilder_.build();
+      }
+      if (schemaCase_ == 3 && protobufBuilder_ != null) {
+        result.schema_ = protobufBuilder_.build();
+      }
+      if (schemaCase_ == 4 && parquetBuilder_ != null) {
+        result.schema_ = parquetBuilder_.build();
+      }
+      if (schemaCase_ == 5 && orcBuilder_ != null) {
+        result.schema_ = orcBuilder_.build();
+      }
+      if (schemaCase_ == 6 && csvBuilder_ != null) {
+        result.schema_ = csvBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4187,6 +4220,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.PhysicalSchema.AvroSchema,
@@ -4395,7 +4430,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 1;
       onChanged();
-      ;
       return avroBuilder_;
     }
 
@@ -4609,7 +4643,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 2;
       onChanged();
-      ;
       return thriftBuilder_;
     }
 
@@ -4826,7 +4859,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 3;
       onChanged();
-      ;
       return protobufBuilder_;
     }
 
@@ -5042,7 +5074,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 4;
       onChanged();
-      ;
       return parquetBuilder_;
     }
 
@@ -5253,7 +5284,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 5;
       onChanged();
-      ;
       return orcBuilder_;
     }
 
@@ -5464,7 +5494,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       }
       schemaCase_ = 6;
       onChanged();
-      ;
       return csvBuilder_;
     }
 

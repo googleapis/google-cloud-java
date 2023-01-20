@@ -106,7 +106,6 @@ public interface VpnGatewayAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.VpnGatewaysScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.VpnGatewaysScopedList getItemsOrDefault(
       java.lang.String key,

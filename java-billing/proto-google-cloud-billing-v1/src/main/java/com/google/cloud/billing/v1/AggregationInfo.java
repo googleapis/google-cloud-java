@@ -296,7 +296,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AGGREGATION_LEVEL_FIELD_NUMBER = 1;
-  private int aggregationLevel_;
+  private int aggregationLevel_ = 0;
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
    *
@@ -313,16 +313,15 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfo.AggregationLevel getAggregationLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.billing.v1.AggregationInfo.AggregationLevel result =
-        com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.valueOf(aggregationLevel_);
+        com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.forNumber(aggregationLevel_);
     return result == null
         ? com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.UNRECOGNIZED
         : result;
   }
 
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 2;
-  private int aggregationInterval_;
+  private int aggregationInterval_ = 0;
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
    * </code>
@@ -341,9 +340,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfo.AggregationInterval getAggregationInterval() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.billing.v1.AggregationInfo.AggregationInterval result =
-        com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.valueOf(
+        com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.forNumber(
             aggregationInterval_);
     return result == null
         ? com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.UNRECOGNIZED
@@ -351,7 +349,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AGGREGATION_COUNT_FIELD_NUMBER = 3;
-  private int aggregationCount_;
+  private int aggregationCount_ = 0;
   /**
    *
    *
@@ -597,12 +595,10 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       aggregationLevel_ = 0;
-
       aggregationInterval_ = 0;
-
       aggregationCount_ = 0;
-
       return this;
     }
 
@@ -630,11 +626,24 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.billing.v1.AggregationInfo buildPartial() {
       com.google.cloud.billing.v1.AggregationInfo result =
           new com.google.cloud.billing.v1.AggregationInfo(this);
-      result.aggregationLevel_ = aggregationLevel_;
-      result.aggregationInterval_ = aggregationInterval_;
-      result.aggregationCount_ = aggregationCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.AggregationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.aggregationLevel_ = aggregationLevel_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.aggregationInterval_ = aggregationInterval_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.aggregationCount_ = aggregationCount_;
+      }
     }
 
     @java.lang.Override
@@ -720,19 +729,19 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 aggregationLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 aggregationInterval_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 aggregationCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -752,6 +761,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private int aggregationLevel_ = 0;
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
@@ -769,8 +780,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAggregationLevelValue(int value) {
-
       aggregationLevel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,9 +792,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.billing.v1.AggregationInfo.AggregationLevel getAggregationLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.v1.AggregationInfo.AggregationLevel result =
-          com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.valueOf(aggregationLevel_);
+          com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.forNumber(aggregationLevel_);
       return result == null
           ? com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.UNRECOGNIZED
           : result;
@@ -799,7 +809,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       aggregationLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -810,7 +820,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAggregationLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       aggregationLevel_ = 0;
       onChanged();
       return this;
@@ -835,8 +845,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAggregationIntervalValue(int value) {
-
       aggregationInterval_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -849,9 +859,8 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.cloud.billing.v1.AggregationInfo.AggregationInterval
         getAggregationInterval() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.v1.AggregationInfo.AggregationInterval result =
-          com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.valueOf(
+          com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.forNumber(
               aggregationInterval_);
       return result == null
           ? com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.UNRECOGNIZED
@@ -869,7 +878,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       aggregationInterval_ = value.getNumber();
       onChanged();
       return this;
@@ -881,7 +890,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAggregationInterval() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       aggregationInterval_ = 0;
       onChanged();
       return this;
@@ -922,6 +931,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     public Builder setAggregationCount(int value) {
 
       aggregationCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -939,7 +949,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAggregationCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       aggregationCount_ = 0;
       onChanged();
       return this;

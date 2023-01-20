@@ -67,7 +67,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int HTTP_STATUS_FIELD_NUMBER = 468949897;
-  private int httpStatus_;
+  private int httpStatus_ = 0;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
-  private double percentage_;
+  private double percentage_ = 0D;
   /**
    *
    *
@@ -352,10 +352,9 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       httpStatus_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       percentage_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -383,6 +382,14 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HttpFaultAbort buildPartial() {
       com.google.cloud.compute.v1.HttpFaultAbort result =
           new com.google.cloud.compute.v1.HttpFaultAbort(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpFaultAbort result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -393,9 +400,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
         result.percentage_ = percentage_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -550,8 +555,9 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHttpStatus(int value) {
-      bitField0_ |= 0x00000001;
+
       httpStatus_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -617,8 +623,9 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercentage(double value) {
-      bitField0_ |= 0x00000002;
+
       percentage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

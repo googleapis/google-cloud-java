@@ -67,7 +67,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER = 16639365;
-  private boolean enableNestedVirtualization_;
+  private boolean enableNestedVirtualization_ = false;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   }
 
   public static final int ENABLE_UEFI_NETWORKING_FIELD_NUMBER = 334485668;
-  private boolean enableUefiNetworking_;
+  private boolean enableUefiNetworking_ = false;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   }
 
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 352611671;
-  private int threadsPerCore_;
+  private int threadsPerCore_ = 0;
   /**
    *
    *
@@ -166,7 +166,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   }
 
   public static final int VISIBLE_CORE_COUNT_FIELD_NUMBER = 193198684;
-  private int visibleCoreCount_;
+  private int visibleCoreCount_ = 0;
   /**
    *
    *
@@ -446,14 +446,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableNestedVirtualization_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       enableUefiNetworking_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       threadsPerCore_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       visibleCoreCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -481,6 +478,14 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.AdvancedMachineFeatures buildPartial() {
       com.google.cloud.compute.v1.AdvancedMachineFeatures result =
           new com.google.cloud.compute.v1.AdvancedMachineFeatures(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AdvancedMachineFeatures result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -499,9 +504,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
         result.visibleCoreCount_ = visibleCoreCount_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -675,8 +678,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setEnableNestedVirtualization(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enableNestedVirtualization_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,8 +746,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setEnableUefiNetworking(boolean value) {
-      bitField0_ |= 0x00000002;
+
       enableUefiNetworking_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -809,8 +814,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setThreadsPerCore(int value) {
-      bitField0_ |= 0x00000004;
+
       threadsPerCore_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -876,8 +882,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setVisibleCoreCount(int value) {
-      bitField0_ |= 0x00000008;
+
       visibleCoreCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

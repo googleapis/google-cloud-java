@@ -73,7 +73,9 @@ public final class SetBackendServiceTargetSslProxyRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SetBackendServiceTargetSslProxyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -244,11 +248,15 @@ public final class SetBackendServiceTargetSslProxyRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequestOrBuilder
       getTargetSslProxiesSetBackendServiceRequestResourceOrBuilder() {
-    return getTargetSslProxiesSetBackendServiceRequestResource();
+    return targetSslProxiesSetBackendServiceRequestResource_ == null
+        ? com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.getDefaultInstance()
+        : targetSslProxiesSetBackendServiceRequestResource_;
   }
 
   public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
-  private volatile java.lang.Object targetSslProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetSslProxy_ = "";
   /**
    *
    *
@@ -537,18 +545,15 @@ public final class SetBackendServiceTargetSslProxyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null) {
-        targetSslProxiesSetBackendServiceRequestResource_ = null;
-      } else {
-        targetSslProxiesSetBackendServiceRequestResource_ = null;
+      targetSslProxiesSetBackendServiceRequestResource_ = null;
+      if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ != null) {
+        targetSslProxiesSetBackendServiceRequestResourceBuilder_.dispose();
         targetSslProxiesSetBackendServiceRequestResourceBuilder_ = null;
       }
       targetSslProxy_ = "";
-
       return this;
     }
 
@@ -578,24 +583,34 @@ public final class SetBackendServiceTargetSslProxyRequest
     public com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest result =
           new com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null) {
-        result.targetSslProxiesSetBackendServiceRequestResource_ =
-            targetSslProxiesSetBackendServiceRequestResource_;
-      } else {
-        result.targetSslProxiesSetBackendServiceRequestResource_ =
-            targetSslProxiesSetBackendServiceRequestResourceBuilder_.build();
-      }
-      result.targetSslProxy_ = targetSslProxy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetSslProxiesSetBackendServiceRequestResource_ =
+            targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null
+                ? targetSslProxiesSetBackendServiceRequestResource_
+                : targetSslProxiesSetBackendServiceRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetSslProxy_ = targetSslProxy_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -649,11 +664,12 @@ public final class SetBackendServiceTargetSslProxyRequest
               .getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTargetSslProxiesSetBackendServiceRequestResource()) {
@@ -662,6 +678,7 @@ public final class SetBackendServiceTargetSslProxyRequest
       }
       if (!other.getTargetSslProxy().isEmpty()) {
         targetSslProxy_ = other.targetSslProxy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -693,7 +710,7 @@ public final class SetBackendServiceTargetSslProxyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1112646946:
@@ -701,19 +718,19 @@ public final class SetBackendServiceTargetSslProxyRequest
                 input.readMessage(
                     getTargetSslProxiesSetBackendServiceRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1112646946
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1584600470:
               {
                 targetSslProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1584600470
             default:
@@ -802,8 +819,8 @@ public final class SetBackendServiceTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +838,8 @@ public final class SetBackendServiceTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -845,8 +862,8 @@ public final class SetBackendServiceTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,7 +881,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -926,8 +943,8 @@ public final class SetBackendServiceTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -943,8 +960,8 @@ public final class SetBackendServiceTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,8 +982,8 @@ public final class SetBackendServiceTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +1009,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * @return Whether the targetSslProxiesSetBackendServiceRequestResource field is set.
      */
     public boolean hasTargetSslProxiesSetBackendServiceRequestResource() {
-      return targetSslProxiesSetBackendServiceRequestResourceBuilder_ != null
-          || targetSslProxiesSetBackendServiceRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1037,11 +1053,11 @@ public final class SetBackendServiceTargetSslProxyRequest
           throw new NullPointerException();
         }
         targetSslProxiesSetBackendServiceRequestResource_ = value;
-        onChanged();
       } else {
         targetSslProxiesSetBackendServiceRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1060,12 +1076,12 @@ public final class SetBackendServiceTargetSslProxyRequest
             builderForValue) {
       if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null) {
         targetSslProxiesSetBackendServiceRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetSslProxiesSetBackendServiceRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1082,20 +1098,20 @@ public final class SetBackendServiceTargetSslProxyRequest
     public Builder mergeTargetSslProxiesSetBackendServiceRequestResource(
         com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest value) {
       if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null) {
-        if (targetSslProxiesSetBackendServiceRequestResource_ != null) {
-          targetSslProxiesSetBackendServiceRequestResource_ =
-              com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.newBuilder(
-                      targetSslProxiesSetBackendServiceRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetSslProxiesSetBackendServiceRequestResource_ != null
+            && targetSslProxiesSetBackendServiceRequestResource_
+                != com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
+                    .getDefaultInstance()) {
+          getTargetSslProxiesSetBackendServiceRequestResourceBuilder().mergeFrom(value);
         } else {
           targetSslProxiesSetBackendServiceRequestResource_ = value;
         }
-        onChanged();
       } else {
         targetSslProxiesSetBackendServiceRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1110,14 +1126,13 @@ public final class SetBackendServiceTargetSslProxyRequest
      * </code>
      */
     public Builder clearTargetSslProxiesSetBackendServiceRequestResource() {
-      if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ == null) {
-        targetSslProxiesSetBackendServiceRequestResource_ = null;
-        onChanged();
-      } else {
-        targetSslProxiesSetBackendServiceRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      targetSslProxiesSetBackendServiceRequestResource_ = null;
+      if (targetSslProxiesSetBackendServiceRequestResourceBuilder_ != null) {
+        targetSslProxiesSetBackendServiceRequestResourceBuilder_.dispose();
         targetSslProxiesSetBackendServiceRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1133,7 +1148,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.Builder
         getTargetSslProxiesSetBackendServiceRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetSslProxiesSetBackendServiceRequestResourceFieldBuilder().getBuilder();
     }
@@ -1250,8 +1265,8 @@ public final class SetBackendServiceTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,8 +1282,8 @@ public final class SetBackendServiceTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearTargetSslProxy() {
-
       targetSslProxy_ = getDefaultInstance().getTargetSslProxy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1289,8 +1304,8 @@ public final class SetBackendServiceTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

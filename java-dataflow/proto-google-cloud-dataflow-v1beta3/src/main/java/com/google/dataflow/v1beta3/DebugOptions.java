@@ -66,7 +66,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_HOT_KEY_LOGGING_FIELD_NUMBER = 1;
-  private boolean enableHotKeyLogging_;
+  private boolean enableHotKeyLogging_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableHotKeyLogging_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.DebugOptions buildPartial() {
       com.google.dataflow.v1beta3.DebugOptions result =
           new com.google.dataflow.v1beta3.DebugOptions(this);
-      result.enableHotKeyLogging_ = enableHotKeyLogging_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.DebugOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableHotKeyLogging_ = enableHotKeyLogging_;
+      }
     }
 
     @java.lang.Override
@@ -391,7 +400,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 enableHotKeyLogging_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -410,6 +419,8 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableHotKeyLogging_;
     /**
@@ -444,6 +455,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableHotKeyLogging(boolean value) {
 
       enableHotKeyLogging_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -460,7 +472,7 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableHotKeyLogging() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableHotKeyLogging_ = false;
       onChanged();
       return this;

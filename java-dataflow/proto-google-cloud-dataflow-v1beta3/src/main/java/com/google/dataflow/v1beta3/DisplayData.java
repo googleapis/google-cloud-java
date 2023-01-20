@@ -134,7 +134,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -187,7 +189,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -589,7 +593,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHORT_STR_VALUE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object shortStrValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortStrValue_ = "";
   /**
    *
    *
@@ -648,7 +654,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 12;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -697,7 +705,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LABEL_FIELD_NUMBER = 13;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -1088,10 +1098,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       namespace_ = "";
-
       if (timestampValueBuilder_ != null) {
         timestampValueBuilder_.clear();
       }
@@ -1099,11 +1108,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         durationValueBuilder_.clear();
       }
       shortStrValue_ = "";
-
       url_ = "";
-
       label_ = "";
-
       valueCase_ = 0;
       value_ = null;
       return this;
@@ -1133,43 +1139,42 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.DisplayData buildPartial() {
       com.google.dataflow.v1beta3.DisplayData result =
           new com.google.dataflow.v1beta3.DisplayData(this);
-      result.key_ = key_;
-      result.namespace_ = namespace_;
-      if (valueCase_ == 4) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 5) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 6) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 7) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 8) {
-        if (timestampValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = timestampValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 9) {
-        if (durationValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = durationValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 10) {
-        result.value_ = value_;
-      }
-      result.shortStrValue_ = shortStrValue_;
-      result.url_ = url_;
-      result.label_ = label_;
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.DisplayData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.namespace_ = namespace_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.shortStrValue_ = shortStrValue_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.label_ = label_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.dataflow.v1beta3.DisplayData result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 8 && timestampValueBuilder_ != null) {
+        result.value_ = timestampValueBuilder_.build();
+      }
+      if (valueCase_ == 9 && durationValueBuilder_ != null) {
+        result.value_ = durationValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1219,22 +1224,27 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.DisplayData.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getShortStrValue().isEmpty()) {
         shortStrValue_ = other.shortStrValue_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getValueCase()) {
@@ -1311,13 +1321,13 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
@@ -1367,19 +1377,19 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 shortStrValue_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             default:
@@ -1412,6 +1422,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -1480,8 +1492,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1499,8 +1511,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1523,8 +1535,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1599,8 +1611,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1619,8 +1631,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1644,8 +1656,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1828,6 +1840,7 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
+
       valueCase_ = 5;
       value_ = value;
       onChanged();
@@ -1897,6 +1910,7 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFloatValue(float value) {
+
       valueCase_ = 6;
       value_ = value;
       onChanged();
@@ -2257,7 +2271,6 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 8;
       onChanged();
-      ;
       return timestampValueBuilder_;
     }
 
@@ -2462,7 +2475,6 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 9;
       onChanged();
-      ;
       return durationValueBuilder_;
     }
 
@@ -2510,6 +2522,7 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       valueCase_ = 10;
       value_ = value;
       onChanged();
@@ -2611,8 +2624,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       shortStrValue_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2633,8 +2646,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShortStrValue() {
-
       shortStrValue_ = getDefaultInstance().getShortStrValue();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2660,8 +2673,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       shortStrValue_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2727,8 +2740,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2744,8 +2757,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2766,8 +2779,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2833,8 +2846,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2850,8 +2863,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2872,8 +2885,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -66,7 +66,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int GUEST_CPUS_FIELD_NUMBER = 393356754;
-  private int guestCpus_;
+  private int guestCpus_ = 0;
   /**
    *
    *
@@ -99,7 +99,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   }
 
   public static final int LOCAL_SSD_GB_FIELD_NUMBER = 329237578;
-  private int localSsdGb_;
+  private int localSsdGb_ = 0;
   /**
    *
    *
@@ -132,7 +132,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 116001171;
-  private int memoryMb_;
+  private int memoryMb_ = 0;
   /**
    *
    *
@@ -165,7 +165,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   }
 
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 317231675;
-  private int minNodeCpus_;
+  private int minNodeCpus_ = 0;
   /**
    *
    *
@@ -440,14 +440,11 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       guestCpus_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       localSsdGb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       memoryMb_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       minNodeCpus_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -475,6 +472,14 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InstanceConsumptionInfo buildPartial() {
       com.google.cloud.compute.v1.InstanceConsumptionInfo result =
           new com.google.cloud.compute.v1.InstanceConsumptionInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceConsumptionInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -493,9 +498,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
         result.minNodeCpus_ = minNodeCpus_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -669,8 +672,9 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setGuestCpus(int value) {
-      bitField0_ |= 0x00000001;
+
       guestCpus_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -736,8 +740,9 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setLocalSsdGb(int value) {
-      bitField0_ |= 0x00000002;
+
       localSsdGb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -803,8 +808,9 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setMemoryMb(int value) {
-      bitField0_ |= 0x00000004;
+
       memoryMb_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -870,8 +876,9 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setMinNodeCpus(int value) {
-      bitField0_ |= 0x00000008;
+
       minNodeCpus_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

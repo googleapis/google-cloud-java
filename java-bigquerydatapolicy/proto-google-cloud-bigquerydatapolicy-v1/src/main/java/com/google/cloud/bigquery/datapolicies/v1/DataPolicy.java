@@ -444,7 +444,9 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -495,7 +497,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_POLICY_TYPE_FIELD_NUMBER = 2;
-  private int dataPolicyType_;
+  private int dataPolicyType_ = 0;
   /**
    *
    *
@@ -526,9 +528,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType getDataPolicyType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType result =
-        com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.valueOf(
+        com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.forNumber(
             dataPolicyType_);
     return result == null
         ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.UNRECOGNIZED
@@ -536,7 +537,9 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_POLICY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dataPolicyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataPolicyId_ = "";
   /**
    *
    *
@@ -855,15 +858,13 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dataMaskingPolicyBuilder_ != null) {
         dataMaskingPolicyBuilder_.clear();
       }
       name_ = "";
-
       dataPolicyType_ = 0;
-
       dataPolicyId_ = "";
-
       matchingLabelCase_ = 0;
       matchingLabel_ = null;
       policyCase_ = 0;
@@ -895,23 +896,35 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.datapolicies.v1.DataPolicy buildPartial() {
       com.google.cloud.bigquery.datapolicies.v1.DataPolicy result =
           new com.google.cloud.bigquery.datapolicies.v1.DataPolicy(this);
-      if (matchingLabelCase_ == 4) {
-        result.matchingLabel_ = matchingLabel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (policyCase_ == 5) {
-        if (dataMaskingPolicyBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = dataMaskingPolicyBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.dataPolicyType_ = dataPolicyType_;
-      result.dataPolicyId_ = dataPolicyId_;
-      result.matchingLabelCase_ = matchingLabelCase_;
-      result.policyCase_ = policyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.datapolicies.v1.DataPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataPolicyType_ = dataPolicyType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataPolicyId_ = dataPolicyId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.datapolicies.v1.DataPolicy result) {
+      result.matchingLabelCase_ = matchingLabelCase_;
+      result.matchingLabel_ = this.matchingLabel_;
+      result.policyCase_ = policyCase_;
+      result.policy_ = this.policy_;
+      if (policyCase_ == 5 && dataMaskingPolicyBuilder_ != null) {
+        result.policy_ = dataMaskingPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -962,6 +975,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.dataPolicyType_ != 0) {
@@ -969,6 +983,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDataPolicyId().isEmpty()) {
         dataPolicyId_ = other.dataPolicyId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getMatchingLabelCase()) {
@@ -1024,19 +1039,19 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 16:
               {
                 dataPolicyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 26:
               {
                 dataPolicyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -1097,6 +1112,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1460,7 +1477,6 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       policyCase_ = 5;
       onChanged();
-      ;
       return dataMaskingPolicyBuilder_;
     }
 
@@ -1528,8 +1544,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1546,8 +1562,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1569,8 +1585,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1606,8 +1622,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataPolicyTypeValue(int value) {
-
       dataPolicyType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1625,9 +1641,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType getDataPolicyType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType result =
-          com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.valueOf(
+          com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.forNumber(
               dataPolicyType_);
       return result == null
           ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.UNRECOGNIZED
@@ -1651,7 +1666,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       dataPolicyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1669,7 +1684,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataPolicyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       dataPolicyType_ = 0;
       onChanged();
       return this;
@@ -1742,8 +1757,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataPolicyId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1761,8 +1776,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataPolicyId() {
-
       dataPolicyId_ = getDefaultInstance().getDataPolicyId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1785,8 +1800,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataPolicyId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

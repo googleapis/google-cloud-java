@@ -69,7 +69,9 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.RepositoryOrBuilder getRepositoryOrBuilder() {
-    return getRepository();
+    return repository_ == null
+        ? com.google.cloud.dataform.v1beta1.Repository.getDefaultInstance()
+        : repository_;
   }
 
   public static final int REPOSITORY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object repositoryId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object repositoryId_ = "";
   /**
    *
    *
@@ -449,16 +455,14 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (repositoryBuilder_ == null) {
-        repository_ = null;
-      } else {
-        repository_ = null;
+      repository_ = null;
+      if (repositoryBuilder_ != null) {
+        repositoryBuilder_.dispose();
         repositoryBuilder_ = null;
       }
       repositoryId_ = "";
-
       return this;
     }
 
@@ -486,15 +490,24 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
     public com.google.cloud.dataform.v1beta1.CreateRepositoryRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.CreateRepositoryRequest result =
           new com.google.cloud.dataform.v1beta1.CreateRepositoryRequest(this);
-      result.parent_ = parent_;
-      if (repositoryBuilder_ == null) {
-        result.repository_ = repository_;
-      } else {
-        result.repository_ = repositoryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.repositoryId_ = repositoryId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.CreateRepositoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.repository_ = repositoryBuilder_ == null ? repository_ : repositoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.repositoryId_ = repositoryId_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +558,7 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRepository()) {
@@ -552,6 +566,7 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
       }
       if (!other.getRepositoryId().isEmpty()) {
         repositoryId_ = other.repositoryId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,19 +598,19 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRepositoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 repositoryId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +629,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -685,8 +702,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +722,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +747,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,7 +773,7 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      * @return Whether the repository field is set.
      */
     public boolean hasRepository() {
-      return repositoryBuilder_ != null || repository_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +814,11 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         repository_ = value;
-        onChanged();
       } else {
         repositoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +836,11 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
         com.google.cloud.dataform.v1beta1.Repository.Builder builderForValue) {
       if (repositoryBuilder_ == null) {
         repository_ = builderForValue.build();
-        onChanged();
       } else {
         repositoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,19 +856,18 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      */
     public Builder mergeRepository(com.google.cloud.dataform.v1beta1.Repository value) {
       if (repositoryBuilder_ == null) {
-        if (repository_ != null) {
-          repository_ =
-              com.google.cloud.dataform.v1beta1.Repository.newBuilder(repository_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && repository_ != null
+            && repository_ != com.google.cloud.dataform.v1beta1.Repository.getDefaultInstance()) {
+          getRepositoryBuilder().mergeFrom(value);
         } else {
           repository_ = value;
         }
-        onChanged();
       } else {
         repositoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,14 +882,13 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearRepository() {
-      if (repositoryBuilder_ == null) {
-        repository_ = null;
-        onChanged();
-      } else {
-        repository_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      repository_ = null;
+      if (repositoryBuilder_ != null) {
+        repositoryBuilder_.dispose();
         repositoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +903,7 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Repository.Builder getRepositoryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRepositoryFieldBuilder().getBuilder();
     }
@@ -1004,8 +1019,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       repositoryId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1022,8 +1037,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRepositoryId() {
-
       repositoryId_ = getDefaultInstance().getRepositoryId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1045,8 +1060,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       repositoryId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -70,6 +70,8 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
   }
 
   public static final int CONTENT_TYPES_FIELD_NUMBER = 17428787;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList contentTypes_;
   /**
    *
@@ -345,6 +347,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       contentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -378,14 +381,26 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
         buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         contentTypes_ = contentTypes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.contentTypes_ = contentTypes_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

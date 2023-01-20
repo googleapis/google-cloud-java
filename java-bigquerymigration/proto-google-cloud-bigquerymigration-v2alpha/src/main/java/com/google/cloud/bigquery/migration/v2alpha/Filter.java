@@ -68,6 +68,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_FILE_EXCLUSION_PREFIXES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList inputFileExclusionPrefixes_;
   /**
    *
@@ -334,6 +336,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -363,14 +366,25 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.Filter buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.Filter result =
           new com.google.cloud.bigquery.migration.v2alpha.Filter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.migration.v2alpha.Filter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         inputFileExclusionPrefixes_ = inputFileExclusionPrefixes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inputFileExclusionPrefixes_ = inputFileExclusionPrefixes_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.Filter result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

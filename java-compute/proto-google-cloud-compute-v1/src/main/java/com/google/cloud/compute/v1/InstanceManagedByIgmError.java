@@ -188,7 +188,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   }
 
   public static final int TIMESTAMP_FIELD_NUMBER = 55126294;
-  private volatile java.lang.Object timestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timestamp_ = "";
   /**
    *
    *
@@ -493,20 +495,18 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        errorBuilder_.clear();
+      bitField0_ = 0;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
+        errorBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (instanceActionDetailsBuilder_ == null) {
-        instanceActionDetails_ = null;
-      } else {
-        instanceActionDetailsBuilder_.clear();
+      instanceActionDetails_ = null;
+      if (instanceActionDetailsBuilder_ != null) {
+        instanceActionDetailsBuilder_.dispose();
+        instanceActionDetailsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       timestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -534,31 +534,32 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.InstanceManagedByIgmError buildPartial() {
       com.google.cloud.compute.v1.InstanceManagedByIgmError result =
           new com.google.cloud.compute.v1.InstanceManagedByIgmError(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceManagedByIgmError result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (errorBuilder_ == null) {
-          result.error_ = error_;
-        } else {
-          result.error_ = errorBuilder_.build();
-        }
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (instanceActionDetailsBuilder_ == null) {
-          result.instanceActionDetails_ = instanceActionDetails_;
-        } else {
-          result.instanceActionDetails_ = instanceActionDetailsBuilder_.build();
-        }
+        result.instanceActionDetails_ =
+            instanceActionDetailsBuilder_ == null
+                ? instanceActionDetails_
+                : instanceActionDetailsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timestamp_ = timestamp_;
         to_bitField0_ |= 0x00000004;
       }
-      result.timestamp_ = timestamp_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -614,8 +615,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         mergeInstanceActionDetails(other.getInstanceActionDetails());
       }
       if (other.hasTimestamp()) {
-        bitField0_ |= 0x00000004;
         timestamp_ = other.timestamp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -745,11 +746,11 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -768,11 +769,11 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -794,19 +795,15 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             && error_
                 != com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError
                     .getDefaultInstance()) {
-          error_ =
-              com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.newBuilder(
-                      error_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -821,13 +818,13 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        errorBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
+        errorBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -962,11 +959,11 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         instanceActionDetails_ = value;
-        onChanged();
       } else {
         instanceActionDetailsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -985,11 +982,11 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             builderForValue) {
       if (instanceActionDetailsBuilder_ == null) {
         instanceActionDetails_ = builderForValue.build();
-        onChanged();
       } else {
         instanceActionDetailsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1011,19 +1008,15 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             && instanceActionDetails_
                 != com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
                     .getDefaultInstance()) {
-          instanceActionDetails_ =
-              com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.newBuilder(
-                      instanceActionDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getInstanceActionDetailsBuilder().mergeFrom(value);
         } else {
           instanceActionDetails_ = value;
         }
-        onChanged();
       } else {
         instanceActionDetailsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1038,13 +1031,13 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearInstanceActionDetails() {
-      if (instanceActionDetailsBuilder_ == null) {
-        instanceActionDetails_ = null;
-        onChanged();
-      } else {
-        instanceActionDetailsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      instanceActionDetails_ = null;
+      if (instanceActionDetailsBuilder_ != null) {
+        instanceActionDetailsBuilder_.dispose();
+        instanceActionDetailsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1190,8 +1183,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       timestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1207,8 +1200,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       timestamp_ = getDefaultInstance().getTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1229,8 +1222,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       timestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

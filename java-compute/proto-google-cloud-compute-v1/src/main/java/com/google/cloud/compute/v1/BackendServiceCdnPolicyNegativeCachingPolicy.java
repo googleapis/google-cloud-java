@@ -69,7 +69,7 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
 
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
   }
 
   public static final int TTL_FIELD_NUMBER = 115180;
-  private int ttl_;
+  private int ttl_ = 0;
   /**
    *
    *
@@ -355,10 +355,9 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       ttl_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -389,6 +388,15 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy result =
           new com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -399,9 +407,7 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
         result.ttl_ = ttl_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -561,8 +567,9 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
      * @return This builder for chaining.
      */
     public Builder setCode(int value) {
-      bitField0_ |= 0x00000001;
+
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,8 +635,9 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
      * @return This builder for chaining.
      */
     public Builder setTtl(int value) {
-      bitField0_ |= 0x00000002;
+
       ttl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

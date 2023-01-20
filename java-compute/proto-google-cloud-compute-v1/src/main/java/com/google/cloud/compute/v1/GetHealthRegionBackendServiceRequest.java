@@ -72,7 +72,9 @@ public final class GetHealthRegionBackendServiceRequest
   }
 
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
-  private volatile java.lang.Object backendService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendService_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class GetHealthRegionBackendServiceRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -158,7 +162,9 @@ public final class GetHealthRegionBackendServiceRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -258,7 +264,9 @@ public final class GetHealthRegionBackendServiceRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder
       getResourceGroupReferenceResourceOrBuilder() {
-    return getResourceGroupReferenceResource();
+    return resourceGroupReferenceResource_ == null
+        ? com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance()
+        : resourceGroupReferenceResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -495,16 +503,13 @@ public final class GetHealthRegionBackendServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       backendService_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (resourceGroupReferenceResourceBuilder_ == null) {
-        resourceGroupReferenceResource_ = null;
-      } else {
-        resourceGroupReferenceResource_ = null;
+      resourceGroupReferenceResource_ = null;
+      if (resourceGroupReferenceResourceBuilder_ != null) {
+        resourceGroupReferenceResourceBuilder_.dispose();
         resourceGroupReferenceResourceBuilder_ = null;
       }
       return this;
@@ -535,16 +540,31 @@ public final class GetHealthRegionBackendServiceRequest
     public com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest buildPartial() {
       com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest result =
           new com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest(this);
-      result.backendService_ = backendService_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (resourceGroupReferenceResourceBuilder_ == null) {
-        result.resourceGroupReferenceResource_ = resourceGroupReferenceResource_;
-      } else {
-        result.resourceGroupReferenceResource_ = resourceGroupReferenceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendService_ = backendService_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resourceGroupReferenceResource_ =
+            resourceGroupReferenceResourceBuilder_ == null
+                ? resourceGroupReferenceResource_
+                : resourceGroupReferenceResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -597,14 +617,17 @@ public final class GetHealthRegionBackendServiceRequest
         return this;
       if (!other.getBackendService().isEmpty()) {
         backendService_ = other.backendService_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasResourceGroupReferenceResource()) {
@@ -641,25 +664,25 @@ public final class GetHealthRegionBackendServiceRequest
                 input.readMessage(
                     getResourceGroupReferenceResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 903608986
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1839398830:
               {
                 backendService_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1839398830
             default:
@@ -678,6 +701,8 @@ public final class GetHealthRegionBackendServiceRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object backendService_ = "";
     /**
@@ -740,8 +765,8 @@ public final class GetHealthRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +782,8 @@ public final class GetHealthRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-
       backendService_ = getDefaultInstance().getBackendService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -779,8 +804,8 @@ public final class GetHealthRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +853,8 @@ public final class GetHealthRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -839,8 +864,8 @@ public final class GetHealthRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -855,8 +880,8 @@ public final class GetHealthRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -922,8 +947,8 @@ public final class GetHealthRegionBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -939,8 +964,8 @@ public final class GetHealthRegionBackendServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -961,8 +986,8 @@ public final class GetHealthRegionBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -987,8 +1012,7 @@ public final class GetHealthRegionBackendServiceRequest
      * @return Whether the resourceGroupReferenceResource field is set.
      */
     public boolean hasResourceGroupReferenceResource() {
-      return resourceGroupReferenceResourceBuilder_ != null
-          || resourceGroupReferenceResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1030,11 +1054,11 @@ public final class GetHealthRegionBackendServiceRequest
           throw new NullPointerException();
         }
         resourceGroupReferenceResource_ = value;
-        onChanged();
       } else {
         resourceGroupReferenceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1052,11 +1076,11 @@ public final class GetHealthRegionBackendServiceRequest
         com.google.cloud.compute.v1.ResourceGroupReference.Builder builderForValue) {
       if (resourceGroupReferenceResourceBuilder_ == null) {
         resourceGroupReferenceResource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceGroupReferenceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1073,20 +1097,19 @@ public final class GetHealthRegionBackendServiceRequest
     public Builder mergeResourceGroupReferenceResource(
         com.google.cloud.compute.v1.ResourceGroupReference value) {
       if (resourceGroupReferenceResourceBuilder_ == null) {
-        if (resourceGroupReferenceResource_ != null) {
-          resourceGroupReferenceResource_ =
-              com.google.cloud.compute.v1.ResourceGroupReference.newBuilder(
-                      resourceGroupReferenceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && resourceGroupReferenceResource_ != null
+            && resourceGroupReferenceResource_
+                != com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance()) {
+          getResourceGroupReferenceResourceBuilder().mergeFrom(value);
         } else {
           resourceGroupReferenceResource_ = value;
         }
-        onChanged();
       } else {
         resourceGroupReferenceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1101,14 +1124,13 @@ public final class GetHealthRegionBackendServiceRequest
      * </code>
      */
     public Builder clearResourceGroupReferenceResource() {
-      if (resourceGroupReferenceResourceBuilder_ == null) {
-        resourceGroupReferenceResource_ = null;
-        onChanged();
-      } else {
-        resourceGroupReferenceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resourceGroupReferenceResource_ = null;
+      if (resourceGroupReferenceResourceBuilder_ != null) {
+        resourceGroupReferenceResourceBuilder_.dispose();
         resourceGroupReferenceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1124,7 +1146,7 @@ public final class GetHealthRegionBackendServiceRequest
      */
     public com.google.cloud.compute.v1.ResourceGroupReference.Builder
         getResourceGroupReferenceResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResourceGroupReferenceResourceFieldBuilder().getBuilder();
     }

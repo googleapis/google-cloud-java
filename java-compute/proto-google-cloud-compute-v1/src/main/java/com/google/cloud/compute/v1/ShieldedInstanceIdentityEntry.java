@@ -70,7 +70,9 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int EK_CERT_FIELD_NUMBER = 450178589;
-  private volatile java.lang.Object ekCert_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ekCert_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
   }
 
   public static final int EK_PUB_FIELD_NUMBER = 308947940;
-  private volatile java.lang.Object ekPub_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ekPub_ = "";
   /**
    *
    *
@@ -414,10 +418,9 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ekCert_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       ekPub_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -445,19 +448,25 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry result =
           new com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ekCert_ = ekCert_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ekCert_ = ekCert_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ekPub_ = ekPub_;
         to_bitField0_ |= 0x00000002;
       }
-      result.ekPub_ = ekPub_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -507,13 +516,13 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       if (other == com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance())
         return this;
       if (other.hasEkCert()) {
-        bitField0_ |= 0x00000001;
         ekCert_ = other.ekCert_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEkPub()) {
-        bitField0_ |= 0x00000002;
         ekPub_ = other.ekPub_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -648,8 +657,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ekCert_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +674,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEkCert() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ekCert_ = getDefaultInstance().getEkCert();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -687,8 +696,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ekCert_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +777,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       ekPub_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +794,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEkPub() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       ekPub_ = getDefaultInstance().getEkPub();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -807,8 +816,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       ekPub_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

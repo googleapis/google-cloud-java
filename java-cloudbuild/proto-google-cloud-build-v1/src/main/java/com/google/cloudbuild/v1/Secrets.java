@@ -68,6 +68,8 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_MANAGER_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.SecretManagerSecret> secretManager_;
   /**
    *
@@ -138,6 +140,8 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INLINE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.InlineSecret> inline_;
   /**
    *
@@ -419,6 +423,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (secretManagerBuilder_ == null) {
         secretManager_ = java.util.Collections.emptyList();
       } else {
@@ -459,7 +464,15 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Secrets buildPartial() {
       com.google.cloudbuild.v1.Secrets result = new com.google.cloudbuild.v1.Secrets(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.Secrets result) {
       if (secretManagerBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           secretManager_ = java.util.Collections.unmodifiableList(secretManager_);
@@ -478,8 +491,10 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.inline_ = inlineBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Secrets result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

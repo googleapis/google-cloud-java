@@ -107,7 +107,6 @@ public interface SslCertificateAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.SslCertificatesScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.SslCertificatesScopedList getItemsOrDefault(
       java.lang.String key,

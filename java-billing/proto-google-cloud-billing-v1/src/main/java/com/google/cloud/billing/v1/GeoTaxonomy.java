@@ -252,7 +252,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -281,13 +281,14 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.GeoTaxonomy.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.billing.v1.GeoTaxonomy.Type result =
-        com.google.cloud.billing.v1.GeoTaxonomy.Type.valueOf(type_);
+        com.google.cloud.billing.v1.GeoTaxonomy.Type.forNumber(type_);
     return result == null ? com.google.cloud.billing.v1.GeoTaxonomy.Type.UNRECOGNIZED : result;
   }
 
   public static final int REGIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList regions_;
   /**
    *
@@ -564,10 +565,10 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -595,15 +596,27 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.v1.GeoTaxonomy buildPartial() {
       com.google.cloud.billing.v1.GeoTaxonomy result =
           new com.google.cloud.billing.v1.GeoTaxonomy(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        regions_ = regions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.regions_ = regions_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.billing.v1.GeoTaxonomy result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        regions_ = regions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.regions_ = regions_;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.GeoTaxonomy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -657,7 +670,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       if (!other.regions_.isEmpty()) {
         if (regions_.isEmpty()) {
           regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureRegionsIsMutable();
           regions_.addAll(other.regions_);
@@ -693,7 +706,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -751,8 +764,8 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,9 +782,8 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.billing.v1.GeoTaxonomy.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.v1.GeoTaxonomy.Type result =
-          com.google.cloud.billing.v1.GeoTaxonomy.Type.valueOf(type_);
+          com.google.cloud.billing.v1.GeoTaxonomy.Type.forNumber(type_);
       return result == null ? com.google.cloud.billing.v1.GeoTaxonomy.Type.UNRECOGNIZED : result;
     }
     /**
@@ -790,7 +802,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -807,7 +819,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -817,9 +829,9 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -962,7 +974,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegions() {
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

@@ -111,7 +111,9 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder getFirstOrBuilder() {
-    return getFirst();
+    return first_ == null
+        ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
+        : first_;
   }
 
   public static final int SECOND_FIELD_NUMBER = 2;
@@ -159,7 +161,9 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder getSecondOrBuilder() {
-    return getSecond();
+    return second_ == null
+        ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
+        : second_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +387,15 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (firstBuilder_ == null) {
-        first_ = null;
-      } else {
-        first_ = null;
+      bitField0_ = 0;
+      first_ = null;
+      if (firstBuilder_ != null) {
+        firstBuilder_.dispose();
         firstBuilder_ = null;
       }
-      if (secondBuilder_ == null) {
-        second_ = null;
-      } else {
-        second_ = null;
+      second_ = null;
+      if (secondBuilder_ != null) {
+        secondBuilder_.dispose();
         secondBuilder_ = null;
       }
       return this;
@@ -425,18 +428,22 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse buildPartial() {
       com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse result =
           new com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse(this);
-      if (firstBuilder_ == null) {
-        result.first_ = first_;
-      } else {
-        result.first_ = firstBuilder_.build();
-      }
-      if (secondBuilder_ == null) {
-        result.second_ = second_;
-      } else {
-        result.second_ = secondBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.first_ = firstBuilder_ == null ? first_ : firstBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.second_ = secondBuilder_ == null ? second_ : secondBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +531,13 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
             case 10:
               {
                 input.readMessage(getFirstFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSecondFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +557,8 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.bigquery.reservation.v1.CapacityCommitment first_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment,
@@ -568,7 +577,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * @return Whether the first field is set.
      */
     public boolean hasFirst() {
-      return firstBuilder_ != null || first_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -605,11 +614,11 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
           throw new NullPointerException();
         }
         first_ = value;
-        onChanged();
       } else {
         firstBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,11 +634,11 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder builderForValue) {
       if (firstBuilder_ == null) {
         first_ = builderForValue.build();
-        onChanged();
       } else {
         firstBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,19 +652,20 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      */
     public Builder mergeFirst(com.google.cloud.bigquery.reservation.v1.CapacityCommitment value) {
       if (firstBuilder_ == null) {
-        if (first_ != null) {
-          first_ =
-              com.google.cloud.bigquery.reservation.v1.CapacityCommitment.newBuilder(first_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && first_ != null
+            && first_
+                != com.google.cloud.bigquery.reservation.v1.CapacityCommitment
+                    .getDefaultInstance()) {
+          getFirstBuilder().mergeFrom(value);
         } else {
           first_ = value;
         }
-        onChanged();
       } else {
         firstBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,14 +678,13 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment first = 1;</code>
      */
     public Builder clearFirst() {
-      if (firstBuilder_ == null) {
-        first_ = null;
-        onChanged();
-      } else {
-        first_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      first_ = null;
+      if (firstBuilder_ != null) {
+        firstBuilder_.dispose();
         firstBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -688,7 +697,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment first = 1;</code>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder getFirstBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFirstFieldBuilder().getBuilder();
     }
@@ -755,7 +764,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * @return Whether the second field is set.
      */
     public boolean hasSecond() {
-      return secondBuilder_ != null || second_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +801,11 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
           throw new NullPointerException();
         }
         second_ = value;
-        onChanged();
       } else {
         secondBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +821,11 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
         com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder builderForValue) {
       if (secondBuilder_ == null) {
         second_ = builderForValue.build();
-        onChanged();
       } else {
         secondBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,19 +839,20 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      */
     public Builder mergeSecond(com.google.cloud.bigquery.reservation.v1.CapacityCommitment value) {
       if (secondBuilder_ == null) {
-        if (second_ != null) {
-          second_ =
-              com.google.cloud.bigquery.reservation.v1.CapacityCommitment.newBuilder(second_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && second_ != null
+            && second_
+                != com.google.cloud.bigquery.reservation.v1.CapacityCommitment
+                    .getDefaultInstance()) {
+          getSecondBuilder().mergeFrom(value);
         } else {
           second_ = value;
         }
-        onChanged();
       } else {
         secondBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,14 +865,13 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment second = 2;</code>
      */
     public Builder clearSecond() {
-      if (secondBuilder_ == null) {
-        second_ = null;
-        onChanged();
-      } else {
-        second_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      second_ = null;
+      if (secondBuilder_ != null) {
+        secondBuilder_.dispose();
         secondBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -875,7 +884,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
      * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment second = 2;</code>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder getSecondBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSecondFieldBuilder().getBuilder();
     }

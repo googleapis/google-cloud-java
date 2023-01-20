@@ -259,6 +259,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int BYPASS_CACHE_ON_REQUEST_HEADERS_FIELD_NUMBER = 486203082;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
       bypassCacheOnRequestHeaders_;
@@ -397,7 +399,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int CACHE_MODE_FIELD_NUMBER = 28877888;
-  private volatile java.lang.Object cacheMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cacheMode_ = "";
   /**
    *
    *
@@ -464,7 +468,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int CLIENT_TTL_FIELD_NUMBER = 29034360;
-  private int clientTtl_;
+  private int clientTtl_ = 0;
   /**
    *
    *
@@ -497,7 +501,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int DEFAULT_TTL_FIELD_NUMBER = 100253422;
-  private int defaultTtl_;
+  private int defaultTtl_ = 0;
   /**
    *
    *
@@ -530,7 +534,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int MAX_TTL_FIELD_NUMBER = 307578001;
-  private int maxTtl_;
+  private int maxTtl_ = 0;
   /**
    *
    *
@@ -563,7 +567,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int NEGATIVE_CACHING_FIELD_NUMBER = 336110005;
-  private boolean negativeCaching_;
+  private boolean negativeCaching_ = false;
   /**
    *
    *
@@ -596,6 +600,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int NEGATIVE_CACHING_POLICY_FIELD_NUMBER = 155359996;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
       negativeCachingPolicy_;
   /**
@@ -681,7 +687,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int REQUEST_COALESCING_FIELD_NUMBER = 532808276;
-  private boolean requestCoalescing_;
+  private boolean requestCoalescing_ = false;
   /**
    *
    *
@@ -714,7 +720,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int SERVE_WHILE_STALE_FIELD_NUMBER = 236682203;
-  private int serveWhileStale_;
+  private int serveWhileStale_ = 0;
   /**
    *
    *
@@ -747,7 +753,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
-  private long signedUrlCacheMaxAgeSec_;
+  private long signedUrlCacheMaxAgeSec_ = 0L;
   /**
    *
    *
@@ -780,6 +786,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 371848885;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList signedUrlKeyNames_;
   /**
    *
@@ -1212,6 +1220,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bypassCacheOnRequestHeadersBuilder_ == null) {
         bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
       } else {
@@ -1219,22 +1228,16 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         bypassCacheOnRequestHeadersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (cacheKeyPolicyBuilder_ == null) {
-        cacheKeyPolicy_ = null;
-      } else {
-        cacheKeyPolicyBuilder_.clear();
+      cacheKeyPolicy_ = null;
+      if (cacheKeyPolicyBuilder_ != null) {
+        cacheKeyPolicyBuilder_.dispose();
+        cacheKeyPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       cacheMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       clientTtl_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       defaultTtl_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       maxTtl_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       negativeCaching_ = false;
-      bitField0_ = (bitField0_ & ~0x00000040);
       if (negativeCachingPolicyBuilder_ == null) {
         negativeCachingPolicy_ = java.util.Collections.emptyList();
       } else {
@@ -1243,11 +1246,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000080);
       requestCoalescing_ = false;
-      bitField0_ = (bitField0_ & ~0x00000100);
       serveWhileStale_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       signedUrlCacheMaxAgeSec_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000400);
       signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000800);
       return this;
@@ -1277,8 +1277,16 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceCdnPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendServiceCdnPolicy result =
           new com.google.cloud.compute.v1.BackendServiceCdnPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicy result) {
       if (bypassCacheOnRequestHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bypassCacheOnRequestHeaders_ =
@@ -1289,18 +1297,34 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         result.bypassCacheOnRequestHeaders_ = bypassCacheOnRequestHeadersBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (cacheKeyPolicyBuilder_ == null) {
-          result.cacheKeyPolicy_ = cacheKeyPolicy_;
-        } else {
-          result.cacheKeyPolicy_ = cacheKeyPolicyBuilder_.build();
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          negativeCachingPolicy_ = java.util.Collections.unmodifiableList(negativeCachingPolicy_);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
+        result.negativeCachingPolicy_ = negativeCachingPolicy_;
+      } else {
+        result.negativeCachingPolicy_ = negativeCachingPolicyBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      }
+      result.signedUrlKeyNames_ = signedUrlKeyNames_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceCdnPolicy result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cacheKeyPolicy_ =
+            cacheKeyPolicyBuilder_ == null ? cacheKeyPolicy_ : cacheKeyPolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cacheMode_ = cacheMode_;
         to_bitField0_ |= 0x00000002;
       }
-      result.cacheMode_ = cacheMode_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.clientTtl_ = clientTtl_;
         to_bitField0_ |= 0x00000004;
@@ -1317,15 +1341,6 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         result.negativeCaching_ = negativeCaching_;
         to_bitField0_ |= 0x00000020;
       }
-      if (negativeCachingPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
-          negativeCachingPolicy_ = java.util.Collections.unmodifiableList(negativeCachingPolicy_);
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.negativeCachingPolicy_ = negativeCachingPolicy_;
-      } else {
-        result.negativeCachingPolicy_ = negativeCachingPolicyBuilder_.build();
-      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.requestCoalescing_ = requestCoalescing_;
         to_bitField0_ |= 0x00000040;
@@ -1338,14 +1353,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.signedUrlKeyNames_ = signedUrlKeyNames_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1425,8 +1433,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         mergeCacheKeyPolicy(other.getCacheKeyPolicy());
       }
       if (other.hasCacheMode()) {
-        bitField0_ |= 0x00000004;
         cacheMode_ = other.cacheMode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasClientTtl()) {
@@ -2103,11 +2111,11 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         cacheKeyPolicy_ = value;
-        onChanged();
       } else {
         cacheKeyPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2123,11 +2131,11 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         com.google.cloud.compute.v1.CacheKeyPolicy.Builder builderForValue) {
       if (cacheKeyPolicyBuilder_ == null) {
         cacheKeyPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         cacheKeyPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2144,18 +2152,15 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         if (((bitField0_ & 0x00000002) != 0)
             && cacheKeyPolicy_ != null
             && cacheKeyPolicy_ != com.google.cloud.compute.v1.CacheKeyPolicy.getDefaultInstance()) {
-          cacheKeyPolicy_ =
-              com.google.cloud.compute.v1.CacheKeyPolicy.newBuilder(cacheKeyPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCacheKeyPolicyBuilder().mergeFrom(value);
         } else {
           cacheKeyPolicy_ = value;
         }
-        onChanged();
       } else {
         cacheKeyPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2168,13 +2173,13 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * <code>optional .google.cloud.compute.v1.CacheKeyPolicy cache_key_policy = 159263727;</code>
      */
     public Builder clearCacheKeyPolicy() {
-      if (cacheKeyPolicyBuilder_ == null) {
-        cacheKeyPolicy_ = null;
-        onChanged();
-      } else {
-        cacheKeyPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      cacheKeyPolicy_ = null;
+      if (cacheKeyPolicyBuilder_ != null) {
+        cacheKeyPolicyBuilder_.dispose();
+        cacheKeyPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2314,8 +2319,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       cacheMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2332,8 +2337,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCacheMode() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       cacheMode_ = getDefaultInstance().getCacheMode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2355,8 +2360,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       cacheMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2405,8 +2410,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setClientTtl(int value) {
-      bitField0_ |= 0x00000008;
+
       clientTtl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2472,8 +2478,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setDefaultTtl(int value) {
-      bitField0_ |= 0x00000010;
+
       defaultTtl_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2539,8 +2546,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setMaxTtl(int value) {
-      bitField0_ |= 0x00000020;
+
       maxTtl_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2606,8 +2614,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setNegativeCaching(boolean value) {
-      bitField0_ |= 0x00000040;
+
       negativeCaching_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3089,8 +3098,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setRequestCoalescing(boolean value) {
-      bitField0_ |= 0x00000100;
+
       requestCoalescing_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3156,8 +3166,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setServeWhileStale(int value) {
-      bitField0_ |= 0x00000200;
+
       serveWhileStale_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3223,8 +3234,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setSignedUrlCacheMaxAgeSec(long value) {
-      bitField0_ |= 0x00000400;
+
       signedUrlCacheMaxAgeSec_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

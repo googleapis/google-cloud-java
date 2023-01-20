@@ -68,7 +68,9 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.ApprovalResultOrBuilder getApprovalResultOrBuilder() {
-    return getApprovalResult();
+    return approvalResult_ == null
+        ? com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance()
+        : approvalResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,12 +381,11 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (approvalResultBuilder_ == null) {
-        approvalResult_ = null;
-      } else {
-        approvalResult_ = null;
+      approvalResult_ = null;
+      if (approvalResultBuilder_ != null) {
+        approvalResultBuilder_.dispose();
         approvalResultBuilder_ = null;
       }
       return this;
@@ -412,14 +415,22 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloudbuild.v1.ApproveBuildRequest buildPartial() {
       com.google.cloudbuild.v1.ApproveBuildRequest result =
           new com.google.cloudbuild.v1.ApproveBuildRequest(this);
-      result.name_ = name_;
-      if (approvalResultBuilder_ == null) {
-        result.approvalResult_ = approvalResult_;
-      } else {
-        result.approvalResult_ = approvalResultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.ApproveBuildRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.approvalResult_ =
+            approvalResultBuilder_ == null ? approvalResult_ : approvalResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -469,6 +480,7 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloudbuild.v1.ApproveBuildRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApprovalResult()) {
@@ -503,13 +515,13 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApprovalResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -528,6 +540,8 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -593,8 +607,8 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +625,8 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +648,8 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,7 +672,7 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the approvalResult field is set.
      */
     public boolean hasApprovalResult() {
-      return approvalResultBuilder_ != null || approvalResult_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -695,11 +709,11 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         approvalResult_ = value;
-        onChanged();
       } else {
         approvalResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -715,11 +729,11 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
         com.google.cloudbuild.v1.ApprovalResult.Builder builderForValue) {
       if (approvalResultBuilder_ == null) {
         approvalResult_ = builderForValue.build();
-        onChanged();
       } else {
         approvalResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -733,19 +747,18 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeApprovalResult(com.google.cloudbuild.v1.ApprovalResult value) {
       if (approvalResultBuilder_ == null) {
-        if (approvalResult_ != null) {
-          approvalResult_ =
-              com.google.cloudbuild.v1.ApprovalResult.newBuilder(approvalResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && approvalResult_ != null
+            && approvalResult_ != com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance()) {
+          getApprovalResultBuilder().mergeFrom(value);
         } else {
           approvalResult_ = value;
         }
-        onChanged();
       } else {
         approvalResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,14 +771,13 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.devtools.cloudbuild.v1.ApprovalResult approval_result = 2;</code>
      */
     public Builder clearApprovalResult() {
-      if (approvalResultBuilder_ == null) {
-        approvalResult_ = null;
-        onChanged();
-      } else {
-        approvalResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      approvalResult_ = null;
+      if (approvalResultBuilder_ != null) {
+        approvalResultBuilder_.dispose();
         approvalResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -778,7 +790,7 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.devtools.cloudbuild.v1.ApprovalResult approval_result = 2;</code>
      */
     public com.google.cloudbuild.v1.ApprovalResult.Builder getApprovalResultBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApprovalResultFieldBuilder().getBuilder();
     }

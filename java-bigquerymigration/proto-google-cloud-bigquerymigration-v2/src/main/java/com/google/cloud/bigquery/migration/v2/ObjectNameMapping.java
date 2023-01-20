@@ -111,7 +111,9 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.NameMappingKeyOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null
+        ? com.google.cloud.bigquery.migration.v2.NameMappingKey.getDefaultInstance()
+        : source_;
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
@@ -159,7 +161,9 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.NameMappingValueOrBuilder getTargetOrBuilder() {
-    return getTarget();
+    return target_ == null
+        ? com.google.cloud.bigquery.migration.v2.NameMappingValue.getDefaultInstance()
+        : target_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,16 +384,15 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      bitField0_ = 0;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-      if (targetBuilder_ == null) {
-        target_ = null;
-      } else {
-        target_ = null;
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
       return this;
@@ -419,18 +422,21 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.migration.v2.ObjectNameMapping buildPartial() {
       com.google.cloud.bigquery.migration.v2.ObjectNameMapping result =
           new com.google.cloud.bigquery.migration.v2.ObjectNameMapping(this);
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
-      }
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
-      } else {
-        result.target_ = targetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.ObjectNameMapping result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -514,13 +520,13 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +546,8 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.bigquery.migration.v2.NameMappingKey source_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2.NameMappingKey,
@@ -558,7 +566,7 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -595,11 +603,11 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -615,11 +623,11 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
         com.google.cloud.bigquery.migration.v2.NameMappingKey.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,19 +641,19 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSource(com.google.cloud.bigquery.migration.v2.NameMappingKey value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.bigquery.migration.v2.NameMappingKey.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && source_ != null
+            && source_
+                != com.google.cloud.bigquery.migration.v2.NameMappingKey.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -658,14 +666,13 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.bigquery.migration.v2.NameMappingKey source = 1;</code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -678,7 +685,7 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.bigquery.migration.v2.NameMappingKey source = 1;</code>
      */
     public com.google.cloud.bigquery.migration.v2.NameMappingKey.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -744,7 +751,7 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -781,11 +788,11 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         target_ = value;
-        onChanged();
       } else {
         targetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,11 +808,11 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
         com.google.cloud.bigquery.migration.v2.NameMappingValue.Builder builderForValue) {
       if (targetBuilder_ == null) {
         target_ = builderForValue.build();
-        onChanged();
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,19 +826,19 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTarget(com.google.cloud.bigquery.migration.v2.NameMappingValue value) {
       if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-              com.google.cloud.bigquery.migration.v2.NameMappingValue.newBuilder(target_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && target_ != null
+            && target_
+                != com.google.cloud.bigquery.migration.v2.NameMappingValue.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
         } else {
           target_ = value;
         }
-        onChanged();
       } else {
         targetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,14 +851,13 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.bigquery.migration.v2.NameMappingValue target = 2;</code>
      */
     public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
-        onChanged();
-      } else {
-        target_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -864,7 +870,7 @@ public final class ObjectNameMapping extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.bigquery.migration.v2.NameMappingValue target = 2;</code>
      */
     public com.google.cloud.bigquery.migration.v2.NameMappingValue.Builder getTargetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }

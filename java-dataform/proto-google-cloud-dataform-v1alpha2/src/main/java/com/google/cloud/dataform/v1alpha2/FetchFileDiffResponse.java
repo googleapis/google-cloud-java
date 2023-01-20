@@ -68,7 +68,9 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FORMATTED_DIFF_FIELD_NUMBER = 1;
-  private volatile java.lang.Object formattedDiff_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object formattedDiff_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       formattedDiff_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse buildPartial() {
       com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse result =
           new com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse(this);
-      result.formattedDiff_ = formattedDiff_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.formattedDiff_ = formattedDiff_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getFormattedDiff().isEmpty()) {
         formattedDiff_ = other.formattedDiff_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 formattedDiff_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object formattedDiff_ = "";
     /**
@@ -508,8 +522,8 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       formattedDiff_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFormattedDiff() {
-
       formattedDiff_ = getDefaultInstance().getFormattedDiff();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class FetchFileDiffResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       formattedDiff_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

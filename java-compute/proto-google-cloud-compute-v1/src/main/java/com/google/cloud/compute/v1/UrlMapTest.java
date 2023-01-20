@@ -74,7 +74,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPECTED_OUTPUT_URL_FIELD_NUMBER = 433967384;
-  private volatile java.lang.Object expectedOutputUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expectedOutputUrl_ = "";
   /**
    *
    *
@@ -202,7 +206,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPECTED_REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 18888047;
-  private int expectedRedirectResponseCode_;
+  private int expectedRedirectResponseCode_ = 0;
   /**
    *
    *
@@ -235,6 +239,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEADERS_FIELD_NUMBER = 258436998;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> headers_;
   /**
    *
@@ -304,7 +310,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOST_FIELD_NUMBER = 3208616;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -368,7 +376,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 3433509;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -432,7 +442,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -781,12 +793,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       expectedOutputUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       expectedRedirectResponseCode_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
       } else {
@@ -795,11 +805,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       host_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       path_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -827,20 +834,15 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.UrlMapTest buildPartial() {
       com.google.cloud.compute.v1.UrlMapTest result =
           new com.google.cloud.compute.v1.UrlMapTest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.expectedOutputUrl_ = expectedOutputUrl_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.expectedRedirectResponseCode_ = expectedRedirectResponseCode_;
-        to_bitField0_ |= 0x00000004;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.UrlMapTest result) {
       if (headersBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           headers_ = java.util.Collections.unmodifiableList(headers_);
@@ -850,21 +852,36 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.headers_ = headersBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UrlMapTest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expectedOutputUrl_ = expectedOutputUrl_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.expectedRedirectResponseCode_ = expectedRedirectResponseCode_;
+        to_bitField0_ |= 0x00000004;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.host_ = host_;
         to_bitField0_ |= 0x00000008;
       }
-      result.host_ = host_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.path_ = path_;
         to_bitField0_ |= 0x00000010;
       }
-      result.path_ = path_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000020;
       }
-      result.service_ = service_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -913,13 +930,13 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlMapTest other) {
       if (other == com.google.cloud.compute.v1.UrlMapTest.getDefaultInstance()) return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpectedOutputUrl()) {
-        bitField0_ |= 0x00000002;
         expectedOutputUrl_ = other.expectedOutputUrl_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasExpectedRedirectResponseCode()) {
@@ -953,18 +970,18 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasHost()) {
-        bitField0_ |= 0x00000010;
         host_ = other.host_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasPath()) {
-        bitField0_ |= 0x00000020;
         path_ = other.path_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000040;
         service_ = other.service_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1136,8 +1153,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1153,8 +1170,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1175,8 +1192,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1256,8 +1273,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       expectedOutputUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1273,8 +1290,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpectedOutputUrl() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       expectedOutputUrl_ = getDefaultInstance().getExpectedOutputUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1295,8 +1312,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       expectedOutputUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1345,8 +1362,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExpectedRedirectResponseCode(int value) {
-      bitField0_ |= 0x00000004;
+
       expectedRedirectResponseCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1793,8 +1811,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       host_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1810,8 +1828,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1832,8 +1850,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       host_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1913,8 +1931,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       path_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1930,8 +1948,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1952,8 +1970,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       path_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2033,8 +2051,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       service_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2050,8 +2068,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2072,8 +2090,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       service_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

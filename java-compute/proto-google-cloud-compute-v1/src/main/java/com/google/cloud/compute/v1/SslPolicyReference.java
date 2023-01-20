@@ -68,7 +68,9 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int SSL_POLICY_FIELD_NUMBER = 295190213;
-  private volatile java.lang.Object sslPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sslPolicy_ = "";
   /**
    *
    *
@@ -332,8 +334,8 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sslPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,15 +363,21 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.SslPolicyReference buildPartial() {
       com.google.cloud.compute.v1.SslPolicyReference result =
           new com.google.cloud.compute.v1.SslPolicyReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SslPolicyReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sslPolicy_ = sslPolicy_;
         to_bitField0_ |= 0x00000001;
       }
-      result.sslPolicy_ = sslPolicy_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -418,8 +426,8 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.SslPolicyReference other) {
       if (other == com.google.cloud.compute.v1.SslPolicyReference.getDefaultInstance()) return this;
       if (other.hasSslPolicy()) {
-        bitField0_ |= 0x00000001;
         sslPolicy_ = other.sslPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -548,8 +556,8 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       sslPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -565,8 +573,8 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSslPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       sslPolicy_ = getDefaultInstance().getSslPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -587,8 +595,8 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       sslPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

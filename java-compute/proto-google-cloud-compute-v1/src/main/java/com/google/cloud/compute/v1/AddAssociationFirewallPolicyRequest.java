@@ -72,7 +72,9 @@ public final class AddAssociationFirewallPolicyRequest
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -173,11 +175,13 @@ public final class AddAssociationFirewallPolicyRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyAssociationOrBuilder
       getFirewallPolicyAssociationResourceOrBuilder() {
-    return getFirewallPolicyAssociationResource();
+    return firewallPolicyAssociationResource_ == null
+        ? com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance()
+        : firewallPolicyAssociationResource_;
   }
 
   public static final int REPLACE_EXISTING_ASSOCIATION_FIELD_NUMBER = 209541240;
-  private boolean replaceExistingAssociation_;
+  private boolean replaceExistingAssociation_ = false;
   /**
    *
    *
@@ -210,7 +214,9 @@ public final class AddAssociationFirewallPolicyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -520,18 +526,15 @@ public final class AddAssociationFirewallPolicyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        firewallPolicyAssociationResource_ = null;
-      } else {
-        firewallPolicyAssociationResource_ = null;
+      firewallPolicyAssociationResource_ = null;
+      if (firewallPolicyAssociationResourceBuilder_ != null) {
+        firewallPolicyAssociationResourceBuilder_.dispose();
         firewallPolicyAssociationResourceBuilder_ = null;
       }
       replaceExistingAssociation_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -560,26 +563,35 @@ public final class AddAssociationFirewallPolicyRequest
     public com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        result.firewallPolicyAssociationResource_ = firewallPolicyAssociationResource_;
-      } else {
-        result.firewallPolicyAssociationResource_ =
-            firewallPolicyAssociationResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firewallPolicyAssociationResource_ =
+            firewallPolicyAssociationResourceBuilder_ == null
+                ? firewallPolicyAssociationResource_
+                : firewallPolicyAssociationResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.replaceExistingAssociation_ = replaceExistingAssociation_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -632,6 +644,7 @@ public final class AddAssociationFirewallPolicyRequest
         return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirewallPolicyAssociationResource()) {
@@ -641,8 +654,8 @@ public final class AddAssociationFirewallPolicyRequest
         setReplaceExistingAssociation(other.getReplaceExistingAssociation());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -674,13 +687,13 @@ public final class AddAssociationFirewallPolicyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1676329920:
               {
                 replaceExistingAssociation_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1676329920
             case 2076369362:
@@ -688,13 +701,13 @@ public final class AddAssociationFirewallPolicyRequest
                 input.readMessage(
                     getFirewallPolicyAssociationResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 2076369362
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -777,8 +790,8 @@ public final class AddAssociationFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +807,8 @@ public final class AddAssociationFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -816,8 +829,8 @@ public final class AddAssociationFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -843,8 +856,7 @@ public final class AddAssociationFirewallPolicyRequest
      * @return Whether the firewallPolicyAssociationResource field is set.
      */
     public boolean hasFirewallPolicyAssociationResource() {
-      return firewallPolicyAssociationResourceBuilder_ != null
-          || firewallPolicyAssociationResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -887,11 +899,11 @@ public final class AddAssociationFirewallPolicyRequest
           throw new NullPointerException();
         }
         firewallPolicyAssociationResource_ = value;
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +921,11 @@ public final class AddAssociationFirewallPolicyRequest
         com.google.cloud.compute.v1.FirewallPolicyAssociation.Builder builderForValue) {
       if (firewallPolicyAssociationResourceBuilder_ == null) {
         firewallPolicyAssociationResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -930,20 +942,19 @@ public final class AddAssociationFirewallPolicyRequest
     public Builder mergeFirewallPolicyAssociationResource(
         com.google.cloud.compute.v1.FirewallPolicyAssociation value) {
       if (firewallPolicyAssociationResourceBuilder_ == null) {
-        if (firewallPolicyAssociationResource_ != null) {
-          firewallPolicyAssociationResource_ =
-              com.google.cloud.compute.v1.FirewallPolicyAssociation.newBuilder(
-                      firewallPolicyAssociationResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firewallPolicyAssociationResource_ != null
+            && firewallPolicyAssociationResource_
+                != com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance()) {
+          getFirewallPolicyAssociationResourceBuilder().mergeFrom(value);
         } else {
           firewallPolicyAssociationResource_ = value;
         }
-        onChanged();
       } else {
         firewallPolicyAssociationResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -958,14 +969,13 @@ public final class AddAssociationFirewallPolicyRequest
      * </code>
      */
     public Builder clearFirewallPolicyAssociationResource() {
-      if (firewallPolicyAssociationResourceBuilder_ == null) {
-        firewallPolicyAssociationResource_ = null;
-        onChanged();
-      } else {
-        firewallPolicyAssociationResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firewallPolicyAssociationResource_ = null;
+      if (firewallPolicyAssociationResourceBuilder_ != null) {
+        firewallPolicyAssociationResourceBuilder_.dispose();
         firewallPolicyAssociationResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -981,7 +991,7 @@ public final class AddAssociationFirewallPolicyRequest
      */
     public com.google.cloud.compute.v1.FirewallPolicyAssociation.Builder
         getFirewallPolicyAssociationResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirewallPolicyAssociationResourceFieldBuilder().getBuilder();
     }
@@ -1048,7 +1058,7 @@ public final class AddAssociationFirewallPolicyRequest
      */
     @java.lang.Override
     public boolean hasReplaceExistingAssociation() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1078,8 +1088,9 @@ public final class AddAssociationFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder setReplaceExistingAssociation(boolean value) {
-      bitField0_ |= 0x00000001;
+
       replaceExistingAssociation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,7 +1106,7 @@ public final class AddAssociationFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearReplaceExistingAssociation() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       replaceExistingAssociation_ = false;
       onChanged();
       return this;
@@ -1114,7 +1125,7 @@ public final class AddAssociationFirewallPolicyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1176,8 +1187,8 @@ public final class AddAssociationFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1193,8 +1204,8 @@ public final class AddAssociationFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1215,8 +1226,8 @@ public final class AddAssociationFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

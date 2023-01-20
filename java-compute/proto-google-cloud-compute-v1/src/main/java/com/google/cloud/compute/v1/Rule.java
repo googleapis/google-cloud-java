@@ -319,7 +319,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -386,6 +388,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITIONS_FIELD_NUMBER = 142882488;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Condition> conditions_;
   /**
    *
@@ -455,7 +459,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -519,6 +525,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INS_FIELD_NUMBER = 104430;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ins_;
   /**
    *
@@ -580,6 +588,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_CONFIGS_FIELD_NUMBER = 152873846;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.LogConfig> logConfigs_;
   /**
    *
@@ -649,6 +659,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NOT_INS_FIELD_NUMBER = 518443138;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList notIns_;
   /**
    *
@@ -710,6 +722,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERMISSIONS_FIELD_NUMBER = 59962500;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList permissions_;
   /**
    *
@@ -1056,8 +1070,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
       } else {
@@ -1066,7 +1080,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       if (logConfigsBuilder_ == null) {
@@ -1106,12 +1119,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Rule buildPartial() {
       com.google.cloud.compute.v1.Rule result = new com.google.cloud.compute.v1.Rule(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.action_ = action_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Rule result) {
       if (conditionsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
@@ -1121,10 +1137,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.description_ = description_;
       if (((bitField0_ & 0x00000008) != 0)) {
         ins_ = ins_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1149,9 +1161,20 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.permissions_ = permissions_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Rule result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1200,8 +1223,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Rule other) {
       if (other == com.google.cloud.compute.v1.Rule.getDefaultInstance()) return this;
       if (other.hasAction()) {
-        bitField0_ |= 0x00000001;
         action_ = other.action_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (conditionsBuilder_ == null) {
@@ -1232,8 +1255,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.ins_.isEmpty()) {
@@ -1476,8 +1499,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1494,8 +1517,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1517,8 +1540,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1947,8 +1970,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1964,8 +1987,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1986,8 +2009,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

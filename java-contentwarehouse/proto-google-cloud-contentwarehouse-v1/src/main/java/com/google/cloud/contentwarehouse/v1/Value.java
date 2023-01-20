@@ -762,6 +762,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (enumValueBuilder_ != null) {
         enumValueBuilder_.clear();
       }
@@ -800,42 +801,30 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Value buildPartial() {
       com.google.cloud.contentwarehouse.v1.Value result =
           new com.google.cloud.contentwarehouse.v1.Value(this);
-      if (kindCase_ == 1) {
-        result.kind_ = kind_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (kindCase_ == 2) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 3) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 4) {
-        if (enumValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = enumValueBuilder_.build();
-        }
-      }
-      if (kindCase_ == 5) {
-        if (datetimeValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = datetimeValueBuilder_.build();
-        }
-      }
-      if (kindCase_ == 6) {
-        if (timestampValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = timestampValueBuilder_.build();
-        }
-      }
-      if (kindCase_ == 7) {
-        result.kind_ = kind_;
-      }
-      result.kindCase_ = kindCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.Value result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.contentwarehouse.v1.Value result) {
+      result.kindCase_ = kindCase_;
+      result.kind_ = this.kind_;
+      if (kindCase_ == 4 && enumValueBuilder_ != null) {
+        result.kind_ = enumValueBuilder_.build();
+      }
+      if (kindCase_ == 5 && datetimeValueBuilder_ != null) {
+        result.kind_ = datetimeValueBuilder_.build();
+      }
+      if (kindCase_ == 6 && timestampValueBuilder_ != null) {
+        result.kind_ = timestampValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1026,6 +1015,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -1070,6 +1061,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFloatValue(float value) {
+
       kindCase_ = 1;
       kind_ = value;
       onChanged();
@@ -1139,6 +1131,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntValue(int value) {
+
       kindCase_ = 2;
       kind_ = value;
       onChanged();
@@ -1504,7 +1497,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 4;
       onChanged();
-      ;
       return enumValueBuilder_;
     }
 
@@ -1709,7 +1701,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 5;
       onChanged();
-      ;
       return datetimeValueBuilder_;
     }
 
@@ -1920,7 +1911,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 6;
       onChanged();
-      ;
       return timestampValueBuilder_;
     }
 
@@ -1968,6 +1958,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBooleanValue(boolean value) {
+
       kindCase_ = 7;
       kind_ = value;
       onChanged();

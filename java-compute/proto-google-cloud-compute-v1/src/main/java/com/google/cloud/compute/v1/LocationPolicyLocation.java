@@ -306,7 +306,9 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int PREFERENCE_FIELD_NUMBER = 150781147;
-  private volatile java.lang.Object preference_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object preference_ = "";
   /**
    *
    *
@@ -596,14 +598,13 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (constraintsBuilder_ == null) {
-        constraints_ = null;
-      } else {
-        constraintsBuilder_.clear();
+      bitField0_ = 0;
+      constraints_ = null;
+      if (constraintsBuilder_ != null) {
+        constraintsBuilder_.dispose();
+        constraintsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       preference_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -631,23 +632,26 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.LocationPolicyLocation buildPartial() {
       com.google.cloud.compute.v1.LocationPolicyLocation result =
           new com.google.cloud.compute.v1.LocationPolicyLocation(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.LocationPolicyLocation result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (constraintsBuilder_ == null) {
-          result.constraints_ = constraints_;
-        } else {
-          result.constraints_ = constraintsBuilder_.build();
-        }
+        result.constraints_ =
+            constraintsBuilder_ == null ? constraints_ : constraintsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.preference_ = preference_;
         to_bitField0_ |= 0x00000002;
       }
-      result.preference_ = preference_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -700,8 +704,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         mergeConstraints(other.getConstraints());
       }
       if (other.hasPreference()) {
-        bitField0_ |= 0x00000002;
         preference_ = other.preference_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -823,11 +827,11 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         constraints_ = value;
-        onChanged();
       } else {
         constraintsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -845,11 +849,11 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder builderForValue) {
       if (constraintsBuilder_ == null) {
         constraints_ = builderForValue.build();
-        onChanged();
       } else {
         constraintsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -871,18 +875,15 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
             && constraints_
                 != com.google.cloud.compute.v1.LocationPolicyLocationConstraints
                     .getDefaultInstance()) {
-          constraints_ =
-              com.google.cloud.compute.v1.LocationPolicyLocationConstraints.newBuilder(constraints_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getConstraintsBuilder().mergeFrom(value);
         } else {
           constraints_ = value;
         }
-        onChanged();
       } else {
         constraintsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -897,13 +898,13 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearConstraints() {
-      if (constraintsBuilder_ == null) {
-        constraints_ = null;
-        onChanged();
-      } else {
-        constraintsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      constraints_ = null;
+      if (constraintsBuilder_ != null) {
+        constraintsBuilder_.dispose();
+        constraintsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1051,8 +1052,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       preference_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1069,8 +1070,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPreference() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       preference_ = getDefaultInstance().getPreference();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1092,8 +1093,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       preference_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

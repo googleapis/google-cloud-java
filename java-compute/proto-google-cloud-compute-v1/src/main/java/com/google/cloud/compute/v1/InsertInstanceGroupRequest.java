@@ -121,11 +121,15 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupResourceOrBuilder() {
-    return getInstanceGroupResource();
+    return instanceGroupResource_ == null
+        ? com.google.cloud.compute.v1.InstanceGroup.getDefaultInstance()
+        : instanceGroupResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -242,7 +248,9 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -531,18 +539,15 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceGroupResourceBuilder_ == null) {
-        instanceGroupResource_ = null;
-      } else {
-        instanceGroupResource_ = null;
+      bitField0_ = 0;
+      instanceGroupResource_ = null;
+      if (instanceGroupResourceBuilder_ != null) {
+        instanceGroupResourceBuilder_.dispose();
         instanceGroupResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -570,22 +575,33 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.InsertInstanceGroupRequest buildPartial() {
       com.google.cloud.compute.v1.InsertInstanceGroupRequest result =
           new com.google.cloud.compute.v1.InsertInstanceGroupRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (instanceGroupResourceBuilder_ == null) {
-        result.instanceGroupResource_ = instanceGroupResource_;
-      } else {
-        result.instanceGroupResource_ = instanceGroupResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertInstanceGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupResource_ =
+            instanceGroupResourceBuilder_ == null
+                ? instanceGroupResource_
+                : instanceGroupResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -639,15 +655,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -679,26 +697,26 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -2002070078:
               {
                 input.readMessage(
                     getInstanceGroupResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -2002070078
             default:
@@ -740,7 +758,7 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * @return Whether the instanceGroupResource field is set.
      */
     public boolean hasInstanceGroupResource() {
-      return instanceGroupResourceBuilder_ != null || instanceGroupResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -781,11 +799,11 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         instanceGroupResource_ = value;
-        onChanged();
       } else {
         instanceGroupResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -803,11 +821,11 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.InstanceGroup.Builder builderForValue) {
       if (instanceGroupResourceBuilder_ == null) {
         instanceGroupResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceGroupResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -823,19 +841,19 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      */
     public Builder mergeInstanceGroupResource(com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupResourceBuilder_ == null) {
-        if (instanceGroupResource_ != null) {
-          instanceGroupResource_ =
-              com.google.cloud.compute.v1.InstanceGroup.newBuilder(instanceGroupResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && instanceGroupResource_ != null
+            && instanceGroupResource_
+                != com.google.cloud.compute.v1.InstanceGroup.getDefaultInstance()) {
+          getInstanceGroupResourceBuilder().mergeFrom(value);
         } else {
           instanceGroupResource_ = value;
         }
-        onChanged();
       } else {
         instanceGroupResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -850,14 +868,13 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInstanceGroupResource() {
-      if (instanceGroupResourceBuilder_ == null) {
-        instanceGroupResource_ = null;
-        onChanged();
-      } else {
-        instanceGroupResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceGroupResource_ = null;
+      if (instanceGroupResourceBuilder_ != null) {
+        instanceGroupResourceBuilder_.dispose();
         instanceGroupResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -872,7 +889,7 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroup.Builder getInstanceGroupResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInstanceGroupResourceFieldBuilder().getBuilder();
     }
@@ -991,8 +1008,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1010,8 +1027,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1034,8 +1051,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1053,7 +1070,7 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1115,8 +1132,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1132,8 +1149,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1154,8 +1171,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1227,8 +1244,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1246,8 +1263,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1270,8 +1287,8 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -75,7 +75,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -183,7 +187,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -240,7 +246,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMARY_CONTACT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object primaryContact_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryContact_ = "";
   /**
    *
    *
@@ -291,7 +299,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENTATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object documentation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentation_ = "";
   /**
    *
    *
@@ -340,7 +350,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LISTING_COUNT_FIELD_NUMBER = 6;
-  private int listingCount_;
+  private int listingCount_ = 0;
   /**
    *
    *
@@ -358,7 +368,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ICON_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString icon_;
+  private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -633,20 +643,14 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       primaryContact_ = "";
-
       documentation_ = "";
-
       listingCount_ = 0;
-
       icon_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -674,15 +678,36 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange buildPartial() {
       com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.primaryContact_ = primaryContact_;
-      result.documentation_ = documentation_;
-      result.listingCount_ = listingCount_;
-      result.icon_ = icon_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.primaryContact_ = primaryContact_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.documentation_ = documentation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.listingCount_ = listingCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.icon_ = icon_;
+      }
     }
 
     @java.lang.Override
@@ -733,22 +758,27 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPrimaryContact().isEmpty()) {
         primaryContact_ = other.primaryContact_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDocumentation().isEmpty()) {
         documentation_ = other.documentation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getListingCount() != 0) {
@@ -786,43 +816,43 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 primaryContact_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 documentation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 listingCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 icon_ = input.readBytes();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -841,6 +871,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -906,8 +938,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,8 +956,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -947,8 +979,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1026,8 +1058,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1047,8 +1079,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1073,8 +1105,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1152,8 +1184,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1173,8 +1205,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1199,8 +1231,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1269,8 +1301,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryContact_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1287,8 +1319,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrimaryContact() {
-
       primaryContact_ = getDefaultInstance().getPrimaryContact();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1310,8 +1342,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryContact_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1377,8 +1409,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1394,8 +1426,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDocumentation() {
-
       documentation_ = getDefaultInstance().getDocumentation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1416,8 +1448,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1453,6 +1485,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public Builder setListingCount(int value) {
 
       listingCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1468,7 +1501,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearListingCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       listingCount_ = 0;
       onChanged();
       return this;
@@ -1514,8 +1547,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       icon_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1535,7 +1568,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIcon() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       icon_ = getDefaultInstance().getIcon();
       onChanged();
       return this;

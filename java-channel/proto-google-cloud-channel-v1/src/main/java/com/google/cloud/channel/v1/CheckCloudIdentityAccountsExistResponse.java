@@ -71,6 +71,8 @@ public final class CheckCloudIdentityAccountsExistResponse
   }
 
   public static final int CLOUD_IDENTITY_ACCOUNTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.CloudIdentityCustomerAccount>
       cloudIdentityAccounts_;
   /**
@@ -358,6 +360,7 @@ public final class CheckCloudIdentityAccountsExistResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (cloudIdentityAccountsBuilder_ == null) {
         cloudIdentityAccounts_ = java.util.Collections.emptyList();
       } else {
@@ -394,7 +397,16 @@ public final class CheckCloudIdentityAccountsExistResponse
     public com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse buildPartial() {
       com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse result =
           new com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse result) {
       if (cloudIdentityAccountsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           cloudIdentityAccounts_ = java.util.Collections.unmodifiableList(cloudIdentityAccounts_);
@@ -404,8 +416,11 @@ public final class CheckCloudIdentityAccountsExistResponse
       } else {
         result.cloudIdentityAccounts_ = cloudIdentityAccountsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

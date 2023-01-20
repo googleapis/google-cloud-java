@@ -70,7 +70,9 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
   }
 
   public static final int SNAPSHOT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object snapshotId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
   }
 
   public static final int IMPORT_STATE_ENDPOINT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object importStateEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importStateEndpoint_ = "";
   /**
    *
    *
@@ -374,10 +378,9 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       snapshotId_ = "";
-
       importStateEndpoint_ = "";
-
       return this;
     }
 
@@ -406,10 +409,22 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
     public com.google.dataflow.v1beta3.StreamingApplianceSnapshotConfig buildPartial() {
       com.google.dataflow.v1beta3.StreamingApplianceSnapshotConfig result =
           new com.google.dataflow.v1beta3.StreamingApplianceSnapshotConfig(this);
-      result.snapshotId_ = snapshotId_;
-      result.importStateEndpoint_ = importStateEndpoint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.dataflow.v1beta3.StreamingApplianceSnapshotConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.snapshotId_ = snapshotId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importStateEndpoint_ = importStateEndpoint_;
+      }
     }
 
     @java.lang.Override
@@ -461,10 +476,12 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         return this;
       if (!other.getSnapshotId().isEmpty()) {
         snapshotId_ = other.snapshotId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImportStateEndpoint().isEmpty()) {
         importStateEndpoint_ = other.importStateEndpoint_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,13 +513,13 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
             case 10:
               {
                 snapshotId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 importStateEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -521,6 +538,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object snapshotId_ = "";
     /**
@@ -583,8 +602,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,8 +619,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearSnapshotId() {
-
       snapshotId_ = getDefaultInstance().getSnapshotId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -622,8 +641,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +708,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       importStateEndpoint_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -706,8 +725,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearImportStateEndpoint() {
-
       importStateEndpoint_ = getDefaultInstance().getImportStateEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -728,8 +747,8 @@ public final class StreamingApplianceSnapshotConfig extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importStateEndpoint_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

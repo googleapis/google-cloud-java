@@ -119,7 +119,9 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCH_FIELD_NUMBER = 103668165;
-  private volatile java.lang.Object match_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object match_ = "";
   /**
    *
    *
@@ -247,7 +251,7 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
-  private int ruleNumber_;
+  private int ruleNumber_ = 0;
   /**
    *
    *
@@ -531,18 +535,15 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (actionBuilder_ == null) {
-        action_ = null;
-      } else {
-        actionBuilder_.clear();
+      bitField0_ = 0;
+      action_ = null;
+      if (actionBuilder_ != null) {
+        actionBuilder_.dispose();
+        actionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       match_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       ruleNumber_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -570,31 +571,33 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.RouterNatRule buildPartial() {
       com.google.cloud.compute.v1.RouterNatRule result =
           new com.google.cloud.compute.v1.RouterNatRule(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterNatRule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (actionBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = actionBuilder_.build();
-        }
+        result.action_ = actionBuilder_ == null ? action_ : actionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000002;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.match_ = match_;
         to_bitField0_ |= 0x00000004;
       }
-      result.match_ = match_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.ruleNumber_ = ruleNumber_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -646,13 +649,13 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         mergeAction(other.getAction());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasMatch()) {
-        bitField0_ |= 0x00000004;
         match_ = other.match_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRuleNumber()) {
@@ -782,11 +785,11 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         action_ = value;
-        onChanged();
       } else {
         actionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -802,11 +805,11 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.RouterNatRuleAction.Builder builderForValue) {
       if (actionBuilder_ == null) {
         action_ = builderForValue.build();
-        onChanged();
       } else {
         actionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -823,18 +826,15 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)
             && action_ != null
             && action_ != com.google.cloud.compute.v1.RouterNatRuleAction.getDefaultInstance()) {
-          action_ =
-              com.google.cloud.compute.v1.RouterNatRuleAction.newBuilder(action_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getActionBuilder().mergeFrom(value);
         } else {
           action_ = value;
         }
-        onChanged();
       } else {
         actionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -847,13 +847,13 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RouterNatRuleAction action = 187661878;</code>
      */
     public Builder clearAction() {
-      if (actionBuilder_ == null) {
-        action_ = null;
-        onChanged();
-      } else {
-        actionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      action_ = null;
+      if (actionBuilder_ != null) {
+        actionBuilder_.dispose();
+        actionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -989,8 +989,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1006,8 +1006,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1028,8 +1028,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1109,8 +1109,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       match_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1126,8 +1126,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMatch() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       match_ = getDefaultInstance().getMatch();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1148,8 +1148,8 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       match_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1198,8 +1198,9 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRuleNumber(int value) {
-      bitField0_ |= 0x00000008;
+
       ruleNumber_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -252,7 +252,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LOCATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object location_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
     /**
      *
      *
@@ -309,6 +311,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATHS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList paths_;
     /**
      *
@@ -418,7 +422,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
-      return getTiming();
+      return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -651,14 +655,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         location_ = "";
-
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (timingBuilder_ == null) {
-          timing_ = null;
-        } else {
-          timing_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        timing_ = null;
+        if (timingBuilder_ != null) {
+          timingBuilder_.dispose();
           timingBuilder_ = null;
         }
         return this;
@@ -688,20 +691,31 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloudbuild.v1.Artifacts.ArtifactObjects buildPartial() {
         com.google.cloudbuild.v1.Artifacts.ArtifactObjects result =
             new com.google.cloudbuild.v1.Artifacts.ArtifactObjects(this);
-        int from_bitField0_ = bitField0_;
-        result.location_ = location_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paths_ = paths_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.paths_ = paths_;
-        if (timingBuilder_ == null) {
-          result.timing_ = timing_;
-        } else {
-          result.timing_ = timingBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloudbuild.v1.Artifacts.ArtifactObjects result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          paths_ = paths_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.paths_ = paths_;
+      }
+
+      private void buildPartial0(com.google.cloudbuild.v1.Artifacts.ArtifactObjects result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.location_ = location_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timing_ = timingBuilder_ == null ? timing_ : timingBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -754,12 +768,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getLocation().isEmpty()) {
           location_ = other.location_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.paths_.isEmpty()) {
           if (paths_.isEmpty()) {
             paths_ = other.paths_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePathsIsMutable();
             paths_.addAll(other.paths_);
@@ -798,7 +813,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   location_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -811,7 +826,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
               case 26:
                 {
                   input.readMessage(getTimingFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -906,8 +921,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         location_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -927,8 +942,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLocation() {
-
         location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -953,8 +968,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         location_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -963,9 +978,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePathsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1100,7 +1115,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPaths() {
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1147,7 +1162,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the timing field is set.
        */
       public boolean hasTiming() {
-        return timingBuilder_ != null || timing_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1186,11 +1201,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           timing_ = value;
-          onChanged();
         } else {
           timingBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1207,11 +1222,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       public Builder setTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
         if (timingBuilder_ == null) {
           timing_ = builderForValue.build();
-          onChanged();
         } else {
           timingBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1227,19 +1242,18 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTiming(com.google.cloudbuild.v1.TimeSpan value) {
         if (timingBuilder_ == null) {
-          if (timing_ != null) {
-            timing_ =
-                com.google.cloudbuild.v1.TimeSpan.newBuilder(timing_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && timing_ != null
+              && timing_ != com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()) {
+            getTimingBuilder().mergeFrom(value);
           } else {
             timing_ = value;
           }
-          onChanged();
         } else {
           timingBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1254,14 +1268,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearTiming() {
-        if (timingBuilder_ == null) {
-          timing_ = null;
-          onChanged();
-        } else {
-          timing_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timing_ = null;
+        if (timingBuilder_ != null) {
+          timingBuilder_.dispose();
           timingBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1276,7 +1289,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.cloudbuild.v1.TimeSpan.Builder getTimingBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTimingFieldBuilder().getBuilder();
       }
@@ -1597,7 +1610,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REPOSITORY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object repository_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repository_ = "";
     /**
      *
      *
@@ -1652,7 +1667,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -1711,7 +1728,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ARTIFACT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object artifactId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object artifactId_ = "";
     /**
      *
      *
@@ -1762,7 +1781,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object groupId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object groupId_ = "";
     /**
      *
      *
@@ -1813,7 +1834,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -2099,16 +2122,12 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         repository_ = "";
-
         path_ = "";
-
         artifactId_ = "";
-
         groupId_ = "";
-
         version_ = "";
-
         return this;
       }
 
@@ -2136,13 +2155,30 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloudbuild.v1.Artifacts.MavenArtifact buildPartial() {
         com.google.cloudbuild.v1.Artifacts.MavenArtifact result =
             new com.google.cloudbuild.v1.Artifacts.MavenArtifact(this);
-        result.repository_ = repository_;
-        result.path_ = path_;
-        result.artifactId_ = artifactId_;
-        result.groupId_ = groupId_;
-        result.version_ = version_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloudbuild.v1.Artifacts.MavenArtifact result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.repository_ = repository_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.artifactId_ = artifactId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.version_ = version_;
+        }
       }
 
       @java.lang.Override
@@ -2195,22 +2231,27 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getRepository().isEmpty()) {
           repository_ = other.repository_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getArtifactId().isEmpty()) {
           artifactId_ = other.artifactId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getGroupId().isEmpty()) {
           groupId_ = other.groupId_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2242,31 +2283,31 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   repository_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   artifactId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   groupId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -2285,6 +2326,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object repository_ = "";
       /**
@@ -2356,8 +2399,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         repository_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2376,8 +2419,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRepository() {
-
         repository_ = getDefaultInstance().getRepository();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2401,8 +2444,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         repository_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2483,8 +2526,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2505,8 +2548,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2532,8 +2575,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2602,8 +2645,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         artifactId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2620,8 +2663,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearArtifactId() {
-
         artifactId_ = getDefaultInstance().getArtifactId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2643,8 +2686,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         artifactId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2713,8 +2756,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         groupId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2731,8 +2774,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-
         groupId_ = getDefaultInstance().getGroupId();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2754,8 +2797,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         groupId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2824,8 +2867,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2842,8 +2885,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2865,8 +2908,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3083,7 +3126,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REPOSITORY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object repository_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repository_ = "";
     /**
      *
      *
@@ -3138,6 +3183,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATHS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList paths_;
     /**
      *
@@ -3423,10 +3470,10 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         repository_ = "";
-
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3454,15 +3501,28 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloudbuild.v1.Artifacts.PythonPackage buildPartial() {
         com.google.cloudbuild.v1.Artifacts.PythonPackage result =
             new com.google.cloudbuild.v1.Artifacts.PythonPackage(this);
-        int from_bitField0_ = bitField0_;
-        result.repository_ = repository_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paths_ = paths_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.paths_ = paths_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloudbuild.v1.Artifacts.PythonPackage result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          paths_ = paths_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.paths_ = paths_;
+      }
+
+      private void buildPartial0(com.google.cloudbuild.v1.Artifacts.PythonPackage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.repository_ = repository_;
+        }
       }
 
       @java.lang.Override
@@ -3515,12 +3575,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getRepository().isEmpty()) {
           repository_ = other.repository_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.paths_.isEmpty()) {
           if (paths_.isEmpty()) {
             paths_ = other.paths_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePathsIsMutable();
             paths_.addAll(other.paths_);
@@ -3556,7 +3617,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   repository_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3655,8 +3716,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         repository_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3675,8 +3736,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRepository() {
-
         repository_ = getDefaultInstance().getRepository();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3700,8 +3761,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         repository_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3710,9 +3771,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePathsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -3863,7 +3924,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPaths() {
         paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3957,6 +4018,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList images_;
   /**
    *
@@ -4103,10 +4166,14 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.Artifacts.ArtifactObjectsOrBuilder getObjectsOrBuilder() {
-    return getObjects();
+    return objects_ == null
+        ? com.google.cloudbuild.v1.Artifacts.ArtifactObjects.getDefaultInstance()
+        : objects_;
   }
 
   public static final int MAVEN_ARTIFACTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.Artifacts.MavenArtifact> mavenArtifacts_;
   /**
    *
@@ -4207,6 +4274,8 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PYTHON_PACKAGES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.Artifacts.PythonPackage> pythonPackages_;
   /**
    *
@@ -4535,12 +4604,12 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (objectsBuilder_ == null) {
-        objects_ = null;
-      } else {
-        objects_ = null;
+      objects_ = null;
+      if (objectsBuilder_ != null) {
+        objectsBuilder_.dispose();
         objectsBuilder_ = null;
       }
       if (mavenArtifactsBuilder_ == null) {
@@ -4549,14 +4618,14 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         mavenArtifacts_ = null;
         mavenArtifactsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (pythonPackagesBuilder_ == null) {
         pythonPackages_ = java.util.Collections.emptyList();
       } else {
         pythonPackages_ = null;
         pythonPackagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -4583,37 +4652,45 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Artifacts buildPartial() {
       com.google.cloudbuild.v1.Artifacts result = new com.google.cloudbuild.v1.Artifacts(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.Artifacts result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         images_ = images_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.images_ = images_;
-      if (objectsBuilder_ == null) {
-        result.objects_ = objects_;
-      } else {
-        result.objects_ = objectsBuilder_.build();
-      }
       if (mavenArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           mavenArtifacts_ = java.util.Collections.unmodifiableList(mavenArtifacts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.mavenArtifacts_ = mavenArtifacts_;
       } else {
         result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
       }
       if (pythonPackagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           pythonPackages_ = java.util.Collections.unmodifiableList(pythonPackages_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.pythonPackages_ = pythonPackages_;
       } else {
         result.pythonPackages_ = pythonPackagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Artifacts result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.objects_ = objectsBuilder_ == null ? objects_ : objectsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4678,7 +4755,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (!other.mavenArtifacts_.isEmpty()) {
           if (mavenArtifacts_.isEmpty()) {
             mavenArtifacts_ = other.mavenArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMavenArtifactsIsMutable();
             mavenArtifacts_.addAll(other.mavenArtifacts_);
@@ -4691,7 +4768,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             mavenArtifactsBuilder_.dispose();
             mavenArtifactsBuilder_ = null;
             mavenArtifacts_ = other.mavenArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             mavenArtifactsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMavenArtifactsFieldBuilder()
@@ -4705,7 +4782,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         if (!other.pythonPackages_.isEmpty()) {
           if (pythonPackages_.isEmpty()) {
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePythonPackagesIsMutable();
             pythonPackages_.addAll(other.pythonPackages_);
@@ -4718,7 +4795,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             pythonPackagesBuilder_.dispose();
             pythonPackagesBuilder_ = null;
             pythonPackages_ = other.pythonPackages_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             pythonPackagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPythonPackagesFieldBuilder()
@@ -4764,7 +4841,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getObjectsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -5052,7 +5129,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the objects field is set.
      */
     public boolean hasObjects() {
-      return objectsBuilder_ != null || objects_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -5103,11 +5180,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         objects_ = value;
-        onChanged();
       } else {
         objectsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5130,11 +5207,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         com.google.cloudbuild.v1.Artifacts.ArtifactObjects.Builder builderForValue) {
       if (objectsBuilder_ == null) {
         objects_ = builderForValue.build();
-        onChanged();
       } else {
         objectsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5155,19 +5232,19 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeObjects(com.google.cloudbuild.v1.Artifacts.ArtifactObjects value) {
       if (objectsBuilder_ == null) {
-        if (objects_ != null) {
-          objects_ =
-              com.google.cloudbuild.v1.Artifacts.ArtifactObjects.newBuilder(objects_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && objects_ != null
+            && objects_
+                != com.google.cloudbuild.v1.Artifacts.ArtifactObjects.getDefaultInstance()) {
+          getObjectsBuilder().mergeFrom(value);
         } else {
           objects_ = value;
         }
-        onChanged();
       } else {
         objectsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5187,14 +5264,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
      */
     public Builder clearObjects() {
-      if (objectsBuilder_ == null) {
-        objects_ = null;
-        onChanged();
-      } else {
-        objects_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      objects_ = null;
+      if (objectsBuilder_ != null) {
+        objectsBuilder_.dispose();
         objectsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5214,7 +5290,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
      */
     public com.google.cloudbuild.v1.Artifacts.ArtifactObjects.Builder getObjectsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getObjectsFieldBuilder().getBuilder();
     }
@@ -5280,11 +5356,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMavenArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         mavenArtifacts_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.Artifacts.MavenArtifact>(
                 mavenArtifacts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -5569,7 +5645,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMavenArtifacts() {
       if (mavenArtifactsBuilder_ == null) {
         mavenArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         mavenArtifactsBuilder_.clear();
@@ -5737,7 +5813,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Artifacts.MavenArtifact.Builder,
                 com.google.cloudbuild.v1.Artifacts.MavenArtifactOrBuilder>(
                 mavenArtifacts_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         mavenArtifacts_ = null;
@@ -5749,11 +5825,11 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePythonPackagesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         pythonPackages_ =
             new java.util.ArrayList<com.google.cloudbuild.v1.Artifacts.PythonPackage>(
                 pythonPackages_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -6016,7 +6092,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPythonPackages() {
       if (pythonPackagesBuilder_ == null) {
         pythonPackages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         pythonPackagesBuilder_.clear();
@@ -6170,7 +6246,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.Artifacts.PythonPackage.Builder,
                 com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder>(
                 pythonPackages_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         pythonPackages_ = null;

@@ -70,7 +70,9 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
   }
 
   public static final int COMPUTATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object computationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object computationId_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
   }
 
   public static final int RANGE_ASSIGNMENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment> rangeAssignments_;
   /**
    *
@@ -404,15 +408,15 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       computationId_ = "";
-
       if (rangeAssignmentsBuilder_ == null) {
         rangeAssignments_ = java.util.Collections.emptyList();
       } else {
         rangeAssignments_ = null;
         rangeAssignmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -440,19 +444,32 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     public com.google.dataflow.v1beta3.StreamingComputationRanges buildPartial() {
       com.google.dataflow.v1beta3.StreamingComputationRanges result =
           new com.google.dataflow.v1beta3.StreamingComputationRanges(this);
-      int from_bitField0_ = bitField0_;
-      result.computationId_ = computationId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.StreamingComputationRanges result) {
       if (rangeAssignmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rangeAssignments_ = java.util.Collections.unmodifiableList(rangeAssignments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.rangeAssignments_ = rangeAssignments_;
       } else {
         result.rangeAssignments_ = rangeAssignmentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.StreamingComputationRanges result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.computationId_ = computationId_;
+      }
     }
 
     @java.lang.Override
@@ -503,13 +520,14 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         return this;
       if (!other.getComputationId().isEmpty()) {
         computationId_ = other.computationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (rangeAssignmentsBuilder_ == null) {
         if (!other.rangeAssignments_.isEmpty()) {
           if (rangeAssignments_.isEmpty()) {
             rangeAssignments_ = other.rangeAssignments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRangeAssignmentsIsMutable();
             rangeAssignments_.addAll(other.rangeAssignments_);
@@ -522,7 +540,7 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
             rangeAssignmentsBuilder_.dispose();
             rangeAssignmentsBuilder_ = null;
             rangeAssignments_ = other.rangeAssignments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             rangeAssignmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRangeAssignmentsFieldBuilder()
@@ -561,7 +579,7 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
             case 10:
               {
                 computationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -658,8 +676,8 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       computationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,8 +693,8 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearComputationId() {
-
       computationId_ = getDefaultInstance().getComputationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -697,8 +715,8 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       computationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,11 +725,11 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
         rangeAssignments_ = java.util.Collections.emptyList();
 
     private void ensureRangeAssignmentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rangeAssignments_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment>(
                 rangeAssignments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -943,7 +961,7 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
     public Builder clearRangeAssignments() {
       if (rangeAssignmentsBuilder_ == null) {
         rangeAssignments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         rangeAssignmentsBuilder_.clear();
@@ -1078,7 +1096,7 @@ public final class StreamingComputationRanges extends com.google.protobuf.Genera
                 com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment.Builder,
                 com.google.dataflow.v1beta3.KeyRangeDataDiskAssignmentOrBuilder>(
                 rangeAssignments_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         rangeAssignments_ = null;

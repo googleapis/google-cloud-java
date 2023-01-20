@@ -68,6 +68,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.ColumnSchema> columns_;
   /**
    *
@@ -350,6 +352,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
       } else {
@@ -384,7 +387,15 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.Schema buildPartial() {
       com.google.cloud.datacatalog.v1beta1.Schema result =
           new com.google.cloud.datacatalog.v1beta1.Schema(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1beta1.Schema result) {
       if (columnsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
@@ -394,8 +405,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.columns_ = columnsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.Schema result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

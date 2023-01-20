@@ -343,7 +343,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -407,7 +409,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -471,7 +475,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -504,7 +508,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -568,7 +574,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -632,7 +640,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RECOMMENDED_SIZE_FIELD_NUMBER = 257915749;
-  private int recommendedSize_;
+  private int recommendedSize_ = 0;
   /**
    *
    *
@@ -665,7 +673,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -745,6 +755,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.compute.v1.ScalingScheduleStatus.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
       scalingScheduleStatus_;
@@ -815,8 +826,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
+  public /* nullable */ com.google.cloud.compute.v1.ScalingScheduleStatus
+      getScalingScheduleStatusOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -850,7 +864,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -914,7 +930,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -981,6 +999,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_DETAILS_FIELD_NUMBER = 363353845;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> statusDetails_;
   /**
    *
@@ -1057,7 +1077,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_FIELD_NUMBER = 192835985;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -1121,7 +1143,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -1610,31 +1634,22 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (autoscalingPolicyBuilder_ == null) {
-        autoscalingPolicy_ = null;
-      } else {
-        autoscalingPolicyBuilder_.clear();
+      bitField0_ = 0;
+      autoscalingPolicy_ = null;
+      if (autoscalingPolicyBuilder_ != null) {
+        autoscalingPolicyBuilder_.dispose();
+        autoscalingPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       recommendedSize_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableScalingScheduleStatus().clear();
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
       } else {
@@ -1643,9 +1658,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000800);
       target_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       zone_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1673,54 +1686,15 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Autoscaler buildPartial() {
       com.google.cloud.compute.v1.Autoscaler result =
           new com.google.cloud.compute.v1.Autoscaler(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (autoscalingPolicyBuilder_ == null) {
-          result.autoscalingPolicy_ = autoscalingPolicy_;
-        } else {
-          result.autoscalingPolicy_ = autoscalingPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.recommendedSize_ = recommendedSize_;
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.region_ = region_;
-      result.scalingScheduleStatus_ = internalGetScalingScheduleStatus();
-      result.scalingScheduleStatus_.makeImmutable();
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.status_ = status_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Autoscaler result) {
       if (statusDetailsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           statusDetails_ = java.util.Collections.unmodifiableList(statusDetails_);
@@ -1730,17 +1704,67 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.statusDetails_ = statusDetailsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Autoscaler result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoscalingPolicy_ =
+            autoscalingPolicyBuilder_ == null
+                ? autoscalingPolicy_
+                : autoscalingPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.recommendedSize_ = recommendedSize_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.scalingScheduleStatus_ = internalGetScalingScheduleStatus();
+        result.scalingScheduleStatus_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000200;
+      }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.target_ = target_;
         to_bitField0_ |= 0x00000400;
       }
-      result.target_ = target_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.zone_ = zone_;
         to_bitField0_ |= 0x00000800;
       }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1792,45 +1816,46 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         mergeAutoscalingPolicy(other.getAutoscalingPolicy());
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000020;
         name_ = other.name_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasRecommendedSize()) {
         setRecommendedSize(other.getRecommendedSize());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000080;
         region_ = other.region_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       internalGetMutableScalingScheduleStatus().mergeFrom(other.internalGetScalingScheduleStatus());
+      bitField0_ |= 0x00000100;
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000200;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000400;
         status_ = other.status_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (statusDetailsBuilder_ == null) {
@@ -1861,13 +1886,13 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasTarget()) {
-        bitField0_ |= 0x00001000;
         target_ = other.target_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00002000;
         zone_ = other.zone_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1994,6 +2019,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableScalingScheduleStatus()
                     .getMutableMap()
                     .put(scalingScheduleStatus__.getKey(), scalingScheduleStatus__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case -567365870
             default:
@@ -2073,11 +2099,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         autoscalingPolicy_ = value;
-        onChanged();
       } else {
         autoscalingPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2094,11 +2120,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.AutoscalingPolicy.Builder builderForValue) {
       if (autoscalingPolicyBuilder_ == null) {
         autoscalingPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalingPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2117,18 +2143,15 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             && autoscalingPolicy_ != null
             && autoscalingPolicy_
                 != com.google.cloud.compute.v1.AutoscalingPolicy.getDefaultInstance()) {
-          autoscalingPolicy_ =
-              com.google.cloud.compute.v1.AutoscalingPolicy.newBuilder(autoscalingPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getAutoscalingPolicyBuilder().mergeFrom(value);
         } else {
           autoscalingPolicy_ = value;
         }
-        onChanged();
       } else {
         autoscalingPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2142,13 +2165,13 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAutoscalingPolicy() {
-      if (autoscalingPolicyBuilder_ == null) {
-        autoscalingPolicy_ = null;
-        onChanged();
-      } else {
-        autoscalingPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      autoscalingPolicy_ = null;
+      if (autoscalingPolicyBuilder_ != null) {
+        autoscalingPolicyBuilder_.dispose();
+        autoscalingPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2287,8 +2310,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2304,8 +2327,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2326,8 +2349,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2407,8 +2430,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2424,8 +2447,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2446,8 +2469,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2496,8 +2519,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000008;
+
       id_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2594,8 +2618,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       kind_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2611,8 +2635,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2633,8 +2657,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       kind_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2714,8 +2738,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2731,8 +2755,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2753,8 +2777,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2803,8 +2827,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRecommendedSize(int value) {
-      bitField0_ |= 0x00000040;
+
       recommendedSize_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2901,8 +2926,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       region_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2918,8 +2943,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2940,8 +2965,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       region_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2963,8 +2988,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
         internalGetMutableScalingScheduleStatus() {
-      onChanged();
-      ;
       if (scalingScheduleStatus_ == null) {
         scalingScheduleStatus_ =
             com.google.protobuf.MapField.newMapField(
@@ -2973,6 +2996,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (!scalingScheduleStatus_.isMutable()) {
         scalingScheduleStatus_ = scalingScheduleStatus_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return scalingScheduleStatus_;
     }
 
@@ -3032,8 +3057,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
-        java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
+    public /* nullable */ com.google.cloud.compute.v1.ScalingScheduleStatus
+        getScalingScheduleStatusOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3067,6 +3095,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearScalingScheduleStatus() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableScalingScheduleStatus().getMutableMap().clear();
       return this;
     }
@@ -3092,6 +3121,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
         getMutableScalingScheduleStatus() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableScalingScheduleStatus().getMutableMap();
     }
     /**
@@ -3113,8 +3143,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableScalingScheduleStatus().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3131,6 +3161,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllScalingScheduleStatus(
         java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> values) {
       internalGetMutableScalingScheduleStatus().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3209,8 +3240,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       selfLink_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3226,8 +3257,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3248,8 +3279,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       selfLink_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3333,8 +3364,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       status_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3351,8 +3382,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3374,8 +3405,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       status_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3835,8 +3866,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       target_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3852,8 +3883,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3874,8 +3905,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       target_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3955,8 +3986,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       zone_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3972,8 +4003,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3994,8 +4025,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       zone_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATABASE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object schema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schema_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RELATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object relation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relation_ = "";
   /**
    *
    *
@@ -223,7 +229,9 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object attribute_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attribute_ = "";
   /**
    *
    *
@@ -499,14 +507,11 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       database_ = "";
-
       schema_ = "";
-
       relation_ = "";
-
       attribute_ = "";
-
       return this;
     }
 
@@ -534,12 +539,27 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.migration.v2.NameMappingValue buildPartial() {
       com.google.cloud.bigquery.migration.v2.NameMappingValue result =
           new com.google.cloud.bigquery.migration.v2.NameMappingValue(this);
-      result.database_ = database_;
-      result.schema_ = schema_;
-      result.relation_ = relation_;
-      result.attribute_ = attribute_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.NameMappingValue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.schema_ = schema_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.relation_ = relation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.attribute_ = attribute_;
+      }
     }
 
     @java.lang.Override
@@ -590,18 +610,22 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSchema().isEmpty()) {
         schema_ = other.schema_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRelation().isEmpty()) {
         relation_ = other.relation_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getAttribute().isEmpty()) {
         attribute_ = other.attribute_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -633,25 +657,25 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 schema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 relation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 attribute_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -670,6 +694,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object database_ = "";
     /**
@@ -735,8 +761,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,8 +779,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +802,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -843,8 +869,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       schema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,8 +886,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSchema() {
-
       schema_ = getDefaultInstance().getSchema();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -882,8 +908,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -952,8 +978,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       relation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -970,8 +996,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRelation() {
-
       relation_ = getDefaultInstance().getRelation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -993,8 +1019,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,8 +1089,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       attribute_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1081,8 +1107,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAttribute() {
-
       attribute_ = getDefaultInstance().getAttribute();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1104,8 +1130,8 @@ public final class NameMappingValue extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attribute_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

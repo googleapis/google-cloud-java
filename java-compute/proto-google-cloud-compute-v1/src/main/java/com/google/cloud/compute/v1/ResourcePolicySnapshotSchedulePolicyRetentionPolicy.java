@@ -210,7 +210,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
 
   private int bitField0_;
   public static final int MAX_RETENTION_DAYS_FIELD_NUMBER = 324296979;
-  private int maxRetentionDays_;
+  private int maxRetentionDays_ = 0;
   /**
    *
    *
@@ -243,7 +243,9 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
   }
 
   public static final int ON_SOURCE_DISK_DELETE_FIELD_NUMBER = 321955529;
-  private volatile java.lang.Object onSourceDiskDelete_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object onSourceDiskDelete_ = "";
   /**
    *
    *
@@ -538,10 +540,9 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxRetentionDays_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       onSourceDiskDelete_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -573,6 +574,15 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -580,12 +590,10 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.onSourceDiskDelete_ = onSourceDiskDelete_;
         to_bitField0_ |= 0x00000002;
       }
-      result.onSourceDiskDelete_ = onSourceDiskDelete_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -644,8 +652,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         setMaxRetentionDays(other.getMaxRetentionDays());
       }
       if (other.hasOnSourceDiskDelete()) {
-        bitField0_ |= 0x00000002;
         onSourceDiskDelete_ = other.onSourceDiskDelete_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -749,8 +757,9 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * @return This builder for chaining.
      */
     public Builder setMaxRetentionDays(int value) {
-      bitField0_ |= 0x00000001;
+
       maxRetentionDays_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,8 +860,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       onSourceDiskDelete_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,8 +878,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * @return This builder for chaining.
      */
     public Builder clearOnSourceDiskDelete() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       onSourceDiskDelete_ = getDefaultInstance().getOnSourceDiskDelete();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -892,8 +901,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       onSourceDiskDelete_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

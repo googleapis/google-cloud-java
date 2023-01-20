@@ -70,7 +70,9 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -237,7 +241,9 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouteOrBuilder getRouteResourceOrBuilder() {
-    return getRouteResource();
+    return routeResource_ == null
+        ? com.google.cloud.compute.v1.Route.getDefaultInstance()
+        : routeResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -466,14 +472,12 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (routeResourceBuilder_ == null) {
-        routeResource_ = null;
-      } else {
-        routeResource_ = null;
+      routeResource_ = null;
+      if (routeResourceBuilder_ != null) {
+        routeResourceBuilder_.dispose();
         routeResourceBuilder_ = null;
       }
       return this;
@@ -503,21 +507,28 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.InsertRouteRequest buildPartial() {
       com.google.cloud.compute.v1.InsertRouteRequest result =
           new com.google.cloud.compute.v1.InsertRouteRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (routeResourceBuilder_ == null) {
-        result.routeResource_ = routeResource_;
-      } else {
-        result.routeResource_ = routeResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertRouteRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.routeResource_ =
+            routeResourceBuilder_ == null ? routeResource_ : routeResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -567,11 +578,12 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.compute.v1.InsertRouteRequest.getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRouteResource()) {
@@ -606,19 +618,19 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1803430434:
               {
                 input.readMessage(getRouteResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1803430434
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -707,8 +719,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +738,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -750,8 +762,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,7 +781,7 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -831,8 +843,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -848,8 +860,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -870,8 +882,8 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,7 +908,7 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the routeResource field is set.
      */
     public boolean hasRouteResource() {
-      return routeResourceBuilder_ != null || routeResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -937,11 +949,11 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         routeResource_ = value;
-        onChanged();
       } else {
         routeResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -958,11 +970,11 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
     public Builder setRouteResource(com.google.cloud.compute.v1.Route.Builder builderForValue) {
       if (routeResourceBuilder_ == null) {
         routeResource_ = builderForValue.build();
-        onChanged();
       } else {
         routeResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -978,19 +990,18 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRouteResource(com.google.cloud.compute.v1.Route value) {
       if (routeResourceBuilder_ == null) {
-        if (routeResource_ != null) {
-          routeResource_ =
-              com.google.cloud.compute.v1.Route.newBuilder(routeResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && routeResource_ != null
+            && routeResource_ != com.google.cloud.compute.v1.Route.getDefaultInstance()) {
+          getRouteResourceBuilder().mergeFrom(value);
         } else {
           routeResource_ = value;
         }
-        onChanged();
       } else {
         routeResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,14 +1016,13 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRouteResource() {
-      if (routeResourceBuilder_ == null) {
-        routeResource_ = null;
-        onChanged();
-      } else {
-        routeResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      routeResource_ = null;
+      if (routeResourceBuilder_ != null) {
+        routeResourceBuilder_.dispose();
         routeResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1027,7 +1037,7 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.compute.v1.Route.Builder getRouteResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRouteResourceFieldBuilder().getBuilder();
     }

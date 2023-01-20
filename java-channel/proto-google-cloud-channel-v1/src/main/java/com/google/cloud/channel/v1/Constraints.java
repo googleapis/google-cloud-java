@@ -111,7 +111,9 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.channel.v1.CustomerConstraintsOrBuilder
       getCustomerConstraintsOrBuilder() {
-    return getCustomerConstraints();
+    return customerConstraints_ == null
+        ? com.google.cloud.channel.v1.CustomerConstraints.getDefaultInstance()
+        : customerConstraints_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (customerConstraintsBuilder_ == null) {
-        customerConstraints_ = null;
-      } else {
-        customerConstraints_ = null;
+      bitField0_ = 0;
+      customerConstraints_ = null;
+      if (customerConstraintsBuilder_ != null) {
+        customerConstraintsBuilder_.dispose();
         customerConstraintsBuilder_ = null;
       }
       return this;
@@ -348,13 +350,21 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.Constraints buildPartial() {
       com.google.cloud.channel.v1.Constraints result =
           new com.google.cloud.channel.v1.Constraints(this);
-      if (customerConstraintsBuilder_ == null) {
-        result.customerConstraints_ = customerConstraints_;
-      } else {
-        result.customerConstraints_ = customerConstraintsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Constraints result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customerConstraints_ =
+            customerConstraintsBuilder_ == null
+                ? customerConstraints_
+                : customerConstraintsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +445,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCustomerConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +465,8 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.channel.v1.CustomerConstraints customerConstraints_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.CustomerConstraints,
@@ -473,7 +485,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customerConstraints field is set.
      */
     public boolean hasCustomerConstraints() {
-      return customerConstraintsBuilder_ != null || customerConstraints_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +522,11 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         customerConstraints_ = value;
-        onChanged();
       } else {
         customerConstraintsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +542,11 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.channel.v1.CustomerConstraints.Builder builderForValue) {
       if (customerConstraintsBuilder_ == null) {
         customerConstraints_ = builderForValue.build();
-        onChanged();
       } else {
         customerConstraintsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +560,19 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCustomerConstraints(com.google.cloud.channel.v1.CustomerConstraints value) {
       if (customerConstraintsBuilder_ == null) {
-        if (customerConstraints_ != null) {
-          customerConstraints_ =
-              com.google.cloud.channel.v1.CustomerConstraints.newBuilder(customerConstraints_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && customerConstraints_ != null
+            && customerConstraints_
+                != com.google.cloud.channel.v1.CustomerConstraints.getDefaultInstance()) {
+          getCustomerConstraintsBuilder().mergeFrom(value);
         } else {
           customerConstraints_ = value;
         }
-        onChanged();
       } else {
         customerConstraintsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +585,13 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.CustomerConstraints customer_constraints = 1;</code>
      */
     public Builder clearCustomerConstraints() {
-      if (customerConstraintsBuilder_ == null) {
-        customerConstraints_ = null;
-        onChanged();
-      } else {
-        customerConstraints_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      customerConstraints_ = null;
+      if (customerConstraintsBuilder_ != null) {
+        customerConstraintsBuilder_.dispose();
         customerConstraintsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +604,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.CustomerConstraints customer_constraints = 1;</code>
      */
     public com.google.cloud.channel.v1.CustomerConstraints.Builder getCustomerConstraintsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCustomerConstraintsFieldBuilder().getBuilder();
     }

@@ -274,7 +274,9 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subscription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subscription_ = "";
   /**
    *
    *
@@ -329,7 +331,9 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOPIC_FIELD_NUMBER = 2;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -380,7 +384,9 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -429,7 +435,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -460,9 +466,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.PubsubConfig.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.PubsubConfig.State result =
-        com.google.cloudbuild.v1.PubsubConfig.State.valueOf(state_);
+        com.google.cloudbuild.v1.PubsubConfig.State.forNumber(state_);
     return result == null ? com.google.cloudbuild.v1.PubsubConfig.State.UNRECOGNIZED : result;
   }
 
@@ -689,14 +694,11 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subscription_ = "";
-
       topic_ = "";
-
       serviceAccountEmail_ = "";
-
       state_ = 0;
-
       return this;
     }
 
@@ -724,12 +726,27 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.PubsubConfig buildPartial() {
       com.google.cloudbuild.v1.PubsubConfig result =
           new com.google.cloudbuild.v1.PubsubConfig(this);
-      result.subscription_ = subscription_;
-      result.topic_ = topic_;
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.PubsubConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ = subscription_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -779,14 +796,17 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.PubsubConfig.getDefaultInstance()) return this;
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -821,25 +841,25 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 subscription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -858,6 +878,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subscription_ = "";
     /**
@@ -929,8 +951,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -949,8 +971,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubscription() {
-
       subscription_ = getDefaultInstance().getSubscription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -974,8 +996,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subscription_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1044,8 +1066,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1062,8 +1084,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1085,8 +1107,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1152,8 +1174,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1169,8 +1191,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,8 +1213,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1228,8 +1250,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1247,9 +1269,8 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.PubsubConfig.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.PubsubConfig.State result =
-          com.google.cloudbuild.v1.PubsubConfig.State.valueOf(state_);
+          com.google.cloudbuild.v1.PubsubConfig.State.forNumber(state_);
       return result == null ? com.google.cloudbuild.v1.PubsubConfig.State.UNRECOGNIZED : result;
     }
     /**
@@ -1269,7 +1290,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1287,7 +1308,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;

@@ -68,7 +68,9 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
-  private volatile java.lang.Object forwardingRule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object forwardingRule_ = "";
   /**
    * <code>optional string forwarding_rule = 269964030;</code>
    *
@@ -314,8 +316,8 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       forwardingRule_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -343,15 +345,21 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.ForwardingRuleReference buildPartial() {
       com.google.cloud.compute.v1.ForwardingRuleReference result =
           new com.google.cloud.compute.v1.ForwardingRuleReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ForwardingRuleReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.forwardingRule_ = forwardingRule_;
         to_bitField0_ |= 0x00000001;
       }
-      result.forwardingRule_ = forwardingRule_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -401,8 +409,8 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.ForwardingRuleReference.getDefaultInstance())
         return this;
       if (other.hasForwardingRule()) {
-        bitField0_ |= 0x00000001;
         forwardingRule_ = other.forwardingRule_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,8 +515,8 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       forwardingRule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -518,8 +526,8 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearForwardingRule() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       forwardingRule_ = getDefaultInstance().getForwardingRule();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -534,8 +542,8 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       forwardingRule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

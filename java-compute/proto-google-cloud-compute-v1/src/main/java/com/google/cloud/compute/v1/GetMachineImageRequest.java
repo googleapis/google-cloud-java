@@ -69,7 +69,9 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MACHINE_IMAGE_FIELD_NUMBER = 69189475;
-  private volatile java.lang.Object machineImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineImage_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       machineImage_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.GetMachineImageRequest buildPartial() {
       com.google.cloud.compute.v1.GetMachineImageRequest result =
           new com.google.cloud.compute.v1.GetMachineImageRequest(this);
-      result.machineImage_ = machineImage_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetMachineImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineImage_ = machineImage_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getMachineImage().isEmpty()) {
         machineImage_ = other.machineImage_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
             case 553515802:
               {
                 machineImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 553515802
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -517,6 +533,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object machineImage_ = "";
     /**
@@ -579,8 +597,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineImage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMachineImage() {
-
       machineImage_ = getDefaultInstance().getMachineImage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineImage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class GetMachineImageRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -65,7 +65,6 @@ public interface DiskParamsOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
-
   /* nullable */
   java.lang.String getResourceManagerTagsOrDefault(
       java.lang.String key,

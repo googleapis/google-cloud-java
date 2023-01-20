@@ -587,6 +587,7 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (streamingStageLocationBuilder_ != null) {
         streamingStageLocationBuilder_.clear();
       }
@@ -628,37 +629,33 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.StreamLocation buildPartial() {
       com.google.dataflow.v1beta3.StreamLocation result =
           new com.google.dataflow.v1beta3.StreamLocation(this);
-      if (locationCase_ == 1) {
-        if (streamingStageLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = streamingStageLocationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (locationCase_ == 2) {
-        if (pubsubLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = pubsubLocationBuilder_.build();
-        }
-      }
-      if (locationCase_ == 3) {
-        if (sideInputLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = sideInputLocationBuilder_.build();
-        }
-      }
-      if (locationCase_ == 4) {
-        if (customSourceLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = customSourceLocationBuilder_.build();
-        }
-      }
-      result.locationCase_ = locationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.StreamLocation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.dataflow.v1beta3.StreamLocation result) {
+      result.locationCase_ = locationCase_;
+      result.location_ = this.location_;
+      if (locationCase_ == 1 && streamingStageLocationBuilder_ != null) {
+        result.location_ = streamingStageLocationBuilder_.build();
+      }
+      if (locationCase_ == 2 && pubsubLocationBuilder_ != null) {
+        result.location_ = pubsubLocationBuilder_.build();
+      }
+      if (locationCase_ == 3 && sideInputLocationBuilder_ != null) {
+        result.location_ = sideInputLocationBuilder_.build();
+      }
+      if (locationCase_ == 4 && customSourceLocationBuilder_ != null) {
+        result.location_ = customSourceLocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -815,6 +812,8 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.dataflow.v1beta3.StreamingStageLocation,
@@ -1036,7 +1035,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       locationCase_ = 1;
       onChanged();
-      ;
       return streamingStageLocationBuilder_;
     }
 
@@ -1246,7 +1244,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       locationCase_ = 2;
       onChanged();
-      ;
       return pubsubLocationBuilder_;
     }
 
@@ -1461,7 +1458,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       locationCase_ = 3;
       onChanged();
-      ;
       return sideInputLocationBuilder_;
     }
 
@@ -1674,7 +1670,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
       locationCase_ = 4;
       onChanged();
-      ;
       return customSourceLocationBuilder_;
     }
 

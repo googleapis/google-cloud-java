@@ -126,7 +126,9 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_SERVICE_FIELD_NUMBER = 370242231;
-  private volatile java.lang.Object defaultService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultService_ = "";
   /**
    *
    *
@@ -243,7 +245,9 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -357,7 +361,9 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -421,6 +427,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_RULES_FIELD_NUMBER = 104439901;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PathRule> pathRules_;
   /**
    *
@@ -490,6 +498,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTE_RULES_FIELD_NUMBER = 376292225;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HttpRouteRule> routeRules_;
   /**
    *
@@ -871,30 +881,25 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (defaultRouteActionBuilder_ == null) {
-        defaultRouteAction_ = null;
-      } else {
-        defaultRouteActionBuilder_.clear();
+      bitField0_ = 0;
+      defaultRouteAction_ = null;
+      if (defaultRouteActionBuilder_ != null) {
+        defaultRouteActionBuilder_.dispose();
+        defaultRouteActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       defaultService_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (defaultUrlRedirectBuilder_ == null) {
-        defaultUrlRedirect_ = null;
-      } else {
-        defaultUrlRedirectBuilder_.clear();
+      defaultUrlRedirect_ = null;
+      if (defaultUrlRedirectBuilder_ != null) {
+        defaultUrlRedirectBuilder_.dispose();
+        defaultUrlRedirectBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-      } else {
-        headerActionBuilder_.clear();
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       if (pathRulesBuilder_ == null) {
         pathRules_ = java.util.Collections.emptyList();
       } else {
@@ -936,44 +941,15 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.PathMatcher buildPartial() {
       com.google.cloud.compute.v1.PathMatcher result =
           new com.google.cloud.compute.v1.PathMatcher(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (defaultRouteActionBuilder_ == null) {
-          result.defaultRouteAction_ = defaultRouteAction_;
-        } else {
-          result.defaultRouteAction_ = defaultRouteActionBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.defaultService_ = defaultService_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (defaultUrlRedirectBuilder_ == null) {
-          result.defaultUrlRedirect_ = defaultUrlRedirect_;
-        } else {
-          result.defaultUrlRedirect_ = defaultUrlRedirectBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        if (headerActionBuilder_ == null) {
-          result.headerAction_ = headerAction_;
-        } else {
-          result.headerAction_ = headerActionBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.name_ = name_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.PathMatcher result) {
       if (pathRulesBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           pathRules_ = java.util.Collections.unmodifiableList(pathRules_);
@@ -992,9 +968,43 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.routeRules_ = routeRulesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PathMatcher result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.defaultRouteAction_ =
+            defaultRouteActionBuilder_ == null
+                ? defaultRouteAction_
+                : defaultRouteActionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.defaultService_ = defaultService_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultUrlRedirect_ =
+            defaultUrlRedirectBuilder_ == null
+                ? defaultUrlRedirect_
+                : defaultUrlRedirectBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000020;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1046,24 +1056,24 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         mergeDefaultRouteAction(other.getDefaultRouteAction());
       }
       if (other.hasDefaultService()) {
-        bitField0_ |= 0x00000002;
         defaultService_ = other.defaultService_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDefaultUrlRedirect()) {
         mergeDefaultUrlRedirect(other.getDefaultUrlRedirect());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasHeaderAction()) {
         mergeHeaderAction(other.getHeaderAction());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000020;
         name_ = other.name_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (pathRulesBuilder_ == null) {
@@ -1287,11 +1297,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultRouteAction_ = value;
-        onChanged();
       } else {
         defaultRouteActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1308,11 +1318,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
       if (defaultRouteActionBuilder_ == null) {
         defaultRouteAction_ = builderForValue.build();
-        onChanged();
       } else {
         defaultRouteActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1331,18 +1341,15 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             && defaultRouteAction_ != null
             && defaultRouteAction_
                 != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
-          defaultRouteAction_ =
-              com.google.cloud.compute.v1.HttpRouteAction.newBuilder(defaultRouteAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDefaultRouteActionBuilder().mergeFrom(value);
         } else {
           defaultRouteAction_ = value;
         }
-        onChanged();
       } else {
         defaultRouteActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1356,13 +1363,13 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultRouteAction() {
-      if (defaultRouteActionBuilder_ == null) {
-        defaultRouteAction_ = null;
-        onChanged();
-      } else {
-        defaultRouteActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      defaultRouteAction_ = null;
+      if (defaultRouteActionBuilder_ != null) {
+        defaultRouteActionBuilder_.dispose();
+        defaultRouteActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1501,8 +1508,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       defaultService_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1518,8 +1525,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultService() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       defaultService_ = getDefaultInstance().getDefaultService();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1540,8 +1547,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       defaultService_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1604,11 +1611,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultUrlRedirect_ = value;
-        onChanged();
       } else {
         defaultUrlRedirectBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1625,11 +1632,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
       if (defaultUrlRedirectBuilder_ == null) {
         defaultUrlRedirect_ = builderForValue.build();
-        onChanged();
       } else {
         defaultUrlRedirectBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1648,18 +1655,15 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
             && defaultUrlRedirect_ != null
             && defaultUrlRedirect_
                 != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
-          defaultUrlRedirect_ =
-              com.google.cloud.compute.v1.HttpRedirectAction.newBuilder(defaultUrlRedirect_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDefaultUrlRedirectBuilder().mergeFrom(value);
         } else {
           defaultUrlRedirect_ = value;
         }
-        onChanged();
       } else {
         defaultUrlRedirectBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1673,13 +1677,13 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultUrlRedirect() {
-      if (defaultUrlRedirectBuilder_ == null) {
-        defaultUrlRedirect_ = null;
-        onChanged();
-      } else {
-        defaultUrlRedirectBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      defaultUrlRedirect_ = null;
+      if (defaultUrlRedirectBuilder_ != null) {
+        defaultUrlRedirectBuilder_.dispose();
+        defaultUrlRedirectBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1819,8 +1823,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1836,8 +1840,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1858,8 +1862,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1919,11 +1923,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         headerAction_ = value;
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1939,11 +1943,11 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
       if (headerActionBuilder_ == null) {
         headerAction_ = builderForValue.build();
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1960,18 +1964,15 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000010) != 0)
             && headerAction_ != null
             && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
-          headerAction_ =
-              com.google.cloud.compute.v1.HttpHeaderAction.newBuilder(headerAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHeaderActionBuilder().mergeFrom(value);
         } else {
           headerAction_ = value;
         }
-        onChanged();
       } else {
         headerActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1984,13 +1985,13 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-        onChanged();
-      } else {
-        headerActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000010);
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2126,8 +2127,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2143,8 +2144,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2165,8 +2166,8 @@ public final class PathMatcher extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

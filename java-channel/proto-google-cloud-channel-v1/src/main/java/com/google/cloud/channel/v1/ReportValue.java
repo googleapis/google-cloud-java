@@ -726,6 +726,7 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (decimalValueBuilder_ != null) {
         decimalValueBuilder_.clear();
       }
@@ -767,43 +768,33 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.ReportValue buildPartial() {
       com.google.cloud.channel.v1.ReportValue result =
           new com.google.cloud.channel.v1.ReportValue(this);
-      if (valueCase_ == 1) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 3) {
-        if (decimalValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = decimalValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 4) {
-        if (moneyValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = moneyValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 5) {
-        if (dateValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = dateValueBuilder_.build();
-        }
-      }
-      if (valueCase_ == 6) {
-        if (dateTimeValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = dateTimeValueBuilder_.build();
-        }
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ReportValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.ReportValue result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 3 && decimalValueBuilder_ != null) {
+        result.value_ = decimalValueBuilder_.build();
+      }
+      if (valueCase_ == 4 && moneyValueBuilder_ != null) {
+        result.value_ = moneyValueBuilder_.build();
+      }
+      if (valueCase_ == 5 && dateValueBuilder_ != null) {
+        result.value_ = dateValueBuilder_.build();
+      }
+      if (valueCase_ == 6 && dateTimeValueBuilder_ != null) {
+        result.value_ = dateTimeValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -983,6 +974,8 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -1161,6 +1154,7 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntValue(long value) {
+
       valueCase_ = 2;
       value_ = value;
       onChanged();
@@ -1396,7 +1390,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 3;
       onChanged();
-      ;
       return decimalValueBuilder_;
     }
 
@@ -1606,7 +1599,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 4;
       onChanged();
-      ;
       return moneyValueBuilder_;
     }
 
@@ -1805,7 +1797,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 5;
       onChanged();
-      ;
       return dateValueBuilder_;
     }
 
@@ -2019,7 +2010,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 6;
       onChanged();
-      ;
       return dateTimeValueBuilder_;
     }
 

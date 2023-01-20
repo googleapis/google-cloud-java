@@ -72,7 +72,9 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -240,11 +244,15 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder
       getSslPolicyReferenceResourceOrBuilder() {
-    return getSslPolicyReferenceResource();
+    return sslPolicyReferenceResource_ == null
+        ? com.google.cloud.compute.v1.SslPolicyReference.getDefaultInstance()
+        : sslPolicyReferenceResource_;
   }
 
   public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
-  private volatile java.lang.Object targetSslProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetSslProxy_ = "";
   /**
    *
    *
@@ -530,18 +538,15 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (sslPolicyReferenceResourceBuilder_ == null) {
-        sslPolicyReferenceResource_ = null;
-      } else {
-        sslPolicyReferenceResource_ = null;
+      sslPolicyReferenceResource_ = null;
+      if (sslPolicyReferenceResourceBuilder_ != null) {
+        sslPolicyReferenceResourceBuilder_.dispose();
         sslPolicyReferenceResourceBuilder_ = null;
       }
       targetSslProxy_ = "";
-
       return this;
     }
 
@@ -570,22 +575,34 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest result =
           new com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (sslPolicyReferenceResourceBuilder_ == null) {
-        result.sslPolicyReferenceResource_ = sslPolicyReferenceResource_;
-      } else {
-        result.sslPolicyReferenceResource_ = sslPolicyReferenceResourceBuilder_.build();
-      }
-      result.targetSslProxy_ = targetSslProxy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sslPolicyReferenceResource_ =
+            sslPolicyReferenceResourceBuilder_ == null
+                ? sslPolicyReferenceResource_
+                : sslPolicyReferenceResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetSslProxy_ = targetSslProxy_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -637,11 +654,12 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSslPolicyReferenceResource()) {
@@ -649,6 +667,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       }
       if (!other.getTargetSslProxy().isEmpty()) {
         targetSslProxy_ = other.targetSslProxy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -680,26 +699,26 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case 1883230690:
               {
                 input.readMessage(
                     getSslPolicyReferenceResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1883230690
             case -1584600470:
               {
                 targetSslProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1584600470
             default:
@@ -788,8 +807,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +826,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -831,8 +850,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,7 +869,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -912,8 +931,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,8 +948,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -951,8 +970,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,7 +996,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * @return Whether the sslPolicyReferenceResource field is set.
      */
     public boolean hasSslPolicyReferenceResource() {
-      return sslPolicyReferenceResourceBuilder_ != null || sslPolicyReferenceResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1019,11 +1038,11 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         sslPolicyReferenceResource_ = value;
-        onChanged();
       } else {
         sslPolicyReferenceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1041,11 +1060,11 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         com.google.cloud.compute.v1.SslPolicyReference.Builder builderForValue) {
       if (sslPolicyReferenceResourceBuilder_ == null) {
         sslPolicyReferenceResource_ = builderForValue.build();
-        onChanged();
       } else {
         sslPolicyReferenceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1062,19 +1081,19 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     public Builder mergeSslPolicyReferenceResource(
         com.google.cloud.compute.v1.SslPolicyReference value) {
       if (sslPolicyReferenceResourceBuilder_ == null) {
-        if (sslPolicyReferenceResource_ != null) {
-          sslPolicyReferenceResource_ =
-              com.google.cloud.compute.v1.SslPolicyReference.newBuilder(sslPolicyReferenceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sslPolicyReferenceResource_ != null
+            && sslPolicyReferenceResource_
+                != com.google.cloud.compute.v1.SslPolicyReference.getDefaultInstance()) {
+          getSslPolicyReferenceResourceBuilder().mergeFrom(value);
         } else {
           sslPolicyReferenceResource_ = value;
         }
-        onChanged();
       } else {
         sslPolicyReferenceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1089,14 +1108,13 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearSslPolicyReferenceResource() {
-      if (sslPolicyReferenceResourceBuilder_ == null) {
-        sslPolicyReferenceResource_ = null;
-        onChanged();
-      } else {
-        sslPolicyReferenceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sslPolicyReferenceResource_ = null;
+      if (sslPolicyReferenceResourceBuilder_ != null) {
+        sslPolicyReferenceResourceBuilder_.dispose();
         sslPolicyReferenceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1112,7 +1130,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.SslPolicyReference.Builder
         getSslPolicyReferenceResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSslPolicyReferenceResourceFieldBuilder().getBuilder();
     }
@@ -1226,8 +1244,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1243,8 +1261,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearTargetSslProxy() {
-
       targetSslProxy_ = getDefaultInstance().getTargetSslProxy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1265,8 +1283,8 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

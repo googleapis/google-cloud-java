@@ -102,7 +102,6 @@ public interface UrlMapsAggregatedListOrBuilder
    *
    * <code>map&lt;string, .google.cloud.compute.v1.UrlMapsScopedList&gt; items = 100526016;</code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.UrlMapsScopedList getItemsOrDefault(
       java.lang.String key,

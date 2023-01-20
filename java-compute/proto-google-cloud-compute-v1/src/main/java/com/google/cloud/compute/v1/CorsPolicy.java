@@ -73,7 +73,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ALLOW_CREDENTIALS_FIELD_NUMBER = 481263366;
-  private boolean allowCredentials_;
+  private boolean allowCredentials_ = false;
   /**
    *
    *
@@ -106,6 +106,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_HEADERS_FIELD_NUMBER = 45179024;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowHeaders_;
   /**
    *
@@ -167,6 +169,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_METHODS_FIELD_NUMBER = 205405372;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowMethods_;
   /**
    *
@@ -228,6 +232,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_ORIGIN_REGEXES_FIELD_NUMBER = 215385810;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowOriginRegexes_;
   /**
    *
@@ -289,6 +295,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_ORIGINS_FIELD_NUMBER = 194914071;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowOrigins_;
   /**
    *
@@ -350,7 +358,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -383,6 +391,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPOSE_HEADERS_FIELD_NUMBER = 247604747;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList exposeHeaders_;
   /**
    *
@@ -444,7 +454,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_AGE_FIELD_NUMBER = 307559332;
-  private int maxAge_;
+  private int maxAge_ = 0;
   /**
    *
    *
@@ -789,8 +799,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowCredentials_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       allowHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       allowMethods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -800,11 +810,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       allowOrigins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
       disabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
       exposeHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
       maxAge_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -832,12 +840,15 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.CorsPolicy buildPartial() {
       com.google.cloud.compute.v1.CorsPolicy result =
           new com.google.cloud.compute.v1.CorsPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.allowCredentials_ = allowCredentials_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.CorsPolicy result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         allowHeaders_ = allowHeaders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -858,22 +869,29 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.allowOrigins_ = allowOrigins_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.disabled_ = disabled_;
-        to_bitField0_ |= 0x00000002;
-      }
       if (((bitField0_ & 0x00000040) != 0)) {
         exposeHeaders_ = exposeHeaders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.exposeHeaders_ = exposeHeaders_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.CorsPolicy result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowCredentials_ = allowCredentials_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.disabled_ = disabled_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.maxAge_ = maxAge_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1122,8 +1140,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAllowCredentials(boolean value) {
-      bitField0_ |= 0x00000001;
+
       allowCredentials_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1861,8 +1880,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDisabled(boolean value) {
-      bitField0_ |= 0x00000020;
+
       disabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2096,8 +2116,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxAge(int value) {
-      bitField0_ |= 0x00000080;
+
       maxAge_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

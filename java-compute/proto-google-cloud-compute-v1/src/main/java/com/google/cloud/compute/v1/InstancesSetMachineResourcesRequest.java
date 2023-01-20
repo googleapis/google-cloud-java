@@ -69,6 +69,8 @@ public final class InstancesSetMachineResourcesRequest
   }
 
   public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -344,6 +346,7 @@ public final class InstancesSetMachineResourcesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (guestAcceleratorsBuilder_ == null) {
         guestAccelerators_ = java.util.Collections.emptyList();
       } else {
@@ -379,7 +382,16 @@ public final class InstancesSetMachineResourcesRequest
     public com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest buildPartial() {
       com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest result =
           new com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest result) {
       if (guestAcceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
@@ -389,8 +401,11 @@ public final class InstancesSetMachineResourcesRequest
       } else {
         result.guestAccelerators_ = guestAcceleratorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

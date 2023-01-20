@@ -68,7 +68,9 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -385,14 +387,13 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        resultBuilder_.clear();
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
+        resultBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -420,23 +421,25 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.RouterStatusResponse buildPartial() {
       com.google.cloud.compute.v1.RouterStatusResponse result =
           new com.google.cloud.compute.v1.RouterStatusResponse(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterStatusResponse result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (resultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = resultBuilder_.build();
-        }
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -486,8 +489,8 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.compute.v1.RouterStatusResponse.getDefaultInstance())
         return this;
       if (other.hasKind()) {
-        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResult()) {
@@ -625,8 +628,8 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +645,8 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +667,8 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,22 +708,22 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.RouterStatus.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
@@ -729,29 +732,26 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
         if (((bitField0_ & 0x00000002) != 0)
             && result_ != null
             && result_ != com.google.cloud.compute.v1.RouterStatus.getDefaultInstance()) {
-          result_ =
-              com.google.cloud.compute.v1.RouterStatus.newBuilder(result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        resultBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
+        resultBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */

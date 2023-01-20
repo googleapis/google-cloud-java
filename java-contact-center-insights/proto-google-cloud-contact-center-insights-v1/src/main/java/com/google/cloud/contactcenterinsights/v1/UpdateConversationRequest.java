@@ -117,7 +117,9 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ConversationOrBuilder
       getConversationOrBuilder() {
-    return getConversation();
+    return conversation_ == null
+        ? com.google.cloud.contactcenterinsights.v1.Conversation.getDefaultInstance()
+        : conversation_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -163,7 +165,7 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (conversationBuilder_ == null) {
-        conversation_ = null;
-      } else {
-        conversation_ = null;
+      bitField0_ = 0;
+      conversation_ = null;
+      if (conversationBuilder_ != null) {
+        conversationBuilder_.dispose();
         conversationBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -426,18 +427,23 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
     public com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest result =
           new com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest(this);
-      if (conversationBuilder_ == null) {
-        result.conversation_ = conversation_;
-      } else {
-        result.conversation_ = conversationBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversation_ =
+            conversationBuilder_ == null ? conversation_ : conversationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +530,13 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getConversationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -549,6 +555,8 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.contactcenterinsights.v1.Conversation conversation_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -570,7 +578,7 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * @return Whether the conversation field is set.
      */
     public boolean hasConversation() {
-      return conversationBuilder_ != null || conversation_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -611,11 +619,11 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         conversation_ = value;
-        onChanged();
       } else {
         conversationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +641,11 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
         com.google.cloud.contactcenterinsights.v1.Conversation.Builder builderForValue) {
       if (conversationBuilder_ == null) {
         conversation_ = builderForValue.build();
-        onChanged();
       } else {
         conversationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,19 +661,19 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      */
     public Builder mergeConversation(com.google.cloud.contactcenterinsights.v1.Conversation value) {
       if (conversationBuilder_ == null) {
-        if (conversation_ != null) {
-          conversation_ =
-              com.google.cloud.contactcenterinsights.v1.Conversation.newBuilder(conversation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && conversation_ != null
+            && conversation_
+                != com.google.cloud.contactcenterinsights.v1.Conversation.getDefaultInstance()) {
+          getConversationBuilder().mergeFrom(value);
         } else {
           conversation_ = value;
         }
-        onChanged();
       } else {
         conversationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -680,14 +688,13 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearConversation() {
-      if (conversationBuilder_ == null) {
-        conversation_ = null;
-        onChanged();
-      } else {
-        conversation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      conversation_ = null;
+      if (conversationBuilder_ != null) {
+        conversationBuilder_.dispose();
         conversationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -702,7 +709,7 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.contactcenterinsights.v1.Conversation.Builder getConversationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConversationFieldBuilder().getBuilder();
     }
@@ -773,7 +780,7 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +817,11 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +836,11 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,17 +854,18 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +878,13 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -890,7 +897,7 @@ public final class UpdateConversationRequest extends com.google.protobuf.Generat
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

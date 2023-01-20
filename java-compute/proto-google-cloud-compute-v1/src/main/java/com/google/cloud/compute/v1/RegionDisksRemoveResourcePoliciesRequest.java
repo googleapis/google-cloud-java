@@ -69,6 +69,8 @@ public final class RegionDisksRemoveResourcePoliciesRequest
   }
 
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resourcePolicies_;
   /**
    *
@@ -336,6 +338,7 @@ public final class RegionDisksRemoveResourcePoliciesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -367,14 +370,26 @@ public final class RegionDisksRemoveResourcePoliciesRequest
     public com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest buildPartial() {
       com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest result =
           new com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.resourcePolicies_ = resourcePolicies_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

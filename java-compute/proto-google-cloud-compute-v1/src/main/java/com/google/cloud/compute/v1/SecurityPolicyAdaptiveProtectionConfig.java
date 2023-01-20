@@ -346,12 +346,12 @@ public final class SecurityPolicyAdaptiveProtectionConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (layer7DdosDefenseConfigBuilder_ == null) {
-        layer7DdosDefenseConfig_ = null;
-      } else {
-        layer7DdosDefenseConfigBuilder_.clear();
+      bitField0_ = 0;
+      layer7DdosDefenseConfig_ = null;
+      if (layer7DdosDefenseConfigBuilder_ != null) {
+        layer7DdosDefenseConfigBuilder_.dispose();
+        layer7DdosDefenseConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -381,19 +381,25 @@ public final class SecurityPolicyAdaptiveProtectionConfig
     public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (layer7DdosDefenseConfigBuilder_ == null) {
-          result.layer7DdosDefenseConfig_ = layer7DdosDefenseConfig_;
-        } else {
-          result.layer7DdosDefenseConfig_ = layer7DdosDefenseConfigBuilder_.build();
-        }
+        result.layer7DdosDefenseConfig_ =
+            layer7DdosDefenseConfigBuilder_ == null
+                ? layer7DdosDefenseConfig_
+                : layer7DdosDefenseConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -570,11 +576,11 @@ public final class SecurityPolicyAdaptiveProtectionConfig
           throw new NullPointerException();
         }
         layer7DdosDefenseConfig_ = value;
-        onChanged();
       } else {
         layer7DdosDefenseConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -594,11 +600,11 @@ public final class SecurityPolicyAdaptiveProtectionConfig
             builderForValue) {
       if (layer7DdosDefenseConfigBuilder_ == null) {
         layer7DdosDefenseConfig_ = builderForValue.build();
-        onChanged();
       } else {
         layer7DdosDefenseConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,20 +628,15 @@ public final class SecurityPolicyAdaptiveProtectionConfig
                 != com.google.cloud.compute.v1
                     .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                     .getDefaultInstance()) {
-          layer7DdosDefenseConfig_ =
-              com.google.cloud.compute.v1
-                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.newBuilder(
-                      layer7DdosDefenseConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLayer7DdosDefenseConfigBuilder().mergeFrom(value);
         } else {
           layer7DdosDefenseConfig_ = value;
         }
-        onChanged();
       } else {
         layer7DdosDefenseConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,13 +651,13 @@ public final class SecurityPolicyAdaptiveProtectionConfig
      * </code>
      */
     public Builder clearLayer7DdosDefenseConfig() {
-      if (layer7DdosDefenseConfigBuilder_ == null) {
-        layer7DdosDefenseConfig_ = null;
-        onChanged();
-      } else {
-        layer7DdosDefenseConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      layer7DdosDefenseConfig_ = null;
+      if (layer7DdosDefenseConfigBuilder_ != null) {
+        layer7DdosDefenseConfigBuilder_.dispose();
+        layer7DdosDefenseConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

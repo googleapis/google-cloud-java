@@ -69,7 +69,9 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ISSUE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issue_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SCORE_FIELD_NUMBER = 2;
-  private double score_;
+  private double score_ = 0D;
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -406,12 +410,10 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issue_ = "";
-
       score_ = 0D;
-
       displayName_ = "";
-
       return this;
     }
 
@@ -439,11 +441,24 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contactcenterinsights.v1.IssueAssignment buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IssueAssignment result =
           new com.google.cloud.contactcenterinsights.v1.IssueAssignment(this);
-      result.issue_ = issue_;
-      result.score_ = score_;
-      result.displayName_ = displayName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.IssueAssignment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issue_ = issue_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -494,6 +509,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getIssue().isEmpty()) {
         issue_ = other.issue_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getScore() != 0D) {
@@ -501,6 +517,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -532,19 +549,19 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 issue_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 score_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -563,6 +580,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object issue_ = "";
     /**
@@ -625,8 +644,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       issue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +661,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIssue() {
-
       issue_ = getDefaultInstance().getIssue();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +683,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,6 +722,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     public Builder setScore(double value) {
 
       score_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,7 +739,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       score_ = 0D;
       onChanged();
       return this;
@@ -789,8 +809,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -807,8 +827,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -830,8 +850,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

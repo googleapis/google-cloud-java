@@ -71,7 +71,9 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,6 +126,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Parameter> parameters_;
   /**
    *
@@ -223,7 +227,9 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -290,7 +296,9 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   }
 
   public static final int PURCHASE_ORDER_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object purchaseOrderId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object purchaseOrderId_ = "";
   /**
    *
    *
@@ -564,19 +572,17 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = "";
-
       purchaseOrderId_ = "";
-
       return this;
     }
 
@@ -604,21 +610,38 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     public com.google.cloud.channel.v1.ChangeParametersRequest buildPartial() {
       com.google.cloud.channel.v1.ChangeParametersRequest result =
           new com.google.cloud.channel.v1.ChangeParametersRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.ChangeParametersRequest result) {
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      result.requestId_ = requestId_;
-      result.purchaseOrderId_ = purchaseOrderId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ChangeParametersRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.purchaseOrderId_ = purchaseOrderId_;
+      }
     }
 
     @java.lang.Override
@@ -669,13 +692,14 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (parametersBuilder_ == null) {
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -688,7 +712,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -700,10 +724,12 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPurchaseOrderId().isEmpty()) {
         purchaseOrderId_ = other.purchaseOrderId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -735,7 +761,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -754,13 +780,13 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 purchaseOrderId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -849,8 +875,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -868,8 +894,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -892,8 +918,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,9 +928,9 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ = new java.util.ArrayList<com.google.cloud.channel.v1.Parameter>(parameters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1185,7 +1211,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -1349,7 +1375,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
                 com.google.cloud.channel.v1.Parameter,
                 com.google.cloud.channel.v1.Parameter.Builder,
                 com.google.cloud.channel.v1.ParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -1443,8 +1469,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1469,8 +1495,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1500,8 +1526,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1567,8 +1593,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       purchaseOrderId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1584,8 +1610,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPurchaseOrderId() {
-
       purchaseOrderId_ = getDefaultInstance().getPurchaseOrderId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1606,8 +1632,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       purchaseOrderId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

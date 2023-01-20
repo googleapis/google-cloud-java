@@ -70,7 +70,9 @@ public final class SubnetworksExpandIpCidrRangeRequest
 
   private int bitField0_;
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 98117322;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -335,8 +337,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipCidrRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -365,15 +367,22 @@ public final class SubnetworksExpandIpCidrRangeRequest
     public com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest buildPartial() {
       com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest result =
           new com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ipCidrRange_ = ipCidrRange_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -425,8 +434,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
           == com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest.getDefaultInstance())
         return this;
       if (other.hasIpCidrRange()) {
-        bitField0_ |= 0x00000001;
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -555,8 +564,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -572,8 +581,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -594,8 +603,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

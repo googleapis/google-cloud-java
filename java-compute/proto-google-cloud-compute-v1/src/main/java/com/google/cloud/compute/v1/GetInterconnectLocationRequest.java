@@ -70,7 +70,9 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
   }
 
   public static final int INTERCONNECT_LOCATION_FIELD_NUMBER = 492235846;
-  private volatile java.lang.Object interconnectLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interconnectLocation_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       interconnectLocation_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.GetInterconnectLocationRequest buildPartial() {
       com.google.cloud.compute.v1.GetInterconnectLocationRequest result =
           new com.google.cloud.compute.v1.GetInterconnectLocationRequest(this);
-      result.interconnectLocation_ = interconnectLocation_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetInterconnectLocationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.interconnectLocation_ = interconnectLocation_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -463,10 +477,12 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getInterconnectLocation().isEmpty()) {
         interconnectLocation_ = other.interconnectLocation_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -498,13 +514,13 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -357080526:
               {
                 interconnectLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -357080526
             default:
@@ -523,6 +539,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object interconnectLocation_ = "";
     /**
@@ -588,8 +606,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       interconnectLocation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -606,8 +624,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearInterconnectLocation() {
-
       interconnectLocation_ = getDefaultInstance().getInterconnectLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       interconnectLocation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -713,8 +731,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -360,7 +360,6 @@ public interface InstancePropertiesOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -700,7 +699,6 @@ public interface InstancePropertiesOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
-
   /* nullable */
   java.lang.String getResourceManagerTagsOrDefault(
       java.lang.String key,

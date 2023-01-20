@@ -69,6 +69,8 @@ public final class InstancesStartWithEncryptionKeyRequest
   }
 
   public static final int DISKS_FIELD_NUMBER = 95594102;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk> disks_;
   /**
    *
@@ -346,6 +348,7 @@ public final class InstancesStartWithEncryptionKeyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
       } else {
@@ -382,7 +385,16 @@ public final class InstancesStartWithEncryptionKeyRequest
     public com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest buildPartial() {
       com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest result =
           new com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest result) {
       if (disksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           disks_ = java.util.Collections.unmodifiableList(disks_);
@@ -392,8 +404,11 @@ public final class InstancesStartWithEncryptionKeyRequest
       } else {
         result.disks_ = disksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

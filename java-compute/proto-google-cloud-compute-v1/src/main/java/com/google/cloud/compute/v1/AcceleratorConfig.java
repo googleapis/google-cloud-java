@@ -69,7 +69,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 504879675;
-  private int acceleratorCount_;
+  private int acceleratorCount_ = 0;
   /**
    *
    *
@@ -102,7 +102,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 138031246;
-  private volatile java.lang.Object acceleratorType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorType_ = "";
   /**
    *
    *
@@ -381,10 +383,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       acceleratorCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       acceleratorType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -412,6 +413,14 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.AcceleratorConfig buildPartial() {
       com.google.cloud.compute.v1.AcceleratorConfig result =
           new com.google.cloud.compute.v1.AcceleratorConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AcceleratorConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -419,12 +428,10 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.acceleratorType_ = acceleratorType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.acceleratorType_ = acceleratorType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -476,8 +483,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         setAcceleratorCount(other.getAcceleratorCount());
       }
       if (other.hasAcceleratorType()) {
-        bitField0_ |= 0x00000002;
         acceleratorType_ = other.acceleratorType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -581,8 +588,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setAcceleratorCount(int value) {
-      bitField0_ |= 0x00000001;
+
       acceleratorCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,8 +687,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       acceleratorType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -696,8 +704,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       acceleratorType_ = getDefaultInstance().getAcceleratorType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -718,8 +726,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       acceleratorType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

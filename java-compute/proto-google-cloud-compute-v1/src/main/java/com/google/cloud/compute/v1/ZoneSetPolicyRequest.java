@@ -69,6 +69,8 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int BINDINGS_FIELD_NUMBER = 403251854;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ETAG_FIELD_NUMBER = 3123477;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -483,6 +487,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bindingsBuilder_ == null) {
         bindings_ = java.util.Collections.emptyList();
       } else {
@@ -491,13 +496,11 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       etag_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policyBuilder_.clear();
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
+        policyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -525,8 +528,16 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.ZoneSetPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.ZoneSetPolicyRequest result =
           new com.google.cloud.compute.v1.ZoneSetPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ZoneSetPolicyRequest result) {
       if (bindingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bindings_ = java.util.Collections.unmodifiableList(bindings_);
@@ -536,21 +547,20 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.bindings_ = bindingsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ZoneSetPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
         to_bitField0_ |= 0x00000001;
       }
-      result.etag_ = etag_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (policyBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = policyBuilder_.build();
-        }
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -627,8 +637,8 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
         }
       }
       if (other.hasEtag()) {
-        bitField0_ |= 0x00000002;
         etag_ = other.etag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -1127,8 +1137,8 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       etag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1144,8 +1154,8 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1166,8 +1176,8 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       etag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1225,11 +1235,11 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1244,11 +1254,11 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
     public Builder setPolicy(com.google.cloud.compute.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1265,18 +1275,15 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
         if (((bitField0_ & 0x00000004) != 0)
             && policy_ != null
             && policy_ != com.google.cloud.compute.v1.Policy.getDefaultInstance()) {
-          policy_ =
-              com.google.cloud.compute.v1.Policy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1289,13 +1296,13 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
+        policyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

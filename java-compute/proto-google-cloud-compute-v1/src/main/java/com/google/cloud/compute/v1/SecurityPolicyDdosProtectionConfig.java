@@ -195,7 +195,9 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
 
   private int bitField0_;
   public static final int DDOS_PROTECTION_FIELD_NUMBER = 275173268;
-  private volatile java.lang.Object ddosProtection_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ddosProtection_ = "";
   /**
    *
    *
@@ -463,8 +465,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ddosProtection_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -493,15 +495,22 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ddosProtection_ = ddosProtection_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ddosProtection_ = ddosProtection_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -552,8 +561,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
           == com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance())
         return this;
       if (other.hasDdosProtection()) {
-        bitField0_ |= 0x00000001;
         ddosProtection_ = other.ddosProtection_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -686,8 +695,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ddosProtection_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,8 +713,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDdosProtection() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ddosProtection_ = getDefaultInstance().getDdosProtection();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -727,8 +736,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ddosProtection_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

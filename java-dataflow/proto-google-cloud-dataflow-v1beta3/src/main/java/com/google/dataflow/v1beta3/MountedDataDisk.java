@@ -68,7 +68,9 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATA_DISK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataDisk_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataDisk_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
     public com.google.dataflow.v1beta3.MountedDataDisk buildPartial() {
       com.google.dataflow.v1beta3.MountedDataDisk result =
           new com.google.dataflow.v1beta3.MountedDataDisk(this);
-      result.dataDisk_ = dataDisk_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.MountedDataDisk result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataDisk_ = dataDisk_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.dataflow.v1beta3.MountedDataDisk.getDefaultInstance()) return this;
       if (!other.getDataDisk().isEmpty()) {
         dataDisk_ = other.dataDisk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 dataDisk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dataDisk_ = "";
     /**
@@ -521,8 +535,8 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,8 +555,8 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDataDisk() {
-
       dataDisk_ = getDefaultInstance().getDataDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -566,8 +580,8 @@ public final class MountedDataDisk extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataDisk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -117,7 +117,9 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int COMMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object comment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object comment_ = "";
   /**
    *
    *
@@ -166,7 +168,9 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -628,10 +632,9 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       comment_ = "";
-
       id_ = "";
-
       if (pkixPublicKeyBuilder_ != null) {
         pkixPublicKeyBuilder_.clear();
       }
@@ -665,21 +668,32 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey result =
           new com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey(this);
-      result.comment_ = comment_;
-      result.id_ = id_;
-      if (publicKeyCase_ == 3) {
-        result.publicKey_ = publicKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (publicKeyCase_ == 5) {
-        if (pkixPublicKeyBuilder_ == null) {
-          result.publicKey_ = publicKey_;
-        } else {
-          result.publicKey_ = pkixPublicKeyBuilder_.build();
-        }
-      }
-      result.publicKeyCase_ = publicKeyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.comment_ = comment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey result) {
+      result.publicKeyCase_ = publicKeyCase_;
+      result.publicKey_ = this.publicKey_;
+      if (publicKeyCase_ == 5 && pkixPublicKeyBuilder_ != null) {
+        result.publicKey_ = pkixPublicKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -731,10 +745,12 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getComment().isEmpty()) {
         comment_ = other.comment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getPublicKeyCase()) {
@@ -784,13 +800,13 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 comment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -836,6 +852,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object comment_ = "";
     /**
@@ -898,8 +916,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       comment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -915,8 +933,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearComment() {
-
       comment_ = getDefaultInstance().getComment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -937,8 +955,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       comment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1022,8 +1040,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,8 +1063,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1073,8 +1091,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1504,7 +1522,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
       }
       publicKeyCase_ = 5;
       onChanged();
-      ;
       return pkixPublicKeyBuilder_;
     }
 

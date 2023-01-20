@@ -70,7 +70,9 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONDITION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object condition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object condition_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
   }
 
   public static final int FOLDER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object folder_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object folder_ = "";
   /**
    *
    *
@@ -379,10 +383,9 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       condition_ = "";
-
       folder_ = "";
-
       return this;
     }
 
@@ -410,10 +413,21 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
     public com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction result =
           new com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction(this);
-      result.condition_ = condition_;
-      result.folder_ = folder_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.RemoveFromFolderAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.folder_ = folder_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +478,12 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFolder().isEmpty()) {
         folder_ = other.folder_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +515,13 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
             case 10:
               {
                 condition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 folder_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +540,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object condition_ = "";
     /**
@@ -586,8 +604,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       condition_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,8 +621,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCondition() {
-
       condition_ = getDefaultInstance().getCondition();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -625,8 +643,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       condition_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +716,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       folder_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFolder() {
-
       folder_ = getDefaultInstance().getFolder();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -741,8 +759,8 @@ public final class RemoveFromFolderAction extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       folder_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -271,6 +271,8 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int EXEMPTED_MEMBERS_FIELD_NUMBER = 232615576;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList exemptedMembers_;
   /**
    *
@@ -332,7 +334,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IGNORE_CHILD_EXEMPTIONS_FIELD_NUMBER = 70141850;
-  private boolean ignoreChildExemptions_;
+  private boolean ignoreChildExemptions_ = false;
   /**
    *
    *
@@ -365,7 +367,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_TYPE_FIELD_NUMBER = 403115861;
-  private volatile java.lang.Object logType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logType_ = "";
   /**
    *
    *
@@ -665,12 +669,11 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       ignoreChildExemptions_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       logType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -698,24 +701,34 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AuditLogConfig buildPartial() {
       com.google.cloud.compute.v1.AuditLogConfig result =
           new com.google.cloud.compute.v1.AuditLogConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.AuditLogConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         exemptedMembers_ = exemptedMembers_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.exemptedMembers_ = exemptedMembers_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AuditLogConfig result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ignoreChildExemptions_ = ignoreChildExemptions_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.logType_ = logType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.logType_ = logType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -777,8 +790,8 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
         setIgnoreChildExemptions(other.getIgnoreChildExemptions());
       }
       if (other.hasLogType()) {
-        bitField0_ |= 0x00000004;
         logType_ = other.logType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1057,8 +1070,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIgnoreChildExemptions(boolean value) {
-      bitField0_ |= 0x00000002;
+
       ignoreChildExemptions_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1159,8 +1173,8 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       logType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1177,8 +1191,8 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       logType_ = getDefaultInstance().getLogType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1200,8 +1214,8 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       logType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

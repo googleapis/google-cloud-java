@@ -67,7 +67,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
 
   private int bitField0_;
   public static final int HAS_STATEFUL_CONFIG_FIELD_NUMBER = 110474224;
-  private boolean hasStatefulConfig_;
+  private boolean hasStatefulConfig_ = false;
   /**
    *
    *
@@ -387,14 +387,13 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hasStatefulConfig_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (perInstanceConfigsBuilder_ == null) {
-        perInstanceConfigs_ = null;
-      } else {
-        perInstanceConfigsBuilder_.clear();
+      perInstanceConfigs_ = null;
+      if (perInstanceConfigsBuilder_ != null) {
+        perInstanceConfigsBuilder_.dispose();
+        perInstanceConfigsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -423,6 +422,15 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -430,16 +438,13 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (perInstanceConfigsBuilder_ == null) {
-          result.perInstanceConfigs_ = perInstanceConfigs_;
-        } else {
-          result.perInstanceConfigs_ = perInstanceConfigsBuilder_.build();
-        }
+        result.perInstanceConfigs_ =
+            perInstanceConfigsBuilder_ == null
+                ? perInstanceConfigs_
+                : perInstanceConfigsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -597,8 +602,9 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setHasStatefulConfig(boolean value) {
-      bitField0_ |= 0x00000001;
+
       hasStatefulConfig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,11 +693,11 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
           throw new NullPointerException();
         }
         perInstanceConfigs_ = value;
-        onChanged();
       } else {
         perInstanceConfigsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -710,11 +716,11 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             builderForValue) {
       if (perInstanceConfigsBuilder_ == null) {
         perInstanceConfigs_ = builderForValue.build();
-        onChanged();
       } else {
         perInstanceConfigsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -736,19 +742,15 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             && perInstanceConfigs_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
                     .getDefaultInstance()) {
-          perInstanceConfigs_ =
-              com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
-                  .newBuilder(perInstanceConfigs_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPerInstanceConfigsBuilder().mergeFrom(value);
         } else {
           perInstanceConfigs_ = value;
         }
-        onChanged();
       } else {
         perInstanceConfigsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,13 +765,13 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </code>
      */
     public Builder clearPerInstanceConfigs() {
-      if (perInstanceConfigsBuilder_ == null) {
-        perInstanceConfigs_ = null;
-        onChanged();
-      } else {
-        perInstanceConfigsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      perInstanceConfigs_ = null;
+      if (perInstanceConfigsBuilder_ != null) {
+        perInstanceConfigsBuilder_.dispose();
+        perInstanceConfigsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

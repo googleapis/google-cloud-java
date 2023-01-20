@@ -70,7 +70,9 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -177,7 +179,9 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.SynonymSetOrBuilder getSynonymSetOrBuilder() {
-    return getSynonymSet();
+    return synonymSet_ == null
+        ? com.google.cloud.contentwarehouse.v1.SynonymSet.getDefaultInstance()
+        : synonymSet_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,12 +398,11 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (synonymSetBuilder_ == null) {
-        synonymSet_ = null;
-      } else {
-        synonymSet_ = null;
+      synonymSet_ = null;
+      if (synonymSetBuilder_ != null) {
+        synonymSetBuilder_.dispose();
         synonymSetBuilder_ = null;
       }
       return this;
@@ -430,14 +433,22 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     public com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest result =
           new com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest(this);
-      result.name_ = name_;
-      if (synonymSetBuilder_ == null) {
-        result.synonymSet_ = synonymSet_;
-      } else {
-        result.synonymSet_ = synonymSetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.synonymSet_ = synonymSetBuilder_ == null ? synonymSet_ : synonymSetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -489,6 +500,7 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSynonymSet()) {
@@ -523,13 +535,13 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSynonymSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +560,8 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -622,8 +636,8 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,8 +657,8 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -669,8 +683,8 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,7 +709,7 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
      * @return Whether the synonymSet field is set.
      */
     public boolean hasSynonymSet() {
-      return synonymSetBuilder_ != null || synonymSet_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -736,11 +750,11 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         synonymSet_ = value;
-        onChanged();
       } else {
         synonymSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,11 +772,11 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         com.google.cloud.contentwarehouse.v1.SynonymSet.Builder builderForValue) {
       if (synonymSetBuilder_ == null) {
         synonymSet_ = builderForValue.build();
-        onChanged();
       } else {
         synonymSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -778,19 +792,19 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
      */
     public Builder mergeSynonymSet(com.google.cloud.contentwarehouse.v1.SynonymSet value) {
       if (synonymSetBuilder_ == null) {
-        if (synonymSet_ != null) {
-          synonymSet_ =
-              com.google.cloud.contentwarehouse.v1.SynonymSet.newBuilder(synonymSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && synonymSet_ != null
+            && synonymSet_
+                != com.google.cloud.contentwarehouse.v1.SynonymSet.getDefaultInstance()) {
+          getSynonymSetBuilder().mergeFrom(value);
         } else {
           synonymSet_ = value;
         }
-        onChanged();
       } else {
         synonymSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -805,14 +819,13 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearSynonymSet() {
-      if (synonymSetBuilder_ == null) {
-        synonymSet_ = null;
-        onChanged();
-      } else {
-        synonymSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      synonymSet_ = null;
+      if (synonymSetBuilder_ != null) {
+        synonymSetBuilder_.dispose();
         synonymSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -827,7 +840,7 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.contentwarehouse.v1.SynonymSet.Builder getSynonymSetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSynonymSetFieldBuilder().getBuilder();
     }

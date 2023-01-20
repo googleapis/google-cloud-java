@@ -130,7 +130,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object actionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object actionId_ = "";
   /**
    *
    *
@@ -856,8 +858,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       actionId_ = "";
-
       if (accessControlBuilder_ != null) {
         accessControlBuilder_.clear();
       }
@@ -908,59 +910,45 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Action buildPartial() {
       com.google.cloud.contentwarehouse.v1.Action result =
           new com.google.cloud.contentwarehouse.v1.Action(this);
-      result.actionId_ = actionId_;
-      if (actionCase_ == 2) {
-        if (accessControlBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = accessControlBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionCase_ == 3) {
-        if (dataValidationBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = dataValidationBuilder_.build();
-        }
-      }
-      if (actionCase_ == 4) {
-        if (dataUpdateBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = dataUpdateBuilder_.build();
-        }
-      }
-      if (actionCase_ == 5) {
-        if (addToFolderBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = addToFolderBuilder_.build();
-        }
-      }
-      if (actionCase_ == 6) {
-        if (publishToPubSubBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = publishToPubSubBuilder_.build();
-        }
-      }
-      if (actionCase_ == 9) {
-        if (removeFromFolderActionBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = removeFromFolderActionBuilder_.build();
-        }
-      }
-      if (actionCase_ == 10) {
-        if (deleteDocumentActionBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = deleteDocumentActionBuilder_.build();
-        }
-      }
-      result.actionCase_ = actionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.Action result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.actionId_ = actionId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.contentwarehouse.v1.Action result) {
+      result.actionCase_ = actionCase_;
+      result.action_ = this.action_;
+      if (actionCase_ == 2 && accessControlBuilder_ != null) {
+        result.action_ = accessControlBuilder_.build();
+      }
+      if (actionCase_ == 3 && dataValidationBuilder_ != null) {
+        result.action_ = dataValidationBuilder_.build();
+      }
+      if (actionCase_ == 4 && dataUpdateBuilder_ != null) {
+        result.action_ = dataUpdateBuilder_.build();
+      }
+      if (actionCase_ == 5 && addToFolderBuilder_ != null) {
+        result.action_ = addToFolderBuilder_.build();
+      }
+      if (actionCase_ == 6 && publishToPubSubBuilder_ != null) {
+        result.action_ = publishToPubSubBuilder_.build();
+      }
+      if (actionCase_ == 9 && removeFromFolderActionBuilder_ != null) {
+        result.action_ = removeFromFolderActionBuilder_.build();
+      }
+      if (actionCase_ == 10 && deleteDocumentActionBuilder_ != null) {
+        result.action_ = deleteDocumentActionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1010,6 +998,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.contentwarehouse.v1.Action.getDefaultInstance()) return this;
       if (!other.getActionId().isEmpty()) {
         actionId_ = other.actionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getActionCase()) {
@@ -1082,7 +1071,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 actionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1160,6 +1149,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object actionId_ = "";
     /**
      *
@@ -1221,8 +1212,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1238,8 +1229,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActionId() {
-
       actionId_ = getDefaultInstance().getActionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1260,8 +1251,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1477,7 +1468,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 2;
       onChanged();
-      ;
       return accessControlBuilder_;
     }
 
@@ -1692,7 +1682,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 3;
       onChanged();
-      ;
       return dataValidationBuilder_;
     }
 
@@ -1903,7 +1892,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 4;
       onChanged();
-      ;
       return dataUpdateBuilder_;
     }
 
@@ -2115,7 +2103,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 5;
       onChanged();
-      ;
       return addToFolderBuilder_;
     }
 
@@ -2326,7 +2313,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 6;
       onChanged();
-      ;
       return publishToPubSubBuilder_;
     }
 
@@ -2552,7 +2538,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 9;
       onChanged();
-      ;
       return removeFromFolderActionBuilder_;
     }
 
@@ -2776,7 +2761,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 10;
       onChanged();
-      ;
       return deleteDocumentActionBuilder_;
     }
 

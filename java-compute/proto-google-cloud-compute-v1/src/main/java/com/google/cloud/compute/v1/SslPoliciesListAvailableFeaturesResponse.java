@@ -69,6 +69,8 @@ public final class SslPoliciesListAvailableFeaturesResponse
   }
 
   public static final int FEATURES_FIELD_NUMBER = 246211645;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList features_;
   /**
    * <code>repeated string features = 246211645;</code>
@@ -311,6 +313,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       features_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -342,14 +345,26 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse buildPartial() {
       com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result =
           new com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         features_ = features_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.features_ = features_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

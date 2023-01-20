@@ -84,7 +84,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -232,7 +236,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPropertiesOrBuilder() {
-    return getProperties();
+    return properties_ == null ? com.google.protobuf.Struct.getDefaultInstance() : properties_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,14 +473,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-
       name_ = "";
-
-      if (propertiesBuilder_ == null) {
-        properties_ = null;
-      } else {
-        properties_ = null;
+      properties_ = null;
+      if (propertiesBuilder_ != null) {
+        propertiesBuilder_.dispose();
         propertiesBuilder_ = null;
       }
       return this;
@@ -505,15 +507,24 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.dataflow.v1beta3.Step buildPartial() {
       com.google.dataflow.v1beta3.Step result = new com.google.dataflow.v1beta3.Step(this);
-      result.kind_ = kind_;
-      result.name_ = name_;
-      if (propertiesBuilder_ == null) {
-        result.properties_ = properties_;
-      } else {
-        result.properties_ = propertiesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.Step result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.properties_ = propertiesBuilder_ == null ? properties_ : propertiesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -563,10 +574,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.Step.getDefaultInstance()) return this;
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasProperties()) {
@@ -601,19 +614,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -632,6 +645,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object kind_ = "";
     /**
@@ -694,8 +709,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +726,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -733,8 +748,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +818,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -821,8 +836,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -844,8 +859,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -870,7 +885,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the properties field is set.
      */
     public boolean hasProperties() {
-      return propertiesBuilder_ != null || properties_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -909,11 +924,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         properties_ = value;
-        onChanged();
       } else {
         propertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -930,11 +945,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public Builder setProperties(com.google.protobuf.Struct.Builder builderForValue) {
       if (propertiesBuilder_ == null) {
         properties_ = builderForValue.build();
-        onChanged();
       } else {
         propertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -950,17 +965,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProperties(com.google.protobuf.Struct value) {
       if (propertiesBuilder_ == null) {
-        if (properties_ != null) {
-          properties_ =
-              com.google.protobuf.Struct.newBuilder(properties_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && properties_ != null
+            && properties_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPropertiesBuilder().mergeFrom(value);
         } else {
           properties_ = value;
         }
-        onChanged();
       } else {
         propertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -975,14 +991,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct properties = 3;</code>
      */
     public Builder clearProperties() {
-      if (propertiesBuilder_ == null) {
-        properties_ = null;
-        onChanged();
-      } else {
-        properties_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      properties_ = null;
+      if (propertiesBuilder_ != null) {
+        propertiesBuilder_.dispose();
         propertiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -997,7 +1012,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct properties = 3;</code>
      */
     public com.google.protobuf.Struct.Builder getPropertiesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }

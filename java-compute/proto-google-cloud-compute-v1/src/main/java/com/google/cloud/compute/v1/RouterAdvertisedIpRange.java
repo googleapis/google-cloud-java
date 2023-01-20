@@ -70,7 +70,9 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
   }
 
   public static final int RANGE_FIELD_NUMBER = 108280125;
-  private volatile java.lang.Object range_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object range_ = "";
   /**
    *
    *
@@ -413,10 +417,9 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       range_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -444,19 +447,25 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.RouterAdvertisedIpRange buildPartial() {
       com.google.cloud.compute.v1.RouterAdvertisedIpRange result =
           new com.google.cloud.compute.v1.RouterAdvertisedIpRange(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterAdvertisedIpRange result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000001;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.range_ = range_;
         to_bitField0_ |= 0x00000002;
       }
-      result.range_ = range_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -506,13 +515,13 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.RouterAdvertisedIpRange.getDefaultInstance())
         return this;
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000001;
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRange()) {
-        bitField0_ |= 0x00000002;
         range_ = other.range_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -647,8 +656,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,8 +673,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -686,8 +695,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,8 +776,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       range_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -784,8 +793,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRange() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       range_ = getDefaultInstance().getRange();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -806,8 +815,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       range_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

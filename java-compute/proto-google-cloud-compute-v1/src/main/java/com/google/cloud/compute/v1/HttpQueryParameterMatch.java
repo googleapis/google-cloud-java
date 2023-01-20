@@ -71,7 +71,9 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int EXACT_MATCH_FIELD_NUMBER = 457641093;
-  private volatile java.lang.Object exactMatch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object exactMatch_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -199,7 +203,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   }
 
   public static final int PRESENT_MATCH_FIELD_NUMBER = 67435841;
-  private boolean presentMatch_;
+  private boolean presentMatch_ = false;
   /**
    *
    *
@@ -232,7 +236,9 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
   }
 
   public static final int REGEX_MATCH_FIELD_NUMBER = 107387853;
-  private volatile java.lang.Object regexMatch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object regexMatch_ = "";
   /**
    *
    *
@@ -539,14 +545,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       exactMatch_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       presentMatch_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       regexMatch_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -574,27 +577,33 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.HttpQueryParameterMatch buildPartial() {
       com.google.cloud.compute.v1.HttpQueryParameterMatch result =
           new com.google.cloud.compute.v1.HttpQueryParameterMatch(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpQueryParameterMatch result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.exactMatch_ = exactMatch_;
         to_bitField0_ |= 0x00000001;
       }
-      result.exactMatch_ = exactMatch_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.presentMatch_ = presentMatch_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regexMatch_ = regexMatch_;
         to_bitField0_ |= 0x00000008;
       }
-      result.regexMatch_ = regexMatch_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -644,21 +653,21 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.HttpQueryParameterMatch.getDefaultInstance())
         return this;
       if (other.hasExactMatch()) {
-        bitField0_ |= 0x00000001;
         exactMatch_ = other.exactMatch_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPresentMatch()) {
         setPresentMatch(other.getPresentMatch());
       }
       if (other.hasRegexMatch()) {
-        bitField0_ |= 0x00000008;
         regexMatch_ = other.regexMatch_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -805,8 +814,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       exactMatch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -822,8 +831,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearExactMatch() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       exactMatch_ = getDefaultInstance().getExactMatch();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -844,8 +853,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       exactMatch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -925,8 +934,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -942,8 +951,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -964,8 +973,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1014,8 +1023,9 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setPresentMatch(boolean value) {
-      bitField0_ |= 0x00000004;
+
       presentMatch_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1112,8 +1122,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       regexMatch_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1129,8 +1139,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRegexMatch() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       regexMatch_ = getDefaultInstance().getRegexMatch();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1151,8 +1161,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       regexMatch_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

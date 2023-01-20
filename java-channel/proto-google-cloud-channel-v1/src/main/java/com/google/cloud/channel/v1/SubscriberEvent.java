@@ -443,6 +443,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (customerEventBuilder_ != null) {
         customerEventBuilder_.clear();
       }
@@ -478,23 +479,27 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.SubscriberEvent buildPartial() {
       com.google.cloud.channel.v1.SubscriberEvent result =
           new com.google.cloud.channel.v1.SubscriberEvent(this);
-      if (eventCase_ == 1) {
-        if (customerEventBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = customerEventBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (eventCase_ == 2) {
-        if (entitlementEventBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = entitlementEventBuilder_.build();
-        }
-      }
-      result.eventCase_ = eventCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.SubscriberEvent result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.SubscriberEvent result) {
+      result.eventCase_ = eventCase_;
+      result.event_ = this.event_;
+      if (eventCase_ == 1 && customerEventBuilder_ != null) {
+        result.event_ = customerEventBuilder_.build();
+      }
+      if (eventCase_ == 2 && entitlementEventBuilder_ != null) {
+        result.event_ = entitlementEventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -627,6 +632,8 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.CustomerEvent,
@@ -834,7 +841,6 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       }
       eventCase_ = 1;
       onChanged();
-      ;
       return customerEventBuilder_;
     }
 
@@ -1044,7 +1050,6 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
       }
       eventCase_ = 2;
       onChanged();
-      ;
       return entitlementEventBuilder_;
     }
 

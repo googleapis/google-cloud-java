@@ -74,7 +74,9 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int COMMITMENT_FIELD_NUMBER = 482134805;
-  private volatile java.lang.Object commitment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object commitment_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentResourceOrBuilder() {
-    return getCommitmentResource();
+    return commitmentResource_ == null
+        ? com.google.cloud.compute.v1.Commitment.getDefaultInstance()
+        : commitmentResource_;
   }
 
   public static final int PATHS_FIELD_NUMBER = 106438894;
-  private volatile java.lang.Object paths_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object paths_ = "";
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -223,7 +229,9 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -276,7 +284,9 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -329,7 +339,9 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -393,7 +405,9 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 500079778;
-  private volatile java.lang.Object updateMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateMask_ = "";
   /**
    *
    *
@@ -730,24 +744,18 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       commitment_ = "";
-
-      if (commitmentResourceBuilder_ == null) {
-        commitmentResource_ = null;
-      } else {
-        commitmentResource_ = null;
+      commitmentResource_ = null;
+      if (commitmentResourceBuilder_ != null) {
+        commitmentResourceBuilder_.dispose();
         commitmentResourceBuilder_ = null;
       }
       paths_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       updateMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -775,31 +783,44 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.UpdateRegionCommitmentRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateRegionCommitmentRequest result =
           new com.google.cloud.compute.v1.UpdateRegionCommitmentRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.commitment_ = commitment_;
-      if (commitmentResourceBuilder_ == null) {
-        result.commitmentResource_ = commitmentResource_;
-      } else {
-        result.commitmentResource_ = commitmentResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.paths_ = paths_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.requestId_ = requestId_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.updateMask_ = updateMask_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UpdateRegionCommitmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commitment_ = commitment_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.commitmentResource_ =
+            commitmentResourceBuilder_ == null
+                ? commitmentResource_
+                : commitmentResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.paths_ = paths_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateMask_ = updateMask_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -850,32 +871,35 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getCommitment().isEmpty()) {
         commitment_ = other.commitment_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCommitmentResource()) {
         mergeCommitmentResource(other.getCommitmentResource());
       }
       if (other.hasPaths()) {
-        bitField0_ |= 0x00000001;
         paths_ = other.paths_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasUpdateMask()) {
-        bitField0_ |= 0x00000004;
         updateMask_ = other.updateMask_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -907,44 +931,44 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 296879706
             case 851511154:
               {
                 paths_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 851511154
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1820481738
             case 1953927106:
               {
                 input.readMessage(
                     getCommitmentResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1953927106
             case -437888854:
               {
                 commitment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -437888854
             case -294329070:
               {
                 updateMask_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -294329070
             default:
@@ -1027,8 +1051,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       commitment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1044,8 +1068,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearCommitment() {
-
       commitment_ = getDefaultInstance().getCommitment();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1066,8 +1090,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       commitment_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1092,7 +1116,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return Whether the commitmentResource field is set.
      */
     public boolean hasCommitmentResource() {
-      return commitmentResourceBuilder_ != null || commitmentResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1133,11 +1157,11 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         commitmentResource_ = value;
-        onChanged();
       } else {
         commitmentResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1155,11 +1179,11 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         com.google.cloud.compute.v1.Commitment.Builder builderForValue) {
       if (commitmentResourceBuilder_ == null) {
         commitmentResource_ = builderForValue.build();
-        onChanged();
       } else {
         commitmentResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1175,19 +1199,18 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      */
     public Builder mergeCommitmentResource(com.google.cloud.compute.v1.Commitment value) {
       if (commitmentResourceBuilder_ == null) {
-        if (commitmentResource_ != null) {
-          commitmentResource_ =
-              com.google.cloud.compute.v1.Commitment.newBuilder(commitmentResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && commitmentResource_ != null
+            && commitmentResource_ != com.google.cloud.compute.v1.Commitment.getDefaultInstance()) {
+          getCommitmentResourceBuilder().mergeFrom(value);
         } else {
           commitmentResource_ = value;
         }
-        onChanged();
       } else {
         commitmentResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1202,14 +1225,13 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearCommitmentResource() {
-      if (commitmentResourceBuilder_ == null) {
-        commitmentResource_ = null;
-        onChanged();
-      } else {
-        commitmentResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      commitmentResource_ = null;
+      if (commitmentResourceBuilder_ != null) {
+        commitmentResourceBuilder_.dispose();
         commitmentResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1224,7 +1246,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.compute.v1.Commitment.Builder getCommitmentResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCommitmentResourceFieldBuilder().getBuilder();
     }
@@ -1283,7 +1305,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return Whether the paths field is set.
      */
     public boolean hasPaths() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string paths = 106438894;</code>
@@ -1327,8 +1349,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1338,8 +1360,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       paths_ = getDefaultInstance().getPaths();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1354,8 +1376,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1427,8 +1449,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1446,8 +1468,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1470,8 +1492,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1543,8 +1565,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1562,8 +1584,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1586,8 +1608,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1605,7 +1627,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1667,8 +1689,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1684,8 +1706,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1706,8 +1728,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1725,7 +1747,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1787,8 +1809,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1804,8 +1826,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUpdateMask() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       updateMask_ = getDefaultInstance().getUpdateMask();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1826,8 +1848,8 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

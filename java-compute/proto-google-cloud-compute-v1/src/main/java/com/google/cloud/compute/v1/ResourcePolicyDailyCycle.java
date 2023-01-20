@@ -70,7 +70,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 369790004;
-  private int daysInCycle_;
+  private int daysInCycle_ = 0;
   /**
    *
    *
@@ -103,7 +103,9 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   }
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
-  private volatile java.lang.Object duration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object duration_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
-  private volatile java.lang.Object startTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startTime_ = "";
   /**
    *
    *
@@ -460,12 +464,10 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       daysInCycle_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,6 +495,14 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.ResourcePolicyDailyCycle buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyDailyCycle result =
           new com.google.cloud.compute.v1.ResourcePolicyDailyCycle(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourcePolicyDailyCycle result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -500,16 +510,14 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = duration_;
         to_bitField0_ |= 0x00000002;
       }
-      result.duration_ = duration_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00000004;
       }
-      result.startTime_ = startTime_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,13 +570,13 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         setDaysInCycle(other.getDaysInCycle());
       }
       if (other.hasDuration()) {
-        bitField0_ |= 0x00000002;
         duration_ = other.duration_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStartTime()) {
-        bitField0_ |= 0x00000004;
         startTime_ = other.startTime_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -678,8 +686,9 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setDaysInCycle(int value) {
-      bitField0_ |= 0x00000001;
+
       daysInCycle_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -776,8 +785,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -793,8 +802,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       duration_ = getDefaultInstance().getDuration();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -815,8 +824,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,8 +905,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       startTime_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -913,8 +922,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       startTime_ = getDefaultInstance().getStartTime();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -935,8 +944,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       startTime_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

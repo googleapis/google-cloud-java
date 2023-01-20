@@ -127,7 +127,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -178,7 +180,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FRIENDLY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object friendlyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object friendlyName_ = "";
   /**
    *
    *
@@ -227,7 +231,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -534,7 +540,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIME_FIELD_NUMBER = 5;
-  private long creationTime_;
+  private long creationTime_ = 0L;
   /**
    *
    *
@@ -552,7 +558,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_MODIFIED_TIME_FIELD_NUMBER = 6;
-  private long lastModifiedTime_;
+  private long lastModifiedTime_ = 0L;
   /**
    *
    *
@@ -570,7 +576,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_CREDENTIAL_FIELD_NUMBER = 7;
-  private boolean hasCredential_;
+  private boolean hasCredential_ = false;
   /**
    *
    *
@@ -918,12 +924,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       friendlyName_ = "";
-
       description_ = "";
-
       if (cloudSqlBuilder_ != null) {
         cloudSqlBuilder_.clear();
       }
@@ -940,11 +944,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         cloudResourceBuilder_.clear();
       }
       creationTime_ = 0L;
-
       lastModifiedTime_ = 0L;
-
       hasCredential_ = false;
-
       propertiesCase_ = 0;
       properties_ = null;
       return this;
@@ -974,50 +975,54 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.Connection buildPartial() {
       com.google.cloud.bigquery.connection.v1.Connection result =
           new com.google.cloud.bigquery.connection.v1.Connection(this);
-      result.name_ = name_;
-      result.friendlyName_ = friendlyName_;
-      result.description_ = description_;
-      if (propertiesCase_ == 4) {
-        if (cloudSqlBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = cloudSqlBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (propertiesCase_ == 8) {
-        if (awsBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = awsBuilder_.build();
-        }
-      }
-      if (propertiesCase_ == 11) {
-        if (azureBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = azureBuilder_.build();
-        }
-      }
-      if (propertiesCase_ == 21) {
-        if (cloudSpannerBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = cloudSpannerBuilder_.build();
-        }
-      }
-      if (propertiesCase_ == 22) {
-        if (cloudResourceBuilder_ == null) {
-          result.properties_ = properties_;
-        } else {
-          result.properties_ = cloudResourceBuilder_.build();
-        }
-      }
-      result.creationTime_ = creationTime_;
-      result.lastModifiedTime_ = lastModifiedTime_;
-      result.hasCredential_ = hasCredential_;
-      result.propertiesCase_ = propertiesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.Connection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.friendlyName_ = friendlyName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.creationTime_ = creationTime_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.lastModifiedTime_ = lastModifiedTime_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.hasCredential_ = hasCredential_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.connection.v1.Connection result) {
+      result.propertiesCase_ = propertiesCase_;
+      result.properties_ = this.properties_;
+      if (propertiesCase_ == 4 && cloudSqlBuilder_ != null) {
+        result.properties_ = cloudSqlBuilder_.build();
+      }
+      if (propertiesCase_ == 8 && awsBuilder_ != null) {
+        result.properties_ = awsBuilder_.build();
+      }
+      if (propertiesCase_ == 11 && azureBuilder_ != null) {
+        result.properties_ = azureBuilder_.build();
+      }
+      if (propertiesCase_ == 21 && cloudSpannerBuilder_ != null) {
+        result.properties_ = cloudSpannerBuilder_.build();
+      }
+      if (propertiesCase_ == 22 && cloudResourceBuilder_ != null) {
+        result.properties_ = cloudResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1068,14 +1073,17 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFriendlyName().isEmpty()) {
         friendlyName_ = other.friendlyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getCreationTime() != 0L) {
@@ -1147,19 +1155,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 friendlyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1171,19 +1179,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 creationTime_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 40
             case 48:
               {
                 lastModifiedTime_ = input.readInt64();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 56:
               {
                 hasCredential_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 56
             case 66:
@@ -1240,6 +1248,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1305,8 +1315,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1323,8 +1333,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1346,8 +1356,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1413,8 +1423,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       friendlyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1430,8 +1440,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFriendlyName() {
-
       friendlyName_ = getDefaultInstance().getFriendlyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1452,8 +1462,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       friendlyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1519,8 +1529,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1536,8 +1546,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1558,8 +1568,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1774,7 +1784,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 4;
       onChanged();
-      ;
       return cloudSqlBuilder_;
     }
 
@@ -1985,7 +1994,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 8;
       onChanged();
-      ;
       return awsBuilder_;
     }
 
@@ -2197,7 +2205,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 11;
       onChanged();
-      ;
       return azureBuilder_;
     }
 
@@ -2414,7 +2421,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 21;
       onChanged();
-      ;
       return cloudSpannerBuilder_;
     }
 
@@ -2640,7 +2646,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       propertiesCase_ = 22;
       onChanged();
-      ;
       return cloudResourceBuilder_;
     }
 
@@ -2675,6 +2680,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreationTime(long value) {
 
       creationTime_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2690,7 +2696,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       creationTime_ = 0L;
       onChanged();
       return this;
@@ -2727,6 +2733,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastModifiedTime(long value) {
 
       lastModifiedTime_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2742,7 +2749,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastModifiedTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       lastModifiedTime_ = 0L;
       onChanged();
       return this;
@@ -2779,6 +2786,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasCredential(boolean value) {
 
       hasCredential_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2794,7 +2802,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasCredential() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       hasCredential_ = false;
       onChanged();
       return this;

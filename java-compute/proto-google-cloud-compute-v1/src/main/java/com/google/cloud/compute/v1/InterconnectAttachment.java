@@ -1523,7 +1523,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
-  private boolean adminEnabled_;
+  private boolean adminEnabled_ = false;
   /**
    *
    *
@@ -1556,7 +1556,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int BANDWIDTH_FIELD_NUMBER = 181715121;
-  private volatile java.lang.Object bandwidth_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bandwidth_ = "";
   /**
    *
    *
@@ -1623,6 +1625,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CANDIDATE_IPV6_SUBNETS_FIELD_NUMBER = 70682522;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList candidateIpv6Subnets_;
   /**
    *
@@ -1684,6 +1688,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CANDIDATE_SUBNETS_FIELD_NUMBER = 237842938;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList candidateSubnets_;
   /**
    *
@@ -1745,7 +1751,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_ROUTER_IP_ADDRESS_FIELD_NUMBER = 287392776;
-  private volatile java.lang.Object cloudRouterIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudRouterIpAddress_ = "";
   /**
    *
    *
@@ -1809,7 +1817,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_ROUTER_IPV6_ADDRESS_FIELD_NUMBER = 451922376;
-  private volatile java.lang.Object cloudRouterIpv6Address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudRouterIpv6Address_ = "";
   /**
    *
    *
@@ -1873,7 +1883,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_ROUTER_IPV6_INTERFACE_ID_FIELD_NUMBER = 521282701;
-  private volatile java.lang.Object cloudRouterIpv6InterfaceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudRouterIpv6InterfaceId_ = "";
   /**
    *
    *
@@ -1937,7 +1949,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -2001,7 +2015,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CUSTOMER_ROUTER_IP_ADDRESS_FIELD_NUMBER = 332475761;
-  private volatile java.lang.Object customerRouterIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerRouterIpAddress_ = "";
   /**
    *
    *
@@ -2065,7 +2081,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CUSTOMER_ROUTER_IPV6_ADDRESS_FIELD_NUMBER = 290127089;
-  private volatile java.lang.Object customerRouterIpv6Address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerRouterIpv6Address_ = "";
   /**
    *
    *
@@ -2129,7 +2147,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int CUSTOMER_ROUTER_IPV6_INTERFACE_ID_FIELD_NUMBER = 380994308;
-  private volatile java.lang.Object customerRouterIpv6InterfaceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerRouterIpv6InterfaceId_ = "";
   /**
    *
    *
@@ -2193,7 +2213,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATAPLANE_VERSION_FIELD_NUMBER = 34920075;
-  private int dataplaneVersion_;
+  private int dataplaneVersion_ = 0;
   /**
    *
    *
@@ -2226,7 +2246,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -2290,7 +2312,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int EDGE_AVAILABILITY_DOMAIN_FIELD_NUMBER = 71289510;
-  private volatile java.lang.Object edgeAvailabilityDomain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object edgeAvailabilityDomain_ = "";
   /**
    *
    *
@@ -2357,7 +2381,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENCRYPTION_FIELD_NUMBER = 97980291;
-  private volatile java.lang.Object encryption_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryption_ = "";
   /**
    *
    *
@@ -2424,7 +2450,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int GOOGLE_REFERENCE_ID_FIELD_NUMBER = 534944469;
-  private volatile java.lang.Object googleReferenceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleReferenceId_ = "";
   /**
    *
    *
@@ -2488,7 +2516,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -2521,7 +2549,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int INTERCONNECT_FIELD_NUMBER = 224601230;
-  private volatile java.lang.Object interconnect_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interconnect_ = "";
   /**
    *
    *
@@ -2585,6 +2615,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int IPSEC_INTERNAL_ADDRESSES_FIELD_NUMBER = 407648565;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipsecInternalAddresses_;
   /**
    *
@@ -2646,7 +2678,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -2710,7 +2744,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int MTU_FIELD_NUMBER = 108462;
-  private int mtu_;
+  private int mtu_ = 0;
   /**
    *
    *
@@ -2743,7 +2777,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2807,7 +2843,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int OPERATIONAL_STATUS_FIELD_NUMBER = 201070847;
-  private volatile java.lang.Object operationalStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationalStatus_ = "";
   /**
    *
    *
@@ -2874,7 +2912,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAIRING_KEY_FIELD_NUMBER = 439695464;
-  private volatile java.lang.Object pairingKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pairingKey_ = "";
   /**
    *
    *
@@ -2938,7 +2978,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARTNER_ASN_FIELD_NUMBER = 438166149;
-  private long partnerAsn_;
+  private long partnerAsn_ = 0L;
   /**
    *
    *
@@ -3086,7 +3126,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -3150,7 +3192,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int ROUTER_FIELD_NUMBER = 148608841;
-  private volatile java.lang.Object router_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object router_ = "";
   /**
    *
    *
@@ -3214,7 +3258,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
-  private boolean satisfiesPzs_;
+  private boolean satisfiesPzs_ = false;
   /**
    *
    *
@@ -3247,7 +3291,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -3311,7 +3357,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
-  private volatile java.lang.Object stackType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stackType_ = "";
   /**
    *
    *
@@ -3378,7 +3426,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -3445,7 +3495,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -3512,7 +3564,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   public static final int VLAN_TAG8021Q_FIELD_NUMBER = 119927836;
-  private int vlanTag8021Q_;
+  private int vlanTag8021Q_ = 0;
   /**
    *
    *
@@ -4271,84 +4323,54 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      bitField1_ = 0;
       adminEnabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       bandwidth_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       cloudRouterIpAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       cloudRouterIpv6Address_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       cloudRouterIpv6InterfaceId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       customerRouterIpAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       customerRouterIpv6Address_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       customerRouterIpv6InterfaceId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       dataplaneVersion_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       edgeAvailabilityDomain_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       encryption_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       googleReferenceId_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00010000);
       interconnect_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
       ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00040000);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00080000);
       mtu_ = 0;
-      bitField0_ = (bitField0_ & ~0x00100000);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00200000);
       operationalStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00400000);
       pairingKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00800000);
       partnerAsn_ = 0L;
-      bitField0_ = (bitField0_ & ~0x01000000);
-      if (partnerMetadataBuilder_ == null) {
-        partnerMetadata_ = null;
-      } else {
-        partnerMetadataBuilder_.clear();
+      partnerMetadata_ = null;
+      if (partnerMetadataBuilder_ != null) {
+        partnerMetadataBuilder_.dispose();
+        partnerMetadataBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x02000000);
-      if (privateInterconnectInfoBuilder_ == null) {
-        privateInterconnectInfo_ = null;
-      } else {
-        privateInterconnectInfoBuilder_.clear();
+      privateInterconnectInfo_ = null;
+      if (privateInterconnectInfoBuilder_ != null) {
+        privateInterconnectInfoBuilder_.dispose();
+        privateInterconnectInfoBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x08000000);
       router_ = "";
-      bitField0_ = (bitField0_ & ~0x10000000);
       satisfiesPzs_ = false;
-      bitField0_ = (bitField0_ & ~0x20000000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x40000000);
       stackType_ = "";
-      bitField0_ = (bitField0_ & ~0x80000000);
       state_ = "";
-      bitField1_ = (bitField1_ & ~0x00000001);
       type_ = "";
-      bitField1_ = (bitField1_ & ~0x00000002);
       vlanTag8021Q_ = 0;
-      bitField1_ = (bitField1_ & ~0x00000004);
       return this;
     }
 
@@ -4376,17 +4398,19 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InterconnectAttachment buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachment result =
           new com.google.cloud.compute.v1.InterconnectAttachment(this);
-      int from_bitField0_ = bitField0_;
-      int from_bitField1_ = bitField1_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.adminEnabled_ = adminEnabled_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
-      result.bandwidth_ = bandwidth_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InterconnectAttachment result) {
       if (((bitField0_ & 0x00000004) != 0)) {
         candidateIpv6Subnets_ = candidateIpv6Subnets_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4397,142 +4421,155 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.candidateSubnets_ = candidateSubnets_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.cloudRouterIpv6Address_ = cloudRouterIpv6Address_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.cloudRouterIpv6InterfaceId_ = cloudRouterIpv6InterfaceId_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.customerRouterIpAddress_ = customerRouterIpAddress_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.customerRouterIpv6Address_ = customerRouterIpv6Address_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.customerRouterIpv6InterfaceId_ = customerRouterIpv6InterfaceId_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.dataplaneVersion_ = dataplaneVersion_;
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        to_bitField0_ |= 0x00000800;
-      }
-      result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        to_bitField0_ |= 0x00001000;
-      }
-      result.encryption_ = encryption_;
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        to_bitField0_ |= 0x00002000;
-      }
-      result.googleReferenceId_ = googleReferenceId_;
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00004000;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        to_bitField0_ |= 0x00008000;
-      }
-      result.interconnect_ = interconnect_;
       if (((bitField0_ & 0x00040000) != 0)) {
         ipsecInternalAddresses_ = ipsecInternalAddresses_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00040000);
       }
       result.ipsecInternalAddresses_ = ipsecInternalAddresses_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectAttachment result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adminEnabled_ = adminEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bandwidth_ = bandwidth_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cloudRouterIpv6Address_ = cloudRouterIpv6Address_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cloudRouterIpv6InterfaceId_ = cloudRouterIpv6InterfaceId_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.customerRouterIpAddress_ = customerRouterIpAddress_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.customerRouterIpv6Address_ = customerRouterIpv6Address_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.customerRouterIpv6InterfaceId_ = customerRouterIpv6InterfaceId_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.dataplaneVersion_ = dataplaneVersion_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.encryption_ = encryption_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.googleReferenceId_ = googleReferenceId_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.interconnect_ = interconnect_;
+        to_bitField0_ |= 0x00008000;
+      }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00010000;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.mtu_ = mtu_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00040000;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.operationalStatus_ = operationalStatus_;
         to_bitField0_ |= 0x00080000;
       }
-      result.operationalStatus_ = operationalStatus_;
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.pairingKey_ = pairingKey_;
         to_bitField0_ |= 0x00100000;
       }
-      result.pairingKey_ = pairingKey_;
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.partnerAsn_ = partnerAsn_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        if (partnerMetadataBuilder_ == null) {
-          result.partnerMetadata_ = partnerMetadata_;
-        } else {
-          result.partnerMetadata_ = partnerMetadataBuilder_.build();
-        }
+        result.partnerMetadata_ =
+            partnerMetadataBuilder_ == null ? partnerMetadata_ : partnerMetadataBuilder_.build();
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        if (privateInterconnectInfoBuilder_ == null) {
-          result.privateInterconnectInfo_ = privateInterconnectInfo_;
-        } else {
-          result.privateInterconnectInfo_ = privateInterconnectInfoBuilder_.build();
-        }
+        result.privateInterconnectInfo_ =
+            privateInterconnectInfoBuilder_ == null
+                ? privateInterconnectInfo_
+                : privateInterconnectInfoBuilder_.build();
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x01000000;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.router_ = router_;
         to_bitField0_ |= 0x02000000;
       }
-      result.router_ = router_;
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x08000000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x10000000;
       }
-      result.stackType_ = stackType_;
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.compute.v1.InterconnectAttachment result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x20000000;
       }
-      result.state_ = state_;
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x40000000;
       }
-      result.type_ = type_;
       if (((from_bitField1_ & 0x00000004) != 0)) {
         result.vlanTag8021Q_ = vlanTag8021Q_;
         to_bitField0_ |= 0x80000000;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -4585,8 +4622,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         setAdminEnabled(other.getAdminEnabled());
       }
       if (other.hasBandwidth()) {
-        bitField0_ |= 0x00000002;
         bandwidth_ = other.bandwidth_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.candidateIpv6Subnets_.isEmpty()) {
@@ -4610,69 +4647,69 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasCloudRouterIpAddress()) {
-        bitField0_ |= 0x00000010;
         cloudRouterIpAddress_ = other.cloudRouterIpAddress_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCloudRouterIpv6Address()) {
-        bitField0_ |= 0x00000020;
         cloudRouterIpv6Address_ = other.cloudRouterIpv6Address_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCloudRouterIpv6InterfaceId()) {
-        bitField0_ |= 0x00000040;
         cloudRouterIpv6InterfaceId_ = other.cloudRouterIpv6InterfaceId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000080;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCustomerRouterIpAddress()) {
-        bitField0_ |= 0x00000100;
         customerRouterIpAddress_ = other.customerRouterIpAddress_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasCustomerRouterIpv6Address()) {
-        bitField0_ |= 0x00000200;
         customerRouterIpv6Address_ = other.customerRouterIpv6Address_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCustomerRouterIpv6InterfaceId()) {
-        bitField0_ |= 0x00000400;
         customerRouterIpv6InterfaceId_ = other.customerRouterIpv6InterfaceId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasDataplaneVersion()) {
         setDataplaneVersion(other.getDataplaneVersion());
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00001000;
         description_ = other.description_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasEdgeAvailabilityDomain()) {
-        bitField0_ |= 0x00002000;
         edgeAvailabilityDomain_ = other.edgeAvailabilityDomain_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasEncryption()) {
-        bitField0_ |= 0x00004000;
         encryption_ = other.encryption_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasGoogleReferenceId()) {
-        bitField0_ |= 0x00008000;
         googleReferenceId_ = other.googleReferenceId_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasInterconnect()) {
-        bitField0_ |= 0x00020000;
         interconnect_ = other.interconnect_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.ipsecInternalAddresses_.isEmpty()) {
@@ -4686,26 +4723,26 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00080000;
         kind_ = other.kind_;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasMtu()) {
         setMtu(other.getMtu());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00200000;
         name_ = other.name_;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasOperationalStatus()) {
-        bitField0_ |= 0x00400000;
         operationalStatus_ = other.operationalStatus_;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasPairingKey()) {
-        bitField0_ |= 0x00800000;
         pairingKey_ = other.pairingKey_;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasPartnerAsn()) {
@@ -4718,36 +4755,36 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         mergePrivateInterconnectInfo(other.getPrivateInterconnectInfo());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x08000000;
         region_ = other.region_;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasRouter()) {
-        bitField0_ |= 0x10000000;
         router_ = other.router_;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (other.hasSatisfiesPzs()) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x40000000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       if (other.hasStackType()) {
-        bitField0_ |= 0x80000000;
         stackType_ = other.stackType_;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasState()) {
-        bitField1_ |= 0x00000001;
         state_ = other.state_;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasType()) {
-        bitField1_ |= 0x00000002;
         type_ = other.type_;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVlanTag8021Q()) {
@@ -5057,8 +5094,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setAdminEnabled(boolean value) {
-      bitField0_ |= 0x00000001;
+
       adminEnabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5159,8 +5197,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       bandwidth_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5177,8 +5215,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearBandwidth() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       bandwidth_ = getDefaultInstance().getBandwidth();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -5200,8 +5238,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       bandwidth_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5617,8 +5655,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       cloudRouterIpAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5634,8 +5672,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCloudRouterIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       cloudRouterIpAddress_ = getDefaultInstance().getCloudRouterIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5656,8 +5694,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       cloudRouterIpAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5737,8 +5775,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       cloudRouterIpv6Address_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5754,8 +5792,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCloudRouterIpv6Address() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       cloudRouterIpv6Address_ = getDefaultInstance().getCloudRouterIpv6Address();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -5776,8 +5814,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       cloudRouterIpv6Address_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5857,8 +5895,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       cloudRouterIpv6InterfaceId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5874,8 +5912,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCloudRouterIpv6InterfaceId() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       cloudRouterIpv6InterfaceId_ = getDefaultInstance().getCloudRouterIpv6InterfaceId();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -5896,8 +5934,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       cloudRouterIpv6InterfaceId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5977,8 +6015,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5994,8 +6032,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -6016,8 +6054,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6097,8 +6135,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       customerRouterIpAddress_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6114,8 +6152,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCustomerRouterIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       customerRouterIpAddress_ = getDefaultInstance().getCustomerRouterIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -6136,8 +6174,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       customerRouterIpAddress_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6217,8 +6255,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       customerRouterIpv6Address_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6234,8 +6272,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCustomerRouterIpv6Address() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       customerRouterIpv6Address_ = getDefaultInstance().getCustomerRouterIpv6Address();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -6256,8 +6294,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       customerRouterIpv6Address_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6337,8 +6375,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       customerRouterIpv6InterfaceId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6354,8 +6392,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCustomerRouterIpv6InterfaceId() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       customerRouterIpv6InterfaceId_ = getDefaultInstance().getCustomerRouterIpv6InterfaceId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -6376,8 +6414,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       customerRouterIpv6InterfaceId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6426,8 +6464,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDataplaneVersion(int value) {
-      bitField0_ |= 0x00000800;
+
       dataplaneVersion_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6524,8 +6563,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       description_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6541,8 +6580,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -6563,8 +6602,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       description_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6648,8 +6687,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       edgeAvailabilityDomain_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6666,8 +6705,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEdgeAvailabilityDomain() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       edgeAvailabilityDomain_ = getDefaultInstance().getEdgeAvailabilityDomain();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -6689,8 +6728,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       edgeAvailabilityDomain_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6774,8 +6813,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       encryption_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6792,8 +6831,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEncryption() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       encryption_ = getDefaultInstance().getEncryption();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6815,8 +6854,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       encryption_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6896,8 +6935,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       googleReferenceId_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6913,8 +6952,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearGoogleReferenceId() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       googleReferenceId_ = getDefaultInstance().getGoogleReferenceId();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6935,8 +6974,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       googleReferenceId_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6985,8 +7024,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00010000;
+
       id_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7083,8 +7123,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
       interconnect_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7100,8 +7140,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInterconnect() {
-      bitField0_ = (bitField0_ & ~0x00020000);
       interconnect_ = getDefaultInstance().getInterconnect();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -7122,8 +7162,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
       interconnect_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7372,8 +7412,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
       kind_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7389,8 +7429,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00080000);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -7411,8 +7451,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00080000;
       kind_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7461,8 +7501,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setMtu(int value) {
-      bitField0_ |= 0x00100000;
+
       mtu_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7559,8 +7600,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
       name_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7576,8 +7617,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00200000);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7598,8 +7639,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00200000;
       name_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7683,8 +7724,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00400000;
       operationalStatus_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7701,8 +7742,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOperationalStatus() {
-      bitField0_ = (bitField0_ & ~0x00400000);
       operationalStatus_ = getDefaultInstance().getOperationalStatus();
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7724,8 +7765,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00400000;
       operationalStatus_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7805,8 +7846,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00800000;
       pairingKey_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7822,8 +7863,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPairingKey() {
-      bitField0_ = (bitField0_ & ~0x00800000);
       pairingKey_ = getDefaultInstance().getPairingKey();
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7844,8 +7885,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00800000;
       pairingKey_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7894,8 +7935,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setPartnerAsn(long value) {
-      bitField0_ |= 0x01000000;
+
       partnerAsn_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7979,11 +8021,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         partnerMetadata_ = value;
-        onChanged();
       } else {
         partnerMetadataBuilder_.setMessage(value);
       }
       bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -8001,11 +8043,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder builderForValue) {
       if (partnerMetadataBuilder_ == null) {
         partnerMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         partnerMetadataBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -8027,19 +8069,15 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             && partnerMetadata_
                 != com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata
                     .getDefaultInstance()) {
-          partnerMetadata_ =
-              com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.newBuilder(
-                      partnerMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPartnerMetadataBuilder().mergeFrom(value);
         } else {
           partnerMetadata_ = value;
         }
-        onChanged();
       } else {
         partnerMetadataBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -8054,13 +8092,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPartnerMetadata() {
-      if (partnerMetadataBuilder_ == null) {
-        partnerMetadata_ = null;
-        onChanged();
-      } else {
-        partnerMetadataBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x02000000);
+      partnerMetadata_ = null;
+      if (partnerMetadataBuilder_ != null) {
+        partnerMetadataBuilder_.dispose();
+        partnerMetadataBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -8192,11 +8230,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         privateInterconnectInfo_ = value;
-        onChanged();
       } else {
         privateInterconnectInfoBuilder_.setMessage(value);
       }
       bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -8214,11 +8252,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder builderForValue) {
       if (privateInterconnectInfoBuilder_ == null) {
         privateInterconnectInfo_ = builderForValue.build();
-        onChanged();
       } else {
         privateInterconnectInfoBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -8240,19 +8278,15 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             && privateInterconnectInfo_
                 != com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo
                     .getDefaultInstance()) {
-          privateInterconnectInfo_ =
-              com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.newBuilder(
-                      privateInterconnectInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPrivateInterconnectInfoBuilder().mergeFrom(value);
         } else {
           privateInterconnectInfo_ = value;
         }
-        onChanged();
       } else {
         privateInterconnectInfoBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -8267,13 +8301,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPrivateInterconnectInfo() {
-      if (privateInterconnectInfoBuilder_ == null) {
-        privateInterconnectInfo_ = null;
-        onChanged();
-      } else {
-        privateInterconnectInfoBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x04000000);
+      privateInterconnectInfo_ = null;
+      if (privateInterconnectInfoBuilder_ != null) {
+        privateInterconnectInfoBuilder_.dispose();
+        privateInterconnectInfoBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -8417,8 +8451,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
       region_ = value;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8434,8 +8468,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x08000000);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -8456,8 +8490,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x08000000;
       region_ = value;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8537,8 +8571,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x10000000;
       router_ = value;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8554,8 +8588,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRouter() {
-      bitField0_ = (bitField0_ & ~0x10000000);
       router_ = getDefaultInstance().getRouter();
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -8576,8 +8610,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x10000000;
       router_ = value;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8626,8 +8660,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setSatisfiesPzs(boolean value) {
-      bitField0_ |= 0x20000000;
+
       satisfiesPzs_ = value;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8724,8 +8759,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x40000000;
       selfLink_ = value;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8741,8 +8776,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x40000000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -8763,8 +8798,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x40000000;
       selfLink_ = value;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8848,8 +8883,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x80000000;
       stackType_ = value;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8866,8 +8901,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStackType() {
-      bitField0_ = (bitField0_ & ~0x80000000);
       stackType_ = getDefaultInstance().getStackType();
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -8889,8 +8924,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x80000000;
       stackType_ = value;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8974,8 +9009,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000001;
       state_ = value;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8992,8 +9027,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField1_ = (bitField1_ & ~0x00000001);
       state_ = getDefaultInstance().getState();
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -9015,8 +9050,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField1_ |= 0x00000001;
       state_ = value;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9100,8 +9135,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000002;
       type_ = value;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9118,8 +9153,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField1_ = (bitField1_ & ~0x00000002);
       type_ = getDefaultInstance().getType();
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9141,8 +9176,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField1_ |= 0x00000002;
       type_ = value;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9191,8 +9226,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setVlanTag8021Q(int value) {
-      bitField1_ |= 0x00000004;
+
       vlanTag8021Q_ = value;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }

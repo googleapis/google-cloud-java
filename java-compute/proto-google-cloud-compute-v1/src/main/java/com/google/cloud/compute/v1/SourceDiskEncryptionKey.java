@@ -122,7 +122,9 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
   }
 
   public static final int SOURCE_DISK_FIELD_NUMBER = 451753793;
-  private volatile java.lang.Object sourceDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceDisk_ = "";
   /**
    *
    *
@@ -411,14 +413,13 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-      } else {
-        diskEncryptionKeyBuilder_.clear();
+      bitField0_ = 0;
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       sourceDisk_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -446,23 +447,28 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.SourceDiskEncryptionKey buildPartial() {
       com.google.cloud.compute.v1.SourceDiskEncryptionKey result =
           new com.google.cloud.compute.v1.SourceDiskEncryptionKey(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SourceDiskEncryptionKey result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (diskEncryptionKeyBuilder_ == null) {
-          result.diskEncryptionKey_ = diskEncryptionKey_;
-        } else {
-          result.diskEncryptionKey_ = diskEncryptionKeyBuilder_.build();
-        }
+        result.diskEncryptionKey_ =
+            diskEncryptionKeyBuilder_ == null
+                ? diskEncryptionKey_
+                : diskEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceDisk_ = sourceDisk_;
         to_bitField0_ |= 0x00000002;
       }
-      result.sourceDisk_ = sourceDisk_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -515,8 +521,8 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         mergeDiskEncryptionKey(other.getDiskEncryptionKey());
       }
       if (other.hasSourceDisk()) {
-        bitField0_ |= 0x00000002;
         sourceDisk_ = other.sourceDisk_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -638,11 +644,11 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         diskEncryptionKey_ = value;
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -660,11 +666,11 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
       if (diskEncryptionKeyBuilder_ == null) {
         diskEncryptionKey_ = builderForValue.build();
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -684,18 +690,15 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
             && diskEncryptionKey_ != null
             && diskEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
-          diskEncryptionKey_ =
-              com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(diskEncryptionKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDiskEncryptionKeyBuilder().mergeFrom(value);
         } else {
           diskEncryptionKey_ = value;
         }
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -710,13 +713,13 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDiskEncryptionKey() {
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-        onChanged();
-      } else {
-        diskEncryptionKeyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -859,8 +862,8 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       sourceDisk_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -876,8 +879,8 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSourceDisk() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       sourceDisk_ = getDefaultInstance().getSourceDisk();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -898,8 +901,8 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       sourceDisk_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

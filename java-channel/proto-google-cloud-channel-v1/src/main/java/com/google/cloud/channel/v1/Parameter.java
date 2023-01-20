@@ -68,7 +68,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -159,11 +161,11 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    return value_ == null ? com.google.cloud.channel.v1.Value.getDefaultInstance() : value_;
   }
 
   public static final int EDITABLE_FIELD_NUMBER = 3;
-  private boolean editable_;
+  private boolean editable_ = false;
   /**
    *
    *
@@ -400,16 +402,14 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
       editable_ = false;
-
       return this;
     }
 
@@ -437,15 +437,24 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.Parameter buildPartial() {
       com.google.cloud.channel.v1.Parameter result =
           new com.google.cloud.channel.v1.Parameter(this);
-      result.name_ = name_;
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.editable_ = editable_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Parameter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.editable_ = editable_;
+      }
     }
 
     @java.lang.Override
@@ -495,6 +504,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.Parameter.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasValue()) {
@@ -532,19 +542,19 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 editable_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -563,6 +573,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -625,8 +637,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +654,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +676,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,7 +700,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +735,11 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         value_ = value;
-        onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +754,11 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public Builder setValue(com.google.cloud.channel.v1.Value.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
-        onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,17 +772,18 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeValue(com.google.cloud.channel.v1.Value value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ =
-              com.google.cloud.channel.v1.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && value_ != null
+            && value_ != com.google.cloud.channel.v1.Value.getDefaultInstance()) {
+          getValueBuilder().mergeFrom(value);
         } else {
           value_ = value;
         }
-        onChanged();
       } else {
         valueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,14 +796,13 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Value value = 2;</code>
      */
     public Builder clearValue() {
-      if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
-      } else {
-        value_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -803,7 +815,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Value value = 2;</code>
      */
     public com.google.cloud.channel.v1.Value.Builder getValueBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
@@ -884,6 +896,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     public Builder setEditable(boolean value) {
 
       editable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -901,7 +914,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEditable() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       editable_ = false;
       onChanged();
       return this;

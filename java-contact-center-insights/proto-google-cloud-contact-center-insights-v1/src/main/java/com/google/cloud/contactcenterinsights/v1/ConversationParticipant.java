@@ -463,7 +463,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   public static final int DIALOGFLOW_PARTICIPANT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dialogflowParticipant_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dialogflowParticipant_ = "";
   /**
    *
    *
@@ -524,7 +526,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   public static final int OBFUSCATED_EXTERNAL_USER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object obfuscatedExternalUserId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object obfuscatedExternalUserId_ = "";
   /**
    *
    *
@@ -573,7 +577,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private int role_;
+  private int role_ = 0;
   /**
    *
    *
@@ -602,9 +606,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRole() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
-        com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(role_);
+        com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(role_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
         : result;
@@ -869,12 +872,10 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dialogflowParticipant_ = "";
-
       obfuscatedExternalUserId_ = "";
-
       role_ = 0;
-
       participantCase_ = 0;
       participant_ = null;
       return this;
@@ -905,18 +906,32 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
     public com.google.cloud.contactcenterinsights.v1.ConversationParticipant buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ConversationParticipant result =
           new com.google.cloud.contactcenterinsights.v1.ConversationParticipant(this);
-      if (participantCase_ == 5) {
-        result.participant_ = participant_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (participantCase_ == 6) {
-        result.participant_ = participant_;
-      }
-      result.dialogflowParticipant_ = dialogflowParticipant_;
-      result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
-      result.role_ = role_;
-      result.participantCase_ = participantCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ConversationParticipant result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dialogflowParticipant_ = dialogflowParticipant_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.obfuscatedExternalUserId_ = obfuscatedExternalUserId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.role_ = role_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.ConversationParticipant result) {
+      result.participantCase_ = participantCase_;
+      result.participant_ = this.participant_;
     }
 
     @java.lang.Override
@@ -969,10 +984,12 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         return this;
       if (!other.getDialogflowParticipant().isEmpty()) {
         dialogflowParticipant_ = other.dialogflowParticipant_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getObfuscatedExternalUserId().isEmpty()) {
         obfuscatedExternalUserId_ = other.obfuscatedExternalUserId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.role_ != 0) {
@@ -1027,19 +1044,19 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
             case 10:
               {
                 dialogflowParticipant_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 16:
               {
                 role_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 26:
               {
                 obfuscatedExternalUserId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 42:
@@ -1086,6 +1103,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1446,8 +1465,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       dialogflowParticipant_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1469,8 +1488,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      */
     @java.lang.Deprecated
     public Builder clearDialogflowParticipant() {
-
       dialogflowParticipant_ = getDefaultInstance().getDialogflowParticipant();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1497,8 +1516,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dialogflowParticipant_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1564,8 +1583,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1581,8 +1600,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearObfuscatedExternalUserId() {
-
       obfuscatedExternalUserId_ = getDefaultInstance().getObfuscatedExternalUserId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1603,8 +1622,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       obfuscatedExternalUserId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1638,8 +1657,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setRoleValue(int value) {
-
       role_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1656,9 +1675,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRole() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result =
-          com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(role_);
+          com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.forNumber(role_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED
           : result;
@@ -1680,7 +1698,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       role_ = value.getNumber();
       onChanged();
       return this;
@@ -1697,7 +1715,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       role_ = 0;
       onChanged();
       return this;

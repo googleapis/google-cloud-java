@@ -408,7 +408,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int AVG_MS_FIELD_NUMBER = 204811827;
-  private long avgMs_;
+  private long avgMs_ = 0L;
   /**
    *
    *
@@ -441,7 +441,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
-  private volatile java.lang.Object duration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object duration_ = "";
   /**
    *
    *
@@ -508,7 +510,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAX_MS_FIELD_NUMBER = 529474145;
-  private long maxMs_;
+  private long maxMs_ = 0L;
   /**
    *
    *
@@ -541,7 +543,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MIN_MS_FIELD_NUMBER = 536564403;
-  private long minMs_;
+  private long minMs_ = 0L;
   /**
    *
    *
@@ -574,7 +576,7 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NUM_INTERVALS_FIELD_NUMBER = 186329813;
-  private long numIntervals_;
+  private long numIntervals_ = 0L;
   /**
    *
    *
@@ -607,7 +609,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -945,18 +949,13 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       avgMs_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       maxMs_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000004);
       minMs_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
       numIntervals_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -984,6 +983,14 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.PacketIntervals buildPartial() {
       com.google.cloud.compute.v1.PacketIntervals result =
           new com.google.cloud.compute.v1.PacketIntervals(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PacketIntervals result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -991,9 +998,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.duration_ = duration_;
         to_bitField0_ |= 0x00000002;
       }
-      result.duration_ = duration_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxMs_ = maxMs_;
         to_bitField0_ |= 0x00000004;
@@ -1007,12 +1014,10 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000020;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1064,8 +1069,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         setAvgMs(other.getAvgMs());
       }
       if (other.hasDuration()) {
-        bitField0_ |= 0x00000002;
         duration_ = other.duration_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasMaxMs()) {
@@ -1078,8 +1083,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         setNumIntervals(other.getNumIntervals());
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000020;
         type_ = other.type_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1207,8 +1212,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAvgMs(long value) {
-      bitField0_ |= 0x00000001;
+
       avgMs_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1309,8 +1315,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1327,8 +1333,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       duration_ = getDefaultInstance().getDuration();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1350,8 +1356,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       duration_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1400,8 +1406,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMaxMs(long value) {
-      bitField0_ |= 0x00000004;
+
       maxMs_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1467,8 +1474,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMinMs(long value) {
-      bitField0_ |= 0x00000008;
+
       minMs_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1534,8 +1542,9 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setNumIntervals(long value) {
-      bitField0_ |= 0x00000010;
+
       numIntervals_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1636,8 +1645,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       type_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1654,8 +1663,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1677,8 +1686,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       type_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

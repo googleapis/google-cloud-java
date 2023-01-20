@@ -1206,7 +1206,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ADDRESS_FIELD_NUMBER = 462920692;
-  private volatile java.lang.Object address_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object address_ = "";
   /**
    *
    *
@@ -1270,7 +1272,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_TYPE_FIELD_NUMBER = 264307877;
-  private volatile java.lang.Object addressType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object addressType_ = "";
   /**
    *
    *
@@ -1337,7 +1341,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -1401,7 +1407,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1465,7 +1473,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -1498,7 +1506,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_VERSION_FIELD_NUMBER = 294959552;
-  private volatile java.lang.Object ipVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipVersion_ = "";
   /**
    *
    *
@@ -1565,7 +1575,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IPV6_ENDPOINT_TYPE_FIELD_NUMBER = 97501004;
-  private volatile java.lang.Object ipv6EndpointType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6EndpointType_ = "";
   /**
    *
    *
@@ -1632,7 +1644,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -1696,7 +1710,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1760,7 +1776,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -1824,7 +1842,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private volatile java.lang.Object networkTier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkTier_ = "";
   /**
    *
    *
@@ -1891,7 +1911,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREFIX_LENGTH_FIELD_NUMBER = 453565747;
-  private int prefixLength_;
+  private int prefixLength_ = 0;
   /**
    *
    *
@@ -1924,7 +1944,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PURPOSE_FIELD_NUMBER = 316407070;
-  private volatile java.lang.Object purpose_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object purpose_ = "";
   /**
    *
    *
@@ -1991,7 +2013,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -2055,7 +2079,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -2119,7 +2145,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -2186,7 +2214,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -2250,6 +2280,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USERS_FIELD_NUMBER = 111578632;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList users_;
   /**
    *
@@ -2751,40 +2783,24 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       address_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       addressType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
       ipVersion_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       ipv6EndpointType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       network_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       networkTier_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       prefixLength_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
       purpose_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       subnetwork_ = "";
-      bitField0_ = (bitField0_ & ~0x00010000);
       users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00020000);
       return this;
@@ -2813,84 +2829,94 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Address buildPartial() {
       com.google.cloud.compute.v1.Address result = new com.google.cloud.compute.v1.Address(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.address_ = address_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.addressType_ = addressType_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.ipVersion_ = ipVersion_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.ipv6EndpointType_ = ipv6EndpointType_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.network_ = network_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.networkTier_ = networkTier_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.prefixLength_ = prefixLength_;
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00001000;
-      }
-      result.purpose_ = purpose_;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        to_bitField0_ |= 0x00002000;
-      }
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        to_bitField0_ |= 0x00004000;
-      }
-      result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        to_bitField0_ |= 0x00008000;
-      }
-      result.status_ = status_;
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        to_bitField0_ |= 0x00010000;
-      }
-      result.subnetwork_ = subnetwork_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Address result) {
       if (((bitField0_ & 0x00020000) != 0)) {
         users_ = users_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00020000);
       }
       result.users_ = users_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Address result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.address_ = address_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.addressType_ = addressType_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ipVersion_ = ipVersion_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.ipv6EndpointType_ = ipv6EndpointType_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.network_ = network_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.networkTier_ = networkTier_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.prefixLength_ = prefixLength_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.purpose_ = purpose_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.subnetwork_ = subnetwork_;
+        to_bitField0_ |= 0x00010000;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2939,84 +2965,84 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Address other) {
       if (other == com.google.cloud.compute.v1.Address.getDefaultInstance()) return this;
       if (other.hasAddress()) {
-        bitField0_ |= 0x00000001;
         address_ = other.address_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAddressType()) {
-        bitField0_ |= 0x00000002;
         addressType_ = other.addressType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasIpVersion()) {
-        bitField0_ |= 0x00000020;
         ipVersion_ = other.ipVersion_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasIpv6EndpointType()) {
-        bitField0_ |= 0x00000040;
         ipv6EndpointType_ = other.ipv6EndpointType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000080;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000100;
         name_ = other.name_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000200;
         network_ = other.network_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        bitField0_ |= 0x00000400;
         networkTier_ = other.networkTier_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasPrefixLength()) {
         setPrefixLength(other.getPrefixLength());
       }
       if (other.hasPurpose()) {
-        bitField0_ |= 0x00001000;
         purpose_ = other.purpose_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00002000;
         region_ = other.region_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00004000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00008000;
         status_ = other.status_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00010000;
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
@@ -3258,8 +3284,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3275,8 +3301,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       address_ = getDefaultInstance().getAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3297,8 +3323,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       address_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3382,8 +3408,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       addressType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3400,8 +3426,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddressType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       addressType_ = getDefaultInstance().getAddressType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3423,8 +3449,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       addressType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3504,8 +3530,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3521,8 +3547,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3543,8 +3569,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3624,8 +3650,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3641,8 +3667,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3663,8 +3689,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3713,8 +3739,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000010;
+
       id_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3815,8 +3842,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       ipVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3833,8 +3860,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpVersion() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       ipVersion_ = getDefaultInstance().getIpVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3856,8 +3883,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       ipVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3941,8 +3968,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       ipv6EndpointType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3959,8 +3986,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpv6EndpointType() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       ipv6EndpointType_ = getDefaultInstance().getIpv6EndpointType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3982,8 +4009,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       ipv6EndpointType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4063,8 +4090,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       kind_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4080,8 +4107,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4102,8 +4129,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       kind_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4183,8 +4210,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       name_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4200,8 +4227,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4222,8 +4249,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       name_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4303,8 +4330,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       network_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4320,8 +4347,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4342,8 +4369,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       network_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4427,8 +4454,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       networkTier_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4445,8 +4472,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       networkTier_ = getDefaultInstance().getNetworkTier();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4468,8 +4495,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       networkTier_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4518,8 +4545,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrefixLength(int value) {
-      bitField0_ |= 0x00000800;
+
       prefixLength_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4620,8 +4648,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       purpose_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4638,8 +4666,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       purpose_ = getDefaultInstance().getPurpose();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4661,8 +4689,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       purpose_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4742,8 +4770,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       region_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4759,8 +4787,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4781,8 +4809,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       region_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4862,8 +4890,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       selfLink_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4879,8 +4907,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4901,8 +4929,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       selfLink_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4986,8 +5014,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       status_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5004,8 +5032,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5027,8 +5055,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       status_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5108,8 +5136,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
       subnetwork_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5125,8 +5153,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00010000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5147,8 +5175,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
       subnetwork_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

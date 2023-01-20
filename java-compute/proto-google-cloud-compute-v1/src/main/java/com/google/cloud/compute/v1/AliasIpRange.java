@@ -70,7 +70,9 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 98117322;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_RANGE_NAME_FIELD_NUMBER = 387995966;
-  private volatile java.lang.Object subnetworkRangeName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetworkRangeName_ = "";
   /**
    *
    *
@@ -413,10 +417,9 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipCidrRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       subnetworkRangeName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -444,19 +447,25 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AliasIpRange buildPartial() {
       com.google.cloud.compute.v1.AliasIpRange result =
           new com.google.cloud.compute.v1.AliasIpRange(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AliasIpRange result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ipCidrRange_ = ipCidrRange_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subnetworkRangeName_ = subnetworkRangeName_;
         to_bitField0_ |= 0x00000002;
       }
-      result.subnetworkRangeName_ = subnetworkRangeName_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.AliasIpRange other) {
       if (other == com.google.cloud.compute.v1.AliasIpRange.getDefaultInstance()) return this;
       if (other.hasIpCidrRange()) {
-        bitField0_ |= 0x00000001;
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSubnetworkRangeName()) {
-        bitField0_ |= 0x00000002;
         subnetworkRangeName_ = other.subnetworkRangeName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,8 +655,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +672,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +694,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       subnetworkRangeName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetworkRangeName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       subnetworkRangeName_ = getDefaultInstance().getSubnetworkRangeName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +814,8 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       subnetworkRangeName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

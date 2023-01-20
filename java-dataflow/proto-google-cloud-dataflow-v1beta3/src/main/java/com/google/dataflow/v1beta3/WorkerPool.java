@@ -97,7 +97,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -148,7 +150,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NUM_WORKERS_FIELD_NUMBER = 2;
-  private int numWorkers_;
+  private int numWorkers_ = 0;
   /**
    *
    *
@@ -168,6 +170,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.Package> packages_;
   /**
    *
@@ -237,7 +241,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_PACKAGE_SET_FIELD_NUMBER = 4;
-  private int defaultPackageSet_;
+  private int defaultPackageSet_ = 0;
   /**
    *
    *
@@ -270,14 +274,15 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.DefaultPackageSet getDefaultPackageSet() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.DefaultPackageSet result =
-        com.google.dataflow.v1beta3.DefaultPackageSet.valueOf(defaultPackageSet_);
+        com.google.dataflow.v1beta3.DefaultPackageSet.forNumber(defaultPackageSet_);
     return result == null ? com.google.dataflow.v1beta3.DefaultPackageSet.UNRECOGNIZED : result;
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -328,7 +333,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEARDOWN_POLICY_FIELD_NUMBER = 6;
-  private int teardownPolicy_;
+  private int teardownPolicy_ = 0;
   /**
    *
    *
@@ -383,14 +388,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.TeardownPolicy getTeardownPolicy() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.TeardownPolicy result =
-        com.google.dataflow.v1beta3.TeardownPolicy.valueOf(teardownPolicy_);
+        com.google.dataflow.v1beta3.TeardownPolicy.forNumber(teardownPolicy_);
     return result == null ? com.google.dataflow.v1beta3.TeardownPolicy.UNRECOGNIZED : result;
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 7;
-  private int diskSizeGb_;
+  private int diskSizeGb_ = 0;
   /**
    *
    *
@@ -409,7 +413,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 16;
-  private volatile java.lang.Object diskType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskType_ = "";
   /**
    *
    *
@@ -460,7 +466,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SOURCE_IMAGE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object diskSourceImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskSourceImage_ = "";
   /**
    *
    *
@@ -509,7 +517,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 9;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -610,11 +620,15 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.TaskRunnerSettingsOrBuilder getTaskrunnerSettingsOrBuilder() {
-    return getTaskrunnerSettings();
+    return taskrunnerSettings_ == null
+        ? com.google.dataflow.v1beta3.TaskRunnerSettings.getDefaultInstance()
+        : taskrunnerSettings_;
   }
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object onHostMaintenance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object onHostMaintenance_ = "";
   /**
    *
    *
@@ -665,6 +679,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_DISKS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.Disk> dataDisks_;
   /**
    *
@@ -746,6 +762,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -803,8 +820,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 13;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -878,7 +897,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.dataflow.v1beta3.AutoscalingSettingsOrBuilder
       getAutoscalingSettingsOrBuilder() {
-    return getAutoscalingSettings();
+    return autoscalingSettings_ == null
+        ? com.google.dataflow.v1beta3.AutoscalingSettings.getDefaultInstance()
+        : autoscalingSettings_;
   }
 
   public static final int POOL_ARGS_FIELD_NUMBER = 15;
@@ -924,11 +945,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getPoolArgsOrBuilder() {
-    return getPoolArgs();
+    return poolArgs_ == null ? com.google.protobuf.Any.getDefaultInstance() : poolArgs_;
   }
 
   public static final int NETWORK_FIELD_NUMBER = 17;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -979,7 +1002,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 19;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -1030,7 +1055,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_HARNESS_CONTAINER_IMAGE_FIELD_NUMBER = 18;
-  private volatile java.lang.Object workerHarnessContainerImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerHarnessContainerImage_ = "";
   /**
    *
    *
@@ -1083,7 +1110,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NUM_THREADS_PER_WORKER_FIELD_NUMBER = 20;
-  private int numThreadsPerWorker_;
+  private int numThreadsPerWorker_ = 0;
   /**
    *
    *
@@ -1103,7 +1130,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_CONFIGURATION_FIELD_NUMBER = 21;
-  private int ipConfiguration_;
+  private int ipConfiguration_ = 0;
   /**
    *
    *
@@ -1132,15 +1159,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.WorkerIPAddressConfiguration getIpConfiguration() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.WorkerIPAddressConfiguration result =
-        com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.valueOf(ipConfiguration_);
+        com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.forNumber(ipConfiguration_);
     return result == null
         ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
         : result;
   }
 
   public static final int SDK_HARNESS_CONTAINER_IMAGES_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.SdkHarnessContainerImage>
       sdkHarnessContainerImages_;
   /**
@@ -1691,76 +1719,59 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-
       numWorkers_ = 0;
-
       if (packagesBuilder_ == null) {
         packages_ = java.util.Collections.emptyList();
       } else {
         packages_ = null;
         packagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultPackageSet_ = 0;
-
       machineType_ = "";
-
       teardownPolicy_ = 0;
-
       diskSizeGb_ = 0;
-
       diskType_ = "";
-
       diskSourceImage_ = "";
-
       zone_ = "";
-
-      if (taskrunnerSettingsBuilder_ == null) {
-        taskrunnerSettings_ = null;
-      } else {
-        taskrunnerSettings_ = null;
+      taskrunnerSettings_ = null;
+      if (taskrunnerSettingsBuilder_ != null) {
+        taskrunnerSettingsBuilder_.dispose();
         taskrunnerSettingsBuilder_ = null;
       }
       onHostMaintenance_ = "";
-
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
       } else {
         dataDisks_ = null;
         dataDisksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableMetadata().clear();
-      if (autoscalingSettingsBuilder_ == null) {
-        autoscalingSettings_ = null;
-      } else {
-        autoscalingSettings_ = null;
+      autoscalingSettings_ = null;
+      if (autoscalingSettingsBuilder_ != null) {
+        autoscalingSettingsBuilder_.dispose();
         autoscalingSettingsBuilder_ = null;
       }
-      if (poolArgsBuilder_ == null) {
-        poolArgs_ = null;
-      } else {
-        poolArgs_ = null;
+      poolArgs_ = null;
+      if (poolArgsBuilder_ != null) {
+        poolArgsBuilder_.dispose();
         poolArgsBuilder_ = null;
       }
       network_ = "";
-
       subnetwork_ = "";
-
       workerHarnessContainerImage_ = "";
-
       numThreadsPerWorker_ = 0;
-
       ipConfiguration_ = 0;
-
       if (sdkHarnessContainerImagesBuilder_ == null) {
         sdkHarnessContainerImages_ = java.util.Collections.emptyList();
       } else {
         sdkHarnessContainerImages_ = null;
         sdkHarnessContainerImagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00200000);
       return this;
     }
 
@@ -1788,69 +1799,111 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.WorkerPool buildPartial() {
       com.google.dataflow.v1beta3.WorkerPool result =
           new com.google.dataflow.v1beta3.WorkerPool(this);
-      int from_bitField0_ = bitField0_;
-      result.kind_ = kind_;
-      result.numWorkers_ = numWorkers_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.WorkerPool result) {
       if (packagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           packages_ = java.util.Collections.unmodifiableList(packages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.packages_ = packages_;
       } else {
         result.packages_ = packagesBuilder_.build();
       }
-      result.defaultPackageSet_ = defaultPackageSet_;
-      result.machineType_ = machineType_;
-      result.teardownPolicy_ = teardownPolicy_;
-      result.diskSizeGb_ = diskSizeGb_;
-      result.diskType_ = diskType_;
-      result.diskSourceImage_ = diskSourceImage_;
-      result.zone_ = zone_;
-      if (taskrunnerSettingsBuilder_ == null) {
-        result.taskrunnerSettings_ = taskrunnerSettings_;
-      } else {
-        result.taskrunnerSettings_ = taskrunnerSettingsBuilder_.build();
-      }
-      result.onHostMaintenance_ = onHostMaintenance_;
       if (dataDisksBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           dataDisks_ = java.util.Collections.unmodifiableList(dataDisks_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.dataDisks_ = dataDisks_;
       } else {
         result.dataDisks_ = dataDisksBuilder_.build();
       }
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      if (autoscalingSettingsBuilder_ == null) {
-        result.autoscalingSettings_ = autoscalingSettings_;
-      } else {
-        result.autoscalingSettings_ = autoscalingSettingsBuilder_.build();
-      }
-      if (poolArgsBuilder_ == null) {
-        result.poolArgs_ = poolArgs_;
-      } else {
-        result.poolArgs_ = poolArgsBuilder_.build();
-      }
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.workerHarnessContainerImage_ = workerHarnessContainerImage_;
-      result.numThreadsPerWorker_ = numThreadsPerWorker_;
-      result.ipConfiguration_ = ipConfiguration_;
       if (sdkHarnessContainerImagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           sdkHarnessContainerImages_ =
               java.util.Collections.unmodifiableList(sdkHarnessContainerImages_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.sdkHarnessContainerImages_ = sdkHarnessContainerImages_;
       } else {
         result.sdkHarnessContainerImages_ = sdkHarnessContainerImagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.WorkerPool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.numWorkers_ = numWorkers_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultPackageSet_ = defaultPackageSet_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.teardownPolicy_ = teardownPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.diskType_ = diskType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.diskSourceImage_ = diskSourceImage_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.taskrunnerSettings_ =
+            taskrunnerSettingsBuilder_ == null
+                ? taskrunnerSettings_
+                : taskrunnerSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.onHostMaintenance_ = onHostMaintenance_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.autoscalingSettings_ =
+            autoscalingSettingsBuilder_ == null
+                ? autoscalingSettings_
+                : autoscalingSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.poolArgs_ = poolArgsBuilder_ == null ? poolArgs_ : poolArgsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.workerHarnessContainerImage_ = workerHarnessContainerImage_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.numThreadsPerWorker_ = numThreadsPerWorker_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.ipConfiguration_ = ipConfiguration_;
+      }
     }
 
     @java.lang.Override
@@ -1900,6 +1953,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.WorkerPool.getDefaultInstance()) return this;
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getNumWorkers() != 0) {
@@ -1909,7 +1963,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         if (!other.packages_.isEmpty()) {
           if (packages_.isEmpty()) {
             packages_ = other.packages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensurePackagesIsMutable();
             packages_.addAll(other.packages_);
@@ -1922,7 +1976,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             packagesBuilder_.dispose();
             packagesBuilder_ = null;
             packages_ = other.packages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             packagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPackagesFieldBuilder()
@@ -1937,6 +1991,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.teardownPolicy_ != 0) {
@@ -1947,14 +2002,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDiskSourceImage().isEmpty()) {
         diskSourceImage_ = other.diskSourceImage_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasTaskrunnerSettings()) {
@@ -1962,13 +2020,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOnHostMaintenance().isEmpty()) {
         onHostMaintenance_ = other.onHostMaintenance_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (dataDisksBuilder_ == null) {
         if (!other.dataDisks_.isEmpty()) {
           if (dataDisks_.isEmpty()) {
             dataDisks_ = other.dataDisks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureDataDisksIsMutable();
             dataDisks_.addAll(other.dataDisks_);
@@ -1981,7 +2040,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             dataDisksBuilder_.dispose();
             dataDisksBuilder_ = null;
             dataDisks_ = other.dataDisks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
             dataDisksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataDisksFieldBuilder()
@@ -1992,6 +2051,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00002000;
       if (other.hasAutoscalingSettings()) {
         mergeAutoscalingSettings(other.getAutoscalingSettings());
       }
@@ -2000,14 +2060,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getWorkerHarnessContainerImage().isEmpty()) {
         workerHarnessContainerImage_ = other.workerHarnessContainerImage_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.getNumThreadsPerWorker() != 0) {
@@ -2020,7 +2083,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         if (!other.sdkHarnessContainerImages_.isEmpty()) {
           if (sdkHarnessContainerImages_.isEmpty()) {
             sdkHarnessContainerImages_ = other.sdkHarnessContainerImages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureSdkHarnessContainerImagesIsMutable();
             sdkHarnessContainerImages_.addAll(other.sdkHarnessContainerImages_);
@@ -2033,7 +2096,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             sdkHarnessContainerImagesBuilder_.dispose();
             sdkHarnessContainerImagesBuilder_ = null;
             sdkHarnessContainerImages_ = other.sdkHarnessContainerImages_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00200000);
             sdkHarnessContainerImagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSdkHarnessContainerImagesFieldBuilder()
@@ -2072,13 +2135,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 numWorkers_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -2097,50 +2160,50 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 defaultPackageSet_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 teardownPolicy_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 diskSizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 diskSourceImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getTaskrunnerSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 onHostMaintenance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
@@ -2164,55 +2227,56 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getAutoscalingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(getPoolArgsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 diskType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 130
             case 138:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 workerHarnessContainerImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 146
             case 154:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 154
             case 160:
               {
                 numThreadsPerWorker_ = input.readInt32();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 160
             case 168:
               {
                 ipConfiguration_ = input.readEnum();
-
+                bitField0_ |= 0x00100000;
                 break;
               } // case 168
             case 178:
@@ -2312,8 +2376,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2330,8 +2394,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2353,8 +2417,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2394,6 +2458,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setNumWorkers(int value) {
 
       numWorkers_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2411,7 +2476,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNumWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       numWorkers_ = 0;
       onChanged();
       return this;
@@ -2421,9 +2486,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePackagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         packages_ = new java.util.ArrayList<com.google.dataflow.v1beta3.Package>(packages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2638,7 +2703,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPackages() {
       if (packagesBuilder_ == null) {
         packages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         packagesBuilder_.clear();
@@ -2759,7 +2824,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.Package,
                 com.google.dataflow.v1beta3.Package.Builder,
                 com.google.dataflow.v1beta3.PackageOrBuilder>(
-                packages_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                packages_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         packages_ = null;
       }
       return packagesBuilder_;
@@ -2798,8 +2863,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDefaultPackageSetValue(int value) {
-
       defaultPackageSet_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2818,9 +2883,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.DefaultPackageSet getDefaultPackageSet() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.DefaultPackageSet result =
-          com.google.dataflow.v1beta3.DefaultPackageSet.valueOf(defaultPackageSet_);
+          com.google.dataflow.v1beta3.DefaultPackageSet.forNumber(defaultPackageSet_);
       return result == null ? com.google.dataflow.v1beta3.DefaultPackageSet.UNRECOGNIZED : result;
     }
     /**
@@ -2841,7 +2905,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       defaultPackageSet_ = value.getNumber();
       onChanged();
       return this;
@@ -2860,7 +2924,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultPackageSet() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       defaultPackageSet_ = 0;
       onChanged();
       return this;
@@ -2930,8 +2994,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2948,8 +3012,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2971,8 +3035,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3032,8 +3096,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTeardownPolicyValue(int value) {
-
       teardownPolicy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3063,9 +3127,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.TeardownPolicy getTeardownPolicy() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.TeardownPolicy result =
-          com.google.dataflow.v1beta3.TeardownPolicy.valueOf(teardownPolicy_);
+          com.google.dataflow.v1beta3.TeardownPolicy.forNumber(teardownPolicy_);
       return result == null ? com.google.dataflow.v1beta3.TeardownPolicy.UNRECOGNIZED : result;
     }
     /**
@@ -3097,7 +3160,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       teardownPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -3127,7 +3190,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTeardownPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       teardownPolicy_ = 0;
       onChanged();
       return this;
@@ -3166,6 +3229,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskSizeGb(int value) {
 
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3182,7 +3246,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       diskSizeGb_ = 0;
       onChanged();
       return this;
@@ -3252,8 +3316,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       diskType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3270,8 +3334,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
       diskType_ = getDefaultInstance().getDiskType();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3293,8 +3357,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diskType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3360,8 +3424,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       diskSourceImage_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3377,8 +3441,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSourceImage() {
-
       diskSourceImage_ = getDefaultInstance().getDiskSourceImage();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3399,8 +3463,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       diskSourceImage_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3469,8 +3533,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3487,8 +3551,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3510,8 +3574,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3536,7 +3600,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskrunnerSettings field is set.
      */
     public boolean hasTaskrunnerSettings() {
-      return taskrunnerSettingsBuilder_ != null || taskrunnerSettings_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3577,11 +3641,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         taskrunnerSettings_ = value;
-        onChanged();
       } else {
         taskrunnerSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3599,11 +3663,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.TaskRunnerSettings.Builder builderForValue) {
       if (taskrunnerSettingsBuilder_ == null) {
         taskrunnerSettings_ = builderForValue.build();
-        onChanged();
       } else {
         taskrunnerSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3619,19 +3683,19 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTaskrunnerSettings(com.google.dataflow.v1beta3.TaskRunnerSettings value) {
       if (taskrunnerSettingsBuilder_ == null) {
-        if (taskrunnerSettings_ != null) {
-          taskrunnerSettings_ =
-              com.google.dataflow.v1beta3.TaskRunnerSettings.newBuilder(taskrunnerSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && taskrunnerSettings_ != null
+            && taskrunnerSettings_
+                != com.google.dataflow.v1beta3.TaskRunnerSettings.getDefaultInstance()) {
+          getTaskrunnerSettingsBuilder().mergeFrom(value);
         } else {
           taskrunnerSettings_ = value;
         }
-        onChanged();
       } else {
         taskrunnerSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3646,14 +3710,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.TaskRunnerSettings taskrunner_settings = 10;</code>
      */
     public Builder clearTaskrunnerSettings() {
-      if (taskrunnerSettingsBuilder_ == null) {
-        taskrunnerSettings_ = null;
-        onChanged();
-      } else {
-        taskrunnerSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      taskrunnerSettings_ = null;
+      if (taskrunnerSettingsBuilder_ != null) {
+        taskrunnerSettingsBuilder_.dispose();
         taskrunnerSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3668,7 +3731,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.TaskRunnerSettings taskrunner_settings = 10;</code>
      */
     public com.google.dataflow.v1beta3.TaskRunnerSettings.Builder getTaskrunnerSettingsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getTaskrunnerSettingsFieldBuilder().getBuilder();
     }
@@ -3785,8 +3848,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       onHostMaintenance_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3803,8 +3866,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOnHostMaintenance() {
-
       onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3826,8 +3889,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       onHostMaintenance_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3836,9 +3899,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDataDisksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         dataDisks_ = new java.util.ArrayList<com.google.dataflow.v1beta3.Disk>(dataDisks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4053,7 +4116,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDataDisks() {
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         dataDisksBuilder_.clear();
@@ -4174,7 +4237,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.Disk,
                 com.google.dataflow.v1beta3.Disk.Builder,
                 com.google.dataflow.v1beta3.DiskOrBuilder>(
-                dataDisks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                dataDisks_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         dataDisks_ = null;
       }
       return dataDisksBuilder_;
@@ -4191,8 +4254,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -4200,6 +4261,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00002000;
+      onChanged();
       return metadata_;
     }
 
@@ -4251,8 +4314,10 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 13;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4281,6 +4346,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -4303,6 +4369,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00002000;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -4321,8 +4388,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -4336,6 +4403,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
       return this;
     }
 
@@ -4357,7 +4425,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscalingSettings field is set.
      */
     public boolean hasAutoscalingSettings() {
-      return autoscalingSettingsBuilder_ != null || autoscalingSettings_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4394,11 +4462,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         autoscalingSettings_ = value;
-        onChanged();
       } else {
         autoscalingSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4414,11 +4482,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         com.google.dataflow.v1beta3.AutoscalingSettings.Builder builderForValue) {
       if (autoscalingSettingsBuilder_ == null) {
         autoscalingSettings_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalingSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4432,19 +4500,19 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAutoscalingSettings(com.google.dataflow.v1beta3.AutoscalingSettings value) {
       if (autoscalingSettingsBuilder_ == null) {
-        if (autoscalingSettings_ != null) {
-          autoscalingSettings_ =
-              com.google.dataflow.v1beta3.AutoscalingSettings.newBuilder(autoscalingSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && autoscalingSettings_ != null
+            && autoscalingSettings_
+                != com.google.dataflow.v1beta3.AutoscalingSettings.getDefaultInstance()) {
+          getAutoscalingSettingsBuilder().mergeFrom(value);
         } else {
           autoscalingSettings_ = value;
         }
-        onChanged();
       } else {
         autoscalingSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -4457,14 +4525,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.AutoscalingSettings autoscaling_settings = 14;</code>
      */
     public Builder clearAutoscalingSettings() {
-      if (autoscalingSettingsBuilder_ == null) {
-        autoscalingSettings_ = null;
-        onChanged();
-      } else {
-        autoscalingSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      autoscalingSettings_ = null;
+      if (autoscalingSettingsBuilder_ != null) {
+        autoscalingSettingsBuilder_.dispose();
         autoscalingSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4477,7 +4544,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.dataflow.v1beta3.AutoscalingSettings autoscaling_settings = 14;</code>
      */
     public com.google.dataflow.v1beta3.AutoscalingSettings.Builder getAutoscalingSettingsBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getAutoscalingSettingsFieldBuilder().getBuilder();
     }
@@ -4544,7 +4611,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the poolArgs field is set.
      */
     public boolean hasPoolArgs() {
-      return poolArgsBuilder_ != null || poolArgs_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4579,11 +4646,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         poolArgs_ = value;
-        onChanged();
       } else {
         poolArgsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4598,11 +4665,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoolArgs(com.google.protobuf.Any.Builder builderForValue) {
       if (poolArgsBuilder_ == null) {
         poolArgs_ = builderForValue.build();
-        onChanged();
       } else {
         poolArgsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4616,16 +4683,18 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePoolArgs(com.google.protobuf.Any value) {
       if (poolArgsBuilder_ == null) {
-        if (poolArgs_ != null) {
-          poolArgs_ = com.google.protobuf.Any.newBuilder(poolArgs_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && poolArgs_ != null
+            && poolArgs_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getPoolArgsBuilder().mergeFrom(value);
         } else {
           poolArgs_ = value;
         }
-        onChanged();
       } else {
         poolArgsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4638,14 +4707,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any pool_args = 15;</code>
      */
     public Builder clearPoolArgs() {
-      if (poolArgsBuilder_ == null) {
-        poolArgs_ = null;
-        onChanged();
-      } else {
-        poolArgs_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      poolArgs_ = null;
+      if (poolArgsBuilder_ != null) {
+        poolArgsBuilder_.dispose();
         poolArgsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4658,7 +4726,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any pool_args = 15;</code>
      */
     public com.google.protobuf.Any.Builder getPoolArgsBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getPoolArgsFieldBuilder().getBuilder();
     }
@@ -4767,8 +4835,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4785,8 +4853,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4808,8 +4876,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4878,8 +4946,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4896,8 +4964,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4919,8 +4987,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4992,8 +5060,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerHarnessContainerImage_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5011,8 +5079,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerHarnessContainerImage() {
-
       workerHarnessContainerImage_ = getDefaultInstance().getWorkerHarnessContainerImage();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5035,8 +5103,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerHarnessContainerImage_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5076,6 +5144,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setNumThreadsPerWorker(int value) {
 
       numThreadsPerWorker_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5093,7 +5162,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNumThreadsPerWorker() {
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       numThreadsPerWorker_ = 0;
       onChanged();
       return this;
@@ -5128,8 +5197,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIpConfigurationValue(int value) {
-
       ipConfiguration_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5146,9 +5215,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.WorkerIPAddressConfiguration getIpConfiguration() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.WorkerIPAddressConfiguration result =
-          com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.valueOf(ipConfiguration_);
+          com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.forNumber(ipConfiguration_);
       return result == null
           ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
           : result;
@@ -5170,7 +5238,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00100000;
       ipConfiguration_ = value.getNumber();
       onChanged();
       return this;
@@ -5187,7 +5255,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpConfiguration() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       ipConfiguration_ = 0;
       onChanged();
       return this;
@@ -5197,11 +5265,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         sdkHarnessContainerImages_ = java.util.Collections.emptyList();
 
     private void ensureSdkHarnessContainerImagesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         sdkHarnessContainerImages_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.SdkHarnessContainerImage>(
                 sdkHarnessContainerImages_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -5477,7 +5545,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSdkHarnessContainerImages() {
       if (sdkHarnessContainerImagesBuilder_ == null) {
         sdkHarnessContainerImages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         sdkHarnessContainerImagesBuilder_.clear();
@@ -5640,7 +5708,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.SdkHarnessContainerImage.Builder,
                 com.google.dataflow.v1beta3.SdkHarnessContainerImageOrBuilder>(
                 sdkHarnessContainerImages_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         sdkHarnessContainerImages_ = null;

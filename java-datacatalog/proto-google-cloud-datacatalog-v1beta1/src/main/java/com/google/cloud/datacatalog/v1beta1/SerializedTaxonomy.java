@@ -71,7 +71,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -173,6 +177,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int POLICY_TAGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag> policyTags_;
   /**
    *
@@ -462,17 +468,16 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       description_ = "";
-
       if (policyTagsBuilder_ == null) {
         policyTags_ = java.util.Collections.emptyList();
       } else {
         policyTags_ = null;
         policyTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -500,20 +505,35 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy buildPartial() {
       com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy result =
           new com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy(this);
-      int from_bitField0_ = bitField0_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy result) {
       if (policyTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           policyTags_ = java.util.Collections.unmodifiableList(policyTags_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.policyTags_ = policyTags_;
       } else {
         result.policyTags_ = policyTagsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -564,17 +584,19 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (policyTagsBuilder_ == null) {
         if (!other.policyTags_.isEmpty()) {
           if (policyTags_.isEmpty()) {
             policyTags_ = other.policyTags_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensurePolicyTagsIsMutable();
             policyTags_.addAll(other.policyTags_);
@@ -587,7 +609,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
             policyTagsBuilder_.dispose();
             policyTagsBuilder_ = null;
             policyTags_ = other.policyTags_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             policyTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPolicyTagsFieldBuilder()
@@ -626,13 +648,13 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -729,8 +751,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +768,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -768,8 +790,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -841,8 +863,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,8 +882,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -884,8 +906,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,11 +916,11 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensurePolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         policyTags_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>(
                 policyTags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1120,7 +1142,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public Builder clearPolicyTags() {
       if (policyTagsBuilder_ == null) {
         policyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         policyTagsBuilder_.clear();
@@ -1248,7 +1270,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>(
-                policyTags_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                policyTags_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         policyTags_ = null;
       }
       return policyTagsBuilder_;

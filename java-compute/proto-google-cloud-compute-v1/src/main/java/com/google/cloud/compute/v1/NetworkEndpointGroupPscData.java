@@ -304,7 +304,9 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int CONSUMER_PSC_ADDRESS_FIELD_NUMBER = 452646572;
-  private volatile java.lang.Object consumerPscAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumerPscAddress_ = "";
   /**
    *
    *
@@ -368,7 +370,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   }
 
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
-  private long pscConnectionId_;
+  private long pscConnectionId_ = 0L;
   /**
    *
    *
@@ -401,7 +403,9 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
   }
 
   public static final int PSC_CONNECTION_STATUS_FIELD_NUMBER = 184149172;
-  private volatile java.lang.Object pscConnectionStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscConnectionStatus_ = "";
   /**
    *
    *
@@ -700,12 +704,10 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       consumerPscAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       pscConnectionId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       pscConnectionStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -733,23 +735,29 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.NetworkEndpointGroupPscData buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupPscData result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupPscData(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkEndpointGroupPscData result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.consumerPscAddress_ = consumerPscAddress_;
         to_bitField0_ |= 0x00000001;
       }
-      result.consumerPscAddress_ = consumerPscAddress_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pscConnectionStatus_ = pscConnectionStatus_;
         to_bitField0_ |= 0x00000004;
       }
-      result.pscConnectionStatus_ = pscConnectionStatus_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -799,16 +807,16 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroupPscData.getDefaultInstance())
         return this;
       if (other.hasConsumerPscAddress()) {
-        bitField0_ |= 0x00000001;
         consumerPscAddress_ = other.consumerPscAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPscConnectionId()) {
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasPscConnectionStatus()) {
-        bitField0_ |= 0x00000004;
         pscConnectionStatus_ = other.pscConnectionStatus_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -949,8 +957,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       consumerPscAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -966,8 +974,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearConsumerPscAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       consumerPscAddress_ = getDefaultInstance().getConsumerPscAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -988,8 +996,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       consumerPscAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1038,8 +1046,9 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setPscConnectionId(long value) {
-      bitField0_ |= 0x00000002;
+
       pscConnectionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1140,8 +1149,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       pscConnectionStatus_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1158,8 +1167,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       pscConnectionStatus_ = getDefaultInstance().getPscConnectionStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1181,8 +1190,8 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       pscConnectionStatus_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

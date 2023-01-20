@@ -298,7 +298,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int HOST_REDIRECT_FIELD_NUMBER = 107417747;
-  private volatile java.lang.Object hostRedirect_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostRedirect_ = "";
   /**
    *
    *
@@ -362,7 +364,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HTTPS_REDIRECT_FIELD_NUMBER = 170260656;
-  private boolean httpsRedirect_;
+  private boolean httpsRedirect_ = false;
   /**
    *
    *
@@ -395,7 +397,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PATH_REDIRECT_FIELD_NUMBER = 272342710;
-  private volatile java.lang.Object pathRedirect_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathRedirect_ = "";
   /**
    *
    *
@@ -459,7 +463,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PREFIX_REDIRECT_FIELD_NUMBER = 446184169;
-  private volatile java.lang.Object prefixRedirect_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prefixRedirect_ = "";
   /**
    *
    *
@@ -523,7 +529,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 436710408;
-  private volatile java.lang.Object redirectResponseCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectResponseCode_ = "";
   /**
    *
    *
@@ -590,7 +598,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STRIP_QUERY_FIELD_NUMBER = 52284641;
-  private boolean stripQuery_;
+  private boolean stripQuery_ = false;
   /**
    *
    *
@@ -896,18 +904,13 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostRedirect_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       httpsRedirect_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       pathRedirect_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       prefixRedirect_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       redirectResponseCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       stripQuery_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -935,35 +938,41 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.HttpRedirectAction buildPartial() {
       com.google.cloud.compute.v1.HttpRedirectAction result =
           new com.google.cloud.compute.v1.HttpRedirectAction(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpRedirectAction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostRedirect_ = hostRedirect_;
         to_bitField0_ |= 0x00000001;
       }
-      result.hostRedirect_ = hostRedirect_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.httpsRedirect_ = httpsRedirect_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pathRedirect_ = pathRedirect_;
         to_bitField0_ |= 0x00000004;
       }
-      result.pathRedirect_ = pathRedirect_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.prefixRedirect_ = prefixRedirect_;
         to_bitField0_ |= 0x00000008;
       }
-      result.prefixRedirect_ = prefixRedirect_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.redirectResponseCode_ = redirectResponseCode_;
         to_bitField0_ |= 0x00000010;
       }
-      result.redirectResponseCode_ = redirectResponseCode_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.stripQuery_ = stripQuery_;
         to_bitField0_ |= 0x00000020;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1012,26 +1021,26 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRedirectAction other) {
       if (other == com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) return this;
       if (other.hasHostRedirect()) {
-        bitField0_ |= 0x00000001;
         hostRedirect_ = other.hostRedirect_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHttpsRedirect()) {
         setHttpsRedirect(other.getHttpsRedirect());
       }
       if (other.hasPathRedirect()) {
-        bitField0_ |= 0x00000004;
         pathRedirect_ = other.pathRedirect_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasPrefixRedirect()) {
-        bitField0_ |= 0x00000008;
         prefixRedirect_ = other.prefixRedirect_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRedirectResponseCode()) {
-        bitField0_ |= 0x00000010;
         redirectResponseCode_ = other.redirectResponseCode_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasStripQuery()) {
@@ -1193,8 +1202,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       hostRedirect_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1210,8 +1219,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearHostRedirect() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       hostRedirect_ = getDefaultInstance().getHostRedirect();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1232,8 +1241,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       hostRedirect_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1282,8 +1291,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setHttpsRedirect(boolean value) {
-      bitField0_ |= 0x00000002;
+
       httpsRedirect_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1380,8 +1390,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       pathRedirect_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1397,8 +1407,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPathRedirect() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       pathRedirect_ = getDefaultInstance().getPathRedirect();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1419,8 +1429,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       pathRedirect_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1500,8 +1510,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       prefixRedirect_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1517,8 +1527,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrefixRedirect() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       prefixRedirect_ = getDefaultInstance().getPrefixRedirect();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1539,8 +1549,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       prefixRedirect_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1624,8 +1634,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       redirectResponseCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1642,8 +1652,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRedirectResponseCode() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       redirectResponseCode_ = getDefaultInstance().getRedirectResponseCode();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1665,8 +1675,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       redirectResponseCode_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1715,8 +1725,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStripQuery(boolean value) {
-      bitField0_ |= 0x00000020;
+
       stripQuery_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -237,7 +241,9 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder() {
-    return getSnapshotResource();
+    return snapshotResource_ == null
+        ? com.google.cloud.compute.v1.Snapshot.getDefaultInstance()
+        : snapshotResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -467,14 +473,12 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (snapshotResourceBuilder_ == null) {
-        snapshotResource_ = null;
-      } else {
-        snapshotResource_ = null;
+      snapshotResource_ = null;
+      if (snapshotResourceBuilder_ != null) {
+        snapshotResourceBuilder_.dispose();
         snapshotResourceBuilder_ = null;
       }
       return this;
@@ -504,21 +508,28 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.InsertSnapshotRequest buildPartial() {
       com.google.cloud.compute.v1.InsertSnapshotRequest result =
           new com.google.cloud.compute.v1.InsertSnapshotRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (snapshotResourceBuilder_ == null) {
-        result.snapshotResource_ = snapshotResource_;
-      } else {
-        result.snapshotResource_ = snapshotResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertSnapshotRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.snapshotResource_ =
+            snapshotResourceBuilder_ == null ? snapshotResource_ : snapshotResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -569,11 +580,12 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSnapshotResource()) {
@@ -608,20 +620,20 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -444407478:
               {
                 input.readMessage(
                     getSnapshotResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -444407478
             default:
@@ -710,8 +722,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -729,8 +741,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -753,8 +765,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,7 +784,7 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -834,8 +846,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -851,8 +863,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -873,8 +885,8 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -899,7 +911,7 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the snapshotResource field is set.
      */
     public boolean hasSnapshotResource() {
-      return snapshotResourceBuilder_ != null || snapshotResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -940,11 +952,11 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         snapshotResource_ = value;
-        onChanged();
       } else {
         snapshotResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -962,11 +974,11 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.compute.v1.Snapshot.Builder builderForValue) {
       if (snapshotResourceBuilder_ == null) {
         snapshotResource_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -982,19 +994,18 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSnapshotResource(com.google.cloud.compute.v1.Snapshot value) {
       if (snapshotResourceBuilder_ == null) {
-        if (snapshotResource_ != null) {
-          snapshotResource_ =
-              com.google.cloud.compute.v1.Snapshot.newBuilder(snapshotResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && snapshotResource_ != null
+            && snapshotResource_ != com.google.cloud.compute.v1.Snapshot.getDefaultInstance()) {
+          getSnapshotResourceBuilder().mergeFrom(value);
         } else {
           snapshotResource_ = value;
         }
-        onChanged();
       } else {
         snapshotResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1009,14 +1020,13 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearSnapshotResource() {
-      if (snapshotResourceBuilder_ == null) {
-        snapshotResource_ = null;
-        onChanged();
-      } else {
-        snapshotResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      snapshotResource_ = null;
+      if (snapshotResourceBuilder_ != null) {
+        snapshotResourceBuilder_.dispose();
         snapshotResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1031,7 +1041,7 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.compute.v1.Snapshot.Builder getSnapshotResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSnapshotResourceFieldBuilder().getBuilder();
     }

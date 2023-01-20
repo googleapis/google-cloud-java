@@ -74,7 +74,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ALLOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object ipAllocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAllocation_ = "";
   /**
    *
    *
@@ -392,10 +396,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       ipAllocation_ = "";
-
       return this;
     }
 
@@ -423,10 +426,21 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datafusion.v1.NetworkConfig buildPartial() {
       com.google.cloud.datafusion.v1.NetworkConfig result =
           new com.google.cloud.datafusion.v1.NetworkConfig(this);
-      result.network_ = network_;
-      result.ipAllocation_ = ipAllocation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datafusion.v1.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ipAllocation_ = ipAllocation_;
+      }
     }
 
     @java.lang.Override
@@ -476,10 +490,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datafusion.v1.NetworkConfig.getDefaultInstance()) return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIpAllocation().isEmpty()) {
         ipAllocation_ = other.ipAllocation_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -511,13 +527,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 ipAllocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +552,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -607,8 +625,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +645,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +670,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAllocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -744,8 +762,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAllocation() {
-
       ipAllocation_ = getDefaultInstance().getIpAllocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -768,8 +786,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAllocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

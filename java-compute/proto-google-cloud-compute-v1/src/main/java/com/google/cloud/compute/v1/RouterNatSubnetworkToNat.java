@@ -254,7 +254,9 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -318,6 +320,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   }
 
   public static final int SECONDARY_IP_RANGE_NAMES_FIELD_NUMBER = 264315097;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList secondaryIpRangeNames_;
   /**
    *
@@ -379,6 +383,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   }
 
   public static final int SOURCE_IP_RANGES_TO_NAT_FIELD_NUMBER = 388310386;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sourceIpRangesToNat_;
   /**
    *
@@ -679,8 +685,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -712,12 +718,16 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat buildPartial() {
       com.google.cloud.compute.v1.RouterNatSubnetworkToNat result =
           new com.google.cloud.compute.v1.RouterNatSubnetworkToNat(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RouterNatSubnetworkToNat result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         secondaryIpRangeNames_ = secondaryIpRangeNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -728,9 +738,16 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.sourceIpRangesToNat_ = sourceIpRangesToNat_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterNatSubnetworkToNat result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -780,8 +797,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (other == com.google.cloud.compute.v1.RouterNatSubnetworkToNat.getDefaultInstance())
         return this;
       if (other.hasName()) {
-        bitField0_ |= 0x00000001;
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.secondaryIpRangeNames_.isEmpty()) {
@@ -944,8 +961,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -961,8 +978,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -983,8 +1000,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

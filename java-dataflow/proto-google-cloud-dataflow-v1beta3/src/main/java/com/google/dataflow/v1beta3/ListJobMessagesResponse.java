@@ -70,6 +70,8 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
   }
 
   public static final int JOB_MESSAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.JobMessage> jobMessages_;
   /**
    *
@@ -139,7 +141,9 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -188,6 +192,8 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
   }
 
   public static final int AUTOSCALING_EVENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.AutoscalingEvent> autoscalingEvents_;
   /**
    *
@@ -477,6 +483,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (jobMessagesBuilder_ == null) {
         jobMessages_ = java.util.Collections.emptyList();
       } else {
@@ -485,14 +492,13 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       if (autoscalingEventsBuilder_ == null) {
         autoscalingEvents_ = java.util.Collections.emptyList();
       } else {
         autoscalingEvents_ = null;
         autoscalingEventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -520,7 +526,16 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
     public com.google.dataflow.v1beta3.ListJobMessagesResponse buildPartial() {
       com.google.dataflow.v1beta3.ListJobMessagesResponse result =
           new com.google.dataflow.v1beta3.ListJobMessagesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.ListJobMessagesResponse result) {
       if (jobMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           jobMessages_ = java.util.Collections.unmodifiableList(jobMessages_);
@@ -530,18 +545,22 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
       } else {
         result.jobMessages_ = jobMessagesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
       if (autoscalingEventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           autoscalingEvents_ = java.util.Collections.unmodifiableList(autoscalingEvents_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.autoscalingEvents_ = autoscalingEvents_;
       } else {
         result.autoscalingEvents_ = autoscalingEventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ListJobMessagesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -619,13 +638,14 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (autoscalingEventsBuilder_ == null) {
         if (!other.autoscalingEvents_.isEmpty()) {
           if (autoscalingEvents_.isEmpty()) {
             autoscalingEvents_ = other.autoscalingEvents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAutoscalingEventsIsMutable();
             autoscalingEvents_.addAll(other.autoscalingEvents_);
@@ -638,7 +658,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
             autoscalingEventsBuilder_.dispose();
             autoscalingEventsBuilder_ = null;
             autoscalingEvents_ = other.autoscalingEvents_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             autoscalingEventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAutoscalingEventsFieldBuilder()
@@ -690,7 +710,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1136,8 +1156,8 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1153,8 +1173,8 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1175,8 +1195,8 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1185,11 +1205,11 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureAutoscalingEventsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         autoscalingEvents_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.AutoscalingEvent>(
                 autoscalingEvents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1407,7 +1427,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
     public Builder clearAutoscalingEvents() {
       if (autoscalingEventsBuilder_ == null) {
         autoscalingEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         autoscalingEventsBuilder_.clear();
@@ -1533,7 +1553,7 @@ public final class ListJobMessagesResponse extends com.google.protobuf.Generated
                 com.google.dataflow.v1beta3.AutoscalingEvent.Builder,
                 com.google.dataflow.v1beta3.AutoscalingEventOrBuilder>(
                 autoscalingEvents_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         autoscalingEvents_ = null;

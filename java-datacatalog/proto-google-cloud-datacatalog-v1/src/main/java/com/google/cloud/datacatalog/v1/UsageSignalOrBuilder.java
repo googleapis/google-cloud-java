@@ -114,7 +114,6 @@ public interface UsageSignalOrBuilder
    * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrDefault(
       java.lang.String key,

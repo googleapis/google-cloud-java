@@ -66,7 +66,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
 
   private int bitField0_;
   public static final int ADDITIONAL_NODE_COUNT_FIELD_NUMBER = 134997930;
-  private int additionalNodeCount_;
+  private int additionalNodeCount_ = 0;
   /**
    *
    *
@@ -301,8 +301,8 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       additionalNodeCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -330,15 +330,21 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.NodeGroupsAddNodesRequest buildPartial() {
       com.google.cloud.compute.v1.NodeGroupsAddNodesRequest result =
           new com.google.cloud.compute.v1.NodeGroupsAddNodesRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NodeGroupsAddNodesRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.additionalNodeCount_ = additionalNodeCount_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -485,8 +491,9 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAdditionalNodeCount(int value) {
-      bitField0_ |= 0x00000001;
+
       additionalNodeCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

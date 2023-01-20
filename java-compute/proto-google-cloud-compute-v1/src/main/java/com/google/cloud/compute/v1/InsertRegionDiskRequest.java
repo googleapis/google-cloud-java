@@ -122,11 +122,15 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DiskOrBuilder getDiskResourceOrBuilder() {
-    return getDiskResource();
+    return diskResource_ == null
+        ? com.google.cloud.compute.v1.Disk.getDefaultInstance()
+        : diskResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -232,7 +238,9 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -296,7 +304,9 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
   }
 
   public static final int SOURCE_IMAGE_FIELD_NUMBER = 50443319;
-  private volatile java.lang.Object sourceImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceImage_ = "";
   /**
    *
    *
@@ -607,20 +617,16 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (diskResourceBuilder_ == null) {
-        diskResource_ = null;
-      } else {
-        diskResource_ = null;
+      bitField0_ = 0;
+      diskResource_ = null;
+      if (diskResourceBuilder_ != null) {
+        diskResourceBuilder_.dispose();
         diskResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       sourceImage_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -648,26 +654,35 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InsertRegionDiskRequest buildPartial() {
       com.google.cloud.compute.v1.InsertRegionDiskRequest result =
           new com.google.cloud.compute.v1.InsertRegionDiskRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (diskResourceBuilder_ == null) {
-        result.diskResource_ = diskResource_;
-      } else {
-        result.diskResource_ = diskResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.sourceImage_ = sourceImage_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertRegionDiskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.diskResource_ =
+            diskResourceBuilder_ == null ? diskResource_ : diskResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sourceImage_ = sourceImage_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -721,20 +736,22 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSourceImage()) {
-        bitField0_ |= 0x00000002;
         sourceImage_ = other.sourceImage_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -766,31 +783,31 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
             case 207045506:
               {
                 input.readMessage(getDiskResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 207045506
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 403546554:
               {
                 sourceImage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 403546554
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -832,7 +849,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return Whether the diskResource field is set.
      */
     public boolean hasDiskResource() {
-      return diskResourceBuilder_ != null || diskResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -873,11 +890,11 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         diskResource_ = value;
-        onChanged();
       } else {
         diskResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -894,11 +911,11 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
     public Builder setDiskResource(com.google.cloud.compute.v1.Disk.Builder builderForValue) {
       if (diskResourceBuilder_ == null) {
         diskResource_ = builderForValue.build();
-        onChanged();
       } else {
         diskResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -914,19 +931,18 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDiskResource(com.google.cloud.compute.v1.Disk value) {
       if (diskResourceBuilder_ == null) {
-        if (diskResource_ != null) {
-          diskResource_ =
-              com.google.cloud.compute.v1.Disk.newBuilder(diskResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && diskResource_ != null
+            && diskResource_ != com.google.cloud.compute.v1.Disk.getDefaultInstance()) {
+          getDiskResourceBuilder().mergeFrom(value);
         } else {
           diskResource_ = value;
         }
-        onChanged();
       } else {
         diskResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -941,14 +957,13 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDiskResource() {
-      if (diskResourceBuilder_ == null) {
-        diskResource_ = null;
-        onChanged();
-      } else {
-        diskResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      diskResource_ = null;
+      if (diskResourceBuilder_ != null) {
+        diskResourceBuilder_.dispose();
         diskResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -963,7 +978,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.compute.v1.Disk.Builder getDiskResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDiskResourceFieldBuilder().getBuilder();
     }
@@ -1082,8 +1097,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1101,8 +1116,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1125,8 +1140,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1198,8 +1213,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1217,8 +1232,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1241,8 +1256,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1260,7 +1275,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1322,8 +1337,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1339,8 +1354,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1361,8 +1376,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1380,7 +1395,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return Whether the sourceImage field is set.
      */
     public boolean hasSourceImage() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1442,8 +1457,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       sourceImage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1459,8 +1474,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSourceImage() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       sourceImage_ = getDefaultInstance().getSourceImage();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1481,8 +1496,8 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       sourceImage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

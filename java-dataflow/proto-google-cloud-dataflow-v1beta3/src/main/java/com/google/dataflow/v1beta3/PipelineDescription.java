@@ -72,6 +72,8 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ORIGINAL_PIPELINE_TRANSFORM_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.TransformSummary> originalPipelineTransform_;
   /**
    *
@@ -148,6 +150,8 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXECUTION_PIPELINE_STAGE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary> executionPipelineStage_;
   /**
    *
@@ -224,6 +228,8 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_DATA_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DisplayData> displayData_;
   /**
    *
@@ -521,6 +527,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (originalPipelineTransformBuilder_ == null) {
         originalPipelineTransform_ = java.util.Collections.emptyList();
       } else {
@@ -569,7 +576,16 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     public com.google.dataflow.v1beta3.PipelineDescription buildPartial() {
       com.google.dataflow.v1beta3.PipelineDescription result =
           new com.google.dataflow.v1beta3.PipelineDescription(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.PipelineDescription result) {
       if (originalPipelineTransformBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           originalPipelineTransform_ =
@@ -598,8 +614,10 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       } else {
         result.displayData_ = displayDataBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.PipelineDescription result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

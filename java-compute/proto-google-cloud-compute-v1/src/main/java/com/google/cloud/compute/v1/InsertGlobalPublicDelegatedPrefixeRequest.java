@@ -72,7 +72,9 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.PublicDelegatedPrefixOrBuilder
       getPublicDelegatedPrefixResourceOrBuilder() {
-    return getPublicDelegatedPrefixResource();
+    return publicDelegatedPrefixResource_ == null
+        ? com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance()
+        : publicDelegatedPrefixResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -475,16 +481,14 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        publicDelegatedPrefixResource_ = null;
-      } else {
-        publicDelegatedPrefixResource_ = null;
+      publicDelegatedPrefixResource_ = null;
+      if (publicDelegatedPrefixResourceBuilder_ != null) {
+        publicDelegatedPrefixResourceBuilder_.dispose();
         publicDelegatedPrefixResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -514,21 +518,31 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
     public com.google.cloud.compute.v1.InsertGlobalPublicDelegatedPrefixeRequest buildPartial() {
       com.google.cloud.compute.v1.InsertGlobalPublicDelegatedPrefixeRequest result =
           new com.google.cloud.compute.v1.InsertGlobalPublicDelegatedPrefixeRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        result.publicDelegatedPrefixResource_ = publicDelegatedPrefixResource_;
-      } else {
-        result.publicDelegatedPrefixResource_ = publicDelegatedPrefixResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InsertGlobalPublicDelegatedPrefixeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicDelegatedPrefixResource_ =
+            publicDelegatedPrefixResourceBuilder_ == null
+                ? publicDelegatedPrefixResource_
+                : publicDelegatedPrefixResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -582,14 +596,15 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
               .getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPublicDelegatedPrefixResource()) {
         mergePublicDelegatedPrefixResource(other.getPublicDelegatedPrefixResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -621,20 +636,20 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 380756010:
               {
                 input.readMessage(
                     getPublicDelegatedPrefixResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 380756010
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -723,8 +738,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,8 +757,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -766,8 +781,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -792,8 +807,7 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      * @return Whether the publicDelegatedPrefixResource field is set.
      */
     public boolean hasPublicDelegatedPrefixResource() {
-      return publicDelegatedPrefixResourceBuilder_ != null
-          || publicDelegatedPrefixResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -835,11 +849,11 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
           throw new NullPointerException();
         }
         publicDelegatedPrefixResource_ = value;
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,11 +871,11 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
         com.google.cloud.compute.v1.PublicDelegatedPrefix.Builder builderForValue) {
       if (publicDelegatedPrefixResourceBuilder_ == null) {
         publicDelegatedPrefixResource_ = builderForValue.build();
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,20 +892,19 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
     public Builder mergePublicDelegatedPrefixResource(
         com.google.cloud.compute.v1.PublicDelegatedPrefix value) {
       if (publicDelegatedPrefixResourceBuilder_ == null) {
-        if (publicDelegatedPrefixResource_ != null) {
-          publicDelegatedPrefixResource_ =
-              com.google.cloud.compute.v1.PublicDelegatedPrefix.newBuilder(
-                      publicDelegatedPrefixResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && publicDelegatedPrefixResource_ != null
+            && publicDelegatedPrefixResource_
+                != com.google.cloud.compute.v1.PublicDelegatedPrefix.getDefaultInstance()) {
+          getPublicDelegatedPrefixResourceBuilder().mergeFrom(value);
         } else {
           publicDelegatedPrefixResource_ = value;
         }
-        onChanged();
       } else {
         publicDelegatedPrefixResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -906,14 +919,13 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      * </code>
      */
     public Builder clearPublicDelegatedPrefixResource() {
-      if (publicDelegatedPrefixResourceBuilder_ == null) {
-        publicDelegatedPrefixResource_ = null;
-        onChanged();
-      } else {
-        publicDelegatedPrefixResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      publicDelegatedPrefixResource_ = null;
+      if (publicDelegatedPrefixResourceBuilder_ != null) {
+        publicDelegatedPrefixResourceBuilder_.dispose();
         publicDelegatedPrefixResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -929,7 +941,7 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      */
     public com.google.cloud.compute.v1.PublicDelegatedPrefix.Builder
         getPublicDelegatedPrefixResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPublicDelegatedPrefixResourceFieldBuilder().getBuilder();
     }
@@ -995,7 +1007,7 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1057,8 +1069,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1074,8 +1086,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1096,8 +1108,8 @@ public final class InsertGlobalPublicDelegatedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

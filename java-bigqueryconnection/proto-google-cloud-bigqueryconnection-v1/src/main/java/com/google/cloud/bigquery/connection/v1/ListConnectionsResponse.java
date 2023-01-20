@@ -69,7 +69,9 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   }
 
   public static final int CONNECTIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.connection.v1.Connection> connections_;
   /**
    *
@@ -396,15 +400,15 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nextPageToken_ = "";
-
       if (connectionsBuilder_ == null) {
         connections_ = java.util.Collections.emptyList();
       } else {
         connections_ = null;
         connectionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -433,19 +437,33 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.connection.v1.ListConnectionsResponse buildPartial() {
       com.google.cloud.bigquery.connection.v1.ListConnectionsResponse result =
           new com.google.cloud.bigquery.connection.v1.ListConnectionsResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.nextPageToken_ = nextPageToken_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.connection.v1.ListConnectionsResponse result) {
       if (connectionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           connections_ = java.util.Collections.unmodifiableList(connections_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.connections_ = connections_;
       } else {
         result.connections_ = connectionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.connection.v1.ListConnectionsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -498,13 +516,14 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return this;
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (connectionsBuilder_ == null) {
         if (!other.connections_.isEmpty()) {
           if (connections_.isEmpty()) {
             connections_ = other.connections_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConnectionsIsMutable();
             connections_.addAll(other.connections_);
@@ -517,7 +536,7 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
             connectionsBuilder_.dispose();
             connectionsBuilder_ = null;
             connections_ = other.connections_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             connectionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConnectionsFieldBuilder()
@@ -556,7 +575,7 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
             case 10:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -653,8 +672,8 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +689,8 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +711,8 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,11 +721,11 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureConnectionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         connections_ =
             new java.util.ArrayList<com.google.cloud.bigquery.connection.v1.Connection>(
                 connections_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -924,7 +943,7 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     public Builder clearConnections() {
       if (connectionsBuilder_ == null) {
         connections_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         connectionsBuilder_.clear();
@@ -1050,7 +1069,7 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
                 com.google.cloud.bigquery.connection.v1.Connection,
                 com.google.cloud.bigquery.connection.v1.Connection.Builder,
                 com.google.cloud.bigquery.connection.v1.ConnectionOrBuilder>(
-                connections_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                connections_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         connections_ = null;
       }
       return connectionsBuilder_;

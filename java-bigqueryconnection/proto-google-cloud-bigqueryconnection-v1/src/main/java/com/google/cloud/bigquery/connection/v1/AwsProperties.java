@@ -469,6 +469,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (crossAccountRoleBuilder_ != null) {
         crossAccountRoleBuilder_.clear();
       }
@@ -504,23 +505,27 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.connection.v1.AwsProperties buildPartial() {
       com.google.cloud.bigquery.connection.v1.AwsProperties result =
           new com.google.cloud.bigquery.connection.v1.AwsProperties(this);
-      if (authenticationMethodCase_ == 2) {
-        if (crossAccountRoleBuilder_ == null) {
-          result.authenticationMethod_ = authenticationMethod_;
-        } else {
-          result.authenticationMethod_ = crossAccountRoleBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (authenticationMethodCase_ == 3) {
-        if (accessRoleBuilder_ == null) {
-          result.authenticationMethod_ = authenticationMethod_;
-        } else {
-          result.authenticationMethod_ = accessRoleBuilder_.build();
-        }
-      }
-      result.authenticationMethodCase_ = authenticationMethodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.connection.v1.AwsProperties result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.connection.v1.AwsProperties result) {
+      result.authenticationMethodCase_ = authenticationMethodCase_;
+      result.authenticationMethod_ = this.authenticationMethod_;
+      if (authenticationMethodCase_ == 2 && crossAccountRoleBuilder_ != null) {
+        result.authenticationMethod_ = crossAccountRoleBuilder_.build();
+      }
+      if (authenticationMethodCase_ == 3 && accessRoleBuilder_ != null) {
+        result.authenticationMethod_ = accessRoleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -654,6 +659,8 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole,
@@ -919,7 +926,6 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       }
       authenticationMethodCase_ = 2;
       onChanged();
-      ;
       return crossAccountRoleBuilder_;
     }
 
@@ -1140,7 +1146,6 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       }
       authenticationMethodCase_ = 3;
       onChanged();
-      ;
       return accessRoleBuilder_;
     }
 

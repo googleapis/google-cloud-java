@@ -81,6 +81,8 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPUTATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ComputationTopology> computations_;
   /**
    *
@@ -151,6 +153,8 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_DISK_ASSIGNMENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DataDiskAssignment> dataDiskAssignments_;
   /**
    *
@@ -234,6 +238,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       userStageToComputationNameMap_;
 
@@ -294,8 +299,10 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getUserStageToComputationNameMapOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getUserStageToComputationNameMapOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -326,7 +333,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARDING_KEY_BITS_FIELD_NUMBER = 4;
-  private int forwardingKeyBits_;
+  private int forwardingKeyBits_ = 0;
   /**
    *
    *
@@ -344,7 +351,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERSISTENT_STATE_VERSION_FIELD_NUMBER = 5;
-  private int persistentStateVersion_;
+  private int persistentStateVersion_ = 0;
   /**
    *
    *
@@ -635,6 +642,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (computationsBuilder_ == null) {
         computations_ = java.util.Collections.emptyList();
       } else {
@@ -651,9 +659,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableUserStageToComputationNameMap().clear();
       forwardingKeyBits_ = 0;
-
       persistentStateVersion_ = 0;
-
       return this;
     }
 
@@ -681,7 +687,15 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.TopologyConfig buildPartial() {
       com.google.dataflow.v1beta3.TopologyConfig result =
           new com.google.dataflow.v1beta3.TopologyConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.TopologyConfig result) {
       if (computationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           computations_ = java.util.Collections.unmodifiableList(computations_);
@@ -700,12 +714,20 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.dataDiskAssignments_ = dataDiskAssignmentsBuilder_.build();
       }
-      result.userStageToComputationNameMap_ = internalGetUserStageToComputationNameMap();
-      result.userStageToComputationNameMap_.makeImmutable();
-      result.forwardingKeyBits_ = forwardingKeyBits_;
-      result.persistentStateVersion_ = persistentStateVersion_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.TopologyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userStageToComputationNameMap_ = internalGetUserStageToComputationNameMap();
+        result.userStageToComputationNameMap_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.forwardingKeyBits_ = forwardingKeyBits_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.persistentStateVersion_ = persistentStateVersion_;
+      }
     }
 
     @java.lang.Override
@@ -809,6 +831,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableUserStageToComputationNameMap()
           .mergeFrom(other.internalGetUserStageToComputationNameMap());
+      bitField0_ |= 0x00000004;
       if (other.getForwardingKeyBits() != 0) {
         setForwardingKeyBits(other.getForwardingKeyBits());
       }
@@ -881,18 +904,19 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
                     .put(
                         userStageToComputationNameMap__.getKey(),
                         userStageToComputationNameMap__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 forwardingKeyBits_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 persistentStateVersion_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1645,8 +1669,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableUserStageToComputationNameMap() {
-      onChanged();
-      ;
       if (userStageToComputationNameMap_ == null) {
         userStageToComputationNameMap_ =
             com.google.protobuf.MapField.newMapField(
@@ -1655,6 +1677,8 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       if (!userStageToComputationNameMap_.isMutable()) {
         userStageToComputationNameMap_ = userStageToComputationNameMap_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return userStageToComputationNameMap_;
     }
 
@@ -1706,8 +1730,10 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getUserStageToComputationNameMapOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getUserStageToComputationNameMapOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1738,6 +1764,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserStageToComputationNameMap() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableUserStageToComputationNameMap().getMutableMap().clear();
       return this;
     }
@@ -1761,6 +1788,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableUserStageToComputationNameMap() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableUserStageToComputationNameMap().getMutableMap();
     }
     /**
@@ -1779,8 +1807,8 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableUserStageToComputationNameMap().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1795,6 +1823,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllUserStageToComputationNameMap(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserStageToComputationNameMap().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1829,6 +1858,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setForwardingKeyBits(int value) {
 
       forwardingKeyBits_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1844,7 +1874,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearForwardingKeyBits() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       forwardingKeyBits_ = 0;
       onChanged();
       return this;
@@ -1881,6 +1911,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setPersistentStateVersion(int value) {
 
       persistentStateVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1896,7 +1927,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPersistentStateVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       persistentStateVersion_ = 0;
       onChanged();
       return this;

@@ -381,10 +381,9 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
       getPredefinedExpression() {
     if (maskingExpressionCase_ == 1) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression result =
           com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
-              .valueOf((java.lang.Integer) maskingExpression_);
+              .forNumber((java.lang.Integer) maskingExpression_);
       return result == null
           ? com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
               .UNRECOGNIZED
@@ -607,6 +606,7 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maskingExpressionCase_ = 0;
       maskingExpression_ = null;
       return this;
@@ -637,12 +637,23 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy buildPartial() {
       com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy result =
           new com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy(this);
-      if (maskingExpressionCase_ == 1) {
-        result.maskingExpression_ = maskingExpression_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.maskingExpressionCase_ = maskingExpressionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy result) {
+      result.maskingExpressionCase_ = maskingExpressionCase_;
+      result.maskingExpression_ = this.maskingExpression_;
     }
 
     @java.lang.Override
@@ -768,6 +779,8 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -842,11 +855,10 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
         getPredefinedExpression() {
       if (maskingExpressionCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
             result =
                 com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy
-                    .PredefinedExpression.valueOf((java.lang.Integer) maskingExpression_);
+                    .PredefinedExpression.forNumber((java.lang.Integer) maskingExpression_);
         return result == null
             ? com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
                 .UNRECOGNIZED

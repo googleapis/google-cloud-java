@@ -452,7 +452,9 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENTITLEMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entitlement_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entitlement_ = "";
   /**
    *
    *
@@ -503,7 +505,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
-  private int eventType_;
+  private int eventType_ = 0;
   /**
    *
    *
@@ -532,9 +534,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.EntitlementEvent.Type getEventType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.EntitlementEvent.Type result =
-        com.google.cloud.channel.v1.EntitlementEvent.Type.valueOf(eventType_);
+        com.google.cloud.channel.v1.EntitlementEvent.Type.forNumber(eventType_);
     return result == null ? com.google.cloud.channel.v1.EntitlementEvent.Type.UNRECOGNIZED : result;
   }
 
@@ -746,10 +747,9 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entitlement_ = "";
-
       eventType_ = 0;
-
       return this;
     }
 
@@ -777,10 +777,21 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.channel.v1.EntitlementEvent buildPartial() {
       com.google.cloud.channel.v1.EntitlementEvent result =
           new com.google.cloud.channel.v1.EntitlementEvent(this);
-      result.entitlement_ = entitlement_;
-      result.eventType_ = eventType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.EntitlementEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entitlement_ = entitlement_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventType_ = eventType_;
+      }
     }
 
     @java.lang.Override
@@ -830,6 +841,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.channel.v1.EntitlementEvent.getDefaultInstance()) return this;
       if (!other.getEntitlement().isEmpty()) {
         entitlement_ = other.entitlement_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.eventType_ != 0) {
@@ -864,13 +876,13 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 entitlement_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 eventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -889,6 +901,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object entitlement_ = "";
     /**
@@ -954,8 +968,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       entitlement_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +986,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEntitlement() {
-
       entitlement_ = getDefaultInstance().getEntitlement();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -995,8 +1009,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entitlement_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,8 +1044,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEventTypeValue(int value) {
-
       eventType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,9 +1062,8 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.EntitlementEvent.Type getEventType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.EntitlementEvent.Type result =
-          com.google.cloud.channel.v1.EntitlementEvent.Type.valueOf(eventType_);
+          com.google.cloud.channel.v1.EntitlementEvent.Type.forNumber(eventType_);
       return result == null
           ? com.google.cloud.channel.v1.EntitlementEvent.Type.UNRECOGNIZED
           : result;
@@ -1071,7 +1084,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       eventType_ = value.getNumber();
       onChanged();
       return this;
@@ -1088,7 +1101,7 @@ public final class EntitlementEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       eventType_ = 0;
       onChanged();
       return this;

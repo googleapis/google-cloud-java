@@ -71,7 +71,9 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INTENT_UNIQUE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object intentUniqueId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object intentUniqueId_ = "";
   /**
    *
    *
@@ -322,8 +324,8 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       intentUniqueId_ = "";
-
       return this;
     }
 
@@ -351,9 +353,18 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contactcenterinsights.v1.IntentMatchData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IntentMatchData result =
           new com.google.cloud.contactcenterinsights.v1.IntentMatchData(this);
-      result.intentUniqueId_ = intentUniqueId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.IntentMatchData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.intentUniqueId_ = intentUniqueId_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +415,7 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getIntentUniqueId().isEmpty()) {
         intentUniqueId_ = other.intentUniqueId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +447,7 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 intentUniqueId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +466,8 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object intentUniqueId_ = "";
     /**
@@ -519,8 +533,8 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       intentUniqueId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +551,8 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIntentUniqueId() {
-
       intentUniqueId_ = getDefaultInstance().getIntentUniqueId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -560,8 +574,8 @@ public final class IntentMatchData extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       intentUniqueId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -78,7 +78,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -142,7 +144,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
-  private volatile java.lang.Object networkEndpointGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEndpointGroup_ = "";
   /**
    *
    *
@@ -226,7 +230,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -290,7 +296,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -354,7 +362,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -403,7 +413,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
   }
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_;
+  private boolean returnPartialSuccess_ = false;
   /**
    *
    *
@@ -728,20 +738,14 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       maxResults_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       networkEndpointGroup_ = "";
-
       orderBy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       project_ = "";
-
       returnPartialSuccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -775,33 +779,44 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       com.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest result =
           new com.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest(
               this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.maxResults_ = maxResults_;
         to_bitField0_ |= 0x00000002;
       }
-      result.networkEndpointGroup_ = networkEndpointGroup_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.networkEndpointGroup_ = networkEndpointGroup_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000004;
       }
-      result.orderBy_ = orderBy_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000008;
       }
-      result.pageToken_ = pageToken_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -857,8 +872,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
           == com.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
               .getDefaultInstance()) return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMaxResults()) {
@@ -866,20 +881,22 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       }
       if (!other.getNetworkEndpointGroup().isEmpty()) {
         networkEndpointGroup_ = other.networkEndpointGroup_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasOrderBy()) {
-        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasPageToken()) {
-        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -914,7 +931,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
             case 159957578:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 159957578
             case 437723352:
@@ -926,13 +943,13 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
             case 1284503362:
               {
                 orderBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1284503362
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1820481738
             case -1606001726:
@@ -944,13 +961,13 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
             case -823710670:
               {
                 networkEndpointGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -823710670
             case -157380176:
               {
                 returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -157380176
             default:
@@ -1047,8 +1064,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1064,8 +1081,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1086,8 +1103,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1136,8 +1153,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-      bitField0_ |= 0x00000002;
+
       maxResults_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1223,8 +1241,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1241,8 +1259,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointGroup() {
-
       networkEndpointGroup_ = getDefaultInstance().getNetworkEndpointGroup();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1264,8 +1282,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1283,7 +1301,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return Whether the orderBy field is set.
      */
     public boolean hasOrderBy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1345,8 +1363,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1362,8 +1380,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1384,8 +1402,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       orderBy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1403,7 +1421,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return Whether the pageToken field is set.
      */
     public boolean hasPageToken() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1465,8 +1483,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1482,8 +1500,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1504,8 +1522,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1571,8 +1589,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1588,8 +1606,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1610,8 +1628,8 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1630,7 +1648,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      */
     @java.lang.Override
     public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1660,8 +1678,9 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-      bitField0_ |= 0x00000010;
+
       returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1677,7 +1696,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       returnPartialSuccess_ = false;
       onChanged();
       return this;

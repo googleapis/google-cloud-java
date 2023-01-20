@@ -71,6 +71,8 @@ public final class FirewallPoliciesListAssociationsResponse
 
   private int bitField0_;
   public static final int ASSOCIATIONS_FIELD_NUMBER = 508736530;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyAssociation> associations_;
   /**
    *
@@ -147,7 +149,9 @@ public final class FirewallPoliciesListAssociationsResponse
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -426,6 +430,7 @@ public final class FirewallPoliciesListAssociationsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (associationsBuilder_ == null) {
         associations_ = java.util.Collections.emptyList();
       } else {
@@ -434,7 +439,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -464,8 +468,16 @@ public final class FirewallPoliciesListAssociationsResponse
     public com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse buildPartial() {
       com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse result =
           new com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse result) {
       if (associationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           associations_ = java.util.Collections.unmodifiableList(associations_);
@@ -475,13 +487,17 @@ public final class FirewallPoliciesListAssociationsResponse
       } else {
         result.associations_ = associationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -561,8 +577,8 @@ public final class FirewallPoliciesListAssociationsResponse
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1083,8 +1099,8 @@ public final class FirewallPoliciesListAssociationsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,8 +1116,8 @@ public final class FirewallPoliciesListAssociationsResponse
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1122,8 +1138,8 @@ public final class FirewallPoliciesListAssociationsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

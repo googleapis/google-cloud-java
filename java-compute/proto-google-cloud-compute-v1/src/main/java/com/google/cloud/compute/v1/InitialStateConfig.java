@@ -71,6 +71,8 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int DBS_FIELD_NUMBER = 99253;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> dbs_;
   /**
    *
@@ -140,6 +142,8 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DBXS_FIELD_NUMBER = 3077113;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> dbxs_;
   /**
    *
@@ -209,6 +213,8 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KEKS_FIELD_NUMBER = 3288130;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FileContentBuffer> keks_;
   /**
    *
@@ -570,6 +576,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dbsBuilder_ == null) {
         dbs_ = java.util.Collections.emptyList();
       } else {
@@ -591,12 +598,11 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         keksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (pkBuilder_ == null) {
-        pk_ = null;
-      } else {
-        pkBuilder_.clear();
+      pk_ = null;
+      if (pkBuilder_ != null) {
+        pkBuilder_.dispose();
+        pkBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -624,8 +630,15 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.InitialStateConfig buildPartial() {
       com.google.cloud.compute.v1.InitialStateConfig result =
           new com.google.cloud.compute.v1.InitialStateConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.InitialStateConfig result) {
       if (dbsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dbs_ = java.util.Collections.unmodifiableList(dbs_);
@@ -653,17 +666,16 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       } else {
         result.keks_ = keksBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InitialStateConfig result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (pkBuilder_ == null) {
-          result.pk_ = pk_;
-        } else {
-          result.pk_ = pkBuilder_.build();
-        }
+        result.pk_ = pkBuilder_ == null ? pk_ : pkBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1987,11 +1999,11 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         pk_ = value;
-        onChanged();
       } else {
         pkBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2006,11 +2018,11 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     public Builder setPk(com.google.cloud.compute.v1.FileContentBuffer.Builder builderForValue) {
       if (pkBuilder_ == null) {
         pk_ = builderForValue.build();
-        onChanged();
       } else {
         pkBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2027,18 +2039,15 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         if (((bitField0_ & 0x00000008) != 0)
             && pk_ != null
             && pk_ != com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance()) {
-          pk_ =
-              com.google.cloud.compute.v1.FileContentBuffer.newBuilder(pk_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPkBuilder().mergeFrom(value);
         } else {
           pk_ = value;
         }
-        onChanged();
       } else {
         pkBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2051,13 +2060,13 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public Builder clearPk() {
-      if (pkBuilder_ == null) {
-        pk_ = null;
-        onChanged();
-      } else {
-        pkBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      pk_ = null;
+      if (pkBuilder_ != null) {
+        pkBuilder_.dispose();
+        pkBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

@@ -213,7 +213,9 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 138031246;
-  private volatile java.lang.Object acceleratorType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorType_ = "";
   /**
    *
    *
@@ -277,7 +279,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 196759640;
-  private long amount_;
+  private long amount_ = 0L;
   /**
    *
    *
@@ -310,7 +312,9 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -606,12 +610,10 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       acceleratorType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       amount_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -639,23 +641,29 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.ResourceCommitment buildPartial() {
       com.google.cloud.compute.v1.ResourceCommitment result =
           new com.google.cloud.compute.v1.ResourceCommitment(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourceCommitment result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.acceleratorType_ = acceleratorType_;
         to_bitField0_ |= 0x00000001;
       }
-      result.acceleratorType_ = acceleratorType_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.amount_ = amount_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000004;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -704,16 +712,16 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourceCommitment other) {
       if (other == com.google.cloud.compute.v1.ResourceCommitment.getDefaultInstance()) return this;
       if (other.hasAcceleratorType()) {
-        bitField0_ |= 0x00000001;
         acceleratorType_ = other.acceleratorType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAmount()) {
         setAmount(other.getAmount());
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000004;
         type_ = other.type_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -854,8 +862,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       acceleratorType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -871,8 +879,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       acceleratorType_ = getDefaultInstance().getAcceleratorType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -893,8 +901,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       acceleratorType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -943,8 +951,9 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setAmount(long value) {
-      bitField0_ |= 0x00000002;
+
       amount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,8 +1054,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,8 +1072,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1086,8 +1095,8 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -201,7 +201,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -265,7 +267,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -329,7 +333,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private volatile java.lang.Object direction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object direction_ = "";
   /**
    *
    *
@@ -396,7 +402,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -429,7 +435,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENABLE_LOGGING_FIELD_NUMBER = 295396515;
-  private boolean enableLogging_;
+  private boolean enableLogging_ = false;
   /**
    *
    *
@@ -462,7 +468,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -576,7 +584,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -609,7 +617,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RULE_NAME_FIELD_NUMBER = 55286254;
-  private volatile java.lang.Object ruleName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ruleName_ = "";
   /**
    *
    *
@@ -673,7 +683,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RULE_TUPLE_COUNT_FIELD_NUMBER = 388342037;
-  private int ruleTupleCount_;
+  private int ruleTupleCount_ = 0;
   /**
    *
    *
@@ -706,6 +716,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_RESOURCES_FIELD_NUMBER = 528230647;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetResources_;
   /**
    *
@@ -767,6 +779,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_SECURE_TAGS_FIELD_NUMBER = 468132403;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> targetSecureTags_;
   /**
    *
@@ -848,6 +862,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER = 457639710;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetServiceAccounts_;
   /**
    *
@@ -1293,30 +1309,21 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       action_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       direction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       disabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000008);
       enableLogging_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (matchBuilder_ == null) {
-        match_ = null;
-      } else {
-        matchBuilder_.clear();
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
+        matchBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       priority_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       ruleName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       ruleTupleCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
       if (targetSecureTagsBuilder_ == null) {
@@ -1355,52 +1362,15 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.FirewallPolicyRule buildPartial() {
       com.google.cloud.compute.v1.FirewallPolicyRule result =
           new com.google.cloud.compute.v1.FirewallPolicyRule(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.action_ = action_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.direction_ = direction_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.disabled_ = disabled_;
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.enableLogging_ = enableLogging_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (matchBuilder_ == null) {
-          result.match_ = match_;
-        } else {
-          result.match_ = matchBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.priority_ = priority_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.ruleName_ = ruleName_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.ruleTupleCount_ = ruleTupleCount_;
-        to_bitField0_ |= 0x00000200;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.FirewallPolicyRule result) {
       if (((bitField0_ & 0x00000400) != 0)) {
         targetResources_ = targetResources_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -1420,9 +1390,52 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.targetServiceAccounts_ = targetServiceAccounts_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyRule result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.action_ = action_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.direction_ = direction_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.disabled_ = disabled_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableLogging_ = enableLogging_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.match_ = matchBuilder_ == null ? match_ : matchBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ruleName_ = ruleName_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ruleTupleCount_ = ruleTupleCount_;
+        to_bitField0_ |= 0x00000200;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1471,18 +1484,18 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.FirewallPolicyRule other) {
       if (other == com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance()) return this;
       if (other.hasAction()) {
-        bitField0_ |= 0x00000001;
         action_ = other.action_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDirection()) {
-        bitField0_ |= 0x00000004;
         direction_ = other.direction_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDisabled()) {
@@ -1492,8 +1505,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         setEnableLogging(other.getEnableLogging());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000020;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasMatch()) {
@@ -1503,8 +1516,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         setPriority(other.getPriority());
       }
       if (other.hasRuleName()) {
-        bitField0_ |= 0x00000100;
         ruleName_ = other.ruleName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasRuleTupleCount()) {
@@ -1765,8 +1778,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1782,8 +1795,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1804,8 +1817,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       action_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1885,8 +1898,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1902,8 +1915,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1924,8 +1937,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2009,8 +2022,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       direction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2027,8 +2040,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       direction_ = getDefaultInstance().getDirection();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2050,8 +2063,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       direction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2100,8 +2113,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setDisabled(boolean value) {
-      bitField0_ |= 0x00000008;
+
       disabled_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2167,8 +2181,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setEnableLogging(boolean value) {
-      bitField0_ |= 0x00000010;
+
       enableLogging_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2265,8 +2280,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       kind_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2282,8 +2297,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2304,8 +2319,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       kind_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2365,11 +2380,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         match_ = value;
-        onChanged();
       } else {
         matchBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2385,11 +2400,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.Builder builderForValue) {
       if (matchBuilder_ == null) {
         match_ = builderForValue.build();
-        onChanged();
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2407,18 +2422,15 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
             && match_ != null
             && match_
                 != com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDefaultInstance()) {
-          match_ =
-              com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.newBuilder(match_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMatchBuilder().mergeFrom(value);
         } else {
           match_ = value;
         }
-        onChanged();
       } else {
         matchBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2431,13 +2443,13 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder clearMatch() {
-      if (matchBuilder_ == null) {
-        match_ = null;
-        onChanged();
-      } else {
-        matchBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      match_ = null;
+      if (matchBuilder_ != null) {
+        matchBuilder_.dispose();
+        matchBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2542,8 +2554,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-      bitField0_ |= 0x00000080;
+
       priority_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2640,8 +2653,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       ruleName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2657,8 +2670,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRuleName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       ruleName_ = getDefaultInstance().getRuleName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2679,8 +2692,8 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       ruleName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2729,8 +2742,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setRuleTupleCount(int value) {
-      bitField0_ |= 0x00000200;
+
       ruleTupleCount_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

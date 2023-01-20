@@ -69,7 +69,9 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
-  private volatile java.lang.Object urlMap_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMap_ = "";
   /**
    *
    *
@@ -218,7 +222,9 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlMapsValidateRequestOrBuilder
       getUrlMapsValidateRequestResourceOrBuilder() {
-    return getUrlMapsValidateRequestResource();
+    return urlMapsValidateRequestResource_ == null
+        ? com.google.cloud.compute.v1.UrlMapsValidateRequest.getDefaultInstance()
+        : urlMapsValidateRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,14 +451,12 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       urlMap_ = "";
-
-      if (urlMapsValidateRequestResourceBuilder_ == null) {
-        urlMapsValidateRequestResource_ = null;
-      } else {
-        urlMapsValidateRequestResource_ = null;
+      urlMapsValidateRequestResource_ = null;
+      if (urlMapsValidateRequestResourceBuilder_ != null) {
+        urlMapsValidateRequestResourceBuilder_.dispose();
         urlMapsValidateRequestResourceBuilder_ = null;
       }
       return this;
@@ -482,15 +486,27 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.ValidateUrlMapRequest buildPartial() {
       com.google.cloud.compute.v1.ValidateUrlMapRequest result =
           new com.google.cloud.compute.v1.ValidateUrlMapRequest(this);
-      result.project_ = project_;
-      result.urlMap_ = urlMap_;
-      if (urlMapsValidateRequestResourceBuilder_ == null) {
-        result.urlMapsValidateRequestResource_ = urlMapsValidateRequestResource_;
-      } else {
-        result.urlMapsValidateRequestResource_ = urlMapsValidateRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ValidateUrlMapRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.urlMap_ = urlMap_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.urlMapsValidateRequestResource_ =
+            urlMapsValidateRequestResourceBuilder_ == null
+                ? urlMapsValidateRequestResource_
+                : urlMapsValidateRequestResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,10 +557,12 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUrlMap().isEmpty()) {
         urlMap_ = other.urlMap_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUrlMapsValidateRequestResource()) {
@@ -579,13 +597,13 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1358801822:
               {
                 urlMap_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1358801822
             case -1127659654:
@@ -593,7 +611,7 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
                 input.readMessage(
                     getUrlMapsValidateRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1127659654
             default:
@@ -612,6 +630,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -674,8 +694,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,8 +711,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -713,8 +733,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +800,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       urlMap_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +817,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-
       urlMap_ = getDefaultInstance().getUrlMap();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +839,8 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       urlMap_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,8 +865,7 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the urlMapsValidateRequestResource field is set.
      */
     public boolean hasUrlMapsValidateRequestResource() {
-      return urlMapsValidateRequestResourceBuilder_ != null
-          || urlMapsValidateRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -888,11 +907,11 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         urlMapsValidateRequestResource_ = value;
-        onChanged();
       } else {
         urlMapsValidateRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -910,11 +929,11 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.compute.v1.UrlMapsValidateRequest.Builder builderForValue) {
       if (urlMapsValidateRequestResourceBuilder_ == null) {
         urlMapsValidateRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         urlMapsValidateRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -931,20 +950,19 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeUrlMapsValidateRequestResource(
         com.google.cloud.compute.v1.UrlMapsValidateRequest value) {
       if (urlMapsValidateRequestResourceBuilder_ == null) {
-        if (urlMapsValidateRequestResource_ != null) {
-          urlMapsValidateRequestResource_ =
-              com.google.cloud.compute.v1.UrlMapsValidateRequest.newBuilder(
-                      urlMapsValidateRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && urlMapsValidateRequestResource_ != null
+            && urlMapsValidateRequestResource_
+                != com.google.cloud.compute.v1.UrlMapsValidateRequest.getDefaultInstance()) {
+          getUrlMapsValidateRequestResourceBuilder().mergeFrom(value);
         } else {
           urlMapsValidateRequestResource_ = value;
         }
-        onChanged();
       } else {
         urlMapsValidateRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -959,14 +977,13 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUrlMapsValidateRequestResource() {
-      if (urlMapsValidateRequestResourceBuilder_ == null) {
-        urlMapsValidateRequestResource_ = null;
-        onChanged();
-      } else {
-        urlMapsValidateRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      urlMapsValidateRequestResource_ = null;
+      if (urlMapsValidateRequestResourceBuilder_ != null) {
+        urlMapsValidateRequestResourceBuilder_.dispose();
         urlMapsValidateRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -982,7 +999,7 @@ public final class ValidateUrlMapRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.compute.v1.UrlMapsValidateRequest.Builder
         getUrlMapsValidateRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUrlMapsValidateRequestResourceFieldBuilder().getBuilder();
     }

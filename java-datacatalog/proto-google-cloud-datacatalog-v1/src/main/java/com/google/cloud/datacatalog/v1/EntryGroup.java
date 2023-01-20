@@ -72,7 +72,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -280,7 +286,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder
       getDataCatalogTimestampsOrBuilder() {
-    return getDataCatalogTimestamps();
+    return dataCatalogTimestamps_ == null
+        ? com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()
+        : dataCatalogTimestamps_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -515,16 +523,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (dataCatalogTimestampsBuilder_ == null) {
-        dataCatalogTimestamps_ = null;
-      } else {
-        dataCatalogTimestamps_ = null;
+      dataCatalogTimestamps_ = null;
+      if (dataCatalogTimestampsBuilder_ != null) {
+        dataCatalogTimestampsBuilder_.dispose();
         dataCatalogTimestampsBuilder_ = null;
       }
       return this;
@@ -554,16 +559,30 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.EntryGroup buildPartial() {
       com.google.cloud.datacatalog.v1.EntryGroup result =
           new com.google.cloud.datacatalog.v1.EntryGroup(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (dataCatalogTimestampsBuilder_ == null) {
-        result.dataCatalogTimestamps_ = dataCatalogTimestamps_;
-      } else {
-        result.dataCatalogTimestamps_ = dataCatalogTimestampsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.EntryGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataCatalogTimestamps_ =
+            dataCatalogTimestampsBuilder_ == null
+                ? dataCatalogTimestamps_
+                : dataCatalogTimestampsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -613,14 +632,17 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datacatalog.v1.EntryGroup.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDataCatalogTimestamps()) {
@@ -655,26 +677,26 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getDataCatalogTimestampsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -693,6 +715,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -761,8 +785,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +804,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -804,8 +828,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,8 +898,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -892,8 +916,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -915,8 +939,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -988,8 +1012,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1007,8 +1031,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1031,8 +1055,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,7 +1081,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataCatalogTimestamps field is set.
      */
     public boolean hasDataCatalogTimestamps() {
-      return dataCatalogTimestampsBuilder_ != null || dataCatalogTimestamps_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1099,11 +1123,11 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataCatalogTimestamps_ = value;
-        onChanged();
       } else {
         dataCatalogTimestampsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1121,11 +1145,11 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datacatalog.v1.SystemTimestamps.Builder builderForValue) {
       if (dataCatalogTimestampsBuilder_ == null) {
         dataCatalogTimestamps_ = builderForValue.build();
-        onChanged();
       } else {
         dataCatalogTimestampsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1142,19 +1166,19 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDataCatalogTimestamps(
         com.google.cloud.datacatalog.v1.SystemTimestamps value) {
       if (dataCatalogTimestampsBuilder_ == null) {
-        if (dataCatalogTimestamps_ != null) {
-          dataCatalogTimestamps_ =
-              com.google.cloud.datacatalog.v1.SystemTimestamps.newBuilder(dataCatalogTimestamps_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && dataCatalogTimestamps_ != null
+            && dataCatalogTimestamps_
+                != com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()) {
+          getDataCatalogTimestampsBuilder().mergeFrom(value);
         } else {
           dataCatalogTimestamps_ = value;
         }
-        onChanged();
       } else {
         dataCatalogTimestampsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1169,14 +1193,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataCatalogTimestamps() {
-      if (dataCatalogTimestampsBuilder_ == null) {
-        dataCatalogTimestamps_ = null;
-        onChanged();
-      } else {
-        dataCatalogTimestamps_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dataCatalogTimestamps_ = null;
+      if (dataCatalogTimestampsBuilder_ != null) {
+        dataCatalogTimestampsBuilder_.dispose();
         dataCatalogTimestampsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1192,7 +1215,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datacatalog.v1.SystemTimestamps.Builder
         getDataCatalogTimestampsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDataCatalogTimestampsFieldBuilder().getBuilder();
     }

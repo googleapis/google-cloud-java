@@ -259,7 +259,9 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -312,7 +314,9 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int AUTH_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object authToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authToken_ = "";
   /**
    *
    *
@@ -367,7 +371,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OVERWRITE_IF_EXISTS_FIELD_NUMBER = 5;
-  private boolean overwriteIfExists_;
+  private boolean overwriteIfExists_ = false;
   /**
    *
    *
@@ -387,7 +391,9 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CHANNEL_PARTNER_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object channelPartnerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channelPartnerId_ = "";
   /**
    *
    *
@@ -442,7 +448,9 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CUSTOMER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object customer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customer_ = "";
   /**
    *
    *
@@ -767,16 +775,12 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       authToken_ = "";
-
       overwriteIfExists_ = false;
-
       channelPartnerId_ = "";
-
       customer_ = "";
-
       customerIdentityCase_ = 0;
       customerIdentity_ = null;
       return this;
@@ -806,20 +810,36 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.channel.v1.ImportCustomerRequest buildPartial() {
       com.google.cloud.channel.v1.ImportCustomerRequest result =
           new com.google.cloud.channel.v1.ImportCustomerRequest(this);
-      if (customerIdentityCase_ == 2) {
-        result.customerIdentity_ = customerIdentity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (customerIdentityCase_ == 3) {
-        result.customerIdentity_ = customerIdentity_;
-      }
-      result.parent_ = parent_;
-      result.authToken_ = authToken_;
-      result.overwriteIfExists_ = overwriteIfExists_;
-      result.channelPartnerId_ = channelPartnerId_;
-      result.customer_ = customer_;
-      result.customerIdentityCase_ = customerIdentityCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ImportCustomerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.authToken_ = authToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.overwriteIfExists_ = overwriteIfExists_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.channelPartnerId_ = channelPartnerId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customer_ = customer_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.ImportCustomerRequest result) {
+      result.customerIdentityCase_ = customerIdentityCase_;
+      result.customerIdentity_ = this.customerIdentity_;
     }
 
     @java.lang.Override
@@ -870,10 +890,12 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getAuthToken().isEmpty()) {
         authToken_ = other.authToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getOverwriteIfExists() != false) {
@@ -881,10 +903,12 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getChannelPartnerId().isEmpty()) {
         channelPartnerId_ = other.channelPartnerId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getCustomer().isEmpty()) {
         customer_ = other.customer_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getCustomerIdentityCase()) {
@@ -936,7 +960,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -956,25 +980,25 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
             case 34:
               {
                 authToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 overwriteIfExists_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 channelPartnerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 customer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1007,6 +1031,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1343,8 +1369,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1362,8 +1388,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1386,8 +1412,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1462,8 +1488,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       authToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1482,8 +1508,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAuthToken() {
-
       authToken_ = getDefaultInstance().getAuthToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1507,8 +1533,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1548,6 +1574,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public Builder setOverwriteIfExists(boolean value) {
 
       overwriteIfExists_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1565,7 +1592,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOverwriteIfExists() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       overwriteIfExists_ = false;
       onChanged();
       return this;
@@ -1641,8 +1668,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       channelPartnerId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1661,8 +1688,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearChannelPartnerId() {
-
       channelPartnerId_ = getDefaultInstance().getChannelPartnerId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1686,8 +1713,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channelPartnerId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1765,8 +1792,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       customer_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1786,8 +1813,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCustomer() {
-
       customer_ = getDefaultInstance().getCustomer();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1812,8 +1839,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customer_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

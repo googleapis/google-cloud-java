@@ -120,7 +120,7 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.type.DecimalOrBuilder getPercentageOrBuilder() {
-    return getPercentage();
+    return percentage_ == null ? com.google.type.Decimal.getDefaultInstance() : percentage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +325,10 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (percentageBuilder_ == null) {
-        percentage_ = null;
-      } else {
-        percentage_ = null;
+      bitField0_ = 0;
+      percentage_ = null;
+      if (percentageBuilder_ != null) {
+        percentageBuilder_.dispose();
         percentageBuilder_ = null;
       }
       return this;
@@ -358,13 +358,18 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
     public com.google.cloud.channel.v1.PercentageAdjustment buildPartial() {
       com.google.cloud.channel.v1.PercentageAdjustment result =
           new com.google.cloud.channel.v1.PercentageAdjustment(this);
-      if (percentageBuilder_ == null) {
-        result.percentage_ = percentage_;
-      } else {
-        result.percentage_ = percentageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.PercentageAdjustment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.percentage_ = percentageBuilder_ == null ? percentage_ : percentageBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +450,7 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 input.readMessage(getPercentageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -464,6 +469,8 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.type.Decimal percentage_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -487,7 +494,7 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
      * @return Whether the percentage field is set.
      */
     public boolean hasPercentage() {
-      return percentageBuilder_ != null || percentage_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -530,11 +537,11 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         percentage_ = value;
-        onChanged();
       } else {
         percentageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -553,11 +560,11 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
     public Builder setPercentage(com.google.type.Decimal.Builder builderForValue) {
       if (percentageBuilder_ == null) {
         percentage_ = builderForValue.build();
-        onChanged();
       } else {
         percentageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,17 +582,18 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
      */
     public Builder mergePercentage(com.google.type.Decimal value) {
       if (percentageBuilder_ == null) {
-        if (percentage_ != null) {
-          percentage_ =
-              com.google.type.Decimal.newBuilder(percentage_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && percentage_ != null
+            && percentage_ != com.google.type.Decimal.getDefaultInstance()) {
+          getPercentageBuilder().mergeFrom(value);
         } else {
           percentage_ = value;
         }
-        onChanged();
       } else {
         percentageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -602,14 +610,13 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
      * <code>.google.type.Decimal percentage = 2;</code>
      */
     public Builder clearPercentage() {
-      if (percentageBuilder_ == null) {
-        percentage_ = null;
-        onChanged();
-      } else {
-        percentage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      percentage_ = null;
+      if (percentageBuilder_ != null) {
+        percentageBuilder_.dispose();
         percentageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -626,7 +633,7 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
      * <code>.google.type.Decimal percentage = 2;</code>
      */
     public com.google.type.Decimal.Builder getPercentageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPercentageFieldBuilder().getBuilder();
     }

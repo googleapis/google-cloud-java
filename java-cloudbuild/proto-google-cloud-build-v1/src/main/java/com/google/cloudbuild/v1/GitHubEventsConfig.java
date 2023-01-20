@@ -118,7 +118,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INSTALLATION_ID_FIELD_NUMBER = 1;
-  private long installationId_;
+  private long installationId_ = 0L;
   /**
    *
    *
@@ -139,7 +139,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OWNER_FIELD_NUMBER = 6;
-  private volatile java.lang.Object owner_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object owner_ = "";
   /**
    *
    *
@@ -192,7 +194,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -600,12 +604,10 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       installationId_ = 0L;
-
       owner_ = "";
-
       name_ = "";
-
       if (pullRequestBuilder_ != null) {
         pullRequestBuilder_.clear();
       }
@@ -641,26 +643,36 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.GitHubEventsConfig buildPartial() {
       com.google.cloudbuild.v1.GitHubEventsConfig result =
           new com.google.cloudbuild.v1.GitHubEventsConfig(this);
-      result.installationId_ = installationId_;
-      result.owner_ = owner_;
-      result.name_ = name_;
-      if (eventCase_ == 4) {
-        if (pullRequestBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = pullRequestBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (eventCase_ == 5) {
-        if (pushBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = pushBuilder_.build();
-        }
-      }
-      result.eventCase_ = eventCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.GitHubEventsConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.installationId_ = installationId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.owner_ = owner_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloudbuild.v1.GitHubEventsConfig result) {
+      result.eventCase_ = eventCase_;
+      result.event_ = this.event_;
+      if (eventCase_ == 4 && pullRequestBuilder_ != null) {
+        result.event_ = pullRequestBuilder_.build();
+      }
+      if (eventCase_ == 5 && pushBuilder_ != null) {
+        result.event_ = pushBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -713,10 +725,12 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getOwner().isEmpty()) {
         owner_ = other.owner_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getEventCase()) {
@@ -764,7 +778,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 installationId_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 34:
@@ -782,13 +796,13 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             case 50:
               {
                 owner_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             default:
@@ -821,6 +835,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private long installationId_;
     /**
@@ -859,6 +875,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     public Builder setInstallationId(long value) {
 
       installationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,7 +894,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Deprecated
     public Builder clearInstallationId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       installationId_ = 0L;
       onChanged();
       return this;
@@ -950,8 +967,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       owner_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,8 +986,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearOwner() {
-
       owner_ = getDefaultInstance().getOwner();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -993,8 +1010,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       owner_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1063,8 +1080,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1081,8 +1098,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1104,8 +1121,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1316,7 +1333,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       }
       eventCase_ = 4;
       onChanged();
-      ;
       return pullRequestBuilder_;
     }
 
@@ -1522,7 +1538,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       }
       eventCase_ = 5;
       onChanged();
-      ;
       return pushBuilder_;
     }
 

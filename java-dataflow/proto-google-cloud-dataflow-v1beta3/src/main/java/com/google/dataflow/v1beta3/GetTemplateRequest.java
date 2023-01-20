@@ -229,7 +229,9 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -354,7 +356,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VIEW_FIELD_NUMBER = 3;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -383,16 +385,17 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView getView() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView result =
-        com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.valueOf(view_);
+        com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.forNumber(view_);
     return result == null
         ? com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.UNRECOGNIZED
         : result;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -683,12 +686,10 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       view_ = 0;
-
       location_ = "";
-
       templateCase_ = 0;
       template_ = null;
       return this;
@@ -718,15 +719,30 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.GetTemplateRequest buildPartial() {
       com.google.dataflow.v1beta3.GetTemplateRequest result =
           new com.google.dataflow.v1beta3.GetTemplateRequest(this);
-      result.projectId_ = projectId_;
-      if (templateCase_ == 2) {
-        result.template_ = template_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.view_ = view_;
-      result.location_ = location_;
-      result.templateCase_ = templateCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.GetTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.view_ = view_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.location_ = location_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.dataflow.v1beta3.GetTemplateRequest result) {
+      result.templateCase_ = templateCase_;
+      result.template_ = this.template_;
     }
 
     @java.lang.Override
@@ -776,6 +792,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.dataflow.v1beta3.GetTemplateRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -783,6 +800,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getTemplateCase()) {
@@ -827,7 +845,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -840,13 +858,13 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
             case 24:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -879,6 +897,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -941,8 +961,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -958,8 +978,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -980,8 +1000,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1161,8 +1181,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1179,9 +1199,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView getView() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView result =
-          com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.valueOf(view_);
+          com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.forNumber(view_);
       return result == null
           ? com.google.dataflow.v1beta3.GetTemplateRequest.TemplateView.UNRECOGNIZED
           : result;
@@ -1202,7 +1221,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1219,7 +1238,7 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
       onChanged();
       return this;
@@ -1292,8 +1311,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1311,8 +1330,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1335,8 +1354,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

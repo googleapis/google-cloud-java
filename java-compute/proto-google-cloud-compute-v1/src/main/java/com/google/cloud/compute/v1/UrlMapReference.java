@@ -68,7 +68,9 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
-  private volatile java.lang.Object urlMap_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMap_ = "";
   /**
    * <code>optional string url_map = 367020684;</code>
    *
@@ -314,8 +316,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       urlMap_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -343,15 +345,21 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.UrlMapReference buildPartial() {
       com.google.cloud.compute.v1.UrlMapReference result =
           new com.google.cloud.compute.v1.UrlMapReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UrlMapReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.urlMap_ = urlMap_;
         to_bitField0_ |= 0x00000001;
       }
-      result.urlMap_ = urlMap_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -400,8 +408,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlMapReference other) {
       if (other == com.google.cloud.compute.v1.UrlMapReference.getDefaultInstance()) return this;
       if (other.hasUrlMap()) {
-        bitField0_ |= 0x00000001;
         urlMap_ = other.urlMap_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,8 +514,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       urlMap_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -517,8 +525,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       urlMap_ = getDefaultInstance().getUrlMap();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -533,8 +541,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       urlMap_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

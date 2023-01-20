@@ -70,7 +70,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -123,6 +125,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_HASH_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.FileHashes> fileHash_;
   /**
    *
@@ -399,15 +403,15 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       if (fileHashBuilder_ == null) {
         fileHash_ = java.util.Collections.emptyList();
       } else {
         fileHash_ = null;
         fileHashBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,19 +439,31 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.ArtifactResult buildPartial() {
       com.google.cloudbuild.v1.ArtifactResult result =
           new com.google.cloudbuild.v1.ArtifactResult(this);
-      int from_bitField0_ = bitField0_;
-      result.location_ = location_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.ArtifactResult result) {
       if (fileHashBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           fileHash_ = java.util.Collections.unmodifiableList(fileHash_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.fileHash_ = fileHash_;
       } else {
         result.fileHash_ = fileHashBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.ArtifactResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -497,13 +513,14 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.ArtifactResult.getDefaultInstance()) return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (fileHashBuilder_ == null) {
         if (!other.fileHash_.isEmpty()) {
           if (fileHash_.isEmpty()) {
             fileHash_ = other.fileHash_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFileHashIsMutable();
             fileHash_.addAll(other.fileHash_);
@@ -516,7 +533,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
             fileHashBuilder_.dispose();
             fileHashBuilder_ = null;
             fileHash_ = other.fileHash_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             fileHashBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFileHashFieldBuilder()
@@ -555,7 +572,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -657,8 +674,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,8 +693,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -700,8 +717,8 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,9 +727,9 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFileHashIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fileHash_ = new java.util.ArrayList<com.google.cloudbuild.v1.FileHashes>(fileHash_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -927,7 +944,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFileHash() {
       if (fileHashBuilder_ == null) {
         fileHash_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         fileHashBuilder_.clear();
@@ -1048,7 +1065,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloudbuild.v1.FileHashes,
                 com.google.cloudbuild.v1.FileHashes.Builder,
                 com.google.cloudbuild.v1.FileHashesOrBuilder>(
-                fileHash_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                fileHash_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         fileHash_ = null;
       }
       return fileHashBuilder_;

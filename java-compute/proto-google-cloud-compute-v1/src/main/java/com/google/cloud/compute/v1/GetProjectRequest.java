@@ -68,7 +68,9 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.GetProjectRequest buildPartial() {
       com.google.cloud.compute.v1.GetProjectRequest result =
           new com.google.cloud.compute.v1.GetProjectRequest(this);
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +405,7 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.compute.v1.GetProjectRequest.getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -425,7 +437,7 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -444,6 +456,8 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -506,8 +520,8 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -523,8 +537,8 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class GetProjectRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

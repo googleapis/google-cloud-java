@@ -134,7 +134,9 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.TimeIntervalOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.TimeInterval.getDefaultInstance()
+        : interval_;
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
@@ -182,7 +184,9 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.TypedValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    return value_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.TypedValue.getDefaultInstance()
+        : value_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -401,16 +405,15 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        interval_ = null;
+      bitField0_ = 0;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
       return this;
@@ -440,18 +443,21 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.Point buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.Point result =
           new com.google.cloud.bigquery.migration.v2alpha.Point(this);
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
-      }
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.Point result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,13 +541,13 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -560,6 +566,8 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.bigquery.migration.v2alpha.TimeInterval interval_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -587,7 +595,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -640,11 +648,11 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,11 +676,11 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.migration.v2alpha.TimeInterval.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,19 +702,19 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInterval(com.google.cloud.bigquery.migration.v2alpha.TimeInterval value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
-          interval_ =
-              com.google.cloud.bigquery.migration.v2alpha.TimeInterval.newBuilder(interval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && interval_ != null
+            && interval_
+                != com.google.cloud.bigquery.migration.v2alpha.TimeInterval.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -727,14 +735,13 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.migration.v2alpha.TimeInterval interval = 1;</code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        interval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -755,7 +762,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.migration.v2alpha.TimeInterval interval = 1;</code>
      */
     public com.google.cloud.bigquery.migration.v2alpha.TimeInterval.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
@@ -838,7 +845,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -875,11 +882,11 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         value_ = value;
-        onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -895,11 +902,11 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.bigquery.migration.v2alpha.TypedValue.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
-        onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -913,19 +920,19 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeValue(com.google.cloud.bigquery.migration.v2alpha.TypedValue value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ =
-              com.google.cloud.bigquery.migration.v2alpha.TypedValue.newBuilder(value_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && value_ != null
+            && value_
+                != com.google.cloud.bigquery.migration.v2alpha.TypedValue.getDefaultInstance()) {
+          getValueBuilder().mergeFrom(value);
         } else {
           value_ = value;
         }
-        onChanged();
       } else {
         valueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -938,14 +945,13 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.migration.v2alpha.TypedValue value = 2;</code>
      */
     public Builder clearValue() {
-      if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
-      } else {
-        value_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -958,7 +964,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.bigquery.migration.v2alpha.TypedValue value = 2;</code>
      */
     public com.google.cloud.bigquery.migration.v2alpha.TypedValue.Builder getValueBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }

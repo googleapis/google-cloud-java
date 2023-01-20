@@ -69,7 +69,9 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
-  private volatile java.lang.Object instanceTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceTemplate_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -486,16 +490,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceTemplate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (targetSizeBuilder_ == null) {
-        targetSize_ = null;
-      } else {
-        targetSizeBuilder_.clear();
+      targetSize_ = null;
+      if (targetSizeBuilder_ != null) {
+        targetSizeBuilder_.dispose();
+        targetSizeBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -523,27 +525,29 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InstanceGroupManagerVersion buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerVersion result =
           new com.google.cloud.compute.v1.InstanceGroupManagerVersion(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceGroupManagerVersion result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceTemplate_ = instanceTemplate_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceTemplate_ = instanceTemplate_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (targetSizeBuilder_ == null) {
-          result.targetSize_ = targetSize_;
-        } else {
-          result.targetSize_ = targetSizeBuilder_.build();
-        }
+        result.targetSize_ = targetSizeBuilder_ == null ? targetSize_ : targetSizeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -593,13 +597,13 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.InstanceGroupManagerVersion.getDefaultInstance())
         return this;
       if (other.hasInstanceTemplate()) {
-        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTargetSize()) {
@@ -743,8 +747,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,8 +764,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -782,8 +786,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,8 +867,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,8 +884,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -902,8 +906,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -963,11 +967,11 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         targetSize_ = value;
-        onChanged();
       } else {
         targetSizeBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -983,11 +987,11 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
       if (targetSizeBuilder_ == null) {
         targetSize_ = builderForValue.build();
-        onChanged();
       } else {
         targetSizeBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1004,18 +1008,15 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         if (((bitField0_ & 0x00000004) != 0)
             && targetSize_ != null
             && targetSize_ != com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) {
-          targetSize_ =
-              com.google.cloud.compute.v1.FixedOrPercent.newBuilder(targetSize_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getTargetSizeBuilder().mergeFrom(value);
         } else {
           targetSize_ = value;
         }
-        onChanged();
       } else {
         targetSizeBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,13 +1029,13 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public Builder clearTargetSize() {
-      if (targetSizeBuilder_ == null) {
-        targetSize_ = null;
-        onChanged();
-      } else {
-        targetSizeBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      targetSize_ = null;
+      if (targetSizeBuilder_ != null) {
+        targetSizeBuilder_.dispose();
+        targetSizeBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

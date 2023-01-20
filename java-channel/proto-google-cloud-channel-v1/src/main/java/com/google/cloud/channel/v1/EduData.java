@@ -494,7 +494,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTITUTE_TYPE_FIELD_NUMBER = 1;
-  private int instituteType_;
+  private int instituteType_ = 0;
   /**
    *
    *
@@ -523,14 +523,13 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.EduData.InstituteType getInstituteType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.EduData.InstituteType result =
-        com.google.cloud.channel.v1.EduData.InstituteType.valueOf(instituteType_);
+        com.google.cloud.channel.v1.EduData.InstituteType.forNumber(instituteType_);
     return result == null ? com.google.cloud.channel.v1.EduData.InstituteType.UNRECOGNIZED : result;
   }
 
   public static final int INSTITUTE_SIZE_FIELD_NUMBER = 2;
-  private int instituteSize_;
+  private int instituteSize_ = 0;
   /**
    *
    *
@@ -559,14 +558,15 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.EduData.InstituteSize getInstituteSize() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.EduData.InstituteSize result =
-        com.google.cloud.channel.v1.EduData.InstituteSize.valueOf(instituteSize_);
+        com.google.cloud.channel.v1.EduData.InstituteSize.forNumber(instituteSize_);
     return result == null ? com.google.cloud.channel.v1.EduData.InstituteSize.UNRECOGNIZED : result;
   }
 
   public static final int WEBSITE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object website_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object website_ = "";
   /**
    *
    *
@@ -835,12 +835,10 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instituteType_ = 0;
-
       instituteSize_ = 0;
-
       website_ = "";
-
       return this;
     }
 
@@ -867,11 +865,24 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.EduData buildPartial() {
       com.google.cloud.channel.v1.EduData result = new com.google.cloud.channel.v1.EduData(this);
-      result.instituteType_ = instituteType_;
-      result.instituteSize_ = instituteSize_;
-      result.website_ = website_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.EduData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instituteType_ = instituteType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instituteSize_ = instituteSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.website_ = website_;
+      }
     }
 
     @java.lang.Override
@@ -927,6 +938,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWebsite().isEmpty()) {
         website_ = other.website_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -958,19 +970,19 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 instituteType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 instituteSize_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 website_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -989,6 +1001,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int instituteType_ = 0;
     /**
@@ -1019,8 +1033,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInstituteTypeValue(int value) {
-
       instituteType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1037,9 +1051,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.EduData.InstituteType getInstituteType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.EduData.InstituteType result =
-          com.google.cloud.channel.v1.EduData.InstituteType.valueOf(instituteType_);
+          com.google.cloud.channel.v1.EduData.InstituteType.forNumber(instituteType_);
       return result == null
           ? com.google.cloud.channel.v1.EduData.InstituteType.UNRECOGNIZED
           : result;
@@ -1060,7 +1073,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instituteType_ = value.getNumber();
       onChanged();
       return this;
@@ -1077,7 +1090,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstituteType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instituteType_ = 0;
       onChanged();
       return this;
@@ -1112,8 +1125,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInstituteSizeValue(int value) {
-
       instituteSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1130,9 +1143,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.EduData.InstituteSize getInstituteSize() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.EduData.InstituteSize result =
-          com.google.cloud.channel.v1.EduData.InstituteSize.valueOf(instituteSize_);
+          com.google.cloud.channel.v1.EduData.InstituteSize.forNumber(instituteSize_);
       return result == null
           ? com.google.cloud.channel.v1.EduData.InstituteSize.UNRECOGNIZED
           : result;
@@ -1153,7 +1165,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       instituteSize_ = value.getNumber();
       onChanged();
       return this;
@@ -1170,7 +1182,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstituteSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instituteSize_ = 0;
       onChanged();
       return this;
@@ -1237,8 +1249,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       website_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1254,8 +1266,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebsite() {
-
       website_ = getDefaultInstance().getWebsite();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1276,8 +1288,8 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       website_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

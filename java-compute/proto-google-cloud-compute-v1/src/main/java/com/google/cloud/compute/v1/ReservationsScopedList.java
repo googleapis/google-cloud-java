@@ -68,6 +68,8 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int RESERVATIONS_FIELD_NUMBER = 399717927;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Reservation> reservations_;
   /**
    *
@@ -405,6 +407,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
       } else {
@@ -412,12 +415,11 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         reservationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (warningBuilder_ == null) {
-        warning_ = null;
-      } else {
-        warningBuilder_.clear();
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -445,8 +447,16 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ReservationsScopedList buildPartial() {
       com.google.cloud.compute.v1.ReservationsScopedList result =
           new com.google.cloud.compute.v1.ReservationsScopedList(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ReservationsScopedList result) {
       if (reservationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
@@ -456,17 +466,16 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       } else {
         result.reservations_ = reservationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ReservationsScopedList result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (warningBuilder_ == null) {
-          result.warning_ = warning_;
-        } else {
-          result.warning_ = warningBuilder_.build();
-        }
+        result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1015,11 +1024,11 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         warning_ = value;
-        onChanged();
       } else {
         warningBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1034,11 +1043,11 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
         warning_ = builderForValue.build();
-        onChanged();
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1055,18 +1064,15 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         if (((bitField0_ & 0x00000002) != 0)
             && warning_ != null
             && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
-          warning_ =
-              com.google.cloud.compute.v1.Warning.newBuilder(warning_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWarningBuilder().mergeFrom(value);
         } else {
           warning_ = value;
         }
-        onChanged();
       } else {
         warningBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1079,13 +1085,13 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
-      if (warningBuilder_ == null) {
-        warning_ = null;
-        onChanged();
-      } else {
-        warningBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

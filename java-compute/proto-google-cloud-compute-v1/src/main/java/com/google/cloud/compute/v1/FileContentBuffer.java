@@ -200,7 +200,9 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int CONTENT_FIELD_NUMBER = 414659705;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -264,7 +266,9 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILE_TYPE_FIELD_NUMBER = 294346781;
-  private volatile java.lang.Object fileType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fileType_ = "";
   /**
    *
    *
@@ -545,10 +549,9 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       fileType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -576,19 +579,25 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.FileContentBuffer buildPartial() {
       com.google.cloud.compute.v1.FileContentBuffer result =
           new com.google.cloud.compute.v1.FileContentBuffer(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FileContentBuffer result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
         to_bitField0_ |= 0x00000001;
       }
-      result.content_ = content_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileType_ = fileType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.fileType_ = fileType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -637,13 +646,13 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.compute.v1.FileContentBuffer other) {
       if (other == com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance()) return this;
       if (other.hasContent()) {
-        bitField0_ |= 0x00000001;
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFileType()) {
-        bitField0_ |= 0x00000002;
         fileType_ = other.fileType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -778,8 +787,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,8 +804,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +826,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,8 +911,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       fileType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -920,8 +929,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFileType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       fileType_ = getDefaultInstance().getFileType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -943,8 +952,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       fileType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

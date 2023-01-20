@@ -68,7 +68,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENABLE_RENEWAL_FIELD_NUMBER = 1;
-  private boolean enableRenewal_;
+  private boolean enableRenewal_ = false;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESIZE_UNIT_COUNT_FIELD_NUMBER = 2;
-  private boolean resizeUnitCount_;
+  private boolean resizeUnitCount_ = false;
   /**
    *
    *
@@ -105,7 +105,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAYMENT_PLAN_FIELD_NUMBER = 5;
-  private int paymentPlan_;
+  private int paymentPlan_ = 0;
   /**
    *
    *
@@ -134,9 +134,8 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PaymentPlan getPaymentPlan() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.PaymentPlan result =
-        com.google.cloud.channel.v1.PaymentPlan.valueOf(paymentPlan_);
+        com.google.cloud.channel.v1.PaymentPlan.forNumber(paymentPlan_);
     return result == null ? com.google.cloud.channel.v1.PaymentPlan.UNRECOGNIZED : result;
   }
 
@@ -188,7 +187,9 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PeriodOrBuilder getPaymentCycleOrBuilder() {
-    return getPaymentCycle();
+    return paymentCycle_ == null
+        ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+        : paymentCycle_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -422,16 +423,13 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableRenewal_ = false;
-
       resizeUnitCount_ = false;
-
       paymentPlan_ = 0;
-
-      if (paymentCycleBuilder_ == null) {
-        paymentCycle_ = null;
-      } else {
-        paymentCycle_ = null;
+      paymentCycle_ = null;
+      if (paymentCycleBuilder_ != null) {
+        paymentCycleBuilder_.dispose();
         paymentCycleBuilder_ = null;
       }
       return this;
@@ -461,16 +459,28 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.RenewalSettings buildPartial() {
       com.google.cloud.channel.v1.RenewalSettings result =
           new com.google.cloud.channel.v1.RenewalSettings(this);
-      result.enableRenewal_ = enableRenewal_;
-      result.resizeUnitCount_ = resizeUnitCount_;
-      result.paymentPlan_ = paymentPlan_;
-      if (paymentCycleBuilder_ == null) {
-        result.paymentCycle_ = paymentCycle_;
-      } else {
-        result.paymentCycle_ = paymentCycleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.RenewalSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableRenewal_ = enableRenewal_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resizeUnitCount_ = resizeUnitCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.paymentPlan_ = paymentPlan_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.paymentCycle_ =
+            paymentCycleBuilder_ == null ? paymentCycle_ : paymentCycleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -559,25 +569,25 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 enableRenewal_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 resizeUnitCount_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 40:
               {
                 paymentPlan_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getPaymentCycleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -596,6 +606,8 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableRenewal_;
     /**
@@ -628,6 +640,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setEnableRenewal(boolean value) {
 
       enableRenewal_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,7 +656,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEnableRenewal() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableRenewal_ = false;
       onChanged();
       return this;
@@ -682,6 +695,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setResizeUnitCount(boolean value) {
 
       resizeUnitCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -698,7 +712,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearResizeUnitCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       resizeUnitCount_ = false;
       onChanged();
       return this;
@@ -733,8 +747,8 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPaymentPlanValue(int value) {
-
       paymentPlan_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -751,9 +765,8 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.PaymentPlan getPaymentPlan() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.PaymentPlan result =
-          com.google.cloud.channel.v1.PaymentPlan.valueOf(paymentPlan_);
+          com.google.cloud.channel.v1.PaymentPlan.forNumber(paymentPlan_);
       return result == null ? com.google.cloud.channel.v1.PaymentPlan.UNRECOGNIZED : result;
     }
     /**
@@ -772,7 +785,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       paymentPlan_ = value.getNumber();
       onChanged();
       return this;
@@ -789,7 +802,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPaymentPlan() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       paymentPlan_ = 0;
       onChanged();
       return this;
@@ -814,7 +827,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the paymentCycle field is set.
      */
     public boolean hasPaymentCycle() {
-      return paymentCycleBuilder_ != null || paymentCycle_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -853,11 +866,11 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         paymentCycle_ = value;
-        onChanged();
       } else {
         paymentCycleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -873,11 +886,11 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setPaymentCycle(com.google.cloud.channel.v1.Period.Builder builderForValue) {
       if (paymentCycleBuilder_ == null) {
         paymentCycle_ = builderForValue.build();
-        onChanged();
       } else {
         paymentCycleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -892,19 +905,18 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePaymentCycle(com.google.cloud.channel.v1.Period value) {
       if (paymentCycleBuilder_ == null) {
-        if (paymentCycle_ != null) {
-          paymentCycle_ =
-              com.google.cloud.channel.v1.Period.newBuilder(paymentCycle_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && paymentCycle_ != null
+            && paymentCycle_ != com.google.cloud.channel.v1.Period.getDefaultInstance()) {
+          getPaymentCycleBuilder().mergeFrom(value);
         } else {
           paymentCycle_ = value;
         }
-        onChanged();
       } else {
         paymentCycleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -918,14 +930,13 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.channel.v1.Period payment_cycle = 6;</code>
      */
     public Builder clearPaymentCycle() {
-      if (paymentCycleBuilder_ == null) {
-        paymentCycle_ = null;
-        onChanged();
-      } else {
-        paymentCycle_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      paymentCycle_ = null;
+      if (paymentCycleBuilder_ != null) {
+        paymentCycleBuilder_.dispose();
         paymentCycleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -939,7 +950,7 @@ public final class RenewalSettings extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.channel.v1.Period payment_cycle = 6;</code>
      */
     public com.google.cloud.channel.v1.Period.Builder getPaymentCycleBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPaymentCycleFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOPIC_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topicId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topicId_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList messages_;
   /**
    *
@@ -393,10 +397,10 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topicId_ = "";
-
       messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -424,15 +428,28 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.PublishAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.PublishAction result =
           new com.google.cloud.contentwarehouse.v1.PublishAction(this);
-      int from_bitField0_ = bitField0_;
-      result.topicId_ = topicId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        messages_ = messages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.messages_ = messages_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.PublishAction result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        messages_ = messages_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.messages_ = messages_;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.PublishAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topicId_ = topicId_;
+      }
     }
 
     @java.lang.Override
@@ -483,12 +500,13 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getTopicId().isEmpty()) {
         topicId_ = other.topicId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.messages_.isEmpty()) {
         if (messages_.isEmpty()) {
           messages_ = other.messages_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureMessagesIsMutable();
           messages_.addAll(other.messages_);
@@ -524,7 +542,7 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 topicId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -617,8 +635,8 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       topicId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,8 +653,8 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopicId() {
-
       topicId_ = getDefaultInstance().getTopicId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +676,8 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topicId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,9 +686,9 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         messages_ = new com.google.protobuf.LazyStringArrayList(messages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -805,7 +823,7 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMessages() {
       messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

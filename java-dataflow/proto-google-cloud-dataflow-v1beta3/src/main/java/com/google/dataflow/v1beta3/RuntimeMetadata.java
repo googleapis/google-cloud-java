@@ -110,10 +110,12 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.SDKInfoOrBuilder getSdkInfoOrBuilder() {
-    return getSdkInfo();
+    return sdkInfo_ == null ? com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance() : sdkInfo_;
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> parameters_;
   /**
    *
@@ -395,10 +397,10 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sdkInfoBuilder_ == null) {
-        sdkInfo_ = null;
-      } else {
-        sdkInfo_ = null;
+      bitField0_ = 0;
+      sdkInfo_ = null;
+      if (sdkInfoBuilder_ != null) {
+        sdkInfoBuilder_.dispose();
         sdkInfoBuilder_ = null;
       }
       if (parametersBuilder_ == null) {
@@ -407,7 +409,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,23 +437,31 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.dataflow.v1beta3.RuntimeMetadata buildPartial() {
       com.google.dataflow.v1beta3.RuntimeMetadata result =
           new com.google.dataflow.v1beta3.RuntimeMetadata(this);
-      int from_bitField0_ = bitField0_;
-      if (sdkInfoBuilder_ == null) {
-        result.sdkInfo_ = sdkInfo_;
-      } else {
-        result.sdkInfo_ = sdkInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.RuntimeMetadata result) {
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.RuntimeMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sdkInfo_ = sdkInfoBuilder_ == null ? sdkInfo_ : sdkInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -506,7 +516,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -519,7 +529,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -558,7 +568,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getSdkInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -611,7 +621,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
      * @return Whether the sdkInfo field is set.
      */
     public boolean hasSdkInfo() {
-      return sdkInfoBuilder_ != null || sdkInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -648,11 +658,11 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         sdkInfo_ = value;
-        onChanged();
       } else {
         sdkInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -667,11 +677,11 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     public Builder setSdkInfo(com.google.dataflow.v1beta3.SDKInfo.Builder builderForValue) {
       if (sdkInfoBuilder_ == null) {
         sdkInfo_ = builderForValue.build();
-        onChanged();
       } else {
         sdkInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,19 +695,18 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSdkInfo(com.google.dataflow.v1beta3.SDKInfo value) {
       if (sdkInfoBuilder_ == null) {
-        if (sdkInfo_ != null) {
-          sdkInfo_ =
-              com.google.dataflow.v1beta3.SDKInfo.newBuilder(sdkInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && sdkInfo_ != null
+            && sdkInfo_ != com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance()) {
+          getSdkInfoBuilder().mergeFrom(value);
         } else {
           sdkInfo_ = value;
         }
-        onChanged();
       } else {
         sdkInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -710,14 +719,13 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.SDKInfo sdk_info = 1;</code>
      */
     public Builder clearSdkInfo() {
-      if (sdkInfoBuilder_ == null) {
-        sdkInfo_ = null;
-        onChanged();
-      } else {
-        sdkInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      sdkInfo_ = null;
+      if (sdkInfoBuilder_ != null) {
+        sdkInfoBuilder_.dispose();
         sdkInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -730,7 +738,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.SDKInfo sdk_info = 1;</code>
      */
     public com.google.dataflow.v1beta3.SDKInfo.Builder getSdkInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSdkInfoFieldBuilder().getBuilder();
     }
@@ -782,10 +790,10 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.ParameterMetadata>(parameters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1001,7 +1009,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -1124,7 +1132,7 @@ public final class RuntimeMetadata extends com.google.protobuf.GeneratedMessageV
                 com.google.dataflow.v1beta3.ParameterMetadata,
                 com.google.dataflow.v1beta3.ParameterMetadata.Builder,
                 com.google.dataflow.v1beta3.ParameterMetadataOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;

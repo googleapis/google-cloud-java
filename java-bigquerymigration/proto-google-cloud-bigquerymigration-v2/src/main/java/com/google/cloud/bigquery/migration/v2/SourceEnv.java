@@ -69,7 +69,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_DATABASE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object defaultDatabase_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultDatabase_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_SEARCH_PATH_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList schemaSearchPath_;
   /**
    *
@@ -397,10 +401,10 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       defaultDatabase_ = "";
-
       schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -428,15 +432,28 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.SourceEnv buildPartial() {
       com.google.cloud.bigquery.migration.v2.SourceEnv result =
           new com.google.cloud.bigquery.migration.v2.SourceEnv(this);
-      int from_bitField0_ = bitField0_;
-      result.defaultDatabase_ = defaultDatabase_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        schemaSearchPath_ = schemaSearchPath_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.schemaSearchPath_ = schemaSearchPath_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.migration.v2.SourceEnv result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        schemaSearchPath_ = schemaSearchPath_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.schemaSearchPath_ = schemaSearchPath_;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.SourceEnv result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.defaultDatabase_ = defaultDatabase_;
+      }
     }
 
     @java.lang.Override
@@ -487,12 +504,13 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDefaultDatabase().isEmpty()) {
         defaultDatabase_ = other.defaultDatabase_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.schemaSearchPath_.isEmpty()) {
         if (schemaSearchPath_.isEmpty()) {
           schemaSearchPath_ = other.schemaSearchPath_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureSchemaSearchPathIsMutable();
           schemaSearchPath_.addAll(other.schemaSearchPath_);
@@ -528,7 +546,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 defaultDatabase_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -621,8 +639,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultDatabase_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +657,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultDatabase() {
-
       defaultDatabase_ = getDefaultInstance().getDefaultDatabase();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -662,8 +680,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultDatabase_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,9 +690,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSchemaSearchPathIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         schemaSearchPath_ = new com.google.protobuf.LazyStringArrayList(schemaSearchPath_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -817,7 +835,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSchemaSearchPath() {
       schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

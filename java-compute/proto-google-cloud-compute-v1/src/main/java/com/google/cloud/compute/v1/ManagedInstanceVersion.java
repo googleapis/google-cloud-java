@@ -69,7 +69,9 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
-  private volatile java.lang.Object instanceTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceTemplate_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -412,10 +416,9 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceTemplate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +446,25 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ManagedInstanceVersion buildPartial() {
       com.google.cloud.compute.v1.ManagedInstanceVersion result =
           new com.google.cloud.compute.v1.ManagedInstanceVersion(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ManagedInstanceVersion result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceTemplate_ = instanceTemplate_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceTemplate_ = instanceTemplate_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance())
         return this;
       if (other.hasInstanceTemplate()) {
-        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,8 +655,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +672,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +694,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +814,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

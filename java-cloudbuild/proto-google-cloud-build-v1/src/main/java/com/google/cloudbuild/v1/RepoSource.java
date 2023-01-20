@@ -131,7 +131,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -182,7 +184,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPO_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object repoName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object repoName_ = "";
   /**
    *
    *
@@ -453,7 +457,9 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIR_FIELD_NUMBER = 7;
-  private volatile java.lang.Object dir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dir_ = "";
   /**
    *
    *
@@ -506,7 +512,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVERT_REGEX_FIELD_NUMBER = 8;
-  private boolean invertRegex_;
+  private boolean invertRegex_ = false;
   /**
    *
    *
@@ -537,6 +543,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> substitutions_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -599,8 +606,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getSubstitutionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getSubstitutionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -936,14 +945,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       repoName_ = "";
-
       dir_ = "";
-
       invertRegex_ = false;
-
       internalGetMutableSubstitutions().clear();
       revisionCase_ = 0;
       revision_ = null;
@@ -973,25 +979,37 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.RepoSource buildPartial() {
       com.google.cloudbuild.v1.RepoSource result = new com.google.cloudbuild.v1.RepoSource(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.repoName_ = repoName_;
-      if (revisionCase_ == 3) {
-        result.revision_ = revision_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (revisionCase_ == 4) {
-        result.revision_ = revision_;
-      }
-      if (revisionCase_ == 5) {
-        result.revision_ = revision_;
-      }
-      result.dir_ = dir_;
-      result.invertRegex_ = invertRegex_;
-      result.substitutions_ = internalGetSubstitutions();
-      result.substitutions_.makeImmutable();
-      result.revisionCase_ = revisionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.RepoSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.repoName_ = repoName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dir_ = dir_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.invertRegex_ = invertRegex_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.substitutions_ = internalGetSubstitutions();
+        result.substitutions_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloudbuild.v1.RepoSource result) {
+      result.revisionCase_ = revisionCase_;
+      result.revision_ = this.revision_;
     }
 
     @java.lang.Override
@@ -1041,20 +1059,24 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.RepoSource.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRepoName().isEmpty()) {
         repoName_ = other.repoName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDir().isEmpty()) {
         dir_ = other.dir_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getInvertRegex() != false) {
         setInvertRegex(other.getInvertRegex());
       }
       internalGetMutableSubstitutions().mergeFrom(other.internalGetSubstitutions());
+      bitField0_ |= 0x00000080;
       switch (other.getRevisionCase()) {
         case BRANCH_NAME:
           {
@@ -1111,13 +1133,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 repoName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1144,13 +1166,13 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 dir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 64:
               {
                 invertRegex_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 74:
@@ -1162,6 +1184,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSubstitutions()
                     .getMutableMap()
                     .put(substitutions__.getKey(), substitutions__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             default:
@@ -1261,8 +1284,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1279,8 +1302,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1302,8 +1325,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1369,8 +1392,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       repoName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1386,8 +1409,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRepoName() {
-
       repoName_ = getDefaultInstance().getRepoName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1408,8 +1431,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       repoName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1907,8 +1930,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dir_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1926,8 +1949,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDir() {
-
       dir_ = getDefaultInstance().getDir();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1950,8 +1973,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dir_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1989,6 +2012,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvertRegex(boolean value) {
 
       invertRegex_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2005,7 +2029,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInvertRegex() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       invertRegex_ = false;
       onChanged();
       return this;
@@ -2024,8 +2048,6 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableSubstitutions() {
-      onChanged();
-      ;
       if (substitutions_ == null) {
         substitutions_ =
             com.google.protobuf.MapField.newMapField(SubstitutionsDefaultEntryHolder.defaultEntry);
@@ -2033,6 +2055,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (!substitutions_.isMutable()) {
         substitutions_ = substitutions_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return substitutions_;
     }
 
@@ -2087,8 +2111,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; substitutions = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getSubstitutionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getSubstitutionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2118,6 +2144,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSubstitutions() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableSubstitutions().getMutableMap().clear();
       return this;
     }
@@ -2141,6 +2168,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSubstitutions() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableSubstitutions().getMutableMap();
     }
     /**
@@ -2160,8 +2188,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSubstitutions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2176,6 +2204,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSubstitutions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSubstitutions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

@@ -69,7 +69,9 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
   }
 
   public static final int DNS_AUTHORIZATION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dnsAuthorizationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dnsAuthorizationId_ = "";
   /**
    *
    *
@@ -224,7 +228,9 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.DnsAuthorizationOrBuilder
       getDnsAuthorizationOrBuilder() {
-    return getDnsAuthorization();
+    return dnsAuthorization_ == null
+        ? com.google.cloud.certificatemanager.v1.DnsAuthorization.getDefaultInstance()
+        : dnsAuthorization_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +456,12 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       dnsAuthorizationId_ = "";
-
-      if (dnsAuthorizationBuilder_ == null) {
-        dnsAuthorization_ = null;
-      } else {
-        dnsAuthorization_ = null;
+      dnsAuthorization_ = null;
+      if (dnsAuthorizationBuilder_ != null) {
+        dnsAuthorizationBuilder_.dispose();
         dnsAuthorizationBuilder_ = null;
       }
       return this;
@@ -489,15 +493,26 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
     public com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest buildPartial() {
       com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest result =
           new com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest(this);
-      result.parent_ = parent_;
-      result.dnsAuthorizationId_ = dnsAuthorizationId_;
-      if (dnsAuthorizationBuilder_ == null) {
-        result.dnsAuthorization_ = dnsAuthorization_;
-      } else {
-        result.dnsAuthorization_ = dnsAuthorizationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dnsAuthorizationId_ = dnsAuthorizationId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dnsAuthorization_ =
+            dnsAuthorizationBuilder_ == null ? dnsAuthorization_ : dnsAuthorizationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -551,10 +566,12 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDnsAuthorizationId().isEmpty()) {
         dnsAuthorizationId_ = other.dnsAuthorizationId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDnsAuthorization()) {
@@ -589,20 +606,20 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dnsAuthorizationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getDnsAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -621,6 +638,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -692,8 +711,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,8 +731,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -737,8 +756,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,8 +823,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       dnsAuthorizationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -821,8 +840,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDnsAuthorizationId() {
-
       dnsAuthorizationId_ = getDefaultInstance().getDnsAuthorizationId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -843,8 +862,8 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dnsAuthorizationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,7 +888,7 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
      * @return Whether the dnsAuthorization field is set.
      */
     public boolean hasDnsAuthorization() {
-      return dnsAuthorizationBuilder_ != null || dnsAuthorization_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -911,11 +930,11 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         dnsAuthorization_ = value;
-        onChanged();
       } else {
         dnsAuthorizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -933,11 +952,11 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
         com.google.cloud.certificatemanager.v1.DnsAuthorization.Builder builderForValue) {
       if (dnsAuthorizationBuilder_ == null) {
         dnsAuthorization_ = builderForValue.build();
-        onChanged();
       } else {
         dnsAuthorizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -954,19 +973,19 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
     public Builder mergeDnsAuthorization(
         com.google.cloud.certificatemanager.v1.DnsAuthorization value) {
       if (dnsAuthorizationBuilder_ == null) {
-        if (dnsAuthorization_ != null) {
-          dnsAuthorization_ =
-              com.google.cloud.certificatemanager.v1.DnsAuthorization.newBuilder(dnsAuthorization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && dnsAuthorization_ != null
+            && dnsAuthorization_
+                != com.google.cloud.certificatemanager.v1.DnsAuthorization.getDefaultInstance()) {
+          getDnsAuthorizationBuilder().mergeFrom(value);
         } else {
           dnsAuthorization_ = value;
         }
-        onChanged();
       } else {
         dnsAuthorizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -981,14 +1000,13 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearDnsAuthorization() {
-      if (dnsAuthorizationBuilder_ == null) {
-        dnsAuthorization_ = null;
-        onChanged();
-      } else {
-        dnsAuthorization_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dnsAuthorization_ = null;
+      if (dnsAuthorizationBuilder_ != null) {
+        dnsAuthorizationBuilder_.dispose();
         dnsAuthorizationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1004,7 +1022,7 @@ public final class CreateDnsAuthorizationRequest extends com.google.protobuf.Gen
      */
     public com.google.cloud.certificatemanager.v1.DnsAuthorization.Builder
         getDnsAuthorizationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDnsAuthorizationFieldBuilder().getBuilder();
     }

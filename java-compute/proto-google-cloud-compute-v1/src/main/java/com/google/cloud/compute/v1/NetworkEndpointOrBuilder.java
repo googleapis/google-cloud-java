@@ -65,7 +65,6 @@ public interface NetworkEndpointOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

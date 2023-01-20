@@ -71,6 +71,8 @@ public final class PacketMirroringMirroredResourceInfo
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo>
       instances_;
@@ -157,6 +159,8 @@ public final class PacketMirroringMirroredResourceInfo
   }
 
   public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo>
       subnetworks_;
   /**
@@ -242,6 +246,8 @@ public final class PacketMirroringMirroredResourceInfo
   }
 
   public static final int TAGS_FIELD_NUMBER = 3552281;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -529,6 +535,7 @@ public final class PacketMirroringMirroredResourceInfo
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (instancesBuilder_ == null) {
         instances_ = java.util.Collections.emptyList();
       } else {
@@ -573,7 +580,16 @@ public final class PacketMirroringMirroredResourceInfo
     public com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo result =
           new com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo result) {
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -597,8 +613,11 @@ public final class PacketMirroringMirroredResourceInfo
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.tags_ = tags_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

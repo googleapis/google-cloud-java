@@ -230,7 +230,9 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
   private int bitField0_;
   public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
-  private volatile java.lang.Object healthStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthStatus_ = "";
   /**
    *
    *
@@ -500,8 +502,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       healthStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -531,15 +533,22 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     public com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.healthStatus_ = healthStatus_;
         to_bitField0_ |= 0x00000001;
       }
-      result.healthStatus_ = healthStatus_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -592,8 +601,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
           == com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest
               .getDefaultInstance()) return this;
       if (other.hasHealthStatus()) {
-        bitField0_ |= 0x00000001;
         healthStatus_ = other.healthStatus_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -726,8 +735,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       healthStatus_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,8 +753,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * @return This builder for chaining.
      */
     public Builder clearHealthStatus() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       healthStatus_ = getDefaultInstance().getHealthStatus();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -767,8 +776,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       healthStatus_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

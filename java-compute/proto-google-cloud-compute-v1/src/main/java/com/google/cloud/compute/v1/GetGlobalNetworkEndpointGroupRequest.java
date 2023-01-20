@@ -71,7 +71,9 @@ public final class GetGlobalNetworkEndpointGroupRequest
   }
 
   public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
-  private volatile java.lang.Object networkEndpointGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkEndpointGroup_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class GetGlobalNetworkEndpointGroupRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -379,10 +383,9 @@ public final class GetGlobalNetworkEndpointGroupRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkEndpointGroup_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -411,10 +414,22 @@ public final class GetGlobalNetworkEndpointGroupRequest
     public com.google.cloud.compute.v1.GetGlobalNetworkEndpointGroupRequest buildPartial() {
       com.google.cloud.compute.v1.GetGlobalNetworkEndpointGroupRequest result =
           new com.google.cloud.compute.v1.GetGlobalNetworkEndpointGroupRequest(this);
-      result.networkEndpointGroup_ = networkEndpointGroup_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.GetGlobalNetworkEndpointGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkEndpointGroup_ = networkEndpointGroup_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -467,10 +482,12 @@ public final class GetGlobalNetworkEndpointGroupRequest
         return this;
       if (!other.getNetworkEndpointGroup().isEmpty()) {
         networkEndpointGroup_ = other.networkEndpointGroup_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -502,13 +519,13 @@ public final class GetGlobalNetworkEndpointGroupRequest
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -823710670:
               {
                 networkEndpointGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -823710670
             default:
@@ -527,6 +544,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object networkEndpointGroup_ = "";
     /**
@@ -592,8 +611,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,8 +629,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointGroup() {
-
       networkEndpointGroup_ = getDefaultInstance().getNetworkEndpointGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -633,8 +652,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkEndpointGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +719,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +736,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +758,8 @@ public final class GetGlobalNetworkEndpointGroupRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

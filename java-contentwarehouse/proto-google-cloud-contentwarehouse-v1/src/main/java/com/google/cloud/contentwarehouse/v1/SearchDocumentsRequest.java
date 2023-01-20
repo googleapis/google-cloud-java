@@ -71,7 +71,9 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder
       getRequestMetadataOrBuilder() {
-    return getRequestMetadata();
+    return requestMetadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
+        : requestMetadata_;
   }
 
   public static final int DOCUMENT_QUERY_FIELD_NUMBER = 4;
@@ -222,11 +226,13 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.DocumentQueryOrBuilder getDocumentQueryOrBuilder() {
-    return getDocumentQuery();
+    return documentQuery_ == null
+        ? com.google.cloud.contentwarehouse.v1.DocumentQuery.getDefaultInstance()
+        : documentQuery_;
   }
 
   public static final int OFFSET_FIELD_NUMBER = 5;
-  private int offset_;
+  private int offset_ = 0;
   /**
    *
    *
@@ -251,7 +257,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 6;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -271,7 +277,9 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 7;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -324,7 +332,9 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 8;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -391,6 +401,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int HISTOGRAM_QUERIES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.HistogramQuery> histogramQueries_;
   /**
    *
@@ -572,7 +584,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int REQUIRE_TOTAL_SIZE_FIELD_NUMBER = 10;
-  private boolean requireTotalSize_;
+  private boolean requireTotalSize_ = false;
   /**
    *
    *
@@ -595,7 +607,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int QA_SIZE_LIMIT_FIELD_NUMBER = 11;
-  private int qaSizeLimit_;
+  private int qaSizeLimit_ = 0;
   /**
    *
    *
@@ -906,39 +918,31 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-      } else {
-        requestMetadata_ = null;
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-      if (documentQueryBuilder_ == null) {
-        documentQuery_ = null;
-      } else {
-        documentQuery_ = null;
+      documentQuery_ = null;
+      if (documentQueryBuilder_ != null) {
+        documentQueryBuilder_.dispose();
         documentQueryBuilder_ = null;
       }
       offset_ = 0;
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       orderBy_ = "";
-
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
       } else {
         histogramQueries_ = null;
         histogramQueriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       requireTotalSize_ = false;
-
       qaSizeLimit_ = 0;
-
       return this;
     }
 
@@ -966,35 +970,58 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest result =
           new com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (requestMetadataBuilder_ == null) {
-        result.requestMetadata_ = requestMetadata_;
-      } else {
-        result.requestMetadata_ = requestMetadataBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentQueryBuilder_ == null) {
-        result.documentQuery_ = documentQuery_;
-      } else {
-        result.documentQuery_ = documentQueryBuilder_.build();
-      }
-      result.offset_ = offset_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.orderBy_ = orderBy_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest result) {
       if (histogramQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.histogramQueries_ = histogramQueries_;
       } else {
         result.histogramQueries_ = histogramQueriesBuilder_.build();
       }
-      result.requireTotalSize_ = requireTotalSize_;
-      result.qaSizeLimit_ = qaSizeLimit_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestMetadata_ =
+            requestMetadataBuilder_ == null ? requestMetadata_ : requestMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentQuery_ =
+            documentQueryBuilder_ == null ? documentQuery_ : documentQueryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.offset_ = offset_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.requireTotalSize_ = requireTotalSize_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.qaSizeLimit_ = qaSizeLimit_;
+      }
     }
 
     @java.lang.Override
@@ -1045,6 +1072,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestMetadata()) {
@@ -1061,17 +1089,19 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (histogramQueriesBuilder_ == null) {
         if (!other.histogramQueries_.isEmpty()) {
           if (histogramQueries_.isEmpty()) {
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureHistogramQueriesIsMutable();
             histogramQueries_.addAll(other.histogramQueries_);
@@ -1084,7 +1114,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
             histogramQueriesBuilder_.dispose();
             histogramQueriesBuilder_ = null;
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             histogramQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramQueriesFieldBuilder()
@@ -1129,43 +1159,43 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getRequestMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDocumentQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 40:
               {
                 offset_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 48:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 58:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -1185,13 +1215,13 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
             case 80:
               {
                 requireTotalSize_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 88:
               {
                 qaSizeLimit_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             default:
@@ -1283,8 +1313,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1303,8 +1333,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1328,8 +1358,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1353,7 +1383,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
-      return requestMetadataBuilder_ != null || requestMetadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1392,11 +1422,11 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         requestMetadata_ = value;
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1413,11 +1443,11 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder builderForValue) {
       if (requestMetadataBuilder_ == null) {
         requestMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1433,19 +1463,19 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder mergeRequestMetadata(
         com.google.cloud.contentwarehouse.v1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
-        if (requestMetadata_ != null) {
-          requestMetadata_ =
-              com.google.cloud.contentwarehouse.v1.RequestMetadata.newBuilder(requestMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && requestMetadata_ != null
+            && requestMetadata_
+                != com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()) {
+          getRequestMetadataBuilder().mergeFrom(value);
         } else {
           requestMetadata_ = value;
         }
-        onChanged();
       } else {
         requestMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1459,14 +1489,13 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.RequestMetadata request_metadata = 3;</code>
      */
     public Builder clearRequestMetadata() {
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-        onChanged();
-      } else {
-        requestMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1481,7 +1510,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder
         getRequestMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
@@ -1550,7 +1579,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the documentQuery field is set.
      */
     public boolean hasDocumentQuery() {
-      return documentQueryBuilder_ != null || documentQuery_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1587,11 +1616,11 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         documentQuery_ = value;
-        onChanged();
       } else {
         documentQueryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1607,11 +1636,11 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.contentwarehouse.v1.DocumentQuery.Builder builderForValue) {
       if (documentQueryBuilder_ == null) {
         documentQuery_ = builderForValue.build();
-        onChanged();
       } else {
         documentQueryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1625,19 +1654,19 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeDocumentQuery(com.google.cloud.contentwarehouse.v1.DocumentQuery value) {
       if (documentQueryBuilder_ == null) {
-        if (documentQuery_ != null) {
-          documentQuery_ =
-              com.google.cloud.contentwarehouse.v1.DocumentQuery.newBuilder(documentQuery_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && documentQuery_ != null
+            && documentQuery_
+                != com.google.cloud.contentwarehouse.v1.DocumentQuery.getDefaultInstance()) {
+          getDocumentQueryBuilder().mergeFrom(value);
         } else {
           documentQuery_ = value;
         }
-        onChanged();
       } else {
         documentQueryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1650,14 +1679,13 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.DocumentQuery document_query = 4;</code>
      */
     public Builder clearDocumentQuery() {
-      if (documentQueryBuilder_ == null) {
-        documentQuery_ = null;
-        onChanged();
-      } else {
-        documentQuery_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentQuery_ = null;
+      if (documentQueryBuilder_ != null) {
+        documentQueryBuilder_.dispose();
         documentQueryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1670,7 +1698,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.contentwarehouse.v1.DocumentQuery document_query = 4;</code>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentQuery.Builder getDocumentQueryBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentQueryFieldBuilder().getBuilder();
     }
@@ -1763,6 +1791,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setOffset(int value) {
 
       offset_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1785,7 +1814,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       offset_ = 0;
       onChanged();
       return this;
@@ -1826,6 +1855,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1843,7 +1873,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1916,8 +1946,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1935,8 +1965,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1959,8 +1989,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2053,8 +2083,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2079,8 +2109,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2110,8 +2140,8 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2120,11 +2150,11 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureHistogramQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         histogramQueries_ =
             new java.util.ArrayList<com.google.cloud.contentwarehouse.v1.HistogramQuery>(
                 histogramQueries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2585,7 +2615,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder clearHistogramQueries() {
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         histogramQueriesBuilder_.clear();
@@ -2867,7 +2897,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.contentwarehouse.v1.HistogramQuery.Builder,
                 com.google.cloud.contentwarehouse.v1.HistogramQueryOrBuilder>(
                 histogramQueries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueries_ = null;
@@ -2916,6 +2946,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setRequireTotalSize(boolean value) {
 
       requireTotalSize_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2936,7 +2967,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequireTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       requireTotalSize_ = false;
       onChanged();
       return this;
@@ -2979,6 +3010,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setQaSizeLimit(int value) {
 
       qaSizeLimit_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2997,7 +3029,7 @@ public final class SearchDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearQaSizeLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       qaSizeLimit_ = 0;
       onChanged();
       return this;

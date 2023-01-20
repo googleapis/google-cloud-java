@@ -106,7 +106,6 @@ public interface MachineTypeAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.MachineTypesScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.MachineTypesScopedList getItemsOrDefault(
       java.lang.String key,

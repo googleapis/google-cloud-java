@@ -70,7 +70,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
-  private int id_;
+  private int id_ = 0;
   /**
    *
    *
@@ -103,7 +103,9 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
   }
 
   public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 308135284;
-  private volatile java.lang.Object interconnectAttachment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interconnectAttachment_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -464,12 +468,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       interconnectAttachment_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       ipAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -497,6 +499,14 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface result =
           new com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -504,16 +514,14 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.interconnectAttachment_ = interconnectAttachment_;
         to_bitField0_ |= 0x00000002;
       }
-      result.interconnectAttachment_ = interconnectAttachment_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000004;
       }
-      result.ipAddress_ = ipAddress_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -566,13 +574,13 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         setId(other.getId());
       }
       if (other.hasInterconnectAttachment()) {
-        bitField0_ |= 0x00000002;
         interconnectAttachment_ = other.interconnectAttachment_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000004;
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -682,8 +690,9 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setId(int value) {
-      bitField0_ |= 0x00000001;
+
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +789,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       interconnectAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +806,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearInterconnectAttachment() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       interconnectAttachment_ = getDefaultInstance().getInterconnectAttachment();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +828,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       interconnectAttachment_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -900,8 +909,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -917,8 +926,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -939,8 +948,8 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

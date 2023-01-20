@@ -67,7 +67,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -301,8 +301,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -330,15 +330,21 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.HealthCheckLogConfig buildPartial() {
       com.google.cloud.compute.v1.HealthCheckLogConfig result =
           new com.google.cloud.compute.v1.HealthCheckLogConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthCheckLogConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enable_ = enable_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -485,8 +491,9 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

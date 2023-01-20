@@ -67,7 +67,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int DISABLE_CONNECTION_DRAIN_ON_FAILOVER_FIELD_NUMBER = 182150753;
-  private boolean disableConnectionDrainOnFailover_;
+  private boolean disableConnectionDrainOnFailover_ = false;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   }
 
   public static final int DROP_TRAFFIC_IF_UNHEALTHY_FIELD_NUMBER = 112289428;
-  private boolean dropTrafficIfUnhealthy_;
+  private boolean dropTrafficIfUnhealthy_ = false;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
   }
 
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
-  private float failoverRatio_;
+  private float failoverRatio_ = 0F;
   /**
    *
    *
@@ -404,12 +404,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disableConnectionDrainOnFailover_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       dropTrafficIfUnhealthy_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       failoverRatio_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -437,6 +435,14 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendServiceFailoverPolicy result =
           new com.google.cloud.compute.v1.BackendServiceFailoverPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceFailoverPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -451,9 +457,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
         result.failoverRatio_ = failoverRatio_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -618,8 +622,9 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setDisableConnectionDrainOnFailover(boolean value) {
-      bitField0_ |= 0x00000001;
+
       disableConnectionDrainOnFailover_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +690,9 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setDropTrafficIfUnhealthy(boolean value) {
-      bitField0_ |= 0x00000002;
+
       dropTrafficIfUnhealthy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -752,8 +758,9 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setFailoverRatio(float value) {
-      bitField0_ |= 0x00000004;
+
       failoverRatio_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

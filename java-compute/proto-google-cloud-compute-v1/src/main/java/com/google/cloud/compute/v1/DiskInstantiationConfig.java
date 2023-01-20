@@ -342,7 +342,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private boolean autoDelete_;
+  private boolean autoDelete_ = false;
   /**
    *
    *
@@ -375,7 +375,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   }
 
   public static final int CUSTOM_IMAGE_FIELD_NUMBER = 184123149;
-  private volatile java.lang.Object customImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customImage_ = "";
   /**
    *
    *
@@ -439,7 +441,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   }
 
   public static final int DEVICE_NAME_FIELD_NUMBER = 67541716;
-  private volatile java.lang.Object deviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deviceName_ = "";
   /**
    *
    *
@@ -503,7 +507,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   }
 
   public static final int INSTANTIATE_FROM_FIELD_NUMBER = 393383903;
-  private volatile java.lang.Object instantiateFrom_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instantiateFrom_ = "";
   /**
    *
    *
@@ -813,14 +819,11 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoDelete_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       customImage_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       deviceName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       instantiateFrom_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -848,6 +851,14 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.DiskInstantiationConfig buildPartial() {
       com.google.cloud.compute.v1.DiskInstantiationConfig result =
           new com.google.cloud.compute.v1.DiskInstantiationConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DiskInstantiationConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -855,20 +866,18 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customImage_ = customImage_;
         to_bitField0_ |= 0x00000002;
       }
-      result.customImage_ = customImage_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deviceName_ = deviceName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.deviceName_ = deviceName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.instantiateFrom_ = instantiateFrom_;
         to_bitField0_ |= 0x00000008;
       }
-      result.instantiateFrom_ = instantiateFrom_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -921,18 +930,18 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         setAutoDelete(other.getAutoDelete());
       }
       if (other.hasCustomImage()) {
-        bitField0_ |= 0x00000002;
         customImage_ = other.customImage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDeviceName()) {
-        bitField0_ |= 0x00000004;
         deviceName_ = other.deviceName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInstantiateFrom()) {
-        bitField0_ |= 0x00000008;
         instantiateFrom_ = other.instantiateFrom_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1048,8 +1057,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setAutoDelete(boolean value) {
-      bitField0_ |= 0x00000001;
+
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1146,8 +1156,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       customImage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1163,8 +1173,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCustomImage() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       customImage_ = getDefaultInstance().getCustomImage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1185,8 +1195,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       customImage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1266,8 +1276,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       deviceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1283,8 +1293,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDeviceName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       deviceName_ = getDefaultInstance().getDeviceName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1305,8 +1315,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       deviceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1390,8 +1400,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       instantiateFrom_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1408,8 +1418,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearInstantiateFrom() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       instantiateFrom_ = getDefaultInstance().getInstantiateFrom();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1431,8 +1441,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       instantiateFrom_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

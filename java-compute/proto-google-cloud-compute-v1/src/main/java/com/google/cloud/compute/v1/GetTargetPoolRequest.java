@@ -70,7 +70,9 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TARGET_POOL_FIELD_NUMBER = 62796298;
-  private volatile java.lang.Object targetPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetPool_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       targetPool_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.GetTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.GetTargetPoolRequest result =
           new com.google.cloud.compute.v1.GetTargetPoolRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      result.targetPool_ = targetPool_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetTargetPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetPool_ = targetPool_;
+      }
     }
 
     @java.lang.Override
@@ -519,14 +536,17 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetPool().isEmpty()) {
         targetPool_ = other.targetPool_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -558,19 +578,19 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
             case 502370386:
               {
                 targetPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 502370386
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -589,6 +609,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -651,8 +673,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +690,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +712,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +779,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,8 +796,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +818,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +885,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetPool_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -880,8 +902,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTargetPool() {
-
       targetPool_ = getDefaultInstance().getTargetPool();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class GetTargetPoolRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetPool_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

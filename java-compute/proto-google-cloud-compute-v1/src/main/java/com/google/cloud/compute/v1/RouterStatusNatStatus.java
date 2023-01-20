@@ -75,6 +75,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 510794246;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList autoAllocatedNatIps_;
   /**
    *
@@ -136,6 +138,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DRAIN_AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 309184557;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList drainAutoAllocatedNatIps_;
   /**
    *
@@ -197,6 +201,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DRAIN_USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 305268553;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList drainUserAllocatedNatIps_;
   /**
    *
@@ -258,7 +264,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER = 365786338;
-  private int minExtraNatIpsNeeded_;
+  private int minExtraNatIpsNeeded_ = 0;
   /**
    *
    *
@@ -291,7 +297,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -355,7 +363,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 512367468;
-  private int numVmEndpointsWithNatMappings_;
+  private int numVmEndpointsWithNatMappings_ = 0;
   /**
    *
    *
@@ -388,6 +396,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RULE_STATUS_FIELD_NUMBER = 140223125;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
       ruleStatus_;
   /**
@@ -471,6 +481,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int USER_ALLOCATED_NAT_IP_RESOURCES_FIELD_NUMBER = 212776151;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList userAllocatedNatIpResources_;
   /**
    *
@@ -532,6 +544,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 506878242;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList userAllocatedNatIps_;
   /**
    *
@@ -927,6 +941,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -934,11 +949,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       minExtraNatIpsNeeded_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       numVmEndpointsWithNatMappings_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       if (ruleStatusBuilder_ == null) {
         ruleStatus_ = java.util.Collections.emptyList();
       } else {
@@ -977,8 +989,16 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.RouterStatusNatStatus buildPartial() {
       com.google.cloud.compute.v1.RouterStatusNatStatus result =
           new com.google.cloud.compute.v1.RouterStatusNatStatus(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RouterStatusNatStatus result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         autoAllocatedNatIps_ = autoAllocatedNatIps_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -994,18 +1014,6 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.minExtraNatIpsNeeded_ = minExtraNatIpsNeeded_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
-        to_bitField0_ |= 0x00000004;
-      }
       if (ruleStatusBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           ruleStatus_ = java.util.Collections.unmodifiableList(ruleStatus_);
@@ -1025,9 +1033,24 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.userAllocatedNatIps_ = userAllocatedNatIps_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterStatusNatStatus result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minExtraNatIpsNeeded_ = minExtraNatIpsNeeded_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1110,8 +1133,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         setMinExtraNatIpsNeeded(other.getMinExtraNatIpsNeeded());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000010;
         name_ = other.name_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasNumVmEndpointsWithNatMappings()) {
@@ -1826,8 +1849,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setMinExtraNatIpsNeeded(int value) {
-      bitField0_ |= 0x00000008;
+
       minExtraNatIpsNeeded_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1924,8 +1948,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1941,8 +1965,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1963,8 +1987,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2013,8 +2037,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setNumVmEndpointsWithNatMappings(int value) {
-      bitField0_ |= 0x00000020;
+
       numVmEndpointsWithNatMappings_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

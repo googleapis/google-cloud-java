@@ -113,10 +113,12 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.rpc.ResourceInfoOrBuilder getResourceInfoOrBuilder() {
-    return getResourceInfo();
+    return resourceInfo_ == null ? com.google.rpc.ResourceInfo.getDefaultInstance() : resourceInfo_;
   }
 
   public static final int ERROR_DETAILS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.ErrorDetail> errorDetails_;
   /**
    *
@@ -197,7 +199,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ERROR_COUNT_FIELD_NUMBER = 3;
-  private int errorCount_;
+  private int errorCount_ = 0;
   /**
    *
    *
@@ -439,10 +441,10 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resourceInfoBuilder_ == null) {
-        resourceInfo_ = null;
-      } else {
-        resourceInfo_ = null;
+      bitField0_ = 0;
+      resourceInfo_ = null;
+      if (resourceInfoBuilder_ != null) {
+        resourceInfoBuilder_.dispose();
         resourceInfoBuilder_ = null;
       }
       if (errorDetailsBuilder_ == null) {
@@ -451,9 +453,8 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         errorDetails_ = null;
         errorDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       errorCount_ = 0;
-
       return this;
     }
 
@@ -481,24 +482,36 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public com.google.cloud.bigquery.migration.v2.ResourceErrorDetail buildPartial() {
       com.google.cloud.bigquery.migration.v2.ResourceErrorDetail result =
           new com.google.cloud.bigquery.migration.v2.ResourceErrorDetail(this);
-      int from_bitField0_ = bitField0_;
-      if (resourceInfoBuilder_ == null) {
-        result.resourceInfo_ = resourceInfo_;
-      } else {
-        result.resourceInfo_ = resourceInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.migration.v2.ResourceErrorDetail result) {
       if (errorDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           errorDetails_ = java.util.Collections.unmodifiableList(errorDetails_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.errorDetails_ = errorDetails_;
       } else {
         result.errorDetails_ = errorDetailsBuilder_.build();
       }
-      result.errorCount_ = errorCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.ResourceErrorDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceInfo_ =
+            resourceInfoBuilder_ == null ? resourceInfo_ : resourceInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorCount_ = errorCount_;
+      }
     }
 
     @java.lang.Override
@@ -554,7 +567,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         if (!other.errorDetails_.isEmpty()) {
           if (errorDetails_.isEmpty()) {
             errorDetails_ = other.errorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureErrorDetailsIsMutable();
             errorDetails_.addAll(other.errorDetails_);
@@ -567,7 +580,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             errorDetailsBuilder_.dispose();
             errorDetailsBuilder_ = null;
             errorDetails_ = other.errorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             errorDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorDetailsFieldBuilder()
@@ -609,7 +622,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getResourceInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -629,7 +642,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             case 24:
               {
                 errorCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -670,7 +683,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      * @return Whether the resourceInfo field is set.
      */
     public boolean hasResourceInfo() {
-      return resourceInfoBuilder_ != null || resourceInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -709,11 +722,11 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         resourceInfo_ = value;
-        onChanged();
       } else {
         resourceInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -729,11 +742,11 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public Builder setResourceInfo(com.google.rpc.ResourceInfo.Builder builderForValue) {
       if (resourceInfoBuilder_ == null) {
         resourceInfo_ = builderForValue.build();
-        onChanged();
       } else {
         resourceInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -748,17 +761,18 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeResourceInfo(com.google.rpc.ResourceInfo value) {
       if (resourceInfoBuilder_ == null) {
-        if (resourceInfo_ != null) {
-          resourceInfo_ =
-              com.google.rpc.ResourceInfo.newBuilder(resourceInfo_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && resourceInfo_ != null
+            && resourceInfo_ != com.google.rpc.ResourceInfo.getDefaultInstance()) {
+          getResourceInfoBuilder().mergeFrom(value);
         } else {
           resourceInfo_ = value;
         }
-        onChanged();
       } else {
         resourceInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -772,14 +786,13 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearResourceInfo() {
-      if (resourceInfoBuilder_ == null) {
-        resourceInfo_ = null;
-        onChanged();
-      } else {
-        resourceInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      resourceInfo_ = null;
+      if (resourceInfoBuilder_ != null) {
+        resourceInfoBuilder_.dispose();
         resourceInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -793,7 +806,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.rpc.ResourceInfo.Builder getResourceInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResourceInfoFieldBuilder().getBuilder();
     }
@@ -847,11 +860,11 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureErrorDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         errorDetails_ =
             new java.util.ArrayList<com.google.cloud.bigquery.migration.v2.ErrorDetail>(
                 errorDetails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1092,7 +1105,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public Builder clearErrorDetails() {
       if (errorDetailsBuilder_ == null) {
         errorDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         errorDetailsBuilder_.clear();
@@ -1232,7 +1245,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
                 com.google.cloud.bigquery.migration.v2.ErrorDetail,
                 com.google.cloud.bigquery.migration.v2.ErrorDetail.Builder,
                 com.google.cloud.bigquery.migration.v2.ErrorDetailOrBuilder>(
-                errorDetails_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                errorDetails_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         errorDetails_ = null;
       }
       return errorDetailsBuilder_;
@@ -1273,6 +1286,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     public Builder setErrorCount(int value) {
 
       errorCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1290,7 +1304,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearErrorCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       errorCount_ = 0;
       onChanged();
       return this;

@@ -196,7 +196,9 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -260,7 +262,9 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -542,10 +546,9 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -573,19 +576,25 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag buildPartial() {
       com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag result =
           new com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000001;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000002;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -635,13 +644,13 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       if (other == com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance())
         return this;
       if (other.hasName()) {
-        bitField0_ |= 0x00000001;
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000002;
         state_ = other.state_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -776,8 +785,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,8 +802,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -815,8 +824,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +909,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -918,8 +927,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -941,8 +950,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

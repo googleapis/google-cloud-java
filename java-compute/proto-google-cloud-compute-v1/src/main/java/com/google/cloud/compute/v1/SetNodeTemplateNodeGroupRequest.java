@@ -73,7 +73,9 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
   private int bitField0_;
   public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
-  private volatile java.lang.Object nodeGroup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeGroup_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequestOrBuilder
       getNodeGroupsSetNodeTemplateRequestResourceOrBuilder() {
-    return getNodeGroupsSetNodeTemplateRequestResource();
+    return nodeGroupsSetNodeTemplateRequestResource_ == null
+        ? com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.getDefaultInstance()
+        : nodeGroupsSetNodeTemplateRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -232,7 +238,9 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -296,7 +304,9 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -596,20 +606,16 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodeGroup_ = "";
-
-      if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null) {
-        nodeGroupsSetNodeTemplateRequestResource_ = null;
-      } else {
-        nodeGroupsSetNodeTemplateRequestResource_ = null;
+      nodeGroupsSetNodeTemplateRequestResource_ = null;
+      if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ != null) {
+        nodeGroupsSetNodeTemplateRequestResourceBuilder_.dispose();
         nodeGroupsSetNodeTemplateRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -637,25 +643,36 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest buildPartial() {
       com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest result =
           new com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.nodeGroup_ = nodeGroup_;
-      if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null) {
-        result.nodeGroupsSetNodeTemplateRequestResource_ =
-            nodeGroupsSetNodeTemplateRequestResource_;
-      } else {
-        result.nodeGroupsSetNodeTemplateRequestResource_ =
-            nodeGroupsSetNodeTemplateRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeGroup_ = nodeGroup_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodeGroupsSetNodeTemplateRequestResource_ =
+            nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null
+                ? nodeGroupsSetNodeTemplateRequestResource_
+                : nodeGroupsSetNodeTemplateRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -706,6 +723,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         return this;
       if (!other.getNodeGroup().isEmpty()) {
         nodeGroup_ = other.nodeGroup_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNodeGroupsSetNodeTemplateRequestResource()) {
@@ -714,15 +732,17 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -754,13 +774,13 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 939058570:
@@ -768,19 +788,19 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
                 input.readMessage(
                     getNodeGroupsSetNodeTemplateRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 939058570
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -535302126:
               {
                 nodeGroup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -535302126
             default:
@@ -863,8 +883,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +900,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearNodeGroup() {
-
       nodeGroup_ = getDefaultInstance().getNodeGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -902,8 +922,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeGroup_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -929,8 +949,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return Whether the nodeGroupsSetNodeTemplateRequestResource field is set.
      */
     public boolean hasNodeGroupsSetNodeTemplateRequestResource() {
-      return nodeGroupsSetNodeTemplateRequestResourceBuilder_ != null
-          || nodeGroupsSetNodeTemplateRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -973,11 +992,11 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         nodeGroupsSetNodeTemplateRequestResource_ = value;
-        onChanged();
       } else {
         nodeGroupsSetNodeTemplateRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -995,11 +1014,11 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder builderForValue) {
       if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null) {
         nodeGroupsSetNodeTemplateRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         nodeGroupsSetNodeTemplateRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1016,20 +1035,20 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     public Builder mergeNodeGroupsSetNodeTemplateRequestResource(
         com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest value) {
       if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null) {
-        if (nodeGroupsSetNodeTemplateRequestResource_ != null) {
-          nodeGroupsSetNodeTemplateRequestResource_ =
-              com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.newBuilder(
-                      nodeGroupsSetNodeTemplateRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && nodeGroupsSetNodeTemplateRequestResource_ != null
+            && nodeGroupsSetNodeTemplateRequestResource_
+                != com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest
+                    .getDefaultInstance()) {
+          getNodeGroupsSetNodeTemplateRequestResourceBuilder().mergeFrom(value);
         } else {
           nodeGroupsSetNodeTemplateRequestResource_ = value;
         }
-        onChanged();
       } else {
         nodeGroupsSetNodeTemplateRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1044,14 +1063,13 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearNodeGroupsSetNodeTemplateRequestResource() {
-      if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ == null) {
-        nodeGroupsSetNodeTemplateRequestResource_ = null;
-        onChanged();
-      } else {
-        nodeGroupsSetNodeTemplateRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      nodeGroupsSetNodeTemplateRequestResource_ = null;
+      if (nodeGroupsSetNodeTemplateRequestResourceBuilder_ != null) {
+        nodeGroupsSetNodeTemplateRequestResourceBuilder_.dispose();
         nodeGroupsSetNodeTemplateRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1067,7 +1085,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      */
     public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder
         getNodeGroupsSetNodeTemplateRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNodeGroupsSetNodeTemplateRequestResourceFieldBuilder().getBuilder();
     }
@@ -1187,8 +1205,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1206,8 +1224,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1230,8 +1248,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1249,7 +1267,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1311,8 +1329,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1328,8 +1346,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1350,8 +1368,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1423,8 +1441,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1442,8 +1460,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1466,8 +1484,8 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -73,7 +73,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int QUERY_PATH_FIELD_NUMBER = 368591164;
-  private volatile java.lang.Object queryPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryPath_ = "";
   /**
    *
    *
@@ -251,7 +255,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -315,7 +321,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VARIABLE_KEY_FIELD_NUMBER = 164364828;
-  private volatile java.lang.Object variableKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object variableKey_ = "";
   /**
    *
    *
@@ -379,7 +387,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VARIABLE_VALUE_FIELD_NUMBER = 124582382;
-  private volatile java.lang.Object variableValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object variableValue_ = "";
   /**
    *
    *
@@ -723,22 +733,17 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       queryPath_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (queryValueBuilder_ == null) {
-        queryValue_ = null;
-      } else {
-        queryValueBuilder_.clear();
+      queryValue_ = null;
+      if (queryValueBuilder_ != null) {
+        queryValueBuilder_.dispose();
+        queryValueBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       variableKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       variableValue_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -766,39 +771,41 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.GuestAttributes buildPartial() {
       com.google.cloud.compute.v1.GuestAttributes result =
           new com.google.cloud.compute.v1.GuestAttributes(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GuestAttributes result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.queryPath_ = queryPath_;
         to_bitField0_ |= 0x00000002;
       }
-      result.queryPath_ = queryPath_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (queryValueBuilder_ == null) {
-          result.queryValue_ = queryValue_;
-        } else {
-          result.queryValue_ = queryValueBuilder_.build();
-        }
+        result.queryValue_ = queryValueBuilder_ == null ? queryValue_ : queryValueBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000008;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.variableKey_ = variableKey_;
         to_bitField0_ |= 0x00000010;
       }
-      result.variableKey_ = variableKey_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.variableValue_ = variableValue_;
         to_bitField0_ |= 0x00000020;
       }
-      result.variableValue_ = variableValue_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -847,31 +854,31 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.GuestAttributes other) {
       if (other == com.google.cloud.compute.v1.GuestAttributes.getDefaultInstance()) return this;
       if (other.hasKind()) {
-        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasQueryPath()) {
-        bitField0_ |= 0x00000002;
         queryPath_ = other.queryPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasQueryValue()) {
         mergeQueryValue(other.getQueryValue());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000008;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasVariableKey()) {
-        bitField0_ |= 0x00000010;
         variableKey_ = other.variableKey_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasVariableValue()) {
-        bitField0_ |= 0x00000020;
         variableValue_ = other.variableValue_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1030,8 +1037,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1047,8 +1054,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1069,8 +1076,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1150,8 +1157,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       queryPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1167,8 +1174,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearQueryPath() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       queryPath_ = getDefaultInstance().getQueryPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1189,8 +1196,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       queryPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1250,11 +1257,11 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         queryValue_ = value;
-        onChanged();
       } else {
         queryValueBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1270,11 +1277,11 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.GuestAttributesValue.Builder builderForValue) {
       if (queryValueBuilder_ == null) {
         queryValue_ = builderForValue.build();
-        onChanged();
       } else {
         queryValueBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1292,18 +1299,15 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
             && queryValue_ != null
             && queryValue_
                 != com.google.cloud.compute.v1.GuestAttributesValue.getDefaultInstance()) {
-          queryValue_ =
-              com.google.cloud.compute.v1.GuestAttributesValue.newBuilder(queryValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getQueryValueBuilder().mergeFrom(value);
         } else {
           queryValue_ = value;
         }
-        onChanged();
       } else {
         queryValueBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1316,13 +1320,13 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public Builder clearQueryValue() {
-      if (queryValueBuilder_ == null) {
-        queryValue_ = null;
-        onChanged();
-      } else {
-        queryValueBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      queryValue_ = null;
+      if (queryValueBuilder_ != null) {
+        queryValueBuilder_.dispose();
+        queryValueBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1458,8 +1462,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       selfLink_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1475,8 +1479,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1497,8 +1501,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       selfLink_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1578,8 +1582,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       variableKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1595,8 +1599,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearVariableKey() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       variableKey_ = getDefaultInstance().getVariableKey();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1617,8 +1621,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       variableKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1698,8 +1702,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       variableValue_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1715,8 +1719,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearVariableValue() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       variableValue_ = getDefaultInstance().getVariableValue();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1737,8 +1741,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       variableValue_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

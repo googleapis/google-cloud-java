@@ -69,7 +69,9 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OFFER_FIELD_NUMBER = 13;
-  private volatile java.lang.Object offer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object offer_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter>
       parameters_;
   /**
@@ -261,7 +265,9 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.commerce.consumer.procurement.v1alpha1.SubscriptionOrBuilder
       getSubscriptionOrBuilder() {
-    return getSubscription();
+    return subscription_ == null
+        ? com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription.getDefaultInstance()
+        : subscription_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -489,19 +495,18 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       offer_ = "";
-
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (subscriptionBuilder_ == null) {
-        subscription_ = null;
-      } else {
-        subscription_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      subscription_ = null;
+      if (subscriptionBuilder_ != null) {
+        subscriptionBuilder_.dispose();
         subscriptionBuilder_ = null;
       }
       return this;
@@ -533,24 +538,37 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo buildPartial() {
       com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo result =
           new com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.offer_ = offer_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo result) {
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      if (subscriptionBuilder_ == null) {
-        result.subscription_ = subscription_;
-      } else {
-        result.subscription_ = subscriptionBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.offer_ = offer_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.subscription_ =
+            subscriptionBuilder_ == null ? subscription_ : subscriptionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -604,13 +622,14 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()) return this;
       if (!other.getOffer().isEmpty()) {
         offer_ = other.offer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (parametersBuilder_ == null) {
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -623,7 +642,7 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -679,13 +698,13 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getSubscriptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 82
             case 106:
               {
                 offer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 106
             default:
@@ -780,8 +799,8 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       offer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -801,8 +820,8 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOffer() {
-
       offer_ = getDefaultInstance().getOffer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -827,8 +846,8 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       offer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,11 +856,11 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
         parameters_ = java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parameters_ =
             new java.util.ArrayList<
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter>(parameters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1088,7 +1107,7 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -1234,7 +1253,7 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter,
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter.Builder,
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.ParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -1260,7 +1279,7 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subscription field is set.
      */
     public boolean hasSubscription() {
-      return subscriptionBuilder_ != null || subscription_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1303,11 +1322,11 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         subscription_ = value;
-        onChanged();
       } else {
         subscriptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1326,11 +1345,11 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (subscriptionBuilder_ == null) {
         subscription_ = builderForValue.build();
-        onChanged();
       } else {
         subscriptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1347,20 +1366,20 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSubscription(
         com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription value) {
       if (subscriptionBuilder_ == null) {
-        if (subscription_ != null) {
-          subscription_ =
-              com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription.newBuilder(
-                      subscription_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && subscription_ != null
+            && subscription_
+                != com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription
+                    .getDefaultInstance()) {
+          getSubscriptionBuilder().mergeFrom(value);
         } else {
           subscription_ = value;
         }
-        onChanged();
       } else {
         subscriptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1375,14 +1394,13 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSubscription() {
-      if (subscriptionBuilder_ == null) {
-        subscription_ = null;
-        onChanged();
-      } else {
-        subscription_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      subscription_ = null;
+      if (subscriptionBuilder_ != null) {
+        subscriptionBuilder_.dispose();
         subscriptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1398,7 +1416,7 @@ public final class LineItemInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription.Builder
         getSubscriptionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSubscriptionFieldBuilder().getBuilder();
     }

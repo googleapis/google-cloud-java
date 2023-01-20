@@ -71,7 +71,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERIOD_TYPE_FIELD_NUMBER = 1;
-  private int periodType_;
+  private int periodType_ = 0;
   /**
    *
    *
@@ -100,14 +100,13 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PeriodType getPeriodType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.PeriodType result =
-        com.google.cloud.channel.v1.PeriodType.valueOf(periodType_);
+        com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
     return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
   }
 
   public static final int FIRST_PERIOD_FIELD_NUMBER = 2;
-  private int firstPeriod_;
+  private int firstPeriod_ = 0;
   /**
    *
    *
@@ -125,7 +124,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_PERIOD_FIELD_NUMBER = 3;
-  private int lastPeriod_;
+  private int lastPeriod_ = 0;
   /**
    *
    *
@@ -185,10 +184,12 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PriceOrBuilder getPriceOrBuilder() {
-    return getPrice();
+    return price_ == null ? com.google.cloud.channel.v1.Price.getDefaultInstance() : price_;
   }
 
   public static final int PRICE_TIERS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.PriceTier> priceTiers_;
   /**
    *
@@ -498,16 +499,13 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       periodType_ = 0;
-
       firstPeriod_ = 0;
-
       lastPeriod_ = 0;
-
-      if (priceBuilder_ == null) {
-        price_ = null;
-      } else {
-        price_ = null;
+      price_ = null;
+      if (priceBuilder_ != null) {
+        priceBuilder_.dispose();
         priceBuilder_ = null;
       }
       if (priceTiersBuilder_ == null) {
@@ -516,7 +514,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         priceTiers_ = null;
         priceTiersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -544,26 +542,40 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.PricePhase buildPartial() {
       com.google.cloud.channel.v1.PricePhase result =
           new com.google.cloud.channel.v1.PricePhase(this);
-      int from_bitField0_ = bitField0_;
-      result.periodType_ = periodType_;
-      result.firstPeriod_ = firstPeriod_;
-      result.lastPeriod_ = lastPeriod_;
-      if (priceBuilder_ == null) {
-        result.price_ = price_;
-      } else {
-        result.price_ = priceBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.channel.v1.PricePhase result) {
       if (priceTiersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           priceTiers_ = java.util.Collections.unmodifiableList(priceTiers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.priceTiers_ = priceTiers_;
       } else {
         result.priceTiers_ = priceTiersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.PricePhase result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.periodType_ = periodType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firstPeriod_ = firstPeriod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastPeriod_ = lastPeriod_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.price_ = priceBuilder_ == null ? price_ : priceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -627,7 +639,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         if (!other.priceTiers_.isEmpty()) {
           if (priceTiers_.isEmpty()) {
             priceTiers_ = other.priceTiers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePriceTiersIsMutable();
             priceTiers_.addAll(other.priceTiers_);
@@ -640,7 +652,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
             priceTiersBuilder_.dispose();
             priceTiersBuilder_ = null;
             priceTiers_ = other.priceTiers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             priceTiersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPriceTiersFieldBuilder()
@@ -679,25 +691,25 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 periodType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 firstPeriod_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 lastPeriod_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -761,8 +773,8 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeriodTypeValue(int value) {
-
       periodType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,9 +791,8 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.PeriodType getPeriodType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.PeriodType result =
-          com.google.cloud.channel.v1.PeriodType.valueOf(periodType_);
+          com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
       return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
     }
     /**
@@ -800,7 +811,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       periodType_ = value.getNumber();
       onChanged();
       return this;
@@ -817,7 +828,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeriodType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       periodType_ = 0;
       onChanged();
       return this;
@@ -854,6 +865,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public Builder setFirstPeriod(int value) {
 
       firstPeriod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,7 +881,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirstPeriod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       firstPeriod_ = 0;
       onChanged();
       return this;
@@ -906,6 +918,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastPeriod(int value) {
 
       lastPeriod_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -921,7 +934,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastPeriod() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       lastPeriod_ = 0;
       onChanged();
       return this;
@@ -945,7 +958,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the price field is set.
      */
     public boolean hasPrice() {
-      return priceBuilder_ != null || price_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -980,11 +993,11 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         price_ = value;
-        onChanged();
       } else {
         priceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -999,11 +1012,11 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrice(com.google.cloud.channel.v1.Price.Builder builderForValue) {
       if (priceBuilder_ == null) {
         price_ = builderForValue.build();
-        onChanged();
       } else {
         priceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1017,17 +1030,18 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrice(com.google.cloud.channel.v1.Price value) {
       if (priceBuilder_ == null) {
-        if (price_ != null) {
-          price_ =
-              com.google.cloud.channel.v1.Price.newBuilder(price_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && price_ != null
+            && price_ != com.google.cloud.channel.v1.Price.getDefaultInstance()) {
+          getPriceBuilder().mergeFrom(value);
         } else {
           price_ = value;
         }
-        onChanged();
       } else {
         priceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1054,13 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Price price = 4;</code>
      */
     public Builder clearPrice() {
-      if (priceBuilder_ == null) {
-        price_ = null;
-        onChanged();
-      } else {
-        price_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      price_ = null;
+      if (priceBuilder_ != null) {
+        priceBuilder_.dispose();
         priceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1060,7 +1073,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Price price = 4;</code>
      */
     public com.google.cloud.channel.v1.Price.Builder getPriceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
@@ -1110,9 +1123,9 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePriceTiersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         priceTiers_ = new java.util.ArrayList<com.google.cloud.channel.v1.PriceTier>(priceTiers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1327,7 +1340,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPriceTiers() {
       if (priceTiersBuilder_ == null) {
         priceTiers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         priceTiersBuilder_.clear();
@@ -1449,7 +1462,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.channel.v1.PriceTier,
                 com.google.cloud.channel.v1.PriceTier.Builder,
                 com.google.cloud.channel.v1.PriceTierOrBuilder>(
-                priceTiers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                priceTiers_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         priceTiers_ = null;
       }
       return priceTiersBuilder_;

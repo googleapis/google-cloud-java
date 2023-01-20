@@ -374,6 +374,7 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (exactMatchConfigBuilder_ != null) {
         exactMatchConfigBuilder_.clear();
       }
@@ -407,16 +408,26 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig buildPartial() {
       com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig result =
           new com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig(this);
-      if (configCase_ == 1) {
-        if (exactMatchConfigBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = exactMatchConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.configCase_ = configCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig result) {
+      result.configCase_ = configCase_;
+      result.config_ = this.config_;
+      if (configCase_ == 1 && exactMatchConfigBuilder_ != null) {
+        result.config_ = exactMatchConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,6 +552,8 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.ExactMatchConfig,
@@ -754,7 +767,6 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       }
       configCase_ = 1;
       onChanged();
-      ;
       return exactMatchConfigBuilder_;
     }
 

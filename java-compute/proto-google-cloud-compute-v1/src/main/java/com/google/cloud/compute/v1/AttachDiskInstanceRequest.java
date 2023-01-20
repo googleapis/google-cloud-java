@@ -122,11 +122,13 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AttachedDiskOrBuilder getAttachedDiskResourceOrBuilder() {
-    return getAttachedDiskResource();
+    return attachedDiskResource_ == null
+        ? com.google.cloud.compute.v1.AttachedDisk.getDefaultInstance()
+        : attachedDiskResource_;
   }
 
   public static final int FORCE_ATTACH_FIELD_NUMBER = 142758425;
-  private boolean forceAttach_;
+  private boolean forceAttach_ = false;
   /**
    *
    *
@@ -159,7 +161,9 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -208,7 +212,9 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -261,7 +267,9 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -325,7 +333,9 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -637,22 +647,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (attachedDiskResourceBuilder_ == null) {
-        attachedDiskResource_ = null;
-      } else {
-        attachedDiskResource_ = null;
+      bitField0_ = 0;
+      attachedDiskResource_ = null;
+      if (attachedDiskResourceBuilder_ != null) {
+        attachedDiskResourceBuilder_.dispose();
         attachedDiskResourceBuilder_ = null;
       }
       forceAttach_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
-
       return this;
     }
 
@@ -680,27 +685,40 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.AttachDiskInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.AttachDiskInstanceRequest result =
           new com.google.cloud.compute.v1.AttachDiskInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (attachedDiskResourceBuilder_ == null) {
-        result.attachedDiskResource_ = attachedDiskResource_;
-      } else {
-        result.attachedDiskResource_ = attachedDiskResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AttachDiskInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attachedDiskResource_ =
+            attachedDiskResourceBuilder_ == null
+                ? attachedDiskResource_
+                : attachedDiskResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.forceAttach_ = forceAttach_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instance_ = instance_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -757,19 +775,22 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -801,38 +822,38 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 724846762:
               {
                 input.readMessage(
                     getAttachedDiskResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 724846762
             case 1142067400:
               {
                 forceAttach_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1142067400
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1820481738
             default:
@@ -874,7 +895,7 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return Whether the attachedDiskResource field is set.
      */
     public boolean hasAttachedDiskResource() {
-      return attachedDiskResourceBuilder_ != null || attachedDiskResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -915,11 +936,11 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         attachedDiskResource_ = value;
-        onChanged();
       } else {
         attachedDiskResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -937,11 +958,11 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         com.google.cloud.compute.v1.AttachedDisk.Builder builderForValue) {
       if (attachedDiskResourceBuilder_ == null) {
         attachedDiskResource_ = builderForValue.build();
-        onChanged();
       } else {
         attachedDiskResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -957,19 +978,19 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      */
     public Builder mergeAttachedDiskResource(com.google.cloud.compute.v1.AttachedDisk value) {
       if (attachedDiskResourceBuilder_ == null) {
-        if (attachedDiskResource_ != null) {
-          attachedDiskResource_ =
-              com.google.cloud.compute.v1.AttachedDisk.newBuilder(attachedDiskResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && attachedDiskResource_ != null
+            && attachedDiskResource_
+                != com.google.cloud.compute.v1.AttachedDisk.getDefaultInstance()) {
+          getAttachedDiskResourceBuilder().mergeFrom(value);
         } else {
           attachedDiskResource_ = value;
         }
-        onChanged();
       } else {
         attachedDiskResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -984,14 +1005,13 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearAttachedDiskResource() {
-      if (attachedDiskResourceBuilder_ == null) {
-        attachedDiskResource_ = null;
-        onChanged();
-      } else {
-        attachedDiskResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      attachedDiskResource_ = null;
+      if (attachedDiskResourceBuilder_ != null) {
+        attachedDiskResourceBuilder_.dispose();
         attachedDiskResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1006,7 +1026,7 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.compute.v1.AttachedDisk.Builder getAttachedDiskResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAttachedDiskResourceFieldBuilder().getBuilder();
     }
@@ -1072,7 +1092,7 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasForceAttach() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1102,8 +1122,9 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setForceAttach(boolean value) {
-      bitField0_ |= 0x00000001;
+
       forceAttach_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1119,7 +1140,7 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearForceAttach() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       forceAttach_ = false;
       onChanged();
       return this;
@@ -1186,8 +1207,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1203,8 +1224,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1225,8 +1246,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1298,8 +1319,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1317,8 +1338,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1341,8 +1362,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1360,7 +1381,7 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1422,8 +1443,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1439,8 +1460,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1461,8 +1482,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1534,8 +1555,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1553,8 +1574,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1577,8 +1598,8 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

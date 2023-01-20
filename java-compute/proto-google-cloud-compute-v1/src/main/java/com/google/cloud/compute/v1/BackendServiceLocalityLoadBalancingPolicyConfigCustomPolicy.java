@@ -75,7 +75,9 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
 
   private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 3076010;
-  private volatile java.lang.Object data_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object data_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -446,10 +450,9 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       data_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -484,19 +487,27 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
           result =
               new com.google.cloud.compute.v1
                   .BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
+            result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.data_ = data_;
         to_bitField0_ |= 0x00000001;
       }
-      result.data_ = data_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -554,13 +565,13 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
           == com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
               .getDefaultInstance()) return this;
       if (other.hasData()) {
-        bitField0_ |= 0x00000001;
         data_ = other.data_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -695,8 +706,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       data_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,8 +723,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      * @return This builder for chaining.
      */
     public Builder clearData() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       data_ = getDefaultInstance().getData();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +745,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       data_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +826,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,8 +843,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -854,8 +865,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

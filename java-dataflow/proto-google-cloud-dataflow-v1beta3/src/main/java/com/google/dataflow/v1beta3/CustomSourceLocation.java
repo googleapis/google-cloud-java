@@ -66,7 +66,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STATEFUL_FIELD_NUMBER = 1;
-  private boolean stateful_;
+  private boolean stateful_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stateful_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     public com.google.dataflow.v1beta3.CustomSourceLocation buildPartial() {
       com.google.dataflow.v1beta3.CustomSourceLocation result =
           new com.google.dataflow.v1beta3.CustomSourceLocation(this);
-      result.stateful_ = stateful_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.CustomSourceLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stateful_ = stateful_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 stateful_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean stateful_;
     /**
@@ -443,6 +454,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     public Builder setStateful(boolean value) {
 
       stateful_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStateful() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       stateful_ = false;
       onChanged();
       return this;

@@ -89,7 +89,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NUM_WORKERS_FIELD_NUMBER = 11;
-  private int numWorkers_;
+  private int numWorkers_ = 0;
   /**
    *
    *
@@ -107,7 +107,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MAX_WORKERS_FIELD_NUMBER = 1;
-  private int maxWorkers_;
+  private int maxWorkers_ = 0;
   /**
    *
    *
@@ -126,7 +126,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -181,7 +183,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -230,7 +234,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TEMP_LOCATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object tempLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tempLocation_ = "";
   /**
    *
    *
@@ -281,7 +287,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BYPASS_TEMP_DIR_VALIDATION_FIELD_NUMBER = 5;
-  private boolean bypassTempDirValidation_;
+  private boolean bypassTempDirValidation_ = false;
   /**
    *
    *
@@ -300,7 +306,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -351,6 +359,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList additionalExperiments_;
   /**
    *
@@ -416,7 +426,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NETWORK_FIELD_NUMBER = 8;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -467,7 +479,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 9;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -538,6 +552,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> additionalUserLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -612,8 +627,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   @java.lang.Override
-  public java.lang.String getAdditionalUserLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAdditionalUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -649,7 +666,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -702,7 +721,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IP_CONFIGURATION_FIELD_NUMBER = 14;
-  private int ipConfiguration_;
+  private int ipConfiguration_ = 0;
   /**
    *
    *
@@ -731,16 +750,17 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.WorkerIPAddressConfiguration getIpConfiguration() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.WorkerIPAddressConfiguration result =
-        com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.valueOf(ipConfiguration_);
+        com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.forNumber(ipConfiguration_);
     return result == null
         ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
         : result;
   }
 
   public static final int WORKER_REGION_FIELD_NUMBER = 15;
-  private volatile java.lang.Object workerRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerRegion_ = "";
   /**
    *
    *
@@ -797,7 +817,9 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int WORKER_ZONE_FIELD_NUMBER = 16;
-  private volatile java.lang.Object workerZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerZone_ = "";
   /**
    *
    *
@@ -856,7 +878,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENABLE_STREAMING_ENGINE_FIELD_NUMBER = 17;
-  private boolean enableStreamingEngine_;
+  private boolean enableStreamingEngine_ = false;
   /**
    *
    *
@@ -1249,37 +1271,24 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       numWorkers_ = 0;
-
       maxWorkers_ = 0;
-
       zone_ = "";
-
       serviceAccountEmail_ = "";
-
       tempLocation_ = "";
-
       bypassTempDirValidation_ = false;
-
       machineType_ = "";
-
       additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       network_ = "";
-
       subnetwork_ = "";
-
       internalGetMutableAdditionalUserLabels().clear();
       kmsKeyName_ = "";
-
       ipConfiguration_ = 0;
-
       workerRegion_ = "";
-
       workerZone_ = "";
-
       enableStreamingEngine_ = false;
-
       return this;
     }
 
@@ -1307,30 +1316,70 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.RuntimeEnvironment buildPartial() {
       com.google.dataflow.v1beta3.RuntimeEnvironment result =
           new com.google.dataflow.v1beta3.RuntimeEnvironment(this);
-      int from_bitField0_ = bitField0_;
-      result.numWorkers_ = numWorkers_;
-      result.maxWorkers_ = maxWorkers_;
-      result.zone_ = zone_;
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.tempLocation_ = tempLocation_;
-      result.bypassTempDirValidation_ = bypassTempDirValidation_;
-      result.machineType_ = machineType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.additionalExperiments_ = additionalExperiments_;
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.additionalUserLabels_ = internalGetAdditionalUserLabels();
-      result.additionalUserLabels_.makeImmutable();
-      result.kmsKeyName_ = kmsKeyName_;
-      result.ipConfiguration_ = ipConfiguration_;
-      result.workerRegion_ = workerRegion_;
-      result.workerZone_ = workerZone_;
-      result.enableStreamingEngine_ = enableStreamingEngine_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.RuntimeEnvironment result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.additionalExperiments_ = additionalExperiments_;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.RuntimeEnvironment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.numWorkers_ = numWorkers_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxWorkers_ = maxWorkers_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tempLocation_ = tempLocation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bypassTempDirValidation_ = bypassTempDirValidation_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.additionalUserLabels_ = internalGetAdditionalUserLabels();
+        result.additionalUserLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.ipConfiguration_ = ipConfiguration_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.workerRegion_ = workerRegion_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.workerZone_ = workerZone_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.enableStreamingEngine_ = enableStreamingEngine_;
+      }
     }
 
     @java.lang.Override
@@ -1386,14 +1435,17 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTempLocation().isEmpty()) {
         tempLocation_ = other.tempLocation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getBypassTempDirValidation() != false) {
@@ -1401,12 +1453,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.additionalExperiments_.isEmpty()) {
         if (additionalExperiments_.isEmpty()) {
           additionalExperiments_ = other.additionalExperiments_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureAdditionalExperimentsIsMutable();
           additionalExperiments_.addAll(other.additionalExperiments_);
@@ -1415,15 +1468,19 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       internalGetMutableAdditionalUserLabels().mergeFrom(other.internalGetAdditionalUserLabels());
+      bitField0_ |= 0x00000400;
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.ipConfiguration_ != 0) {
@@ -1431,10 +1488,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getWorkerRegion().isEmpty()) {
         workerRegion_ = other.workerRegion_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getWorkerZone().isEmpty()) {
         workerZone_ = other.workerZone_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.getEnableStreamingEngine() != false) {
@@ -1469,37 +1528,37 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 maxWorkers_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 8
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 tempLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 bypassTempDirValidation_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1512,13 +1571,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
             case 66:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
@@ -1531,42 +1590,43 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
                 internalGetMutableAdditionalUserLabels()
                     .getMutableMap()
                     .put(additionalUserLabels__.getKey(), additionalUserLabels__.getValue());
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 88:
               {
                 numWorkers_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 88
             case 98:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 112:
               {
                 ipConfiguration_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 112
             case 122:
               {
                 workerRegion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
               {
                 workerZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 136:
               {
                 enableStreamingEngine_ = input.readBool();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
             default:
@@ -1619,6 +1679,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder setNumWorkers(int value) {
 
       numWorkers_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1634,7 +1695,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNumWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       numWorkers_ = 0;
       onChanged();
       return this;
@@ -1673,6 +1734,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder setMaxWorkers(int value) {
 
       maxWorkers_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1689,7 +1751,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMaxWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxWorkers_ = 0;
       onChanged();
       return this;
@@ -1765,8 +1827,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1785,8 +1847,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1810,8 +1872,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1877,8 +1939,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1894,8 +1956,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1916,8 +1978,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1986,8 +2048,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       tempLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2004,8 +2066,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTempLocation() {
-
       tempLocation_ = getDefaultInstance().getTempLocation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2027,8 +2089,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tempLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2066,6 +2128,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder setBypassTempDirValidation(boolean value) {
 
       bypassTempDirValidation_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2082,7 +2145,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBypassTempDirValidation() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       bypassTempDirValidation_ = false;
       onChanged();
       return this;
@@ -2152,8 +2215,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2170,8 +2233,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2193,8 +2256,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2203,10 +2266,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdditionalExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         additionalExperiments_ =
             new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2349,7 +2412,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearAdditionalExperiments() {
       additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2441,8 +2504,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2459,8 +2522,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2482,8 +2545,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2564,8 +2627,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2586,8 +2649,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2613,8 +2676,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2632,8 +2695,6 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAdditionalUserLabels() {
-      onChanged();
-      ;
       if (additionalUserLabels_ == null) {
         additionalUserLabels_ =
             com.google.protobuf.MapField.newMapField(
@@ -2642,6 +2703,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (!additionalUserLabels_.isMutable()) {
         additionalUserLabels_ = additionalUserLabels_.copy();
       }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return additionalUserLabels_;
     }
 
@@ -2708,8 +2771,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
      */
     @java.lang.Override
-    public java.lang.String getAdditionalUserLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAdditionalUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2745,6 +2810,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearAdditionalUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableAdditionalUserLabels().getMutableMap().clear();
       return this;
     }
@@ -2772,6 +2838,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalUserLabels() {
+      bitField0_ |= 0x00000400;
       return internalGetMutableAdditionalUserLabels().getMutableMap();
     }
     /**
@@ -2795,8 +2862,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAdditionalUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -2816,6 +2883,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder putAllAdditionalUserLabels(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAdditionalUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -2886,8 +2954,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2905,8 +2973,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2929,8 +2997,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2964,8 +3032,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIpConfigurationValue(int value) {
-
       ipConfiguration_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2982,9 +3050,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.WorkerIPAddressConfiguration getIpConfiguration() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.WorkerIPAddressConfiguration result =
-          com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.valueOf(ipConfiguration_);
+          com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.forNumber(ipConfiguration_);
       return result == null
           ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
           : result;
@@ -3006,7 +3073,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       ipConfiguration_ = value.getNumber();
       onChanged();
       return this;
@@ -3023,7 +3090,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIpConfiguration() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       ipConfiguration_ = 0;
       onChanged();
       return this;
@@ -3102,8 +3169,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerRegion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3123,8 +3190,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearWorkerRegion() {
-
       workerRegion_ = getDefaultInstance().getWorkerRegion();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3149,8 +3216,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerRegion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3231,8 +3298,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerZone_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3253,8 +3320,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearWorkerZone() {
-
       workerZone_ = getDefaultInstance().getWorkerZone();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3280,8 +3347,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerZone_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3317,6 +3384,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder setEnableStreamingEngine(boolean value) {
 
       enableStreamingEngine_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3332,7 +3400,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEnableStreamingEngine() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       enableStreamingEngine_ = false;
       onChanged();
       return this;

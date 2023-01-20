@@ -69,7 +69,9 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -163,11 +165,15 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.dataflow.v1beta3.LaunchFlexTemplateParameterOrBuilder
       getLaunchParameterOrBuilder() {
-    return getLaunchParameter();
+    return launchParameter_ == null
+        ? com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.getDefaultInstance()
+        : launchParameter_;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -220,7 +226,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -468,18 +474,15 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
-      if (launchParameterBuilder_ == null) {
-        launchParameter_ = null;
-      } else {
-        launchParameter_ = null;
+      launchParameter_ = null;
+      if (launchParameterBuilder_ != null) {
+        launchParameterBuilder_.dispose();
         launchParameterBuilder_ = null;
       }
       location_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -507,16 +510,28 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
     public com.google.dataflow.v1beta3.LaunchFlexTemplateRequest buildPartial() {
       com.google.dataflow.v1beta3.LaunchFlexTemplateRequest result =
           new com.google.dataflow.v1beta3.LaunchFlexTemplateRequest(this);
-      result.projectId_ = projectId_;
-      if (launchParameterBuilder_ == null) {
-        result.launchParameter_ = launchParameter_;
-      } else {
-        result.launchParameter_ = launchParameterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.location_ = location_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.LaunchFlexTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.launchParameter_ =
+            launchParameterBuilder_ == null ? launchParameter_ : launchParameterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -567,6 +582,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLaunchParameter()) {
@@ -574,6 +590,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -608,25 +625,25 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLaunchParameterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -645,6 +662,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -707,8 +726,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -724,8 +743,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -746,8 +765,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,7 +789,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      * @return Whether the launchParameter field is set.
      */
     public boolean hasLaunchParameter() {
-      return launchParameterBuilder_ != null || launchParameter_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -808,11 +827,11 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         launchParameter_ = value;
-        onChanged();
       } else {
         launchParameterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,11 +847,11 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
         com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.Builder builderForValue) {
       if (launchParameterBuilder_ == null) {
         launchParameter_ = builderForValue.build();
-        onChanged();
       } else {
         launchParameterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,19 +866,19 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
     public Builder mergeLaunchParameter(
         com.google.dataflow.v1beta3.LaunchFlexTemplateParameter value) {
       if (launchParameterBuilder_ == null) {
-        if (launchParameter_ != null) {
-          launchParameter_ =
-              com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.newBuilder(launchParameter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && launchParameter_ != null
+            && launchParameter_
+                != com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.getDefaultInstance()) {
+          getLaunchParameterBuilder().mergeFrom(value);
         } else {
           launchParameter_ = value;
         }
-        onChanged();
       } else {
         launchParameterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +891,13 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      * <code>.google.dataflow.v1beta3.LaunchFlexTemplateParameter launch_parameter = 2;</code>
      */
     public Builder clearLaunchParameter() {
-      if (launchParameterBuilder_ == null) {
-        launchParameter_ = null;
-        onChanged();
-      } else {
-        launchParameter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      launchParameter_ = null;
+      if (launchParameterBuilder_ != null) {
+        launchParameterBuilder_.dispose();
         launchParameterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +911,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      */
     public com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.Builder
         getLaunchParameterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLaunchParameterFieldBuilder().getBuilder();
     }
@@ -1009,8 +1027,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1028,8 +1046,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1052,8 +1070,8 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1091,6 +1109,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1107,7 +1126,7 @@ public final class LaunchFlexTemplateRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

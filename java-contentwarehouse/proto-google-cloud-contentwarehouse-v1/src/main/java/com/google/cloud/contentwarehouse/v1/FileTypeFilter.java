@@ -249,7 +249,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_TYPE_FIELD_NUMBER = 1;
-  private int fileType_;
+  private int fileType_ = 0;
   /**
    *
    *
@@ -278,9 +278,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType getFileType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType result =
-        com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.valueOf(fileType_);
+        com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.forNumber(fileType_);
     return result == null
         ? com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.UNRECOGNIZED
         : result;
@@ -487,8 +486,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fileType_ = 0;
-
       return this;
     }
 
@@ -516,9 +515,18 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.FileTypeFilter buildPartial() {
       com.google.cloud.contentwarehouse.v1.FileTypeFilter result =
           new com.google.cloud.contentwarehouse.v1.FileTypeFilter(this);
-      result.fileType_ = fileType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.FileTypeFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fileType_ = fileType_;
+      }
     }
 
     @java.lang.Override
@@ -599,7 +607,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 fileType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -618,6 +626,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int fileType_ = 0;
     /**
@@ -648,8 +658,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFileTypeValue(int value) {
-
       fileType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,9 +676,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType getFileType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType result =
-          com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.valueOf(fileType_);
+          com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.forNumber(fileType_);
       return result == null
           ? com.google.cloud.contentwarehouse.v1.FileTypeFilter.FileType.UNRECOGNIZED
           : result;
@@ -689,7 +698,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       fileType_ = value.getNumber();
       onChanged();
       return this;
@@ -706,7 +715,7 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFileType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fileType_ = 0;
       onChanged();
       return this;

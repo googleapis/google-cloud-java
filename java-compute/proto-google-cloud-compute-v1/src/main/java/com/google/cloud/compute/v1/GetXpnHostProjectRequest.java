@@ -68,7 +68,9 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.GetXpnHostProjectRequest buildPartial() {
       com.google.cloud.compute.v1.GetXpnHostProjectRequest result =
           new com.google.cloud.compute.v1.GetXpnHostProjectRequest(this);
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetXpnHostProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -395,6 +406,7 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -426,7 +438,7 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -445,6 +457,8 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -507,8 +521,8 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,8 +538,8 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -546,8 +560,8 @@ public final class GetXpnHostProjectRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

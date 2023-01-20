@@ -108,7 +108,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
-    return getBuild();
+    return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +313,10 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (buildBuilder_ == null) {
-        build_ = null;
-      } else {
-        build_ = null;
+      bitField0_ = 0;
+      build_ = null;
+      if (buildBuilder_ != null) {
+        buildBuilder_.dispose();
         buildBuilder_ = null;
       }
       return this;
@@ -346,13 +346,18 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloudbuild.v1.BuildOperationMetadata buildPartial() {
       com.google.cloudbuild.v1.BuildOperationMetadata result =
           new com.google.cloudbuild.v1.BuildOperationMetadata(this);
-      if (buildBuilder_ == null) {
-        result.build_ = build_;
-      } else {
-        result.build_ = buildBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.BuildOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.build_ = buildBuilder_ == null ? build_ : buildBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -433,7 +438,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getBuildFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +458,8 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloudbuild.v1.Build build_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.Build,
@@ -471,7 +478,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the build field is set.
      */
     public boolean hasBuild() {
-      return buildBuilder_ != null || build_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -506,11 +513,11 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         build_ = value;
-        onChanged();
       } else {
         buildBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -525,11 +532,11 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setBuild(com.google.cloudbuild.v1.Build.Builder builderForValue) {
       if (buildBuilder_ == null) {
         build_ = builderForValue.build();
-        onChanged();
       } else {
         buildBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -543,17 +550,18 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeBuild(com.google.cloudbuild.v1.Build value) {
       if (buildBuilder_ == null) {
-        if (build_ != null) {
-          build_ =
-              com.google.cloudbuild.v1.Build.newBuilder(build_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && build_ != null
+            && build_ != com.google.cloudbuild.v1.Build.getDefaultInstance()) {
+          getBuildBuilder().mergeFrom(value);
         } else {
           build_ = value;
         }
-        onChanged();
       } else {
         buildBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,14 +574,13 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.cloudbuild.v1.Build build = 1;</code>
      */
     public Builder clearBuild() {
-      if (buildBuilder_ == null) {
-        build_ = null;
-        onChanged();
-      } else {
-        build_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      build_ = null;
+      if (buildBuilder_ != null) {
+        buildBuilder_.dispose();
         buildBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -586,7 +593,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.cloudbuild.v1.Build build = 1;</code>
      */
     public com.google.cloudbuild.v1.Build.Builder getBuildBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBuildFieldBuilder().getBuilder();
     }

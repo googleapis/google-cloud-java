@@ -613,7 +613,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private boolean autoDelete_;
+  private boolean autoDelete_ = false;
   /**
    *
    *
@@ -646,7 +646,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BOOT_FIELD_NUMBER = 3029746;
-  private boolean boot_;
+  private boolean boot_ = false;
   /**
    *
    *
@@ -679,7 +679,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DEVICE_NAME_FIELD_NUMBER = 67541716;
-  private volatile java.lang.Object deviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deviceName_ = "";
   /**
    *
    *
@@ -797,7 +799,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private long diskSizeGb_;
+  private long diskSizeGb_ = 0L;
   /**
    *
    *
@@ -830,7 +832,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 93009052;
-  private volatile java.lang.Object diskType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskType_ = "";
   /**
    *
    *
@@ -894,6 +898,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GUEST_OS_FEATURES_FIELD_NUMBER = 79294545;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.GuestOsFeature> guestOsFeatures_;
   /**
    *
@@ -964,7 +970,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INDEX_FIELD_NUMBER = 100346066;
-  private int index_;
+  private int index_ = 0;
   /**
    *
    *
@@ -997,7 +1003,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
-  private volatile java.lang.Object interface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interface_ = "";
   /**
    *
    *
@@ -1064,7 +1072,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -1128,6 +1138,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LICENSES_FIELD_NUMBER = 337642578;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList licenses_;
   /**
    *
@@ -1189,7 +1201,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -1256,7 +1270,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -1320,7 +1336,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STORAGE_BYTES_FIELD_NUMBER = 424631719;
-  private long storageBytes_;
+  private long storageBytes_ = 0L;
   /**
    *
    *
@@ -1353,7 +1369,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STORAGE_BYTES_STATUS_FIELD_NUMBER = 490739082;
-  private volatile java.lang.Object storageBytesStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storageBytesStatus_ = "";
   /**
    *
    *
@@ -1420,7 +1438,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1912,22 +1932,17 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoDelete_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       boot_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       deviceName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-      } else {
-        diskEncryptionKeyBuilder_.clear();
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       diskSizeGb_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
       diskType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
       } else {
@@ -1936,23 +1951,15 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000040);
       index_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       interface_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
       mode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       source_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       storageBytes_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00002000);
       storageBytesStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1980,6 +1987,32 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.SavedAttachedDisk buildPartial() {
       com.google.cloud.compute.v1.SavedAttachedDisk result =
           new com.google.cloud.compute.v1.SavedAttachedDisk(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SavedAttachedDisk result) {
+      if (guestOsFeaturesBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.guestOsFeatures_ = guestOsFeatures_;
+      } else {
+        result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        licenses_ = licenses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.licenses_ = licenses_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SavedAttachedDisk result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1991,15 +2024,14 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deviceName_ = deviceName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.deviceName_ = deviceName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (diskEncryptionKeyBuilder_ == null) {
-          result.diskEncryptionKey_ = diskEncryptionKey_;
-        } else {
-          result.diskEncryptionKey_ = diskEncryptionKeyBuilder_.build();
-        }
+        result.diskEncryptionKey_ =
+            diskEncryptionKeyBuilder_ == null
+                ? diskEncryptionKey_
+                : diskEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -2007,58 +2039,42 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.diskType_ = diskType_;
         to_bitField0_ |= 0x00000020;
-      }
-      result.diskType_ = diskType_;
-      if (guestOsFeaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
-          guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.guestOsFeatures_ = guestOsFeatures_;
-      } else {
-        result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.index_ = index_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.interface_ = interface_;
         to_bitField0_ |= 0x00000080;
       }
-      result.interface_ = interface_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000100;
       }
-      result.kind_ = kind_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.licenses_ = licenses_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000200;
       }
-      result.mode_ = mode_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.source_ = source_;
         to_bitField0_ |= 0x00000400;
       }
-      result.source_ = source_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.storageBytes_ = storageBytes_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.storageBytesStatus_ = storageBytesStatus_;
         to_bitField0_ |= 0x00001000;
       }
-      result.storageBytesStatus_ = storageBytesStatus_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00002000;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2113,8 +2129,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         setBoot(other.getBoot());
       }
       if (other.hasDeviceName()) {
-        bitField0_ |= 0x00000004;
         deviceName_ = other.deviceName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDiskEncryptionKey()) {
@@ -2124,8 +2140,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasDiskType()) {
-        bitField0_ |= 0x00000020;
         diskType_ = other.diskType_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (guestOsFeaturesBuilder_ == null) {
@@ -2159,13 +2175,13 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         setIndex(other.getIndex());
       }
       if (other.hasInterface()) {
-        bitField0_ |= 0x00000100;
         interface_ = other.interface_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.licenses_.isEmpty()) {
@@ -2179,26 +2195,26 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       if (other.hasMode()) {
-        bitField0_ |= 0x00000800;
         mode_ = other.mode_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00001000;
         source_ = other.source_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasStorageBytes()) {
         setStorageBytes(other.getStorageBytes());
       }
       if (other.hasStorageBytesStatus()) {
-        bitField0_ |= 0x00004000;
         storageBytesStatus_ = other.storageBytesStatus_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00008000;
         type_ = other.type_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2395,8 +2411,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setAutoDelete(boolean value) {
-      bitField0_ |= 0x00000001;
+
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2462,8 +2479,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setBoot(boolean value) {
-      bitField0_ |= 0x00000002;
+
       boot_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2560,8 +2578,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       deviceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2577,8 +2595,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDeviceName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       deviceName_ = getDefaultInstance().getDeviceName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2599,8 +2617,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       deviceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2666,11 +2684,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         diskEncryptionKey_ = value;
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2688,11 +2706,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
       if (diskEncryptionKeyBuilder_ == null) {
         diskEncryptionKey_ = builderForValue.build();
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2712,18 +2730,15 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
             && diskEncryptionKey_ != null
             && diskEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
-          diskEncryptionKey_ =
-              com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(diskEncryptionKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDiskEncryptionKeyBuilder().mergeFrom(value);
         } else {
           diskEncryptionKey_ = value;
         }
-        onChanged();
       } else {
         diskEncryptionKeyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2738,13 +2753,13 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearDiskEncryptionKey() {
-      if (diskEncryptionKeyBuilder_ == null) {
-        diskEncryptionKey_ = null;
-        onChanged();
-      } else {
-        diskEncryptionKeyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      diskEncryptionKey_ = null;
+      if (diskEncryptionKeyBuilder_ != null) {
+        diskEncryptionKeyBuilder_.dispose();
+        diskEncryptionKeyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2856,8 +2871,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(long value) {
-      bitField0_ |= 0x00000010;
+
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2954,8 +2970,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       diskType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2971,8 +2987,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       diskType_ = getDefaultInstance().getDiskType();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2993,8 +3009,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       diskType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3398,8 +3414,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setIndex(int value) {
-      bitField0_ |= 0x00000080;
+
       index_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3500,8 +3517,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       interface_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3518,8 +3535,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       interface_ = getDefaultInstance().getInterface();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3541,8 +3558,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       interface_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3622,8 +3639,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3639,8 +3656,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3661,8 +3678,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3914,8 +3931,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       mode_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3932,8 +3949,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3955,8 +3972,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       mode_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4036,8 +4053,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       source_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4053,8 +4070,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4075,8 +4092,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       source_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4125,8 +4142,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStorageBytes(long value) {
-      bitField0_ |= 0x00002000;
+
       storageBytes_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4227,8 +4245,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       storageBytesStatus_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4245,8 +4263,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStorageBytesStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       storageBytesStatus_ = getDefaultInstance().getStorageBytesStatus();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4268,8 +4286,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       storageBytesStatus_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4353,8 +4371,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       type_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4371,8 +4389,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4394,8 +4412,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       type_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

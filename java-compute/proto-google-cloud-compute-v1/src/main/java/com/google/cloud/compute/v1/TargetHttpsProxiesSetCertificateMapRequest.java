@@ -70,7 +70,9 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
 
   private int bitField0_;
   public static final int CERTIFICATE_MAP_FIELD_NUMBER = 156463796;
-  private volatile java.lang.Object certificateMap_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificateMap_ = "";
   /**
    *
    *
@@ -337,8 +339,8 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       certificateMap_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -369,15 +371,22 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest buildPartial() {
       com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest result =
           new com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificateMap_ = certificateMap_;
         to_bitField0_ |= 0x00000001;
       }
-      result.certificateMap_ = certificateMap_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -430,8 +439,8 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
           == com.google.cloud.compute.v1.TargetHttpsProxiesSetCertificateMapRequest
               .getDefaultInstance()) return this;
       if (other.hasCertificateMap()) {
-        bitField0_ |= 0x00000001;
         certificateMap_ = other.certificateMap_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -560,8 +569,8 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       certificateMap_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -577,8 +586,8 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      * @return This builder for chaining.
      */
     public Builder clearCertificateMap() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       certificateMap_ = getDefaultInstance().getCertificateMap();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -599,8 +608,8 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       certificateMap_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

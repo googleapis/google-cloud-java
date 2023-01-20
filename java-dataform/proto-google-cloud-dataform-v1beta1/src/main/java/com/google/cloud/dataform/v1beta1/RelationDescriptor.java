@@ -267,6 +267,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList path_;
     /**
      *
@@ -332,7 +334,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -381,6 +385,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int BIGQUERY_POLICY_TAGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList bigqueryPolicyTags_;
     /**
      *
@@ -677,12 +683,12 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         description_ = "";
-
         bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -713,20 +719,34 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor buildPartial() {
         com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result =
             new com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           path_ = path_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.path_ = path_;
-        result.description_ = description_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           bigqueryPolicyTags_ = bigqueryPolicyTags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.bigqueryPolicyTags_ = bigqueryPolicyTags_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
       }
 
       @java.lang.Override
@@ -793,12 +813,13 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.bigqueryPolicyTags_.isEmpty()) {
           if (bigqueryPolicyTags_.isEmpty()) {
             bigqueryPolicyTags_ = other.bigqueryPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureBigqueryPolicyTagsIsMutable();
             bigqueryPolicyTags_.addAll(other.bigqueryPolicyTags_);
@@ -841,7 +862,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -1108,8 +1129,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1125,8 +1146,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1147,8 +1168,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1157,9 +1178,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureBigqueryPolicyTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           bigqueryPolicyTags_ = new com.google.protobuf.LazyStringArrayList(bigqueryPolicyTags_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1294,7 +1315,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        */
       public Builder clearBigqueryPolicyTags() {
         bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1390,7 +1411,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1439,6 +1462,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor>
       columns_;
   /**
@@ -1530,6 +1555,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> bigqueryLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1589,8 +1615,10 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getBigqueryLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getBigqueryLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1863,15 +1891,15 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
       } else {
         columns_ = null;
         columnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableBigqueryLabels().clear();
       return this;
     }
@@ -1900,21 +1928,36 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.dataform.v1beta1.RelationDescriptor buildPartial() {
       com.google.cloud.dataform.v1beta1.RelationDescriptor result =
           new com.google.cloud.dataform.v1beta1.RelationDescriptor(this);
-      int from_bitField0_ = bitField0_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1beta1.RelationDescriptor result) {
       if (columnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.columns_ = columns_;
       } else {
         result.columns_ = columnsBuilder_.build();
       }
-      result.bigqueryLabels_ = internalGetBigqueryLabels();
-      result.bigqueryLabels_.makeImmutable();
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1beta1.RelationDescriptor result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bigqueryLabels_ = internalGetBigqueryLabels();
+        result.bigqueryLabels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1965,13 +2008,14 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (columnsBuilder_ == null) {
         if (!other.columns_.isEmpty()) {
           if (columns_.isEmpty()) {
             columns_ = other.columns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureColumnsIsMutable();
             columns_.addAll(other.columns_);
@@ -1984,7 +2028,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
             columnsBuilder_.dispose();
             columnsBuilder_ = null;
             columns_ = other.columns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             columnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getColumnsFieldBuilder()
@@ -1995,6 +2039,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
       }
       internalGetMutableBigqueryLabels().mergeFrom(other.internalGetBigqueryLabels());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2024,7 +2069,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2051,6 +2096,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
                 internalGetMutableBigqueryLabels()
                     .getMutableMap()
                     .put(bigqueryLabels__.getKey(), bigqueryLabels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2133,8 +2179,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2150,8 +2196,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2172,8 +2218,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2182,11 +2228,11 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         columns_ = java.util.Collections.emptyList();
 
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         columns_ =
             new java.util.ArrayList<
                 com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor>(columns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2436,7 +2482,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public Builder clearColumns() {
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         columnsBuilder_.clear();
@@ -2584,7 +2630,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor,
                 com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor.Builder,
                 com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptorOrBuilder>(
-                columns_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                columns_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         columns_ = null;
       }
       return columnsBuilder_;
@@ -2603,8 +2649,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableBigqueryLabels() {
-      onChanged();
-      ;
       if (bigqueryLabels_ == null) {
         bigqueryLabels_ =
             com.google.protobuf.MapField.newMapField(BigqueryLabelsDefaultEntryHolder.defaultEntry);
@@ -2612,6 +2656,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       if (!bigqueryLabels_.isMutable()) {
         bigqueryLabels_ = bigqueryLabels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return bigqueryLabels_;
     }
 
@@ -2663,8 +2709,10 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; bigquery_labels = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getBigqueryLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getBigqueryLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2693,6 +2741,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearBigqueryLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableBigqueryLabels().getMutableMap().clear();
       return this;
     }
@@ -2715,6 +2764,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableBigqueryLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableBigqueryLabels().getMutableMap();
     }
     /**
@@ -2733,8 +2783,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableBigqueryLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -2748,6 +2798,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllBigqueryLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableBigqueryLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

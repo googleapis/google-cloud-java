@@ -94,6 +94,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
                         com.google.dataflow.v1beta3.JobExecutionStageInfo.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo>
       stages_;
@@ -157,8 +158,10 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
    */
   @java.lang.Override
-  public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
-      java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
+  public /* nullable */ com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -416,6 +419,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableStages().clear();
       return this;
     }
@@ -444,11 +448,19 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.JobExecutionInfo buildPartial() {
       com.google.dataflow.v1beta3.JobExecutionInfo result =
           new com.google.dataflow.v1beta3.JobExecutionInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.stages_ = internalGetStages();
-      result.stages_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.JobExecutionInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stages_ = internalGetStages();
+        result.stages_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +509,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.dataflow.v1beta3.JobExecutionInfo other) {
       if (other == com.google.dataflow.v1beta3.JobExecutionInfo.getDefaultInstance()) return this;
       internalGetMutableStages().mergeFrom(other.internalGetStages());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -534,6 +547,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
                 internalGetMutableStages()
                     .getMutableMap()
                     .put(stages__.getKey(), stages__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -571,14 +585,14 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.MapField<
             java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo>
         internalGetMutableStages() {
-      onChanged();
-      ;
       if (stages_ == null) {
         stages_ = com.google.protobuf.MapField.newMapField(StagesDefaultEntryHolder.defaultEntry);
       }
       if (!stages_.isMutable()) {
         stages_ = stages_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return stages_;
     }
 
@@ -632,8 +646,10 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
      */
     @java.lang.Override
-    public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
-        java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
+    public /* nullable */ com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -665,6 +681,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearStages() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableStages().getMutableMap().clear();
       return this;
     }
@@ -688,6 +705,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo>
         getMutableStages() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableStages().getMutableMap();
     }
     /**
@@ -707,8 +725,8 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableStages().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -723,6 +741,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public Builder putAllStages(
         java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> values) {
       internalGetMutableStages().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

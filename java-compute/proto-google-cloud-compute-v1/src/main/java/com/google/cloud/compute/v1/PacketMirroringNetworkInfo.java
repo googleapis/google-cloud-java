@@ -69,7 +69,9 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int CANONICAL_URL_FIELD_NUMBER = 512294820;
-  private volatile java.lang.Object canonicalUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canonicalUrl_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
   }
 
   public static final int URL_FIELD_NUMBER = 116079;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -412,10 +416,9 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       canonicalUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       url_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +446,25 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.PacketMirroringNetworkInfo buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringNetworkInfo result =
           new com.google.cloud.compute.v1.PacketMirroringNetworkInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PacketMirroringNetworkInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.canonicalUrl_ = canonicalUrl_;
         to_bitField0_ |= 0x00000001;
       }
-      result.canonicalUrl_ = canonicalUrl_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.url_ = url_;
         to_bitField0_ |= 0x00000002;
       }
-      result.url_ = url_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.PacketMirroringNetworkInfo.getDefaultInstance())
         return this;
       if (other.hasCanonicalUrl()) {
-        bitField0_ |= 0x00000001;
         canonicalUrl_ = other.canonicalUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUrl()) {
-        bitField0_ |= 0x00000002;
         url_ = other.url_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,8 +655,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +672,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearCanonicalUrl() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       canonicalUrl_ = getDefaultInstance().getCanonicalUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +694,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +814,8 @@ public final class PacketMirroringNetworkInfo extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

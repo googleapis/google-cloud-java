@@ -69,7 +69,9 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.dataform.v1beta1.WorkflowInvocationOrBuilder
       getWorkflowInvocationOrBuilder() {
-    return getWorkflowInvocation();
+    return workflowInvocation_ == null
+        ? com.google.cloud.dataform.v1beta1.WorkflowInvocation.getDefaultInstance()
+        : workflowInvocation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (workflowInvocationBuilder_ == null) {
-        workflowInvocation_ = null;
-      } else {
-        workflowInvocation_ = null;
+      workflowInvocation_ = null;
+      if (workflowInvocationBuilder_ != null) {
+        workflowInvocationBuilder_.dispose();
         workflowInvocationBuilder_ = null;
       }
       return this;
@@ -428,14 +431,25 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
     public com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest result =
           new com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest(this);
-      result.parent_ = parent_;
-      if (workflowInvocationBuilder_ == null) {
-        result.workflowInvocation_ = workflowInvocation_;
-      } else {
-        result.workflowInvocation_ = workflowInvocationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workflowInvocation_ =
+            workflowInvocationBuilder_ == null
+                ? workflowInvocation_
+                : workflowInvocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +502,7 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasWorkflowInvocation()) {
@@ -522,14 +537,14 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getWorkflowInvocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +563,8 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -619,8 +636,8 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +656,8 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -664,8 +681,8 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,7 +707,7 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
      * @return Whether the workflowInvocation field is set.
      */
     public boolean hasWorkflowInvocation() {
-      return workflowInvocationBuilder_ != null || workflowInvocation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +749,11 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         workflowInvocation_ = value;
-        onChanged();
       } else {
         workflowInvocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +771,11 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
         com.google.cloud.dataform.v1beta1.WorkflowInvocation.Builder builderForValue) {
       if (workflowInvocationBuilder_ == null) {
         workflowInvocation_ = builderForValue.build();
-        onChanged();
       } else {
         workflowInvocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,19 +792,19 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
     public Builder mergeWorkflowInvocation(
         com.google.cloud.dataform.v1beta1.WorkflowInvocation value) {
       if (workflowInvocationBuilder_ == null) {
-        if (workflowInvocation_ != null) {
-          workflowInvocation_ =
-              com.google.cloud.dataform.v1beta1.WorkflowInvocation.newBuilder(workflowInvocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && workflowInvocation_ != null
+            && workflowInvocation_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocation.getDefaultInstance()) {
+          getWorkflowInvocationBuilder().mergeFrom(value);
         } else {
           workflowInvocation_ = value;
         }
-        onChanged();
       } else {
         workflowInvocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +819,13 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearWorkflowInvocation() {
-      if (workflowInvocationBuilder_ == null) {
-        workflowInvocation_ = null;
-        onChanged();
-      } else {
-        workflowInvocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      workflowInvocation_ = null;
+      if (workflowInvocationBuilder_ != null) {
+        workflowInvocationBuilder_.dispose();
         workflowInvocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +841,7 @@ public final class CreateWorkflowInvocationRequest extends com.google.protobuf.G
      */
     public com.google.cloud.dataform.v1beta1.WorkflowInvocation.Builder
         getWorkflowInvocationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWorkflowInvocationFieldBuilder().getBuilder();
     }

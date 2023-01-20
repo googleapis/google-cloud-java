@@ -69,7 +69,9 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.MigrationWorkflowOrBuilder
       getMigrationWorkflowOrBuilder() {
-    return getMigrationWorkflow();
+    return migrationWorkflow_ == null
+        ? com.google.cloud.bigquery.migration.v2.MigrationWorkflow.getDefaultInstance()
+        : migrationWorkflow_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (migrationWorkflowBuilder_ == null) {
-        migrationWorkflow_ = null;
-      } else {
-        migrationWorkflow_ = null;
+      migrationWorkflow_ = null;
+      if (migrationWorkflowBuilder_ != null) {
+        migrationWorkflowBuilder_.dispose();
         migrationWorkflowBuilder_ = null;
       }
       return this;
@@ -429,14 +432,25 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     public com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest buildPartial() {
       com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest result =
           new com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest(this);
-      result.parent_ = parent_;
-      if (migrationWorkflowBuilder_ == null) {
-        result.migrationWorkflow_ = migrationWorkflow_;
-      } else {
-        result.migrationWorkflow_ = migrationWorkflowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.migrationWorkflow_ =
+            migrationWorkflowBuilder_ == null
+                ? migrationWorkflow_
+                : migrationWorkflowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -490,6 +504,7 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMigrationWorkflow()) {
@@ -524,14 +539,14 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getMigrationWorkflowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +565,8 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -621,8 +638,8 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +658,8 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +683,8 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +709,7 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
      * @return Whether the migrationWorkflow field is set.
      */
     public boolean hasMigrationWorkflow() {
-      return migrationWorkflowBuilder_ != null || migrationWorkflow_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -734,11 +751,11 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         migrationWorkflow_ = value;
-        onChanged();
       } else {
         migrationWorkflowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,11 +773,11 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         com.google.cloud.bigquery.migration.v2.MigrationWorkflow.Builder builderForValue) {
       if (migrationWorkflowBuilder_ == null) {
         migrationWorkflow_ = builderForValue.build();
-        onChanged();
       } else {
         migrationWorkflowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -777,20 +794,19 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     public Builder mergeMigrationWorkflow(
         com.google.cloud.bigquery.migration.v2.MigrationWorkflow value) {
       if (migrationWorkflowBuilder_ == null) {
-        if (migrationWorkflow_ != null) {
-          migrationWorkflow_ =
-              com.google.cloud.bigquery.migration.v2.MigrationWorkflow.newBuilder(
-                      migrationWorkflow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && migrationWorkflow_ != null
+            && migrationWorkflow_
+                != com.google.cloud.bigquery.migration.v2.MigrationWorkflow.getDefaultInstance()) {
+          getMigrationWorkflowBuilder().mergeFrom(value);
         } else {
           migrationWorkflow_ = value;
         }
-        onChanged();
       } else {
         migrationWorkflowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -805,14 +821,13 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearMigrationWorkflow() {
-      if (migrationWorkflowBuilder_ == null) {
-        migrationWorkflow_ = null;
-        onChanged();
-      } else {
-        migrationWorkflow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      migrationWorkflow_ = null;
+      if (migrationWorkflowBuilder_ != null) {
+        migrationWorkflowBuilder_.dispose();
         migrationWorkflowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -828,7 +843,7 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.bigquery.migration.v2.MigrationWorkflow.Builder
         getMigrationWorkflowBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMigrationWorkflowFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -332,8 +334,8 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,15 +363,21 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.InstanceReference buildPartial() {
       com.google.cloud.compute.v1.InstanceReference result =
           new com.google.cloud.compute.v1.InstanceReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InstanceReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instance_ = instance_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -418,8 +426,8 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceReference other) {
       if (other == com.google.cloud.compute.v1.InstanceReference.getDefaultInstance()) return this;
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000001;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -548,8 +556,8 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -565,8 +573,8 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -587,8 +595,8 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

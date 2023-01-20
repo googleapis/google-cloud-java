@@ -68,7 +68,9 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -168,7 +170,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
@@ -220,11 +222,13 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder
       getRequestMetadataOrBuilder() {
-    return getRequestMetadata();
+    return requestMetadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
+        : requestMetadata_;
   }
 
   public static final int PROJECT_OWNER_FIELD_NUMBER = 4;
-  private boolean projectOwner_;
+  private boolean projectOwner_ = false;
   /**
    *
    *
@@ -476,22 +480,19 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resource_ = "";
-
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-      } else {
-        requestMetadata_ = null;
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
       projectOwner_ = false;
-
       return this;
     }
 
@@ -519,20 +520,28 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.SetAclRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.SetAclRequest result =
           new com.google.cloud.contentwarehouse.v1.SetAclRequest(this);
-      result.resource_ = resource_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (requestMetadataBuilder_ == null) {
-        result.requestMetadata_ = requestMetadata_;
-      } else {
-        result.requestMetadata_ = requestMetadataBuilder_.build();
-      }
-      result.projectOwner_ = projectOwner_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.SetAclRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestMetadata_ =
+            requestMetadataBuilder_ == null ? requestMetadata_ : requestMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.projectOwner_ = projectOwner_;
+      }
     }
 
     @java.lang.Override
@@ -583,6 +592,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -623,25 +633,25 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRequestMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 projectOwner_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -660,6 +670,8 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resource_ = "";
     /**
@@ -731,8 +743,8 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,8 +763,8 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +788,8 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -801,7 +813,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -838,11 +850,11 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,11 +870,11 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,16 +889,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ = com.google.iam.v1.Policy.newBuilder(policy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && policy_ != null
+            && policy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,14 +914,13 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -921,7 +934,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -987,7 +1000,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
-      return requestMetadataBuilder_ != null || requestMetadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,11 +1039,11 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         requestMetadata_ = value;
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1047,11 +1060,11 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder builderForValue) {
       if (requestMetadataBuilder_ == null) {
         requestMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1067,19 +1080,19 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRequestMetadata(
         com.google.cloud.contentwarehouse.v1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
-        if (requestMetadata_ != null) {
-          requestMetadata_ =
-              com.google.cloud.contentwarehouse.v1.RequestMetadata.newBuilder(requestMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && requestMetadata_ != null
+            && requestMetadata_
+                != com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()) {
+          getRequestMetadataBuilder().mergeFrom(value);
         } else {
           requestMetadata_ = value;
         }
-        onChanged();
       } else {
         requestMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1093,14 +1106,13 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contentwarehouse.v1.RequestMetadata request_metadata = 3;</code>
      */
     public Builder clearRequestMetadata() {
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-        onChanged();
-      } else {
-        requestMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1115,7 +1127,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder
         getRequestMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
@@ -1199,6 +1211,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setProjectOwner(boolean value) {
 
       projectOwner_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1215,7 +1228,7 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectOwner() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       projectOwner_ = false;
       onChanged();
       return this;

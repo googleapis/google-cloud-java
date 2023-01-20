@@ -69,7 +69,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int LOCAL_GATEWAY_INTERFACE_FIELD_NUMBER = 158764330;
-  private int localGatewayInterface_;
+  private int localGatewayInterface_ = 0;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   }
 
   public static final int PEER_GATEWAY_INTERFACE_FIELD_NUMBER = 214380385;
-  private int peerGatewayInterface_;
+  private int peerGatewayInterface_ = 0;
   /**
    *
    *
@@ -135,7 +135,9 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
   }
 
   public static final int TUNNEL_URL_FIELD_NUMBER = 78975256;
-  private volatile java.lang.Object tunnelUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tunnelUrl_ = "";
   /**
    *
    *
@@ -431,12 +433,10 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       localGatewayInterface_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       peerGatewayInterface_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       tunnelUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -464,6 +464,14 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.VpnGatewayStatusTunnel buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatusTunnel result =
           new com.google.cloud.compute.v1.VpnGatewayStatusTunnel(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.VpnGatewayStatusTunnel result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -475,12 +483,10 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tunnelUrl_ = tunnelUrl_;
         to_bitField0_ |= 0x00000004;
       }
-      result.tunnelUrl_ = tunnelUrl_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -536,8 +542,8 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         setPeerGatewayInterface(other.getPeerGatewayInterface());
       }
       if (other.hasTunnelUrl()) {
-        bitField0_ |= 0x00000004;
         tunnelUrl_ = other.tunnelUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -647,8 +653,9 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setLocalGatewayInterface(int value) {
-      bitField0_ |= 0x00000001;
+
       localGatewayInterface_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -714,8 +721,9 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setPeerGatewayInterface(int value) {
-      bitField0_ |= 0x00000002;
+
       peerGatewayInterface_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -812,8 +820,8 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       tunnelUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -829,8 +837,8 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTunnelUrl() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       tunnelUrl_ = getDefaultInstance().getTunnelUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -851,8 +859,8 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       tunnelUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

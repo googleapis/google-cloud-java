@@ -71,7 +71,9 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TABLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object table_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object table_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DATASET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -218,7 +224,9 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int QUERY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -490,14 +498,11 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       table_ = "";
-
       dataset_ = "";
-
       projectId_ = "";
-
       query_ = "";
-
       return this;
     }
 
@@ -525,12 +530,27 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     public com.google.dataflow.v1beta3.BigQueryIODetails buildPartial() {
       com.google.dataflow.v1beta3.BigQueryIODetails result =
           new com.google.dataflow.v1beta3.BigQueryIODetails(this);
-      result.table_ = table_;
-      result.dataset_ = dataset_;
-      result.projectId_ = projectId_;
-      result.query_ = query_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.BigQueryIODetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.table_ = table_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.query_ = query_;
+      }
     }
 
     @java.lang.Override
@@ -580,18 +600,22 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       if (other == com.google.dataflow.v1beta3.BigQueryIODetails.getDefaultInstance()) return this;
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -623,25 +647,25 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 table_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -660,6 +684,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object table_ = "";
     /**
@@ -722,8 +748,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       table_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +765,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTable() {
-
       table_ = getDefaultInstance().getTable();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -761,8 +787,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       table_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +854,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,8 +871,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -867,8 +893,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -934,8 +960,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -951,8 +977,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -973,8 +999,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1040,8 +1066,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1057,8 +1083,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1079,8 +1105,8 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

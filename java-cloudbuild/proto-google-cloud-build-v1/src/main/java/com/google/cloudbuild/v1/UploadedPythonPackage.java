@@ -68,7 +68,9 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.FileHashesOrBuilder getFileHashesOrBuilder() {
-    return getFileHashes();
+    return fileHashes_ == null
+        ? com.google.cloudbuild.v1.FileHashes.getDefaultInstance()
+        : fileHashes_;
   }
 
   public static final int PUSH_TIMING_FIELD_NUMBER = 3;
@@ -215,7 +219,9 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder() {
-    return getPushTiming();
+    return pushTiming_ == null
+        ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+        : pushTiming_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -443,18 +449,16 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
-      if (fileHashesBuilder_ == null) {
-        fileHashes_ = null;
-      } else {
-        fileHashes_ = null;
+      fileHashes_ = null;
+      if (fileHashesBuilder_ != null) {
+        fileHashesBuilder_.dispose();
         fileHashesBuilder_ = null;
       }
-      if (pushTimingBuilder_ == null) {
-        pushTiming_ = null;
-      } else {
-        pushTiming_ = null;
+      pushTiming_ = null;
+      if (pushTimingBuilder_ != null) {
+        pushTimingBuilder_.dispose();
         pushTimingBuilder_ = null;
       }
       return this;
@@ -484,19 +488,24 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
     public com.google.cloudbuild.v1.UploadedPythonPackage buildPartial() {
       com.google.cloudbuild.v1.UploadedPythonPackage result =
           new com.google.cloudbuild.v1.UploadedPythonPackage(this);
-      result.uri_ = uri_;
-      if (fileHashesBuilder_ == null) {
-        result.fileHashes_ = fileHashes_;
-      } else {
-        result.fileHashes_ = fileHashesBuilder_.build();
-      }
-      if (pushTimingBuilder_ == null) {
-        result.pushTiming_ = pushTiming_;
-      } else {
-        result.pushTiming_ = pushTimingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.UploadedPythonPackage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileHashes_ = fileHashesBuilder_ == null ? fileHashes_ : fileHashesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pushTiming_ = pushTimingBuilder_ == null ? pushTiming_ : pushTimingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,6 +555,7 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
       if (other == com.google.cloudbuild.v1.UploadedPythonPackage.getDefaultInstance()) return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFileHashes()) {
@@ -583,19 +593,19 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFileHashesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPushTimingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +624,8 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uri_ = "";
     /**
@@ -676,8 +688,8 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +705,8 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -715,8 +727,8 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,7 +751,7 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * @return Whether the fileHashes field is set.
      */
     public boolean hasFileHashes() {
-      return fileHashesBuilder_ != null || fileHashes_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -776,11 +788,11 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         fileHashes_ = value;
-        onChanged();
       } else {
         fileHashesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,11 +807,11 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
     public Builder setFileHashes(com.google.cloudbuild.v1.FileHashes.Builder builderForValue) {
       if (fileHashesBuilder_ == null) {
         fileHashes_ = builderForValue.build();
-        onChanged();
       } else {
         fileHashesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,19 +825,18 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeFileHashes(com.google.cloudbuild.v1.FileHashes value) {
       if (fileHashesBuilder_ == null) {
-        if (fileHashes_ != null) {
-          fileHashes_ =
-              com.google.cloudbuild.v1.FileHashes.newBuilder(fileHashes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && fileHashes_ != null
+            && fileHashes_ != com.google.cloudbuild.v1.FileHashes.getDefaultInstance()) {
+          getFileHashesBuilder().mergeFrom(value);
         } else {
           fileHashes_ = value;
         }
-        onChanged();
       } else {
         fileHashesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,14 +849,13 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * <code>.google.devtools.cloudbuild.v1.FileHashes file_hashes = 2;</code>
      */
     public Builder clearFileHashes() {
-      if (fileHashesBuilder_ == null) {
-        fileHashes_ = null;
-        onChanged();
-      } else {
-        fileHashes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fileHashes_ = null;
+      if (fileHashesBuilder_ != null) {
+        fileHashesBuilder_.dispose();
         fileHashesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -858,7 +868,7 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * <code>.google.devtools.cloudbuild.v1.FileHashes file_hashes = 2;</code>
      */
     public com.google.cloudbuild.v1.FileHashes.Builder getFileHashesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFileHashesFieldBuilder().getBuilder();
     }
@@ -926,7 +936,7 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * @return Whether the pushTiming field is set.
      */
     public boolean hasPushTiming() {
-      return pushTimingBuilder_ != null || pushTiming_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -967,11 +977,11 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         pushTiming_ = value;
-        onChanged();
       } else {
         pushTimingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,11 +998,11 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
     public Builder setPushTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (pushTimingBuilder_ == null) {
         pushTiming_ = builderForValue.build();
-        onChanged();
       } else {
         pushTimingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,19 +1018,18 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      */
     public Builder mergePushTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pushTimingBuilder_ == null) {
-        if (pushTiming_ != null) {
-          pushTiming_ =
-              com.google.cloudbuild.v1.TimeSpan.newBuilder(pushTiming_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && pushTiming_ != null
+            && pushTiming_ != com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()) {
+          getPushTimingBuilder().mergeFrom(value);
         } else {
           pushTiming_ = value;
         }
-        onChanged();
       } else {
         pushTimingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1035,14 +1044,13 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearPushTiming() {
-      if (pushTimingBuilder_ == null) {
-        pushTiming_ = null;
-        onChanged();
-      } else {
-        pushTiming_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pushTiming_ = null;
+      if (pushTimingBuilder_ != null) {
+        pushTimingBuilder_.dispose();
         pushTimingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1057,7 +1065,7 @@ public final class UploadedPythonPackage extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getPushTimingBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPushTimingFieldBuilder().getBuilder();
     }

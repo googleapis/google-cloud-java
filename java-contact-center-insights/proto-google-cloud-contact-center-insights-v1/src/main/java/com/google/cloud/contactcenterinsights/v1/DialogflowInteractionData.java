@@ -68,7 +68,9 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
   }
 
   public static final int DIALOGFLOW_INTENT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dialogflowIntentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dialogflowIntentId_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -347,10 +349,9 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dialogflowIntentId_ = "";
-
       confidence_ = 0F;
-
       return this;
     }
 
@@ -380,10 +381,22 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     public com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData result =
           new com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData(this);
-      result.dialogflowIntentId_ = dialogflowIntentId_;
-      result.confidence_ = confidence_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dialogflowIntentId_ = dialogflowIntentId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -437,6 +450,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
               .getDefaultInstance()) return this;
       if (!other.getDialogflowIntentId().isEmpty()) {
         dialogflowIntentId_ = other.dialogflowIntentId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -471,13 +485,13 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
             case 10:
               {
                 dialogflowIntentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -496,6 +510,8 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dialogflowIntentId_ = "";
     /**
@@ -561,8 +577,8 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       dialogflowIntentId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -579,8 +595,8 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDialogflowIntentId() {
-
       dialogflowIntentId_ = getDefaultInstance().getDialogflowIntentId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -602,8 +618,8 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dialogflowIntentId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,6 +657,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -657,7 +674,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;

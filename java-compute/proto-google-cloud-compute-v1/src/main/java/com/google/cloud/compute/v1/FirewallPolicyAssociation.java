@@ -72,7 +72,9 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
 
   private int bitField0_;
   public static final int ATTACHMENT_TARGET_FIELD_NUMBER = 175773741;
-  private volatile java.lang.Object attachmentTarget_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attachmentTarget_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4473832;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -200,7 +204,9 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   }
 
   public static final int FIREWALL_POLICY_ID_FIELD_NUMBER = 357211849;
-  private volatile java.lang.Object firewallPolicyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicyId_ = "";
   /**
    *
    *
@@ -264,7 +270,9 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -328,7 +336,9 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
   }
 
   public static final int SHORT_NAME_FIELD_NUMBER = 492051566;
-  private volatile java.lang.Object shortName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortName_ = "";
   /**
    *
    *
@@ -651,16 +661,12 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       attachmentTarget_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       displayName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       firewallPolicyId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       shortName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -688,31 +694,37 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.FirewallPolicyAssociation buildPartial() {
       com.google.cloud.compute.v1.FirewallPolicyAssociation result =
           new com.google.cloud.compute.v1.FirewallPolicyAssociation(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyAssociation result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attachmentTarget_ = attachmentTarget_;
         to_bitField0_ |= 0x00000001;
       }
-      result.attachmentTarget_ = attachmentTarget_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
         to_bitField0_ |= 0x00000002;
       }
-      result.displayName_ = displayName_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.firewallPolicyId_ = firewallPolicyId_;
         to_bitField0_ |= 0x00000004;
       }
-      result.firewallPolicyId_ = firewallPolicyId_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000008;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.shortName_ = shortName_;
         to_bitField0_ |= 0x00000010;
       }
-      result.shortName_ = shortName_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -762,28 +774,28 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (other == com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance())
         return this;
       if (other.hasAttachmentTarget()) {
-        bitField0_ |= 0x00000001;
         attachmentTarget_ = other.attachmentTarget_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDisplayName()) {
-        bitField0_ |= 0x00000002;
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFirewallPolicyId()) {
-        bitField0_ |= 0x00000004;
         firewallPolicyId_ = other.firewallPolicyId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000008;
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasShortName()) {
-        bitField0_ |= 0x00000010;
         shortName_ = other.shortName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -936,8 +948,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       attachmentTarget_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -953,8 +965,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAttachmentTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       attachmentTarget_ = getDefaultInstance().getAttachmentTarget();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -975,8 +987,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       attachmentTarget_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1056,8 +1068,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1073,8 +1085,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1095,8 +1107,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1176,8 +1188,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       firewallPolicyId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1193,8 +1205,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicyId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       firewallPolicyId_ = getDefaultInstance().getFirewallPolicyId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1215,8 +1227,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       firewallPolicyId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1296,8 +1308,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1313,8 +1325,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1335,8 +1347,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1416,8 +1428,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       shortName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1433,8 +1445,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearShortName() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       shortName_ = getDefaultInstance().getShortName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1455,8 +1467,8 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       shortName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

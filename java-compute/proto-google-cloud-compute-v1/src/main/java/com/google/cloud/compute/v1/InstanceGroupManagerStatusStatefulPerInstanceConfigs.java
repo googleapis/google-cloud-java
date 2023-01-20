@@ -70,7 +70,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
 
   private int bitField0_;
   public static final int ALL_EFFECTIVE_FIELD_NUMBER = 516540553;
-  private boolean allEffective_;
+  private boolean allEffective_ = false;
   /**
    *
    *
@@ -316,8 +316,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allEffective_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -351,15 +351,22 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs(
               this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allEffective_ = allEffective_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -512,8 +519,9 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * @return This builder for chaining.
      */
     public Builder setAllEffective(boolean value) {
-      bitField0_ |= 0x00000001;
+
       allEffective_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

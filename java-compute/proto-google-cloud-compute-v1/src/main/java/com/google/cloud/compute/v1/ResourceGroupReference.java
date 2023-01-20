@@ -68,7 +68,9 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int GROUP_FIELD_NUMBER = 98629247;
-  private volatile java.lang.Object group_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object group_ = "";
   /**
    *
    *
@@ -332,8 +334,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       group_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,15 +363,21 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ResourceGroupReference buildPartial() {
       com.google.cloud.compute.v1.ResourceGroupReference result =
           new com.google.cloud.compute.v1.ResourceGroupReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourceGroupReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.group_ = group_;
         to_bitField0_ |= 0x00000001;
       }
-      result.group_ = group_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -419,8 +427,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance())
         return this;
       if (other.hasGroup()) {
-        bitField0_ |= 0x00000001;
         group_ = other.group_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -549,8 +557,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       group_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,8 +574,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       group_ = getDefaultInstance().getGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -588,8 +596,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       group_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

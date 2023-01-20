@@ -74,7 +74,9 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
 
   private int bitField0_;
   public static final int BACKEND_BUCKET_FIELD_NUMBER = 91714037;
-  private volatile java.lang.Object backendBucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendBucket_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
   }
 
   public static final int KEY_NAME_FIELD_NUMBER = 500938859;
-  private volatile java.lang.Object keyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyName_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -225,7 +231,9 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -520,14 +528,11 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       backendBucket_ = "";
-
       keyName_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -557,18 +562,31 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
     public com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest result =
           new com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.backendBucket_ = backendBucket_;
-      result.keyName_ = keyName_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendBucket_ = backendBucket_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyName_ = keyName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -622,19 +640,22 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
               .getDefaultInstance()) return this;
       if (!other.getBackendBucket().isEmpty()) {
         backendBucket_ = other.backendBucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKeyName().isEmpty()) {
         keyName_ = other.keyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -666,25 +687,25 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 733712298:
               {
                 backendBucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 733712298
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -287456422:
               {
                 keyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -287456422
             default:
@@ -767,8 +788,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       backendBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,8 +805,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearBackendBucket() {
-
       backendBucket_ = getDefaultInstance().getBackendBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -806,8 +827,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backendBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -873,8 +894,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,8 +911,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearKeyName() {
-
       keyName_ = getDefaultInstance().getKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -912,8 +933,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -985,8 +1006,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1004,8 +1025,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1028,8 +1049,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1047,7 +1068,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1109,8 +1130,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1126,8 +1147,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1148,8 +1169,8 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -226,7 +226,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 1;
-  private int language_;
+  private int language_ = 0;
   /**
    *
    *
@@ -255,14 +255,15 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.SDKInfo.Language getLanguage() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.SDKInfo.Language result =
-        com.google.dataflow.v1beta3.SDKInfo.Language.valueOf(language_);
+        com.google.dataflow.v1beta3.SDKInfo.Language.forNumber(language_);
     return result == null ? com.google.dataflow.v1beta3.SDKInfo.Language.UNRECOGNIZED : result;
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -514,10 +515,9 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       language_ = 0;
-
       version_ = "";
-
       return this;
     }
 
@@ -544,10 +544,21 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.dataflow.v1beta3.SDKInfo buildPartial() {
       com.google.dataflow.v1beta3.SDKInfo result = new com.google.dataflow.v1beta3.SDKInfo(this);
-      result.language_ = language_;
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.SDKInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.language_ = language_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -600,6 +611,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -631,13 +643,13 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 language_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -656,6 +668,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int language_ = 0;
     /**
@@ -686,8 +700,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLanguageValue(int value) {
-
       language_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,9 +718,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.SDKInfo.Language getLanguage() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.SDKInfo.Language result =
-          com.google.dataflow.v1beta3.SDKInfo.Language.valueOf(language_);
+          com.google.dataflow.v1beta3.SDKInfo.Language.forNumber(language_);
       return result == null ? com.google.dataflow.v1beta3.SDKInfo.Language.UNRECOGNIZED : result;
     }
     /**
@@ -725,7 +738,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       language_ = value.getNumber();
       onChanged();
       return this;
@@ -742,7 +755,7 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       language_ = 0;
       onChanged();
       return this;
@@ -809,8 +822,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -826,8 +839,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -848,8 +861,8 @@ public final class SDKInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

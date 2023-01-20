@@ -619,6 +619,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (protoValueBuilder_ != null) {
         protoValueBuilder_.clear();
       }
@@ -650,28 +651,24 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Value buildPartial() {
       com.google.cloud.channel.v1.Value result = new com.google.cloud.channel.v1.Value(this);
-      if (kindCase_ == 1) {
-        result.kind_ = kind_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (kindCase_ == 2) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 3) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 4) {
-        if (protoValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = protoValueBuilder_.build();
-        }
-      }
-      if (kindCase_ == 5) {
-        result.kind_ = kind_;
-      }
-      result.kindCase_ = kindCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Value result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.Value result) {
+      result.kindCase_ = kindCase_;
+      result.kind_ = this.kind_;
+      if (kindCase_ == 4 && protoValueBuilder_ != null) {
+        result.kind_ = protoValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -840,6 +837,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -884,6 +883,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
+
       kindCase_ = 1;
       kind_ = value;
       onChanged();
@@ -1087,6 +1087,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       kindCase_ = 3;
       kind_ = value;
       onChanged();
@@ -1313,7 +1314,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 4;
       onChanged();
-      ;
       return protoValueBuilder_;
     }
 
@@ -1361,6 +1361,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       kindCase_ = 5;
       kind_ = value;
       onChanged();

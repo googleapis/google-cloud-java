@@ -110,7 +110,9 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DataplexSpecOrBuilder getDataplexSpecOrBuilder() {
-    return getDataplexSpec();
+    return dataplexSpec_ == null
+        ? com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()
+        : dataplexSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dataplexSpecBuilder_ == null) {
-        dataplexSpec_ = null;
-      } else {
-        dataplexSpec_ = null;
+      bitField0_ = 0;
+      dataplexSpec_ = null;
+      if (dataplexSpecBuilder_ != null) {
+        dataplexSpecBuilder_.dispose();
         dataplexSpecBuilder_ = null;
       }
       return this;
@@ -348,13 +350,19 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1.DataplexFilesetSpec buildPartial() {
       com.google.cloud.datacatalog.v1.DataplexFilesetSpec result =
           new com.google.cloud.datacatalog.v1.DataplexFilesetSpec(this);
-      if (dataplexSpecBuilder_ == null) {
-        result.dataplexSpec_ = dataplexSpec_;
-      } else {
-        result.dataplexSpec_ = dataplexSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataplexFilesetSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataplexSpec_ =
+            dataplexSpecBuilder_ == null ? dataplexSpec_ : dataplexSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +443,7 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getDataplexSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +463,8 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datacatalog.v1.DataplexSpec dataplexSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.DataplexSpec,
@@ -473,7 +483,7 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the dataplexSpec field is set.
      */
     public boolean hasDataplexSpec() {
-      return dataplexSpecBuilder_ != null || dataplexSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +520,11 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         dataplexSpec_ = value;
-        onChanged();
       } else {
         dataplexSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +540,11 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
         com.google.cloud.datacatalog.v1.DataplexSpec.Builder builderForValue) {
       if (dataplexSpecBuilder_ == null) {
         dataplexSpec_ = builderForValue.build();
-        onChanged();
       } else {
         dataplexSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +558,18 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDataplexSpec(com.google.cloud.datacatalog.v1.DataplexSpec value) {
       if (dataplexSpecBuilder_ == null) {
-        if (dataplexSpec_ != null) {
-          dataplexSpec_ =
-              com.google.cloud.datacatalog.v1.DataplexSpec.newBuilder(dataplexSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dataplexSpec_ != null
+            && dataplexSpec_ != com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()) {
+          getDataplexSpecBuilder().mergeFrom(value);
         } else {
           dataplexSpec_ = value;
         }
-        onChanged();
       } else {
         dataplexSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +582,13 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datacatalog.v1.DataplexSpec dataplex_spec = 1;</code>
      */
     public Builder clearDataplexSpec() {
-      if (dataplexSpecBuilder_ == null) {
-        dataplexSpec_ = null;
-        onChanged();
-      } else {
-        dataplexSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataplexSpec_ = null;
+      if (dataplexSpecBuilder_ != null) {
+        dataplexSpecBuilder_.dispose();
         dataplexSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +601,7 @@ public final class DataplexFilesetSpec extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datacatalog.v1.DataplexSpec dataplex_spec = 1;</code>
      */
     public com.google.cloud.datacatalog.v1.DataplexSpec.Builder getDataplexSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDataplexSpecFieldBuilder().getBuilder();
     }

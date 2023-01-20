@@ -66,7 +66,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINE_FIELD_NUMBER = 1;
-  private int line_;
+  private int line_ = 0;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_FIELD_NUMBER = 2;
-  private int column_;
+  private int column_ = 0;
   /**
    *
    *
@@ -310,10 +310,9 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       line_ = 0;
-
       column_ = 0;
-
       return this;
     }
 
@@ -341,10 +340,21 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.ErrorLocation buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.ErrorLocation result =
           new com.google.cloud.bigquery.migration.v2alpha.ErrorLocation(this);
-      result.line_ = line_;
-      result.column_ = column_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.ErrorLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.line_ = line_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.column_ = column_;
+      }
     }
 
     @java.lang.Override
@@ -428,13 +438,13 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 line_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 column_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -453,6 +463,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int line_;
     /**
@@ -487,6 +499,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setLine(int value) {
 
       line_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -503,7 +516,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLine() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       line_ = 0;
       onChanged();
       return this;
@@ -542,6 +555,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setColumn(int value) {
 
       column_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -558,7 +572,7 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumn() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       column_ = 0;
       onChanged();
       return this;

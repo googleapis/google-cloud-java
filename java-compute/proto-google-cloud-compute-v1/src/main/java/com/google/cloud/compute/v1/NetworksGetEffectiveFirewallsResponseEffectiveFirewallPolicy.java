@@ -212,7 +212,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   private int bitField0_;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4473832;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -276,7 +278,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -340,6 +344,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   }
 
   public static final int RULES_FIELD_NUMBER = 108873975;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> rules_;
   /**
    *
@@ -409,7 +415,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   }
 
   public static final int SHORT_NAME_FIELD_NUMBER = 492051566;
-  private volatile java.lang.Object shortName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortName_ = "";
   /**
    *
    *
@@ -473,7 +481,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -821,10 +831,9 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
@@ -833,9 +842,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       shortName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -870,16 +877,17 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
           result =
               new com.google.cloud.compute.v1
                   .NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.displayName_ = displayName_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.name_ = name_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
+            result) {
       if (rulesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
@@ -889,17 +897,30 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       } else {
         result.rules_ = rulesBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
+            result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.shortName_ = shortName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.shortName_ = shortName_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000008;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -959,13 +980,13 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
               .NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.getDefaultInstance())
         return this;
       if (other.hasDisplayName()) {
-        bitField0_ |= 0x00000001;
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (rulesBuilder_ == null) {
@@ -996,13 +1017,13 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         }
       }
       if (other.hasShortName()) {
-        bitField0_ |= 0x00000008;
         shortName_ = other.shortName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000010;
         type_ = other.type_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1162,8 +1183,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1179,8 +1200,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1201,8 +1222,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1282,8 +1303,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1299,8 +1320,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1321,8 +1342,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1752,8 +1773,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       shortName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1769,8 +1790,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return This builder for chaining.
      */
     public Builder clearShortName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       shortName_ = getDefaultInstance().getShortName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1791,8 +1812,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       shortName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1876,8 +1897,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1894,8 +1915,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1917,8 +1938,8 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

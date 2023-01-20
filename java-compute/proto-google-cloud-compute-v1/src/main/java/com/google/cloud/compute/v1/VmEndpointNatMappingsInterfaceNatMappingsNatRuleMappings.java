@@ -75,6 +75,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
 
   private int bitField0_;
   public static final int DRAIN_NAT_IP_PORT_RANGES_FIELD_NUMBER = 395440577;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList drainNatIpPortRanges_;
   /**
    *
@@ -136,6 +138,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   }
 
   public static final int NAT_IP_PORT_RANGES_FIELD_NUMBER = 531830810;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList natIpPortRanges_;
   /**
    *
@@ -197,7 +201,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   }
 
   public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 335532793;
-  private int numTotalDrainNatPorts_;
+  private int numTotalDrainNatPorts_ = 0;
   /**
    *
    *
@@ -230,7 +234,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   }
 
   public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 299904384;
-  private int numTotalNatPorts_;
+  private int numTotalNatPorts_ = 0;
   /**
    *
    *
@@ -263,7 +267,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
   }
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
-  private int ruleNumber_;
+  private int ruleNumber_ = 0;
   /**
    *
    *
@@ -575,16 +579,14 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       numTotalDrainNatPorts_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       numTotalNatPorts_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       ruleNumber_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -618,8 +620,17 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings result =
           new com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings(
               this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         drainNatIpPortRanges_ = drainNatIpPortRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -630,6 +641,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.natIpPortRanges_ = natIpPortRanges_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
         to_bitField0_ |= 0x00000001;
@@ -642,9 +660,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
         result.ruleNumber_ = ruleNumber_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1186,8 +1202,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
      * @return This builder for chaining.
      */
     public Builder setNumTotalDrainNatPorts(int value) {
-      bitField0_ |= 0x00000004;
+
       numTotalDrainNatPorts_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,8 +1270,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
      * @return This builder for chaining.
      */
     public Builder setNumTotalNatPorts(int value) {
-      bitField0_ |= 0x00000008;
+
       numTotalNatPorts_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1320,8 +1338,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
      * @return This builder for chaining.
      */
     public Builder setRuleNumber(int value) {
-      bitField0_ |= 0x00000010;
+
       ruleNumber_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

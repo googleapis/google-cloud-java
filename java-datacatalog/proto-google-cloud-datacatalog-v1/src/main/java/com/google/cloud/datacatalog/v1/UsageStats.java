@@ -73,7 +73,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_COMPLETIONS_FIELD_NUMBER = 1;
-  private float totalCompletions_;
+  private float totalCompletions_ = 0F;
   /**
    *
    *
@@ -91,7 +91,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_FAILURES_FIELD_NUMBER = 2;
-  private float totalFailures_;
+  private float totalFailures_ = 0F;
   /**
    *
    *
@@ -109,7 +109,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_CANCELLATIONS_FIELD_NUMBER = 3;
-  private float totalCancellations_;
+  private float totalCancellations_ = 0F;
   /**
    *
    *
@@ -127,7 +127,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_EXECUTION_TIME_FOR_COMPLETIONS_MILLIS_FIELD_NUMBER = 4;
-  private float totalExecutionTimeForCompletionsMillis_;
+  private float totalExecutionTimeForCompletionsMillis_ = 0F;
   /**
    *
    *
@@ -383,14 +383,11 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       totalCompletions_ = 0F;
-
       totalFailures_ = 0F;
-
       totalCancellations_ = 0F;
-
       totalExecutionTimeForCompletionsMillis_ = 0F;
-
       return this;
     }
 
@@ -418,12 +415,27 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.UsageStats buildPartial() {
       com.google.cloud.datacatalog.v1.UsageStats result =
           new com.google.cloud.datacatalog.v1.UsageStats(this);
-      result.totalCompletions_ = totalCompletions_;
-      result.totalFailures_ = totalFailures_;
-      result.totalCancellations_ = totalCancellations_;
-      result.totalExecutionTimeForCompletionsMillis_ = totalExecutionTimeForCompletionsMillis_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.UsageStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.totalCompletions_ = totalCompletions_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalFailures_ = totalFailures_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalCancellations_ = totalCancellations_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalExecutionTimeForCompletionsMillis_ = totalExecutionTimeForCompletionsMillis_;
+      }
     }
 
     @java.lang.Override
@@ -513,25 +525,25 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 totalCompletions_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 totalFailures_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 totalCancellations_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 37:
               {
                 totalExecutionTimeForCompletionsMillis_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             default:
@@ -550,6 +562,8 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float totalCompletions_;
     /**
@@ -582,6 +596,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalCompletions(float value) {
 
       totalCompletions_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,7 +612,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalCompletions() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       totalCompletions_ = 0F;
       onChanged();
       return this;
@@ -634,6 +649,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalFailures(float value) {
 
       totalFailures_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -649,7 +665,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalFailures() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       totalFailures_ = 0F;
       onChanged();
       return this;
@@ -686,6 +702,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalCancellations(float value) {
 
       totalCancellations_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -701,7 +718,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalCancellations() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalCancellations_ = 0F;
       onChanged();
       return this;
@@ -738,6 +755,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalExecutionTimeForCompletionsMillis(float value) {
 
       totalExecutionTimeForCompletionsMillis_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -753,7 +771,7 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalExecutionTimeForCompletionsMillis() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       totalExecutionTimeForCompletionsMillis_ = 0F;
       onChanged();
       return this;

@@ -343,7 +343,6 @@ public interface CalculateStatsResponseOrBuilder
    * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
       getIssueMatchesStatsOrDefault(

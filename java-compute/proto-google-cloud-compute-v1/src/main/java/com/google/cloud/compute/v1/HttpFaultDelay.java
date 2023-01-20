@@ -117,7 +117,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
-  private double percentage_;
+  private double percentage_ = 0D;
   /**
    *
    *
@@ -378,14 +378,13 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (fixedDelayBuilder_ == null) {
-        fixedDelay_ = null;
-      } else {
-        fixedDelayBuilder_.clear();
+      bitField0_ = 0;
+      fixedDelay_ = null;
+      if (fixedDelayBuilder_ != null) {
+        fixedDelayBuilder_.dispose();
+        fixedDelayBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       percentage_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -413,23 +412,25 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HttpFaultDelay buildPartial() {
       com.google.cloud.compute.v1.HttpFaultDelay result =
           new com.google.cloud.compute.v1.HttpFaultDelay(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpFaultDelay result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (fixedDelayBuilder_ == null) {
-          result.fixedDelay_ = fixedDelay_;
-        } else {
-          result.fixedDelay_ = fixedDelayBuilder_.build();
-        }
+        result.fixedDelay_ = fixedDelayBuilder_ == null ? fixedDelay_ : fixedDelayBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.percentage_ = percentage_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -595,11 +596,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fixedDelay_ = value;
-        onChanged();
       } else {
         fixedDelayBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,11 +615,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (fixedDelayBuilder_ == null) {
         fixedDelay_ = builderForValue.build();
-        onChanged();
       } else {
         fixedDelayBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -635,18 +636,15 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)
             && fixedDelay_ != null
             && fixedDelay_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          fixedDelay_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(fixedDelay_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getFixedDelayBuilder().mergeFrom(value);
         } else {
           fixedDelay_ = value;
         }
-        onChanged();
       } else {
         fixedDelayBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -659,13 +657,13 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder clearFixedDelay() {
-      if (fixedDelayBuilder_ == null) {
-        fixedDelay_ = null;
-        onChanged();
-      } else {
-        fixedDelayBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      fixedDelay_ = null;
+      if (fixedDelayBuilder_ != null) {
+        fixedDelayBuilder_.dispose();
+        fixedDelayBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -770,8 +768,9 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercentage(double value) {
-      bitField0_ |= 0x00000002;
+
       percentage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

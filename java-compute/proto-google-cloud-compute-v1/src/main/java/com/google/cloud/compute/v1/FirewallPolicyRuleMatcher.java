@@ -71,6 +71,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int DEST_IP_RANGES_FIELD_NUMBER = 337357713;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList destIpRanges_;
   /**
    *
@@ -132,6 +134,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int LAYER4_CONFIGS_FIELD_NUMBER = 373534261;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>
       layer4Configs_;
   /**
@@ -216,6 +220,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int SRC_IP_RANGES_FIELD_NUMBER = 432128083;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList srcIpRanges_;
   /**
    *
@@ -277,6 +283,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int SRC_SECURE_TAGS_FIELD_NUMBER = 508791302;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> srcSecureTags_;
   /**
    *
@@ -605,6 +613,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (layer4ConfigsBuilder_ == null) {
@@ -650,7 +659,16 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.FirewallPolicyRuleMatcher buildPartial() {
       com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result =
           new com.google.cloud.compute.v1.FirewallPolicyRuleMatcher(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         destIpRanges_ = destIpRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -679,8 +697,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         result.srcSecureTags_ = srcSecureTagsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

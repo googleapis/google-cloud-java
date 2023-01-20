@@ -120,11 +120,15 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyOrBuilder getFirewallPolicyResourceOrBuilder() {
-    return getFirewallPolicyResource();
+    return firewallPolicyResource_ == null
+        ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
+        : firewallPolicyResource_;
   }
 
   public static final int PARENT_ID_FIELD_NUMBER = 459714768;
-  private volatile java.lang.Object parentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentId_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -468,16 +474,14 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-      } else {
-        firewallPolicyResource_ = null;
+      bitField0_ = 0;
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
       parentId_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -505,21 +509,30 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InsertFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.InsertFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.InsertFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (firewallPolicyResourceBuilder_ == null) {
-        result.firewallPolicyResource_ = firewallPolicyResource_;
-      } else {
-        result.firewallPolicyResource_ = firewallPolicyResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parentId_ = parentId_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicyResource_ =
+            firewallPolicyResourceBuilder_ == null
+                ? firewallPolicyResource_
+                : firewallPolicyResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parentId_ = parentId_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -573,11 +586,12 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
       }
       if (!other.getParentId().isEmpty()) {
         parentId_ = other.parentId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -609,20 +623,20 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case -617249150:
               {
                 parentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -617249150
             case -334571038:
               {
                 input.readMessage(
                     getFirewallPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -334571038
             default:
@@ -664,7 +678,7 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * @return Whether the firewallPolicyResource field is set.
      */
     public boolean hasFirewallPolicyResource() {
-      return firewallPolicyResourceBuilder_ != null || firewallPolicyResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -705,11 +719,11 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         firewallPolicyResource_ = value;
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -727,11 +741,11 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
         com.google.cloud.compute.v1.FirewallPolicy.Builder builderForValue) {
       if (firewallPolicyResourceBuilder_ == null) {
         firewallPolicyResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -747,19 +761,19 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      */
     public Builder mergeFirewallPolicyResource(com.google.cloud.compute.v1.FirewallPolicy value) {
       if (firewallPolicyResourceBuilder_ == null) {
-        if (firewallPolicyResource_ != null) {
-          firewallPolicyResource_ =
-              com.google.cloud.compute.v1.FirewallPolicy.newBuilder(firewallPolicyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && firewallPolicyResource_ != null
+            && firewallPolicyResource_
+                != com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()) {
+          getFirewallPolicyResourceBuilder().mergeFrom(value);
         } else {
           firewallPolicyResource_ = value;
         }
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -774,14 +788,13 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearFirewallPolicyResource() {
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-        onChanged();
-      } else {
-        firewallPolicyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -796,7 +809,7 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.compute.v1.FirewallPolicy.Builder getFirewallPolicyResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
@@ -916,8 +929,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,8 +948,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParentId() {
-
       parentId_ = getDefaultInstance().getParentId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -959,8 +972,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -978,7 +991,7 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1040,8 +1053,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,8 +1070,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1079,8 +1092,8 @@ public final class InsertFirewallPolicyRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

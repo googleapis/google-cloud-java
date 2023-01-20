@@ -68,7 +68,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
 
   private int bitField0_;
   public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
-  private boolean privateIpGoogleAccess_;
+  private boolean privateIpGoogleAccess_ = false;
   /**
    * <code>optional bool private_ip_google_access = 421491790;</code>
    *
@@ -293,8 +293,8 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       privateIpGoogleAccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -325,15 +325,22 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     public com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest buildPartial() {
       com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest result =
           new com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -465,8 +472,9 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
      * @return This builder for chaining.
      */
     public Builder setPrivateIpGoogleAccess(boolean value) {
-      bitField0_ |= 0x00000001;
+
       privateIpGoogleAccess_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

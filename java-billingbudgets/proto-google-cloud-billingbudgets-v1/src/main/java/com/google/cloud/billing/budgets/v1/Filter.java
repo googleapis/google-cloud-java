@@ -310,6 +310,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList projects_;
   /**
    *
@@ -387,6 +389,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREDIT_TYPES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList creditTypes_;
   /**
    *
@@ -480,7 +484,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREDIT_TYPES_TREATMENT_FIELD_NUMBER = 4;
-  private int creditTypesTreatment_;
+  private int creditTypesTreatment_ = 0;
   /**
    *
    *
@@ -513,9 +517,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment getCreditTypesTreatment() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment result =
-        com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.valueOf(
+        com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.forNumber(
             creditTypesTreatment_);
     return result == null
         ? com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.UNRECOGNIZED
@@ -523,6 +526,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList services_;
   /**
    *
@@ -604,6 +609,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBACCOUNTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList subaccounts_;
   /**
    *
@@ -699,6 +706,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.ListValue.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue>
@@ -772,8 +780,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.protobuf.ListValue getLabelsOrDefault(
-      java.lang.String key, com.google.protobuf.ListValue defaultValue) {
+  public /* nullable */ com.google.protobuf.ListValue getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.ListValue defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -874,9 +884,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.billing.budgets.v1.CalendarPeriod getCalendarPeriod() {
     if (usagePeriodCase_ == 8) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.budgets.v1.CalendarPeriod result =
-          com.google.cloud.billing.budgets.v1.CalendarPeriod.valueOf(
+          com.google.cloud.billing.budgets.v1.CalendarPeriod.forNumber(
               (java.lang.Integer) usagePeriod_);
       return result == null
           ? com.google.cloud.billing.budgets.v1.CalendarPeriod.UNRECOGNIZED
@@ -1288,16 +1297,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       creditTypesTreatment_ = 0;
-
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().clear();
       if (customPeriodBuilder_ != null) {
         customPeriodBuilder_.clear();
@@ -1331,7 +1340,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1.Filter buildPartial() {
       com.google.cloud.billing.budgets.v1.Filter result =
           new com.google.cloud.billing.budgets.v1.Filter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.billing.budgets.v1.Filter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         projects_ = projects_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1342,32 +1360,35 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.creditTypes_ = creditTypes_;
-      result.creditTypesTreatment_ = creditTypesTreatment_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        services_ = services_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.services_ = services_;
       if (((bitField0_ & 0x00000008) != 0)) {
-        subaccounts_ = subaccounts_.getUnmodifiableView();
+        services_ = services_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
+      result.services_ = services_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        subaccounts_ = subaccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
       result.subaccounts_ = subaccounts_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (usagePeriodCase_ == 8) {
-        result.usagePeriod_ = usagePeriod_;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1.Filter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creditTypesTreatment_ = creditTypesTreatment_;
       }
-      if (usagePeriodCase_ == 9) {
-        if (customPeriodBuilder_ == null) {
-          result.usagePeriod_ = usagePeriod_;
-        } else {
-          result.usagePeriod_ = customPeriodBuilder_.build();
-        }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.billing.budgets.v1.Filter result) {
       result.usagePeriodCase_ = usagePeriodCase_;
-      onBuilt();
-      return result;
+      result.usagePeriod_ = this.usagePeriod_;
+      if (usagePeriodCase_ == 9 && customPeriodBuilder_ != null) {
+        result.usagePeriod_ = customPeriodBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1441,7 +1462,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.services_.isEmpty()) {
         if (services_.isEmpty()) {
           services_ = other.services_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureServicesIsMutable();
           services_.addAll(other.services_);
@@ -1451,7 +1472,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.subaccounts_.isEmpty()) {
         if (subaccounts_.isEmpty()) {
           subaccounts_ = other.subaccounts_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureSubaccountsIsMutable();
           subaccounts_.addAll(other.subaccounts_);
@@ -1459,6 +1480,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000020;
       switch (other.getUsagePeriodCase()) {
         case CALENDAR_PERIOD:
           {
@@ -1518,7 +1540,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 creditTypesTreatment_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
@@ -1538,6 +1560,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -2070,8 +2093,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCreditTypesTreatmentValue(int value) {
-
       creditTypesTreatment_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2091,9 +2114,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment
         getCreditTypesTreatment() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment result =
-          com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.valueOf(
+          com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.forNumber(
               creditTypesTreatment_);
       return result == null
           ? com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.UNRECOGNIZED
@@ -2118,7 +2140,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       creditTypesTreatment_ = value.getNumber();
       onChanged();
       return this;
@@ -2137,7 +2159,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreditTypesTreatment() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       creditTypesTreatment_ = 0;
       onChanged();
       return this;
@@ -2147,9 +2169,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServicesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         services_ = new com.google.protobuf.LazyStringArrayList(services_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2324,7 +2346,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServices() {
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2360,9 +2382,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubaccountsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         subaccounts_ = new com.google.protobuf.LazyStringArrayList(subaccounts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2537,7 +2559,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubaccounts() {
       subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2581,14 +2603,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return labels_;
     }
 
@@ -2655,8 +2677,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.protobuf.ListValue getLabelsOrDefault(
-        java.lang.String key, com.google.protobuf.ListValue defaultValue) {
+    public /* nullable */ com.google.protobuf.ListValue getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.ListValue defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2692,6 +2716,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2719,6 +2744,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getMutableLabels() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2742,8 +2768,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2763,6 +2789,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(
         java.util.Map<java.lang.String, com.google.protobuf.ListValue> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2859,9 +2886,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.billing.budgets.v1.CalendarPeriod getCalendarPeriod() {
       if (usagePeriodCase_ == 8) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.billing.budgets.v1.CalendarPeriod result =
-            com.google.cloud.billing.budgets.v1.CalendarPeriod.valueOf(
+            com.google.cloud.billing.budgets.v1.CalendarPeriod.forNumber(
                 (java.lang.Integer) usagePeriod_);
         return result == null
             ? com.google.cloud.billing.budgets.v1.CalendarPeriod.UNRECOGNIZED
@@ -3158,7 +3184,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       usagePeriodCase_ = 9;
       onChanged();
-      ;
       return customPeriodBuilder_;
     }
 

@@ -81,7 +81,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -217,7 +217,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   }
 
   public static final int MIN_COUNT_FIELD_NUMBER = 523228386;
-  private long minCount_;
+  private long minCount_ = 0L;
   /**
    *
    *
@@ -250,7 +250,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   }
 
   public static final int NAME_PATTERN_FIELD_NUMBER = 413815260;
-  private volatile java.lang.Object namePattern_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namePattern_ = "";
   /**
    *
    *
@@ -333,6 +335,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
@@ -409,9 +412,10 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
+  public /* nullable */ com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
       getPerInstancePropertiesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
               defaultValue) {
     if (key == null) {
@@ -451,7 +455,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   }
 
   public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 332423616;
-  private volatile java.lang.Object sourceInstanceTemplate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstanceTemplate_ = "";
   /**
    *
    *
@@ -851,27 +857,22 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       count_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (instancePropertiesBuilder_ == null) {
-        instanceProperties_ = null;
-      } else {
-        instancePropertiesBuilder_.clear();
+      instanceProperties_ = null;
+      if (instancePropertiesBuilder_ != null) {
+        instancePropertiesBuilder_.dispose();
+        instancePropertiesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (locationPolicyBuilder_ == null) {
-        locationPolicy_ = null;
-      } else {
-        locationPolicyBuilder_.clear();
+      locationPolicy_ = null;
+      if (locationPolicyBuilder_ != null) {
+        locationPolicyBuilder_.dispose();
+        locationPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       minCount_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
       namePattern_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutablePerInstanceProperties().clear();
       sourceInstanceTemplate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -899,6 +900,14 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.BulkInsertInstanceResource buildPartial() {
       com.google.cloud.compute.v1.BulkInsertInstanceResource result =
           new com.google.cloud.compute.v1.BulkInsertInstanceResource(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BulkInsertInstanceResource result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -906,19 +915,15 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (instancePropertiesBuilder_ == null) {
-          result.instanceProperties_ = instanceProperties_;
-        } else {
-          result.instanceProperties_ = instancePropertiesBuilder_.build();
-        }
+        result.instanceProperties_ =
+            instancePropertiesBuilder_ == null
+                ? instanceProperties_
+                : instancePropertiesBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (locationPolicyBuilder_ == null) {
-          result.locationPolicy_ = locationPolicy_;
-        } else {
-          result.locationPolicy_ = locationPolicyBuilder_.build();
-        }
+        result.locationPolicy_ =
+            locationPolicyBuilder_ == null ? locationPolicy_ : locationPolicyBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -926,18 +931,18 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.namePattern_ = namePattern_;
         to_bitField0_ |= 0x00000010;
       }
-      result.namePattern_ = namePattern_;
-      result.perInstanceProperties_ = internalGetPerInstanceProperties();
-      result.perInstanceProperties_.makeImmutable();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.perInstanceProperties_ = internalGetPerInstanceProperties();
+        result.perInstanceProperties_.makeImmutable();
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sourceInstanceTemplate_ = sourceInstanceTemplate_;
         to_bitField0_ |= 0x00000020;
       }
-      result.sourceInstanceTemplate_ = sourceInstanceTemplate_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -999,14 +1004,15 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         setMinCount(other.getMinCount());
       }
       if (other.hasNamePattern()) {
-        bitField0_ |= 0x00000010;
         namePattern_ = other.namePattern_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       internalGetMutablePerInstanceProperties().mergeFrom(other.internalGetPerInstanceProperties());
+      bitField0_ |= 0x00000020;
       if (other.hasSourceInstanceTemplate()) {
-        bitField0_ |= 0x00000040;
         sourceInstanceTemplate_ = other.sourceInstanceTemplate_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1053,6 +1059,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
                 internalGetMutablePerInstanceProperties()
                     .getMutableMap()
                     .put(perInstanceProperties__.getKey(), perInstanceProperties__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 868018138
             case 1722841322:
@@ -1149,8 +1156,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setCount(long value) {
-      bitField0_ |= 0x00000001;
+
       count_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1230,11 +1238,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         instanceProperties_ = value;
-        onChanged();
       } else {
         instancePropertiesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1251,11 +1259,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.InstanceProperties.Builder builderForValue) {
       if (instancePropertiesBuilder_ == null) {
         instanceProperties_ = builderForValue.build();
-        onChanged();
       } else {
         instancePropertiesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1274,18 +1282,15 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
             && instanceProperties_ != null
             && instanceProperties_
                 != com.google.cloud.compute.v1.InstanceProperties.getDefaultInstance()) {
-          instanceProperties_ =
-              com.google.cloud.compute.v1.InstanceProperties.newBuilder(instanceProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getInstancePropertiesBuilder().mergeFrom(value);
         } else {
           instanceProperties_ = value;
         }
-        onChanged();
       } else {
         instancePropertiesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1299,13 +1304,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInstanceProperties() {
-      if (instancePropertiesBuilder_ == null) {
-        instanceProperties_ = null;
-        onChanged();
-      } else {
-        instancePropertiesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      instanceProperties_ = null;
+      if (instancePropertiesBuilder_ != null) {
+        instancePropertiesBuilder_.dispose();
+        instancePropertiesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1425,11 +1430,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         locationPolicy_ = value;
-        onChanged();
       } else {
         locationPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1445,11 +1450,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.LocationPolicy.Builder builderForValue) {
       if (locationPolicyBuilder_ == null) {
         locationPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         locationPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1466,18 +1471,15 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         if (((bitField0_ & 0x00000004) != 0)
             && locationPolicy_ != null
             && locationPolicy_ != com.google.cloud.compute.v1.LocationPolicy.getDefaultInstance()) {
-          locationPolicy_ =
-              com.google.cloud.compute.v1.LocationPolicy.newBuilder(locationPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLocationPolicyBuilder().mergeFrom(value);
         } else {
           locationPolicy_ = value;
         }
-        onChanged();
       } else {
         locationPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1490,13 +1492,13 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
      */
     public Builder clearLocationPolicy() {
-      if (locationPolicyBuilder_ == null) {
-        locationPolicy_ = null;
-        onChanged();
-      } else {
-        locationPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      locationPolicy_ = null;
+      if (locationPolicyBuilder_ != null) {
+        locationPolicyBuilder_.dispose();
+        locationPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1601,8 +1603,9 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setMinCount(long value) {
-      bitField0_ |= 0x00000008;
+
       minCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1699,8 +1702,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       namePattern_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1716,8 +1719,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearNamePattern() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       namePattern_ = getDefaultInstance().getNamePattern();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1738,8 +1741,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       namePattern_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1764,8 +1767,6 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
             java.lang.String,
             com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
         internalGetMutablePerInstanceProperties() {
-      onChanged();
-      ;
       if (perInstanceProperties_ == null) {
         perInstanceProperties_ =
             com.google.protobuf.MapField.newMapField(
@@ -1774,6 +1775,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       if (!perInstanceProperties_.isMutable()) {
         perInstanceProperties_ = perInstanceProperties_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return perInstanceProperties_;
     }
 
@@ -1837,9 +1840,11 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
+    public /* nullable */ com.google.cloud.compute.v1
+            .BulkInsertInstanceResourcePerInstanceProperties
         getPerInstancePropertiesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
                 defaultValue) {
       if (key == null) {
@@ -1879,6 +1884,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     }
 
     public Builder clearPerInstanceProperties() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutablePerInstanceProperties().getMutableMap().clear();
       return this;
     }
@@ -1906,6 +1912,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
             java.lang.String,
             com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
         getMutablePerInstanceProperties() {
+      bitField0_ |= 0x00000020;
       return internalGetMutablePerInstanceProperties().getMutableMap();
     }
     /**
@@ -1928,8 +1935,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutablePerInstanceProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1949,6 +1956,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
                 com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
             values) {
       internalGetMutablePerInstanceProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2027,8 +2035,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       sourceInstanceTemplate_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2044,8 +2052,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearSourceInstanceTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       sourceInstanceTemplate_ = getDefaultInstance().getSourceInstanceTemplate();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2066,8 +2074,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       sourceInstanceTemplate_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

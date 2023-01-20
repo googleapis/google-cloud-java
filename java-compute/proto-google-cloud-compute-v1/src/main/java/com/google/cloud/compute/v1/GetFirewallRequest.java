@@ -69,7 +69,9 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FIREWALL_FIELD_NUMBER = 511016192;
-  private volatile java.lang.Object firewall_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewall_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewall_ = "";
-
       project_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.GetFirewallRequest buildPartial() {
       com.google.cloud.compute.v1.GetFirewallRequest result =
           new com.google.cloud.compute.v1.GetFirewallRequest(this);
-      result.firewall_ = firewall_;
-      result.project_ = project_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetFirewallRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewall_ = firewall_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.compute.v1.GetFirewallRequest.getDefaultInstance()) return this;
       if (!other.getFirewall().isEmpty()) {
         firewall_ = other.firewall_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -206837758:
               {
                 firewall_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -206837758
             default:
@@ -516,6 +532,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object firewall_ = "";
     /**
@@ -578,8 +596,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewall_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFirewall() {
-
       firewall_ = getDefaultInstance().getFirewall();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewall_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

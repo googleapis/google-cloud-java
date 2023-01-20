@@ -226,7 +226,9 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOMER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object customer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customer_ = "";
   /**
    *
    *
@@ -277,7 +279,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 2;
-  private int eventType_;
+  private int eventType_ = 0;
   /**
    *
    *
@@ -306,9 +308,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.CustomerEvent.Type getEventType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.CustomerEvent.Type result =
-        com.google.cloud.channel.v1.CustomerEvent.Type.valueOf(eventType_);
+        com.google.cloud.channel.v1.CustomerEvent.Type.forNumber(eventType_);
     return result == null ? com.google.cloud.channel.v1.CustomerEvent.Type.UNRECOGNIZED : result;
   }
 
@@ -518,10 +519,9 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       customer_ = "";
-
       eventType_ = 0;
-
       return this;
     }
 
@@ -549,10 +549,21 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.CustomerEvent buildPartial() {
       com.google.cloud.channel.v1.CustomerEvent result =
           new com.google.cloud.channel.v1.CustomerEvent(this);
-      result.customer_ = customer_;
-      result.eventType_ = eventType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CustomerEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customer_ = customer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventType_ = eventType_;
+      }
     }
 
     @java.lang.Override
@@ -602,6 +613,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.CustomerEvent.getDefaultInstance()) return this;
       if (!other.getCustomer().isEmpty()) {
         customer_ = other.customer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.eventType_ != 0) {
@@ -636,13 +648,13 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 customer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 eventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -661,6 +673,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object customer_ = "";
     /**
@@ -726,8 +740,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       customer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,8 +758,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomer() {
-
       customer_ = getDefaultInstance().getCustomer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -767,8 +781,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +816,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEventTypeValue(int value) {
-
       eventType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -820,9 +834,8 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.CustomerEvent.Type getEventType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.CustomerEvent.Type result =
-          com.google.cloud.channel.v1.CustomerEvent.Type.valueOf(eventType_);
+          com.google.cloud.channel.v1.CustomerEvent.Type.forNumber(eventType_);
       return result == null ? com.google.cloud.channel.v1.CustomerEvent.Type.UNRECOGNIZED : result;
     }
     /**
@@ -841,7 +854,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       eventType_ = value.getNumber();
       onChanged();
       return this;
@@ -858,7 +871,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       eventType_ = 0;
       onChanged();
       return this;

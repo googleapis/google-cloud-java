@@ -626,6 +626,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (distributionValueBuilder_ != null) {
         distributionValueBuilder_.clear();
       }
@@ -658,28 +659,24 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.TypedValue buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.TypedValue result =
           new com.google.cloud.bigquery.migration.v2alpha.TypedValue(this);
-      if (valueCase_ == 1) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 3) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 4) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 5) {
-        if (distributionValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = distributionValueBuilder_.build();
-        }
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.TypedValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.migration.v2alpha.TypedValue result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 5 && distributionValueBuilder_ != null) {
+        result.value_ = distributionValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -850,6 +847,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -894,6 +893,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       valueCase_ = 1;
       value_ = value;
       onChanged();
@@ -963,6 +963,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
+
       valueCase_ = 2;
       value_ = value;
       onChanged();
@@ -1038,6 +1039,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       valueCase_ = 3;
       value_ = value;
       onChanged();
@@ -1400,7 +1402,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 5;
       onChanged();
-      ;
       return distributionValueBuilder_;
     }
 

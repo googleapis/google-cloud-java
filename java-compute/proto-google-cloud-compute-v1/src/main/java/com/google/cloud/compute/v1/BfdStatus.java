@@ -524,7 +524,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int BFD_SESSION_INITIALIZATION_MODE_FIELD_NUMBER = 218156954;
-  private volatile java.lang.Object bfdSessionInitializationMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bfdSessionInitializationMode_ = "";
   /**
    *
    *
@@ -591,7 +593,7 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIG_UPDATE_TIMESTAMP_MICROS_FIELD_NUMBER = 457195569;
-  private long configUpdateTimestampMicros_;
+  private long configUpdateTimestampMicros_ = 0L;
   /**
    *
    *
@@ -681,6 +683,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTROL_PACKET_INTERVALS_FIELD_NUMBER = 500806649;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PacketIntervals> controlPacketIntervals_;
   /**
    *
@@ -757,7 +761,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCAL_DIAGNOSTIC_FIELD_NUMBER = 463737083;
-  private volatile java.lang.Object localDiagnostic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object localDiagnostic_ = "";
   /**
    *
    *
@@ -824,7 +830,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCAL_STATE_FIELD_NUMBER = 149195453;
-  private volatile java.lang.Object localState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object localState_ = "";
   /**
    *
    *
@@ -891,7 +899,7 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEGOTIATED_LOCAL_CONTROL_TX_INTERVAL_MS_FIELD_NUMBER = 21768340;
-  private int negotiatedLocalControlTxIntervalMs_;
+  private int negotiatedLocalControlTxIntervalMs_ = 0;
   /**
    *
    *
@@ -1024,7 +1032,7 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPTIME_MS_FIELD_NUMBER = 125398365;
-  private long uptimeMs_;
+  private long uptimeMs_ = 0L;
   /**
    *
    *
@@ -1406,16 +1414,14 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bfdSessionInitializationMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       configUpdateTimestampMicros_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (controlPacketCountsBuilder_ == null) {
-        controlPacketCounts_ = null;
-      } else {
-        controlPacketCountsBuilder_.clear();
+      controlPacketCounts_ = null;
+      if (controlPacketCountsBuilder_ != null) {
+        controlPacketCountsBuilder_.dispose();
+        controlPacketCountsBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (controlPacketIntervalsBuilder_ == null) {
         controlPacketIntervals_ = java.util.Collections.emptyList();
       } else {
@@ -1424,25 +1430,19 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       localDiagnostic_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       localState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       negotiatedLocalControlTxIntervalMs_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (rxPacketBuilder_ == null) {
-        rxPacket_ = null;
-      } else {
-        rxPacketBuilder_.clear();
+      rxPacket_ = null;
+      if (rxPacketBuilder_ != null) {
+        rxPacketBuilder_.dispose();
+        rxPacketBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
-      if (txPacketBuilder_ == null) {
-        txPacket_ = null;
-      } else {
-        txPacketBuilder_.clear();
+      txPacket_ = null;
+      if (txPacketBuilder_ != null) {
+        txPacketBuilder_.dispose();
+        txPacketBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
       uptimeMs_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1470,24 +1470,15 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BfdStatus buildPartial() {
       com.google.cloud.compute.v1.BfdStatus result =
           new com.google.cloud.compute.v1.BfdStatus(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.bfdSessionInitializationMode_ = bfdSessionInitializationMode_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.configUpdateTimestampMicros_ = configUpdateTimestampMicros_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (controlPacketCountsBuilder_ == null) {
-          result.controlPacketCounts_ = controlPacketCounts_;
-        } else {
-          result.controlPacketCounts_ = controlPacketCountsBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000004;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.BfdStatus result) {
       if (controlPacketIntervalsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           controlPacketIntervals_ = java.util.Collections.unmodifiableList(controlPacketIntervals_);
@@ -1497,41 +1488,51 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.controlPacketIntervals_ = controlPacketIntervalsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BfdStatus result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bfdSessionInitializationMode_ = bfdSessionInitializationMode_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configUpdateTimestampMicros_ = configUpdateTimestampMicros_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.controlPacketCounts_ =
+            controlPacketCountsBuilder_ == null
+                ? controlPacketCounts_
+                : controlPacketCountsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.localDiagnostic_ = localDiagnostic_;
         to_bitField0_ |= 0x00000008;
       }
-      result.localDiagnostic_ = localDiagnostic_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.localState_ = localState_;
         to_bitField0_ |= 0x00000010;
       }
-      result.localState_ = localState_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.negotiatedLocalControlTxIntervalMs_ = negotiatedLocalControlTxIntervalMs_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (rxPacketBuilder_ == null) {
-          result.rxPacket_ = rxPacket_;
-        } else {
-          result.rxPacket_ = rxPacketBuilder_.build();
-        }
+        result.rxPacket_ = rxPacketBuilder_ == null ? rxPacket_ : rxPacketBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        if (txPacketBuilder_ == null) {
-          result.txPacket_ = txPacket_;
-        } else {
-          result.txPacket_ = txPacketBuilder_.build();
-        }
+        result.txPacket_ = txPacketBuilder_ == null ? txPacket_ : txPacketBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.uptimeMs_ = uptimeMs_;
         to_bitField0_ |= 0x00000100;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1580,8 +1581,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.BfdStatus other) {
       if (other == com.google.cloud.compute.v1.BfdStatus.getDefaultInstance()) return this;
       if (other.hasBfdSessionInitializationMode()) {
-        bitField0_ |= 0x00000001;
         bfdSessionInitializationMode_ = other.bfdSessionInitializationMode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfigUpdateTimestampMicros()) {
@@ -1618,13 +1619,13 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasLocalDiagnostic()) {
-        bitField0_ |= 0x00000010;
         localDiagnostic_ = other.localDiagnostic_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasLocalState()) {
-        bitField0_ |= 0x00000020;
         localState_ = other.localState_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasNegotiatedLocalControlTxIntervalMs()) {
@@ -1831,8 +1832,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       bfdSessionInitializationMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1849,8 +1850,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBfdSessionInitializationMode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       bfdSessionInitializationMode_ = getDefaultInstance().getBfdSessionInitializationMode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1872,8 +1873,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       bfdSessionInitializationMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1922,8 +1923,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setConfigUpdateTimestampMicros(long value) {
-      bitField0_ |= 0x00000002;
+
       configUpdateTimestampMicros_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2006,11 +2008,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         controlPacketCounts_ = value;
-        onChanged();
       } else {
         controlPacketCountsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2028,11 +2030,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.BfdStatusPacketCounts.Builder builderForValue) {
       if (controlPacketCountsBuilder_ == null) {
         controlPacketCounts_ = builderForValue.build();
-        onChanged();
       } else {
         controlPacketCountsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2053,18 +2055,15 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
             && controlPacketCounts_ != null
             && controlPacketCounts_
                 != com.google.cloud.compute.v1.BfdStatusPacketCounts.getDefaultInstance()) {
-          controlPacketCounts_ =
-              com.google.cloud.compute.v1.BfdStatusPacketCounts.newBuilder(controlPacketCounts_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getControlPacketCountsBuilder().mergeFrom(value);
         } else {
           controlPacketCounts_ = value;
         }
-        onChanged();
       } else {
         controlPacketCountsBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2079,13 +2078,13 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearControlPacketCounts() {
-      if (controlPacketCountsBuilder_ == null) {
-        controlPacketCounts_ = null;
-        onChanged();
-      } else {
-        controlPacketCountsBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      controlPacketCounts_ = null;
+      if (controlPacketCountsBuilder_ != null) {
+        controlPacketCountsBuilder_.dispose();
+        controlPacketCountsBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2612,8 +2611,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       localDiagnostic_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2630,8 +2629,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalDiagnostic() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       localDiagnostic_ = getDefaultInstance().getLocalDiagnostic();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2653,8 +2652,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       localDiagnostic_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2738,8 +2737,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       localState_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2756,8 +2755,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       localState_ = getDefaultInstance().getLocalState();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2779,8 +2778,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       localState_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2829,8 +2828,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNegotiatedLocalControlTxIntervalMs(int value) {
-      bitField0_ |= 0x00000040;
+
       negotiatedLocalControlTxIntervalMs_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2907,11 +2907,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rxPacket_ = value;
-        onChanged();
       } else {
         rxPacketBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2926,11 +2926,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setRxPacket(com.google.cloud.compute.v1.BfdPacket.Builder builderForValue) {
       if (rxPacketBuilder_ == null) {
         rxPacket_ = builderForValue.build();
-        onChanged();
       } else {
         rxPacketBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2947,18 +2947,15 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000080) != 0)
             && rxPacket_ != null
             && rxPacket_ != com.google.cloud.compute.v1.BfdPacket.getDefaultInstance()) {
-          rxPacket_ =
-              com.google.cloud.compute.v1.BfdPacket.newBuilder(rxPacket_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRxPacketBuilder().mergeFrom(value);
         } else {
           rxPacket_ = value;
         }
-        onChanged();
       } else {
         rxPacketBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2971,13 +2968,13 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BfdPacket rx_packet = 505069729;</code>
      */
     public Builder clearRxPacket() {
-      if (rxPacketBuilder_ == null) {
-        rxPacket_ = null;
-        onChanged();
-      } else {
-        rxPacketBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      rxPacket_ = null;
+      if (rxPacketBuilder_ != null) {
+        rxPacketBuilder_.dispose();
+        rxPacketBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3093,11 +3090,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         txPacket_ = value;
-        onChanged();
       } else {
         txPacketBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3112,11 +3109,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setTxPacket(com.google.cloud.compute.v1.BfdPacket.Builder builderForValue) {
       if (txPacketBuilder_ == null) {
         txPacket_ = builderForValue.build();
-        onChanged();
       } else {
         txPacketBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3133,18 +3130,15 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000100) != 0)
             && txPacket_ != null
             && txPacket_ != com.google.cloud.compute.v1.BfdPacket.getDefaultInstance()) {
-          txPacket_ =
-              com.google.cloud.compute.v1.BfdPacket.newBuilder(txPacket_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getTxPacketBuilder().mergeFrom(value);
         } else {
           txPacket_ = value;
         }
-        onChanged();
       } else {
         txPacketBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3157,13 +3151,13 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BfdPacket tx_packet = 111386275;</code>
      */
     public Builder clearTxPacket() {
-      if (txPacketBuilder_ == null) {
-        txPacket_ = null;
-        onChanged();
-      } else {
-        txPacketBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000100);
+      txPacket_ = null;
+      if (txPacketBuilder_ != null) {
+        txPacketBuilder_.dispose();
+        txPacketBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3268,8 +3262,9 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUptimeMs(long value) {
-      bitField0_ |= 0x00000200;
+
       uptimeMs_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

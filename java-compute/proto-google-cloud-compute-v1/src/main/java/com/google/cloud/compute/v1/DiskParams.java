@@ -89,6 +89,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -148,8 +149,10 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
   @java.lang.Override
-  public java.lang.String getResourceManagerTagsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -409,6 +412,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableResourceManagerTags().clear();
       return this;
     }
@@ -437,11 +441,19 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.DiskParams buildPartial() {
       com.google.cloud.compute.v1.DiskParams result =
           new com.google.cloud.compute.v1.DiskParams(this);
-      int from_bitField0_ = bitField0_;
-      result.resourceManagerTags_ = internalGetResourceManagerTags();
-      result.resourceManagerTags_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DiskParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceManagerTags_ = internalGetResourceManagerTags();
+        result.resourceManagerTags_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -490,6 +502,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.DiskParams other) {
       if (other == com.google.cloud.compute.v1.DiskParams.getDefaultInstance()) return this;
       internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -526,6 +539,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableResourceManagerTags()
                     .getMutableMap()
                     .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1273597982
             default:
@@ -560,8 +574,6 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableResourceManagerTags() {
-      onChanged();
-      ;
       if (resourceManagerTags_ == null) {
         resourceManagerTags_ =
             com.google.protobuf.MapField.newMapField(
@@ -570,6 +582,8 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
       if (!resourceManagerTags_.isMutable()) {
         resourceManagerTags_ = resourceManagerTags_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return resourceManagerTags_;
     }
 
@@ -621,8 +635,10 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
      */
     @java.lang.Override
-    public java.lang.String getResourceManagerTagsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -653,6 +669,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearResourceManagerTags() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableResourceManagerTags().getMutableMap().clear();
       return this;
     }
@@ -675,6 +692,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableResourceManagerTags().getMutableMap();
     }
     /**
@@ -693,8 +711,8 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -709,6 +727,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllResourceManagerTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

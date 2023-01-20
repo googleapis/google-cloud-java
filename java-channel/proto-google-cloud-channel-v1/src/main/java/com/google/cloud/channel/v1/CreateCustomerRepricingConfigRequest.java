@@ -71,7 +71,9 @@ public final class CreateCustomerRepricingConfigRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class CreateCustomerRepricingConfigRequest
   @java.lang.Override
   public com.google.cloud.channel.v1.CustomerRepricingConfigOrBuilder
       getCustomerRepricingConfigOrBuilder() {
-    return getCustomerRepricingConfig();
+    return customerRepricingConfig_ == null
+        ? com.google.cloud.channel.v1.CustomerRepricingConfig.getDefaultInstance()
+        : customerRepricingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -396,12 +400,11 @@ public final class CreateCustomerRepricingConfigRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (customerRepricingConfigBuilder_ == null) {
-        customerRepricingConfig_ = null;
-      } else {
-        customerRepricingConfig_ = null;
+      customerRepricingConfig_ = null;
+      if (customerRepricingConfigBuilder_ != null) {
+        customerRepricingConfigBuilder_.dispose();
         customerRepricingConfigBuilder_ = null;
       }
       return this;
@@ -432,14 +435,25 @@ public final class CreateCustomerRepricingConfigRequest
     public com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest buildPartial() {
       com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest result =
           new com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest(this);
-      result.parent_ = parent_;
-      if (customerRepricingConfigBuilder_ == null) {
-        result.customerRepricingConfig_ = customerRepricingConfig_;
-      } else {
-        result.customerRepricingConfig_ = customerRepricingConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customerRepricingConfig_ =
+            customerRepricingConfigBuilder_ == null
+                ? customerRepricingConfig_
+                : customerRepricingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -492,6 +506,7 @@ public final class CreateCustomerRepricingConfigRequest
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCustomerRepricingConfig()) {
@@ -526,14 +541,14 @@ public final class CreateCustomerRepricingConfigRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getCustomerRepricingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -552,6 +567,8 @@ public final class CreateCustomerRepricingConfigRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -626,8 +643,8 @@ public final class CreateCustomerRepricingConfigRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,8 +664,8 @@ public final class CreateCustomerRepricingConfigRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -673,8 +690,8 @@ public final class CreateCustomerRepricingConfigRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,7 +716,7 @@ public final class CreateCustomerRepricingConfigRequest
      * @return Whether the customerRepricingConfig field is set.
      */
     public boolean hasCustomerRepricingConfig() {
-      return customerRepricingConfigBuilder_ != null || customerRepricingConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -741,11 +758,11 @@ public final class CreateCustomerRepricingConfigRequest
           throw new NullPointerException();
         }
         customerRepricingConfig_ = value;
-        onChanged();
       } else {
         customerRepricingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,11 +780,11 @@ public final class CreateCustomerRepricingConfigRequest
         com.google.cloud.channel.v1.CustomerRepricingConfig.Builder builderForValue) {
       if (customerRepricingConfigBuilder_ == null) {
         customerRepricingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         customerRepricingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -784,20 +801,19 @@ public final class CreateCustomerRepricingConfigRequest
     public Builder mergeCustomerRepricingConfig(
         com.google.cloud.channel.v1.CustomerRepricingConfig value) {
       if (customerRepricingConfigBuilder_ == null) {
-        if (customerRepricingConfig_ != null) {
-          customerRepricingConfig_ =
-              com.google.cloud.channel.v1.CustomerRepricingConfig.newBuilder(
-                      customerRepricingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && customerRepricingConfig_ != null
+            && customerRepricingConfig_
+                != com.google.cloud.channel.v1.CustomerRepricingConfig.getDefaultInstance()) {
+          getCustomerRepricingConfigBuilder().mergeFrom(value);
         } else {
           customerRepricingConfig_ = value;
         }
-        onChanged();
       } else {
         customerRepricingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,14 +828,13 @@ public final class CreateCustomerRepricingConfigRequest
      * </code>
      */
     public Builder clearCustomerRepricingConfig() {
-      if (customerRepricingConfigBuilder_ == null) {
-        customerRepricingConfig_ = null;
-        onChanged();
-      } else {
-        customerRepricingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customerRepricingConfig_ = null;
+      if (customerRepricingConfigBuilder_ != null) {
+        customerRepricingConfigBuilder_.dispose();
         customerRepricingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -835,7 +850,7 @@ public final class CreateCustomerRepricingConfigRequest
      */
     public com.google.cloud.channel.v1.CustomerRepricingConfig.Builder
         getCustomerRepricingConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCustomerRepricingConfigFieldBuilder().getBuilder();
     }

@@ -96,6 +96,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
       disks_;
@@ -162,8 +163,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue) {
+  public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -208,6 +211,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -265,8 +269,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -543,6 +549,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDisks().clear();
       internalGetMutableMetadata().clear();
       return this;
@@ -572,13 +579,23 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.PreservedState buildPartial() {
       com.google.cloud.compute.v1.PreservedState result =
           new com.google.cloud.compute.v1.PreservedState(this);
-      int from_bitField0_ = bitField0_;
-      result.disks_ = internalGetDisks();
-      result.disks_.makeImmutable();
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PreservedState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disks_ = internalGetDisks();
+        result.disks_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -627,7 +644,9 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.PreservedState other) {
       if (other == com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) return this;
       internalGetMutableDisks().mergeFrom(other.internalGetDisks());
+      bitField0_ |= 0x00000001;
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -663,6 +682,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 694933882
             case 764752818:
@@ -674,6 +694,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                             DisksDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableDisks().getMutableMap().put(disks__.getKey(), disks__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 764752818
             default:
@@ -711,14 +732,14 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
         internalGetMutableDisks() {
-      onChanged();
-      ;
       if (disks_ == null) {
         disks_ = com.google.protobuf.MapField.newMapField(DisksDefaultEntryHolder.defaultEntry);
       }
       if (!disks_.isMutable()) {
         disks_ = disks_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return disks_;
     }
 
@@ -778,8 +799,9 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
+    public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
         java.lang.String key,
+        /* nullable */
         com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -814,6 +836,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDisks() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDisks().getMutableMap().clear();
       return this;
     }
@@ -839,6 +862,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
         getMutableDisks() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDisks().getMutableMap();
     }
     /**
@@ -860,8 +884,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDisks().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -879,6 +903,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
             values) {
       internalGetMutableDisks().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -893,8 +918,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -902,6 +925,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return metadata_;
     }
 
@@ -953,8 +978,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 86866735;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -983,6 +1010,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1005,6 +1033,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1023,8 +1052,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1038,6 +1067,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

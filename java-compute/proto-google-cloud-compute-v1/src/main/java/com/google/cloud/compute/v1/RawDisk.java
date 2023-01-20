@@ -190,7 +190,9 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int CONTAINER_TYPE_FIELD_NUMBER = 318809144;
-  private volatile java.lang.Object containerType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containerType_ = "";
   /**
    *
    *
@@ -257,7 +259,9 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHA1_CHECKSUM_FIELD_NUMBER = 314444349;
-  private volatile java.lang.Object sha1Checksum_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha1Checksum_ = "";
   /**
    *
    *
@@ -321,7 +325,9 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -612,12 +618,10 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       containerType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       sha1Checksum_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -644,23 +648,29 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.RawDisk buildPartial() {
       com.google.cloud.compute.v1.RawDisk result = new com.google.cloud.compute.v1.RawDisk(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RawDisk result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.containerType_ = containerType_;
         to_bitField0_ |= 0x00000001;
       }
-      result.containerType_ = containerType_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sha1Checksum_ = sha1Checksum_;
         to_bitField0_ |= 0x00000002;
       }
-      result.sha1Checksum_ = sha1Checksum_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.source_ = source_;
         to_bitField0_ |= 0x00000004;
       }
-      result.source_ = source_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -709,18 +719,18 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.RawDisk other) {
       if (other == com.google.cloud.compute.v1.RawDisk.getDefaultInstance()) return this;
       if (other.hasContainerType()) {
-        bitField0_ |= 0x00000001;
         containerType_ = other.containerType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSha1Checksum()) {
-        bitField0_ |= 0x00000002;
         sha1Checksum_ = other.sha1Checksum_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00000004;
         source_ = other.source_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -865,8 +875,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       containerType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +893,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContainerType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       containerType_ = getDefaultInstance().getContainerType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -906,8 +916,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       containerType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -987,8 +997,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       sha1Checksum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1004,8 +1014,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSha1Checksum() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       sha1Checksum_ = getDefaultInstance().getSha1Checksum();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1026,8 +1036,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       sha1Checksum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1107,8 +1117,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       source_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1124,8 +1134,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1146,8 +1156,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       source_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

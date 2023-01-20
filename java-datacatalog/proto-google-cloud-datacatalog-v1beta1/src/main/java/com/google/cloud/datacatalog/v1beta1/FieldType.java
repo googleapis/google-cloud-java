@@ -458,7 +458,9 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object displayName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object displayName_ = "";
       /**
        *
        *
@@ -701,8 +703,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           displayName_ = "";
-
           return this;
         }
 
@@ -732,9 +734,19 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue buildPartial() {
           com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue result =
               new com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue(this);
-          result.displayName_ = displayName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.displayName_ = displayName_;
+          }
         }
 
         @java.lang.Override
@@ -790,6 +802,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getDisplayName().isEmpty()) {
             displayName_ = other.displayName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -821,7 +834,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     displayName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -840,6 +853,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object displayName_ = "";
         /**
@@ -902,8 +917,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           displayName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -919,8 +934,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDisplayName() {
-
           displayName_ = getDefaultInstance().getDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -941,8 +956,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           displayName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1015,6 +1030,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue>
         allowedValues_;
     /**
@@ -1317,6 +1334,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (allowedValuesBuilder_ == null) {
           allowedValues_ = java.util.Collections.emptyList();
         } else {
@@ -1351,7 +1369,16 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1beta1.FieldType.EnumType buildPartial() {
         com.google.cloud.datacatalog.v1beta1.FieldType.EnumType result =
             new com.google.cloud.datacatalog.v1beta1.FieldType.EnumType(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.datacatalog.v1beta1.FieldType.EnumType result) {
         if (allowedValuesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             allowedValues_ = java.util.Collections.unmodifiableList(allowedValues_);
@@ -1361,8 +1388,10 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.allowedValues_ = allowedValuesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1beta1.FieldType.EnumType result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2161,9 +2190,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType getPrimitiveType() {
     if (typeDeclCase_ == 1) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType result =
-          com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.valueOf(
+          com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.forNumber(
               (java.lang.Integer) typeDecl_);
       return result == null
           ? com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.UNRECOGNIZED
@@ -2441,6 +2469,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (enumTypeBuilder_ != null) {
         enumTypeBuilder_.clear();
       }
@@ -2473,19 +2502,24 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.FieldType buildPartial() {
       com.google.cloud.datacatalog.v1beta1.FieldType result =
           new com.google.cloud.datacatalog.v1beta1.FieldType(this);
-      if (typeDeclCase_ == 1) {
-        result.typeDecl_ = typeDecl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeDeclCase_ == 2) {
-        if (enumTypeBuilder_ == null) {
-          result.typeDecl_ = typeDecl_;
-        } else {
-          result.typeDecl_ = enumTypeBuilder_.build();
-        }
-      }
-      result.typeDeclCase_ = typeDeclCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.FieldType result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1beta1.FieldType result) {
+      result.typeDeclCase_ = typeDeclCase_;
+      result.typeDecl_ = this.typeDecl_;
+      if (typeDeclCase_ == 2 && enumTypeBuilder_ != null) {
+        result.typeDecl_ = enumTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2619,6 +2653,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -2684,9 +2720,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType getPrimitiveType() {
       if (typeDeclCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType result =
-            com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.valueOf(
+            com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.forNumber(
                 (java.lang.Integer) typeDecl_);
         return result == null
             ? com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType.UNRECOGNIZED
@@ -2944,7 +2979,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       }
       typeDeclCase_ = 2;
       onChanged();
-      ;
       return enumTypeBuilder_;
     }
 

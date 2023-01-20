@@ -69,7 +69,9 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int DESTINATION_ZONE_FIELD_NUMBER = 131854653;
-  private volatile java.lang.Object destinationZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationZone_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TARGET_DISK_FIELD_NUMBER = 62433163;
-  private volatile java.lang.Object targetDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetDisk_ = "";
   /**
    *
    *
@@ -411,10 +415,9 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationZone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetDisk_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -442,19 +445,25 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.DiskMoveRequest buildPartial() {
       com.google.cloud.compute.v1.DiskMoveRequest result =
           new com.google.cloud.compute.v1.DiskMoveRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DiskMoveRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destinationZone_ = destinationZone_;
         to_bitField0_ |= 0x00000001;
       }
-      result.destinationZone_ = destinationZone_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetDisk_ = targetDisk_;
         to_bitField0_ |= 0x00000002;
       }
-      result.targetDisk_ = targetDisk_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -503,13 +512,13 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.DiskMoveRequest other) {
       if (other == com.google.cloud.compute.v1.DiskMoveRequest.getDefaultInstance()) return this;
       if (other.hasDestinationZone()) {
-        bitField0_ |= 0x00000001;
         destinationZone_ = other.destinationZone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTargetDisk()) {
-        bitField0_ |= 0x00000002;
         targetDisk_ = other.targetDisk_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -644,8 +653,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       destinationZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,8 +670,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDestinationZone() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       destinationZone_ = getDefaultInstance().getDestinationZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +692,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       destinationZone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -764,8 +773,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       targetDisk_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -781,8 +790,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetDisk() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       targetDisk_ = getDefaultInstance().getTargetDisk();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -803,8 +812,8 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       targetDisk_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

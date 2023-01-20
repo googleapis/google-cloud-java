@@ -114,7 +114,9 @@ public final class Service {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -379,8 +381,8 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -414,9 +416,19 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.GetPolicyRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.GetPolicyRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.GetPolicyRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -475,6 +487,7 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -506,7 +519,7 @@ public final class Service {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -525,6 +538,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -596,8 +611,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -616,8 +631,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -641,8 +656,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -877,7 +892,10 @@ public final class Service {
     @java.lang.Override
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.PolicyOrBuilder
         getPolicyOrBuilder() {
-      return getPolicy();
+      return policy_ == null
+          ? com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy
+              .getDefaultInstance()
+          : policy_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1097,10 +1115,10 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (policyBuilder_ == null) {
-          policy_ = null;
-        } else {
-          policy_ = null;
+        bitField0_ = 0;
+        policy_ = null;
+        if (policyBuilder_ != null) {
+          policyBuilder_.dispose();
           policyBuilder_ = null;
         }
         return this;
@@ -1136,13 +1154,20 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdatePolicyRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdatePolicyRequest(
                 this);
-        if (policyBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = policyBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdatePolicyRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1231,7 +1256,7 @@ public final class Service {
               case 10:
                 {
                   input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1250,6 +1275,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy policy_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1273,7 +1300,7 @@ public final class Service {
        * @return Whether the policy field is set.
        */
       public boolean hasPolicy() {
-        return policyBuilder_ != null || policy_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1320,11 +1347,11 @@ public final class Service {
             throw new NullPointerException();
           }
           policy_ = value;
-          onChanged();
         } else {
           policyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1345,11 +1372,11 @@ public final class Service {
               builderForValue) {
         if (policyBuilder_ == null) {
           policy_ = builderForValue.build();
-          onChanged();
         } else {
           policyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1368,20 +1395,20 @@ public final class Service {
       public Builder mergePolicy(
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy value) {
         if (policyBuilder_ == null) {
-          if (policy_ != null) {
-            policy_ =
-                com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy.newBuilder(
-                        policy_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && policy_ != null
+              && policy_
+                  != com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy
+                      .getDefaultInstance()) {
+            getPolicyBuilder().mergeFrom(value);
           } else {
             policy_ = value;
           }
-          onChanged();
         } else {
           policyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1398,14 +1425,13 @@ public final class Service {
        * </code>
        */
       public Builder clearPolicy() {
-        if (policyBuilder_ == null) {
-          policy_ = null;
-          onChanged();
-        } else {
-          policy_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        policy_ = null;
+        if (policyBuilder_ != null) {
+          policyBuilder_.dispose();
           policyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1423,7 +1449,7 @@ public final class Service {
        */
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy.Builder
           getPolicyBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPolicyFieldBuilder().getBuilder();
       }
@@ -1710,7 +1736,9 @@ public final class Service {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -1763,7 +1791,9 @@ public final class Service {
     }
 
     public static final int ATTESTOR_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object attestorId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object attestorId_ = "";
     /**
      *
      *
@@ -1870,7 +1900,10 @@ public final class Service {
     @java.lang.Override
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder
         getAttestorOrBuilder() {
-      return getAttestor();
+      return attestor_ == null
+          ? com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
+              .getDefaultInstance()
+          : attestor_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2121,14 +2154,12 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
         attestorId_ = "";
-
-        if (attestorBuilder_ == null) {
-          attestor_ = null;
-        } else {
-          attestor_ = null;
+        attestor_ = null;
+        if (attestorBuilder_ != null) {
+          attestorBuilder_.dispose();
           attestorBuilder_ = null;
         }
         return this;
@@ -2164,15 +2195,26 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.CreateAttestorRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.CreateAttestorRequest(
                 this);
-        result.parent_ = parent_;
-        result.attestorId_ = attestorId_;
-        if (attestorBuilder_ == null) {
-          result.attestor_ = attestor_;
-        } else {
-          result.attestor_ = attestorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.CreateAttestorRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attestorId_ = attestorId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.attestor_ = attestorBuilder_ == null ? attestor_ : attestorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2232,10 +2274,12 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getAttestorId().isEmpty()) {
           attestorId_ = other.attestorId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasAttestor()) {
@@ -2270,19 +2314,19 @@ public final class Service {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   attestorId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getAttestorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -2301,6 +2345,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -2369,8 +2415,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2388,8 +2434,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2412,8 +2458,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2479,8 +2525,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         attestorId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2496,8 +2542,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearAttestorId() {
-
         attestorId_ = getDefaultInstance().getAttestorId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2518,8 +2564,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         attestorId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2546,7 +2592,7 @@ public final class Service {
        * @return Whether the attestor field is set.
        */
       public boolean hasAttestor() {
-        return attestorBuilder_ != null || attestor_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2594,11 +2640,11 @@ public final class Service {
             throw new NullPointerException();
           }
           attestor_ = value;
-          onChanged();
         } else {
           attestorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2619,11 +2665,11 @@ public final class Service {
               builderForValue) {
         if (attestorBuilder_ == null) {
           attestor_ = builderForValue.build();
-          onChanged();
         } else {
           attestorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2642,20 +2688,20 @@ public final class Service {
       public Builder mergeAttestor(
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor value) {
         if (attestorBuilder_ == null) {
-          if (attestor_ != null) {
-            attestor_ =
-                com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.newBuilder(
-                        attestor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && attestor_ != null
+              && attestor_
+                  != com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
+                      .getDefaultInstance()) {
+            getAttestorBuilder().mergeFrom(value);
           } else {
             attestor_ = value;
           }
-          onChanged();
         } else {
           attestorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2672,14 +2718,13 @@ public final class Service {
        * </code>
        */
       public Builder clearAttestor() {
-        if (attestorBuilder_ == null) {
-          attestor_ = null;
-          onChanged();
-        } else {
-          attestor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attestor_ = null;
+        if (attestorBuilder_ != null) {
+          attestorBuilder_.dispose();
           attestorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2697,7 +2742,7 @@ public final class Service {
        */
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.Builder
           getAttestorBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAttestorFieldBuilder().getBuilder();
       }
@@ -2913,7 +2958,9 @@ public final class Service {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -3179,8 +3226,8 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -3214,9 +3261,19 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.GetAttestorRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.GetAttestorRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.GetAttestorRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -3275,6 +3332,7 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3306,7 +3364,7 @@ public final class Service {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -3325,6 +3383,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -3396,8 +3456,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3416,8 +3476,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3441,8 +3501,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3677,7 +3737,10 @@ public final class Service {
     @java.lang.Override
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorOrBuilder
         getAttestorOrBuilder() {
-      return getAttestor();
+      return attestor_ == null
+          ? com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
+              .getDefaultInstance()
+          : attestor_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3910,10 +3973,10 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (attestorBuilder_ == null) {
-          attestor_ = null;
-        } else {
-          attestor_ = null;
+        bitField0_ = 0;
+        attestor_ = null;
+        if (attestorBuilder_ != null) {
+          attestorBuilder_.dispose();
           attestorBuilder_ = null;
         }
         return this;
@@ -3949,13 +4012,20 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdateAttestorRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdateAttestorRequest(
                 this);
-        if (attestorBuilder_ == null) {
-          result.attestor_ = attestor_;
-        } else {
-          result.attestor_ = attestorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.UpdateAttestorRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.attestor_ = attestorBuilder_ == null ? attestor_ : attestorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4045,7 +4115,7 @@ public final class Service {
               case 10:
                 {
                   input.readMessage(getAttestorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -4064,6 +4134,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor attestor_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4087,7 +4159,7 @@ public final class Service {
        * @return Whether the attestor field is set.
        */
       public boolean hasAttestor() {
-        return attestorBuilder_ != null || attestor_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4135,11 +4207,11 @@ public final class Service {
             throw new NullPointerException();
           }
           attestor_ = value;
-          onChanged();
         } else {
           attestorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4160,11 +4232,11 @@ public final class Service {
               builderForValue) {
         if (attestorBuilder_ == null) {
           attestor_ = builderForValue.build();
-          onChanged();
         } else {
           attestorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4183,20 +4255,20 @@ public final class Service {
       public Builder mergeAttestor(
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor value) {
         if (attestorBuilder_ == null) {
-          if (attestor_ != null) {
-            attestor_ =
-                com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.newBuilder(
-                        attestor_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && attestor_ != null
+              && attestor_
+                  != com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor
+                      .getDefaultInstance()) {
+            getAttestorBuilder().mergeFrom(value);
           } else {
             attestor_ = value;
           }
-          onChanged();
         } else {
           attestorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4213,14 +4285,13 @@ public final class Service {
        * </code>
        */
       public Builder clearAttestor() {
-        if (attestorBuilder_ == null) {
-          attestor_ = null;
-          onChanged();
-        } else {
-          attestor_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        attestor_ = null;
+        if (attestorBuilder_ != null) {
+          attestorBuilder_.dispose();
           attestorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4238,7 +4309,7 @@ public final class Service {
        */
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.Builder
           getAttestorBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAttestorFieldBuilder().getBuilder();
       }
@@ -4498,7 +4569,9 @@ public final class Service {
     }
 
     public static final int PARENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parent_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parent_ = "";
     /**
      *
      *
@@ -4553,7 +4626,7 @@ public final class Service {
     }
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-    private int pageSize_;
+    private int pageSize_ = 0;
     /**
      *
      *
@@ -4572,7 +4645,9 @@ public final class Service {
     }
 
     public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pageToken_ = "";
     /**
      *
      *
@@ -4855,12 +4930,10 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parent_ = "";
-
         pageSize_ = 0;
-
         pageToken_ = "";
-
         return this;
       }
 
@@ -4894,11 +4967,26 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsRequest(
                 this);
-        result.parent_ = parent_;
-        result.pageSize_ = pageSize_;
-        result.pageToken_ = pageToken_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parent_ = parent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pageSize_ = pageSize_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pageToken_ = pageToken_;
+        }
       }
 
       @java.lang.Override
@@ -4958,6 +5046,7 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getParent().isEmpty()) {
           parent_ = other.parent_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getPageSize() != 0) {
@@ -4965,6 +5054,7 @@ public final class Service {
         }
         if (!other.getPageToken().isEmpty()) {
           pageToken_ = other.pageToken_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4996,19 +5086,19 @@ public final class Service {
               case 10:
                 {
                   parent_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   pageSize_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   pageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -5027,6 +5117,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parent_ = "";
       /**
@@ -5098,8 +5190,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5118,8 +5210,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearParent() {
-
         parent_ = getDefaultInstance().getParent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5143,8 +5235,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5182,6 +5274,7 @@ public final class Service {
       public Builder setPageSize(int value) {
 
         pageSize_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5198,7 +5291,7 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearPageSize() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         pageSize_ = 0;
         onChanged();
         return this;
@@ -5271,8 +5364,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5290,8 +5383,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
-
         pageToken_ = getDefaultInstance().getPageToken();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -5314,8 +5407,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pageToken_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5533,6 +5626,8 @@ public final class Service {
     }
 
     public static final int ATTESTORS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor>
         attestors_;
     /**
@@ -5608,7 +5703,9 @@ public final class Service {
     }
 
     public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nextPageToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextPageToken_ = "";
     /**
      *
      *
@@ -5896,6 +5993,7 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (attestorsBuilder_ == null) {
           attestors_ = java.util.Collections.emptyList();
         } else {
@@ -5904,7 +6002,6 @@ public final class Service {
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         nextPageToken_ = "";
-
         return this;
       }
 
@@ -5938,7 +6035,17 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse(
                 this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse
+              result) {
         if (attestorsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             attestors_ = java.util.Collections.unmodifiableList(attestors_);
@@ -5948,9 +6055,15 @@ public final class Service {
         } else {
           result.attestors_ = attestorsBuilder_.build();
         }
-        result.nextPageToken_ = nextPageToken_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.ListAttestorsResponse
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nextPageToken_ = nextPageToken_;
+        }
       }
 
       @java.lang.Override
@@ -6037,6 +6150,7 @@ public final class Service {
         }
         if (!other.getNextPageToken().isEmpty()) {
           nextPageToken_ = other.nextPageToken_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -6083,7 +6197,7 @@ public final class Service {
               case 18:
                 {
                   nextPageToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -6555,8 +6669,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6574,8 +6688,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearNextPageToken() {
-
         nextPageToken_ = getDefaultInstance().getNextPageToken();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6598,8 +6712,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         nextPageToken_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6762,7 +6876,9 @@ public final class Service {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7041,8 +7157,8 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -7076,9 +7192,20 @@ public final class Service {
         com.google.protos.google.cloud.binaryauthorization.v1.Service.DeleteAttestorRequest result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Service.DeleteAttestorRequest(
                 this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.DeleteAttestorRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -7138,6 +7265,7 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7169,7 +7297,7 @@ public final class Service {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -7188,6 +7316,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -7259,8 +7389,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7279,8 +7409,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7304,8 +7434,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7468,7 +7598,9 @@ public final class Service {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -7748,8 +7880,8 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         return this;
       }
 
@@ -7784,9 +7916,20 @@ public final class Service {
             result =
                 new com.google.protos.google.cloud.binaryauthorization.v1.Service
                     .GetSystemPolicyRequest(this);
-        result.name_ = name_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service.GetSystemPolicyRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
       }
 
       @java.lang.Override
@@ -7846,6 +7989,7 @@ public final class Service {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7877,7 +8021,7 @@ public final class Service {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -7896,6 +8040,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -7967,8 +8113,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7987,8 +8133,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -8012,8 +8158,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8284,7 +8430,9 @@ public final class Service {
     }
 
     public static final int ATTESTOR_FIELD_NUMBER = 1;
-    private volatile java.lang.Object attestor_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object attestor_ = "";
     /**
      *
      *
@@ -8396,11 +8544,15 @@ public final class Service {
      */
     @java.lang.Override
     public io.grafeas.v1.AttestationOccurrenceOrBuilder getAttestationOrBuilder() {
-      return getAttestation();
+      return attestation_ == null
+          ? io.grafeas.v1.AttestationOccurrence.getDefaultInstance()
+          : attestation_;
     }
 
     public static final int OCCURRENCE_NOTE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object occurrenceNote_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object occurrenceNote_ = "";
     /**
      *
      *
@@ -8451,7 +8603,9 @@ public final class Service {
     }
 
     public static final int OCCURRENCE_RESOURCE_URI_FIELD_NUMBER = 4;
-    private volatile java.lang.Object occurrenceResourceUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object occurrenceResourceUri_ = "";
     /**
      *
      *
@@ -8766,18 +8920,15 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         attestor_ = "";
-
-        if (attestationBuilder_ == null) {
-          attestation_ = null;
-        } else {
-          attestation_ = null;
+        attestation_ = null;
+        if (attestationBuilder_ != null) {
+          attestationBuilder_.dispose();
           attestationBuilder_ = null;
         }
         occurrenceNote_ = "";
-
         occurrenceResourceUri_ = "";
-
         return this;
       }
 
@@ -8817,16 +8968,31 @@ public final class Service {
             result =
                 new com.google.protos.google.cloud.binaryauthorization.v1.Service
                     .ValidateAttestationOccurrenceRequest(this);
-        result.attestor_ = attestor_;
-        if (attestationBuilder_ == null) {
-          result.attestation_ = attestation_;
-        } else {
-          result.attestation_ = attestationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.occurrenceNote_ = occurrenceNote_;
-        result.occurrenceResourceUri_ = occurrenceResourceUri_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service
+                  .ValidateAttestationOccurrenceRequest
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.attestor_ = attestor_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attestation_ =
+              attestationBuilder_ == null ? attestation_ : attestationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.occurrenceNote_ = occurrenceNote_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.occurrenceResourceUri_ = occurrenceResourceUri_;
+        }
       }
 
       @java.lang.Override
@@ -8889,6 +9055,7 @@ public final class Service {
                 .ValidateAttestationOccurrenceRequest.getDefaultInstance()) return this;
         if (!other.getAttestor().isEmpty()) {
           attestor_ = other.attestor_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasAttestation()) {
@@ -8896,10 +9063,12 @@ public final class Service {
         }
         if (!other.getOccurrenceNote().isEmpty()) {
           occurrenceNote_ = other.occurrenceNote_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getOccurrenceResourceUri().isEmpty()) {
           occurrenceResourceUri_ = other.occurrenceResourceUri_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -8931,25 +9100,25 @@ public final class Service {
               case 10:
                 {
                   attestor_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   occurrenceNote_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   occurrenceResourceUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -8968,6 +9137,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object attestor_ = "";
       /**
@@ -9036,8 +9207,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         attestor_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9055,8 +9226,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearAttestor() {
-
         attestor_ = getDefaultInstance().getAttestor();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9079,8 +9250,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         attestor_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9108,7 +9279,7 @@ public final class Service {
        * @return Whether the attestation field is set.
        */
       public boolean hasAttestation() {
-        return attestationBuilder_ != null || attestation_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -9155,11 +9326,11 @@ public final class Service {
             throw new NullPointerException();
           }
           attestation_ = value;
-          onChanged();
         } else {
           attestationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9179,11 +9350,11 @@ public final class Service {
       public Builder setAttestation(io.grafeas.v1.AttestationOccurrence.Builder builderForValue) {
         if (attestationBuilder_ == null) {
           attestation_ = builderForValue.build();
-          onChanged();
         } else {
           attestationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9202,19 +9373,18 @@ public final class Service {
        */
       public Builder mergeAttestation(io.grafeas.v1.AttestationOccurrence value) {
         if (attestationBuilder_ == null) {
-          if (attestation_ != null) {
-            attestation_ =
-                io.grafeas.v1.AttestationOccurrence.newBuilder(attestation_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && attestation_ != null
+              && attestation_ != io.grafeas.v1.AttestationOccurrence.getDefaultInstance()) {
+            getAttestationBuilder().mergeFrom(value);
           } else {
             attestation_ = value;
           }
-          onChanged();
         } else {
           attestationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9232,14 +9402,13 @@ public final class Service {
        * </code>
        */
       public Builder clearAttestation() {
-        if (attestationBuilder_ == null) {
-          attestation_ = null;
-          onChanged();
-        } else {
-          attestation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        attestation_ = null;
+        if (attestationBuilder_ != null) {
+          attestationBuilder_.dispose();
           attestationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -9257,7 +9426,7 @@ public final class Service {
        * </code>
        */
       public io.grafeas.v1.AttestationOccurrence.Builder getAttestationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAttestationFieldBuilder().getBuilder();
       }
@@ -9379,8 +9548,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         occurrenceNote_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9397,8 +9566,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearOccurrenceNote() {
-
         occurrenceNote_ = getDefaultInstance().getOccurrenceNote();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -9420,8 +9589,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         occurrenceNote_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9490,8 +9659,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         occurrenceResourceUri_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9508,8 +9677,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearOccurrenceResourceUri() {
-
         occurrenceResourceUri_ = getDefaultInstance().getOccurrenceResourceUri();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -9531,8 +9700,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         occurrenceResourceUri_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9887,7 +10056,7 @@ public final class Service {
     }
 
     public static final int RESULT_FIELD_NUMBER = 1;
-    private int result_;
+    private int result_ = 0;
     /**
      *
      *
@@ -9922,12 +10091,11 @@ public final class Service {
     public com.google.protos.google.cloud.binaryauthorization.v1.Service
             .ValidateAttestationOccurrenceResponse.Result
         getResult() {
-      @SuppressWarnings("deprecation")
       com.google.protos.google.cloud.binaryauthorization.v1.Service
               .ValidateAttestationOccurrenceResponse.Result
           result =
               com.google.protos.google.cloud.binaryauthorization.v1.Service
-                  .ValidateAttestationOccurrenceResponse.Result.valueOf(result_);
+                  .ValidateAttestationOccurrenceResponse.Result.forNumber(result_);
       return result == null
           ? com.google.protos.google.cloud.binaryauthorization.v1.Service
               .ValidateAttestationOccurrenceResponse.Result.UNRECOGNIZED
@@ -9935,7 +10103,9 @@ public final class Service {
     }
 
     public static final int DENIAL_REASON_FIELD_NUMBER = 2;
-    private volatile java.lang.Object denialReason_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object denialReason_ = "";
     /**
      *
      *
@@ -10231,10 +10401,9 @@ public final class Service {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         result_ = 0;
-
         denialReason_ = "";
-
         return this;
       }
 
@@ -10274,10 +10443,24 @@ public final class Service {
             result =
                 new com.google.protos.google.cloud.binaryauthorization.v1.Service
                     .ValidateAttestationOccurrenceResponse(this);
-        result.result_ = result_;
-        result.denialReason_ = denialReason_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.protos.google.cloud.binaryauthorization.v1.Service
+                  .ValidateAttestationOccurrenceResponse
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.result_ = result_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.denialReason_ = denialReason_;
+        }
       }
 
       @java.lang.Override
@@ -10343,6 +10526,7 @@ public final class Service {
         }
         if (!other.getDenialReason().isEmpty()) {
           denialReason_ = other.denialReason_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -10374,13 +10558,13 @@ public final class Service {
               case 8:
                 {
                   result_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   denialReason_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -10399,6 +10583,8 @@ public final class Service {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int result_ = 0;
       /**
@@ -10433,8 +10619,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder setResultValue(int value) {
-
         result_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10455,12 +10641,11 @@ public final class Service {
       public com.google.protos.google.cloud.binaryauthorization.v1.Service
               .ValidateAttestationOccurrenceResponse.Result
           getResult() {
-        @SuppressWarnings("deprecation")
         com.google.protos.google.cloud.binaryauthorization.v1.Service
                 .ValidateAttestationOccurrenceResponse.Result
             result =
                 com.google.protos.google.cloud.binaryauthorization.v1.Service
-                    .ValidateAttestationOccurrenceResponse.Result.valueOf(result_);
+                    .ValidateAttestationOccurrenceResponse.Result.forNumber(result_);
         return result == null
             ? com.google.protos.google.cloud.binaryauthorization.v1.Service
                 .ValidateAttestationOccurrenceResponse.Result.UNRECOGNIZED
@@ -10487,7 +10672,7 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         result_ = value.getNumber();
         onChanged();
         return this;
@@ -10506,7 +10691,7 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearResult() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         result_ = 0;
         onChanged();
         return this;
@@ -10573,8 +10758,8 @@ public final class Service {
         if (value == null) {
           throw new NullPointerException();
         }
-
         denialReason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -10590,8 +10775,8 @@ public final class Service {
        * @return This builder for chaining.
        */
       public Builder clearDenialReason() {
-
         denialReason_ = getDefaultInstance().getDenialReason();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -10612,8 +10797,8 @@ public final class Service {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         denialReason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

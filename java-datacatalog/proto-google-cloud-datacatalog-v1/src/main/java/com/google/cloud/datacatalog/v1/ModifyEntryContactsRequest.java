@@ -69,7 +69,9 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -172,7 +174,9 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ContactsOrBuilder getContactsOrBuilder() {
-    return getContacts();
+    return contacts_ == null
+        ? com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()
+        : contacts_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (contactsBuilder_ == null) {
-        contacts_ = null;
-      } else {
-        contacts_ = null;
+      contacts_ = null;
+      if (contactsBuilder_ != null) {
+        contactsBuilder_.dispose();
         contactsBuilder_ = null;
       }
       return this;
@@ -423,14 +426,21 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
     public com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest buildPartial() {
       com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest result =
           new com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest(this);
-      result.name_ = name_;
-      if (contactsBuilder_ == null) {
-        result.contacts_ = contacts_;
-      } else {
-        result.contacts_ = contactsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.contacts_ = contactsBuilder_ == null ? contacts_ : contactsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasContacts()) {
@@ -515,13 +526,13 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContactsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -608,8 +621,8 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +640,8 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +664,8 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +690,7 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
      * @return Whether the contacts field is set.
      */
     public boolean hasContacts() {
-      return contactsBuilder_ != null || contacts_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +731,11 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         contacts_ = value;
-        onChanged();
       } else {
         contactsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -739,11 +752,11 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
     public Builder setContacts(com.google.cloud.datacatalog.v1.Contacts.Builder builderForValue) {
       if (contactsBuilder_ == null) {
         contacts_ = builderForValue.build();
-        onChanged();
       } else {
         contactsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,19 +772,18 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
      */
     public Builder mergeContacts(com.google.cloud.datacatalog.v1.Contacts value) {
       if (contactsBuilder_ == null) {
-        if (contacts_ != null) {
-          contacts_ =
-              com.google.cloud.datacatalog.v1.Contacts.newBuilder(contacts_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && contacts_ != null
+            && contacts_ != com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()) {
+          getContactsBuilder().mergeFrom(value);
         } else {
           contacts_ = value;
         }
-        onChanged();
       } else {
         contactsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -786,14 +798,13 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearContacts() {
-      if (contactsBuilder_ == null) {
-        contacts_ = null;
-        onChanged();
-      } else {
-        contacts_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      contacts_ = null;
+      if (contactsBuilder_ != null) {
+        contactsBuilder_.dispose();
         contactsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -808,7 +819,7 @@ public final class ModifyEntryContactsRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.datacatalog.v1.Contacts.Builder getContactsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContactsFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ReportStatusOrBuilder getReportStatusOrBuilder() {
-    return getReportStatus();
+    return reportStatus_ == null
+        ? com.google.cloud.channel.v1.ReportStatus.getDefaultInstance()
+        : reportStatus_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,12 +385,11 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (reportStatusBuilder_ == null) {
-        reportStatus_ = null;
-      } else {
-        reportStatus_ = null;
+      reportStatus_ = null;
+      if (reportStatusBuilder_ != null) {
+        reportStatusBuilder_.dispose();
         reportStatusBuilder_ = null;
       }
       return this;
@@ -416,14 +419,22 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.ReportJob buildPartial() {
       com.google.cloud.channel.v1.ReportJob result =
           new com.google.cloud.channel.v1.ReportJob(this);
-      result.name_ = name_;
-      if (reportStatusBuilder_ == null) {
-        result.reportStatus_ = reportStatus_;
-      } else {
-        result.reportStatus_ = reportStatusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ReportJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reportStatus_ =
+            reportStatusBuilder_ == null ? reportStatus_ : reportStatusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -473,6 +484,7 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.ReportJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReportStatus()) {
@@ -507,13 +519,13 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getReportStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -532,6 +544,8 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -600,8 +614,8 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,8 +633,8 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -643,8 +657,8 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,7 +681,7 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reportStatus field is set.
      */
     public boolean hasReportStatus() {
-      return reportStatusBuilder_ != null || reportStatus_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -704,11 +718,11 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         reportStatus_ = value;
-        onChanged();
       } else {
         reportStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -724,11 +738,11 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.channel.v1.ReportStatus.Builder builderForValue) {
       if (reportStatusBuilder_ == null) {
         reportStatus_ = builderForValue.build();
-        onChanged();
       } else {
         reportStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,19 +756,18 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReportStatus(com.google.cloud.channel.v1.ReportStatus value) {
       if (reportStatusBuilder_ == null) {
-        if (reportStatus_ != null) {
-          reportStatus_ =
-              com.google.cloud.channel.v1.ReportStatus.newBuilder(reportStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && reportStatus_ != null
+            && reportStatus_ != com.google.cloud.channel.v1.ReportStatus.getDefaultInstance()) {
+          getReportStatusBuilder().mergeFrom(value);
         } else {
           reportStatus_ = value;
         }
-        onChanged();
       } else {
         reportStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,14 +780,13 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.ReportStatus report_status = 2;</code>
      */
     public Builder clearReportStatus() {
-      if (reportStatusBuilder_ == null) {
-        reportStatus_ = null;
-        onChanged();
-      } else {
-        reportStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      reportStatus_ = null;
+      if (reportStatusBuilder_ != null) {
+        reportStatusBuilder_.dispose();
         reportStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -787,7 +799,7 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.ReportStatus report_status = 2;</code>
      */
     public com.google.cloud.channel.v1.ReportStatus.Builder getReportStatusBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReportStatusFieldBuilder().getBuilder();
     }

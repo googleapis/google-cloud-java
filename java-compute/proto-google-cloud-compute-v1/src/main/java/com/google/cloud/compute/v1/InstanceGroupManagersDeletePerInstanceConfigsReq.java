@@ -71,6 +71,8 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
   }
 
   public static final int NAMES_FIELD_NUMBER = 104585032;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList names_;
   /**
    *
@@ -345,6 +347,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -378,14 +381,26 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
         buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq result =
           new com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.names_ = names_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

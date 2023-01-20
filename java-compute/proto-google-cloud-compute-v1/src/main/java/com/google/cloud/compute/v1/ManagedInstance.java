@@ -734,7 +734,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int CURRENT_ACTION_FIELD_NUMBER = 178475964;
-  private volatile java.lang.Object currentAction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentAction_ = "";
   /**
    *
    *
@@ -801,7 +803,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -834,7 +836,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -898,6 +902,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INSTANCE_HEALTH_FIELD_NUMBER = 382667078;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> instanceHealth_;
   /**
    *
@@ -980,7 +986,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INSTANCE_STATUS_FIELD_NUMBER = 174577372;
-  private volatile java.lang.Object instanceStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceStatus_ = "";
   /**
    *
    *
@@ -1587,12 +1595,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       currentAction_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (instanceHealthBuilder_ == null) {
         instanceHealth_ = java.util.Collections.emptyList();
       } else {
@@ -1601,31 +1607,26 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       instanceStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      if (lastAttemptBuilder_ == null) {
-        lastAttempt_ = null;
-      } else {
-        lastAttemptBuilder_.clear();
+      lastAttempt_ = null;
+      if (lastAttemptBuilder_ != null) {
+        lastAttemptBuilder_.dispose();
+        lastAttemptBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (preservedStateFromConfigBuilder_ == null) {
-        preservedStateFromConfig_ = null;
-      } else {
-        preservedStateFromConfigBuilder_.clear();
+      preservedStateFromConfig_ = null;
+      if (preservedStateFromConfigBuilder_ != null) {
+        preservedStateFromConfigBuilder_.dispose();
+        preservedStateFromConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (preservedStateFromPolicyBuilder_ == null) {
-        preservedStateFromPolicy_ = null;
-      } else {
-        preservedStateFromPolicyBuilder_.clear();
+      preservedStateFromPolicy_ = null;
+      if (preservedStateFromPolicyBuilder_ != null) {
+        preservedStateFromPolicyBuilder_.dispose();
+        preservedStateFromPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        versionBuilder_.clear();
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1653,20 +1654,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.ManagedInstance buildPartial() {
       com.google.cloud.compute.v1.ManagedInstance result =
           new com.google.cloud.compute.v1.ManagedInstance(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.currentAction_ = currentAction_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.instance_ = instance_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.ManagedInstance result) {
       if (instanceHealthBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           instanceHealth_ = java.util.Collections.unmodifiableList(instanceHealth_);
@@ -1676,45 +1672,51 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         result.instanceHealth_ = instanceHealthBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ManagedInstance result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.currentAction_ = currentAction_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instance_;
+        to_bitField0_ |= 0x00000004;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.instanceStatus_ = instanceStatus_;
         to_bitField0_ |= 0x00000008;
       }
-      result.instanceStatus_ = instanceStatus_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        if (lastAttemptBuilder_ == null) {
-          result.lastAttempt_ = lastAttempt_;
-        } else {
-          result.lastAttempt_ = lastAttemptBuilder_.build();
-        }
+        result.lastAttempt_ =
+            lastAttemptBuilder_ == null ? lastAttempt_ : lastAttemptBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (preservedStateFromConfigBuilder_ == null) {
-          result.preservedStateFromConfig_ = preservedStateFromConfig_;
-        } else {
-          result.preservedStateFromConfig_ = preservedStateFromConfigBuilder_.build();
-        }
+        result.preservedStateFromConfig_ =
+            preservedStateFromConfigBuilder_ == null
+                ? preservedStateFromConfig_
+                : preservedStateFromConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (preservedStateFromPolicyBuilder_ == null) {
-          result.preservedStateFromPolicy_ = preservedStateFromPolicy_;
-        } else {
-          result.preservedStateFromPolicy_ = preservedStateFromPolicyBuilder_.build();
-        }
+        result.preservedStateFromPolicy_ =
+            preservedStateFromPolicyBuilder_ == null
+                ? preservedStateFromPolicy_
+                : preservedStateFromPolicyBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        if (versionBuilder_ == null) {
-          result.version_ = version_;
-        } else {
-          result.version_ = versionBuilder_.build();
-        }
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1763,16 +1765,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.ManagedInstance other) {
       if (other == com.google.cloud.compute.v1.ManagedInstance.getDefaultInstance()) return this;
       if (other.hasCurrentAction()) {
-        bitField0_ |= 0x00000001;
         currentAction_ = other.currentAction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasInstance()) {
-        bitField0_ |= 0x00000004;
         instance_ = other.instance_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (instanceHealthBuilder_ == null) {
@@ -1803,8 +1805,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         }
       }
       if (other.hasInstanceStatus()) {
-        bitField0_ |= 0x00000010;
         instanceStatus_ = other.instanceStatus_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasLastAttempt()) {
@@ -2007,8 +2009,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       currentAction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2025,8 +2027,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCurrentAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       currentAction_ = getDefaultInstance().getCurrentAction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2048,8 +2050,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       currentAction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2098,8 +2100,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000002;
+
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2196,8 +2199,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2213,8 +2216,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2235,8 +2238,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2726,8 +2729,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       instanceStatus_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2744,8 +2747,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstanceStatus() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       instanceStatus_ = getDefaultInstance().getInstanceStatus();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2767,8 +2770,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       instanceStatus_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2831,11 +2834,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         lastAttempt_ = value;
-        onChanged();
       } else {
         lastAttemptBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2852,11 +2855,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.ManagedInstanceLastAttempt.Builder builderForValue) {
       if (lastAttemptBuilder_ == null) {
         lastAttempt_ = builderForValue.build();
-        onChanged();
       } else {
         lastAttemptBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2875,18 +2878,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             && lastAttempt_ != null
             && lastAttempt_
                 != com.google.cloud.compute.v1.ManagedInstanceLastAttempt.getDefaultInstance()) {
-          lastAttempt_ =
-              com.google.cloud.compute.v1.ManagedInstanceLastAttempt.newBuilder(lastAttempt_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLastAttemptBuilder().mergeFrom(value);
         } else {
           lastAttempt_ = value;
         }
-        onChanged();
       } else {
         lastAttemptBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2900,13 +2900,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearLastAttempt() {
-      if (lastAttemptBuilder_ == null) {
-        lastAttempt_ = null;
-        onChanged();
-      } else {
-        lastAttemptBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000020);
+      lastAttempt_ = null;
+      if (lastAttemptBuilder_ != null) {
+        lastAttemptBuilder_.dispose();
+        lastAttemptBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3032,11 +3032,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         preservedStateFromConfig_ = value;
-        onChanged();
       } else {
         preservedStateFromConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3054,11 +3054,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.PreservedState.Builder builderForValue) {
       if (preservedStateFromConfigBuilder_ == null) {
         preservedStateFromConfig_ = builderForValue.build();
-        onChanged();
       } else {
         preservedStateFromConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3078,18 +3078,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             && preservedStateFromConfig_ != null
             && preservedStateFromConfig_
                 != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
-          preservedStateFromConfig_ =
-              com.google.cloud.compute.v1.PreservedState.newBuilder(preservedStateFromConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPreservedStateFromConfigBuilder().mergeFrom(value);
         } else {
           preservedStateFromConfig_ = value;
         }
-        onChanged();
       } else {
         preservedStateFromConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3104,13 +3101,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearPreservedStateFromConfig() {
-      if (preservedStateFromConfigBuilder_ == null) {
-        preservedStateFromConfig_ = null;
-        onChanged();
-      } else {
-        preservedStateFromConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      preservedStateFromConfig_ = null;
+      if (preservedStateFromConfigBuilder_ != null) {
+        preservedStateFromConfigBuilder_.dispose();
+        preservedStateFromConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3239,11 +3236,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         preservedStateFromPolicy_ = value;
-        onChanged();
       } else {
         preservedStateFromPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3261,11 +3258,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.PreservedState.Builder builderForValue) {
       if (preservedStateFromPolicyBuilder_ == null) {
         preservedStateFromPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         preservedStateFromPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3285,18 +3282,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             && preservedStateFromPolicy_ != null
             && preservedStateFromPolicy_
                 != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
-          preservedStateFromPolicy_ =
-              com.google.cloud.compute.v1.PreservedState.newBuilder(preservedStateFromPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPreservedStateFromPolicyBuilder().mergeFrom(value);
         } else {
           preservedStateFromPolicy_ = value;
         }
-        onChanged();
       } else {
         preservedStateFromPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3311,13 +3305,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearPreservedStateFromPolicy() {
-      if (preservedStateFromPolicyBuilder_ == null) {
-        preservedStateFromPolicy_ = null;
-        onChanged();
-      } else {
-        preservedStateFromPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      preservedStateFromPolicy_ = null;
+      if (preservedStateFromPolicyBuilder_ != null) {
+        preservedStateFromPolicyBuilder_.dispose();
+        preservedStateFromPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3440,11 +3434,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3460,11 +3454,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.ManagedInstanceVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3482,18 +3476,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
-          version_ =
-              com.google.cloud.compute.v1.ManagedInstanceVersion.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3506,13 +3497,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        versionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000100);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
+        versionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

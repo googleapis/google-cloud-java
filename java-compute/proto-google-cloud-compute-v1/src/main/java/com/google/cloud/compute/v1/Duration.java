@@ -67,7 +67,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int NANOS_FIELD_NUMBER = 104586303;
-  private int nanos_;
+  private int nanos_ = 0;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECONDS_FIELD_NUMBER = 359484031;
-  private long seconds_;
+  private long seconds_ = 0L;
   /**
    *
    *
@@ -346,10 +346,9 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nanos_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       seconds_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -376,6 +375,14 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Duration buildPartial() {
       com.google.cloud.compute.v1.Duration result = new com.google.cloud.compute.v1.Duration(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Duration result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -386,9 +393,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
         result.seconds_ = seconds_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -543,8 +548,9 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNanos(int value) {
-      bitField0_ |= 0x00000001;
+
       nanos_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,8 +616,9 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeconds(long value) {
-      bitField0_ |= 0x00000002;
+
       seconds_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

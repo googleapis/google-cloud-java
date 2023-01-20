@@ -210,7 +210,9 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int DELETED_FIELD_NUMBER = 476721177;
-  private volatile java.lang.Object deleted_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deleted_ = "";
   /**
    *
    *
@@ -274,7 +276,9 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DEPRECATED_FIELD_NUMBER = 515138995;
-  private volatile java.lang.Object deprecated_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deprecated_ = "";
   /**
    *
    *
@@ -338,7 +342,9 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OBSOLETE_FIELD_NUMBER = 357647769;
-  private volatile java.lang.Object obsolete_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object obsolete_ = "";
   /**
    *
    *
@@ -402,7 +408,9 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REPLACEMENT_FIELD_NUMBER = 430919186;
-  private volatile java.lang.Object replacement_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object replacement_ = "";
   /**
    *
    *
@@ -466,7 +474,9 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -790,16 +800,12 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deleted_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       deprecated_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       obsolete_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       replacement_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -827,31 +833,37 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.DeprecationStatus buildPartial() {
       com.google.cloud.compute.v1.DeprecationStatus result =
           new com.google.cloud.compute.v1.DeprecationStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DeprecationStatus result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deleted_ = deleted_;
         to_bitField0_ |= 0x00000001;
       }
-      result.deleted_ = deleted_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deprecated_ = deprecated_;
         to_bitField0_ |= 0x00000002;
       }
-      result.deprecated_ = deprecated_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.obsolete_ = obsolete_;
         to_bitField0_ |= 0x00000004;
       }
-      result.obsolete_ = obsolete_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.replacement_ = replacement_;
         to_bitField0_ |= 0x00000008;
       }
-      result.replacement_ = replacement_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000010;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -900,28 +912,28 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.compute.v1.DeprecationStatus other) {
       if (other == com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) return this;
       if (other.hasDeleted()) {
-        bitField0_ |= 0x00000001;
         deleted_ = other.deleted_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeprecated()) {
-        bitField0_ |= 0x00000002;
         deprecated_ = other.deprecated_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasObsolete()) {
-        bitField0_ |= 0x00000004;
         obsolete_ = other.obsolete_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasReplacement()) {
-        bitField0_ |= 0x00000008;
         replacement_ = other.replacement_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000010;
         state_ = other.state_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1074,8 +1086,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       deleted_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1091,8 +1103,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDeleted() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       deleted_ = getDefaultInstance().getDeleted();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1113,8 +1125,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       deleted_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1194,8 +1206,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       deprecated_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1211,8 +1223,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDeprecated() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       deprecated_ = getDefaultInstance().getDeprecated();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1233,8 +1245,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       deprecated_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1314,8 +1326,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       obsolete_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1331,8 +1343,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearObsolete() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       obsolete_ = getDefaultInstance().getObsolete();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1353,8 +1365,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       obsolete_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1434,8 +1446,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       replacement_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1451,8 +1463,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReplacement() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       replacement_ = getDefaultInstance().getReplacement();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1473,8 +1485,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       replacement_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1558,8 +1570,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1576,8 +1588,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1599,8 +1611,8 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

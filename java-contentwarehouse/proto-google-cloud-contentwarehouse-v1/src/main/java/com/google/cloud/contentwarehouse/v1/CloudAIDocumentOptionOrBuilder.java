@@ -78,7 +78,6 @@ public interface CloudAIDocumentOptionOrBuilder
    *
    * <code>map&lt;string, string&gt; customized_entities_properties_conversions = 2;</code>
    */
-
   /* nullable */
   java.lang.String getCustomizedEntitiesPropertiesConversionsOrDefault(
       java.lang.String key,

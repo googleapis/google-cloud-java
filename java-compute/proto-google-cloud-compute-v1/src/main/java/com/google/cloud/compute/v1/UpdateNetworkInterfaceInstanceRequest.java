@@ -75,7 +75,9 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class UpdateNetworkInterfaceInstanceRequest
   }
 
   public static final int NETWORK_INTERFACE_FIELD_NUMBER = 365387880;
-  private volatile java.lang.Object networkInterface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkInterface_ = "";
   /**
    *
    *
@@ -224,11 +228,15 @@ public final class UpdateNetworkInterfaceInstanceRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkInterfaceOrBuilder
       getNetworkInterfaceResourceOrBuilder() {
-    return getNetworkInterfaceResource();
+    return networkInterfaceResource_ == null
+        ? com.google.cloud.compute.v1.NetworkInterface.getDefaultInstance()
+        : networkInterfaceResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -281,7 +289,9 @@ public final class UpdateNetworkInterfaceInstanceRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -345,7 +355,9 @@ public final class UpdateNetworkInterfaceInstanceRequest
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -655,22 +667,17 @@ public final class UpdateNetworkInterfaceInstanceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-
       networkInterface_ = "";
-
-      if (networkInterfaceResourceBuilder_ == null) {
-        networkInterfaceResource_ = null;
-      } else {
-        networkInterfaceResource_ = null;
+      networkInterfaceResource_ = null;
+      if (networkInterfaceResourceBuilder_ != null) {
+        networkInterfaceResourceBuilder_.dispose();
         networkInterfaceResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
-
       return this;
     }
 
@@ -699,24 +706,40 @@ public final class UpdateNetworkInterfaceInstanceRequest
     public com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest result =
           new com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instance_ = instance_;
-      result.networkInterface_ = networkInterface_;
-      if (networkInterfaceResourceBuilder_ == null) {
-        result.networkInterfaceResource_ = networkInterfaceResource_;
-      } else {
-        result.networkInterfaceResource_ = networkInterfaceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.networkInterface_ = networkInterface_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.networkInterfaceResource_ =
+            networkInterfaceResourceBuilder_ == null
+                ? networkInterfaceResource_
+                : networkInterfaceResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -769,10 +792,12 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return this;
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNetworkInterface().isEmpty()) {
         networkInterface_ = other.networkInterface_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNetworkInterfaceResource()) {
@@ -780,15 +805,17 @@ public final class UpdateNetworkInterfaceInstanceRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -820,38 +847,38 @@ public final class UpdateNetworkInterfaceInstanceRequest
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1820481738
             case -1688448982:
               {
                 input.readMessage(
                     getNetworkInterfaceResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1688448982
             case -1371864254:
               {
                 networkInterface_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1371864254
             default:
@@ -934,8 +961,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,8 +978,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -973,8 +1000,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1040,8 +1067,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1057,8 +1084,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearNetworkInterface() {
-
       networkInterface_ = getDefaultInstance().getNetworkInterface();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1079,8 +1106,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkInterface_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1105,7 +1132,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return Whether the networkInterfaceResource field is set.
      */
     public boolean hasNetworkInterfaceResource() {
-      return networkInterfaceResourceBuilder_ != null || networkInterfaceResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1146,11 +1173,11 @@ public final class UpdateNetworkInterfaceInstanceRequest
           throw new NullPointerException();
         }
         networkInterfaceResource_ = value;
-        onChanged();
       } else {
         networkInterfaceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1168,11 +1195,11 @@ public final class UpdateNetworkInterfaceInstanceRequest
         com.google.cloud.compute.v1.NetworkInterface.Builder builderForValue) {
       if (networkInterfaceResourceBuilder_ == null) {
         networkInterfaceResource_ = builderForValue.build();
-        onChanged();
       } else {
         networkInterfaceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1189,19 +1216,19 @@ public final class UpdateNetworkInterfaceInstanceRequest
     public Builder mergeNetworkInterfaceResource(
         com.google.cloud.compute.v1.NetworkInterface value) {
       if (networkInterfaceResourceBuilder_ == null) {
-        if (networkInterfaceResource_ != null) {
-          networkInterfaceResource_ =
-              com.google.cloud.compute.v1.NetworkInterface.newBuilder(networkInterfaceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && networkInterfaceResource_ != null
+            && networkInterfaceResource_
+                != com.google.cloud.compute.v1.NetworkInterface.getDefaultInstance()) {
+          getNetworkInterfaceResourceBuilder().mergeFrom(value);
         } else {
           networkInterfaceResource_ = value;
         }
-        onChanged();
       } else {
         networkInterfaceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1216,14 +1243,13 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * </code>
      */
     public Builder clearNetworkInterfaceResource() {
-      if (networkInterfaceResourceBuilder_ == null) {
-        networkInterfaceResource_ = null;
-        onChanged();
-      } else {
-        networkInterfaceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      networkInterfaceResource_ = null;
+      if (networkInterfaceResourceBuilder_ != null) {
+        networkInterfaceResourceBuilder_.dispose();
         networkInterfaceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1239,7 +1265,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      */
     public com.google.cloud.compute.v1.NetworkInterface.Builder
         getNetworkInterfaceResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNetworkInterfaceResourceFieldBuilder().getBuilder();
     }
@@ -1359,8 +1385,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1378,8 +1404,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1402,8 +1428,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1421,7 +1447,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1483,8 +1509,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1500,8 +1526,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1522,8 +1548,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1595,8 +1621,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1614,8 +1640,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1638,8 +1664,8 @@ public final class UpdateNetworkInterfaceInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

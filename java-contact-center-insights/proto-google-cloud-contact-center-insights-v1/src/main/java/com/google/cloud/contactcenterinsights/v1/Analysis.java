@@ -68,7 +68,9 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -166,7 +168,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
-    return getRequestTime();
+    return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
@@ -218,7 +220,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int ANALYSIS_RESULT_FIELD_NUMBER = 7;
@@ -276,7 +278,9 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnalysisResultOrBuilder
       getAnalysisResultOrBuilder() {
-    return getAnalysisResult();
+    return analysisResult_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnalysisResult.getDefaultInstance()
+        : analysisResult_;
   }
 
   public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 8;
@@ -328,7 +332,9 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
       getAnnotatorSelectorOrBuilder() {
-    return getAnnotatorSelector();
+    return annotatorSelector_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+        : annotatorSelector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -584,30 +590,26 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-      } else {
-        requestTime_ = null;
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (analysisResultBuilder_ == null) {
-        analysisResult_ = null;
-      } else {
-        analysisResult_ = null;
+      analysisResult_ = null;
+      if (analysisResultBuilder_ != null) {
+        analysisResultBuilder_.dispose();
         analysisResultBuilder_ = null;
       }
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-      } else {
-        annotatorSelector_ = null;
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
       return this;
@@ -637,29 +639,35 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Analysis buildPartial() {
       com.google.cloud.contactcenterinsights.v1.Analysis result =
           new com.google.cloud.contactcenterinsights.v1.Analysis(this);
-      result.name_ = name_;
-      if (requestTimeBuilder_ == null) {
-        result.requestTime_ = requestTime_;
-      } else {
-        result.requestTime_ = requestTimeBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (analysisResultBuilder_ == null) {
-        result.analysisResult_ = analysisResult_;
-      } else {
-        result.analysisResult_ = analysisResultBuilder_.build();
-      }
-      if (annotatorSelectorBuilder_ == null) {
-        result.annotatorSelector_ = annotatorSelector_;
-      } else {
-        result.annotatorSelector_ = annotatorSelectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.Analysis result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestTime_ =
+            requestTimeBuilder_ == null ? requestTime_ : requestTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.analysisResult_ =
+            analysisResultBuilder_ == null ? analysisResult_ : analysisResultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotatorSelector_ =
+            annotatorSelectorBuilder_ == null
+                ? annotatorSelector_
+                : annotatorSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -710,6 +718,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestTime()) {
@@ -753,32 +762,32 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRequestTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 58:
               {
                 input.readMessage(getAnalysisResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             default:
@@ -797,6 +806,8 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -865,8 +876,8 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,8 +895,8 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -908,8 +919,8 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -934,7 +945,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requestTime field is set.
      */
     public boolean hasRequestTime() {
-      return requestTimeBuilder_ != null || requestTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -975,11 +986,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         requestTime_ = value;
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -996,11 +1007,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (requestTimeBuilder_ == null) {
         requestTime_ = builderForValue.build();
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1016,19 +1027,18 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRequestTime(com.google.protobuf.Timestamp value) {
       if (requestTimeBuilder_ == null) {
-        if (requestTime_ != null) {
-          requestTime_ =
-              com.google.protobuf.Timestamp.newBuilder(requestTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && requestTime_ != null
+            && requestTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRequestTimeBuilder().mergeFrom(value);
         } else {
           requestTime_ = value;
         }
-        onChanged();
       } else {
         requestTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1043,14 +1053,13 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRequestTime() {
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-        onChanged();
-      } else {
-        requestTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1065,7 +1074,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRequestTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
@@ -1138,7 +1147,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1181,11 +1190,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1203,11 +1212,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1224,17 +1233,18 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1250,14 +1260,13 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1273,7 +1282,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1348,7 +1357,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the analysisResult field is set.
      */
     public boolean hasAnalysisResult() {
-      return analysisResultBuilder_ != null || analysisResult_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1392,11 +1401,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         analysisResult_ = value;
-        onChanged();
       } else {
         analysisResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1415,11 +1424,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.AnalysisResult.Builder builderForValue) {
       if (analysisResultBuilder_ == null) {
         analysisResult_ = builderForValue.build();
-        onChanged();
       } else {
         analysisResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1437,19 +1446,19 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnalysisResult(
         com.google.cloud.contactcenterinsights.v1.AnalysisResult value) {
       if (analysisResultBuilder_ == null) {
-        if (analysisResult_ != null) {
-          analysisResult_ =
-              com.google.cloud.contactcenterinsights.v1.AnalysisResult.newBuilder(analysisResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && analysisResult_ != null
+            && analysisResult_
+                != com.google.cloud.contactcenterinsights.v1.AnalysisResult.getDefaultInstance()) {
+          getAnalysisResultBuilder().mergeFrom(value);
         } else {
           analysisResult_ = value;
         }
-        onChanged();
       } else {
         analysisResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1465,14 +1474,13 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnalysisResult() {
-      if (analysisResultBuilder_ == null) {
-        analysisResult_ = null;
-        onChanged();
-      } else {
-        analysisResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      analysisResult_ = null;
+      if (analysisResultBuilder_ != null) {
+        analysisResultBuilder_.dispose();
         analysisResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1489,7 +1497,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.AnalysisResult.Builder
         getAnalysisResultBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAnalysisResultFieldBuilder().getBuilder();
     }
@@ -1563,7 +1571,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotatorSelector field is set.
      */
     public boolean hasAnnotatorSelector() {
-      return annotatorSelectorBuilder_ != null || annotatorSelector_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1603,11 +1611,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         annotatorSelector_ = value;
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1624,11 +1632,11 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder builderForValue) {
       if (annotatorSelectorBuilder_ == null) {
         annotatorSelector_ = builderForValue.build();
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1644,20 +1652,20 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnnotatorSelector(
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
       if (annotatorSelectorBuilder_ == null) {
-        if (annotatorSelector_ != null) {
-          annotatorSelector_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.newBuilder(
-                      annotatorSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && annotatorSelector_ != null
+            && annotatorSelector_
+                != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                    .getDefaultInstance()) {
+          getAnnotatorSelectorBuilder().mergeFrom(value);
         } else {
           annotatorSelector_ = value;
         }
-        onChanged();
       } else {
         annotatorSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1671,14 +1679,13 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 8;</code>
      */
     public Builder clearAnnotatorSelector() {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-        onChanged();
-      } else {
-        annotatorSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1693,7 +1700,7 @@ public final class Analysis extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
         getAnnotatorSelectorBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAnnotatorSelectorFieldBuilder().getBuilder();
     }

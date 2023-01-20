@@ -270,7 +270,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -303,9 +303,8 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildApproval.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildApproval.State result =
-        com.google.cloudbuild.v1.BuildApproval.State.valueOf(state_);
+        com.google.cloudbuild.v1.BuildApproval.State.forNumber(state_);
     return result == null ? com.google.cloudbuild.v1.BuildApproval.State.UNRECOGNIZED : result;
   }
 
@@ -358,7 +357,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.ApprovalConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance() : config_;
   }
 
   public static final int RESULT_FIELD_NUMBER = 3;
@@ -410,7 +409,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.ApprovalResultOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null ? com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance() : result_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -638,18 +637,16 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       return this;
@@ -679,19 +676,24 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.BuildApproval buildPartial() {
       com.google.cloudbuild.v1.BuildApproval result =
           new com.google.cloudbuild.v1.BuildApproval(this);
-      result.state_ = state_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
-      }
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.BuildApproval result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -777,19 +779,19 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -808,6 +810,8 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -842,8 +846,8 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,9 +866,8 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.BuildApproval.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildApproval.State result =
-          com.google.cloudbuild.v1.BuildApproval.State.valueOf(state_);
+          com.google.cloudbuild.v1.BuildApproval.State.forNumber(state_);
       return result == null ? com.google.cloudbuild.v1.BuildApproval.State.UNRECOGNIZED : result;
     }
     /**
@@ -885,7 +888,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -904,7 +907,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -930,7 +933,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -971,11 +974,11 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -992,11 +995,11 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfig(com.google.cloudbuild.v1.ApprovalConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1012,19 +1015,18 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfig(com.google.cloudbuild.v1.ApprovalConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloudbuild.v1.ApprovalConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && config_ != null
+            && config_ != com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1039,14 +1041,13 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1061,7 +1062,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.ApprovalConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -1133,7 +1134,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1174,11 +1175,11 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1195,11 +1196,11 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public Builder setResult(com.google.cloudbuild.v1.ApprovalResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1215,19 +1216,18 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResult(com.google.cloudbuild.v1.ApprovalResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-              com.google.cloudbuild.v1.ApprovalResult.newBuilder(result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && result_ != null
+            && result_ != com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1242,14 +1242,13 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1264,7 +1263,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.ApprovalResult.Builder getResultBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }

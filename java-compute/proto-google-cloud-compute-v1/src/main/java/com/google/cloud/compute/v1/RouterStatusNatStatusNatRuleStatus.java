@@ -71,6 +71,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
 
   private int bitField0_;
   public static final int ACTIVE_NAT_IPS_FIELD_NUMBER = 208517077;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList activeNatIps_;
   /**
    *
@@ -132,6 +134,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   }
 
   public static final int DRAIN_NAT_IPS_FIELD_NUMBER = 504078535;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList drainNatIps_;
   /**
    *
@@ -193,7 +197,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   }
 
   public static final int MIN_EXTRA_IPS_NEEDED_FIELD_NUMBER = 353002756;
-  private int minExtraIpsNeeded_;
+  private int minExtraIpsNeeded_ = 0;
   /**
    *
    *
@@ -226,7 +230,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   }
 
   public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 512367468;
-  private int numVmEndpointsWithNatMappings_;
+  private int numVmEndpointsWithNatMappings_ = 0;
   /**
    *
    *
@@ -259,7 +263,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   }
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
-  private int ruleNumber_;
+  private int ruleNumber_ = 0;
   /**
    *
    *
@@ -559,16 +563,14 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       activeNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       minExtraIpsNeeded_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       numVmEndpointsWithNatMappings_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       ruleNumber_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -597,8 +599,16 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus buildPartial() {
       com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result =
           new com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         activeNatIps_ = activeNatIps_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -609,6 +619,12 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.drainNatIps_ = drainNatIps_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.minExtraIpsNeeded_ = minExtraIpsNeeded_;
         to_bitField0_ |= 0x00000001;
@@ -621,9 +637,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
         result.ruleNumber_ = ruleNumber_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1159,8 +1173,9 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setMinExtraIpsNeeded(int value) {
-      bitField0_ |= 0x00000004;
+
       minExtraIpsNeeded_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,8 +1241,9 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setNumVmEndpointsWithNatMappings(int value) {
-      bitField0_ |= 0x00000008;
+
       numVmEndpointsWithNatMappings_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1293,8 +1309,9 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setRuleNumber(int value) {
-      bitField0_ |= 0x00000010;
+
       ruleNumber_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

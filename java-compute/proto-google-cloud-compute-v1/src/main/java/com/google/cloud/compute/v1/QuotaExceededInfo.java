@@ -93,6 +93,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> dimensions_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDimensions() {
@@ -150,8 +151,10 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
   @java.lang.Override
-  public java.lang.String getDimensionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDimensionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -180,7 +183,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LIMIT_FIELD_NUMBER = 102976443;
-  private double limit_;
+  private double limit_ = 0D;
   /**
    *
    *
@@ -213,7 +216,9 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LIMIT_NAME_FIELD_NUMBER = 398197903;
-  private volatile java.lang.Object limitName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object limitName_ = "";
   /**
    *
    *
@@ -277,7 +282,9 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int METRIC_NAME_FIELD_NUMBER = 409881530;
-  private volatile java.lang.Object metricName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricName_ = "";
   /**
    *
    *
@@ -611,13 +618,11 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDimensions().clear();
       limit_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
       limitName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       metricName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -645,25 +650,33 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.QuotaExceededInfo buildPartial() {
       com.google.cloud.compute.v1.QuotaExceededInfo result =
           new com.google.cloud.compute.v1.QuotaExceededInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.QuotaExceededInfo result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dimensions_ = internalGetDimensions();
+        result.dimensions_.makeImmutable();
+      }
       int to_bitField0_ = 0;
-      result.dimensions_ = internalGetDimensions();
-      result.dimensions_.makeImmutable();
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.limit_ = limit_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.limitName_ = limitName_;
         to_bitField0_ |= 0x00000002;
       }
-      result.limitName_ = limitName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metricName_ = metricName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.metricName_ = metricName_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -712,17 +725,18 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.compute.v1.QuotaExceededInfo other) {
       if (other == com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()) return this;
       internalGetMutableDimensions().mergeFrom(other.internalGetDimensions());
+      bitField0_ |= 0x00000001;
       if (other.hasLimit()) {
         setLimit(other.getLimit());
       }
       if (other.hasLimitName()) {
-        bitField0_ |= 0x00000004;
         limitName_ = other.limitName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMetricName()) {
-        bitField0_ |= 0x00000008;
         metricName_ = other.metricName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -778,6 +792,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
                 internalGetMutableDimensions()
                     .getMutableMap()
                     .put(dimensions__.getKey(), dimensions__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case -980287894
             default:
@@ -812,8 +827,6 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDimensions() {
-      onChanged();
-      ;
       if (dimensions_ == null) {
         dimensions_ =
             com.google.protobuf.MapField.newMapField(DimensionsDefaultEntryHolder.defaultEntry);
@@ -821,6 +834,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       if (!dimensions_.isMutable()) {
         dimensions_ = dimensions_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return dimensions_;
     }
 
@@ -872,8 +887,10 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
      */
     @java.lang.Override
-    public java.lang.String getDimensionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDimensionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -902,6 +919,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearDimensions() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
@@ -924,6 +942,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDimensions().getMutableMap();
     }
     /**
@@ -942,8 +961,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDimensions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -957,6 +976,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllDimensions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1004,8 +1024,9 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setLimit(double value) {
-      bitField0_ |= 0x00000002;
+
       limit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1102,8 +1123,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       limitName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,8 +1140,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLimitName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       limitName_ = getDefaultInstance().getLimitName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1141,8 +1162,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       limitName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1222,8 +1243,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       metricName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1239,8 +1260,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMetricName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       metricName_ = getDefaultInstance().getMetricName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1261,8 +1282,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       metricName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

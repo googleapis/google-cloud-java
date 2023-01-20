@@ -73,7 +73,9 @@ public final class SetCertificateMapTargetSslProxyRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SetCertificateMapTargetSslProxyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -244,11 +248,15 @@ public final class SetCertificateMapTargetSslProxyRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequestOrBuilder
       getTargetSslProxiesSetCertificateMapRequestResourceOrBuilder() {
-    return getTargetSslProxiesSetCertificateMapRequestResource();
+    return targetSslProxiesSetCertificateMapRequestResource_ == null
+        ? com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequest.getDefaultInstance()
+        : targetSslProxiesSetCertificateMapRequestResource_;
   }
 
   public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
-  private volatile java.lang.Object targetSslProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetSslProxy_ = "";
   /**
    *
    *
@@ -537,18 +545,15 @@ public final class SetCertificateMapTargetSslProxyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null) {
-        targetSslProxiesSetCertificateMapRequestResource_ = null;
-      } else {
-        targetSslProxiesSetCertificateMapRequestResource_ = null;
+      targetSslProxiesSetCertificateMapRequestResource_ = null;
+      if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ != null) {
+        targetSslProxiesSetCertificateMapRequestResourceBuilder_.dispose();
         targetSslProxiesSetCertificateMapRequestResourceBuilder_ = null;
       }
       targetSslProxy_ = "";
-
       return this;
     }
 
@@ -578,24 +583,34 @@ public final class SetCertificateMapTargetSslProxyRequest
     public com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest result =
           new com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null) {
-        result.targetSslProxiesSetCertificateMapRequestResource_ =
-            targetSslProxiesSetCertificateMapRequestResource_;
-      } else {
-        result.targetSslProxiesSetCertificateMapRequestResource_ =
-            targetSslProxiesSetCertificateMapRequestResourceBuilder_.build();
-      }
-      result.targetSslProxy_ = targetSslProxy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetSslProxiesSetCertificateMapRequestResource_ =
+            targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null
+                ? targetSslProxiesSetCertificateMapRequestResource_
+                : targetSslProxiesSetCertificateMapRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetSslProxy_ = targetSslProxy_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -649,11 +664,12 @@ public final class SetCertificateMapTargetSslProxyRequest
               .getDefaultInstance()) return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTargetSslProxiesSetCertificateMapRequestResource()) {
@@ -662,6 +678,7 @@ public final class SetCertificateMapTargetSslProxyRequest
       }
       if (!other.getTargetSslProxy().isEmpty()) {
         targetSslProxy_ = other.targetSslProxy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -693,19 +710,19 @@ public final class SetCertificateMapTargetSslProxyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1584600470:
               {
                 targetSslProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1584600470
             case -1543087662:
@@ -713,7 +730,7 @@ public final class SetCertificateMapTargetSslProxyRequest
                 input.readMessage(
                     getTargetSslProxiesSetCertificateMapRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1543087662
             default:
@@ -802,8 +819,8 @@ public final class SetCertificateMapTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +838,8 @@ public final class SetCertificateMapTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -845,8 +862,8 @@ public final class SetCertificateMapTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,7 +881,7 @@ public final class SetCertificateMapTargetSslProxyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -926,8 +943,8 @@ public final class SetCertificateMapTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -943,8 +960,8 @@ public final class SetCertificateMapTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,8 +982,8 @@ public final class SetCertificateMapTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +1009,7 @@ public final class SetCertificateMapTargetSslProxyRequest
      * @return Whether the targetSslProxiesSetCertificateMapRequestResource field is set.
      */
     public boolean hasTargetSslProxiesSetCertificateMapRequestResource() {
-      return targetSslProxiesSetCertificateMapRequestResourceBuilder_ != null
-          || targetSslProxiesSetCertificateMapRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1037,11 +1053,11 @@ public final class SetCertificateMapTargetSslProxyRequest
           throw new NullPointerException();
         }
         targetSslProxiesSetCertificateMapRequestResource_ = value;
-        onChanged();
       } else {
         targetSslProxiesSetCertificateMapRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1060,12 +1076,12 @@ public final class SetCertificateMapTargetSslProxyRequest
             builderForValue) {
       if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null) {
         targetSslProxiesSetCertificateMapRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetSslProxiesSetCertificateMapRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1082,20 +1098,20 @@ public final class SetCertificateMapTargetSslProxyRequest
     public Builder mergeTargetSslProxiesSetCertificateMapRequestResource(
         com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequest value) {
       if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null) {
-        if (targetSslProxiesSetCertificateMapRequestResource_ != null) {
-          targetSslProxiesSetCertificateMapRequestResource_ =
-              com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequest.newBuilder(
-                      targetSslProxiesSetCertificateMapRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetSslProxiesSetCertificateMapRequestResource_ != null
+            && targetSslProxiesSetCertificateMapRequestResource_
+                != com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequest
+                    .getDefaultInstance()) {
+          getTargetSslProxiesSetCertificateMapRequestResourceBuilder().mergeFrom(value);
         } else {
           targetSslProxiesSetCertificateMapRequestResource_ = value;
         }
-        onChanged();
       } else {
         targetSslProxiesSetCertificateMapRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1110,14 +1126,13 @@ public final class SetCertificateMapTargetSslProxyRequest
      * </code>
      */
     public Builder clearTargetSslProxiesSetCertificateMapRequestResource() {
-      if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ == null) {
-        targetSslProxiesSetCertificateMapRequestResource_ = null;
-        onChanged();
-      } else {
-        targetSslProxiesSetCertificateMapRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      targetSslProxiesSetCertificateMapRequestResource_ = null;
+      if (targetSslProxiesSetCertificateMapRequestResourceBuilder_ != null) {
+        targetSslProxiesSetCertificateMapRequestResourceBuilder_.dispose();
         targetSslProxiesSetCertificateMapRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1133,7 +1148,7 @@ public final class SetCertificateMapTargetSslProxyRequest
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetCertificateMapRequest.Builder
         getTargetSslProxiesSetCertificateMapRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetSslProxiesSetCertificateMapRequestResourceFieldBuilder().getBuilder();
     }
@@ -1250,8 +1265,8 @@ public final class SetCertificateMapTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,8 +1282,8 @@ public final class SetCertificateMapTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearTargetSslProxy() {
-
       targetSslProxy_ = getDefaultInstance().getTargetSslProxy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1289,8 +1304,8 @@ public final class SetCertificateMapTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetSslProxy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -175,7 +175,9 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     }
 
     public static final int PARAMETER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parameter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parameter_ = "";
     /**
      *
      *
@@ -224,7 +226,9 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -490,10 +494,9 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parameter_ = "";
-
         description_ = "";
-
         return this;
       }
 
@@ -525,10 +528,22 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           buildPartial() {
         com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation result =
             new com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation(this);
-        result.parameter_ = parameter_;
-        result.description_ = description_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parameter_ = parameter_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
       }
 
       @java.lang.Override
@@ -585,10 +600,12 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
                 .getDefaultInstance()) return this;
         if (!other.getParameter().isEmpty()) {
           parameter_ = other.parameter_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -620,13 +637,13 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
               case 10:
                 {
                   parameter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -645,6 +662,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object parameter_ = "";
       /**
@@ -707,8 +726,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         parameter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -724,8 +743,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearParameter() {
-
         parameter_ = getDefaultInstance().getParameter();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -746,8 +765,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parameter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -813,8 +832,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -830,8 +849,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -852,8 +871,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -927,6 +946,8 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
   }
 
   public static final int PARAMETER_VIOLATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.InvalidTemplateParameters.ParameterViolation>
       parameterViolations_;
   /**
@@ -1213,6 +1234,7 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (parameterViolationsBuilder_ == null) {
         parameterViolations_ = java.util.Collections.emptyList();
       } else {
@@ -1247,7 +1269,16 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
     public com.google.dataflow.v1beta3.InvalidTemplateParameters buildPartial() {
       com.google.dataflow.v1beta3.InvalidTemplateParameters result =
           new com.google.dataflow.v1beta3.InvalidTemplateParameters(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.InvalidTemplateParameters result) {
       if (parameterViolationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           parameterViolations_ = java.util.Collections.unmodifiableList(parameterViolations_);
@@ -1257,8 +1288,10 @@ public final class InvalidTemplateParameters extends com.google.protobuf.Generat
       } else {
         result.parameterViolations_ = parameterViolationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.InvalidTemplateParameters result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

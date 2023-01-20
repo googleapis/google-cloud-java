@@ -70,7 +70,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
   }
 
   public static final int EXISTING_FIELD_NUMBER = 1;
-  private boolean existing_;
+  private boolean existing_ = false;
   /**
    *
    *
@@ -88,7 +88,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
   }
 
   public static final int OWNED_FIELD_NUMBER = 2;
-  private boolean owned_;
+  private boolean owned_ = false;
   /**
    *
    *
@@ -107,7 +107,9 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
   }
 
   public static final int CUSTOMER_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object customerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerName_ = "";
   /**
    *
    *
@@ -162,7 +164,9 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
   }
 
   public static final int CUSTOMER_CLOUD_IDENTITY_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object customerCloudIdentityId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerCloudIdentityId_ = "";
   /**
    *
    *
@@ -436,14 +440,11 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       existing_ = false;
-
       owned_ = false;
-
       customerName_ = "";
-
       customerCloudIdentityId_ = "";
-
       return this;
     }
 
@@ -471,12 +472,27 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public com.google.cloud.channel.v1.CloudIdentityCustomerAccount buildPartial() {
       com.google.cloud.channel.v1.CloudIdentityCustomerAccount result =
           new com.google.cloud.channel.v1.CloudIdentityCustomerAccount(this);
-      result.existing_ = existing_;
-      result.owned_ = owned_;
-      result.customerName_ = customerName_;
-      result.customerCloudIdentityId_ = customerCloudIdentityId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.CloudIdentityCustomerAccount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.existing_ = existing_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.owned_ = owned_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customerName_ = customerName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.customerCloudIdentityId_ = customerCloudIdentityId_;
+      }
     }
 
     @java.lang.Override
@@ -533,10 +549,12 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       }
       if (!other.getCustomerName().isEmpty()) {
         customerName_ = other.customerName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCustomerCloudIdentityId().isEmpty()) {
         customerCloudIdentityId_ = other.customerCloudIdentityId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -568,25 +586,25 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
             case 8:
               {
                 existing_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 owned_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 customerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 customerCloudIdentityId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -605,6 +623,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean existing_;
     /**
@@ -637,6 +657,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public Builder setExisting(boolean value) {
 
       existing_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,7 +673,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearExisting() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       existing_ = false;
       onChanged();
       return this;
@@ -691,6 +712,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
     public Builder setOwned(boolean value) {
 
       owned_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,7 +729,7 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearOwned() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       owned_ = false;
       onChanged();
       return this;
@@ -783,8 +805,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       customerName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -803,8 +825,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearCustomerName() {
-
       customerName_ = getDefaultInstance().getCustomerName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -828,8 +850,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customerName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -895,8 +917,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       customerCloudIdentityId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -912,8 +934,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearCustomerCloudIdentityId() {
-
       customerCloudIdentityId_ = getDefaultInstance().getCustomerCloudIdentityId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -934,8 +956,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customerCloudIdentityId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

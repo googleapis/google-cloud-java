@@ -306,12 +306,12 @@ public final class SecurityPoliciesWafConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (wafRulesBuilder_ == null) {
-        wafRules_ = null;
-      } else {
-        wafRulesBuilder_.clear();
+      bitField0_ = 0;
+      wafRules_ = null;
+      if (wafRulesBuilder_ != null) {
+        wafRulesBuilder_.dispose();
+        wafRulesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -339,19 +339,21 @@ public final class SecurityPoliciesWafConfig extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.SecurityPoliciesWafConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPoliciesWafConfig result =
           new com.google.cloud.compute.v1.SecurityPoliciesWafConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SecurityPoliciesWafConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (wafRulesBuilder_ == null) {
-          result.wafRules_ = wafRules_;
-        } else {
-          result.wafRules_ = wafRulesBuilder_.build();
-        }
+        result.wafRules_ = wafRulesBuilder_ == null ? wafRules_ : wafRulesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -489,11 +491,11 @@ public final class SecurityPoliciesWafConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         wafRules_ = value;
-        onChanged();
       } else {
         wafRulesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
@@ -501,11 +503,11 @@ public final class SecurityPoliciesWafConfig extends com.google.protobuf.Generat
         com.google.cloud.compute.v1.PreconfiguredWafSet.Builder builderForValue) {
       if (wafRulesBuilder_ == null) {
         wafRules_ = builderForValue.build();
-        onChanged();
       } else {
         wafRulesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
@@ -514,29 +516,26 @@ public final class SecurityPoliciesWafConfig extends com.google.protobuf.Generat
         if (((bitField0_ & 0x00000001) != 0)
             && wafRules_ != null
             && wafRules_ != com.google.cloud.compute.v1.PreconfiguredWafSet.getDefaultInstance()) {
-          wafRules_ =
-              com.google.cloud.compute.v1.PreconfiguredWafSet.newBuilder(wafRules_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWafRulesBuilder().mergeFrom(value);
         } else {
           wafRules_ = value;
         }
-        onChanged();
       } else {
         wafRulesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
     public Builder clearWafRules() {
-      if (wafRulesBuilder_ == null) {
-        wafRules_ = null;
-        onChanged();
-      } else {
-        wafRulesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      wafRules_ = null;
+      if (wafRulesBuilder_ != null) {
+        wafRulesBuilder_.dispose();
+        wafRulesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */

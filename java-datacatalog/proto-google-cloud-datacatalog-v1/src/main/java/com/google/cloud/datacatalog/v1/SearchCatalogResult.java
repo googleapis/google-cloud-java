@@ -122,7 +122,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SEARCH_RESULT_TYPE_FIELD_NUMBER = 1;
-  private int searchResultType_;
+  private int searchResultType_ = 0;
   /**
    *
    *
@@ -155,14 +155,15 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.SearchResultType getSearchResultType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.SearchResultType result =
-        com.google.cloud.datacatalog.v1.SearchResultType.valueOf(searchResultType_);
+        com.google.cloud.datacatalog.v1.SearchResultType.forNumber(searchResultType_);
     return result == null ? com.google.cloud.datacatalog.v1.SearchResultType.UNRECOGNIZED : result;
   }
 
   public static final int SEARCH_RESULT_SUBTYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object searchResultSubtype_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object searchResultSubtype_ = "";
   /**
    *
    *
@@ -217,7 +218,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RELATIVE_RESOURCE_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object relativeResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relativeResourceName_ = "";
   /**
    *
    *
@@ -272,7 +275,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LINKED_RESOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object linkedResource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkedResource_ = "";
   /**
    *
    *
@@ -371,7 +376,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
-    return getModifyTime();
+    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
   }
 
   public static final int INTEGRATED_SYSTEM_FIELD_NUMBER = 8;
@@ -428,9 +433,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    */
   public com.google.cloud.datacatalog.v1.IntegratedSystem getIntegratedSystem() {
     if (systemCase_ == 8) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.IntegratedSystem result =
-          com.google.cloud.datacatalog.v1.IntegratedSystem.valueOf((java.lang.Integer) system_);
+          com.google.cloud.datacatalog.v1.IntegratedSystem.forNumber((java.lang.Integer) system_);
       return result == null
           ? com.google.cloud.datacatalog.v1.IntegratedSystem.UNRECOGNIZED
           : result;
@@ -509,7 +513,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 10;
-  private volatile java.lang.Object fullyQualifiedName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullyQualifiedName_ = "";
   /**
    *
    *
@@ -572,7 +578,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -621,7 +629,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 13;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -977,26 +987,19 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       searchResultType_ = 0;
-
       searchResultSubtype_ = "";
-
       relativeResourceName_ = "";
-
       linkedResource_ = "";
-
-      if (modifyTimeBuilder_ == null) {
-        modifyTime_ = null;
-      } else {
-        modifyTime_ = null;
+      modifyTime_ = null;
+      if (modifyTimeBuilder_ != null) {
+        modifyTimeBuilder_.dispose();
         modifyTimeBuilder_ = null;
       }
       fullyQualifiedName_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       systemCase_ = 0;
       system_ = null;
       return this;
@@ -1026,27 +1029,45 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1.SearchCatalogResult buildPartial() {
       com.google.cloud.datacatalog.v1.SearchCatalogResult result =
           new com.google.cloud.datacatalog.v1.SearchCatalogResult(this);
-      result.searchResultType_ = searchResultType_;
-      result.searchResultSubtype_ = searchResultSubtype_;
-      result.relativeResourceName_ = relativeResourceName_;
-      result.linkedResource_ = linkedResource_;
-      if (modifyTimeBuilder_ == null) {
-        result.modifyTime_ = modifyTime_;
-      } else {
-        result.modifyTime_ = modifyTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (systemCase_ == 8) {
-        result.system_ = system_;
-      }
-      if (systemCase_ == 9) {
-        result.system_ = system_;
-      }
-      result.fullyQualifiedName_ = fullyQualifiedName_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.systemCase_ = systemCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.SearchCatalogResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.searchResultType_ = searchResultType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.searchResultSubtype_ = searchResultSubtype_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.relativeResourceName_ = relativeResourceName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.linkedResource_ = linkedResource_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.modifyTime_ = modifyTimeBuilder_ == null ? modifyTime_ : modifyTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.fullyQualifiedName_ = fullyQualifiedName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.description_ = description_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.SearchCatalogResult result) {
+      result.systemCase_ = systemCase_;
+      result.system_ = this.system_;
     }
 
     @java.lang.Override
@@ -1100,14 +1121,17 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (!other.getSearchResultSubtype().isEmpty()) {
         searchResultSubtype_ = other.searchResultSubtype_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRelativeResourceName().isEmpty()) {
         relativeResourceName_ = other.relativeResourceName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLinkedResource().isEmpty()) {
         linkedResource_ = other.linkedResource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasModifyTime()) {
@@ -1115,14 +1139,17 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (!other.getFullyQualifiedName().isEmpty()) {
         fullyQualifiedName_ = other.fullyQualifiedName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getSystemCase()) {
@@ -1172,31 +1199,31 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 searchResultType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 searchResultSubtype_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 relativeResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 linkedResource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 58:
               {
                 input.readMessage(getModifyTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 64:
@@ -1216,19 +1243,19 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
             case 82:
               {
                 fullyQualifiedName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 98:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             default:
@@ -1261,6 +1288,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private int searchResultType_ = 0;
     /**
@@ -1295,8 +1324,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setSearchResultTypeValue(int value) {
-
       searchResultType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1315,9 +1344,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.SearchResultType getSearchResultType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.SearchResultType result =
-          com.google.cloud.datacatalog.v1.SearchResultType.valueOf(searchResultType_);
+          com.google.cloud.datacatalog.v1.SearchResultType.forNumber(searchResultType_);
       return result == null
           ? com.google.cloud.datacatalog.v1.SearchResultType.UNRECOGNIZED
           : result;
@@ -1340,7 +1368,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       searchResultType_ = value.getNumber();
       onChanged();
       return this;
@@ -1359,7 +1387,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSearchResultType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       searchResultType_ = 0;
       onChanged();
       return this;
@@ -1435,8 +1463,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       searchResultSubtype_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1455,8 +1483,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSearchResultSubtype() {
-
       searchResultSubtype_ = getDefaultInstance().getSearchResultSubtype();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1480,8 +1508,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       searchResultSubtype_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1556,8 +1584,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       relativeResourceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1576,8 +1604,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRelativeResourceName() {
-
       relativeResourceName_ = getDefaultInstance().getRelativeResourceName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1601,8 +1629,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relativeResourceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1680,8 +1708,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       linkedResource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1701,8 +1729,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLinkedResource() {
-
       linkedResource_ = getDefaultInstance().getLinkedResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1727,8 +1755,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       linkedResource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1751,7 +1779,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return Whether the modifyTime field is set.
      */
     public boolean hasModifyTime() {
-      return modifyTimeBuilder_ != null || modifyTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1788,11 +1816,11 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         modifyTime_ = value;
-        onChanged();
       } else {
         modifyTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1807,11 +1835,11 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     public Builder setModifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (modifyTimeBuilder_ == null) {
         modifyTime_ = builderForValue.build();
-        onChanged();
       } else {
         modifyTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1825,17 +1853,18 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeModifyTime(com.google.protobuf.Timestamp value) {
       if (modifyTimeBuilder_ == null) {
-        if (modifyTime_ != null) {
-          modifyTime_ =
-              com.google.protobuf.Timestamp.newBuilder(modifyTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && modifyTime_ != null
+            && modifyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getModifyTimeBuilder().mergeFrom(value);
         } else {
           modifyTime_ = value;
         }
-        onChanged();
       } else {
         modifyTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1848,14 +1877,13 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp modify_time = 7;</code>
      */
     public Builder clearModifyTime() {
-      if (modifyTimeBuilder_ == null) {
-        modifyTime_ = null;
-        onChanged();
-      } else {
-        modifyTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      modifyTime_ = null;
+      if (modifyTimeBuilder_ != null) {
+        modifyTimeBuilder_.dispose();
         modifyTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1868,7 +1896,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp modify_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getModifyTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getModifyTimeFieldBuilder().getBuilder();
     }
@@ -1993,9 +2021,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.IntegratedSystem getIntegratedSystem() {
       if (systemCase_ == 8) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.datacatalog.v1.IntegratedSystem result =
-            com.google.cloud.datacatalog.v1.IntegratedSystem.valueOf((java.lang.Integer) system_);
+            com.google.cloud.datacatalog.v1.IntegratedSystem.forNumber((java.lang.Integer) system_);
         return result == null
             ? com.google.cloud.datacatalog.v1.IntegratedSystem.UNRECOGNIZED
             : result;
@@ -2265,8 +2292,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullyQualifiedName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2289,8 +2316,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFullyQualifiedName() {
-
       fullyQualifiedName_ = getDefaultInstance().getFullyQualifiedName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2318,8 +2345,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullyQualifiedName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2385,8 +2412,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2402,8 +2429,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2424,8 +2451,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2494,8 +2521,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2512,8 +2539,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2535,8 +2562,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

@@ -374,6 +374,7 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (skuGroupConditionBuilder_ != null) {
         skuGroupConditionBuilder_.clear();
       }
@@ -406,16 +407,24 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.channel.v1.RepricingCondition buildPartial() {
       com.google.cloud.channel.v1.RepricingCondition result =
           new com.google.cloud.channel.v1.RepricingCondition(this);
-      if (conditionCase_ == 1) {
-        if (skuGroupConditionBuilder_ == null) {
-          result.condition_ = condition_;
-        } else {
-          result.condition_ = skuGroupConditionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.conditionCase_ = conditionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.RepricingCondition result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.channel.v1.RepricingCondition result) {
+      result.conditionCase_ = conditionCase_;
+      result.condition_ = this.condition_;
+      if (conditionCase_ == 1 && skuGroupConditionBuilder_ != null) {
+        result.condition_ = skuGroupConditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +546,8 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.SkuGroupCondition,
@@ -744,7 +755,6 @@ public final class RepricingCondition extends com.google.protobuf.GeneratedMessa
       }
       conditionCase_ = 1;
       onChanged();
-      ;
       return skuGroupConditionBuilder_;
     }
 

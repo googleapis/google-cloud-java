@@ -115,7 +115,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TABLE_SOURCE_TYPE_FIELD_NUMBER = 1;
-  private int tableSourceType_;
+  private int tableSourceType_ = 0;
   /**
    *
    *
@@ -148,9 +148,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.TableSourceType getTableSourceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.TableSourceType result =
-        com.google.cloud.datacatalog.v1.TableSourceType.valueOf(tableSourceType_);
+        com.google.cloud.datacatalog.v1.TableSourceType.forNumber(tableSourceType_);
     return result == null ? com.google.cloud.datacatalog.v1.TableSourceType.UNRECOGNIZED : result;
   }
 
@@ -502,8 +501,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tableSourceType_ = 0;
-
       if (viewSpecBuilder_ != null) {
         viewSpecBuilder_.clear();
       }
@@ -539,24 +538,30 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1.BigQueryTableSpec buildPartial() {
       com.google.cloud.datacatalog.v1.BigQueryTableSpec result =
           new com.google.cloud.datacatalog.v1.BigQueryTableSpec(this);
-      result.tableSourceType_ = tableSourceType_;
-      if (typeSpecCase_ == 2) {
-        if (viewSpecBuilder_ == null) {
-          result.typeSpec_ = typeSpec_;
-        } else {
-          result.typeSpec_ = viewSpecBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeSpecCase_ == 3) {
-        if (tableSpecBuilder_ == null) {
-          result.typeSpec_ = typeSpec_;
-        } else {
-          result.typeSpec_ = tableSpecBuilder_.build();
-        }
-      }
-      result.typeSpecCase_ = typeSpecCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.BigQueryTableSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableSourceType_ = tableSourceType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1.BigQueryTableSpec result) {
+      result.typeSpecCase_ = typeSpecCase_;
+      result.typeSpec_ = this.typeSpec_;
+      if (typeSpecCase_ == 2 && viewSpecBuilder_ != null) {
+        result.typeSpec_ = viewSpecBuilder_.build();
+      }
+      if (typeSpecCase_ == 3 && tableSpecBuilder_ != null) {
+        result.typeSpec_ = tableSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -653,7 +658,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 tableSourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -699,6 +704,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private int tableSourceType_ = 0;
     /**
      *
@@ -732,8 +739,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTableSourceTypeValue(int value) {
-
       tableSourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -752,9 +759,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.TableSourceType getTableSourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.TableSourceType result =
-          com.google.cloud.datacatalog.v1.TableSourceType.valueOf(tableSourceType_);
+          com.google.cloud.datacatalog.v1.TableSourceType.forNumber(tableSourceType_);
       return result == null ? com.google.cloud.datacatalog.v1.TableSourceType.UNRECOGNIZED : result;
     }
     /**
@@ -775,7 +781,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       tableSourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -794,7 +800,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTableSourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tableSourceType_ = 0;
       onChanged();
       return this;
@@ -1014,7 +1020,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       }
       typeSpecCase_ = 2;
       onChanged();
-      ;
       return viewSpecBuilder_;
     }
 
@@ -1232,7 +1237,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       }
       typeSpecCase_ = 3;
       onChanged();
-      ;
       return tableSpecBuilder_;
     }
 

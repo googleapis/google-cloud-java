@@ -68,7 +68,7 @@ public final class InstanceGroupManagerStatusVersionTarget
 
   private int bitField0_;
   public static final int IS_REACHED_FIELD_NUMBER = 433209149;
-  private boolean isReached_;
+  private boolean isReached_ = false;
   /**
    *
    *
@@ -304,8 +304,8 @@ public final class InstanceGroupManagerStatusVersionTarget
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isReached_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -335,15 +335,22 @@ public final class InstanceGroupManagerStatusVersionTarget
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.isReached_ = isReached_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -493,8 +500,9 @@ public final class InstanceGroupManagerStatusVersionTarget
      * @return This builder for chaining.
      */
     public Builder setIsReached(boolean value) {
-      bitField0_ |= 0x00000001;
+
       isReached_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

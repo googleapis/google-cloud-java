@@ -71,7 +71,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -135,6 +137,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ITEMS_FIELD_NUMBER = 100526016;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Items> items_;
   /**
    *
@@ -204,7 +208,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -492,8 +498,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
@@ -502,7 +508,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -529,12 +534,15 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Metadata buildPartial() {
       com.google.cloud.compute.v1.Metadata result = new com.google.cloud.compute.v1.Metadata(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fingerprint_ = fingerprint_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Metadata result) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -544,13 +552,20 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.items_ = itemsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Metadata result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000002;
       }
-      result.kind_ = kind_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -599,8 +614,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Metadata other) {
       if (other == com.google.cloud.compute.v1.Metadata.getDefaultInstance()) return this;
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (itemsBuilder_ == null) {
@@ -631,8 +646,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -780,8 +795,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,8 +812,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -819,8 +834,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1246,8 +1261,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1263,8 +1278,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1285,8 +1300,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

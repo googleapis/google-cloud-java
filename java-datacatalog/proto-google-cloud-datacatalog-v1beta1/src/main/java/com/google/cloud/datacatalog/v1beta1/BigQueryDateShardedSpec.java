@@ -71,7 +71,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
   }
 
   public static final int TABLE_PREFIX_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tablePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tablePrefix_ = "";
   /**
    *
    *
@@ -181,7 +185,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
   }
 
   public static final int SHARD_COUNT_FIELD_NUMBER = 3;
-  private long shardCount_;
+  private long shardCount_ = 0L;
   /**
    *
    *
@@ -416,12 +420,10 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataset_ = "";
-
       tablePrefix_ = "";
-
       shardCount_ = 0L;
-
       return this;
     }
 
@@ -450,11 +452,25 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec buildPartial() {
       com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec result =
           new com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec(this);
-      result.dataset_ = dataset_;
-      result.tablePrefix_ = tablePrefix_;
-      result.shardCount_ = shardCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tablePrefix_ = tablePrefix_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.shardCount_ = shardCount_;
+      }
     }
 
     @java.lang.Override
@@ -506,10 +522,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         return this;
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTablePrefix().isEmpty()) {
         tablePrefix_ = other.tablePrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getShardCount() != 0L) {
@@ -544,19 +562,19 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
             case 10:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tablePrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 shardCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -575,6 +593,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dataset_ = "";
     /**
@@ -649,8 +669,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +690,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -696,8 +716,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +789,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       tablePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -788,8 +808,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTablePrefix() {
-
       tablePrefix_ = getDefaultInstance().getTablePrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -812,8 +832,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tablePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -849,6 +869,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     public Builder setShardCount(long value) {
 
       shardCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -864,7 +885,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearShardCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       shardCount_ = 0L;
       onChanged();
       return this;

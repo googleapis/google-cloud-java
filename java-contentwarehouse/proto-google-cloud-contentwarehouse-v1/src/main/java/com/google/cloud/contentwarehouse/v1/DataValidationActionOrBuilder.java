@@ -73,7 +73,6 @@ public interface DataValidationActionOrBuilder
    *
    * <code>map&lt;string, string&gt; conditions = 1;</code>
    */
-
   /* nullable */
   java.lang.String getConditionsOrDefault(
       java.lang.String key,

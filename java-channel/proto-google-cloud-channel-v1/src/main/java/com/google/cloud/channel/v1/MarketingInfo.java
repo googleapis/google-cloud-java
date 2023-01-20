@@ -69,7 +69,9 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -211,7 +215,9 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.MediaOrBuilder getDefaultLogoOrBuilder() {
-    return getDefaultLogo();
+    return defaultLogo_ == null
+        ? com.google.cloud.channel.v1.Media.getDefaultInstance()
+        : defaultLogo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -434,14 +440,12 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       description_ = "";
-
-      if (defaultLogoBuilder_ == null) {
-        defaultLogo_ = null;
-      } else {
-        defaultLogo_ = null;
+      defaultLogo_ = null;
+      if (defaultLogoBuilder_ != null) {
+        defaultLogoBuilder_.dispose();
         defaultLogoBuilder_ = null;
       }
       return this;
@@ -471,15 +475,25 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.MarketingInfo buildPartial() {
       com.google.cloud.channel.v1.MarketingInfo result =
           new com.google.cloud.channel.v1.MarketingInfo(this);
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (defaultLogoBuilder_ == null) {
-        result.defaultLogo_ = defaultLogo_;
-      } else {
-        result.defaultLogo_ = defaultLogoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.MarketingInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultLogo_ =
+            defaultLogoBuilder_ == null ? defaultLogo_ : defaultLogoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -529,10 +543,12 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()) return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDefaultLogo()) {
@@ -567,19 +583,19 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDefaultLogoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -598,6 +614,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -660,8 +678,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +695,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +784,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +801,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +823,8 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -829,7 +847,7 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultLogo field is set.
      */
     public boolean hasDefaultLogo() {
-      return defaultLogoBuilder_ != null || defaultLogo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -866,11 +884,11 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultLogo_ = value;
-        onChanged();
       } else {
         defaultLogoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -885,11 +903,11 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefaultLogo(com.google.cloud.channel.v1.Media.Builder builderForValue) {
       if (defaultLogoBuilder_ == null) {
         defaultLogo_ = builderForValue.build();
-        onChanged();
       } else {
         defaultLogoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -903,19 +921,18 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultLogo(com.google.cloud.channel.v1.Media value) {
       if (defaultLogoBuilder_ == null) {
-        if (defaultLogo_ != null) {
-          defaultLogo_ =
-              com.google.cloud.channel.v1.Media.newBuilder(defaultLogo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && defaultLogo_ != null
+            && defaultLogo_ != com.google.cloud.channel.v1.Media.getDefaultInstance()) {
+          getDefaultLogoBuilder().mergeFrom(value);
         } else {
           defaultLogo_ = value;
         }
-        onChanged();
       } else {
         defaultLogoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -928,14 +945,13 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Media default_logo = 3;</code>
      */
     public Builder clearDefaultLogo() {
-      if (defaultLogoBuilder_ == null) {
-        defaultLogo_ = null;
-        onChanged();
-      } else {
-        defaultLogo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      defaultLogo_ = null;
+      if (defaultLogoBuilder_ != null) {
+        defaultLogoBuilder_.dispose();
         defaultLogoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -948,7 +964,7 @@ public final class MarketingInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.Media default_logo = 3;</code>
      */
     public com.google.cloud.channel.v1.Media.Builder getDefaultLogoBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDefaultLogoFieldBuilder().getBuilder();
     }

@@ -273,7 +273,9 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int LAST_START_TIME_FIELD_NUMBER = 34545107;
-  private volatile java.lang.Object lastStartTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastStartTime_ = "";
   /**
    *
    *
@@ -337,7 +339,9 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NEXT_START_TIME_FIELD_NUMBER = 97270102;
-  private volatile java.lang.Object nextStartTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextStartTime_ = "";
   /**
    *
    *
@@ -401,7 +405,9 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -696,12 +702,10 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       lastStartTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       nextStartTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -729,23 +733,29 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.ScalingScheduleStatus buildPartial() {
       com.google.cloud.compute.v1.ScalingScheduleStatus result =
           new com.google.cloud.compute.v1.ScalingScheduleStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ScalingScheduleStatus result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastStartTime_ = lastStartTime_;
         to_bitField0_ |= 0x00000001;
       }
-      result.lastStartTime_ = lastStartTime_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextStartTime_ = nextStartTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.nextStartTime_ = nextStartTime_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000004;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -795,18 +805,18 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       if (other == com.google.cloud.compute.v1.ScalingScheduleStatus.getDefaultInstance())
         return this;
       if (other.hasLastStartTime()) {
-        bitField0_ |= 0x00000001;
         lastStartTime_ = other.lastStartTime_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNextStartTime()) {
-        bitField0_ |= 0x00000002;
         nextStartTime_ = other.nextStartTime_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00000004;
         state_ = other.state_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -947,8 +957,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       lastStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -964,8 +974,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLastStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       lastStartTime_ = getDefaultInstance().getLastStartTime();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -986,8 +996,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       lastStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1067,8 +1077,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       nextStartTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1084,8 +1094,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNextStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       nextStartTime_ = getDefaultInstance().getNextStartTime();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1106,8 +1116,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       nextStartTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1191,8 +1201,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1209,8 +1219,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1232,8 +1242,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

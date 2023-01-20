@@ -204,7 +204,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
   private int bitField0_;
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
-  private long diskSizeGb_;
+  private long diskSizeGb_ = 0L;
   /**
    *
    *
@@ -237,7 +237,9 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
-  private volatile java.lang.Object interface_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interface_ = "";
   /**
    *
    *
@@ -552,10 +554,9 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       diskSizeGb_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       interface_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -596,6 +597,17 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
           result =
               new com.google.cloud.compute.v1
                   .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1
+                .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
+            result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -603,12 +615,10 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.interface_ = interface_;
         to_bitField0_ |= 0x00000002;
       }
-      result.interface_ = interface_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -672,8 +682,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasInterface()) {
-        bitField0_ |= 0x00000002;
         interface_ = other.interface_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -777,8 +787,9 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(long value) {
-      bitField0_ |= 0x00000001;
+
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,8 +890,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       interface_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +908,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * @return This builder for chaining.
      */
     public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       interface_ = getDefaultInstance().getInterface();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -920,8 +931,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       interface_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

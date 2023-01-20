@@ -69,7 +69,9 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DOCUMENT_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object documentName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentName_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutputOrBuilder
       getRuleEvaluatorOutputOrBuilder() {
-    return getRuleEvaluatorOutput();
+    return ruleEvaluatorOutput_ == null
+        ? com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput.getDefaultInstance()
+        : ruleEvaluatorOutput_;
   }
 
   public static final int ACTION_EXECUTOR_OUTPUT_FIELD_NUMBER = 2;
@@ -215,7 +219,9 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.ActionExecutorOutputOrBuilder
       getActionExecutorOutputOrBuilder() {
-    return getActionExecutorOutput();
+    return actionExecutorOutput_ == null
+        ? com.google.cloud.contentwarehouse.v1.ActionExecutorOutput.getDefaultInstance()
+        : actionExecutorOutput_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -446,18 +452,16 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       documentName_ = "";
-
-      if (ruleEvaluatorOutputBuilder_ == null) {
-        ruleEvaluatorOutput_ = null;
-      } else {
-        ruleEvaluatorOutput_ = null;
+      ruleEvaluatorOutput_ = null;
+      if (ruleEvaluatorOutputBuilder_ != null) {
+        ruleEvaluatorOutputBuilder_.dispose();
         ruleEvaluatorOutputBuilder_ = null;
       }
-      if (actionExecutorOutputBuilder_ == null) {
-        actionExecutorOutput_ = null;
-      } else {
-        actionExecutorOutput_ = null;
+      actionExecutorOutput_ = null;
+      if (actionExecutorOutputBuilder_ != null) {
+        actionExecutorOutputBuilder_.dispose();
         actionExecutorOutputBuilder_ = null;
       }
       return this;
@@ -487,19 +491,30 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.contentwarehouse.v1.RuleEngineOutput buildPartial() {
       com.google.cloud.contentwarehouse.v1.RuleEngineOutput result =
           new com.google.cloud.contentwarehouse.v1.RuleEngineOutput(this);
-      result.documentName_ = documentName_;
-      if (ruleEvaluatorOutputBuilder_ == null) {
-        result.ruleEvaluatorOutput_ = ruleEvaluatorOutput_;
-      } else {
-        result.ruleEvaluatorOutput_ = ruleEvaluatorOutputBuilder_.build();
-      }
-      if (actionExecutorOutputBuilder_ == null) {
-        result.actionExecutorOutput_ = actionExecutorOutput_;
-      } else {
-        result.actionExecutorOutput_ = actionExecutorOutputBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.RuleEngineOutput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.documentName_ = documentName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ruleEvaluatorOutput_ =
+            ruleEvaluatorOutputBuilder_ == null
+                ? ruleEvaluatorOutput_
+                : ruleEvaluatorOutputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actionExecutorOutput_ =
+            actionExecutorOutputBuilder_ == null
+                ? actionExecutorOutput_
+                : actionExecutorOutputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -550,6 +565,7 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getDocumentName().isEmpty()) {
         documentName_ = other.documentName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRuleEvaluatorOutput()) {
@@ -588,20 +604,20 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getRuleEvaluatorOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getActionExecutorOutputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 documentName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -620,6 +636,8 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object documentName_ = "";
     /**
@@ -682,8 +700,8 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDocumentName() {
-
       documentName_ = getDefaultInstance().getDocumentName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -721,8 +739,8 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -745,7 +763,7 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      * @return Whether the ruleEvaluatorOutput field is set.
      */
     public boolean hasRuleEvaluatorOutput() {
-      return ruleEvaluatorOutputBuilder_ != null || ruleEvaluatorOutput_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -783,11 +801,11 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         ruleEvaluatorOutput_ = value;
-        onChanged();
       } else {
         ruleEvaluatorOutputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -803,11 +821,11 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
         com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput.Builder builderForValue) {
       if (ruleEvaluatorOutputBuilder_ == null) {
         ruleEvaluatorOutput_ = builderForValue.build();
-        onChanged();
       } else {
         ruleEvaluatorOutputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,20 +840,19 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
     public Builder mergeRuleEvaluatorOutput(
         com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput value) {
       if (ruleEvaluatorOutputBuilder_ == null) {
-        if (ruleEvaluatorOutput_ != null) {
-          ruleEvaluatorOutput_ =
-              com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput.newBuilder(
-                      ruleEvaluatorOutput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && ruleEvaluatorOutput_ != null
+            && ruleEvaluatorOutput_
+                != com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput.getDefaultInstance()) {
+          getRuleEvaluatorOutputBuilder().mergeFrom(value);
         } else {
           ruleEvaluatorOutput_ = value;
         }
-        onChanged();
       } else {
         ruleEvaluatorOutputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,14 +865,13 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput rule_evaluator_output = 1;</code>
      */
     public Builder clearRuleEvaluatorOutput() {
-      if (ruleEvaluatorOutputBuilder_ == null) {
-        ruleEvaluatorOutput_ = null;
-        onChanged();
-      } else {
-        ruleEvaluatorOutput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ruleEvaluatorOutput_ = null;
+      if (ruleEvaluatorOutputBuilder_ != null) {
+        ruleEvaluatorOutputBuilder_.dispose();
         ruleEvaluatorOutputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -869,7 +885,7 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput.Builder
         getRuleEvaluatorOutputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRuleEvaluatorOutputFieldBuilder().getBuilder();
     }
@@ -938,7 +954,7 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      * @return Whether the actionExecutorOutput field is set.
      */
     public boolean hasActionExecutorOutput() {
-      return actionExecutorOutputBuilder_ != null || actionExecutorOutput_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -980,11 +996,11 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         actionExecutorOutput_ = value;
-        onChanged();
       } else {
         actionExecutorOutputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1002,11 +1018,11 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
         com.google.cloud.contentwarehouse.v1.ActionExecutorOutput.Builder builderForValue) {
       if (actionExecutorOutputBuilder_ == null) {
         actionExecutorOutput_ = builderForValue.build();
-        onChanged();
       } else {
         actionExecutorOutputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1023,20 +1039,19 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
     public Builder mergeActionExecutorOutput(
         com.google.cloud.contentwarehouse.v1.ActionExecutorOutput value) {
       if (actionExecutorOutputBuilder_ == null) {
-        if (actionExecutorOutput_ != null) {
-          actionExecutorOutput_ =
-              com.google.cloud.contentwarehouse.v1.ActionExecutorOutput.newBuilder(
-                      actionExecutorOutput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && actionExecutorOutput_ != null
+            && actionExecutorOutput_
+                != com.google.cloud.contentwarehouse.v1.ActionExecutorOutput.getDefaultInstance()) {
+          getActionExecutorOutputBuilder().mergeFrom(value);
         } else {
           actionExecutorOutput_ = value;
         }
-        onChanged();
       } else {
         actionExecutorOutputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1051,14 +1066,13 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearActionExecutorOutput() {
-      if (actionExecutorOutputBuilder_ == null) {
-        actionExecutorOutput_ = null;
-        onChanged();
-      } else {
-        actionExecutorOutput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      actionExecutorOutput_ = null;
+      if (actionExecutorOutputBuilder_ != null) {
+        actionExecutorOutputBuilder_.dispose();
         actionExecutorOutputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1074,7 +1088,7 @@ public final class RuleEngineOutput extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.contentwarehouse.v1.ActionExecutorOutput.Builder
         getActionExecutorOutputBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getActionExecutorOutputFieldBuilder().getBuilder();
     }

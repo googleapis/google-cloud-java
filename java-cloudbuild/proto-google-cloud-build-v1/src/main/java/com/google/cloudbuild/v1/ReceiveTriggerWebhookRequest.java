@@ -72,7 +72,9 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
   }
 
   public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -165,11 +167,13 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.api.HttpBodyOrBuilder getBodyOrBuilder() {
-    return getBody();
+    return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -218,7 +222,9 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
   }
 
   public static final int TRIGGER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object trigger_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trigger_ = "";
   /**
    *
    *
@@ -267,7 +273,9 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
   }
 
   public static final int SECRET_FIELD_NUMBER = 4;
-  private volatile java.lang.Object secret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secret_ = "";
   /**
    *
    *
@@ -555,20 +563,16 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (bodyBuilder_ == null) {
-        body_ = null;
-      } else {
-        body_ = null;
+      body_ = null;
+      if (bodyBuilder_ != null) {
+        bodyBuilder_.dispose();
         bodyBuilder_ = null;
       }
       projectId_ = "";
-
       trigger_ = "";
-
       secret_ = "";
-
       return this;
     }
 
@@ -596,17 +600,30 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     public com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest buildPartial() {
       com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest result =
           new com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest(this);
-      result.name_ = name_;
-      if (bodyBuilder_ == null) {
-        result.body_ = body_;
-      } else {
-        result.body_ = bodyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.projectId_ = projectId_;
-      result.trigger_ = trigger_;
-      result.secret_ = secret_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.body_ = bodyBuilder_ == null ? body_ : bodyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.trigger_ = trigger_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.secret_ = secret_;
+      }
     }
 
     @java.lang.Override
@@ -657,6 +674,7 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBody()) {
@@ -664,14 +682,17 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTrigger().isEmpty()) {
         trigger_ = other.trigger_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -703,31 +724,31 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getBodyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 trigger_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 secret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 42
             default:
@@ -746,6 +767,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -811,8 +834,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -829,8 +852,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -852,8 +875,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -876,7 +899,7 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * @return Whether the body field is set.
      */
     public boolean hasBody() {
-      return bodyBuilder_ != null || body_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -911,11 +934,11 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         body_ = value;
-        onChanged();
       } else {
         bodyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -930,11 +953,11 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
     public Builder setBody(com.google.api.HttpBody.Builder builderForValue) {
       if (bodyBuilder_ == null) {
         body_ = builderForValue.build();
-        onChanged();
       } else {
         bodyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -948,16 +971,18 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      */
     public Builder mergeBody(com.google.api.HttpBody value) {
       if (bodyBuilder_ == null) {
-        if (body_ != null) {
-          body_ = com.google.api.HttpBody.newBuilder(body_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && body_ != null
+            && body_ != com.google.api.HttpBody.getDefaultInstance()) {
+          getBodyBuilder().mergeFrom(value);
         } else {
           body_ = value;
         }
-        onChanged();
       } else {
         bodyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -970,14 +995,13 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * <code>.google.api.HttpBody body = 1;</code>
      */
     public Builder clearBody() {
-      if (bodyBuilder_ == null) {
-        body_ = null;
-        onChanged();
-      } else {
-        body_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      body_ = null;
+      if (bodyBuilder_ != null) {
+        bodyBuilder_.dispose();
         bodyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -990,7 +1014,7 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * <code>.google.api.HttpBody body = 1;</code>
      */
     public com.google.api.HttpBody.Builder getBodyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBodyFieldBuilder().getBuilder();
     }
@@ -1096,8 +1120,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1113,8 +1137,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1135,8 +1159,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1202,8 +1226,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       trigger_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1219,8 +1243,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTrigger() {
-
       trigger_ = getDefaultInstance().getTrigger();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1241,8 +1265,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trigger_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1308,8 +1332,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       secret_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1325,8 +1349,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSecret() {
-
       secret_ = getDefaultInstance().getSecret();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1347,8 +1371,8 @@ public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secret_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

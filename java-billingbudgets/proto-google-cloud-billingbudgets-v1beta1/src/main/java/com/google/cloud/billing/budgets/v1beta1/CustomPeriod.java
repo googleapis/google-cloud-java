@@ -108,7 +108,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getStartDateOrBuilder() {
-    return getStartDate();
+    return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
 
   public static final int END_DATE_FIELD_NUMBER = 2;
@@ -160,7 +160,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getEndDateOrBuilder() {
-    return getEndDate();
+    return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,16 +380,15 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startDateBuilder_ == null) {
-        startDate_ = null;
-      } else {
-        startDate_ = null;
+      bitField0_ = 0;
+      startDate_ = null;
+      if (startDateBuilder_ != null) {
+        startDateBuilder_.dispose();
         startDateBuilder_ = null;
       }
-      if (endDateBuilder_ == null) {
-        endDate_ = null;
-      } else {
-        endDate_ = null;
+      endDate_ = null;
+      if (endDateBuilder_ != null) {
+        endDateBuilder_.dispose();
         endDateBuilder_ = null;
       }
       return this;
@@ -419,18 +418,21 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.CustomPeriod buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.CustomPeriod result =
           new com.google.cloud.billing.budgets.v1beta1.CustomPeriod(this);
-      if (startDateBuilder_ == null) {
-        result.startDate_ = startDate_;
-      } else {
-        result.startDate_ = startDateBuilder_.build();
-      }
-      if (endDateBuilder_ == null) {
-        result.endDate_ = endDate_;
-      } else {
-        result.endDate_ = endDateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.budgets.v1beta1.CustomPeriod result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startDate_ = startDateBuilder_ == null ? startDate_ : startDateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endDate_ = endDateBuilder_ == null ? endDate_ : endDateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -514,13 +516,13 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +542,8 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.Date startDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
@@ -556,7 +560,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
-      return startDateBuilder_ != null || startDate_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -591,11 +595,11 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startDate_ = value;
-        onChanged();
       } else {
         startDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,11 +614,11 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartDate(com.google.type.Date.Builder builderForValue) {
       if (startDateBuilder_ == null) {
         startDate_ = builderForValue.build();
-        onChanged();
       } else {
         startDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,16 +632,18 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartDate(com.google.type.Date value) {
       if (startDateBuilder_ == null) {
-        if (startDate_ != null) {
-          startDate_ = com.google.type.Date.newBuilder(startDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startDate_ != null
+            && startDate_ != com.google.type.Date.getDefaultInstance()) {
+          getStartDateBuilder().mergeFrom(value);
         } else {
           startDate_ = value;
         }
-        onChanged();
       } else {
         startDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,14 +656,13 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date start_date = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearStartDate() {
-      if (startDateBuilder_ == null) {
-        startDate_ = null;
-        onChanged();
-      } else {
-        startDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startDate_ = null;
+      if (startDateBuilder_ != null) {
+        startDateBuilder_.dispose();
         startDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -670,7 +675,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date start_date = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.type.Date.Builder getStartDateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartDateFieldBuilder().getBuilder();
     }
@@ -730,7 +735,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
-      return endDateBuilder_ != null || endDate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -769,11 +774,11 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endDate_ = value;
-        onChanged();
       } else {
         endDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,11 +795,11 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndDate(com.google.type.Date.Builder builderForValue) {
       if (endDateBuilder_ == null) {
         endDate_ = builderForValue.build();
-        onChanged();
       } else {
         endDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,16 +815,18 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndDate(com.google.type.Date value) {
       if (endDateBuilder_ == null) {
-        if (endDate_ != null) {
-          endDate_ = com.google.type.Date.newBuilder(endDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endDate_ != null
+            && endDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEndDateBuilder().mergeFrom(value);
         } else {
           endDate_ = value;
         }
-        onChanged();
       } else {
         endDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,14 +841,13 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEndDate() {
-      if (endDateBuilder_ == null) {
-        endDate_ = null;
-        onChanged();
-      } else {
-        endDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endDate_ = null;
+      if (endDateBuilder_ != null) {
+        endDateBuilder_.dispose();
         endDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -856,7 +862,7 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.type.Date.Builder getEndDateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndDateFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   }
 
   public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList serviceAccounts_;
   /**
    *
@@ -180,7 +184,9 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -452,12 +458,11 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       serviceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -485,16 +490,31 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public com.google.cloud.channel.v1.ListSubscribersResponse buildPartial() {
       com.google.cloud.channel.v1.ListSubscribersResponse result =
           new com.google.cloud.channel.v1.ListSubscribersResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.topic_ = topic_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        serviceAccounts_ = serviceAccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.serviceAccounts_ = serviceAccounts_;
-      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.ListSubscribersResponse result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        serviceAccounts_ = serviceAccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.serviceAccounts_ = serviceAccounts_;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ListSubscribersResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -545,12 +565,13 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.serviceAccounts_.isEmpty()) {
         if (serviceAccounts_.isEmpty()) {
           serviceAccounts_ = other.serviceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureServiceAccountsIsMutable();
           serviceAccounts_.addAll(other.serviceAccounts_);
@@ -559,6 +580,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -590,7 +612,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -603,7 +625,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -686,8 +708,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +725,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -725,8 +747,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,9 +757,9 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         serviceAccounts_ = new com.google.protobuf.LazyStringArrayList(serviceAccounts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -872,7 +894,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
      */
     public Builder clearServiceAccounts() {
       serviceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -963,8 +985,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,8 +1003,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1004,8 +1026,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

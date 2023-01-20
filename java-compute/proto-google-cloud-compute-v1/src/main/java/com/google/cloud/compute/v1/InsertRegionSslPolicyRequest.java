@@ -71,7 +71,9 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -291,7 +297,9 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder() {
-    return getSslPolicyResource();
+    return sslPolicyResource_ == null
+        ? com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()
+        : sslPolicyResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -531,16 +539,13 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (sslPolicyResourceBuilder_ == null) {
-        sslPolicyResource_ = null;
-      } else {
-        sslPolicyResource_ = null;
+      sslPolicyResource_ = null;
+      if (sslPolicyResourceBuilder_ != null) {
+        sslPolicyResourceBuilder_.dispose();
         sslPolicyResourceBuilder_ = null;
       }
       return this;
@@ -570,22 +575,33 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.InsertRegionSslPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.InsertRegionSslPolicyRequest result =
           new com.google.cloud.compute.v1.InsertRegionSslPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (sslPolicyResourceBuilder_ == null) {
-        result.sslPolicyResource_ = sslPolicyResource_;
-      } else {
-        result.sslPolicyResource_ = sslPolicyResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InsertRegionSslPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sslPolicyResource_ =
+            sslPolicyResourceBuilder_ == null
+                ? sslPolicyResource_
+                : sslPolicyResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -636,15 +652,17 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSslPolicyResource()) {
@@ -679,26 +697,26 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -2095832510:
               {
                 input.readMessage(
                     getSslPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -2095832510
             default:
@@ -787,8 +805,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -806,8 +824,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -830,8 +848,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -903,8 +921,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -922,8 +940,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -946,8 +964,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -965,7 +983,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1027,8 +1045,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1044,8 +1062,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1066,8 +1084,8 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1092,7 +1110,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * @return Whether the sslPolicyResource field is set.
      */
     public boolean hasSslPolicyResource() {
-      return sslPolicyResourceBuilder_ != null || sslPolicyResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1133,11 +1151,11 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         sslPolicyResource_ = value;
-        onChanged();
       } else {
         sslPolicyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1155,11 +1173,11 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.SslPolicy.Builder builderForValue) {
       if (sslPolicyResourceBuilder_ == null) {
         sslPolicyResource_ = builderForValue.build();
-        onChanged();
       } else {
         sslPolicyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1175,19 +1193,18 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      */
     public Builder mergeSslPolicyResource(com.google.cloud.compute.v1.SslPolicy value) {
       if (sslPolicyResourceBuilder_ == null) {
-        if (sslPolicyResource_ != null) {
-          sslPolicyResource_ =
-              com.google.cloud.compute.v1.SslPolicy.newBuilder(sslPolicyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && sslPolicyResource_ != null
+            && sslPolicyResource_ != com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()) {
+          getSslPolicyResourceBuilder().mergeFrom(value);
         } else {
           sslPolicyResource_ = value;
         }
-        onChanged();
       } else {
         sslPolicyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1202,14 +1219,13 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSslPolicyResource() {
-      if (sslPolicyResourceBuilder_ == null) {
-        sslPolicyResource_ = null;
-        onChanged();
-      } else {
-        sslPolicyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      sslPolicyResource_ = null;
+      if (sslPolicyResourceBuilder_ != null) {
+        sslPolicyResourceBuilder_.dispose();
         sslPolicyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1224,7 +1240,7 @@ public final class InsertRegionSslPolicyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicy.Builder getSslPolicyResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSslPolicyResourceFieldBuilder().getBuilder();
     }

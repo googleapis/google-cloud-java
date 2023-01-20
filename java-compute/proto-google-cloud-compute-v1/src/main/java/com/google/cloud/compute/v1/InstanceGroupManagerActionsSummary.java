@@ -67,7 +67,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
 
   private int bitField0_;
   public static final int ABANDONING_FIELD_NUMBER = 440023373;
-  private int abandoning_;
+  private int abandoning_ = 0;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int CREATING_FIELD_NUMBER = 209809081;
-  private int creating_;
+  private int creating_ = 0;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int CREATING_WITHOUT_RETRIES_FIELD_NUMBER = 369916745;
-  private int creatingWithoutRetries_;
+  private int creatingWithoutRetries_ = 0;
   /**
    *
    *
@@ -166,7 +166,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int DELETING_FIELD_NUMBER = 282846120;
-  private int deleting_;
+  private int deleting_ = 0;
   /**
    *
    *
@@ -199,7 +199,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int NONE_FIELD_NUMBER = 3387192;
-  private int none_;
+  private int none_ = 0;
   /**
    *
    *
@@ -232,7 +232,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int RECREATING_FIELD_NUMBER = 339057132;
-  private int recreating_;
+  private int recreating_ = 0;
   /**
    *
    *
@@ -265,7 +265,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int REFRESHING_FIELD_NUMBER = 215044903;
-  private int refreshing_;
+  private int refreshing_ = 0;
   /**
    *
    *
@@ -298,7 +298,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int RESTARTING_FIELD_NUMBER = 372312947;
-  private int restarting_;
+  private int restarting_ = 0;
   /**
    *
    *
@@ -331,7 +331,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int RESUMING_FIELD_NUMBER = 201100714;
-  private int resuming_;
+  private int resuming_ = 0;
   /**
    *
    *
@@ -364,7 +364,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int STARTING_FIELD_NUMBER = 243064896;
-  private int starting_;
+  private int starting_ = 0;
   /**
    *
    *
@@ -397,7 +397,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int STOPPING_FIELD_NUMBER = 105035892;
-  private int stopping_;
+  private int stopping_ = 0;
   /**
    *
    *
@@ -430,7 +430,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int SUSPENDING_FIELD_NUMBER = 29113894;
-  private int suspending_;
+  private int suspending_ = 0;
   /**
    *
    *
@@ -463,7 +463,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
   }
 
   public static final int VERIFYING_FIELD_NUMBER = 451612873;
-  private int verifying_;
+  private int verifying_ = 0;
   /**
    *
    *
@@ -867,32 +867,20 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       abandoning_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       creating_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       creatingWithoutRetries_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       deleting_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       none_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       recreating_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000020);
       refreshing_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000040);
       restarting_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
       resuming_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000100);
       starting_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000200);
       stopping_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000400);
       suspending_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000800);
       verifying_ = 0;
-      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -921,6 +909,15 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary result =
           new com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -975,9 +972,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
         result.verifying_ = verifying_;
         to_bitField0_ |= 0x00001000;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1233,8 +1228,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setAbandoning(int value) {
-      bitField0_ |= 0x00000001;
+
       abandoning_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1300,8 +1296,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setCreating(int value) {
-      bitField0_ |= 0x00000002;
+
       creating_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1367,8 +1364,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setCreatingWithoutRetries(int value) {
-      bitField0_ |= 0x00000004;
+
       creatingWithoutRetries_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1434,8 +1432,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setDeleting(int value) {
-      bitField0_ |= 0x00000008;
+
       deleting_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1501,8 +1500,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setNone(int value) {
-      bitField0_ |= 0x00000010;
+
       none_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1568,8 +1568,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setRecreating(int value) {
-      bitField0_ |= 0x00000020;
+
       recreating_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1635,8 +1636,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setRefreshing(int value) {
-      bitField0_ |= 0x00000040;
+
       refreshing_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1702,8 +1704,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setRestarting(int value) {
-      bitField0_ |= 0x00000080;
+
       restarting_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1769,8 +1772,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setResuming(int value) {
-      bitField0_ |= 0x00000100;
+
       resuming_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1836,8 +1840,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setStarting(int value) {
-      bitField0_ |= 0x00000200;
+
       starting_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1903,8 +1908,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setStopping(int value) {
-      bitField0_ |= 0x00000400;
+
       stopping_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -1970,8 +1976,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setSuspending(int value) {
-      bitField0_ |= 0x00000800;
+
       suspending_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2037,8 +2044,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setVerifying(int value) {
-      bitField0_ |= 0x00001000;
+
       verifying_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

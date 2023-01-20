@@ -70,6 +70,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int ALIASES_FIELD_NUMBER = 159207166;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList aliases_;
   /**
    *
@@ -131,6 +133,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 175554779;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.WafExpressionSetExpression> expressions_;
   /**
    *
@@ -207,7 +211,9 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -499,6 +505,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (expressionsBuilder_ == null) {
@@ -509,7 +516,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       id_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -537,8 +543,15 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.WafExpressionSet buildPartial() {
       com.google.cloud.compute.v1.WafExpressionSet result =
           new com.google.cloud.compute.v1.WafExpressionSet(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.WafExpressionSet result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         aliases_ = aliases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -553,13 +566,16 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.WafExpressionSet result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000001;
       }
-      result.id_ = id_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -645,8 +661,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         }
       }
       if (other.hasId()) {
-        bitField0_ |= 0x00000004;
         id_ = other.id_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1342,8 +1358,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1359,8 +1375,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1381,8 +1397,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

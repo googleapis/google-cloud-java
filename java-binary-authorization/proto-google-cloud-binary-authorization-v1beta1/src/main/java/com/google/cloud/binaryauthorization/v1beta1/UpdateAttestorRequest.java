@@ -122,7 +122,9 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.AttestorOrBuilder getAttestorOrBuilder() {
-    return getAttestor();
+    return attestor_ == null
+        ? com.google.cloud.binaryauthorization.v1beta1.Attestor.getDefaultInstance()
+        : attestor_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -330,10 +332,10 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (attestorBuilder_ == null) {
-        attestor_ = null;
-      } else {
-        attestor_ = null;
+      bitField0_ = 0;
+      attestor_ = null;
+      if (attestorBuilder_ != null) {
+        attestorBuilder_.dispose();
         attestorBuilder_ = null;
       }
       return this;
@@ -365,13 +367,19 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest result =
           new com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest(this);
-      if (attestorBuilder_ == null) {
-        result.attestor_ = attestor_;
-      } else {
-        result.attestor_ = attestorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attestor_ = attestorBuilder_ == null ? attestor_ : attestorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -455,7 +463,7 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getAttestorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -474,6 +482,8 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.binaryauthorization.v1beta1.Attestor attestor_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -497,7 +507,7 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the attestor field is set.
      */
     public boolean hasAttestor() {
-      return attestorBuilder_ != null || attestor_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -542,11 +552,11 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         attestor_ = value;
-        onChanged();
       } else {
         attestorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -566,11 +576,11 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.binaryauthorization.v1beta1.Attestor.Builder builderForValue) {
       if (attestorBuilder_ == null) {
         attestor_ = builderForValue.build();
-        onChanged();
       } else {
         attestorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -588,19 +598,19 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAttestor(com.google.cloud.binaryauthorization.v1beta1.Attestor value) {
       if (attestorBuilder_ == null) {
-        if (attestor_ != null) {
-          attestor_ =
-              com.google.cloud.binaryauthorization.v1beta1.Attestor.newBuilder(attestor_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && attestor_ != null
+            && attestor_
+                != com.google.cloud.binaryauthorization.v1beta1.Attestor.getDefaultInstance()) {
+          getAttestorBuilder().mergeFrom(value);
         } else {
           attestor_ = value;
         }
-        onChanged();
       } else {
         attestorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -617,14 +627,13 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearAttestor() {
-      if (attestorBuilder_ == null) {
-        attestor_ = null;
-        onChanged();
-      } else {
-        attestor_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      attestor_ = null;
+      if (attestorBuilder_ != null) {
+        attestorBuilder_.dispose();
         attestorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -641,7 +650,7 @@ public final class UpdateAttestorRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Attestor.Builder getAttestorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAttestorFieldBuilder().getBuilder();
     }

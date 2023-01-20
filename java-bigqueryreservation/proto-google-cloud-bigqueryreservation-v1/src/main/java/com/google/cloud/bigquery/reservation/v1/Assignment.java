@@ -420,7 +420,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -475,7 +477,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSIGNEE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object assignee_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assignee_ = "";
   /**
    *
    *
@@ -526,7 +530,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOB_TYPE_FIELD_NUMBER = 3;
-  private int jobType_;
+  private int jobType_ = 0;
   /**
    *
    *
@@ -555,16 +559,15 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Assignment.JobType getJobType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.Assignment.JobType result =
-        com.google.cloud.bigquery.reservation.v1.Assignment.JobType.valueOf(jobType_);
+        com.google.cloud.bigquery.reservation.v1.Assignment.JobType.forNumber(jobType_);
     return result == null
         ? com.google.cloud.bigquery.reservation.v1.Assignment.JobType.UNRECOGNIZED
         : result;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -597,9 +600,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Assignment.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.Assignment.State result =
-        com.google.cloud.bigquery.reservation.v1.Assignment.State.valueOf(state_);
+        com.google.cloud.bigquery.reservation.v1.Assignment.State.forNumber(state_);
     return result == null
         ? com.google.cloud.bigquery.reservation.v1.Assignment.State.UNRECOGNIZED
         : result;
@@ -838,14 +840,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assignee_ = "";
-
       jobType_ = 0;
-
       state_ = 0;
-
       return this;
     }
 
@@ -873,12 +872,27 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.reservation.v1.Assignment buildPartial() {
       com.google.cloud.bigquery.reservation.v1.Assignment result =
           new com.google.cloud.bigquery.reservation.v1.Assignment(this);
-      result.name_ = name_;
-      result.assignee_ = assignee_;
-      result.jobType_ = jobType_;
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.reservation.v1.Assignment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assignee_ = assignee_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobType_ = jobType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -929,10 +943,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssignee().isEmpty()) {
         assignee_ = other.assignee_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.jobType_ != 0) {
@@ -970,25 +986,25 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 jobType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 assignee_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             default:
@@ -1007,6 +1023,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1078,8 +1096,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1098,8 +1116,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1123,8 +1141,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1193,8 +1211,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assignee_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1211,8 +1229,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssignee() {
-
       assignee_ = getDefaultInstance().getAssignee();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1234,8 +1252,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assignee_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1269,8 +1287,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJobTypeValue(int value) {
-
       jobType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1287,9 +1305,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.Assignment.JobType getJobType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.Assignment.JobType result =
-          com.google.cloud.bigquery.reservation.v1.Assignment.JobType.valueOf(jobType_);
+          com.google.cloud.bigquery.reservation.v1.Assignment.JobType.forNumber(jobType_);
       return result == null
           ? com.google.cloud.bigquery.reservation.v1.Assignment.JobType.UNRECOGNIZED
           : result;
@@ -1310,7 +1327,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       jobType_ = value.getNumber();
       onChanged();
       return this;
@@ -1327,7 +1344,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       jobType_ = 0;
       onChanged();
       return this;
@@ -1366,8 +1383,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1386,9 +1403,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.Assignment.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.Assignment.State result =
-          com.google.cloud.bigquery.reservation.v1.Assignment.State.valueOf(state_);
+          com.google.cloud.bigquery.reservation.v1.Assignment.State.forNumber(state_);
       return result == null
           ? com.google.cloud.bigquery.reservation.v1.Assignment.State.UNRECOGNIZED
           : result;
@@ -1411,7 +1427,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1430,7 +1446,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;

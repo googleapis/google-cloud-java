@@ -68,7 +68,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DURATION_FIELD_NUMBER = 1;
-  private int duration_;
+  private int duration_ = 0;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERIOD_TYPE_FIELD_NUMBER = 2;
-  private int periodType_;
+  private int periodType_ = 0;
   /**
    *
    *
@@ -115,9 +115,8 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.PeriodType getPeriodType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.PeriodType result =
-        com.google.cloud.channel.v1.PeriodType.valueOf(periodType_);
+        com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
     return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
   }
 
@@ -325,10 +324,9 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       duration_ = 0;
-
       periodType_ = 0;
-
       return this;
     }
 
@@ -355,10 +353,21 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Period buildPartial() {
       com.google.cloud.channel.v1.Period result = new com.google.cloud.channel.v1.Period(this);
-      result.duration_ = duration_;
-      result.periodType_ = periodType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Period result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.duration_ = duration_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.periodType_ = periodType_;
+      }
     }
 
     @java.lang.Override
@@ -441,13 +450,13 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 duration_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 periodType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -466,6 +475,8 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int duration_;
     /**
@@ -498,6 +509,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
     public Builder setDuration(int value) {
 
       duration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -513,7 +525,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = 0;
       onChanged();
       return this;
@@ -548,8 +560,8 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeriodTypeValue(int value) {
-
       periodType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -566,9 +578,8 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.PeriodType getPeriodType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.PeriodType result =
-          com.google.cloud.channel.v1.PeriodType.valueOf(periodType_);
+          com.google.cloud.channel.v1.PeriodType.forNumber(periodType_);
       return result == null ? com.google.cloud.channel.v1.PeriodType.UNRECOGNIZED : result;
     }
     /**
@@ -587,7 +598,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       periodType_ = value.getNumber();
       onChanged();
       return this;
@@ -604,7 +615,7 @@ public final class Period extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeriodType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       periodType_ = 0;
       onChanged();
       return this;

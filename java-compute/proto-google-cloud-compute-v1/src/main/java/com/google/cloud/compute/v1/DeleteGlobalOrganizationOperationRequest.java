@@ -72,7 +72,9 @@ public final class DeleteGlobalOrganizationOperationRequest
 
   private int bitField0_;
   public static final int OPERATION_FIELD_NUMBER = 52090215;
-  private volatile java.lang.Object operation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operation_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class DeleteGlobalOrganizationOperationRequest
   }
 
   public static final int PARENT_ID_FIELD_NUMBER = 459714768;
-  private volatile java.lang.Object parentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentId_ = "";
   /**
    *
    *
@@ -398,10 +402,9 @@ public final class DeleteGlobalOrganizationOperationRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operation_ = "";
-
       parentId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -431,16 +434,25 @@ public final class DeleteGlobalOrganizationOperationRequest
     public com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest result =
           new com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.operation_ = operation_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parentId_ = parentId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operation_ = operation_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parentId_ = parentId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -494,11 +506,12 @@ public final class DeleteGlobalOrganizationOperationRequest
               .getDefaultInstance()) return this;
       if (!other.getOperation().isEmpty()) {
         operation_ = other.operation_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasParentId()) {
-        bitField0_ |= 0x00000001;
         parentId_ = other.parentId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -530,13 +543,13 @@ public final class DeleteGlobalOrganizationOperationRequest
             case 416721722:
               {
                 operation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 416721722
             case -617249150:
               {
                 parentId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -617249150
             default:
@@ -619,8 +632,8 @@ public final class DeleteGlobalOrganizationOperationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       operation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +649,8 @@ public final class DeleteGlobalOrganizationOperationRequest
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-
       operation_ = getDefaultInstance().getOperation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +671,8 @@ public final class DeleteGlobalOrganizationOperationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +690,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * @return Whether the parentId field is set.
      */
     public boolean hasParentId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -739,8 +752,8 @@ public final class DeleteGlobalOrganizationOperationRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       parentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -756,8 +769,8 @@ public final class DeleteGlobalOrganizationOperationRequest
      * @return This builder for chaining.
      */
     public Builder clearParentId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       parentId_ = getDefaultInstance().getParentId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -778,8 +791,8 @@ public final class DeleteGlobalOrganizationOperationRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       parentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

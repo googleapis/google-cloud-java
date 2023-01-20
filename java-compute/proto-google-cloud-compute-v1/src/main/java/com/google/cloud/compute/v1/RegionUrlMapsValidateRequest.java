@@ -322,12 +322,12 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resourceBuilder_.clear();
+      bitField0_ = 0;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
+        resourceBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -355,19 +355,21 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.RegionUrlMapsValidateRequest buildPartial() {
       com.google.cloud.compute.v1.RegionUrlMapsValidateRequest result =
           new com.google.cloud.compute.v1.RegionUrlMapsValidateRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RegionUrlMapsValidateRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (resourceBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = resourceBuilder_.build();
-        }
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -525,11 +527,11 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -544,11 +546,11 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     public Builder setResource(com.google.cloud.compute.v1.UrlMap.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,18 +567,15 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
         if (((bitField0_ & 0x00000001) != 0)
             && resource_ != null
             && resource_ != com.google.cloud.compute.v1.UrlMap.getDefaultInstance()) {
-          resource_ =
-              com.google.cloud.compute.v1.UrlMap.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -589,13 +588,13 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
      * <code>optional .google.cloud.compute.v1.UrlMap resource = 195806222;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resourceBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
+        resourceBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

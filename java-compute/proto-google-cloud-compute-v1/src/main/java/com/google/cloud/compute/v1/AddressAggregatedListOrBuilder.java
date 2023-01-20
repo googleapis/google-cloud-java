@@ -102,7 +102,6 @@ public interface AddressAggregatedListOrBuilder
    *
    * <code>map&lt;string, .google.cloud.compute.v1.AddressesScopedList&gt; items = 100526016;</code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.AddressesScopedList getItemsOrDefault(
       java.lang.String key,

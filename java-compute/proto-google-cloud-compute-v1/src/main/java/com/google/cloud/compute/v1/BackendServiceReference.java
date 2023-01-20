@@ -68,7 +68,9 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
-  private volatile java.lang.Object backendService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendService_ = "";
   /**
    * <code>optional string backend_service = 306946058;</code>
    *
@@ -314,8 +316,8 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       backendService_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -343,15 +345,21 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceReference buildPartial() {
       com.google.cloud.compute.v1.BackendServiceReference result =
           new com.google.cloud.compute.v1.BackendServiceReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendService_ = backendService_;
         to_bitField0_ |= 0x00000001;
       }
-      result.backendService_ = backendService_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -401,8 +409,8 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.BackendServiceReference.getDefaultInstance())
         return this;
       if (other.hasBackendService()) {
-        bitField0_ |= 0x00000001;
         backendService_ = other.backendService_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,8 +515,8 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -518,8 +526,8 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       backendService_ = getDefaultInstance().getBackendService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -534,8 +542,8 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

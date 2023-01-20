@@ -228,7 +228,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -257,9 +257,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType result =
-        com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.valueOf(type_);
+        com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.forNumber(type_);
     return result == null
         ? com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.UNRECOGNIZED
         : result;
@@ -319,7 +318,9 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder() {
-    return getDataplexTable();
+    return dataplexTable_ == null
+        ? com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()
+        : dataplexTable_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -538,12 +539,11 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
-      if (dataplexTableBuilder_ == null) {
-        dataplexTable_ = null;
-      } else {
-        dataplexTable_ = null;
+      dataplexTable_ = null;
+      if (dataplexTableBuilder_ != null) {
+        dataplexTableBuilder_.dispose();
         dataplexTableBuilder_ = null;
       }
       return this;
@@ -573,14 +573,22 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1.DatabaseTableSpec buildPartial() {
       com.google.cloud.datacatalog.v1.DatabaseTableSpec result =
           new com.google.cloud.datacatalog.v1.DatabaseTableSpec(this);
-      result.type_ = type_;
-      if (dataplexTableBuilder_ == null) {
-        result.dataplexTable_ = dataplexTable_;
-      } else {
-        result.dataplexTable_ = dataplexTableBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DatabaseTableSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataplexTable_ =
+            dataplexTableBuilder_ == null ? dataplexTable_ : dataplexTableBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -664,13 +672,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getDataplexTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -689,6 +697,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -719,8 +729,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,9 +747,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType result =
-          com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.valueOf(type_);
+          com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.forNumber(type_);
       return result == null
           ? com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.UNRECOGNIZED
           : result;
@@ -760,7 +769,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -777,7 +786,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -804,7 +813,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the dataplexTable field is set.
      */
     public boolean hasDataplexTable() {
-      return dataplexTableBuilder_ != null || dataplexTable_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -847,11 +856,11 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         dataplexTable_ = value;
-        onChanged();
       } else {
         dataplexTableBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,11 +879,11 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder builderForValue) {
       if (dataplexTableBuilder_ == null) {
         dataplexTable_ = builderForValue.build();
-        onChanged();
       } else {
         dataplexTableBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,19 +900,19 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeDataplexTable(com.google.cloud.datacatalog.v1.DataplexTableSpec value) {
       if (dataplexTableBuilder_ == null) {
-        if (dataplexTable_ != null) {
-          dataplexTable_ =
-              com.google.cloud.datacatalog.v1.DataplexTableSpec.newBuilder(dataplexTable_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataplexTable_ != null
+            && dataplexTable_
+                != com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()) {
+          getDataplexTableBuilder().mergeFrom(value);
         } else {
           dataplexTable_ = value;
         }
-        onChanged();
       } else {
         dataplexTableBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,14 +928,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearDataplexTable() {
-      if (dataplexTableBuilder_ == null) {
-        dataplexTable_ = null;
-        onChanged();
-      } else {
-        dataplexTable_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataplexTable_ = null;
+      if (dataplexTableBuilder_ != null) {
+        dataplexTableBuilder_.dispose();
         dataplexTableBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -942,7 +950,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder getDataplexTableBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataplexTableFieldBuilder().getBuilder();
     }

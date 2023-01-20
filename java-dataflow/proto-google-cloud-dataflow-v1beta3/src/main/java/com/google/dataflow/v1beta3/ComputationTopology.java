@@ -73,7 +73,9 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SYSTEM_STAGE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object systemStageName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object systemStageName_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int COMPUTATION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object computationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object computationId_ = "";
   /**
    *
    *
@@ -171,6 +175,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int KEY_RANGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.KeyRangeLocation> keyRanges_;
   /**
    *
@@ -240,6 +246,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INPUTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StreamLocation> inputs_;
   /**
    *
@@ -309,6 +317,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OUTPUTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StreamLocation> outputs_;
   /**
    *
@@ -378,6 +388,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
   }
 
   public static final int STATE_FAMILIES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.StateFamilyConfig> stateFamilies_;
   /**
    *
@@ -697,38 +709,37 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       systemStageName_ = "";
-
       computationId_ = "";
-
       if (keyRangesBuilder_ == null) {
         keyRanges_ = java.util.Collections.emptyList();
       } else {
         keyRanges_ = null;
         keyRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
       } else {
         inputs_ = null;
         inputsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (outputsBuilder_ == null) {
         outputs_ = java.util.Collections.emptyList();
       } else {
         outputs_ = null;
         outputsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (stateFamiliesBuilder_ == null) {
         stateFamilies_ = java.util.Collections.emptyList();
       } else {
         stateFamilies_ = null;
         stateFamiliesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -756,47 +767,62 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     public com.google.dataflow.v1beta3.ComputationTopology buildPartial() {
       com.google.dataflow.v1beta3.ComputationTopology result =
           new com.google.dataflow.v1beta3.ComputationTopology(this);
-      int from_bitField0_ = bitField0_;
-      result.systemStageName_ = systemStageName_;
-      result.computationId_ = computationId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.ComputationTopology result) {
       if (keyRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           keyRanges_ = java.util.Collections.unmodifiableList(keyRanges_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.keyRanges_ = keyRanges_;
       } else {
         result.keyRanges_ = keyRangesBuilder_.build();
       }
       if (inputsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           inputs_ = java.util.Collections.unmodifiableList(inputs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.inputs_ = inputs_;
       } else {
         result.inputs_ = inputsBuilder_.build();
       }
       if (outputsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           outputs_ = java.util.Collections.unmodifiableList(outputs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.outputs_ = outputs_;
       } else {
         result.outputs_ = outputsBuilder_.build();
       }
       if (stateFamiliesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           stateFamilies_ = java.util.Collections.unmodifiableList(stateFamilies_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.stateFamilies_ = stateFamilies_;
       } else {
         result.stateFamilies_ = stateFamiliesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ComputationTopology result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.systemStageName_ = systemStageName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.computationId_ = computationId_;
+      }
     }
 
     @java.lang.Override
@@ -847,17 +873,19 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getSystemStageName().isEmpty()) {
         systemStageName_ = other.systemStageName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getComputationId().isEmpty()) {
         computationId_ = other.computationId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (keyRangesBuilder_ == null) {
         if (!other.keyRanges_.isEmpty()) {
           if (keyRanges_.isEmpty()) {
             keyRanges_ = other.keyRanges_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureKeyRangesIsMutable();
             keyRanges_.addAll(other.keyRanges_);
@@ -870,7 +898,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             keyRangesBuilder_.dispose();
             keyRangesBuilder_ = null;
             keyRanges_ = other.keyRanges_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             keyRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeyRangesFieldBuilder()
@@ -884,7 +912,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         if (!other.inputs_.isEmpty()) {
           if (inputs_.isEmpty()) {
             inputs_ = other.inputs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInputsIsMutable();
             inputs_.addAll(other.inputs_);
@@ -897,7 +925,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             inputsBuilder_.dispose();
             inputsBuilder_ = null;
             inputs_ = other.inputs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             inputsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputsFieldBuilder()
@@ -911,7 +939,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         if (!other.outputs_.isEmpty()) {
           if (outputs_.isEmpty()) {
             outputs_ = other.outputs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureOutputsIsMutable();
             outputs_.addAll(other.outputs_);
@@ -924,7 +952,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             outputsBuilder_.dispose();
             outputsBuilder_ = null;
             outputs_ = other.outputs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             outputsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputsFieldBuilder()
@@ -938,7 +966,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         if (!other.stateFamilies_.isEmpty()) {
           if (stateFamilies_.isEmpty()) {
             stateFamilies_ = other.stateFamilies_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureStateFamiliesIsMutable();
             stateFamilies_.addAll(other.stateFamilies_);
@@ -951,7 +979,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             stateFamiliesBuilder_.dispose();
             stateFamiliesBuilder_ = null;
             stateFamilies_ = other.stateFamilies_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
             stateFamiliesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStateFamiliesFieldBuilder()
@@ -990,7 +1018,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 systemStageName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1035,7 +1063,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
             case 42:
               {
                 computationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 58:
@@ -1131,8 +1159,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       systemStageName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1148,8 +1176,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSystemStageName() {
-
       systemStageName_ = getDefaultInstance().getSystemStageName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1170,8 +1198,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       systemStageName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1237,8 +1265,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       computationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1254,8 +1282,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearComputationId() {
-
       computationId_ = getDefaultInstance().getComputationId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1276,8 +1304,8 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       computationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1286,10 +1314,10 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureKeyRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         keyRanges_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.KeyRangeLocation>(keyRanges_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1505,7 +1533,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     public Builder clearKeyRanges() {
       if (keyRangesBuilder_ == null) {
         keyRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         keyRangesBuilder_.clear();
@@ -1627,7 +1655,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
                 com.google.dataflow.v1beta3.KeyRangeLocation,
                 com.google.dataflow.v1beta3.KeyRangeLocation.Builder,
                 com.google.dataflow.v1beta3.KeyRangeLocationOrBuilder>(
-                keyRanges_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                keyRanges_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         keyRanges_ = null;
       }
       return keyRangesBuilder_;
@@ -1637,9 +1665,9 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureInputsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         inputs_ = new java.util.ArrayList<com.google.dataflow.v1beta3.StreamLocation>(inputs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1854,7 +1882,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     public Builder clearInputs() {
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         inputsBuilder_.clear();
@@ -1976,7 +2004,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
                 com.google.dataflow.v1beta3.StreamLocation,
                 com.google.dataflow.v1beta3.StreamLocation.Builder,
                 com.google.dataflow.v1beta3.StreamLocationOrBuilder>(
-                inputs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                inputs_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         inputs_ = null;
       }
       return inputsBuilder_;
@@ -1986,9 +2014,9 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureOutputsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         outputs_ = new java.util.ArrayList<com.google.dataflow.v1beta3.StreamLocation>(outputs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2203,7 +2231,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     public Builder clearOutputs() {
       if (outputsBuilder_ == null) {
         outputs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         outputsBuilder_.clear();
@@ -2325,7 +2353,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
                 com.google.dataflow.v1beta3.StreamLocation,
                 com.google.dataflow.v1beta3.StreamLocation.Builder,
                 com.google.dataflow.v1beta3.StreamLocationOrBuilder>(
-                outputs_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                outputs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         outputs_ = null;
       }
       return outputsBuilder_;
@@ -2335,10 +2363,10 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureStateFamiliesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         stateFamilies_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.StateFamilyConfig>(stateFamilies_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2556,7 +2584,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
     public Builder clearStateFamilies() {
       if (stateFamiliesBuilder_ == null) {
         stateFamilies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         stateFamiliesBuilder_.clear();
@@ -2682,7 +2710,7 @@ public final class ComputationTopology extends com.google.protobuf.GeneratedMess
                 com.google.dataflow.v1beta3.StateFamilyConfig.Builder,
                 com.google.dataflow.v1beta3.StateFamilyConfigOrBuilder>(
                 stateFamilies_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         stateFamilies_ = null;

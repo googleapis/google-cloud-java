@@ -230,7 +230,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int CHECK_INTERVAL_SEC_FIELD_NUMBER = 345561006;
-  private int checkIntervalSec_;
+  private int checkIntervalSec_ = 0;
   /**
    *
    *
@@ -263,7 +263,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -327,7 +329,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -423,7 +427,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEALTHY_THRESHOLD_FIELD_NUMBER = 403212361;
-  private int healthyThreshold_;
+  private int healthyThreshold_ = 0;
   /**
    *
    *
@@ -552,7 +556,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -585,7 +589,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -699,7 +705,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -763,7 +771,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -827,7 +837,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -951,7 +963,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMEOUT_SEC_FIELD_NUMBER = 79994995;
-  private int timeoutSec_;
+  private int timeoutSec_ = 0;
   /**
    *
    *
@@ -984,7 +996,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1051,7 +1065,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNHEALTHY_THRESHOLD_FIELD_NUMBER = 227958480;
-  private int unhealthyThreshold_;
+  private int unhealthyThreshold_ = 0;
   /**
    *
    *
@@ -1560,72 +1574,54 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       checkIntervalSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (grpcHealthCheckBuilder_ == null) {
-        grpcHealthCheck_ = null;
-      } else {
-        grpcHealthCheckBuilder_.clear();
+      grpcHealthCheck_ = null;
+      if (grpcHealthCheckBuilder_ != null) {
+        grpcHealthCheckBuilder_.dispose();
+        grpcHealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       healthyThreshold_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
-      if (http2HealthCheckBuilder_ == null) {
-        http2HealthCheck_ = null;
-      } else {
-        http2HealthCheckBuilder_.clear();
+      http2HealthCheck_ = null;
+      if (http2HealthCheckBuilder_ != null) {
+        http2HealthCheckBuilder_.dispose();
+        http2HealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (httpHealthCheckBuilder_ == null) {
-        httpHealthCheck_ = null;
-      } else {
-        httpHealthCheckBuilder_.clear();
+      httpHealthCheck_ = null;
+      if (httpHealthCheckBuilder_ != null) {
+        httpHealthCheckBuilder_.dispose();
+        httpHealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
-      if (httpsHealthCheckBuilder_ == null) {
-        httpsHealthCheck_ = null;
-      } else {
-        httpsHealthCheckBuilder_.clear();
+      httpsHealthCheck_ = null;
+      if (httpsHealthCheckBuilder_ != null) {
+        httpsHealthCheckBuilder_.dispose();
+        httpsHealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
-      if (logConfigBuilder_ == null) {
-        logConfig_ = null;
-      } else {
-        logConfigBuilder_.clear();
+      logConfig_ = null;
+      if (logConfigBuilder_ != null) {
+        logConfigBuilder_.dispose();
+        logConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
-      if (sslHealthCheckBuilder_ == null) {
-        sslHealthCheck_ = null;
-      } else {
-        sslHealthCheckBuilder_.clear();
+      sslHealthCheck_ = null;
+      if (sslHealthCheckBuilder_ != null) {
+        sslHealthCheckBuilder_.dispose();
+        sslHealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
-      if (tcpHealthCheckBuilder_ == null) {
-        tcpHealthCheck_ = null;
-      } else {
-        tcpHealthCheckBuilder_.clear();
+      tcpHealthCheck_ = null;
+      if (tcpHealthCheckBuilder_ != null) {
+        tcpHealthCheckBuilder_.dispose();
+        tcpHealthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
       timeoutSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00010000);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
       unhealthyThreshold_ = 0;
-      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -1653,6 +1649,14 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HealthCheck buildPartial() {
       com.google.cloud.compute.v1.HealthCheck result =
           new com.google.cloud.compute.v1.HealthCheck(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthCheck result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1660,19 +1664,16 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000002;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (grpcHealthCheckBuilder_ == null) {
-          result.grpcHealthCheck_ = grpcHealthCheck_;
-        } else {
-          result.grpcHealthCheck_ = grpcHealthCheckBuilder_.build();
-        }
+        result.grpcHealthCheck_ =
+            grpcHealthCheckBuilder_ == null ? grpcHealthCheck_ : grpcHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -1680,27 +1681,18 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        if (http2HealthCheckBuilder_ == null) {
-          result.http2HealthCheck_ = http2HealthCheck_;
-        } else {
-          result.http2HealthCheck_ = http2HealthCheckBuilder_.build();
-        }
+        result.http2HealthCheck_ =
+            http2HealthCheckBuilder_ == null ? http2HealthCheck_ : http2HealthCheckBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (httpHealthCheckBuilder_ == null) {
-          result.httpHealthCheck_ = httpHealthCheck_;
-        } else {
-          result.httpHealthCheck_ = httpHealthCheckBuilder_.build();
-        }
+        result.httpHealthCheck_ =
+            httpHealthCheckBuilder_ == null ? httpHealthCheck_ : httpHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        if (httpsHealthCheckBuilder_ == null) {
-          result.httpsHealthCheck_ = httpsHealthCheck_;
-        } else {
-          result.httpsHealthCheck_ = httpsHealthCheckBuilder_.build();
-        }
+        result.httpsHealthCheck_ =
+            httpsHealthCheckBuilder_ == null ? httpsHealthCheck_ : httpsHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
@@ -1708,43 +1700,33 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000200;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        if (logConfigBuilder_ == null) {
-          result.logConfig_ = logConfig_;
-        } else {
-          result.logConfig_ = logConfigBuilder_.build();
-        }
+        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00001000;
       }
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        if (sslHealthCheckBuilder_ == null) {
-          result.sslHealthCheck_ = sslHealthCheck_;
-        } else {
-          result.sslHealthCheck_ = sslHealthCheckBuilder_.build();
-        }
+        result.sslHealthCheck_ =
+            sslHealthCheckBuilder_ == null ? sslHealthCheck_ : sslHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        if (tcpHealthCheckBuilder_ == null) {
-          result.tcpHealthCheck_ = tcpHealthCheck_;
-        } else {
-          result.tcpHealthCheck_ = tcpHealthCheckBuilder_.build();
-        }
+        result.tcpHealthCheck_ =
+            tcpHealthCheckBuilder_ == null ? tcpHealthCheck_ : tcpHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
@@ -1752,16 +1734,14 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00020000;
       }
-      result.type_ = type_;
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.unhealthyThreshold_ = unhealthyThreshold_;
         to_bitField0_ |= 0x00040000;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1813,13 +1793,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         setCheckIntervalSec(other.getCheckIntervalSec());
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasGrpcHealthCheck()) {
@@ -1841,26 +1821,26 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000800;
         name_ = other.name_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00001000;
         region_ = other.region_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSslHealthCheck()) {
@@ -1873,8 +1853,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         setTimeoutSec(other.getTimeoutSec());
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00020000;
         type_ = other.type_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasUnhealthyThreshold()) {
@@ -2085,8 +2065,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCheckIntervalSec(int value) {
-      bitField0_ |= 0x00000001;
+
       checkIntervalSec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2183,8 +2164,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2200,8 +2181,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2222,8 +2203,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2303,8 +2284,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2320,8 +2301,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2342,8 +2323,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2385,11 +2366,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         grpcHealthCheck_ = value;
-        onChanged();
       } else {
         grpcHealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2399,11 +2380,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.GRPCHealthCheck.Builder builderForValue) {
       if (grpcHealthCheckBuilder_ == null) {
         grpcHealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         grpcHealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2415,31 +2396,28 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             && grpcHealthCheck_ != null
             && grpcHealthCheck_
                 != com.google.cloud.compute.v1.GRPCHealthCheck.getDefaultInstance()) {
-          grpcHealthCheck_ =
-              com.google.cloud.compute.v1.GRPCHealthCheck.newBuilder(grpcHealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getGrpcHealthCheckBuilder().mergeFrom(value);
         } else {
           grpcHealthCheck_ = value;
         }
-        onChanged();
       } else {
         grpcHealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
      */
     public Builder clearGrpcHealthCheck() {
-      if (grpcHealthCheckBuilder_ == null) {
-        grpcHealthCheck_ = null;
-        onChanged();
-      } else {
-        grpcHealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      grpcHealthCheck_ = null;
+      if (grpcHealthCheckBuilder_ != null) {
+        grpcHealthCheckBuilder_.dispose();
+        grpcHealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2526,8 +2504,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHealthyThreshold(int value) {
-      bitField0_ |= 0x00000010;
+
       healthyThreshold_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2589,11 +2568,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         http2HealthCheck_ = value;
-        onChanged();
       } else {
         http2HealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2604,11 +2583,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HTTP2HealthCheck.Builder builderForValue) {
       if (http2HealthCheckBuilder_ == null) {
         http2HealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         http2HealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2621,18 +2600,15 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             && http2HealthCheck_ != null
             && http2HealthCheck_
                 != com.google.cloud.compute.v1.HTTP2HealthCheck.getDefaultInstance()) {
-          http2HealthCheck_ =
-              com.google.cloud.compute.v1.HTTP2HealthCheck.newBuilder(http2HealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHttp2HealthCheckBuilder().mergeFrom(value);
         } else {
           http2HealthCheck_ = value;
         }
-        onChanged();
       } else {
         http2HealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2640,13 +2616,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHttp2HealthCheck() {
-      if (http2HealthCheckBuilder_ == null) {
-        http2HealthCheck_ = null;
-        onChanged();
-      } else {
-        http2HealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000020);
+      http2HealthCheck_ = null;
+      if (http2HealthCheckBuilder_ != null) {
+        http2HealthCheckBuilder_.dispose();
+        http2HealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2729,11 +2705,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         httpHealthCheck_ = value;
-        onChanged();
       } else {
         httpHealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2743,11 +2719,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HTTPHealthCheck.Builder builderForValue) {
       if (httpHealthCheckBuilder_ == null) {
         httpHealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         httpHealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2759,31 +2735,28 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             && httpHealthCheck_ != null
             && httpHealthCheck_
                 != com.google.cloud.compute.v1.HTTPHealthCheck.getDefaultInstance()) {
-          httpHealthCheck_ =
-              com.google.cloud.compute.v1.HTTPHealthCheck.newBuilder(httpHealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHttpHealthCheckBuilder().mergeFrom(value);
         } else {
           httpHealthCheck_ = value;
         }
-        onChanged();
       } else {
         httpHealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
      */
     public Builder clearHttpHealthCheck() {
-      if (httpHealthCheckBuilder_ == null) {
-        httpHealthCheck_ = null;
-        onChanged();
-      } else {
-        httpHealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      httpHealthCheck_ = null;
+      if (httpHealthCheckBuilder_ != null) {
+        httpHealthCheckBuilder_.dispose();
+        httpHealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2866,11 +2839,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         httpsHealthCheck_ = value;
-        onChanged();
       } else {
         httpsHealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2881,11 +2854,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HTTPSHealthCheck.Builder builderForValue) {
       if (httpsHealthCheckBuilder_ == null) {
         httpsHealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         httpsHealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2898,18 +2871,15 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             && httpsHealthCheck_ != null
             && httpsHealthCheck_
                 != com.google.cloud.compute.v1.HTTPSHealthCheck.getDefaultInstance()) {
-          httpsHealthCheck_ =
-              com.google.cloud.compute.v1.HTTPSHealthCheck.newBuilder(httpsHealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHttpsHealthCheckBuilder().mergeFrom(value);
         } else {
           httpsHealthCheck_ = value;
         }
-        onChanged();
       } else {
         httpsHealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2917,13 +2887,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHttpsHealthCheck() {
-      if (httpsHealthCheckBuilder_ == null) {
-        httpsHealthCheck_ = null;
-        onChanged();
-      } else {
-        httpsHealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000080);
+      httpsHealthCheck_ = null;
+      if (httpsHealthCheckBuilder_ != null) {
+        httpsHealthCheckBuilder_.dispose();
+        httpsHealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3013,8 +2983,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000100;
+
       id_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3111,8 +3082,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3128,8 +3099,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3150,8 +3121,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3211,11 +3182,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         logConfig_ = value;
-        onChanged();
       } else {
         logConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3231,11 +3202,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.HealthCheckLogConfig.Builder builderForValue) {
       if (logConfigBuilder_ == null) {
         logConfig_ = builderForValue.build();
-        onChanged();
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3253,18 +3224,15 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             && logConfig_ != null
             && logConfig_
                 != com.google.cloud.compute.v1.HealthCheckLogConfig.getDefaultInstance()) {
-          logConfig_ =
-              com.google.cloud.compute.v1.HealthCheckLogConfig.newBuilder(logConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getLogConfigBuilder().mergeFrom(value);
         } else {
           logConfig_ = value;
         }
-        onChanged();
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3277,13 +3245,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
      */
     public Builder clearLogConfig() {
-      if (logConfigBuilder_ == null) {
-        logConfig_ = null;
-        onChanged();
-      } else {
-        logConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000400);
+      logConfig_ = null;
+      if (logConfigBuilder_ != null) {
+        logConfigBuilder_.dispose();
+        logConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3419,8 +3387,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3436,8 +3404,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3458,8 +3426,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3539,8 +3507,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       region_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3556,8 +3524,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3578,8 +3546,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       region_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3659,8 +3627,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       selfLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3676,8 +3644,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3698,8 +3666,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       selfLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3741,11 +3709,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sslHealthCheck_ = value;
-        onChanged();
       } else {
         sslHealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3755,11 +3723,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.SSLHealthCheck.Builder builderForValue) {
       if (sslHealthCheckBuilder_ == null) {
         sslHealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         sslHealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3770,31 +3738,28 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00004000) != 0)
             && sslHealthCheck_ != null
             && sslHealthCheck_ != com.google.cloud.compute.v1.SSLHealthCheck.getDefaultInstance()) {
-          sslHealthCheck_ =
-              com.google.cloud.compute.v1.SSLHealthCheck.newBuilder(sslHealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSslHealthCheckBuilder().mergeFrom(value);
         } else {
           sslHealthCheck_ = value;
         }
-        onChanged();
       } else {
         sslHealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
      */
     public Builder clearSslHealthCheck() {
-      if (sslHealthCheckBuilder_ == null) {
-        sslHealthCheck_ = null;
-        onChanged();
-      } else {
-        sslHealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00004000);
+      sslHealthCheck_ = null;
+      if (sslHealthCheckBuilder_ != null) {
+        sslHealthCheckBuilder_.dispose();
+        sslHealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3874,11 +3839,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tcpHealthCheck_ = value;
-        onChanged();
       } else {
         tcpHealthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -3888,11 +3853,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.TCPHealthCheck.Builder builderForValue) {
       if (tcpHealthCheckBuilder_ == null) {
         tcpHealthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         tcpHealthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -3903,31 +3868,28 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00008000) != 0)
             && tcpHealthCheck_ != null
             && tcpHealthCheck_ != com.google.cloud.compute.v1.TCPHealthCheck.getDefaultInstance()) {
-          tcpHealthCheck_ =
-              com.google.cloud.compute.v1.TCPHealthCheck.newBuilder(tcpHealthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getTcpHealthCheckBuilder().mergeFrom(value);
         } else {
           tcpHealthCheck_ = value;
         }
-        onChanged();
       } else {
         tcpHealthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
      */
     public Builder clearTcpHealthCheck() {
-      if (tcpHealthCheckBuilder_ == null) {
-        tcpHealthCheck_ = null;
-        onChanged();
-      } else {
-        tcpHealthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00008000);
+      tcpHealthCheck_ = null;
+      if (tcpHealthCheckBuilder_ != null) {
+        tcpHealthCheckBuilder_.dispose();
+        tcpHealthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4014,8 +3976,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-      bitField0_ |= 0x00010000;
+
       timeoutSec_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4116,8 +4079,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
       type_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4134,8 +4097,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00020000);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4157,8 +4120,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
       type_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4207,8 +4170,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUnhealthyThreshold(int value) {
-      bitField0_ |= 0x00040000;
+
       unhealthyThreshold_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

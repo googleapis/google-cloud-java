@@ -148,7 +148,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -396,8 +398,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         return this;
       }
 
@@ -425,9 +427,18 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.datacatalog.v1beta1.TagField.EnumValue buildPartial() {
         com.google.cloud.datacatalog.v1beta1.TagField.EnumValue result =
             new com.google.cloud.datacatalog.v1beta1.TagField.EnumValue(this);
-        result.displayName_ = displayName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1beta1.TagField.EnumValue result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
       }
 
       @java.lang.Override
@@ -480,6 +491,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -511,7 +523,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -530,6 +542,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -592,8 +606,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -609,8 +623,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -631,8 +645,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -758,7 +772,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1052,7 +1068,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORDER_FIELD_NUMBER = 7;
-  private int order_;
+  private int order_ = 0;
   /**
    *
    *
@@ -1366,8 +1382,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       if (timestampValueBuilder_ != null) {
         timestampValueBuilder_.clear();
       }
@@ -1375,7 +1391,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         enumValueBuilder_.clear();
       }
       order_ = 0;
-
       kindCase_ = 0;
       kind_ = null;
       return this;
@@ -1405,34 +1420,33 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.TagField buildPartial() {
       com.google.cloud.datacatalog.v1beta1.TagField result =
           new com.google.cloud.datacatalog.v1beta1.TagField(this);
-      result.displayName_ = displayName_;
-      if (kindCase_ == 2) {
-        result.kind_ = kind_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (kindCase_ == 3) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 4) {
-        result.kind_ = kind_;
-      }
-      if (kindCase_ == 5) {
-        if (timestampValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = timestampValueBuilder_.build();
-        }
-      }
-      if (kindCase_ == 6) {
-        if (enumValueBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = enumValueBuilder_.build();
-        }
-      }
-      result.order_ = order_;
-      result.kindCase_ = kindCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.TagField result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.order_ = order_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datacatalog.v1beta1.TagField result) {
+      result.kindCase_ = kindCase_;
+      result.kind_ = this.kind_;
+      if (kindCase_ == 5 && timestampValueBuilder_ != null) {
+        result.kind_ = timestampValueBuilder_.build();
+      }
+      if (kindCase_ == 6 && enumValueBuilder_ != null) {
+        result.kind_ = enumValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1482,6 +1496,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datacatalog.v1beta1.TagField.getDefaultInstance()) return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getOrder() != 0) {
@@ -1549,7 +1564,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
@@ -1586,7 +1601,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 order_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1619,6 +1634,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -1681,8 +1698,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1698,8 +1715,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1720,8 +1737,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1770,6 +1787,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       kindCase_ = 2;
       kind_ = value;
       onChanged();
@@ -1973,6 +1991,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       kindCase_ = 4;
       kind_ = value;
       onChanged();
@@ -2199,7 +2218,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 5;
       onChanged();
-      ;
       return timestampValueBuilder_;
     }
 
@@ -2420,7 +2438,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 6;
       onChanged();
-      ;
       return enumValueBuilder_;
     }
 
@@ -2463,6 +2480,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     public Builder setOrder(int value) {
 
       order_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2482,7 +2500,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrder() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       order_ = 0;
       onChanged();
       return this;

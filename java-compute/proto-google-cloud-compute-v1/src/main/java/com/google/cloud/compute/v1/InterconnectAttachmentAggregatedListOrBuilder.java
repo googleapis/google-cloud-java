@@ -112,7 +112,6 @@ public interface InterconnectAttachmentAggregatedListOrBuilder
    * map&lt;string, .google.cloud.compute.v1.InterconnectAttachmentsScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.InterconnectAttachmentsScopedList getItemsOrDefault(
       java.lang.String key,

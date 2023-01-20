@@ -71,7 +71,6 @@ public interface LocationPolicyOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
       java.lang.String key,

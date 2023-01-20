@@ -342,12 +342,12 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceSchedulePolicyBuilder_ == null) {
-        instanceSchedulePolicy_ = null;
-      } else {
-        instanceSchedulePolicyBuilder_.clear();
+      bitField0_ = 0;
+      instanceSchedulePolicy_ = null;
+      if (instanceSchedulePolicyBuilder_ != null) {
+        instanceSchedulePolicyBuilder_.dispose();
+        instanceSchedulePolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -375,19 +375,24 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.ResourcePolicyResourceStatus buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyResourceStatus result =
           new com.google.cloud.compute.v1.ResourcePolicyResourceStatus(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ResourcePolicyResourceStatus result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (instanceSchedulePolicyBuilder_ == null) {
-          result.instanceSchedulePolicy_ = instanceSchedulePolicy_;
-        } else {
-          result.instanceSchedulePolicy_ = instanceSchedulePolicyBuilder_.build();
-        }
+        result.instanceSchedulePolicy_ =
+            instanceSchedulePolicyBuilder_ == null
+                ? instanceSchedulePolicy_
+                : instanceSchedulePolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -559,11 +564,11 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         instanceSchedulePolicy_ = value;
-        onChanged();
       } else {
         instanceSchedulePolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,11 +587,11 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
             builderForValue) {
       if (instanceSchedulePolicyBuilder_ == null) {
         instanceSchedulePolicy_ = builderForValue.build();
-        onChanged();
       } else {
         instanceSchedulePolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,19 +615,15 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
                 != com.google.cloud.compute.v1
                     .ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
                     .getDefaultInstance()) {
-          instanceSchedulePolicy_ =
-              com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
-                  .newBuilder(instanceSchedulePolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getInstanceSchedulePolicyBuilder().mergeFrom(value);
         } else {
           instanceSchedulePolicy_ = value;
         }
-        onChanged();
       } else {
         instanceSchedulePolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -637,13 +638,13 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearInstanceSchedulePolicy() {
-      if (instanceSchedulePolicyBuilder_ == null) {
-        instanceSchedulePolicy_ = null;
-        onChanged();
-      } else {
-        instanceSchedulePolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      instanceSchedulePolicy_ = null;
+      if (instanceSchedulePolicyBuilder_ != null) {
+        instanceSchedulePolicyBuilder_.dispose();
+        instanceSchedulePolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

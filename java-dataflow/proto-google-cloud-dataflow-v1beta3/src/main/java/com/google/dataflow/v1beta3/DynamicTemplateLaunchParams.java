@@ -69,7 +69,9 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
   }
 
   public static final int GCS_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gcsPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsPath_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
   }
 
   public static final int STAGING_LOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object stagingLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stagingLocation_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gcsPath_ = "";
-
       stagingLocation_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
     public com.google.dataflow.v1beta3.DynamicTemplateLaunchParams buildPartial() {
       com.google.dataflow.v1beta3.DynamicTemplateLaunchParams result =
           new com.google.dataflow.v1beta3.DynamicTemplateLaunchParams(this);
-      result.gcsPath_ = gcsPath_;
-      result.stagingLocation_ = stagingLocation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.DynamicTemplateLaunchParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsPath_ = gcsPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stagingLocation_ = stagingLocation_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
         return this;
       if (!other.getGcsPath().isEmpty()) {
         gcsPath_ = other.gcsPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getStagingLocation().isEmpty()) {
         stagingLocation_ = other.stagingLocation_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
             case 10:
               {
                 gcsPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 stagingLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gcsPath_ = "";
     /**
@@ -587,8 +605,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearGcsPath() {
-
       gcsPath_ = getDefaultInstance().getGcsPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +716,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       stagingLocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearStagingLocation() {
-
       stagingLocation_ = getDefaultInstance().getStagingLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class DynamicTemplateLaunchParams extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stagingLocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

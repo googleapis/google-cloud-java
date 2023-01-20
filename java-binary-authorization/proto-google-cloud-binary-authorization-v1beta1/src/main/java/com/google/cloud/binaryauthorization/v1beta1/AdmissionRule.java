@@ -416,7 +416,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVALUATION_MODE_FIELD_NUMBER = 1;
-  private int evaluationMode_;
+  private int evaluationMode_ = 0;
   /**
    *
    *
@@ -450,9 +450,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode
       getEvaluationMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode result =
-        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.valueOf(
+        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.forNumber(
             evaluationMode_);
     return result == null
         ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.UNRECOGNIZED
@@ -460,6 +459,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_ATTESTATIONS_BY_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList requireAttestationsBy_;
   /**
    *
@@ -549,7 +550,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENFORCEMENT_MODE_FIELD_NUMBER = 3;
-  private int enforcementMode_;
+  private int enforcementMode_ = 0;
   /**
    *
    *
@@ -583,9 +584,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode
       getEnforcementMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode result =
-        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.valueOf(
+        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.forNumber(
             enforcementMode_);
     return result == null
         ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.UNRECOGNIZED
@@ -833,12 +833,11 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       evaluationMode_ = 0;
-
       requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       enforcementMode_ = 0;
-
       return this;
     }
 
@@ -866,16 +865,31 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result =
           new com.google.cloud.binaryauthorization.v1beta1.AdmissionRule(this);
-      int from_bitField0_ = bitField0_;
-      result.evaluationMode_ = evaluationMode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        requireAttestationsBy_ = requireAttestationsBy_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requireAttestationsBy_ = requireAttestationsBy_;
-      result.enforcementMode_ = enforcementMode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        requireAttestationsBy_ = requireAttestationsBy_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.requireAttestationsBy_ = requireAttestationsBy_;
+    }
+
+    private void buildPartial0(com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluationMode_ = evaluationMode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enforcementMode_ = enforcementMode_;
+      }
     }
 
     @java.lang.Override
@@ -930,7 +944,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.requireAttestationsBy_.isEmpty()) {
         if (requireAttestationsBy_.isEmpty()) {
           requireAttestationsBy_ = other.requireAttestationsBy_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureRequireAttestationsByIsMutable();
           requireAttestationsBy_.addAll(other.requireAttestationsBy_);
@@ -969,7 +983,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 evaluationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -982,7 +996,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 enforcementMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1037,8 +1051,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEvaluationModeValue(int value) {
-
       evaluationMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1058,9 +1072,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode
         getEvaluationMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode result =
-          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.valueOf(
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.forNumber(
               evaluationMode_);
       return result == null
           ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode.UNRECOGNIZED
@@ -1085,7 +1098,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       evaluationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1104,7 +1117,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEvaluationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       evaluationMode_ = 0;
       onChanged();
       return this;
@@ -1114,10 +1127,10 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRequireAttestationsByIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         requireAttestationsBy_ =
             new com.google.protobuf.LazyStringArrayList(requireAttestationsBy_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1308,7 +1321,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequireAttestationsBy() {
       requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1375,8 +1388,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnforcementModeValue(int value) {
-
       enforcementMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1396,9 +1409,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode
         getEnforcementMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode result =
-          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.valueOf(
+          com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.forNumber(
               enforcementMode_);
       return result == null
           ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EnforcementMode.UNRECOGNIZED
@@ -1423,7 +1435,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       enforcementMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1442,7 +1454,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnforcementMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enforcementMode_ = 0;
       onChanged();
       return this;

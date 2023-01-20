@@ -397,11 +397,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        */
       @java.lang.Override
       public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-        return getStartTime();
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
 
       public static final int CONVERSATION_COUNT_FIELD_NUMBER = 2;
-      private int conversationCount_;
+      private int conversationCount_ = 0;
       /**
        *
        *
@@ -661,14 +661,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (startTimeBuilder_ == null) {
-            startTime_ = null;
-          } else {
-            startTime_ = null;
+          bitField0_ = 0;
+          startTime_ = null;
+          if (startTimeBuilder_ != null) {
+            startTimeBuilder_.dispose();
             startTimeBuilder_ = null;
           }
           conversationCount_ = 0;
-
           return this;
         }
 
@@ -703,14 +702,23 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               result =
                   new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
                       .Interval(this);
-          if (startTimeBuilder_ == null) {
-            result.startTime_ = startTime_;
-          } else {
-            result.startTime_ = startTimeBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.conversationCount_ = conversationCount_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.conversationCount_ = conversationCount_;
+          }
         }
 
         @java.lang.Override
@@ -805,13 +813,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 case 10:
                   {
                     input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 16:
                   {
                     conversationCount_ = input.readInt32();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -831,6 +839,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           return this;
         }
 
+        private int bitField0_;
+
         private com.google.protobuf.Timestamp startTime_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Timestamp,
@@ -849,7 +859,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
          * @return Whether the startTime field is set.
          */
         public boolean hasStartTime() {
-          return startTimeBuilder_ != null || startTime_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -886,11 +896,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               throw new NullPointerException();
             }
             startTime_ = value;
-            onChanged();
           } else {
             startTimeBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -905,11 +915,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
           if (startTimeBuilder_ == null) {
             startTime_ = builderForValue.build();
-            onChanged();
           } else {
             startTimeBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -923,19 +933,18 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
          */
         public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
           if (startTimeBuilder_ == null) {
-            if (startTime_ != null) {
-              startTime_ =
-                  com.google.protobuf.Timestamp.newBuilder(startTime_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && startTime_ != null
+                && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getStartTimeBuilder().mergeFrom(value);
             } else {
               startTime_ = value;
             }
-            onChanged();
           } else {
             startTimeBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -948,14 +957,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
          * <code>.google.protobuf.Timestamp start_time = 1;</code>
          */
         public Builder clearStartTime() {
-          if (startTimeBuilder_ == null) {
-            startTime_ = null;
-            onChanged();
-          } else {
-            startTime_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          startTime_ = null;
+          if (startTimeBuilder_ != null) {
+            startTimeBuilder_.dispose();
             startTimeBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -968,7 +976,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
          * <code>.google.protobuf.Timestamp start_time = 1;</code>
          */
         public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getStartTimeFieldBuilder().getBuilder();
         }
@@ -1047,6 +1055,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         public Builder setConversationCount(int value) {
 
           conversationCount_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1062,7 +1071,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
          * @return This builder for chaining.
          */
         public Builder clearConversationCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           conversationCount_ = 0;
           onChanged();
           return this;
@@ -1184,10 +1193,14 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getIntervalDurationOrBuilder() {
-      return getIntervalDuration();
+      return intervalDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : intervalDuration_;
     }
 
     public static final int POINTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval>
         points_;
@@ -1511,10 +1524,10 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (intervalDurationBuilder_ == null) {
-          intervalDuration_ = null;
-        } else {
-          intervalDuration_ = null;
+        bitField0_ = 0;
+        intervalDuration_ = null;
+        if (intervalDurationBuilder_ != null) {
+          intervalDurationBuilder_.dispose();
           intervalDurationBuilder_ = null;
         }
         if (pointsBuilder_ == null) {
@@ -1523,7 +1536,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           points_ = null;
           pointsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1555,23 +1568,36 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries result =
             new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries(this);
-        int from_bitField0_ = bitField0_;
-        if (intervalDurationBuilder_ == null) {
-          result.intervalDuration_ = intervalDuration_;
-        } else {
-          result.intervalDuration_ = intervalDurationBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries result) {
         if (pointsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             points_ = java.util.Collections.unmodifiableList(points_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.points_ = points_;
         } else {
           result.points_ = pointsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.intervalDuration_ =
+              intervalDurationBuilder_ == null
+                  ? intervalDuration_
+                  : intervalDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1634,7 +1660,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           if (!other.points_.isEmpty()) {
             if (points_.isEmpty()) {
               points_ = other.points_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePointsIsMutable();
               points_.addAll(other.points_);
@@ -1647,7 +1673,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
               pointsBuilder_.dispose();
               pointsBuilder_ = null;
               points_ = other.points_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               pointsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPointsFieldBuilder()
@@ -1687,7 +1713,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 {
                   input.readMessage(
                       getIntervalDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1744,7 +1770,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        * @return Whether the intervalDuration field is set.
        */
       public boolean hasIntervalDuration() {
-        return intervalDurationBuilder_ != null || intervalDuration_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1781,11 +1807,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             throw new NullPointerException();
           }
           intervalDuration_ = value;
-          onChanged();
         } else {
           intervalDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1800,11 +1826,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       public Builder setIntervalDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (intervalDurationBuilder_ == null) {
           intervalDuration_ = builderForValue.build();
-          onChanged();
         } else {
           intervalDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1818,19 +1844,18 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        */
       public Builder mergeIntervalDuration(com.google.protobuf.Duration value) {
         if (intervalDurationBuilder_ == null) {
-          if (intervalDuration_ != null) {
-            intervalDuration_ =
-                com.google.protobuf.Duration.newBuilder(intervalDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && intervalDuration_ != null
+              && intervalDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getIntervalDurationBuilder().mergeFrom(value);
           } else {
             intervalDuration_ = value;
           }
-          onChanged();
         } else {
           intervalDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1843,14 +1868,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Duration interval_duration = 1;</code>
        */
       public Builder clearIntervalDuration() {
-        if (intervalDurationBuilder_ == null) {
-          intervalDuration_ = null;
-          onChanged();
-        } else {
-          intervalDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        intervalDuration_ = null;
+        if (intervalDurationBuilder_ != null) {
+          intervalDurationBuilder_.dispose();
           intervalDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1863,7 +1887,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
        * <code>.google.protobuf.Duration interval_duration = 1;</code>
        */
       public com.google.protobuf.Duration.Builder getIntervalDurationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getIntervalDurationFieldBuilder().getBuilder();
       }
@@ -1916,12 +1940,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           points_ = java.util.Collections.emptyList();
 
       private void ensurePointsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           points_ =
               new java.util.ArrayList<
                   com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
                       .Interval>(points_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -2206,7 +2230,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       public Builder clearPoints() {
         if (pointsBuilder_ == null) {
           points_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           pointsBuilder_.clear();
@@ -2379,7 +2403,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                       .Interval.Builder,
                   com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
                       .IntervalOrBuilder>(
-                  points_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  points_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           points_ = null;
         }
         return pointsBuilder_;
@@ -2501,11 +2525,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAverageDurationOrBuilder() {
-    return getAverageDuration();
+    return averageDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : averageDuration_;
   }
 
   public static final int AVERAGE_TURN_COUNT_FIELD_NUMBER = 2;
-  private int averageTurnCount_;
+  private int averageTurnCount_ = 0;
   /**
    *
    *
@@ -2523,7 +2549,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONVERSATION_COUNT_FIELD_NUMBER = 3;
-  private int conversationCount_;
+  private int conversationCount_ = 0;
   /**
    *
    *
@@ -2553,6 +2579,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             0);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
       smartHighlighterMatches_;
 
@@ -2660,6 +2687,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             0);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
       customHighlighterMatches_;
 
@@ -2767,6 +2795,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             0);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> issueMatches_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -2794,8 +2823,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
-  @java.lang.Deprecated
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean containsIssueMatches(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -2891,6 +2920,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
@@ -2973,9 +3003,10 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+  public /* nullable */ com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
       getIssueMatchesStatsOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -3073,7 +3104,10 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeriesOrBuilder
       getConversationCountTimeSeriesOrBuilder() {
-    return getConversationCountTimeSeries();
+    return conversationCountTimeSeries_ == null
+        ? com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+            .getDefaultInstance()
+        : conversationCountTimeSeries_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3432,24 +3466,21 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (averageDurationBuilder_ == null) {
-        averageDuration_ = null;
-      } else {
-        averageDuration_ = null;
+      bitField0_ = 0;
+      averageDuration_ = null;
+      if (averageDurationBuilder_ != null) {
+        averageDurationBuilder_.dispose();
         averageDurationBuilder_ = null;
       }
       averageTurnCount_ = 0;
-
       conversationCount_ = 0;
-
       internalGetMutableSmartHighlighterMatches().clear();
       internalGetMutableCustomHighlighterMatches().clear();
       internalGetMutableIssueMatches().clear();
       internalGetMutableIssueMatchesStats().clear();
-      if (conversationCountTimeSeriesBuilder_ == null) {
-        conversationCountTimeSeries_ = null;
-      } else {
-        conversationCountTimeSeries_ = null;
+      conversationCountTimeSeries_ = null;
+      if (conversationCountTimeSeriesBuilder_ != null) {
+        conversationCountTimeSeriesBuilder_.dispose();
         conversationCountTimeSeriesBuilder_ = null;
       }
       return this;
@@ -3480,29 +3511,48 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse result =
           new com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (averageDurationBuilder_ == null) {
-        result.averageDuration_ = averageDuration_;
-      } else {
-        result.averageDuration_ = averageDurationBuilder_.build();
-      }
-      result.averageTurnCount_ = averageTurnCount_;
-      result.conversationCount_ = conversationCount_;
-      result.smartHighlighterMatches_ = internalGetSmartHighlighterMatches();
-      result.smartHighlighterMatches_.makeImmutable();
-      result.customHighlighterMatches_ = internalGetCustomHighlighterMatches();
-      result.customHighlighterMatches_.makeImmutable();
-      result.issueMatches_ = internalGetIssueMatches();
-      result.issueMatches_.makeImmutable();
-      result.issueMatchesStats_ = internalGetIssueMatchesStats();
-      result.issueMatchesStats_.makeImmutable();
-      if (conversationCountTimeSeriesBuilder_ == null) {
-        result.conversationCountTimeSeries_ = conversationCountTimeSeries_;
-      } else {
-        result.conversationCountTimeSeries_ = conversationCountTimeSeriesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.averageDuration_ =
+            averageDurationBuilder_ == null ? averageDuration_ : averageDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.averageTurnCount_ = averageTurnCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conversationCount_ = conversationCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.smartHighlighterMatches_ = internalGetSmartHighlighterMatches();
+        result.smartHighlighterMatches_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.customHighlighterMatches_ = internalGetCustomHighlighterMatches();
+        result.customHighlighterMatches_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.issueMatches_ = internalGetIssueMatches();
+        result.issueMatches_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.issueMatchesStats_ = internalGetIssueMatchesStats();
+        result.issueMatchesStats_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.conversationCountTimeSeries_ =
+            conversationCountTimeSeriesBuilder_ == null
+                ? conversationCountTimeSeries_
+                : conversationCountTimeSeriesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3564,10 +3614,14 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
       internalGetMutableSmartHighlighterMatches()
           .mergeFrom(other.internalGetSmartHighlighterMatches());
+      bitField0_ |= 0x00000008;
       internalGetMutableCustomHighlighterMatches()
           .mergeFrom(other.internalGetCustomHighlighterMatches());
+      bitField0_ |= 0x00000010;
       internalGetMutableIssueMatches().mergeFrom(other.internalGetIssueMatches());
+      bitField0_ |= 0x00000020;
       internalGetMutableIssueMatchesStats().mergeFrom(other.internalGetIssueMatchesStats());
+      bitField0_ |= 0x00000040;
       if (other.hasConversationCountTimeSeries()) {
         mergeConversationCountTimeSeries(other.getConversationCountTimeSeries());
       }
@@ -3600,19 +3654,19 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getAverageDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 averageTurnCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 conversationCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -3626,6 +3680,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 internalGetMutableSmartHighlighterMatches()
                     .getMutableMap()
                     .put(smartHighlighterMatches__.getKey(), smartHighlighterMatches__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -3640,6 +3695,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                     .getMutableMap()
                     .put(
                         customHighlighterMatches__.getKey(), customHighlighterMatches__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -3651,13 +3707,14 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 internalGetMutableIssueMatches()
                     .getMutableMap()
                     .put(issueMatches__.getKey(), issueMatches__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getConversationCountTimeSeriesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -3672,6 +3729,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 internalGetMutableIssueMatchesStats()
                     .getMutableMap()
                     .put(issueMatchesStats__.getKey(), issueMatchesStats__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -3712,7 +3770,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the averageDuration field is set.
      */
     public boolean hasAverageDuration() {
-      return averageDurationBuilder_ != null || averageDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3751,11 +3809,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         averageDuration_ = value;
-        onChanged();
       } else {
         averageDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3771,11 +3829,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder setAverageDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (averageDurationBuilder_ == null) {
         averageDuration_ = builderForValue.build();
-        onChanged();
       } else {
         averageDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3790,19 +3848,18 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeAverageDuration(com.google.protobuf.Duration value) {
       if (averageDurationBuilder_ == null) {
-        if (averageDuration_ != null) {
-          averageDuration_ =
-              com.google.protobuf.Duration.newBuilder(averageDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && averageDuration_ != null
+            && averageDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAverageDurationBuilder().mergeFrom(value);
         } else {
           averageDuration_ = value;
         }
-        onChanged();
       } else {
         averageDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3816,14 +3873,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Duration average_duration = 1;</code>
      */
     public Builder clearAverageDuration() {
-      if (averageDurationBuilder_ == null) {
-        averageDuration_ = null;
-        onChanged();
-      } else {
-        averageDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      averageDuration_ = null;
+      if (averageDurationBuilder_ != null) {
+        averageDurationBuilder_.dispose();
         averageDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3837,7 +3893,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Duration average_duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getAverageDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAverageDurationFieldBuilder().getBuilder();
     }
@@ -3918,6 +3974,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder setAverageTurnCount(int value) {
 
       averageTurnCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3933,7 +3990,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAverageTurnCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       averageTurnCount_ = 0;
       onChanged();
       return this;
@@ -3970,6 +4027,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder setConversationCount(int value) {
 
       conversationCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3985,7 +4043,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearConversationCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       conversationCount_ = 0;
       onChanged();
       return this;
@@ -4005,8 +4063,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableSmartHighlighterMatches() {
-      onChanged();
-      ;
       if (smartHighlighterMatches_ == null) {
         smartHighlighterMatches_ =
             com.google.protobuf.MapField.newMapField(
@@ -4015,6 +4071,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       if (!smartHighlighterMatches_.isMutable()) {
         smartHighlighterMatches_ = smartHighlighterMatches_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return smartHighlighterMatches_;
     }
 
@@ -4101,6 +4159,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearSmartHighlighterMatches() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableSmartHighlighterMatches().getMutableMap().clear();
       return this;
     }
@@ -4124,6 +4183,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableSmartHighlighterMatches() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableSmartHighlighterMatches().getMutableMap();
     }
     /**
@@ -4142,6 +4202,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
 
       internalGetMutableSmartHighlighterMatches().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4157,6 +4218,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder putAllSmartHighlighterMatches(
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableSmartHighlighterMatches().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -4174,8 +4236,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableCustomHighlighterMatches() {
-      onChanged();
-      ;
       if (customHighlighterMatches_ == null) {
         customHighlighterMatches_ =
             com.google.protobuf.MapField.newMapField(
@@ -4184,6 +4244,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       if (!customHighlighterMatches_.isMutable()) {
         customHighlighterMatches_ = customHighlighterMatches_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return customHighlighterMatches_;
     }
 
@@ -4270,6 +4332,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearCustomHighlighterMatches() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableCustomHighlighterMatches().getMutableMap().clear();
       return this;
     }
@@ -4293,6 +4356,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableCustomHighlighterMatches() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableCustomHighlighterMatches().getMutableMap();
     }
     /**
@@ -4311,6 +4375,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
 
       internalGetMutableCustomHighlighterMatches().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -4326,11 +4391,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder putAllCustomHighlighterMatches(
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableCustomHighlighterMatches().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> issueMatches_;
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetIssueMatches() {
       if (issueMatches_ == null) {
@@ -4340,10 +4407,9 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       return issueMatches_;
     }
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableIssueMatches() {
-      onChanged();
-      ;
       if (issueMatches_ == null) {
         issueMatches_ =
             com.google.protobuf.MapField.newMapField(IssueMatchesDefaultEntryHolder.defaultEntry);
@@ -4351,6 +4417,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       if (!issueMatches_.isMutable()) {
         issueMatches_ = issueMatches_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return issueMatches_;
     }
 
@@ -4370,8 +4438,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      *
      * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
-    @java.lang.Deprecated
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean containsIssueMatches(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -4449,6 +4517,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Deprecated
     public Builder clearIssueMatches() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableIssueMatches().getMutableMap().clear();
       return this;
     }
@@ -4475,6 +4544,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableIssueMatches() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableIssueMatches().getMutableMap();
     }
     /**
@@ -4496,6 +4566,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
 
       internalGetMutableIssueMatches().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -4513,6 +4584,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public Builder putAllIssueMatches(java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableIssueMatches().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -4536,8 +4608,6 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             java.lang.String,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
         internalGetMutableIssueMatchesStats() {
-      onChanged();
-      ;
       if (issueMatchesStats_ == null) {
         issueMatchesStats_ =
             com.google.protobuf.MapField.newMapField(
@@ -4546,6 +4616,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       if (!issueMatchesStats_.isMutable()) {
         issueMatchesStats_ = issueMatchesStats_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return issueMatchesStats_;
     }
 
@@ -4615,9 +4687,10 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
+    public /* nullable */ com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
         getIssueMatchesStatsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
                 defaultValue) {
       if (key == null) {
@@ -4659,6 +4732,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearIssueMatchesStats() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableIssueMatchesStats().getMutableMap().clear();
       return this;
     }
@@ -4688,6 +4762,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             java.lang.String,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
         getMutableIssueMatchesStats() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableIssueMatchesStats().getMutableMap();
     }
     /**
@@ -4712,8 +4787,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableIssueMatchesStats().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -4735,6 +4810,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
             values) {
       internalGetMutableIssueMatchesStats().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -4760,7 +4836,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * @return Whether the conversationCountTimeSeries field is set.
      */
     public boolean hasConversationCountTimeSeries() {
-      return conversationCountTimeSeriesBuilder_ != null || conversationCountTimeSeries_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4806,11 +4882,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         conversationCountTimeSeries_ = value;
-        onChanged();
       } else {
         conversationCountTimeSeriesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4830,11 +4906,11 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             builderForValue) {
       if (conversationCountTimeSeriesBuilder_ == null) {
         conversationCountTimeSeries_ = builderForValue.build();
-        onChanged();
       } else {
         conversationCountTimeSeriesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4852,20 +4928,20 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public Builder mergeConversationCountTimeSeries(
         com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries value) {
       if (conversationCountTimeSeriesBuilder_ == null) {
-        if (conversationCountTimeSeries_ != null) {
-          conversationCountTimeSeries_ =
-              com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
-                  .newBuilder(conversationCountTimeSeries_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && conversationCountTimeSeries_ != null
+            && conversationCountTimeSeries_
+                != com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
+                    .getDefaultInstance()) {
+          getConversationCountTimeSeriesBuilder().mergeFrom(value);
         } else {
           conversationCountTimeSeries_ = value;
         }
-        onChanged();
       } else {
         conversationCountTimeSeriesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4881,14 +4957,13 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearConversationCountTimeSeries() {
-      if (conversationCountTimeSeriesBuilder_ == null) {
-        conversationCountTimeSeries_ = null;
-        onChanged();
-      } else {
-        conversationCountTimeSeries_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      conversationCountTimeSeries_ = null;
+      if (conversationCountTimeSeriesBuilder_ != null) {
+        conversationCountTimeSeriesBuilder_.dispose();
         conversationCountTimeSeriesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4905,7 +4980,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Builder
         getConversationCountTimeSeriesBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getConversationCountTimeSeriesFieldBuilder().getBuilder();
     }

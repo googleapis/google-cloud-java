@@ -260,6 +260,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     public static final int INCLUDE_ORG_IDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList includeOrgIds_;
     /**
      *
@@ -329,6 +331,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     public static final int INCLUDE_PROJECT_IDS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList includeProjectIds_;
     /**
      *
@@ -398,7 +402,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     public static final int INCLUDE_GCP_PUBLIC_DATASETS_FIELD_NUMBER = 7;
-    private boolean includeGcpPublicDatasets_;
+    private boolean includeGcpPublicDatasets_ = false;
     /**
      *
      *
@@ -652,12 +656,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         includeGcpPublicDatasets_ = false;
-
         return this;
       }
 
@@ -686,7 +690,16 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope buildPartial() {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result =
             new com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           includeOrgIds_ = includeOrgIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -697,9 +710,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.includeProjectIds_ = includeProjectIds_;
-        result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
+        }
       }
 
       @java.lang.Override
@@ -818,7 +836,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
               case 56:
                 {
                   includeGcpPublicDatasets_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 56
               default:
@@ -1249,6 +1267,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder setIncludeGcpPublicDatasets(boolean value) {
 
         includeGcpPublicDatasets_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1267,7 +1286,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeGcpPublicDatasets() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         includeGcpPublicDatasets_ = false;
         onChanged();
         return this;
@@ -1401,11 +1420,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.ScopeOrBuilder
       getScopeOrBuilder() {
-    return getScope();
+    return scope_ == null
+        ? com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.getDefaultInstance()
+        : scope_;
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -1470,7 +1493,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -1489,7 +1512,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -1548,7 +1573,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -1846,20 +1873,16 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (scopeBuilder_ == null) {
-        scope_ = null;
-      } else {
-        scope_ = null;
+      bitField0_ = 0;
+      scope_ = null;
+      if (scopeBuilder_ != null) {
+        scopeBuilder_.dispose();
         scopeBuilder_ = null;
       }
       query_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       orderBy_ = "";
-
       return this;
     }
 
@@ -1887,17 +1910,30 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest result =
           new com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest(this);
-      if (scopeBuilder_ == null) {
-        result.scope_ = scope_;
-      } else {
-        result.scope_ = scopeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.query_ = query_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scopeBuilder_ == null ? scope_ : scopeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
     }
 
     @java.lang.Override
@@ -1951,6 +1987,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -1958,10 +1995,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1993,31 +2032,31 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 42:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getScopeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             default:
@@ -2036,6 +2075,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2060,7 +2101,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the scope field is set.
      */
     public boolean hasScope() {
-      return scopeBuilder_ != null || scope_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2107,11 +2148,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         scope_ = value;
-        onChanged();
       } else {
         scopeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2132,11 +2173,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.Builder builderForValue) {
       if (scopeBuilder_ == null) {
         scope_ = builderForValue.build();
-        onChanged();
       } else {
         scopeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2156,19 +2197,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeScope(
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope value) {
       if (scopeBuilder_ == null) {
-        if (scope_ != null) {
-          scope_ =
-              com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.newBuilder(scope_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && scope_ != null
+            && scope_
+                != com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope
+                    .getDefaultInstance()) {
+          getScopeBuilder().mergeFrom(value);
         } else {
           scope_ = value;
         }
-        onChanged();
       } else {
         scopeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2186,14 +2228,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearScope() {
-      if (scopeBuilder_ == null) {
-        scope_ = null;
-        onChanged();
-      } else {
-        scope_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scope_ = null;
+      if (scopeBuilder_ != null) {
+        scopeBuilder_.dispose();
         scopeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2212,7 +2253,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.Builder
         getScopeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getScopeFieldBuilder().getBuilder();
     }
@@ -2356,8 +2397,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2381,8 +2422,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2411,8 +2452,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2450,6 +2491,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2466,7 +2508,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -2548,8 +2590,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2570,8 +2612,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2597,8 +2639,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2679,8 +2721,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2701,8 +2743,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2728,8 +2770,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

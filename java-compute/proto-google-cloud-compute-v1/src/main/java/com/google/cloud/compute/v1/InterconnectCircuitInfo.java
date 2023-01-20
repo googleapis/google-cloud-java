@@ -71,7 +71,9 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int CUSTOMER_DEMARC_ID_FIELD_NUMBER = 28771859;
-  private volatile java.lang.Object customerDemarcId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerDemarcId_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
   }
 
   public static final int GOOGLE_CIRCUIT_ID_FIELD_NUMBER = 262014711;
-  private volatile java.lang.Object googleCircuitId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleCircuitId_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
   }
 
   public static final int GOOGLE_DEMARC_ID_FIELD_NUMBER = 448196270;
-  private volatile java.lang.Object googleDemarcId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleDemarcId_ = "";
   /**
    *
    *
@@ -492,12 +498,10 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       customerDemarcId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       googleCircuitId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       googleDemarcId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -525,23 +529,29 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InterconnectCircuitInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectCircuitInfo result =
           new com.google.cloud.compute.v1.InterconnectCircuitInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectCircuitInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customerDemarcId_ = customerDemarcId_;
         to_bitField0_ |= 0x00000001;
       }
-      result.customerDemarcId_ = customerDemarcId_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.googleCircuitId_ = googleCircuitId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.googleCircuitId_ = googleCircuitId_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.googleDemarcId_ = googleDemarcId_;
         to_bitField0_ |= 0x00000004;
       }
-      result.googleDemarcId_ = googleDemarcId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -591,18 +601,18 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (other == com.google.cloud.compute.v1.InterconnectCircuitInfo.getDefaultInstance())
         return this;
       if (other.hasCustomerDemarcId()) {
-        bitField0_ |= 0x00000001;
         customerDemarcId_ = other.customerDemarcId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGoogleCircuitId()) {
-        bitField0_ |= 0x00000002;
         googleCircuitId_ = other.googleCircuitId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasGoogleDemarcId()) {
-        bitField0_ |= 0x00000004;
         googleDemarcId_ = other.googleDemarcId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,8 +753,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       customerDemarcId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,8 +770,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCustomerDemarcId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       customerDemarcId_ = getDefaultInstance().getCustomerDemarcId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -782,8 +792,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       customerDemarcId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,8 +873,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       googleCircuitId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,8 +890,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearGoogleCircuitId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       googleCircuitId_ = getDefaultInstance().getGoogleCircuitId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -902,8 +912,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       googleCircuitId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -983,8 +993,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       googleDemarcId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1000,8 +1010,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearGoogleDemarcId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       googleDemarcId_ = getDefaultInstance().getGoogleDemarcId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1022,8 +1032,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       googleDemarcId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

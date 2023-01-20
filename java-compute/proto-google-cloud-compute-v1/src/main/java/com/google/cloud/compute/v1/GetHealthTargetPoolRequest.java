@@ -121,11 +121,15 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceReferenceOrBuilder
       getInstanceReferenceResourceOrBuilder() {
-    return getInstanceReferenceResource();
+    return instanceReferenceResource_ == null
+        ? com.google.cloud.compute.v1.InstanceReference.getDefaultInstance()
+        : instanceReferenceResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -223,7 +229,9 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_POOL_FIELD_NUMBER = 62796298;
-  private volatile java.lang.Object targetPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetPool_ = "";
   /**
    *
    *
@@ -504,18 +512,15 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceReferenceResourceBuilder_ == null) {
-        instanceReferenceResource_ = null;
-      } else {
-        instanceReferenceResource_ = null;
+      bitField0_ = 0;
+      instanceReferenceResource_ = null;
+      if (instanceReferenceResourceBuilder_ != null) {
+        instanceReferenceResourceBuilder_.dispose();
         instanceReferenceResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       targetPool_ = "";
-
       return this;
     }
 
@@ -543,16 +548,30 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.GetHealthTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.GetHealthTargetPoolRequest result =
           new com.google.cloud.compute.v1.GetHealthTargetPoolRequest(this);
-      if (instanceReferenceResourceBuilder_ == null) {
-        result.instanceReferenceResource_ = instanceReferenceResource_;
-      } else {
-        result.instanceReferenceResource_ = instanceReferenceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.region_ = region_;
-      result.targetPool_ = targetPool_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetHealthTargetPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceReferenceResource_ =
+            instanceReferenceResourceBuilder_ == null
+                ? instanceReferenceResource_
+                : instanceReferenceResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetPool_ = targetPool_;
+      }
     }
 
     @java.lang.Override
@@ -606,14 +625,17 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetPool().isEmpty()) {
         targetPool_ = other.targetPool_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -645,26 +667,26 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
             case 502370386:
               {
                 targetPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 502370386
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1951558814:
               {
                 input.readMessage(
                     getInstanceReferenceResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1951558814
             default:
@@ -683,6 +705,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.compute.v1.InstanceReference instanceReferenceResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -704,7 +728,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * @return Whether the instanceReferenceResource field is set.
      */
     public boolean hasInstanceReferenceResource() {
-      return instanceReferenceResourceBuilder_ != null || instanceReferenceResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -746,11 +770,11 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         instanceReferenceResource_ = value;
-        onChanged();
       } else {
         instanceReferenceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -768,11 +792,11 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
         com.google.cloud.compute.v1.InstanceReference.Builder builderForValue) {
       if (instanceReferenceResourceBuilder_ == null) {
         instanceReferenceResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceReferenceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -789,19 +813,19 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     public Builder mergeInstanceReferenceResource(
         com.google.cloud.compute.v1.InstanceReference value) {
       if (instanceReferenceResourceBuilder_ == null) {
-        if (instanceReferenceResource_ != null) {
-          instanceReferenceResource_ =
-              com.google.cloud.compute.v1.InstanceReference.newBuilder(instanceReferenceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && instanceReferenceResource_ != null
+            && instanceReferenceResource_
+                != com.google.cloud.compute.v1.InstanceReference.getDefaultInstance()) {
+          getInstanceReferenceResourceBuilder().mergeFrom(value);
         } else {
           instanceReferenceResource_ = value;
         }
-        onChanged();
       } else {
         instanceReferenceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -816,14 +840,13 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInstanceReferenceResource() {
-      if (instanceReferenceResourceBuilder_ == null) {
-        instanceReferenceResource_ = null;
-        onChanged();
-      } else {
-        instanceReferenceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceReferenceResource_ = null;
+      if (instanceReferenceResourceBuilder_ != null) {
+        instanceReferenceResourceBuilder_.dispose();
         instanceReferenceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -839,7 +862,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceReference.Builder
         getInstanceReferenceResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInstanceReferenceResourceFieldBuilder().getBuilder();
     }
@@ -953,8 +976,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -970,8 +993,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -992,8 +1015,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1059,8 +1082,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1076,8 +1099,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1098,8 +1121,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1165,8 +1188,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1182,8 +1205,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTargetPool() {
-
       targetPool_ = getDefaultInstance().getTargetPool();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1204,8 +1227,8 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

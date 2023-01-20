@@ -113,7 +113,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -162,7 +162,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int REQUEST_FIELD_NUMBER = 3;
@@ -211,10 +211,14 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequestOrBuilder
       getRequestOrBuilder() {
-    return getRequest();
+    return request_ == null
+        ? com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.getDefaultInstance()
+        : request_;
   }
 
   public static final int PARTIAL_ERRORS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialErrors_;
   /**
    *
@@ -531,22 +535,20 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (requestBuilder_ == null) {
-        request_ = null;
-      } else {
-        request_ = null;
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
       if (partialErrorsBuilder_ == null) {
@@ -555,7 +557,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
         partialErrors_ = null;
         partialErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -585,33 +587,39 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata result =
           new com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata(this);
-      int from_bitField0_ = bitField0_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (requestBuilder_ == null) {
-        result.request_ = request_;
-      } else {
-        result.request_ = requestBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata result) {
       if (partialErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.partialErrors_ = partialErrors_;
       } else {
         result.partialErrors_ = partialErrorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -676,7 +684,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
         if (!other.partialErrors_.isEmpty()) {
           if (partialErrors_.isEmpty()) {
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePartialErrorsIsMutable();
             partialErrors_.addAll(other.partialErrors_);
@@ -689,7 +697,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
             partialErrorsBuilder_.dispose();
             partialErrorsBuilder_ = null;
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             partialErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialErrorsFieldBuilder()
@@ -728,19 +736,19 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -794,7 +802,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -835,11 +843,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -856,11 +864,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -876,17 +884,18 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -901,14 +910,13 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -923,7 +931,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -994,7 +1002,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1031,11 +1039,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1051,11 +1059,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1070,17 +1078,18 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1094,14 +1103,13 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1115,7 +1123,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1181,7 +1189,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * @return Whether the request field is set.
      */
     public boolean hasRequest() {
-      return requestBuilder_ != null || request_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1220,11 +1228,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         request_ = value;
-        onChanged();
       } else {
         requestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1241,11 +1249,11 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
             builderForValue) {
       if (requestBuilder_ == null) {
         request_ = builderForValue.build();
-        onChanged();
       } else {
         requestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1260,20 +1268,20 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     public Builder mergeRequest(
         com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest value) {
       if (requestBuilder_ == null) {
-        if (request_ != null) {
-          request_ =
-              com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.newBuilder(
-                      request_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && request_ != null
+            && request_
+                != com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest
+                    .getDefaultInstance()) {
+          getRequestBuilder().mergeFrom(value);
         } else {
           request_ = value;
         }
-        onChanged();
       } else {
         requestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1286,14 +1294,13 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest request = 3;</code>
      */
     public Builder clearRequest() {
-      if (requestBuilder_ == null) {
-        request_ = null;
-        onChanged();
-      } else {
-        request_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1307,7 +1314,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
      */
     public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.Builder
         getRequestBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
@@ -1361,9 +1368,9 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensurePartialErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         partialErrors_ = new java.util.ArrayList<com.google.rpc.Status>(partialErrors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1584,7 +1591,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
     public Builder clearPartialErrors() {
       if (partialErrorsBuilder_ == null) {
         partialErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         partialErrorsBuilder_.clear();
@@ -1710,7 +1717,7 @@ public final class ExportInsightsDataMetadata extends com.google.protobuf.Genera
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialErrors_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         partialErrors_ = null;

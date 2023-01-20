@@ -302,7 +302,9 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   private int bitField0_;
   public static final int ENDPOINT_FIELD_NUMBER = 130489749;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -366,7 +368,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
-  private long pscConnectionId_;
+  private long pscConnectionId_ = 0L;
   /**
    *
    *
@@ -399,7 +401,9 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -696,12 +700,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       endpoint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       pscConnectionId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -730,23 +732,30 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint buildPartial() {
       com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint result =
           new com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpoint_ = endpoint_;
         to_bitField0_ |= 0x00000001;
       }
-      result.endpoint_ = endpoint_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000004;
       }
-      result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -797,16 +806,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
           == com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.getDefaultInstance())
         return this;
       if (other.hasEndpoint()) {
-        bitField0_ |= 0x00000001;
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPscConnectionId()) {
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000004;
         status_ = other.status_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -947,8 +956,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -964,8 +973,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -986,8 +995,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1036,8 +1045,9 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setPscConnectionId(long value) {
-      bitField0_ |= 0x00000002;
+
       pscConnectionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1138,8 +1148,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1156,8 +1166,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1179,8 +1189,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

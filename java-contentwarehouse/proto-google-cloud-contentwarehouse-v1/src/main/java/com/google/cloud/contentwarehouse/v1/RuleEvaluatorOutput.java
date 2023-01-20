@@ -70,6 +70,8 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TRIGGERED_RULES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Rule> triggeredRules_;
   /**
    *
@@ -139,6 +141,8 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MATCHED_RULES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Rule> matchedRules_;
   /**
    *
@@ -208,6 +212,8 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INVALID_RULES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.InvalidRule> invalidRules_;
   /**
    *
@@ -504,6 +510,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (triggeredRulesBuilder_ == null) {
         triggeredRules_ = java.util.Collections.emptyList();
       } else {
@@ -552,7 +559,16 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     public com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput buildPartial() {
       com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput result =
           new com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput result) {
       if (triggeredRulesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           triggeredRules_ = java.util.Collections.unmodifiableList(triggeredRules_);
@@ -580,8 +596,10 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       } else {
         result.invalidRules_ = invalidRulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.RuleEvaluatorOutput result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

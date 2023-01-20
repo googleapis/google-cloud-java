@@ -73,7 +73,9 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
   }
 
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
-  private volatile java.lang.Object instanceGroupManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManager_ = "";
   /**
    *
    *
@@ -178,11 +180,15 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequestOrBuilder
       getInstanceGroupManagersApplyUpdatesRequestResourceOrBuilder() {
-    return getInstanceGroupManagersApplyUpdatesRequestResource();
+    return instanceGroupManagersApplyUpdatesRequestResource_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.getDefaultInstance()
+        : instanceGroupManagersApplyUpdatesRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -235,7 +241,9 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -534,18 +542,15 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroupManager_ = "";
-
-      if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        instanceGroupManagersApplyUpdatesRequestResource_ = null;
-      } else {
-        instanceGroupManagersApplyUpdatesRequestResource_ = null;
+      instanceGroupManagersApplyUpdatesRequestResource_ = null;
+      if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null) {
+        instanceGroupManagersApplyUpdatesRequestResourceBuilder_.dispose();
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       zone_ = "";
-
       return this;
     }
 
@@ -577,18 +582,31 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         buildPartial() {
       com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerRequest(this);
-      result.instanceGroupManager_ = instanceGroupManager_;
-      if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        result.instanceGroupManagersApplyUpdatesRequestResource_ =
-            instanceGroupManagersApplyUpdatesRequestResource_;
-      } else {
-        result.instanceGroupManagersApplyUpdatesRequestResource_ =
-            instanceGroupManagersApplyUpdatesRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.zone_ = zone_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupManager_ = instanceGroupManager_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceGroupManagersApplyUpdatesRequestResource_ =
+            instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null
+                ? instanceGroupManagersApplyUpdatesRequestResource_
+                : instanceGroupManagersApplyUpdatesRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
+      }
     }
 
     @java.lang.Override
@@ -644,6 +662,7 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
               .getDefaultInstance()) return this;
       if (!other.getInstanceGroupManager().isEmpty()) {
         instanceGroupManager_ = other.instanceGroupManager_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInstanceGroupManagersApplyUpdatesRequestResource()) {
@@ -652,10 +671,12 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -687,19 +708,19 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 29957474
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case 1994907162:
               {
                 instanceGroupManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1994907162
             case 2073942682:
@@ -707,7 +728,7 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
                 input.readMessage(
                     getInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 2073942682
             default:
@@ -726,6 +747,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
     /**
@@ -791,8 +814,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -809,8 +832,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManager() {
-
       instanceGroupManager_ = getDefaultInstance().getInstanceGroupManager();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -832,8 +855,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -859,8 +882,7 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      * @return Whether the instanceGroupManagersApplyUpdatesRequestResource field is set.
      */
     public boolean hasInstanceGroupManagersApplyUpdatesRequestResource() {
-      return instanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null
-          || instanceGroupManagersApplyUpdatesRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -904,11 +926,11 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
           throw new NullPointerException();
         }
         instanceGroupManagersApplyUpdatesRequestResource_ = value;
-        onChanged();
       } else {
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,12 +949,12 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
             builderForValue) {
       if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
         instanceGroupManagersApplyUpdatesRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -949,20 +971,20 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     public Builder mergeInstanceGroupManagersApplyUpdatesRequestResource(
         com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest value) {
       if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        if (instanceGroupManagersApplyUpdatesRequestResource_ != null) {
-          instanceGroupManagersApplyUpdatesRequestResource_ =
-              com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.newBuilder(
-                      instanceGroupManagersApplyUpdatesRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && instanceGroupManagersApplyUpdatesRequestResource_ != null
+            && instanceGroupManagersApplyUpdatesRequestResource_
+                != com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
+                    .getDefaultInstance()) {
+          getInstanceGroupManagersApplyUpdatesRequestResourceBuilder().mergeFrom(value);
         } else {
           instanceGroupManagersApplyUpdatesRequestResource_ = value;
         }
-        onChanged();
       } else {
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -977,14 +999,13 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearInstanceGroupManagersApplyUpdatesRequestResource() {
-      if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        instanceGroupManagersApplyUpdatesRequestResource_ = null;
-        onChanged();
-      } else {
-        instanceGroupManagersApplyUpdatesRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      instanceGroupManagersApplyUpdatesRequestResource_ = null;
+      if (instanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null) {
+        instanceGroupManagersApplyUpdatesRequestResourceBuilder_.dispose();
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1000,7 +1021,7 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder
         getInstanceGroupManagersApplyUpdatesRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder();
     }
@@ -1123,8 +1144,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,8 +1163,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1166,8 +1187,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1239,8 +1260,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1258,8 +1279,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1282,8 +1303,8 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

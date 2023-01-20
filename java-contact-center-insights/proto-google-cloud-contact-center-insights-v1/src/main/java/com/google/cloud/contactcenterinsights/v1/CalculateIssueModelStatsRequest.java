@@ -70,7 +70,9 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
   }
 
   public static final int ISSUE_MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issueModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issueModel_ = "";
   /**
    *
    *
@@ -324,8 +326,8 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issueModel_ = "";
-
       return this;
     }
 
@@ -357,9 +359,19 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest result =
           new com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest(this);
-      result.issueModel_ = issueModel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issueModel_ = issueModel_;
+      }
     }
 
     @java.lang.Override
@@ -414,6 +426,7 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getIssueModel().isEmpty()) {
         issueModel_ = other.issueModel_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -445,7 +458,7 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
             case 10:
               {
                 issueModel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +477,8 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object issueModel_ = "";
     /**
@@ -532,8 +547,8 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       issueModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -551,8 +566,8 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearIssueModel() {
-
       issueModel_ = getDefaultInstance().getIssueModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -575,8 +590,8 @@ public final class CalculateIssueModelStatsRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issueModel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

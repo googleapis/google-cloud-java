@@ -122,11 +122,15 @@ public final class SetCommonInstanceMetadataProjectRequest
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataResourceOrBuilder() {
-    return getMetadataResource();
+    return metadataResource_ == null
+        ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
+        : metadataResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class SetCommonInstanceMetadataProjectRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -472,16 +478,14 @@ public final class SetCommonInstanceMetadataProjectRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (metadataResourceBuilder_ == null) {
-        metadataResource_ = null;
-      } else {
-        metadataResource_ = null;
+      bitField0_ = 0;
+      metadataResource_ = null;
+      if (metadataResourceBuilder_ != null) {
+        metadataResourceBuilder_.dispose();
         metadataResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -511,21 +515,29 @@ public final class SetCommonInstanceMetadataProjectRequest
     public com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest buildPartial() {
       com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest result =
           new com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (metadataResourceBuilder_ == null) {
-        result.metadataResource_ = metadataResource_;
-      } else {
-        result.metadataResource_ = metadataResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metadataResource_ =
+            metadataResourceBuilder_ == null ? metadataResource_ : metadataResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -582,11 +594,12 @@ public final class SetCommonInstanceMetadataProjectRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -618,20 +631,20 @@ public final class SetCommonInstanceMetadataProjectRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1966278414:
               {
                 input.readMessage(
                     getMetadataResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1966278414
             default:
@@ -673,7 +686,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * @return Whether the metadataResource field is set.
      */
     public boolean hasMetadataResource() {
-      return metadataResourceBuilder_ != null || metadataResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -714,11 +727,11 @@ public final class SetCommonInstanceMetadataProjectRequest
           throw new NullPointerException();
         }
         metadataResource_ = value;
-        onChanged();
       } else {
         metadataResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +749,11 @@ public final class SetCommonInstanceMetadataProjectRequest
         com.google.cloud.compute.v1.Metadata.Builder builderForValue) {
       if (metadataResourceBuilder_ == null) {
         metadataResource_ = builderForValue.build();
-        onChanged();
       } else {
         metadataResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -756,19 +769,18 @@ public final class SetCommonInstanceMetadataProjectRequest
      */
     public Builder mergeMetadataResource(com.google.cloud.compute.v1.Metadata value) {
       if (metadataResourceBuilder_ == null) {
-        if (metadataResource_ != null) {
-          metadataResource_ =
-              com.google.cloud.compute.v1.Metadata.newBuilder(metadataResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && metadataResource_ != null
+            && metadataResource_ != com.google.cloud.compute.v1.Metadata.getDefaultInstance()) {
+          getMetadataResourceBuilder().mergeFrom(value);
         } else {
           metadataResource_ = value;
         }
-        onChanged();
       } else {
         metadataResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -783,14 +795,13 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </code>
      */
     public Builder clearMetadataResource() {
-      if (metadataResourceBuilder_ == null) {
-        metadataResource_ = null;
-        onChanged();
-      } else {
-        metadataResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      metadataResource_ = null;
+      if (metadataResourceBuilder_ != null) {
+        metadataResourceBuilder_.dispose();
         metadataResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +816,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </code>
      */
     public com.google.cloud.compute.v1.Metadata.Builder getMetadataResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMetadataResourceFieldBuilder().getBuilder();
     }
@@ -924,8 +935,8 @@ public final class SetCommonInstanceMetadataProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -943,8 +954,8 @@ public final class SetCommonInstanceMetadataProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -967,8 +978,8 @@ public final class SetCommonInstanceMetadataProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -986,7 +997,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1048,8 +1059,8 @@ public final class SetCommonInstanceMetadataProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1065,8 +1076,8 @@ public final class SetCommonInstanceMetadataProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1087,8 +1098,8 @@ public final class SetCommonInstanceMetadataProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

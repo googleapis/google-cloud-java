@@ -197,7 +197,9 @@ public final class StatefulPolicyPreservedStateDiskDevice
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private volatile java.lang.Object autoDelete_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoDelete_ = "";
   /**
    *
    *
@@ -467,8 +469,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoDelete_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -498,15 +500,22 @@ public final class StatefulPolicyPreservedStateDiskDevice
     public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice buildPartial() {
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice result =
           new com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoDelete_ = autoDelete_;
         to_bitField0_ |= 0x00000001;
       }
-      result.autoDelete_ = autoDelete_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -559,8 +568,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
           == com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice
               .getDefaultInstance()) return this;
       if (other.hasAutoDelete()) {
-        bitField0_ |= 0x00000001;
         autoDelete_ = other.autoDelete_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -693,8 +702,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +720,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * @return This builder for chaining.
      */
     public Builder clearAutoDelete() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       autoDelete_ = getDefaultInstance().getAutoDelete();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +743,8 @@ public final class StatefulPolicyPreservedStateDiskDevice
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       autoDelete_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

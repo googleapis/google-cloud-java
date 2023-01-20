@@ -72,7 +72,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
 
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -136,6 +138,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   }
 
   public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetPools_;
   /**
    *
@@ -423,8 +427,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -458,20 +462,32 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fingerprint_ = fingerprint_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result) {
       if (((bitField0_ & 0x00000002) != 0)) {
         targetPools_ = targetPools_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.targetPools_ = targetPools_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -525,8 +541,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
           == com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
               .getDefaultInstance()) return this;
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.targetPools_.isEmpty()) {
@@ -672,8 +688,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +705,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +727,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object asset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object asset_ = "";
   /**
    *
    *
@@ -167,11 +169,15 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.PhysicalSchemaOrBuilder getDataFormatOrBuilder() {
-    return getDataFormat();
+    return dataFormat_ == null
+        ? com.google.cloud.datacatalog.v1.PhysicalSchema.getDefaultInstance()
+        : dataFormat_;
   }
 
   public static final int COMPRESSION_FORMAT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object compressionFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object compressionFormat_ = "";
   /**
    *
    *
@@ -220,7 +226,9 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -501,18 +509,15 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       asset_ = "";
-
-      if (dataFormatBuilder_ == null) {
-        dataFormat_ = null;
-      } else {
-        dataFormat_ = null;
+      dataFormat_ = null;
+      if (dataFormatBuilder_ != null) {
+        dataFormatBuilder_.dispose();
         dataFormatBuilder_ = null;
       }
       compressionFormat_ = "";
-
       projectId_ = "";
-
       return this;
     }
 
@@ -540,16 +545,27 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.DataplexSpec buildPartial() {
       com.google.cloud.datacatalog.v1.DataplexSpec result =
           new com.google.cloud.datacatalog.v1.DataplexSpec(this);
-      result.asset_ = asset_;
-      if (dataFormatBuilder_ == null) {
-        result.dataFormat_ = dataFormat_;
-      } else {
-        result.dataFormat_ = dataFormatBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.compressionFormat_ = compressionFormat_;
-      result.projectId_ = projectId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.DataplexSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.asset_ = asset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataFormat_ = dataFormatBuilder_ == null ? dataFormat_ : dataFormatBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.compressionFormat_ = compressionFormat_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.projectId_ = projectId_;
+      }
     }
 
     @java.lang.Override
@@ -599,6 +615,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datacatalog.v1.DataplexSpec.getDefaultInstance()) return this;
       if (!other.getAsset().isEmpty()) {
         asset_ = other.asset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDataFormat()) {
@@ -606,10 +623,12 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCompressionFormat().isEmpty()) {
         compressionFormat_ = other.compressionFormat_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -641,25 +660,25 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 asset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDataFormatFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 compressionFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -678,6 +697,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object asset_ = "";
     /**
@@ -746,8 +767,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       asset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,8 +786,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsset() {
-
       asset_ = getDefaultInstance().getAsset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -789,8 +810,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       asset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,7 +834,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataFormat field is set.
      */
     public boolean hasDataFormat() {
-      return dataFormatBuilder_ != null || dataFormat_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -850,11 +871,11 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataFormat_ = value;
-        onChanged();
       } else {
         dataFormatBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,11 +891,11 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datacatalog.v1.PhysicalSchema.Builder builderForValue) {
       if (dataFormatBuilder_ == null) {
         dataFormat_ = builderForValue.build();
-        onChanged();
       } else {
         dataFormatBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -888,19 +909,18 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataFormat(com.google.cloud.datacatalog.v1.PhysicalSchema value) {
       if (dataFormatBuilder_ == null) {
-        if (dataFormat_ != null) {
-          dataFormat_ =
-              com.google.cloud.datacatalog.v1.PhysicalSchema.newBuilder(dataFormat_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataFormat_ != null
+            && dataFormat_ != com.google.cloud.datacatalog.v1.PhysicalSchema.getDefaultInstance()) {
+          getDataFormatBuilder().mergeFrom(value);
         } else {
           dataFormat_ = value;
         }
-        onChanged();
       } else {
         dataFormatBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -913,14 +933,13 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.PhysicalSchema data_format = 2;</code>
      */
     public Builder clearDataFormat() {
-      if (dataFormatBuilder_ == null) {
-        dataFormat_ = null;
-        onChanged();
-      } else {
-        dataFormat_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataFormat_ = null;
+      if (dataFormatBuilder_ != null) {
+        dataFormatBuilder_.dispose();
         dataFormatBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -933,7 +952,7 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.PhysicalSchema data_format = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.PhysicalSchema.Builder getDataFormatBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataFormatFieldBuilder().getBuilder();
     }
@@ -1042,8 +1061,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       compressionFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1059,8 +1078,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompressionFormat() {
-
       compressionFormat_ = getDefaultInstance().getCompressionFormat();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1081,8 +1100,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       compressionFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1154,8 +1173,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1173,8 +1192,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1197,8 +1216,8 @@ public final class DataplexSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

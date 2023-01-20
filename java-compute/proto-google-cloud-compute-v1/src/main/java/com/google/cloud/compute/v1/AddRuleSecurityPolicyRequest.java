@@ -70,7 +70,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
   }
 
   public static final int SECURITY_POLICY_FIELD_NUMBER = 171082513;
-  private volatile java.lang.Object securityPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securityPolicy_ = "";
   /**
    *
    *
@@ -223,11 +227,13 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder
       getSecurityPolicyRuleResourceOrBuilder() {
-    return getSecurityPolicyRuleResource();
+    return securityPolicyRuleResource_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance()
+        : securityPolicyRuleResource_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 242744629;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -497,18 +503,15 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       securityPolicy_ = "";
-
-      if (securityPolicyRuleResourceBuilder_ == null) {
-        securityPolicyRuleResource_ = null;
-      } else {
-        securityPolicyRuleResource_ = null;
+      securityPolicyRuleResource_ = null;
+      if (securityPolicyRuleResourceBuilder_ != null) {
+        securityPolicyRuleResourceBuilder_.dispose();
         securityPolicyRuleResourceBuilder_ = null;
       }
       validateOnly_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -536,22 +539,33 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest result =
           new com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.securityPolicy_ = securityPolicy_;
-      if (securityPolicyRuleResourceBuilder_ == null) {
-        result.securityPolicyRuleResource_ = securityPolicyRuleResource_;
-      } else {
-        result.securityPolicyRuleResource_ = securityPolicyRuleResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.securityPolicy_ = securityPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.securityPolicyRuleResource_ =
+            securityPolicyRuleResourceBuilder_ == null
+                ? securityPolicyRuleResource_
+                : securityPolicyRuleResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.validateOnly_ = validateOnly_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -602,10 +616,12 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSecurityPolicy().isEmpty()) {
         securityPolicy_ = other.securityPolicy_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSecurityPolicyRuleResource()) {
@@ -643,26 +659,26 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
             case 1368660106:
               {
                 securityPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1368660106
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case 1941957032:
               {
                 validateOnly_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1941957032
             case -1073419750:
               {
                 input.readMessage(
                     getSecurityPolicyRuleResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1073419750
             default:
@@ -751,8 +767,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,8 +786,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -794,8 +810,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,8 +877,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       securityPolicy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,8 +894,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -900,8 +916,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       securityPolicy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -926,7 +942,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * @return Whether the securityPolicyRuleResource field is set.
      */
     public boolean hasSecurityPolicyRuleResource() {
-      return securityPolicyRuleResourceBuilder_ != null || securityPolicyRuleResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -968,11 +984,11 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         securityPolicyRuleResource_ = value;
-        onChanged();
       } else {
         securityPolicyRuleResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -990,11 +1006,11 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.SecurityPolicyRule.Builder builderForValue) {
       if (securityPolicyRuleResourceBuilder_ == null) {
         securityPolicyRuleResource_ = builderForValue.build();
-        onChanged();
       } else {
         securityPolicyRuleResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1011,19 +1027,19 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public Builder mergeSecurityPolicyRuleResource(
         com.google.cloud.compute.v1.SecurityPolicyRule value) {
       if (securityPolicyRuleResourceBuilder_ == null) {
-        if (securityPolicyRuleResource_ != null) {
-          securityPolicyRuleResource_ =
-              com.google.cloud.compute.v1.SecurityPolicyRule.newBuilder(securityPolicyRuleResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && securityPolicyRuleResource_ != null
+            && securityPolicyRuleResource_
+                != com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance()) {
+          getSecurityPolicyRuleResourceBuilder().mergeFrom(value);
         } else {
           securityPolicyRuleResource_ = value;
         }
-        onChanged();
       } else {
         securityPolicyRuleResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1038,14 +1054,13 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSecurityPolicyRuleResource() {
-      if (securityPolicyRuleResourceBuilder_ == null) {
-        securityPolicyRuleResource_ = null;
-        onChanged();
-      } else {
-        securityPolicyRuleResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      securityPolicyRuleResource_ = null;
+      if (securityPolicyRuleResourceBuilder_ != null) {
+        securityPolicyRuleResourceBuilder_.dispose();
         securityPolicyRuleResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1061,7 +1076,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.SecurityPolicyRule.Builder
         getSecurityPolicyRuleResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSecurityPolicyRuleResourceFieldBuilder().getBuilder();
     }
@@ -1128,7 +1143,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public boolean hasValidateOnly() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1158,8 +1173,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setValidateOnly(boolean value) {
-      bitField0_ |= 0x00000001;
+
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1175,7 +1191,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

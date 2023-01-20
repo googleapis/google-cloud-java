@@ -72,7 +72,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SKU_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object skuId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object skuId_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -269,10 +275,14 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.CategoryOrBuilder getCategoryOrBuilder() {
-    return getCategory();
+    return category_ == null
+        ? com.google.cloud.billing.v1.Category.getDefaultInstance()
+        : category_;
   }
 
   public static final int SERVICE_REGIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList serviceRegions_;
   /**
    *
@@ -342,6 +352,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRICING_INFO_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.v1.PricingInfo> pricingInfo_;
   /**
    *
@@ -411,7 +423,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_PROVIDER_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object serviceProviderName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceProviderName_ = "";
   /**
    *
    *
@@ -506,7 +520,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.GeoTaxonomyOrBuilder getGeoTaxonomyOrBuilder() {
-    return getGeoTaxonomy();
+    return geoTaxonomy_ == null
+        ? com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()
+        : geoTaxonomy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -785,33 +801,28 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       skuId_ = "";
-
       description_ = "";
-
-      if (categoryBuilder_ == null) {
-        category_ = null;
-      } else {
-        category_ = null;
+      category_ = null;
+      if (categoryBuilder_ != null) {
+        categoryBuilder_.dispose();
         categoryBuilder_ = null;
       }
       serviceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (pricingInfoBuilder_ == null) {
         pricingInfo_ = java.util.Collections.emptyList();
       } else {
         pricingInfo_ = null;
         pricingInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       serviceProviderName_ = "";
-
-      if (geoTaxonomyBuilder_ == null) {
-        geoTaxonomy_ = null;
-      } else {
-        geoTaxonomy_ = null;
+      geoTaxonomy_ = null;
+      if (geoTaxonomyBuilder_ != null) {
+        geoTaxonomyBuilder_.dispose();
         geoTaxonomyBuilder_ = null;
       }
       return this;
@@ -840,37 +851,52 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.billing.v1.Sku buildPartial() {
       com.google.cloud.billing.v1.Sku result = new com.google.cloud.billing.v1.Sku(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.skuId_ = skuId_;
-      result.description_ = description_;
-      if (categoryBuilder_ == null) {
-        result.category_ = category_;
-      } else {
-        result.category_ = categoryBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.billing.v1.Sku result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         serviceRegions_ = serviceRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.serviceRegions_ = serviceRegions_;
       if (pricingInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           pricingInfo_ = java.util.Collections.unmodifiableList(pricingInfo_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.pricingInfo_ = pricingInfo_;
       } else {
         result.pricingInfo_ = pricingInfoBuilder_.build();
       }
-      result.serviceProviderName_ = serviceProviderName_;
-      if (geoTaxonomyBuilder_ == null) {
-        result.geoTaxonomy_ = geoTaxonomy_;
-      } else {
-        result.geoTaxonomy_ = geoTaxonomyBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.Sku result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skuId_ = skuId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.category_ = categoryBuilder_ == null ? category_ : categoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceProviderName_ = serviceProviderName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.geoTaxonomy_ =
+            geoTaxonomyBuilder_ == null ? geoTaxonomy_ : geoTaxonomyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -920,14 +946,17 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.billing.v1.Sku.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSkuId().isEmpty()) {
         skuId_ = other.skuId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCategory()) {
@@ -936,7 +965,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceRegions_.isEmpty()) {
         if (serviceRegions_.isEmpty()) {
           serviceRegions_ = other.serviceRegions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureServiceRegionsIsMutable();
           serviceRegions_.addAll(other.serviceRegions_);
@@ -947,7 +976,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         if (!other.pricingInfo_.isEmpty()) {
           if (pricingInfo_.isEmpty()) {
             pricingInfo_ = other.pricingInfo_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePricingInfoIsMutable();
             pricingInfo_.addAll(other.pricingInfo_);
@@ -960,7 +989,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             pricingInfoBuilder_.dispose();
             pricingInfoBuilder_ = null;
             pricingInfo_ = other.pricingInfo_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             pricingInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPricingInfoFieldBuilder()
@@ -972,6 +1001,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceProviderName().isEmpty()) {
         serviceProviderName_ = other.serviceProviderName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasGeoTaxonomy()) {
@@ -1006,25 +1036,25 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 skuId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCategoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1050,13 +1080,13 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 serviceProviderName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getGeoTaxonomyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1142,8 +1172,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1160,8 +1190,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1183,8 +1213,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1253,8 +1283,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       skuId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1271,8 +1301,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkuId() {
-
       skuId_ = getDefaultInstance().getSkuId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1294,8 +1324,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       skuId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1364,8 +1394,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1382,8 +1412,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1405,8 +1435,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1429,7 +1459,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the category field is set.
      */
     public boolean hasCategory() {
-      return categoryBuilder_ != null || category_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1466,11 +1496,11 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         category_ = value;
-        onChanged();
       } else {
         categoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1485,11 +1515,11 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public Builder setCategory(com.google.cloud.billing.v1.Category.Builder builderForValue) {
       if (categoryBuilder_ == null) {
         category_ = builderForValue.build();
-        onChanged();
       } else {
         categoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1503,19 +1533,18 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCategory(com.google.cloud.billing.v1.Category value) {
       if (categoryBuilder_ == null) {
-        if (category_ != null) {
-          category_ =
-              com.google.cloud.billing.v1.Category.newBuilder(category_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && category_ != null
+            && category_ != com.google.cloud.billing.v1.Category.getDefaultInstance()) {
+          getCategoryBuilder().mergeFrom(value);
         } else {
           category_ = value;
         }
-        onChanged();
       } else {
         categoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1528,14 +1557,13 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.billing.v1.Category category = 4;</code>
      */
     public Builder clearCategory() {
-      if (categoryBuilder_ == null) {
-        category_ = null;
-        onChanged();
-      } else {
-        category_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      category_ = null;
+      if (categoryBuilder_ != null) {
+        categoryBuilder_.dispose();
         categoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1548,7 +1576,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.billing.v1.Category category = 4;</code>
      */
     public com.google.cloud.billing.v1.Category.Builder getCategoryBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCategoryFieldBuilder().getBuilder();
     }
@@ -1600,9 +1628,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         serviceRegions_ = new com.google.protobuf.LazyStringArrayList(serviceRegions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1753,7 +1781,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceRegions() {
       serviceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1786,10 +1814,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePricingInfoIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         pricingInfo_ =
             new java.util.ArrayList<com.google.cloud.billing.v1.PricingInfo>(pricingInfo_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2004,7 +2032,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPricingInfo() {
       if (pricingInfoBuilder_ == null) {
         pricingInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         pricingInfoBuilder_.clear();
@@ -2126,7 +2154,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.billing.v1.PricingInfo,
                 com.google.cloud.billing.v1.PricingInfo.Builder,
                 com.google.cloud.billing.v1.PricingInfoOrBuilder>(
-                pricingInfo_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                pricingInfo_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         pricingInfo_ = null;
       }
       return pricingInfoBuilder_;
@@ -2196,8 +2224,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceProviderName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2214,8 +2242,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceProviderName() {
-
       serviceProviderName_ = getDefaultInstance().getServiceProviderName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2237,8 +2265,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceProviderName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2261,7 +2289,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the geoTaxonomy field is set.
      */
     public boolean hasGeoTaxonomy() {
-      return geoTaxonomyBuilder_ != null || geoTaxonomy_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2298,11 +2326,11 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         geoTaxonomy_ = value;
-        onChanged();
       } else {
         geoTaxonomyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2317,11 +2345,11 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public Builder setGeoTaxonomy(com.google.cloud.billing.v1.GeoTaxonomy.Builder builderForValue) {
       if (geoTaxonomyBuilder_ == null) {
         geoTaxonomy_ = builderForValue.build();
-        onChanged();
       } else {
         geoTaxonomyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2335,19 +2363,18 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGeoTaxonomy(com.google.cloud.billing.v1.GeoTaxonomy value) {
       if (geoTaxonomyBuilder_ == null) {
-        if (geoTaxonomy_ != null) {
-          geoTaxonomy_ =
-              com.google.cloud.billing.v1.GeoTaxonomy.newBuilder(geoTaxonomy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && geoTaxonomy_ != null
+            && geoTaxonomy_ != com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()) {
+          getGeoTaxonomyBuilder().mergeFrom(value);
         } else {
           geoTaxonomy_ = value;
         }
-        onChanged();
       } else {
         geoTaxonomyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2360,14 +2387,13 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
      */
     public Builder clearGeoTaxonomy() {
-      if (geoTaxonomyBuilder_ == null) {
-        geoTaxonomy_ = null;
-        onChanged();
-      } else {
-        geoTaxonomy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      geoTaxonomy_ = null;
+      if (geoTaxonomyBuilder_ != null) {
+        geoTaxonomyBuilder_.dispose();
         geoTaxonomyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2380,7 +2406,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
      */
     public com.google.cloud.billing.v1.GeoTaxonomy.Builder getGeoTaxonomyBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getGeoTaxonomyFieldBuilder().getBuilder();
     }

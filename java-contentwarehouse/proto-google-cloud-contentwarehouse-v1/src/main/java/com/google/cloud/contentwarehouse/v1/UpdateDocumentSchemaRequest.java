@@ -68,7 +68,9 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
-    return getDocumentSchema();
+    return documentSchema_ == null
+        ? com.google.cloud.contentwarehouse.v1.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-      } else {
-        documentSchema_ = null;
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
       return this;
@@ -426,14 +429,23 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
     public com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest buildPartial() {
       com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest result =
           new com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest(this);
-      result.name_ = name_;
-      if (documentSchemaBuilder_ == null) {
-        result.documentSchema_ = documentSchema_;
-      } else {
-        result.documentSchema_ = documentSchemaBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentSchema_ =
+            documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -486,6 +498,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDocumentSchema()) {
@@ -520,13 +533,13 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +558,8 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -619,8 +634,8 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -640,8 +655,8 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +681,8 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +707,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return documentSchemaBuilder_ != null || documentSchema_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -733,11 +748,11 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         documentSchema_ = value;
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -755,11 +770,11 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
         com.google.cloud.contentwarehouse.v1.DocumentSchema.Builder builderForValue) {
       if (documentSchemaBuilder_ == null) {
         documentSchema_ = builderForValue.build();
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,19 +790,19 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
      */
     public Builder mergeDocumentSchema(com.google.cloud.contentwarehouse.v1.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (documentSchema_ != null) {
-          documentSchema_ =
-              com.google.cloud.contentwarehouse.v1.DocumentSchema.newBuilder(documentSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && documentSchema_ != null
+            && documentSchema_
+                != com.google.cloud.contentwarehouse.v1.DocumentSchema.getDefaultInstance()) {
+          getDocumentSchemaBuilder().mergeFrom(value);
         } else {
           documentSchema_ = value;
         }
-        onChanged();
       } else {
         documentSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +817,13 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearDocumentSchema() {
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-        onChanged();
-      } else {
-        documentSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -824,7 +838,7 @@ public final class UpdateDocumentSchemaRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentSchema.Builder getDocumentSchemaBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }

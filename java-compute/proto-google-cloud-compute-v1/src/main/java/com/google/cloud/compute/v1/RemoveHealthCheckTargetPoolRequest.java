@@ -73,7 +73,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
   }
 
   public static final int TARGET_POOL_FIELD_NUMBER = 62796298;
-  private volatile java.lang.Object targetPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetPool_ = "";
   /**
    *
    *
@@ -346,7 +354,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequestOrBuilder
       getTargetPoolsRemoveHealthCheckRequestResourceOrBuilder() {
-    return getTargetPoolsRemoveHealthCheckRequestResource();
+    return targetPoolsRemoveHealthCheckRequestResource_ == null
+        ? com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.getDefaultInstance()
+        : targetPoolsRemoveHealthCheckRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -597,18 +607,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetPool_ = "";
-
-      if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null) {
-        targetPoolsRemoveHealthCheckRequestResource_ = null;
-      } else {
-        targetPoolsRemoveHealthCheckRequestResource_ = null;
+      targetPoolsRemoveHealthCheckRequestResource_ = null;
+      if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ != null) {
+        targetPoolsRemoveHealthCheckRequestResourceBuilder_.dispose();
         targetPoolsRemoveHealthCheckRequestResourceBuilder_ = null;
       }
       return this;
@@ -639,25 +645,37 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     public com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest result =
           new com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.targetPool_ = targetPool_;
-      if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null) {
-        result.targetPoolsRemoveHealthCheckRequestResource_ =
-            targetPoolsRemoveHealthCheckRequestResource_;
-      } else {
-        result.targetPoolsRemoveHealthCheckRequestResource_ =
-            targetPoolsRemoveHealthCheckRequestResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetPool_ = targetPool_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetPoolsRemoveHealthCheckRequestResource_ =
+            targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null
+                ? targetPoolsRemoveHealthCheckRequestResource_
+                : targetPoolsRemoveHealthCheckRequestResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -709,19 +727,22 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetPool().isEmpty()) {
         targetPool_ = other.targetPool_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasTargetPoolsRemoveHealthCheckRequestResource()) {
@@ -757,25 +778,25 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 502370386:
               {
                 targetPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 502370386
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1855087206:
@@ -783,7 +804,7 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
                 input.readMessage(
                     getTargetPoolsRemoveHealthCheckRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1855087206
             default:
@@ -872,8 +893,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -891,8 +912,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -915,8 +936,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -988,8 +1009,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1007,8 +1028,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1031,8 +1052,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1050,7 +1071,7 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1112,8 +1133,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1129,8 +1150,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1151,8 +1172,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,8 +1239,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1235,8 +1256,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearTargetPool() {
-
       targetPool_ = getDefaultInstance().getTargetPool();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1257,8 +1278,8 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1284,8 +1305,7 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * @return Whether the targetPoolsRemoveHealthCheckRequestResource field is set.
      */
     public boolean hasTargetPoolsRemoveHealthCheckRequestResource() {
-      return targetPoolsRemoveHealthCheckRequestResourceBuilder_ != null
-          || targetPoolsRemoveHealthCheckRequestResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1328,11 +1348,11 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
           throw new NullPointerException();
         }
         targetPoolsRemoveHealthCheckRequestResource_ = value;
-        onChanged();
       } else {
         targetPoolsRemoveHealthCheckRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1350,11 +1370,11 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.Builder builderForValue) {
       if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null) {
         targetPoolsRemoveHealthCheckRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         targetPoolsRemoveHealthCheckRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1371,20 +1391,20 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     public Builder mergeTargetPoolsRemoveHealthCheckRequestResource(
         com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest value) {
       if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null) {
-        if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
-          targetPoolsRemoveHealthCheckRequestResource_ =
-              com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.newBuilder(
-                      targetPoolsRemoveHealthCheckRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && targetPoolsRemoveHealthCheckRequestResource_ != null
+            && targetPoolsRemoveHealthCheckRequestResource_
+                != com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest
+                    .getDefaultInstance()) {
+          getTargetPoolsRemoveHealthCheckRequestResourceBuilder().mergeFrom(value);
         } else {
           targetPoolsRemoveHealthCheckRequestResource_ = value;
         }
-        onChanged();
       } else {
         targetPoolsRemoveHealthCheckRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1399,14 +1419,13 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      * </code>
      */
     public Builder clearTargetPoolsRemoveHealthCheckRequestResource() {
-      if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ == null) {
-        targetPoolsRemoveHealthCheckRequestResource_ = null;
-        onChanged();
-      } else {
-        targetPoolsRemoveHealthCheckRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      targetPoolsRemoveHealthCheckRequestResource_ = null;
+      if (targetPoolsRemoveHealthCheckRequestResourceBuilder_ != null) {
+        targetPoolsRemoveHealthCheckRequestResourceBuilder_.dispose();
         targetPoolsRemoveHealthCheckRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1422,7 +1441,7 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
      */
     public com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.Builder
         getTargetPoolsRemoveHealthCheckRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTargetPoolsRemoveHealthCheckRequestResourceFieldBuilder().getBuilder();
     }

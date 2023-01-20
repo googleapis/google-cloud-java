@@ -72,7 +72,9 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
 
   private int bitField0_;
   public static final int CANONICAL_URL_FIELD_NUMBER = 512294820;
-  private volatile java.lang.Object canonicalUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canonicalUrl_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
   }
 
   public static final int URL_FIELD_NUMBER = 116079;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -424,10 +428,9 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       canonicalUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       url_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -459,19 +462,26 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
         buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo result =
           new com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.canonicalUrl_ = canonicalUrl_;
         to_bitField0_ |= 0x00000001;
       }
-      result.canonicalUrl_ = canonicalUrl_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.url_ = url_;
         to_bitField0_ |= 0x00000002;
       }
-      result.url_ = url_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -525,13 +535,13 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
           == com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoInstanceInfo
               .getDefaultInstance()) return this;
       if (other.hasCanonicalUrl()) {
-        bitField0_ |= 0x00000001;
         canonicalUrl_ = other.canonicalUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUrl()) {
-        bitField0_ |= 0x00000002;
         url_ = other.url_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -666,8 +676,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,8 +693,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * @return This builder for chaining.
      */
     public Builder clearCanonicalUrl() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       canonicalUrl_ = getDefaultInstance().getCanonicalUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -705,8 +715,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -786,8 +796,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -803,8 +813,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -825,8 +835,8 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

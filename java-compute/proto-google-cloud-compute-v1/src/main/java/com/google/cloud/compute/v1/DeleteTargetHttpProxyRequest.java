@@ -71,7 +71,9 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -188,7 +192,9 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
   }
 
   public static final int TARGET_HTTP_PROXY_FIELD_NUMBER = 206872421;
-  private volatile java.lang.Object targetHttpProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetHttpProxy_ = "";
   /**
    *
    *
@@ -457,12 +463,10 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetHttpProxy_ = "";
-
       return this;
     }
 
@@ -490,17 +494,27 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest result =
           new com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.targetHttpProxy_ = targetHttpProxy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetHttpProxy_ = targetHttpProxy_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -551,15 +565,17 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetHttpProxy().isEmpty()) {
         targetHttpProxy_ = other.targetHttpProxy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -591,19 +607,19 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1654979370:
               {
                 targetHttpProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1654979370
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -692,8 +708,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +727,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -735,8 +751,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,7 +770,7 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -816,8 +832,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,8 +849,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -855,8 +871,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -922,8 +938,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetHttpProxy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -939,8 +955,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTargetHttpProxy() {
-
       targetHttpProxy_ = getDefaultInstance().getTargetHttpProxy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -961,8 +977,8 @@ public final class DeleteTargetHttpProxyRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetHttpProxy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

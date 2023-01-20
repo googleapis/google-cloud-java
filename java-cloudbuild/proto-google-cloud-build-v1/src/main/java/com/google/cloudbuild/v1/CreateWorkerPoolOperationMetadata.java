@@ -69,7 +69,9 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
   }
 
   public static final int WORKER_POOL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object workerPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerPool_ = "";
   /**
    *
    *
@@ -164,7 +166,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int COMPLETE_TIME_FIELD_NUMBER = 3;
@@ -212,7 +214,9 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCompleteTimeOrBuilder() {
-    return getCompleteTime();
+    return completeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : completeTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,18 +445,16 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       workerPool_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (completeTimeBuilder_ == null) {
-        completeTime_ = null;
-      } else {
-        completeTime_ = null;
+      completeTime_ = null;
+      if (completeTimeBuilder_ != null) {
+        completeTimeBuilder_.dispose();
         completeTimeBuilder_ = null;
       }
       return this;
@@ -482,19 +484,25 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
     public com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata buildPartial() {
       com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata result =
           new com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata(this);
-      result.workerPool_ = workerPool_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (completeTimeBuilder_ == null) {
-        result.completeTime_ = completeTime_;
-      } else {
-        result.completeTime_ = completeTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workerPool_ = workerPool_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.completeTime_ =
+            completeTimeBuilder_ == null ? completeTime_ : completeTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -545,6 +553,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
         return this;
       if (!other.getWorkerPool().isEmpty()) {
         workerPool_ = other.workerPool_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -582,19 +591,19 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
             case 10:
               {
                 workerPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCompleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -613,6 +622,8 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object workerPool_ = "";
     /**
@@ -681,8 +692,8 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +711,8 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearWorkerPool() {
-
       workerPool_ = getDefaultInstance().getWorkerPool();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -724,8 +735,8 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,7 +759,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -785,11 +796,11 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -804,11 +815,11 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,17 +833,18 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,14 +857,13 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -865,7 +876,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -931,7 +942,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * @return Whether the completeTime field is set.
      */
     public boolean hasCompleteTime() {
-      return completeTimeBuilder_ != null || completeTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -968,11 +979,11 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
           throw new NullPointerException();
         }
         completeTime_ = value;
-        onChanged();
       } else {
         completeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -987,11 +998,11 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
     public Builder setCompleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (completeTimeBuilder_ == null) {
         completeTime_ = builderForValue.build();
-        onChanged();
       } else {
         completeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,19 +1016,18 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      */
     public Builder mergeCompleteTime(com.google.protobuf.Timestamp value) {
       if (completeTimeBuilder_ == null) {
-        if (completeTime_ != null) {
-          completeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completeTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && completeTime_ != null
+            && completeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCompleteTimeBuilder().mergeFrom(value);
         } else {
           completeTime_ = value;
         }
-        onChanged();
       } else {
         completeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1030,14 +1040,13 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * <code>.google.protobuf.Timestamp complete_time = 3;</code>
      */
     public Builder clearCompleteTime() {
-      if (completeTimeBuilder_ == null) {
-        completeTime_ = null;
-        onChanged();
-      } else {
-        completeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      completeTime_ = null;
+      if (completeTimeBuilder_ != null) {
+        completeTimeBuilder_.dispose();
         completeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1050,7 +1059,7 @@ public final class CreateWorkerPoolOperationMetadata extends com.google.protobuf
      * <code>.google.protobuf.Timestamp complete_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCompleteTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCompleteTimeFieldBuilder().getBuilder();
     }

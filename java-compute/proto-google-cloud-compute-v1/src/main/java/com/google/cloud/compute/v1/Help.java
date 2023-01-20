@@ -67,6 +67,8 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINKS_FIELD_NUMBER = 102977465;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HelpLink> links_;
   /**
    *
@@ -332,6 +334,7 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
@@ -365,7 +368,15 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Help buildPartial() {
       com.google.cloud.compute.v1.Help result = new com.google.cloud.compute.v1.Help(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Help result) {
       if (linksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
@@ -375,8 +386,10 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.links_ = linksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Help result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

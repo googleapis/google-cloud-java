@@ -70,7 +70,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   }
 
   public static final int CONTAINER_IMAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object containerImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containerImage_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   }
 
   public static final int USE_SINGLE_CORE_PER_CONTAINER_FIELD_NUMBER = 2;
-  private boolean useSingleCorePerContainer_;
+  private boolean useSingleCorePerContainer_ = false;
   /**
    *
    *
@@ -141,7 +143,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   }
 
   public static final int ENVIRONMENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object environmentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object environmentId_ = "";
   /**
    *
    *
@@ -192,6 +196,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   }
 
   public static final int CAPABILITIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList capabilities_;
   /**
    *
@@ -487,14 +493,12 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       containerImage_ = "";
-
       useSingleCorePerContainer_ = false;
-
       environmentId_ = "";
-
       capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -522,17 +526,34 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     public com.google.dataflow.v1beta3.SdkHarnessContainerImage buildPartial() {
       com.google.dataflow.v1beta3.SdkHarnessContainerImage result =
           new com.google.dataflow.v1beta3.SdkHarnessContainerImage(this);
-      int from_bitField0_ = bitField0_;
-      result.containerImage_ = containerImage_;
-      result.useSingleCorePerContainer_ = useSingleCorePerContainer_;
-      result.environmentId_ = environmentId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        capabilities_ = capabilities_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.capabilities_ = capabilities_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.SdkHarnessContainerImage result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        capabilities_ = capabilities_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.capabilities_ = capabilities_;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.SdkHarnessContainerImage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.containerImage_ = containerImage_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useSingleCorePerContainer_ = useSingleCorePerContainer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.environmentId_ = environmentId_;
+      }
     }
 
     @java.lang.Override
@@ -583,6 +604,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
         return this;
       if (!other.getContainerImage().isEmpty()) {
         containerImage_ = other.containerImage_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getUseSingleCorePerContainer() != false) {
@@ -590,12 +612,13 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       }
       if (!other.getEnvironmentId().isEmpty()) {
         environmentId_ = other.environmentId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.capabilities_.isEmpty()) {
         if (capabilities_.isEmpty()) {
           capabilities_ = other.capabilities_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureCapabilitiesIsMutable();
           capabilities_.addAll(other.capabilities_);
@@ -631,19 +654,19 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
             case 10:
               {
                 containerImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 useSingleCorePerContainer_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 environmentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -733,8 +756,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       containerImage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +773,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearContainerImage() {
-
       containerImage_ = getDefaultInstance().getContainerImage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -772,8 +795,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       containerImage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,6 +840,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     public Builder setUseSingleCorePerContainer(boolean value) {
 
       useSingleCorePerContainer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -836,7 +860,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearUseSingleCorePerContainer() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       useSingleCorePerContainer_ = false;
       onChanged();
       return this;
@@ -906,8 +930,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       environmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -924,8 +948,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentId() {
-
       environmentId_ = getDefaultInstance().getEnvironmentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -947,8 +971,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       environmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -957,9 +981,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCapabilitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         capabilities_ = new com.google.protobuf.LazyStringArrayList(capabilities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1102,7 +1126,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      */
     public Builder clearCapabilities() {
       capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

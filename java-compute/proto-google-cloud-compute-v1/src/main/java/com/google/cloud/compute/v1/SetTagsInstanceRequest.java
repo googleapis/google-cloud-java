@@ -72,7 +72,9 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -288,11 +294,15 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TagsOrBuilder getTagsResourceOrBuilder() {
-    return getTagsResource();
+    return tagsResource_ == null
+        ? com.google.cloud.compute.v1.Tags.getDefaultInstance()
+        : tagsResource_;
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -588,20 +598,16 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (tagsResourceBuilder_ == null) {
-        tagsResource_ = null;
-      } else {
-        tagsResource_ = null;
+      tagsResource_ = null;
+      if (tagsResourceBuilder_ != null) {
+        tagsResourceBuilder_.dispose();
         tagsResourceBuilder_ = null;
       }
       zone_ = "";
-
       return this;
     }
 
@@ -629,23 +635,34 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.SetTagsInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.SetTagsInstanceRequest result =
           new com.google.cloud.compute.v1.SetTagsInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.instance_ = instance_;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      if (tagsResourceBuilder_ == null) {
-        result.tagsResource_ = tagsResource_;
-      } else {
-        result.tagsResource_ = tagsResourceBuilder_.build();
-      }
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetTagsInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tagsResource_ =
+            tagsResourceBuilder_ == null ? tagsResource_ : tagsResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -696,15 +713,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTagsResource()) {
@@ -712,6 +731,7 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,31 +763,31 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 146056362
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1643484254:
               {
                 input.readMessage(getTagsResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1643484254
             default:
@@ -850,8 +870,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +887,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -889,8 +909,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -962,8 +982,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,8 +1001,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1005,8 +1025,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,7 +1044,7 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1086,8 +1106,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,8 +1123,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1125,8 +1145,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1151,7 +1171,7 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the tagsResource field is set.
      */
     public boolean hasTagsResource() {
-      return tagsResourceBuilder_ != null || tagsResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1192,11 +1212,11 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         tagsResource_ = value;
-        onChanged();
       } else {
         tagsResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1213,11 +1233,11 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     public Builder setTagsResource(com.google.cloud.compute.v1.Tags.Builder builderForValue) {
       if (tagsResourceBuilder_ == null) {
         tagsResource_ = builderForValue.build();
-        onChanged();
       } else {
         tagsResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1233,19 +1253,18 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeTagsResource(com.google.cloud.compute.v1.Tags value) {
       if (tagsResourceBuilder_ == null) {
-        if (tagsResource_ != null) {
-          tagsResource_ =
-              com.google.cloud.compute.v1.Tags.newBuilder(tagsResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && tagsResource_ != null
+            && tagsResource_ != com.google.cloud.compute.v1.Tags.getDefaultInstance()) {
+          getTagsResourceBuilder().mergeFrom(value);
         } else {
           tagsResource_ = value;
         }
-        onChanged();
       } else {
         tagsResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1260,14 +1279,13 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearTagsResource() {
-      if (tagsResourceBuilder_ == null) {
-        tagsResource_ = null;
-        onChanged();
-      } else {
-        tagsResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      tagsResource_ = null;
+      if (tagsResourceBuilder_ != null) {
+        tagsResourceBuilder_.dispose();
         tagsResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1282,7 +1300,7 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTagsResourceFieldBuilder().getBuilder();
     }
@@ -1401,8 +1419,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1420,8 +1438,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1444,8 +1462,8 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

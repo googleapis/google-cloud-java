@@ -397,6 +397,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int ARP_CACHES_FIELD_NUMBER = 414591761;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> arpCaches_;
   /**
    *
@@ -474,7 +476,9 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   }
 
   public static final int BUNDLE_AGGREGATION_TYPE_FIELD_NUMBER = 434939028;
-  private volatile java.lang.Object bundleAggregationType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bundleAggregationType_ = "";
   /**
    *
    *
@@ -541,7 +545,9 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   }
 
   public static final int BUNDLE_OPERATIONAL_STATUS_FIELD_NUMBER = 106433500;
-  private volatile java.lang.Object bundleOperationalStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bundleOperationalStatus_ = "";
   /**
    *
    *
@@ -608,6 +614,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   }
 
   public static final int LINKS_FIELD_NUMBER = 102977465;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus> links_;
   /**
    *
@@ -685,7 +693,9 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   }
 
   public static final int MAC_ADDRESS_FIELD_NUMBER = 332540164;
-  private volatile java.lang.Object macAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object macAddress_ = "";
   /**
    *
    *
@@ -1006,6 +1016,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (arpCachesBuilder_ == null) {
         arpCaches_ = java.util.Collections.emptyList();
       } else {
@@ -1014,9 +1025,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       bundleAggregationType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       bundleOperationalStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
@@ -1025,7 +1034,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       macAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1053,8 +1061,16 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InterconnectDiagnostics buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnostics result =
           new com.google.cloud.compute.v1.InterconnectDiagnostics(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InterconnectDiagnostics result) {
       if (arpCachesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           arpCaches_ = java.util.Collections.unmodifiableList(arpCaches_);
@@ -1064,14 +1080,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       } else {
         result.arpCaches_ = arpCachesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bundleAggregationType_ = bundleAggregationType_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bundleOperationalStatus_ = bundleOperationalStatus_;
       if (linksBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
@@ -1081,13 +1089,24 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       } else {
         result.links_ = linksBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectDiagnostics result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bundleAggregationType_ = bundleAggregationType_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bundleOperationalStatus_ = bundleOperationalStatus_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.macAddress_ = macAddress_;
         to_bitField0_ |= 0x00000004;
       }
-      result.macAddress_ = macAddress_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1164,13 +1183,13 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
       }
       if (other.hasBundleAggregationType()) {
-        bitField0_ |= 0x00000002;
         bundleAggregationType_ = other.bundleAggregationType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBundleOperationalStatus()) {
-        bitField0_ |= 0x00000004;
         bundleOperationalStatus_ = other.bundleOperationalStatus_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (linksBuilder_ == null) {
@@ -1201,8 +1220,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
       }
       if (other.hasMacAddress()) {
-        bitField0_ |= 0x00000010;
         macAddress_ = other.macAddress_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1777,8 +1796,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       bundleAggregationType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1795,8 +1814,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBundleAggregationType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       bundleAggregationType_ = getDefaultInstance().getBundleAggregationType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1818,8 +1837,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       bundleAggregationType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1903,8 +1922,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       bundleOperationalStatus_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1921,8 +1940,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBundleOperationalStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       bundleOperationalStatus_ = getDefaultInstance().getBundleOperationalStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1944,8 +1963,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       bundleOperationalStatus_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2408,8 +2427,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       macAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2425,8 +2444,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       macAddress_ = getDefaultInstance().getMacAddress();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2447,8 +2466,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       macAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

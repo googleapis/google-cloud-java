@@ -741,7 +741,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
-  private boolean adminEnabled_;
+  private boolean adminEnabled_ = false;
   /**
    *
    *
@@ -774,6 +774,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIRCUIT_INFOS_FIELD_NUMBER = 164839855;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectCircuitInfo> circuitInfos_;
   /**
    *
@@ -849,7 +851,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -913,7 +917,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOMER_NAME_FIELD_NUMBER = 3665484;
-  private volatile java.lang.Object customerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerName_ = "";
   /**
    *
    *
@@ -977,7 +983,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1041,6 +1049,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPECTED_OUTAGES_FIELD_NUMBER = 264484123;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectOutageNotification>
       expectedOutages_;
   /**
@@ -1124,7 +1134,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_IP_ADDRESS_FIELD_NUMBER = 443105954;
-  private volatile java.lang.Object googleIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleIpAddress_ = "";
   /**
    *
    *
@@ -1188,7 +1200,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_REFERENCE_ID_FIELD_NUMBER = 534944469;
-  private volatile java.lang.Object googleReferenceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleReferenceId_ = "";
   /**
    *
    *
@@ -1252,7 +1266,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -1285,6 +1299,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 425388415;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList interconnectAttachments_;
   /**
    *
@@ -1346,7 +1362,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERCONNECT_TYPE_FIELD_NUMBER = 515165259;
-  private volatile java.lang.Object interconnectType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interconnectType_ = "";
   /**
    *
    *
@@ -1413,7 +1431,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -1477,7 +1497,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINK_TYPE_FIELD_NUMBER = 523207775;
-  private volatile java.lang.Object linkType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkType_ = "";
   /**
    *
    *
@@ -1544,7 +1566,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 290430901;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -1608,7 +1632,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1672,7 +1698,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NOC_CONTACT_EMAIL_FIELD_NUMBER = 14072832;
-  private volatile java.lang.Object nocContactEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nocContactEmail_ = "";
   /**
    *
    *
@@ -1736,7 +1764,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATIONAL_STATUS_FIELD_NUMBER = 201070847;
-  private volatile java.lang.Object operationalStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationalStatus_ = "";
   /**
    *
    *
@@ -1803,7 +1833,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PEER_IP_ADDRESS_FIELD_NUMBER = 207735769;
-  private volatile java.lang.Object peerIpAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerIpAddress_ = "";
   /**
    *
    *
@@ -1867,7 +1899,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROVISIONED_LINK_COUNT_FIELD_NUMBER = 410888565;
-  private int provisionedLinkCount_;
+  private int provisionedLinkCount_ = 0;
   /**
    *
    *
@@ -1900,7 +1932,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUESTED_LINK_COUNT_FIELD_NUMBER = 45051387;
-  private int requestedLinkCount_;
+  private int requestedLinkCount_ = 0;
   /**
    *
    *
@@ -1933,7 +1965,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
-  private boolean satisfiesPzs_;
+  private boolean satisfiesPzs_ = false;
   /**
    *
    *
@@ -1966,7 +1998,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -2030,7 +2064,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -2611,8 +2647,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       adminEnabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (circuitInfosBuilder_ == null) {
         circuitInfos_ = java.util.Collections.emptyList();
       } else {
@@ -2621,11 +2657,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       customerName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       if (expectedOutagesBuilder_ == null) {
         expectedOutages_ = java.util.Collections.emptyList();
       } else {
@@ -2634,39 +2667,23 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       googleIpAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       googleReferenceId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000100);
       interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000200);
       interconnectType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       linkType_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       location_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
       nocContactEmail_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       operationalStatus_ = "";
-      bitField0_ = (bitField0_ & ~0x00010000);
       peerIpAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
       provisionedLinkCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00040000);
       requestedLinkCount_ = 0;
-      bitField0_ = (bitField0_ & ~0x00080000);
       satisfiesPzs_ = false;
-      bitField0_ = (bitField0_ & ~0x00100000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00200000);
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
 
@@ -2694,12 +2711,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Interconnect buildPartial() {
       com.google.cloud.compute.v1.Interconnect result =
           new com.google.cloud.compute.v1.Interconnect(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.adminEnabled_ = adminEnabled_;
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Interconnect result) {
       if (circuitInfosBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           circuitInfos_ = java.util.Collections.unmodifiableList(circuitInfos_);
@@ -2709,18 +2729,6 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.circuitInfos_ = circuitInfosBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.customerName_ = customerName_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.description_ = description_;
       if (expectedOutagesBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           expectedOutages_ = java.util.Collections.unmodifiableList(expectedOutages_);
@@ -2730,55 +2738,76 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.expectedOutages_ = expectedOutagesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000010;
-      }
-      result.googleIpAddress_ = googleIpAddress_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.googleReferenceId_ = googleReferenceId_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000040;
-      }
       if (((bitField0_ & 0x00000200) != 0)) {
         interconnectAttachments_ = interconnectAttachments_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.interconnectAttachments_ = interconnectAttachments_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Interconnect result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adminEnabled_ = adminEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.customerName_ = customerName_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.googleIpAddress_ = googleIpAddress_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.googleReferenceId_ = googleReferenceId_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000040;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.interconnectType_ = interconnectType_;
         to_bitField0_ |= 0x00000080;
       }
-      result.interconnectType_ = interconnectType_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000100;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.linkType_ = linkType_;
         to_bitField0_ |= 0x00000200;
       }
-      result.linkType_ = linkType_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.location_ = location_;
         to_bitField0_ |= 0x00000400;
       }
-      result.location_ = location_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.nocContactEmail_ = nocContactEmail_;
         to_bitField0_ |= 0x00001000;
       }
-      result.nocContactEmail_ = nocContactEmail_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.operationalStatus_ = operationalStatus_;
         to_bitField0_ |= 0x00002000;
       }
-      result.operationalStatus_ = operationalStatus_;
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.peerIpAddress_ = peerIpAddress_;
         to_bitField0_ |= 0x00004000;
       }
-      result.peerIpAddress_ = peerIpAddress_;
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.provisionedLinkCount_ = provisionedLinkCount_;
         to_bitField0_ |= 0x00008000;
@@ -2792,16 +2821,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00040000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00080000;
       }
-      result.state_ = state_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2880,18 +2907,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCustomerName()) {
-        bitField0_ |= 0x00000008;
         customerName_ = other.customerName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000010;
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (expectedOutagesBuilder_ == null) {
@@ -2922,13 +2949,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasGoogleIpAddress()) {
-        bitField0_ |= 0x00000040;
         googleIpAddress_ = other.googleIpAddress_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasGoogleReferenceId()) {
-        bitField0_ |= 0x00000080;
         googleReferenceId_ = other.googleReferenceId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasId()) {
@@ -2945,43 +2972,43 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasInterconnectType()) {
-        bitField0_ |= 0x00000400;
         interconnectType_ = other.interconnectType_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000800;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasLinkType()) {
-        bitField0_ |= 0x00001000;
         linkType_ = other.linkType_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasLocation()) {
-        bitField0_ |= 0x00002000;
         location_ = other.location_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00004000;
         name_ = other.name_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasNocContactEmail()) {
-        bitField0_ |= 0x00008000;
         nocContactEmail_ = other.nocContactEmail_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasOperationalStatus()) {
-        bitField0_ |= 0x00010000;
         operationalStatus_ = other.operationalStatus_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasPeerIpAddress()) {
-        bitField0_ |= 0x00020000;
         peerIpAddress_ = other.peerIpAddress_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasProvisionedLinkCount()) {
@@ -2994,13 +3021,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00200000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasState()) {
-        bitField0_ |= 0x00400000;
         state_ = other.state_;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3247,8 +3274,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAdminEnabled(boolean value) {
-      bitField0_ |= 0x00000001;
+
       adminEnabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3722,8 +3750,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3739,8 +3767,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3761,8 +3789,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3842,8 +3870,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       customerName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3859,8 +3887,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomerName() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       customerName_ = getDefaultInstance().getCustomerName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3881,8 +3909,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       customerName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3962,8 +3990,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3979,8 +4007,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4001,8 +4029,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4489,8 +4517,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       googleIpAddress_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4506,8 +4534,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGoogleIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       googleIpAddress_ = getDefaultInstance().getGoogleIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4528,8 +4556,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       googleIpAddress_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4609,8 +4637,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       googleReferenceId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4626,8 +4654,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGoogleReferenceId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       googleReferenceId_ = getDefaultInstance().getGoogleReferenceId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4648,8 +4676,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       googleReferenceId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4698,8 +4726,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000100;
+
       id_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4969,8 +4998,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       interconnectType_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4987,8 +5016,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInterconnectType() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       interconnectType_ = getDefaultInstance().getInterconnectType();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5010,8 +5039,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       interconnectType_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5091,8 +5120,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       kind_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5108,8 +5137,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5130,8 +5159,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       kind_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5215,8 +5244,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       linkType_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5233,8 +5262,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLinkType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       linkType_ = getDefaultInstance().getLinkType();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5256,8 +5285,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       linkType_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5337,8 +5366,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       location_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5354,8 +5383,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5376,8 +5405,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       location_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5457,8 +5486,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
       name_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5474,8 +5503,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00004000);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5496,8 +5525,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
       name_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5577,8 +5606,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       nocContactEmail_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5594,8 +5623,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNocContactEmail() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       nocContactEmail_ = getDefaultInstance().getNocContactEmail();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5616,8 +5645,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       nocContactEmail_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5701,8 +5730,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
       operationalStatus_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5719,8 +5748,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperationalStatus() {
-      bitField0_ = (bitField0_ & ~0x00010000);
       operationalStatus_ = getDefaultInstance().getOperationalStatus();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5742,8 +5771,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
       operationalStatus_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5823,8 +5852,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
       peerIpAddress_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5840,8 +5869,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00020000);
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5862,8 +5891,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
       peerIpAddress_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5912,8 +5941,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProvisionedLinkCount(int value) {
-      bitField0_ |= 0x00040000;
+
       provisionedLinkCount_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5979,8 +6009,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRequestedLinkCount(int value) {
-      bitField0_ |= 0x00080000;
+
       requestedLinkCount_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6046,8 +6077,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSatisfiesPzs(boolean value) {
-      bitField0_ |= 0x00100000;
+
       satisfiesPzs_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6144,8 +6176,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
       selfLink_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6161,8 +6193,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00200000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6183,8 +6215,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00200000;
       selfLink_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6268,8 +6300,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00400000;
       state_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6286,8 +6318,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00400000);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -6309,8 +6341,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00400000;
       state_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

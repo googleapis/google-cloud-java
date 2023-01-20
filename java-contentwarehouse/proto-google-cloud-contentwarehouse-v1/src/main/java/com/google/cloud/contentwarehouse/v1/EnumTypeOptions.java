@@ -68,6 +68,8 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int POSSIBLE_VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList possibleValues_;
   /**
    *
@@ -129,7 +131,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALIDATION_CHECK_DISABLED_FIELD_NUMBER = 2;
-  private boolean validationCheckDisabled_;
+  private boolean validationCheckDisabled_ = false;
   /**
    *
    *
@@ -361,10 +363,10 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       possibleValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       validationCheckDisabled_ = false;
-
       return this;
     }
 
@@ -392,15 +394,28 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contentwarehouse.v1.EnumTypeOptions buildPartial() {
       com.google.cloud.contentwarehouse.v1.EnumTypeOptions result =
           new com.google.cloud.contentwarehouse.v1.EnumTypeOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.EnumTypeOptions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         possibleValues_ = possibleValues_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.possibleValues_ = possibleValues_;
-      result.validationCheckDisabled_ = validationCheckDisabled_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.EnumTypeOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validationCheckDisabled_ = validationCheckDisabled_;
+      }
     }
 
     @java.lang.Override
@@ -498,7 +513,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
             case 16:
               {
                 validationCheckDisabled_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -723,6 +738,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public Builder setValidationCheckDisabled(boolean value) {
 
       validationCheckDisabled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,7 +756,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearValidationCheckDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validationCheckDisabled_ = false;
       onChanged();
       return this;

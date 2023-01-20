@@ -68,7 +68,9 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datafusion.v1beta1.IAMPolicyOrBuilder getIamPolicyOrBuilder() {
-    return getIamPolicy();
+    return iamPolicy_ == null
+        ? com.google.cloud.datafusion.v1beta1.IAMPolicy.getDefaultInstance()
+        : iamPolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -375,12 +379,11 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (iamPolicyBuilder_ == null) {
-        iamPolicy_ = null;
-      } else {
-        iamPolicy_ = null;
+      iamPolicy_ = null;
+      if (iamPolicyBuilder_ != null) {
+        iamPolicyBuilder_.dispose();
         iamPolicyBuilder_ = null;
       }
       return this;
@@ -410,14 +413,21 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datafusion.v1beta1.Namespace buildPartial() {
       com.google.cloud.datafusion.v1beta1.Namespace result =
           new com.google.cloud.datafusion.v1beta1.Namespace(this);
-      result.name_ = name_;
-      if (iamPolicyBuilder_ == null) {
-        result.iamPolicy_ = iamPolicy_;
-      } else {
-        result.iamPolicy_ = iamPolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datafusion.v1beta1.Namespace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.iamPolicy_ = iamPolicyBuilder_ == null ? iamPolicy_ : iamPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -467,6 +477,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datafusion.v1beta1.Namespace.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasIamPolicy()) {
@@ -501,13 +512,13 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getIamPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -526,6 +537,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -588,8 +601,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +618,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -627,8 +640,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -651,7 +664,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iamPolicy field is set.
      */
     public boolean hasIamPolicy() {
-      return iamPolicyBuilder_ != null || iamPolicy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -688,11 +701,11 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         iamPolicy_ = value;
-        onChanged();
       } else {
         iamPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -708,11 +721,11 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datafusion.v1beta1.IAMPolicy.Builder builderForValue) {
       if (iamPolicyBuilder_ == null) {
         iamPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         iamPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -726,19 +739,18 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIamPolicy(com.google.cloud.datafusion.v1beta1.IAMPolicy value) {
       if (iamPolicyBuilder_ == null) {
-        if (iamPolicy_ != null) {
-          iamPolicy_ =
-              com.google.cloud.datafusion.v1beta1.IAMPolicy.newBuilder(iamPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && iamPolicy_ != null
+            && iamPolicy_ != com.google.cloud.datafusion.v1beta1.IAMPolicy.getDefaultInstance()) {
+          getIamPolicyBuilder().mergeFrom(value);
         } else {
           iamPolicy_ = value;
         }
-        onChanged();
       } else {
         iamPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -751,14 +763,13 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datafusion.v1beta1.IAMPolicy iam_policy = 2;</code>
      */
     public Builder clearIamPolicy() {
-      if (iamPolicyBuilder_ == null) {
-        iamPolicy_ = null;
-        onChanged();
-      } else {
-        iamPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      iamPolicy_ = null;
+      if (iamPolicyBuilder_ != null) {
+        iamPolicyBuilder_.dispose();
         iamPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -771,7 +782,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datafusion.v1beta1.IAMPolicy iam_policy = 2;</code>
      */
     public com.google.cloud.datafusion.v1beta1.IAMPolicy.Builder getIamPolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIamPolicyFieldBuilder().getBuilder();
     }

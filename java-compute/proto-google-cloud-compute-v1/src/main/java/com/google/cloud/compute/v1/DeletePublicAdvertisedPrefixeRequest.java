@@ -73,7 +73,9 @@ public final class DeletePublicAdvertisedPrefixeRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class DeletePublicAdvertisedPrefixeRequest
   }
 
   public static final int PUBLIC_ADVERTISED_PREFIX_FIELD_NUMBER = 101874590;
-  private volatile java.lang.Object publicAdvertisedPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicAdvertisedPrefix_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class DeletePublicAdvertisedPrefixeRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -464,12 +470,10 @@ public final class DeletePublicAdvertisedPrefixeRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       publicAdvertisedPrefix_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -498,17 +502,28 @@ public final class DeletePublicAdvertisedPrefixeRequest
     public com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest buildPartial() {
       com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest result =
           new com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.publicAdvertisedPrefix_ = publicAdvertisedPrefix_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicAdvertisedPrefix_ = publicAdvertisedPrefix_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -561,15 +576,17 @@ public final class DeletePublicAdvertisedPrefixeRequest
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPublicAdvertisedPrefix().isEmpty()) {
         publicAdvertisedPrefix_ = other.publicAdvertisedPrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,19 +618,19 @@ public final class DeletePublicAdvertisedPrefixeRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 814996722:
               {
                 publicAdvertisedPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 814996722
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -702,8 +719,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +738,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -745,8 +762,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +832,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicAdvertisedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,8 +850,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearPublicAdvertisedPrefix() {
-
       publicAdvertisedPrefix_ = getDefaultInstance().getPublicAdvertisedPrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -856,8 +873,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicAdvertisedPrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -875,7 +892,7 @@ public final class DeletePublicAdvertisedPrefixeRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -937,8 +954,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -954,8 +971,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -976,8 +993,8 @@ public final class DeletePublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

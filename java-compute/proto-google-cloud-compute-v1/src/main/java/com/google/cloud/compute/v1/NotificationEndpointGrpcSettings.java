@@ -72,7 +72,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   private int bitField0_;
   public static final int AUTHORITY_FIELD_NUMBER = 401868611;
-  private volatile java.lang.Object authority_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authority_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 130489749;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -200,7 +204,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   }
 
   public static final int PAYLOAD_NAME_FIELD_NUMBER = 300358300;
-  private volatile java.lang.Object payloadName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object payloadName_ = "";
   /**
    *
    *
@@ -314,7 +320,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
   }
 
   public static final int RETRY_DURATION_SEC_FIELD_NUMBER = 115681117;
-  private int retryDurationSec_;
+  private int retryDurationSec_ = 0;
   /**
    *
    *
@@ -615,20 +621,16 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authority_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       endpoint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       payloadName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (resendIntervalBuilder_ == null) {
-        resendInterval_ = null;
-      } else {
-        resendIntervalBuilder_.clear();
+      resendInterval_ = null;
+      if (resendIntervalBuilder_ != null) {
+        resendIntervalBuilder_.dispose();
+        resendIntervalBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       retryDurationSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -657,35 +659,39 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettings buildPartial() {
       com.google.cloud.compute.v1.NotificationEndpointGrpcSettings result =
           new com.google.cloud.compute.v1.NotificationEndpointGrpcSettings(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.NotificationEndpointGrpcSettings result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authority_ = authority_;
         to_bitField0_ |= 0x00000001;
       }
-      result.authority_ = authority_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endpoint_ = endpoint_;
         to_bitField0_ |= 0x00000002;
       }
-      result.endpoint_ = endpoint_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.payloadName_ = payloadName_;
         to_bitField0_ |= 0x00000004;
       }
-      result.payloadName_ = payloadName_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (resendIntervalBuilder_ == null) {
-          result.resendInterval_ = resendInterval_;
-        } else {
-          result.resendInterval_ = resendIntervalBuilder_.build();
-        }
+        result.resendInterval_ =
+            resendIntervalBuilder_ == null ? resendInterval_ : resendIntervalBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.retryDurationSec_ = retryDurationSec_;
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -736,18 +742,18 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
           == com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.getDefaultInstance())
         return this;
       if (other.hasAuthority()) {
-        bitField0_ |= 0x00000001;
         authority_ = other.authority_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEndpoint()) {
-        bitField0_ |= 0x00000002;
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPayloadName()) {
-        bitField0_ |= 0x00000004;
         payloadName_ = other.payloadName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasResendInterval()) {
@@ -906,8 +912,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       authority_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -923,8 +929,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearAuthority() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       authority_ = getDefaultInstance().getAuthority();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -945,8 +951,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       authority_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1026,8 +1032,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       endpoint_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1049,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1065,8 +1071,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       endpoint_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1146,8 +1152,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       payloadName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1163,8 +1169,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearPayloadName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       payloadName_ = getDefaultInstance().getPayloadName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1185,8 +1191,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       payloadName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1246,11 +1252,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
           throw new NullPointerException();
         }
         resendInterval_ = value;
-        onChanged();
       } else {
         resendIntervalBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1265,11 +1271,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public Builder setResendInterval(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (resendIntervalBuilder_ == null) {
         resendInterval_ = builderForValue.build();
-        onChanged();
       } else {
         resendIntervalBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1286,18 +1292,15 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         if (((bitField0_ & 0x00000008) != 0)
             && resendInterval_ != null
             && resendInterval_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          resendInterval_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(resendInterval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getResendIntervalBuilder().mergeFrom(value);
         } else {
           resendInterval_ = value;
         }
-        onChanged();
       } else {
         resendIntervalBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1310,13 +1313,13 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public Builder clearResendInterval() {
-      if (resendIntervalBuilder_ == null) {
-        resendInterval_ = null;
-        onChanged();
-      } else {
-        resendIntervalBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      resendInterval_ = null;
+      if (resendIntervalBuilder_ != null) {
+        resendIntervalBuilder_.dispose();
+        resendIntervalBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1421,8 +1424,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setRetryDurationSec(int value) {
-      bitField0_ |= 0x00000010;
+
       retryDurationSec_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

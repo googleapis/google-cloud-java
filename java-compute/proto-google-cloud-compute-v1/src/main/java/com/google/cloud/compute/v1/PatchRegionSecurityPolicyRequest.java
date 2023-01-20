@@ -73,7 +73,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
   }
 
   public static final int SECURITY_POLICY_FIELD_NUMBER = 171082513;
-  private volatile java.lang.Object securityPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securityPolicy_ = "";
   /**
    *
    *
@@ -342,7 +350,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyOrBuilder getSecurityPolicyResourceOrBuilder() {
-    return getSecurityPolicyResource();
+    return securityPolicyResource_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicy.getDefaultInstance()
+        : securityPolicyResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -591,18 +601,14 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       securityPolicy_ = "";
-
-      if (securityPolicyResourceBuilder_ == null) {
-        securityPolicyResource_ = null;
-      } else {
-        securityPolicyResource_ = null;
+      securityPolicyResource_ = null;
+      if (securityPolicyResourceBuilder_ != null) {
+        securityPolicyResourceBuilder_.dispose();
         securityPolicyResourceBuilder_ = null;
       }
       return this;
@@ -633,23 +639,37 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     public com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest result =
           new com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.securityPolicy_ = securityPolicy_;
-      if (securityPolicyResourceBuilder_ == null) {
-        result.securityPolicyResource_ = securityPolicyResource_;
-      } else {
-        result.securityPolicyResource_ = securityPolicyResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.securityPolicy_ = securityPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.securityPolicyResource_ =
+            securityPolicyResourceBuilder_ == null
+                ? securityPolicyResource_
+                : securityPolicyResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -701,19 +721,22 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSecurityPolicy().isEmpty()) {
         securityPolicy_ = other.securityPolicy_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSecurityPolicyResource()) {
@@ -748,32 +771,32 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1368660106:
               {
                 securityPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1368660106
             case 1729276898:
               {
                 input.readMessage(
                     getSecurityPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1729276898
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -862,8 +885,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -881,8 +904,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +928,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -978,8 +1001,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -997,8 +1020,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1021,8 +1044,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1040,7 +1063,7 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1102,8 +1125,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,8 +1142,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1141,8 +1164,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1208,8 +1231,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       securityPolicy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1225,8 +1248,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1247,8 +1270,8 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       securityPolicy_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1273,7 +1296,7 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * @return Whether the securityPolicyResource field is set.
      */
     public boolean hasSecurityPolicyResource() {
-      return securityPolicyResourceBuilder_ != null || securityPolicyResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1314,11 +1337,11 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         securityPolicyResource_ = value;
-        onChanged();
       } else {
         securityPolicyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1336,11 +1359,11 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         com.google.cloud.compute.v1.SecurityPolicy.Builder builderForValue) {
       if (securityPolicyResourceBuilder_ == null) {
         securityPolicyResource_ = builderForValue.build();
-        onChanged();
       } else {
         securityPolicyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1356,19 +1379,19 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      */
     public Builder mergeSecurityPolicyResource(com.google.cloud.compute.v1.SecurityPolicy value) {
       if (securityPolicyResourceBuilder_ == null) {
-        if (securityPolicyResource_ != null) {
-          securityPolicyResource_ =
-              com.google.cloud.compute.v1.SecurityPolicy.newBuilder(securityPolicyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && securityPolicyResource_ != null
+            && securityPolicyResource_
+                != com.google.cloud.compute.v1.SecurityPolicy.getDefaultInstance()) {
+          getSecurityPolicyResourceBuilder().mergeFrom(value);
         } else {
           securityPolicyResource_ = value;
         }
-        onChanged();
       } else {
         securityPolicyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1383,14 +1406,13 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearSecurityPolicyResource() {
-      if (securityPolicyResourceBuilder_ == null) {
-        securityPolicyResource_ = null;
-        onChanged();
-      } else {
-        securityPolicyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      securityPolicyResource_ = null;
+      if (securityPolicyResourceBuilder_ != null) {
+        securityPolicyResourceBuilder_.dispose();
         securityPolicyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1405,7 +1427,7 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicy.Builder getSecurityPolicyResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSecurityPolicyResourceFieldBuilder().getBuilder();
     }

@@ -72,7 +72,9 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -242,7 +248,9 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
   }
 
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
-  private volatile java.lang.Object urlMap_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMap_ = "";
   /**
    *
    *
@@ -341,7 +349,9 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlMapOrBuilder getUrlMapResourceOrBuilder() {
-    return getUrlMapResource();
+    return urlMapResource_ == null
+        ? com.google.cloud.compute.v1.UrlMap.getDefaultInstance()
+        : urlMapResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -588,18 +598,14 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       urlMap_ = "";
-
-      if (urlMapResourceBuilder_ == null) {
-        urlMapResource_ = null;
-      } else {
-        urlMapResource_ = null;
+      urlMapResource_ = null;
+      if (urlMapResourceBuilder_ != null) {
+        urlMapResourceBuilder_.dispose();
         urlMapResourceBuilder_ = null;
       }
       return this;
@@ -629,23 +635,34 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.PatchRegionUrlMapRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionUrlMapRequest result =
           new com.google.cloud.compute.v1.PatchRegionUrlMapRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.urlMap_ = urlMap_;
-      if (urlMapResourceBuilder_ == null) {
-        result.urlMapResource_ = urlMapResource_;
-      } else {
-        result.urlMapResource_ = urlMapResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PatchRegionUrlMapRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.urlMap_ = urlMap_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.urlMapResource_ =
+            urlMapResourceBuilder_ == null ? urlMapResource_ : urlMapResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -696,19 +713,22 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUrlMap().isEmpty()) {
         urlMap_ = other.urlMap_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasUrlMapResource()) {
@@ -743,31 +763,31 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1349403402:
               {
                 input.readMessage(getUrlMapResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1349403402
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1358801822:
               {
                 urlMap_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1358801822
             default:
@@ -856,8 +876,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -875,8 +895,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -899,8 +919,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +992,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -991,8 +1011,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1015,8 +1035,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1034,7 +1054,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1096,8 +1116,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1113,8 +1133,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1135,8 +1155,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1202,8 +1222,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       urlMap_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1219,8 +1239,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-
       urlMap_ = getDefaultInstance().getUrlMap();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1241,8 +1261,8 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       urlMap_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,7 +1287,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * @return Whether the urlMapResource field is set.
      */
     public boolean hasUrlMapResource() {
-      return urlMapResourceBuilder_ != null || urlMapResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1308,11 +1328,11 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         urlMapResource_ = value;
-        onChanged();
       } else {
         urlMapResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1329,11 +1349,11 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
     public Builder setUrlMapResource(com.google.cloud.compute.v1.UrlMap.Builder builderForValue) {
       if (urlMapResourceBuilder_ == null) {
         urlMapResource_ = builderForValue.build();
-        onChanged();
       } else {
         urlMapResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1349,19 +1369,18 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUrlMapResource(com.google.cloud.compute.v1.UrlMap value) {
       if (urlMapResourceBuilder_ == null) {
-        if (urlMapResource_ != null) {
-          urlMapResource_ =
-              com.google.cloud.compute.v1.UrlMap.newBuilder(urlMapResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && urlMapResource_ != null
+            && urlMapResource_ != com.google.cloud.compute.v1.UrlMap.getDefaultInstance()) {
+          getUrlMapResourceBuilder().mergeFrom(value);
         } else {
           urlMapResource_ = value;
         }
-        onChanged();
       } else {
         urlMapResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1376,14 +1395,13 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearUrlMapResource() {
-      if (urlMapResourceBuilder_ == null) {
-        urlMapResource_ = null;
-        onChanged();
-      } else {
-        urlMapResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      urlMapResource_ = null;
+      if (urlMapResourceBuilder_ != null) {
+        urlMapResourceBuilder_.dispose();
         urlMapResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1398,7 +1416,7 @@ public final class PatchRegionUrlMapRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.compute.v1.UrlMap.Builder getUrlMapResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUrlMapResourceFieldBuilder().getBuilder();
     }

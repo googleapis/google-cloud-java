@@ -116,7 +116,9 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStatsOrBuilder
       getCurrentStatsOrBuilder() {
-    return getCurrentStats();
+    return currentStats_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.getDefaultInstance()
+        : currentStats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,10 +333,10 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (currentStatsBuilder_ == null) {
-        currentStats_ = null;
-      } else {
-        currentStats_ = null;
+      bitField0_ = 0;
+      currentStats_ = null;
+      if (currentStatsBuilder_ != null) {
+        currentStatsBuilder_.dispose();
         currentStatsBuilder_ = null;
       }
       return this;
@@ -368,13 +370,20 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse result =
           new com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse(this);
-      if (currentStatsBuilder_ == null) {
-        result.currentStats_ = currentStats_;
-      } else {
-        result.currentStats_ = currentStatsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.currentStats_ =
+            currentStatsBuilder_ == null ? currentStats_ : currentStatsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -459,7 +468,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
             case 34:
               {
                 input.readMessage(getCurrentStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -478,6 +487,8 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats currentStats_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -498,7 +509,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
      * @return Whether the currentStats field is set.
      */
     public boolean hasCurrentStats() {
-      return currentStatsBuilder_ != null || currentStats_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -538,11 +549,11 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
           throw new NullPointerException();
         }
         currentStats_ = value;
-        onChanged();
       } else {
         currentStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,11 +570,11 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder builderForValue) {
       if (currentStatsBuilder_ == null) {
         currentStats_ = builderForValue.build();
-        onChanged();
       } else {
         currentStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -579,20 +590,20 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
     public Builder mergeCurrentStats(
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats value) {
       if (currentStatsBuilder_ == null) {
-        if (currentStats_ != null) {
-          currentStats_ =
-              com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.newBuilder(
-                      currentStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && currentStats_ != null
+            && currentStats_
+                != com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats
+                    .getDefaultInstance()) {
+          getCurrentStatsBuilder().mergeFrom(value);
         } else {
           currentStats_ = value;
         }
-        onChanged();
       } else {
         currentStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -606,14 +617,13 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
      * <code>.google.cloud.contactcenterinsights.v1.IssueModelLabelStats current_stats = 4;</code>
      */
     public Builder clearCurrentStats() {
-      if (currentStatsBuilder_ == null) {
-        currentStats_ = null;
-        onChanged();
-      } else {
-        currentStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      currentStats_ = null;
+      if (currentStatsBuilder_ != null) {
+        currentStatsBuilder_.dispose();
         currentStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -628,7 +638,7 @@ public final class CalculateIssueModelStatsResponse extends com.google.protobuf.
      */
     public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder
         getCurrentStatsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCurrentStatsFieldBuilder().getBuilder();
     }

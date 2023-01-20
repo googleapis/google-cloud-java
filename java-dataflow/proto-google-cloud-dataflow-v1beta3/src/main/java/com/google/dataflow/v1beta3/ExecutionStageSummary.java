@@ -223,7 +223,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int USER_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userName_ = "";
     /**
      *
      *
@@ -272,7 +274,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -321,7 +325,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ORIGINAL_TRANSFORM_OR_COLLECTION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object originalTransformOrCollection_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object originalTransformOrCollection_ = "";
     /**
      *
      *
@@ -372,7 +378,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int SIZE_BYTES_FIELD_NUMBER = 4;
-    private long sizeBytes_;
+    private long sizeBytes_ = 0L;
     /**
      *
      *
@@ -620,14 +626,11 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         userName_ = "";
-
         name_ = "";
-
         originalTransformOrCollection_ = "";
-
         sizeBytes_ = 0L;
-
         return this;
       }
 
@@ -656,12 +659,28 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       public com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource buildPartial() {
         com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource result =
             new com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource(this);
-        result.userName_ = userName_;
-        result.name_ = name_;
-        result.originalTransformOrCollection_ = originalTransformOrCollection_;
-        result.sizeBytes_ = sizeBytes_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userName_ = userName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.originalTransformOrCollection_ = originalTransformOrCollection_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sizeBytes_ = sizeBytes_;
+        }
       }
 
       @java.lang.Override
@@ -716,14 +735,17 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return this;
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getOriginalTransformOrCollection().isEmpty()) {
           originalTransformOrCollection_ = other.originalTransformOrCollection_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getSizeBytes() != 0L) {
@@ -758,25 +780,25 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   userName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   originalTransformOrCollection_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   sizeBytes_ = input.readInt64();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -795,6 +817,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object userName_ = "";
       /**
@@ -857,8 +881,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -874,8 +898,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
-
         userName_ = getDefaultInstance().getUserName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -896,8 +920,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -963,8 +987,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -980,8 +1004,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1002,8 +1026,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1072,8 +1096,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         originalTransformOrCollection_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1090,8 +1114,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearOriginalTransformOrCollection() {
-
         originalTransformOrCollection_ = getDefaultInstance().getOriginalTransformOrCollection();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1113,8 +1137,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         originalTransformOrCollection_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1150,6 +1174,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       public Builder setSizeBytes(long value) {
 
         sizeBytes_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1165,7 +1190,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearSizeBytes() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         sizeBytes_ = 0L;
         onChanged();
         return this;
@@ -1372,7 +1397,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int USER_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userName_ = "";
     /**
      *
      *
@@ -1421,7 +1448,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -1470,7 +1499,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ORIGINAL_TRANSFORM_FIELD_NUMBER = 3;
-    private volatile java.lang.Object originalTransform_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object originalTransform_ = "";
     /**
      *
      *
@@ -1740,12 +1771,10 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         userName_ = "";
-
         name_ = "";
-
         originalTransform_ = "";
-
         return this;
       }
 
@@ -1776,11 +1805,25 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       public com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform buildPartial() {
         com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform result =
             new com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform(this);
-        result.userName_ = userName_;
-        result.name_ = name_;
-        result.originalTransform_ = originalTransform_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userName_ = userName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.originalTransform_ = originalTransform_;
+        }
       }
 
       @java.lang.Override
@@ -1836,14 +1879,17 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getOriginalTransform().isEmpty()) {
           originalTransform_ = other.originalTransform_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1875,19 +1921,19 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   userName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   originalTransform_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1906,6 +1952,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object userName_ = "";
       /**
@@ -1968,8 +2016,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1985,8 +2033,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
-
         userName_ = getDefaultInstance().getUserName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2007,8 +2055,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2074,8 +2122,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2091,8 +2139,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2113,8 +2161,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2183,8 +2231,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         originalTransform_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2201,8 +2249,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearOriginalTransform() {
-
         originalTransform_ = getDefaultInstance().getOriginalTransform();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -2224,8 +2272,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         originalTransform_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2432,7 +2480,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int USER_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userName_ = "";
     /**
      *
      *
@@ -2481,7 +2531,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -2530,7 +2582,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ORIGINAL_TRANSFORM_OR_COLLECTION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object originalTransformOrCollection_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object originalTransformOrCollection_ = "";
     /**
      *
      *
@@ -2805,12 +2859,10 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         userName_ = "";
-
         name_ = "";
-
         originalTransformOrCollection_ = "";
-
         return this;
       }
 
@@ -2840,11 +2892,25 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       public com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource buildPartial() {
         com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource result =
             new com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource(this);
-        result.userName_ = userName_;
-        result.name_ = name_;
-        result.originalTransformOrCollection_ = originalTransformOrCollection_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userName_ = userName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.originalTransformOrCollection_ = originalTransformOrCollection_;
+        }
       }
 
       @java.lang.Override
@@ -2900,14 +2966,17 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getOriginalTransformOrCollection().isEmpty()) {
           originalTransformOrCollection_ = other.originalTransformOrCollection_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2939,19 +3008,19 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   userName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   originalTransformOrCollection_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -2970,6 +3039,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object userName_ = "";
       /**
@@ -3032,8 +3103,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3049,8 +3120,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
-
         userName_ = getDefaultInstance().getUserName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3071,8 +3142,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         userName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3138,8 +3209,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3155,8 +3226,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3177,8 +3248,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3247,8 +3318,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         originalTransformOrCollection_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3265,8 +3336,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearOriginalTransformOrCollection() {
-
         originalTransformOrCollection_ = getDefaultInstance().getOriginalTransformOrCollection();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3288,8 +3359,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         originalTransformOrCollection_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3362,7 +3433,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -3411,7 +3484,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -3460,7 +3535,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int KIND_FIELD_NUMBER = 3;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -3489,13 +3564,14 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.KindType getKind() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.KindType result =
-        com.google.dataflow.v1beta3.KindType.valueOf(kind_);
+        com.google.dataflow.v1beta3.KindType.forNumber(kind_);
     return result == null ? com.google.dataflow.v1beta3.KindType.UNRECOGNIZED : result;
   }
 
   public static final int INPUT_SOURCE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       inputSource_;
   /**
@@ -3574,6 +3650,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OUTPUT_SOURCE_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       outputSource_;
   /**
@@ -3652,6 +3730,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PREREQUISITE_STAGE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList prerequisiteStage_;
   /**
    *
@@ -3713,6 +3793,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPONENT_TRANSFORM_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform>
       componentTransform_;
   /**
@@ -3797,6 +3879,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPONENT_SOURCE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource>
       componentSource_;
   /**
@@ -4158,42 +4242,40 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       kind_ = 0;
-
       if (inputSourceBuilder_ == null) {
         inputSource_ = java.util.Collections.emptyList();
       } else {
         inputSource_ = null;
         inputSourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (outputSourceBuilder_ == null) {
         outputSource_ = java.util.Collections.emptyList();
       } else {
         outputSource_ = null;
         outputSourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (componentTransformBuilder_ == null) {
         componentTransform_ = java.util.Collections.emptyList();
       } else {
         componentTransform_ = null;
         componentTransformBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (componentSourceBuilder_ == null) {
         componentSource_ = java.util.Collections.emptyList();
       } else {
         componentSource_ = null;
         componentSourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -4221,53 +4303,70 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public com.google.dataflow.v1beta3.ExecutionStageSummary buildPartial() {
       com.google.dataflow.v1beta3.ExecutionStageSummary result =
           new com.google.dataflow.v1beta3.ExecutionStageSummary(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      result.kind_ = kind_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.ExecutionStageSummary result) {
       if (inputSourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           inputSource_ = java.util.Collections.unmodifiableList(inputSource_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.inputSource_ = inputSource_;
       } else {
         result.inputSource_ = inputSourceBuilder_.build();
       }
       if (outputSourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           outputSource_ = java.util.Collections.unmodifiableList(outputSource_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.outputSource_ = outputSource_;
       } else {
         result.outputSource_ = outputSourceBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         prerequisiteStage_ = prerequisiteStage_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.prerequisiteStage_ = prerequisiteStage_;
       if (componentTransformBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           componentTransform_ = java.util.Collections.unmodifiableList(componentTransform_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.componentTransform_ = componentTransform_;
       } else {
         result.componentTransform_ = componentTransformBuilder_.build();
       }
       if (componentSourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           componentSource_ = java.util.Collections.unmodifiableList(componentSource_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.componentSource_ = componentSource_;
       } else {
         result.componentSource_ = componentSourceBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ExecutionStageSummary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
+      }
     }
 
     @java.lang.Override
@@ -4318,10 +4417,12 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.kind_ != 0) {
@@ -4331,7 +4432,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (!other.inputSource_.isEmpty()) {
           if (inputSource_.isEmpty()) {
             inputSource_ = other.inputSource_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInputSourceIsMutable();
             inputSource_.addAll(other.inputSource_);
@@ -4344,7 +4445,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
             inputSourceBuilder_.dispose();
             inputSourceBuilder_ = null;
             inputSource_ = other.inputSource_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             inputSourceBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputSourceFieldBuilder()
@@ -4358,7 +4459,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (!other.outputSource_.isEmpty()) {
           if (outputSource_.isEmpty()) {
             outputSource_ = other.outputSource_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureOutputSourceIsMutable();
             outputSource_.addAll(other.outputSource_);
@@ -4371,7 +4472,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
             outputSourceBuilder_.dispose();
             outputSourceBuilder_ = null;
             outputSource_ = other.outputSource_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             outputSourceBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOutputSourceFieldBuilder()
@@ -4384,7 +4485,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       if (!other.prerequisiteStage_.isEmpty()) {
         if (prerequisiteStage_.isEmpty()) {
           prerequisiteStage_ = other.prerequisiteStage_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensurePrerequisiteStageIsMutable();
           prerequisiteStage_.addAll(other.prerequisiteStage_);
@@ -4395,7 +4496,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (!other.componentTransform_.isEmpty()) {
           if (componentTransform_.isEmpty()) {
             componentTransform_ = other.componentTransform_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureComponentTransformIsMutable();
             componentTransform_.addAll(other.componentTransform_);
@@ -4408,7 +4509,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
             componentTransformBuilder_.dispose();
             componentTransformBuilder_ = null;
             componentTransform_ = other.componentTransform_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
             componentTransformBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getComponentTransformFieldBuilder()
@@ -4422,7 +4523,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         if (!other.componentSource_.isEmpty()) {
           if (componentSource_.isEmpty()) {
             componentSource_ = other.componentSource_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureComponentSourceIsMutable();
             componentSource_.addAll(other.componentSource_);
@@ -4435,7 +4536,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
             componentSourceBuilder_.dispose();
             componentSourceBuilder_ = null;
             componentSource_ = other.componentSource_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
             componentSourceBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getComponentSourceFieldBuilder()
@@ -4474,19 +4575,19 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -4633,8 +4734,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4650,8 +4751,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -4672,8 +4773,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4739,8 +4840,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4756,8 +4857,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4778,8 +4879,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4813,8 +4914,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4831,9 +4932,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.KindType getKind() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.KindType result =
-          com.google.dataflow.v1beta3.KindType.valueOf(kind_);
+          com.google.dataflow.v1beta3.KindType.forNumber(kind_);
       return result == null ? com.google.dataflow.v1beta3.KindType.UNRECOGNIZED : result;
     }
     /**
@@ -4852,7 +4952,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -4869,7 +4969,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = 0;
       onChanged();
       return this;
@@ -4879,11 +4979,11 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         inputSource_ = java.util.Collections.emptyList();
 
     private void ensureInputSourceIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         inputSource_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>(
                 inputSource_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -5117,7 +5217,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public Builder clearInputSource() {
       if (inputSourceBuilder_ == null) {
         inputSource_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         inputSourceBuilder_.clear();
@@ -5254,7 +5354,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.Builder,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSourceOrBuilder>(
-                inputSource_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                inputSource_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         inputSource_ = null;
       }
       return inputSourceBuilder_;
@@ -5264,11 +5364,11 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         outputSource_ = java.util.Collections.emptyList();
 
     private void ensureOutputSourceIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         outputSource_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>(
                 outputSource_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -5503,7 +5603,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public Builder clearOutputSource() {
       if (outputSourceBuilder_ == null) {
         outputSource_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         outputSourceBuilder_.clear();
@@ -5640,7 +5740,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.Builder,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.StageSourceOrBuilder>(
-                outputSource_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                outputSource_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         outputSource_ = null;
       }
       return outputSourceBuilder_;
@@ -5650,9 +5750,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStageIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         prerequisiteStage_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStage_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -5787,7 +5887,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      */
     public Builder clearPrerequisiteStage() {
       prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -5818,12 +5918,12 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         componentTransform_ = java.util.Collections.emptyList();
 
     private void ensureComponentTransformIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         componentTransform_ =
             new java.util.ArrayList<
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform>(
                 componentTransform_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -6073,7 +6173,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public Builder clearComponentTransform() {
       if (componentTransformBuilder_ == null) {
         componentTransform_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         componentTransformBuilder_.clear();
@@ -6221,7 +6321,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform.Builder,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransformOrBuilder>(
                 componentTransform_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         componentTransform_ = null;
@@ -6233,12 +6333,12 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         componentSource_ = java.util.Collections.emptyList();
 
     private void ensureComponentSourceIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         componentSource_ =
             new java.util.ArrayList<
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource>(
                 componentSource_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -6485,7 +6585,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public Builder clearComponentSource() {
       if (componentSourceBuilder_ == null) {
         componentSource_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         componentSourceBuilder_.clear();
@@ -6632,7 +6732,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource.Builder,
                 com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSourceOrBuilder>(
                 componentSource_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         componentSource_ = null;

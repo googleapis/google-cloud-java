@@ -312,12 +312,12 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (preservedStateBuilder_ == null) {
-        preservedState_ = null;
-      } else {
-        preservedStateBuilder_.clear();
+      bitField0_ = 0;
+      preservedState_ = null;
+      if (preservedStateBuilder_ != null) {
+        preservedStateBuilder_.dispose();
+        preservedStateBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -345,19 +345,22 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.StatefulPolicy buildPartial() {
       com.google.cloud.compute.v1.StatefulPolicy result =
           new com.google.cloud.compute.v1.StatefulPolicy(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.StatefulPolicy result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (preservedStateBuilder_ == null) {
-          result.preservedState_ = preservedState_;
-        } else {
-          result.preservedState_ = preservedStateBuilder_.build();
-        }
+        result.preservedState_ =
+            preservedStateBuilder_ == null ? preservedState_ : preservedStateBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -503,11 +506,11 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         preservedState_ = value;
-        onChanged();
       } else {
         preservedStateBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -519,11 +522,11 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.StatefulPolicyPreservedState.Builder builderForValue) {
       if (preservedStateBuilder_ == null) {
         preservedState_ = builderForValue.build();
-        onChanged();
       } else {
         preservedStateBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -538,18 +541,15 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
             && preservedState_ != null
             && preservedState_
                 != com.google.cloud.compute.v1.StatefulPolicyPreservedState.getDefaultInstance()) {
-          preservedState_ =
-              com.google.cloud.compute.v1.StatefulPolicyPreservedState.newBuilder(preservedState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPreservedStateBuilder().mergeFrom(value);
         } else {
           preservedState_ = value;
         }
-        onChanged();
       } else {
         preservedStateBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -558,13 +558,13 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPreservedState() {
-      if (preservedStateBuilder_ == null) {
-        preservedState_ = null;
-        onChanged();
-      } else {
-        preservedStateBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      preservedState_ = null;
+      if (preservedStateBuilder_ != null) {
+        preservedStateBuilder_.dispose();
+        preservedStateBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

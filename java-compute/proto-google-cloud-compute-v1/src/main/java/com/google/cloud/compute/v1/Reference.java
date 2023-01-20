@@ -72,7 +72,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERENCE_TYPE_FIELD_NUMBER = 247521198;
-  private volatile java.lang.Object referenceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referenceType_ = "";
   /**
    *
    *
@@ -200,7 +204,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERRER_FIELD_NUMBER = 351173663;
-  private volatile java.lang.Object referrer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referrer_ = "";
   /**
    *
    *
@@ -264,7 +270,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_FIELD_NUMBER = 192835985;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -569,14 +577,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       referenceType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       referrer_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       target_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -604,27 +609,33 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Reference buildPartial() {
       com.google.cloud.compute.v1.Reference result =
           new com.google.cloud.compute.v1.Reference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Reference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.referenceType_ = referenceType_;
         to_bitField0_ |= 0x00000002;
       }
-      result.referenceType_ = referenceType_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.referrer_ = referrer_;
         to_bitField0_ |= 0x00000004;
       }
-      result.referrer_ = referrer_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.target_ = target_;
         to_bitField0_ |= 0x00000008;
       }
-      result.target_ = target_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -673,23 +684,23 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Reference other) {
       if (other == com.google.cloud.compute.v1.Reference.getDefaultInstance()) return this;
       if (other.hasKind()) {
-        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReferenceType()) {
-        bitField0_ |= 0x00000002;
         referenceType_ = other.referenceType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasReferrer()) {
-        bitField0_ |= 0x00000004;
         referrer_ = other.referrer_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTarget()) {
-        bitField0_ |= 0x00000008;
         target_ = other.target_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -836,8 +847,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -853,8 +864,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +886,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -956,8 +967,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       referenceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,8 +984,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferenceType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       referenceType_ = getDefaultInstance().getReferenceType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -995,8 +1006,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       referenceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1076,8 +1087,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       referrer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1093,8 +1104,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferrer() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       referrer_ = getDefaultInstance().getReferrer();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1115,8 +1126,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       referrer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1196,8 +1207,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       target_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1213,8 +1224,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1235,8 +1246,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       target_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

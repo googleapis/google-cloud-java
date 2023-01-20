@@ -69,7 +69,9 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object workerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerName_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORK_ITEMS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.WorkItemDetails> workItems_;
   /**
    *
@@ -394,15 +398,15 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       workerName_ = "";
-
       if (workItemsBuilder_ == null) {
         workItems_ = java.util.Collections.emptyList();
       } else {
         workItems_ = null;
         workItemsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -430,19 +434,31 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.WorkerDetails buildPartial() {
       com.google.dataflow.v1beta3.WorkerDetails result =
           new com.google.dataflow.v1beta3.WorkerDetails(this);
-      int from_bitField0_ = bitField0_;
-      result.workerName_ = workerName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.WorkerDetails result) {
       if (workItemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           workItems_ = java.util.Collections.unmodifiableList(workItems_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.workItems_ = workItems_;
       } else {
         result.workItems_ = workItemsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.WorkerDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workerName_ = workerName_;
+      }
     }
 
     @java.lang.Override
@@ -492,13 +508,14 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.dataflow.v1beta3.WorkerDetails.getDefaultInstance()) return this;
       if (!other.getWorkerName().isEmpty()) {
         workerName_ = other.workerName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (workItemsBuilder_ == null) {
         if (!other.workItems_.isEmpty()) {
           if (workItems_.isEmpty()) {
             workItems_ = other.workItems_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureWorkItemsIsMutable();
             workItems_.addAll(other.workItems_);
@@ -511,7 +528,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
             workItemsBuilder_.dispose();
             workItemsBuilder_ = null;
             workItems_ = other.workItems_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             workItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWorkItemsFieldBuilder()
@@ -550,7 +567,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 workerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -646,8 +663,8 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +680,8 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerName() {
-
       workerName_ = getDefaultInstance().getWorkerName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +702,8 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,10 +712,10 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWorkItemsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         workItems_ =
             new java.util.ArrayList<com.google.dataflow.v1beta3.WorkItemDetails>(workItems_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -914,7 +931,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWorkItems() {
       if (workItemsBuilder_ == null) {
         workItems_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         workItemsBuilder_.clear();
@@ -1036,7 +1053,7 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
                 com.google.dataflow.v1beta3.WorkItemDetails,
                 com.google.dataflow.v1beta3.WorkItemDetails.Builder,
                 com.google.dataflow.v1beta3.WorkItemDetailsOrBuilder>(
-                workItems_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                workItems_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         workItems_ = null;
       }
       return workItemsBuilder_;

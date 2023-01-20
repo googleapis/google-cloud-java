@@ -71,7 +71,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int PEER_EXTERNAL_GATEWAY_FIELD_NUMBER = 384956173;
-  private volatile java.lang.Object peerExternalGateway_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerExternalGateway_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
   }
 
   public static final int PEER_GCP_GATEWAY_FIELD_NUMBER = 281867452;
-  private volatile java.lang.Object peerGcpGateway_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerGcpGateway_ = "";
   /**
    *
    *
@@ -258,6 +262,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
   }
 
   public static final int TUNNELS_FIELD_NUMBER = 104561931;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusTunnel> tunnels_;
   /**
    *
@@ -580,16 +586,14 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       peerExternalGateway_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       peerGcpGateway_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        stateBuilder_.clear();
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
+        stateBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       if (tunnelsBuilder_ == null) {
         tunnels_ = java.util.Collections.emptyList();
       } else {
@@ -624,24 +628,16 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection result =
           new com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.peerExternalGateway_ = peerExternalGateway_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.peerGcpGateway_ = peerGcpGateway_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (stateBuilder_ == null) {
-          result.state_ = state_;
-        } else {
-          result.state_ = stateBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000004;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection result) {
       if (tunnelsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           tunnels_ = java.util.Collections.unmodifiableList(tunnels_);
@@ -651,9 +647,24 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
       } else {
         result.tunnels_ = tunnelsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.peerExternalGateway_ = peerExternalGateway_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.peerGcpGateway_ = peerGcpGateway_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -703,13 +714,13 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
       if (other == com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.getDefaultInstance())
         return this;
       if (other.hasPeerExternalGateway()) {
-        bitField0_ |= 0x00000001;
         peerExternalGateway_ = other.peerExternalGateway_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPeerGcpGateway()) {
-        bitField0_ |= 0x00000002;
         peerGcpGateway_ = other.peerGcpGateway_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasState()) {
@@ -894,8 +905,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       peerExternalGateway_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,8 +922,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPeerExternalGateway() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       peerExternalGateway_ = getDefaultInstance().getPeerExternalGateway();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -933,8 +944,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       peerExternalGateway_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1014,8 +1025,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       peerGcpGateway_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1031,8 +1042,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPeerGcpGateway() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       peerGcpGateway_ = getDefaultInstance().getPeerGcpGateway();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1053,8 +1064,8 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       peerGcpGateway_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1122,11 +1133,11 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1145,11 +1156,11 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
             builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1171,19 +1182,15 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
             && state_
                 != com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
                     .getDefaultInstance()) {
-          state_ =
-              com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
-                  .newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1198,13 +1205,13 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        stateBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
+        stateBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

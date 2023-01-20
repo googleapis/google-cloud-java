@@ -71,7 +71,9 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
 
   private int bitField0_;
   public static final int SCHEDULE_FIELD_NUMBER = 375820951;
-  private volatile java.lang.Object schedule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schedule_ = "";
   /**
    *
    *
@@ -341,8 +343,8 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       schedule_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -373,15 +375,22 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
     public com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule result =
           new com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.schedule_ = schedule_;
         to_bitField0_ |= 0x00000001;
       }
-      result.schedule_ = schedule_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -435,8 +444,8 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
           == com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule
               .getDefaultInstance()) return this;
       if (other.hasSchedule()) {
-        bitField0_ |= 0x00000001;
         schedule_ = other.schedule_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -565,8 +574,8 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       schedule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -582,8 +591,8 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * @return This builder for chaining.
      */
     public Builder clearSchedule() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       schedule_ = getDefaultInstance().getSchedule();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -604,8 +613,8 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       schedule_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

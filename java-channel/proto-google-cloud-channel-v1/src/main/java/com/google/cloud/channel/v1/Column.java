@@ -317,7 +317,9 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object columnId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object columnId_ = "";
   /**
    *
    *
@@ -374,7 +376,9 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -423,7 +427,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 3;
-  private int dataType_;
+  private int dataType_ = 0;
   /**
    *
    *
@@ -452,9 +456,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.Column.DataType getDataType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.channel.v1.Column.DataType result =
-        com.google.cloud.channel.v1.Column.DataType.valueOf(dataType_);
+        com.google.cloud.channel.v1.Column.DataType.forNumber(dataType_);
     return result == null ? com.google.cloud.channel.v1.Column.DataType.UNRECOGNIZED : result;
   }
 
@@ -674,12 +677,10 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       columnId_ = "";
-
       displayName_ = "";
-
       dataType_ = 0;
-
       return this;
     }
 
@@ -706,11 +707,24 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Column buildPartial() {
       com.google.cloud.channel.v1.Column result = new com.google.cloud.channel.v1.Column(this);
-      result.columnId_ = columnId_;
-      result.displayName_ = displayName_;
-      result.dataType_ = dataType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Column result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.columnId_ = columnId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataType_ = dataType_;
+      }
     }
 
     @java.lang.Override
@@ -760,10 +774,12 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.Column.getDefaultInstance()) return this;
       if (!other.getColumnId().isEmpty()) {
         columnId_ = other.columnId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.dataType_ != 0) {
@@ -798,19 +814,19 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 columnId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 dataType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -829,6 +845,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object columnId_ = "";
     /**
@@ -903,8 +921,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       columnId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,8 +942,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumnId() {
-
       columnId_ = getDefaultInstance().getColumnId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -950,8 +968,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       columnId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1017,8 +1035,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1034,8 +1052,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1056,8 +1074,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1091,8 +1109,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
-
       dataType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1109,9 +1127,8 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.channel.v1.Column.DataType getDataType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.channel.v1.Column.DataType result =
-          com.google.cloud.channel.v1.Column.DataType.valueOf(dataType_);
+          com.google.cloud.channel.v1.Column.DataType.forNumber(dataType_);
       return result == null ? com.google.cloud.channel.v1.Column.DataType.UNRECOGNIZED : result;
     }
     /**
@@ -1130,7 +1147,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       dataType_ = value.getNumber();
       onChanged();
       return this;
@@ -1147,7 +1164,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       dataType_ = 0;
       onChanged();
       return this;

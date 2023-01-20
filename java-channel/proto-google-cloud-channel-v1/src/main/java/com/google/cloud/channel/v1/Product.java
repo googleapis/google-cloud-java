@@ -69,7 +69,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.MarketingInfoOrBuilder getMarketingInfoOrBuilder() {
-    return getMarketingInfo();
+    return marketingInfo_ == null
+        ? com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()
+        : marketingInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,12 +381,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (marketingInfoBuilder_ == null) {
-        marketingInfo_ = null;
-      } else {
-        marketingInfo_ = null;
+      marketingInfo_ = null;
+      if (marketingInfoBuilder_ != null) {
+        marketingInfoBuilder_.dispose();
         marketingInfoBuilder_ = null;
       }
       return this;
@@ -411,14 +414,22 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Product buildPartial() {
       com.google.cloud.channel.v1.Product result = new com.google.cloud.channel.v1.Product(this);
-      result.name_ = name_;
-      if (marketingInfoBuilder_ == null) {
-        result.marketingInfo_ = marketingInfo_;
-      } else {
-        result.marketingInfo_ = marketingInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.Product result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.marketingInfo_ =
+            marketingInfoBuilder_ == null ? marketingInfo_ : marketingInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -468,6 +479,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.channel.v1.Product.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMarketingInfo()) {
@@ -502,13 +514,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMarketingInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -527,6 +539,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -592,8 +606,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,8 +624,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -633,8 +647,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,7 +671,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the marketingInfo field is set.
      */
     public boolean hasMarketingInfo() {
-      return marketingInfoBuilder_ != null || marketingInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -694,11 +708,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         marketingInfo_ = value;
-        onChanged();
       } else {
         marketingInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -714,11 +728,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.channel.v1.MarketingInfo.Builder builderForValue) {
       if (marketingInfoBuilder_ == null) {
         marketingInfo_ = builderForValue.build();
-        onChanged();
       } else {
         marketingInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -732,19 +746,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMarketingInfo(com.google.cloud.channel.v1.MarketingInfo value) {
       if (marketingInfoBuilder_ == null) {
-        if (marketingInfo_ != null) {
-          marketingInfo_ =
-              com.google.cloud.channel.v1.MarketingInfo.newBuilder(marketingInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && marketingInfo_ != null
+            && marketingInfo_ != com.google.cloud.channel.v1.MarketingInfo.getDefaultInstance()) {
+          getMarketingInfoBuilder().mergeFrom(value);
         } else {
           marketingInfo_ = value;
         }
-        onChanged();
       } else {
         marketingInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -757,14 +770,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.MarketingInfo marketing_info = 2;</code>
      */
     public Builder clearMarketingInfo() {
-      if (marketingInfoBuilder_ == null) {
-        marketingInfo_ = null;
-        onChanged();
-      } else {
-        marketingInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      marketingInfo_ = null;
+      if (marketingInfoBuilder_ != null) {
+        marketingInfoBuilder_.dispose();
         marketingInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -777,7 +789,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.channel.v1.MarketingInfo marketing_info = 2;</code>
      */
     public com.google.cloud.channel.v1.MarketingInfo.Builder getMarketingInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMarketingInfoFieldBuilder().getBuilder();
     }

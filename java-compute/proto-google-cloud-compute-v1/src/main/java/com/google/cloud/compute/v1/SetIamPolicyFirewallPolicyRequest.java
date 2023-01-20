@@ -122,11 +122,15 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequestOrBuilder
       getGlobalOrganizationSetPolicyRequestResourceOrBuilder() {
-    return getGlobalOrganizationSetPolicyRequestResource();
+    return globalOrganizationSetPolicyRequestResource_ == null
+        ? com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.getDefaultInstance()
+        : globalOrganizationSetPolicyRequestResource_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -390,14 +394,13 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (globalOrganizationSetPolicyRequestResourceBuilder_ == null) {
-        globalOrganizationSetPolicyRequestResource_ = null;
-      } else {
-        globalOrganizationSetPolicyRequestResource_ = null;
+      bitField0_ = 0;
+      globalOrganizationSetPolicyRequestResource_ = null;
+      if (globalOrganizationSetPolicyRequestResourceBuilder_ != null) {
+        globalOrganizationSetPolicyRequestResourceBuilder_.dispose();
         globalOrganizationSetPolicyRequestResourceBuilder_ = null;
       }
       resource_ = "";
-
       return this;
     }
 
@@ -426,16 +429,25 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest(this);
-      if (globalOrganizationSetPolicyRequestResourceBuilder_ == null) {
-        result.globalOrganizationSetPolicyRequestResource_ =
-            globalOrganizationSetPolicyRequestResource_;
-      } else {
-        result.globalOrganizationSetPolicyRequestResource_ =
-            globalOrganizationSetPolicyRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resource_ = resource_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.globalOrganizationSetPolicyRequestResource_ =
+            globalOrganizationSetPolicyRequestResourceBuilder_ == null
+                ? globalOrganizationSetPolicyRequestResource_
+                : globalOrganizationSetPolicyRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
     }
 
     @java.lang.Override
@@ -491,6 +503,7 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -524,13 +537,13 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
                 input.readMessage(
                     getGlobalOrganizationSetPolicyRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1419268850
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1566449778
             default:
@@ -549,6 +562,8 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest
         globalOrganizationSetPolicyRequestResource_;
@@ -571,8 +586,7 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * @return Whether the globalOrganizationSetPolicyRequestResource field is set.
      */
     public boolean hasGlobalOrganizationSetPolicyRequestResource() {
-      return globalOrganizationSetPolicyRequestResourceBuilder_ != null
-          || globalOrganizationSetPolicyRequestResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -615,11 +629,11 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         globalOrganizationSetPolicyRequestResource_ = value;
-        onChanged();
       } else {
         globalOrganizationSetPolicyRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -637,11 +651,11 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.Builder builderForValue) {
       if (globalOrganizationSetPolicyRequestResourceBuilder_ == null) {
         globalOrganizationSetPolicyRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         globalOrganizationSetPolicyRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -658,20 +672,20 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     public Builder mergeGlobalOrganizationSetPolicyRequestResource(
         com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest value) {
       if (globalOrganizationSetPolicyRequestResourceBuilder_ == null) {
-        if (globalOrganizationSetPolicyRequestResource_ != null) {
-          globalOrganizationSetPolicyRequestResource_ =
-              com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.newBuilder(
-                      globalOrganizationSetPolicyRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && globalOrganizationSetPolicyRequestResource_ != null
+            && globalOrganizationSetPolicyRequestResource_
+                != com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest
+                    .getDefaultInstance()) {
+          getGlobalOrganizationSetPolicyRequestResourceBuilder().mergeFrom(value);
         } else {
           globalOrganizationSetPolicyRequestResource_ = value;
         }
-        onChanged();
       } else {
         globalOrganizationSetPolicyRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -686,14 +700,13 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearGlobalOrganizationSetPolicyRequestResource() {
-      if (globalOrganizationSetPolicyRequestResourceBuilder_ == null) {
-        globalOrganizationSetPolicyRequestResource_ = null;
-        onChanged();
-      } else {
-        globalOrganizationSetPolicyRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      globalOrganizationSetPolicyRequestResource_ = null;
+      if (globalOrganizationSetPolicyRequestResourceBuilder_ != null) {
+        globalOrganizationSetPolicyRequestResourceBuilder_.dispose();
         globalOrganizationSetPolicyRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -709,7 +722,7 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest.Builder
         getGlobalOrganizationSetPolicyRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGlobalOrganizationSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
@@ -823,8 +836,8 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,8 +853,8 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -862,8 +875,8 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

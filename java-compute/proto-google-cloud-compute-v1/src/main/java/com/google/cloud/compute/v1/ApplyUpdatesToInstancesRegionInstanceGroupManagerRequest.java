@@ -75,7 +75,9 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
-  private volatile java.lang.Object instanceGroupManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManager_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -287,7 +293,10 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder
       getRegionInstanceGroupManagersApplyUpdatesRequestResourceOrBuilder() {
-    return getRegionInstanceGroupManagersApplyUpdatesRequestResource();
+    return regionInstanceGroupManagersApplyUpdatesRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest
+            .getDefaultInstance()
+        : regionInstanceGroupManagersApplyUpdatesRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -541,16 +550,13 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceGroupManager_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
-      } else {
-        regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
+      regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
+      if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ = null;
       }
       return this;
@@ -586,18 +592,32 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest(
               this);
-      result.instanceGroupManager_ = instanceGroupManager_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        result.regionInstanceGroupManagersApplyUpdatesRequestResource_ =
-            regionInstanceGroupManagersApplyUpdatesRequestResource_;
-      } else {
-        result.regionInstanceGroupManagersApplyUpdatesRequestResource_ =
-            regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceGroupManager_ = instanceGroupManager_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regionInstanceGroupManagersApplyUpdatesRequestResource_ =
+            regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null
+                ? regionInstanceGroupManagersApplyUpdatesRequestResource_
+                : regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -655,14 +675,17 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
               .getDefaultInstance()) return this;
       if (!other.getInstanceGroupManager().isEmpty()) {
         instanceGroupManager_ = other.instanceGroupManager_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegionInstanceGroupManagersApplyUpdatesRequestResource()) {
@@ -701,25 +724,25 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
                     getRegionInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 609986546
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case 1994907162:
               {
                 instanceGroupManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1994907162
             default:
@@ -738,6 +761,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
     /**
@@ -803,8 +828,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +846,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupManager() {
-
       instanceGroupManager_ = getDefaultInstance().getInstanceGroupManager();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -844,8 +869,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceGroupManager_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -917,8 +942,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +961,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -960,8 +985,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1033,8 +1058,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1052,8 +1077,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1076,8 +1101,8 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,8 +1128,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      * @return Whether the regionInstanceGroupManagersApplyUpdatesRequestResource field is set.
      */
     public boolean hasRegionInstanceGroupManagersApplyUpdatesRequestResource() {
-      return regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null
-          || regionInstanceGroupManagersApplyUpdatesRequestResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1148,11 +1172,11 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
           throw new NullPointerException();
         }
         regionInstanceGroupManagersApplyUpdatesRequestResource_ = value;
-        onChanged();
       } else {
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1171,12 +1195,12 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
             builderForValue) {
       if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
         regionInstanceGroupManagersApplyUpdatesRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1193,20 +1217,20 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     public Builder mergeRegionInstanceGroupManagersApplyUpdatesRequestResource(
         com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest value) {
       if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        if (regionInstanceGroupManagersApplyUpdatesRequestResource_ != null) {
-          regionInstanceGroupManagersApplyUpdatesRequestResource_ =
-              com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder(
-                      regionInstanceGroupManagersApplyUpdatesRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && regionInstanceGroupManagersApplyUpdatesRequestResource_ != null
+            && regionInstanceGroupManagersApplyUpdatesRequestResource_
+                != com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest
+                    .getDefaultInstance()) {
+          getRegionInstanceGroupManagersApplyUpdatesRequestResourceBuilder().mergeFrom(value);
         } else {
           regionInstanceGroupManagersApplyUpdatesRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1221,14 +1245,13 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersApplyUpdatesRequestResource() {
-      if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ == null) {
-        regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
-        onChanged();
-      } else {
-        regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regionInstanceGroupManagersApplyUpdatesRequestResource_ = null;
+      if (regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ != null) {
+        regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.dispose();
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1244,7 +1267,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest.Builder
         getRegionInstanceGroupManagersApplyUpdatesRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRegionInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder();
     }

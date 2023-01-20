@@ -70,7 +70,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -170,7 +174,9 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int TRIGGER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object triggerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object triggerId_ = "";
   /**
    *
    *
@@ -261,7 +267,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance() : source_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -493,16 +499,13 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       projectId_ = "";
-
       triggerId_ = "";
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
       return this;
@@ -532,16 +535,27 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
     public com.google.cloudbuild.v1.RunBuildTriggerRequest buildPartial() {
       com.google.cloudbuild.v1.RunBuildTriggerRequest result =
           new com.google.cloudbuild.v1.RunBuildTriggerRequest(this);
-      result.name_ = name_;
-      result.projectId_ = projectId_;
-      result.triggerId_ = triggerId_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.RunBuildTriggerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.triggerId_ = triggerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -592,14 +606,17 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTriggerId().isEmpty()) {
         triggerId_ = other.triggerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSource()) {
@@ -634,25 +651,25 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 triggerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -671,6 +688,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -736,8 +755,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +773,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -777,8 +796,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +863,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -861,8 +880,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -883,8 +902,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -950,8 +969,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -967,8 +986,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
-
       triggerId_ = getDefaultInstance().getTriggerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -989,8 +1008,8 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1013,7 +1032,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1048,11 +1067,11 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1067,11 +1086,11 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
     public Builder setSource(com.google.cloudbuild.v1.RepoSource.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1085,19 +1104,18 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSource(com.google.cloudbuild.v1.RepoSource value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloudbuild.v1.RepoSource.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && source_ != null
+            && source_ != com.google.cloudbuild.v1.RepoSource.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1110,14 +1128,13 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1130,7 +1147,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public com.google.cloudbuild.v1.RepoSource.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }

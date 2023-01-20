@@ -72,7 +72,9 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -189,7 +193,9 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -238,7 +244,9 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -342,7 +350,9 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.compute.v1.ZoneSetLabelsRequestOrBuilder
       getZoneSetLabelsRequestResourceOrBuilder() {
-    return getZoneSetLabelsRequestResource();
+    return zoneSetLabelsRequestResource_ == null
+        ? com.google.cloud.compute.v1.ZoneSetLabelsRequest.getDefaultInstance()
+        : zoneSetLabelsRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -591,18 +601,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       resource_ = "";
-
       zone_ = "";
-
-      if (zoneSetLabelsRequestResourceBuilder_ == null) {
-        zoneSetLabelsRequestResource_ = null;
-      } else {
-        zoneSetLabelsRequestResource_ = null;
+      zoneSetLabelsRequestResource_ = null;
+      if (zoneSetLabelsRequestResourceBuilder_ != null) {
+        zoneSetLabelsRequestResourceBuilder_.dispose();
         zoneSetLabelsRequestResourceBuilder_ = null;
       }
       return this;
@@ -632,23 +638,36 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.SetLabelsDiskRequest buildPartial() {
       com.google.cloud.compute.v1.SetLabelsDiskRequest result =
           new com.google.cloud.compute.v1.SetLabelsDiskRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.resource_ = resource_;
-      result.zone_ = zone_;
-      if (zoneSetLabelsRequestResourceBuilder_ == null) {
-        result.zoneSetLabelsRequestResource_ = zoneSetLabelsRequestResource_;
-      } else {
-        result.zoneSetLabelsRequestResource_ = zoneSetLabelsRequestResourceBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetLabelsDiskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.zoneSetLabelsRequestResource_ =
+            zoneSetLabelsRequestResourceBuilder_ == null
+                ? zoneSetLabelsRequestResource_
+                : zoneSetLabelsRequestResourceBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -699,19 +718,22 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasZoneSetLabelsRequestResource()) {
@@ -746,32 +768,32 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1375360910:
               {
                 input.readMessage(
                     getZoneSetLabelsRequestResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1375360910
             default:
@@ -860,8 +882,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,8 +901,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -922,7 +944,7 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -984,8 +1006,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1001,8 +1023,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1023,8 +1045,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1090,8 +1112,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1107,8 +1129,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1129,8 +1151,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1202,8 +1224,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1221,8 +1243,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1245,8 +1267,8 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1271,7 +1293,7 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the zoneSetLabelsRequestResource field is set.
      */
     public boolean hasZoneSetLabelsRequestResource() {
-      return zoneSetLabelsRequestResourceBuilder_ != null || zoneSetLabelsRequestResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1313,11 +1335,11 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         zoneSetLabelsRequestResource_ = value;
-        onChanged();
       } else {
         zoneSetLabelsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1335,11 +1357,11 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.compute.v1.ZoneSetLabelsRequest.Builder builderForValue) {
       if (zoneSetLabelsRequestResourceBuilder_ == null) {
         zoneSetLabelsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         zoneSetLabelsRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1356,20 +1378,19 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeZoneSetLabelsRequestResource(
         com.google.cloud.compute.v1.ZoneSetLabelsRequest value) {
       if (zoneSetLabelsRequestResourceBuilder_ == null) {
-        if (zoneSetLabelsRequestResource_ != null) {
-          zoneSetLabelsRequestResource_ =
-              com.google.cloud.compute.v1.ZoneSetLabelsRequest.newBuilder(
-                      zoneSetLabelsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && zoneSetLabelsRequestResource_ != null
+            && zoneSetLabelsRequestResource_
+                != com.google.cloud.compute.v1.ZoneSetLabelsRequest.getDefaultInstance()) {
+          getZoneSetLabelsRequestResourceBuilder().mergeFrom(value);
         } else {
           zoneSetLabelsRequestResource_ = value;
         }
-        onChanged();
       } else {
         zoneSetLabelsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1384,14 +1405,13 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearZoneSetLabelsRequestResource() {
-      if (zoneSetLabelsRequestResourceBuilder_ == null) {
-        zoneSetLabelsRequestResource_ = null;
-        onChanged();
-      } else {
-        zoneSetLabelsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      zoneSetLabelsRequestResource_ = null;
+      if (zoneSetLabelsRequestResourceBuilder_ != null) {
+        zoneSetLabelsRequestResourceBuilder_.dispose();
         zoneSetLabelsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1407,7 +1427,7 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.compute.v1.ZoneSetLabelsRequest.Builder
         getZoneSetLabelsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getZoneSetLabelsRequestResourceFieldBuilder().getBuilder();
     }

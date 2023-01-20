@@ -112,7 +112,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagOrBuilder getTagOrBuilder() {
-    return getTag();
+    return tag_ == null ? com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance() : tag_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -161,7 +161,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +382,15 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tagBuilder_ == null) {
-        tag_ = null;
-      } else {
-        tag_ = null;
+      bitField0_ = 0;
+      tag_ = null;
+      if (tagBuilder_ != null) {
+        tagBuilder_.dispose();
         tagBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -421,18 +420,21 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datacatalog.v1beta1.UpdateTagRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.UpdateTagRequest result =
           new com.google.cloud.datacatalog.v1beta1.UpdateTagRequest(this);
-      if (tagBuilder_ == null) {
-        result.tag_ = tag_;
-      } else {
-        result.tag_ = tagBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.UpdateTagRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tag_ = tagBuilder_ == null ? tag_ : tagBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -516,13 +518,13 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getTagFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +543,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.v1beta1.Tag tag_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -562,7 +566,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the tag field is set.
      */
     public boolean hasTag() {
-      return tagBuilder_ != null || tag_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -601,11 +605,11 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         tag_ = value;
-        onChanged();
       } else {
         tagBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,11 +626,11 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     public Builder setTag(com.google.cloud.datacatalog.v1beta1.Tag.Builder builderForValue) {
       if (tagBuilder_ == null) {
         tag_ = builderForValue.build();
-        onChanged();
       } else {
         tagBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -642,19 +646,18 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTag(com.google.cloud.datacatalog.v1beta1.Tag value) {
       if (tagBuilder_ == null) {
-        if (tag_ != null) {
-          tag_ =
-              com.google.cloud.datacatalog.v1beta1.Tag.newBuilder(tag_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tag_ != null
+            && tag_ != com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance()) {
+          getTagBuilder().mergeFrom(value);
         } else {
           tag_ = value;
         }
-        onChanged();
       } else {
         tagBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -669,14 +672,13 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTag() {
-      if (tagBuilder_ == null) {
-        tag_ = null;
-        onChanged();
-      } else {
-        tag_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tag_ = null;
+      if (tagBuilder_ != null) {
+        tagBuilder_.dispose();
         tagBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -691,7 +693,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.datacatalog.v1beta1.Tag.Builder getTagBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTagFieldBuilder().getBuilder();
     }
@@ -760,7 +762,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -799,11 +801,11 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +821,11 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,17 +840,18 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,14 +865,13 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +885,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

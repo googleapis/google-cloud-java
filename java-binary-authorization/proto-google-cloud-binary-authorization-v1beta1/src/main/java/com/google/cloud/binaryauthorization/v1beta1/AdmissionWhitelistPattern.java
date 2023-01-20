@@ -69,7 +69,9 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
   }
 
   public static final int NAME_PATTERN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object namePattern_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namePattern_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       namePattern_ = "";
-
       return this;
     }
 
@@ -362,9 +364,19 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern result =
           new com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern(this);
-      result.namePattern_ = namePattern_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.namePattern_ = namePattern_;
+      }
     }
 
     @java.lang.Override
@@ -418,6 +430,7 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
               .getDefaultInstance()) return this;
       if (!other.getNamePattern().isEmpty()) {
         namePattern_ = other.namePattern_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -449,7 +462,7 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
             case 10:
               {
                 namePattern_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -468,6 +481,8 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object namePattern_ = "";
     /**
@@ -548,8 +563,8 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       namePattern_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearNamePattern() {
-
       namePattern_ = getDefaultInstance().getNamePattern();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -599,8 +614,8 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namePattern_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

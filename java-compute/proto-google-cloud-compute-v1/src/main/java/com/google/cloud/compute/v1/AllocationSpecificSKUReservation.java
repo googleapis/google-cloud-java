@@ -68,7 +68,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   private int bitField0_;
   public static final int ASSURED_COUNT_FIELD_NUMBER = 281197645;
-  private long assuredCount_;
+  private long assuredCount_ = 0L;
   /**
    *
    *
@@ -101,7 +101,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   }
 
   public static final int COUNT_FIELD_NUMBER = 94851343;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -134,7 +134,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   }
 
   public static final int IN_USE_COUNT_FIELD_NUMBER = 493458877;
-  private long inUseCount_;
+  private long inUseCount_ = 0L;
   /**
    *
    *
@@ -484,18 +484,15 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       assuredCount_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       count_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       inUseCount_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (instancePropertiesBuilder_ == null) {
-        instanceProperties_ = null;
-      } else {
-        instancePropertiesBuilder_.clear();
+      instanceProperties_ = null;
+      if (instancePropertiesBuilder_ != null) {
+        instancePropertiesBuilder_.dispose();
+        instancePropertiesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -524,6 +521,15 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public com.google.cloud.compute.v1.AllocationSpecificSKUReservation buildPartial() {
       com.google.cloud.compute.v1.AllocationSpecificSKUReservation result =
           new com.google.cloud.compute.v1.AllocationSpecificSKUReservation(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AllocationSpecificSKUReservation result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -539,16 +545,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (instancePropertiesBuilder_ == null) {
-          result.instanceProperties_ = instanceProperties_;
-        } else {
-          result.instanceProperties_ = instancePropertiesBuilder_.build();
-        }
+        result.instanceProperties_ =
+            instancePropertiesBuilder_ == null
+                ? instanceProperties_
+                : instancePropertiesBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -724,8 +727,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setAssuredCount(long value) {
-      bitField0_ |= 0x00000001;
+
       assuredCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +795,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setCount(long value) {
-      bitField0_ |= 0x00000002;
+
       count_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -858,8 +863,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setInUseCount(long value) {
-      bitField0_ |= 0x00000004;
+
       inUseCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -949,11 +955,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
           throw new NullPointerException();
         }
         instanceProperties_ = value;
-        onChanged();
       } else {
         instancePropertiesBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -973,11 +979,11 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
             builderForValue) {
       if (instancePropertiesBuilder_ == null) {
         instanceProperties_ = builderForValue.build();
-        onChanged();
       } else {
         instancePropertiesBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1001,19 +1007,15 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
                 != com.google.cloud.compute.v1
                     .AllocationSpecificSKUAllocationReservedInstanceProperties
                     .getDefaultInstance()) {
-          instanceProperties_ =
-              com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
-                  .newBuilder(instanceProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getInstancePropertiesBuilder().mergeFrom(value);
         } else {
           instanceProperties_ = value;
         }
-        onChanged();
       } else {
         instancePropertiesBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1028,13 +1030,13 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </code>
      */
     public Builder clearInstanceProperties() {
-      if (instancePropertiesBuilder_ == null) {
-        instanceProperties_ = null;
-        onChanged();
-      } else {
-        instancePropertiesBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      instanceProperties_ = null;
+      if (instancePropertiesBuilder_ != null) {
+        instancePropertiesBuilder_.dispose();
+        instancePropertiesBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

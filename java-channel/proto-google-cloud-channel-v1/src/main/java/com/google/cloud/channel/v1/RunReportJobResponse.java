@@ -117,7 +117,9 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ReportJobOrBuilder getReportJobOrBuilder() {
-    return getReportJob();
+    return reportJob_ == null
+        ? com.google.cloud.channel.v1.ReportJob.getDefaultInstance()
+        : reportJob_;
   }
 
   public static final int REPORT_METADATA_FIELD_NUMBER = 2;
@@ -171,7 +173,9 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.ReportResultsMetadataOrBuilder getReportMetadataOrBuilder() {
-    return getReportMetadata();
+    return reportMetadata_ == null
+        ? com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()
+        : reportMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,16 +395,15 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (reportJobBuilder_ == null) {
-        reportJob_ = null;
-      } else {
-        reportJob_ = null;
+      bitField0_ = 0;
+      reportJob_ = null;
+      if (reportJobBuilder_ != null) {
+        reportJobBuilder_.dispose();
         reportJobBuilder_ = null;
       }
-      if (reportMetadataBuilder_ == null) {
-        reportMetadata_ = null;
-      } else {
-        reportMetadata_ = null;
+      reportMetadata_ = null;
+      if (reportMetadataBuilder_ != null) {
+        reportMetadataBuilder_.dispose();
         reportMetadataBuilder_ = null;
       }
       return this;
@@ -430,18 +433,22 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.channel.v1.RunReportJobResponse buildPartial() {
       com.google.cloud.channel.v1.RunReportJobResponse result =
           new com.google.cloud.channel.v1.RunReportJobResponse(this);
-      if (reportJobBuilder_ == null) {
-        result.reportJob_ = reportJob_;
-      } else {
-        result.reportJob_ = reportJobBuilder_.build();
-      }
-      if (reportMetadataBuilder_ == null) {
-        result.reportMetadata_ = reportMetadata_;
-      } else {
-        result.reportMetadata_ = reportMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.RunReportJobResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reportJob_ = reportJobBuilder_ == null ? reportJob_ : reportJobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reportMetadata_ =
+            reportMetadataBuilder_ == null ? reportMetadata_ : reportMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +532,13 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getReportJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getReportMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +557,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.channel.v1.ReportJob reportJob_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +580,7 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the reportJob field is set.
      */
     public boolean hasReportJob() {
-      return reportJobBuilder_ != null || reportJob_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +621,11 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         reportJob_ = value;
-        onChanged();
       } else {
         reportJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +642,11 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     public Builder setReportJob(com.google.cloud.channel.v1.ReportJob.Builder builderForValue) {
       if (reportJobBuilder_ == null) {
         reportJob_ = builderForValue.build();
-        onChanged();
       } else {
         reportJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,19 +662,18 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeReportJob(com.google.cloud.channel.v1.ReportJob value) {
       if (reportJobBuilder_ == null) {
-        if (reportJob_ != null) {
-          reportJob_ =
-              com.google.cloud.channel.v1.ReportJob.newBuilder(reportJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && reportJob_ != null
+            && reportJob_ != com.google.cloud.channel.v1.ReportJob.getDefaultInstance()) {
+          getReportJobBuilder().mergeFrom(value);
         } else {
           reportJob_ = value;
         }
-        onChanged();
       } else {
         reportJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -680,14 +688,13 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.channel.v1.ReportJob report_job = 1;</code>
      */
     public Builder clearReportJob() {
-      if (reportJobBuilder_ == null) {
-        reportJob_ = null;
-        onChanged();
-      } else {
-        reportJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      reportJob_ = null;
+      if (reportJobBuilder_ != null) {
+        reportJobBuilder_.dispose();
         reportJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -702,7 +709,7 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.channel.v1.ReportJob report_job = 1;</code>
      */
     public com.google.cloud.channel.v1.ReportJob.Builder getReportJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReportJobFieldBuilder().getBuilder();
     }
@@ -774,7 +781,7 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the reportMetadata field is set.
      */
     public boolean hasReportMetadata() {
-      return reportMetadataBuilder_ != null || reportMetadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -815,11 +822,11 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         reportMetadata_ = value;
-        onChanged();
       } else {
         reportMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,11 +844,11 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.channel.v1.ReportResultsMetadata.Builder builderForValue) {
       if (reportMetadataBuilder_ == null) {
         reportMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         reportMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,19 +864,19 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeReportMetadata(com.google.cloud.channel.v1.ReportResultsMetadata value) {
       if (reportMetadataBuilder_ == null) {
-        if (reportMetadata_ != null) {
-          reportMetadata_ =
-              com.google.cloud.channel.v1.ReportResultsMetadata.newBuilder(reportMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && reportMetadata_ != null
+            && reportMetadata_
+                != com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()) {
+          getReportMetadataBuilder().mergeFrom(value);
         } else {
           reportMetadata_ = value;
         }
-        onChanged();
       } else {
         reportMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -884,14 +891,13 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.channel.v1.ReportResultsMetadata report_metadata = 2;</code>
      */
     public Builder clearReportMetadata() {
-      if (reportMetadataBuilder_ == null) {
-        reportMetadata_ = null;
-        onChanged();
-      } else {
-        reportMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      reportMetadata_ = null;
+      if (reportMetadataBuilder_ != null) {
+        reportMetadataBuilder_.dispose();
         reportMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -906,7 +912,7 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.channel.v1.ReportResultsMetadata report_metadata = 2;</code>
      */
     public com.google.cloud.channel.v1.ReportResultsMetadata.Builder getReportMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReportMetadataFieldBuilder().getBuilder();
     }

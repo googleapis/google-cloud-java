@@ -202,7 +202,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int MIN_RECEIVE_INTERVAL_FIELD_NUMBER = 186981614;
-  private int minReceiveInterval_;
+  private int minReceiveInterval_ = 0;
   /**
    *
    *
@@ -235,7 +235,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MIN_TRANSMIT_INTERVAL_FIELD_NUMBER = 523282631;
-  private int minTransmitInterval_;
+  private int minTransmitInterval_ = 0;
   /**
    *
    *
@@ -268,7 +268,7 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MULTIPLIER_FIELD_NUMBER = 191331777;
-  private int multiplier_;
+  private int multiplier_ = 0;
   /**
    *
    *
@@ -301,7 +301,9 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SESSION_INITIALIZATION_MODE_FIELD_NUMBER = 105957049;
-  private volatile java.lang.Object sessionInitializationMode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sessionInitializationMode_ = "";
   /**
    *
    *
@@ -616,14 +618,11 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minReceiveInterval_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       minTransmitInterval_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       multiplier_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       sessionInitializationMode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -651,6 +650,14 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.RouterBgpPeerBfd buildPartial() {
       com.google.cloud.compute.v1.RouterBgpPeerBfd result =
           new com.google.cloud.compute.v1.RouterBgpPeerBfd(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterBgpPeerBfd result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -666,12 +673,10 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sessionInitializationMode_ = sessionInitializationMode_;
         to_bitField0_ |= 0x00000008;
       }
-      result.sessionInitializationMode_ = sessionInitializationMode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -729,8 +734,8 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
         setMultiplier(other.getMultiplier());
       }
       if (other.hasSessionInitializationMode()) {
-        bitField0_ |= 0x00000008;
         sessionInitializationMode_ = other.sessionInitializationMode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -846,8 +851,9 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMinReceiveInterval(int value) {
-      bitField0_ |= 0x00000001;
+
       minReceiveInterval_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,8 +919,9 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMinTransmitInterval(int value) {
-      bitField0_ |= 0x00000002;
+
       minTransmitInterval_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -980,8 +987,9 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMultiplier(int value) {
-      bitField0_ |= 0x00000004;
+
       multiplier_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1082,8 +1090,8 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       sessionInitializationMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1100,8 +1108,8 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSessionInitializationMode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       sessionInitializationMode_ = getDefaultInstance().getSessionInitializationMode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1123,8 +1131,8 @@ public final class RouterBgpPeerBfd extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       sessionInitializationMode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

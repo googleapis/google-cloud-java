@@ -257,7 +257,9 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object actionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object actionId_ = "";
   /**
    *
    *
@@ -306,7 +308,7 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_STATE_FIELD_NUMBER = 2;
-  private int actionState_;
+  private int actionState_ = 0;
   /**
    *
    *
@@ -335,16 +337,17 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.ActionOutput.State getActionState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contentwarehouse.v1.ActionOutput.State result =
-        com.google.cloud.contentwarehouse.v1.ActionOutput.State.valueOf(actionState_);
+        com.google.cloud.contentwarehouse.v1.ActionOutput.State.forNumber(actionState_);
     return result == null
         ? com.google.cloud.contentwarehouse.v1.ActionOutput.State.UNRECOGNIZED
         : result;
   }
 
   public static final int OUTPUT_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object outputMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputMessage_ = "";
   /**
    *
    *
@@ -609,12 +612,10 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       actionId_ = "";
-
       actionState_ = 0;
-
       outputMessage_ = "";
-
       return this;
     }
 
@@ -642,11 +643,24 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.ActionOutput buildPartial() {
       com.google.cloud.contentwarehouse.v1.ActionOutput result =
           new com.google.cloud.contentwarehouse.v1.ActionOutput(this);
-      result.actionId_ = actionId_;
-      result.actionState_ = actionState_;
-      result.outputMessage_ = outputMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.ActionOutput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.actionId_ = actionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.actionState_ = actionState_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputMessage_ = outputMessage_;
+      }
     }
 
     @java.lang.Override
@@ -697,6 +711,7 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getActionId().isEmpty()) {
         actionId_ = other.actionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.actionState_ != 0) {
@@ -704,6 +719,7 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOutputMessage().isEmpty()) {
         outputMessage_ = other.outputMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -735,19 +751,19 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 actionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 actionState_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 outputMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -766,6 +782,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object actionId_ = "";
     /**
@@ -828,8 +846,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -845,8 +863,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActionId() {
-
       actionId_ = getDefaultInstance().getActionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -867,8 +885,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,8 +920,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setActionStateValue(int value) {
-
       actionState_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -920,9 +938,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.contentwarehouse.v1.ActionOutput.State getActionState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contentwarehouse.v1.ActionOutput.State result =
-          com.google.cloud.contentwarehouse.v1.ActionOutput.State.valueOf(actionState_);
+          com.google.cloud.contentwarehouse.v1.ActionOutput.State.forNumber(actionState_);
       return result == null
           ? com.google.cloud.contentwarehouse.v1.ActionOutput.State.UNRECOGNIZED
           : result;
@@ -943,7 +960,7 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       actionState_ = value.getNumber();
       onChanged();
       return this;
@@ -960,7 +977,7 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActionState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       actionState_ = 0;
       onChanged();
       return this;
@@ -1027,8 +1044,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1044,8 +1061,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputMessage() {
-
       outputMessage_ = getDefaultInstance().getOutputMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1066,8 +1083,8 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

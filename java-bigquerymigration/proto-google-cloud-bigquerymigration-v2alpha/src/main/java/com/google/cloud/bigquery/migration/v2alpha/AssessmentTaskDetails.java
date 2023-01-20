@@ -71,7 +71,9 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INPUT_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object inputPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inputPath_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OUTPUT_DATASET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object outputDataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputDataset_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
   }
 
   public static final int QUERYLOGS_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object querylogsPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object querylogsPath_ = "";
   /**
    *
    *
@@ -220,7 +226,9 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DATA_SOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object dataSource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataSource_ = "";
   /**
    *
    *
@@ -497,14 +505,11 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputPath_ = "";
-
       outputDataset_ = "";
-
       querylogsPath_ = "";
-
       dataSource_ = "";
-
       return this;
     }
 
@@ -533,12 +538,28 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
     public com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails result =
           new com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails(this);
-      result.inputPath_ = inputPath_;
-      result.outputDataset_ = outputDataset_;
-      result.querylogsPath_ = querylogsPath_;
-      result.dataSource_ = dataSource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputPath_ = inputPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputDataset_ = outputDataset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.querylogsPath_ = querylogsPath_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataSource_ = dataSource_;
+      }
     }
 
     @java.lang.Override
@@ -591,18 +612,22 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getInputPath().isEmpty()) {
         inputPath_ = other.inputPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOutputDataset().isEmpty()) {
         outputDataset_ = other.outputDataset_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getQuerylogsPath().isEmpty()) {
         querylogsPath_ = other.querylogsPath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDataSource().isEmpty()) {
         dataSource_ = other.dataSource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -634,25 +659,25 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 inputPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 outputDataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 querylogsPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 dataSource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -671,6 +696,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object inputPath_ = "";
     /**
@@ -733,8 +760,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +777,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInputPath() {
-
       inputPath_ = getDefaultInstance().getInputPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -772,8 +799,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inputPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -839,8 +866,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputDataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,8 +883,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOutputDataset() {
-
       outputDataset_ = getDefaultInstance().getOutputDataset();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -878,8 +905,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputDataset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -948,8 +975,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       querylogsPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -966,8 +993,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearQuerylogsPath() {
-
       querylogsPath_ = getDefaultInstance().getQuerylogsPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -989,8 +1016,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       querylogsPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1059,8 +1086,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataSource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1077,8 +1104,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDataSource() {
-
       dataSource_ = getDefaultInstance().getDataSource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1100,8 +1127,8 @@ public final class AssessmentTaskDetails extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataSource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

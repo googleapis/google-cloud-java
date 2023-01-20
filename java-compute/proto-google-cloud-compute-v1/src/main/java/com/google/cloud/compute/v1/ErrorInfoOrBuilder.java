@@ -102,7 +102,6 @@ public interface ErrorInfoOrBuilder
    *
    * <code>map&lt;string, string&gt; metadatas = 8514340;</code>
    */
-
   /* nullable */
   java.lang.String getMetadatasOrDefault(
       java.lang.String key,

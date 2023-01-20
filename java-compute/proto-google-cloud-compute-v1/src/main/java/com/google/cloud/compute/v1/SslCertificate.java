@@ -242,7 +242,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int CERTIFICATE_FIELD_NUMBER = 341787031;
-  private volatile java.lang.Object certificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificate_ = "";
   /**
    *
    *
@@ -306,7 +308,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -370,7 +374,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -434,7 +440,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 440691181;
-  private volatile java.lang.Object expireTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expireTime_ = "";
   /**
    *
    *
@@ -498,7 +506,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -531,7 +539,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -652,7 +662,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -716,7 +728,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIVATE_KEY_FIELD_NUMBER = 361331107;
-  private volatile java.lang.Object privateKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateKey_ = "";
   /**
    *
    *
@@ -780,7 +794,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -844,7 +860,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -965,6 +983,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBJECT_ALTERNATIVE_NAMES_FIELD_NUMBER = 528807907;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList subjectAlternativeNames_;
   /**
    *
@@ -1026,7 +1046,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -1491,42 +1513,30 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       certificate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       expireTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (managedBuilder_ == null) {
-        managed_ = null;
-      } else {
-        managedBuilder_.clear();
+      managed_ = null;
+      if (managedBuilder_ != null) {
+        managedBuilder_.dispose();
+        managedBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
       privateKey_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       region_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
-      if (selfManagedBuilder_ == null) {
-        selfManaged_ = null;
-      } else {
-        selfManagedBuilder_.clear();
+      selfManaged_ = null;
+      if (selfManagedBuilder_ != null) {
+        selfManagedBuilder_.dispose();
+        selfManagedBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
       subjectAlternativeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1554,76 +1564,79 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SslCertificate buildPartial() {
       com.google.cloud.compute.v1.SslCertificate result =
           new com.google.cloud.compute.v1.SslCertificate(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.certificate_ = certificate_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.expireTime_ = expireTime_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (managedBuilder_ == null) {
-          result.managed_ = managed_;
-        } else {
-          result.managed_ = managedBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000080;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.privateKey_ = privateKey_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        if (selfManagedBuilder_ == null) {
-          result.selfManaged_ = selfManaged_;
-        } else {
-          result.selfManaged_ = selfManagedBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000800;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SslCertificate result) {
       if (((bitField0_ & 0x00001000) != 0)) {
         subjectAlternativeNames_ = subjectAlternativeNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.subjectAlternativeNames_ = subjectAlternativeNames_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SslCertificate result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificate_ = certificate_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expireTime_ = expireTime_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.managed_ = managedBuilder_ == null ? managed_ : managedBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.privateKey_ = privateKey_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.selfManaged_ =
+            selfManagedBuilder_ == null ? selfManaged_ : selfManagedBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00001000;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1672,54 +1685,54 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.SslCertificate other) {
       if (other == com.google.cloud.compute.v1.SslCertificate.getDefaultInstance()) return this;
       if (other.hasCertificate()) {
-        bitField0_ |= 0x00000001;
         certificate_ = other.certificate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasExpireTime()) {
-        bitField0_ |= 0x00000008;
         expireTime_ = other.expireTime_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000020;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasManaged()) {
         mergeManaged(other.getManaged());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
         name_ = other.name_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasPrivateKey()) {
-        bitField0_ |= 0x00000100;
         privateKey_ = other.privateKey_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000200;
         region_ = other.region_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000400;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfManaged()) {
@@ -1736,8 +1749,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00002000;
         type_ = other.type_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1945,8 +1958,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       certificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1962,8 +1975,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCertificate() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       certificate_ = getDefaultInstance().getCertificate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1984,8 +1997,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       certificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2065,8 +2078,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2082,8 +2095,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2104,8 +2117,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2185,8 +2198,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2202,8 +2215,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2224,8 +2237,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2305,8 +2318,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       expireTime_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2322,8 +2335,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpireTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       expireTime_ = getDefaultInstance().getExpireTime();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2344,8 +2357,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       expireTime_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2394,8 +2407,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000010;
+
       id_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2492,8 +2506,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       kind_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2509,8 +2523,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2531,8 +2545,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       kind_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2599,11 +2613,11 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         managed_ = value;
-        onChanged();
       } else {
         managedBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2621,11 +2635,11 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Builder builderForValue) {
       if (managedBuilder_ == null) {
         managed_ = builderForValue.build();
-        onChanged();
       } else {
         managedBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2647,18 +2661,15 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             && managed_
                 != com.google.cloud.compute.v1.SslCertificateManagedSslCertificate
                     .getDefaultInstance()) {
-          managed_ =
-              com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.newBuilder(managed_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getManagedBuilder().mergeFrom(value);
         } else {
           managed_ = value;
         }
-        onChanged();
       } else {
         managedBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2673,13 +2684,13 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearManaged() {
-      if (managedBuilder_ == null) {
-        managed_ = null;
-        onChanged();
-      } else {
-        managedBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      managed_ = null;
+      if (managedBuilder_ != null) {
+        managedBuilder_.dispose();
+        managedBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2823,8 +2834,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2840,8 +2851,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2862,8 +2873,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2943,8 +2954,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       privateKey_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2960,8 +2971,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivateKey() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       privateKey_ = getDefaultInstance().getPrivateKey();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2982,8 +2993,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       privateKey_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3063,8 +3074,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       region_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3080,8 +3091,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3102,8 +3113,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       region_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3183,8 +3194,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
       selfLink_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3200,8 +3211,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3222,8 +3233,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
       selfLink_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3291,11 +3302,11 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         selfManaged_ = value;
-        onChanged();
       } else {
         selfManagedBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3314,11 +3325,11 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (selfManagedBuilder_ == null) {
         selfManaged_ = builderForValue.build();
-        onChanged();
       } else {
         selfManagedBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3340,19 +3351,15 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
             && selfManaged_
                 != com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate
                     .getDefaultInstance()) {
-          selfManaged_ =
-              com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.newBuilder(
-                      selfManaged_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSelfManagedBuilder().mergeFrom(value);
         } else {
           selfManaged_ = value;
         }
-        onChanged();
       } else {
         selfManagedBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3367,13 +3374,13 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSelfManaged() {
-      if (selfManagedBuilder_ == null) {
-        selfManaged_ = null;
-        onChanged();
-      } else {
-        selfManagedBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000800);
+      selfManaged_ = null;
+      if (selfManagedBuilder_ != null) {
+        selfManagedBuilder_.dispose();
+        selfManagedBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -3691,8 +3698,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
       type_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3709,8 +3716,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3732,8 +3739,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
       type_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

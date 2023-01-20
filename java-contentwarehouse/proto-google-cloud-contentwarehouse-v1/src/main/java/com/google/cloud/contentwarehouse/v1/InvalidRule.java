@@ -110,11 +110,13 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.RuleOrBuilder getRuleOrBuilder() {
-    return getRule();
+    return rule_ == null ? com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance() : rule_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -373,14 +375,13 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-      } else {
-        rule_ = null;
+      bitField0_ = 0;
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
       error_ = "";
-
       return this;
     }
 
@@ -408,14 +409,21 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.InvalidRule buildPartial() {
       com.google.cloud.contentwarehouse.v1.InvalidRule result =
           new com.google.cloud.contentwarehouse.v1.InvalidRule(this);
-      if (ruleBuilder_ == null) {
-        result.rule_ = rule_;
-      } else {
-        result.rule_ = ruleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.error_ = error_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.InvalidRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rule_ = ruleBuilder_ == null ? rule_ : ruleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = error_;
+      }
     }
 
     @java.lang.Override
@@ -469,6 +477,7 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +509,13 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getRuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -526,6 +535,8 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.contentwarehouse.v1.Rule rule_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contentwarehouse.v1.Rule,
@@ -544,7 +555,7 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rule field is set.
      */
     public boolean hasRule() {
-      return ruleBuilder_ != null || rule_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -581,11 +592,11 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rule_ = value;
-        onChanged();
       } else {
         ruleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -600,11 +611,11 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     public Builder setRule(com.google.cloud.contentwarehouse.v1.Rule.Builder builderForValue) {
       if (ruleBuilder_ == null) {
         rule_ = builderForValue.build();
-        onChanged();
       } else {
         ruleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -618,19 +629,18 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRule(com.google.cloud.contentwarehouse.v1.Rule value) {
       if (ruleBuilder_ == null) {
-        if (rule_ != null) {
-          rule_ =
-              com.google.cloud.contentwarehouse.v1.Rule.newBuilder(rule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && rule_ != null
+            && rule_ != com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance()) {
+          getRuleBuilder().mergeFrom(value);
         } else {
           rule_ = value;
         }
-        onChanged();
       } else {
         ruleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,14 +653,13 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contentwarehouse.v1.Rule rule = 1;</code>
      */
     public Builder clearRule() {
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-        onChanged();
-      } else {
-        rule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -663,7 +672,7 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contentwarehouse.v1.Rule rule = 1;</code>
      */
     public com.google.cloud.contentwarehouse.v1.Rule.Builder getRuleBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
@@ -772,8 +781,8 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -789,8 +798,8 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -811,8 +820,8 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

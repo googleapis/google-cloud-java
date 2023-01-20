@@ -120,11 +120,15 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder
       getGlobalSetLabelsRequestResourceOrBuilder() {
-    return getGlobalSetLabelsRequestResource();
+    return globalSetLabelsRequestResource_ == null
+        ? com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()
+        : globalSetLabelsRequestResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -450,16 +456,14 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (globalSetLabelsRequestResourceBuilder_ == null) {
-        globalSetLabelsRequestResource_ = null;
-      } else {
-        globalSetLabelsRequestResource_ = null;
+      bitField0_ = 0;
+      globalSetLabelsRequestResource_ = null;
+      if (globalSetLabelsRequestResourceBuilder_ != null) {
+        globalSetLabelsRequestResourceBuilder_.dispose();
         globalSetLabelsRequestResourceBuilder_ = null;
       }
       project_ = "";
-
       resource_ = "";
-
       return this;
     }
 
@@ -487,15 +491,27 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.SetLabelsInterconnectRequest buildPartial() {
       com.google.cloud.compute.v1.SetLabelsInterconnectRequest result =
           new com.google.cloud.compute.v1.SetLabelsInterconnectRequest(this);
-      if (globalSetLabelsRequestResourceBuilder_ == null) {
-        result.globalSetLabelsRequestResource_ = globalSetLabelsRequestResource_;
-      } else {
-        result.globalSetLabelsRequestResource_ = globalSetLabelsRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.resource_ = resource_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetLabelsInterconnectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.globalSetLabelsRequestResource_ =
+            globalSetLabelsRequestResourceBuilder_ == null
+                ? globalSetLabelsRequestResource_
+                : globalSetLabelsRequestResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resource_;
+      }
     }
 
     @java.lang.Override
@@ -549,10 +565,12 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -584,13 +602,13 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -1735629782:
@@ -598,7 +616,7 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
                 input.readMessage(
                     getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -1735629782
             default:
@@ -617,6 +635,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -638,8 +658,7 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
      * @return Whether the globalSetLabelsRequestResource field is set.
      */
     public boolean hasGlobalSetLabelsRequestResource() {
-      return globalSetLabelsRequestResourceBuilder_ != null
-          || globalSetLabelsRequestResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -681,11 +700,11 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         globalSetLabelsRequestResource_ = value;
-        onChanged();
       } else {
         globalSetLabelsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,11 +722,11 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder builderForValue) {
       if (globalSetLabelsRequestResourceBuilder_ == null) {
         globalSetLabelsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         globalSetLabelsRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -724,20 +743,19 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
     public Builder mergeGlobalSetLabelsRequestResource(
         com.google.cloud.compute.v1.GlobalSetLabelsRequest value) {
       if (globalSetLabelsRequestResourceBuilder_ == null) {
-        if (globalSetLabelsRequestResource_ != null) {
-          globalSetLabelsRequestResource_ =
-              com.google.cloud.compute.v1.GlobalSetLabelsRequest.newBuilder(
-                      globalSetLabelsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && globalSetLabelsRequestResource_ != null
+            && globalSetLabelsRequestResource_
+                != com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()) {
+          getGlobalSetLabelsRequestResourceBuilder().mergeFrom(value);
         } else {
           globalSetLabelsRequestResource_ = value;
         }
-        onChanged();
       } else {
         globalSetLabelsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -752,14 +770,13 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearGlobalSetLabelsRequestResource() {
-      if (globalSetLabelsRequestResourceBuilder_ == null) {
-        globalSetLabelsRequestResource_ = null;
-        onChanged();
-      } else {
-        globalSetLabelsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      globalSetLabelsRequestResource_ = null;
+      if (globalSetLabelsRequestResourceBuilder_ != null) {
+        globalSetLabelsRequestResourceBuilder_.dispose();
         globalSetLabelsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -775,7 +792,7 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder
         getGlobalSetLabelsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
@@ -895,8 +912,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -914,8 +931,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -938,8 +955,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1005,8 +1022,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1022,8 +1039,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1044,8 +1061,8 @@ public final class SetLabelsInterconnectRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -420,7 +420,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object url_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
     /**
      *
      *
@@ -469,7 +471,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DEFAULT_BRANCH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object defaultBranch_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object defaultBranch_ = "";
     /**
      *
      *
@@ -518,7 +522,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AUTHENTICATION_TOKEN_SECRET_VERSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object authenticationTokenSecretVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object authenticationTokenSecretVersion_ = "";
     /**
      *
      *
@@ -575,7 +581,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TOKEN_STATUS_FIELD_NUMBER = 4;
-    private int tokenStatus_;
+    private int tokenStatus_ = 0;
     /**
      *
      *
@@ -609,9 +615,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus
         getTokenStatus() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus result =
-          com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus.valueOf(
+          com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus.forNumber(
               tokenStatus_);
       return result == null
           ? com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus.UNRECOGNIZED
@@ -859,14 +864,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         url_ = "";
-
         defaultBranch_ = "";
-
         authenticationTokenSecretVersion_ = "";
-
         tokenStatus_ = 0;
-
         return this;
       }
 
@@ -895,12 +897,28 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings buildPartial() {
         com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings result =
             new com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings(this);
-        result.url_ = url_;
-        result.defaultBranch_ = defaultBranch_;
-        result.authenticationTokenSecretVersion_ = authenticationTokenSecretVersion_;
-        result.tokenStatus_ = tokenStatus_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.defaultBranch_ = defaultBranch_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.authenticationTokenSecretVersion_ = authenticationTokenSecretVersion_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.tokenStatus_ = tokenStatus_;
+        }
       }
 
       @java.lang.Override
@@ -955,14 +973,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDefaultBranch().isEmpty()) {
           defaultBranch_ = other.defaultBranch_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getAuthenticationTokenSecretVersion().isEmpty()) {
           authenticationTokenSecretVersion_ = other.authenticationTokenSecretVersion_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.tokenStatus_ != 0) {
@@ -997,25 +1018,25 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   url_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   defaultBranch_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   authenticationTokenSecretVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   tokenStatus_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1034,6 +1055,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object url_ = "";
       /**
@@ -1096,8 +1119,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1113,8 +1136,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUrl() {
-
         url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1135,8 +1158,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1202,8 +1225,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         defaultBranch_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1219,8 +1242,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDefaultBranch() {
-
         defaultBranch_ = getDefaultInstance().getDefaultBranch();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1241,8 +1264,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         defaultBranch_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1320,8 +1343,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         authenticationTokenSecretVersion_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1341,9 +1364,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAuthenticationTokenSecretVersion() {
-
         authenticationTokenSecretVersion_ =
             getDefaultInstance().getAuthenticationTokenSecretVersion();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1369,8 +1392,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         authenticationTokenSecretVersion_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1408,8 +1431,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTokenStatusValue(int value) {
-
         tokenStatus_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1429,9 +1452,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus
           getTokenStatus() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus result =
-            com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus.valueOf(
+            com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus.forNumber(
                 tokenStatus_);
         return result == null
             ? com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.TokenStatus
@@ -1457,7 +1479,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         tokenStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -1476,7 +1498,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTokenStatus() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         tokenStatus_ = 0;
         onChanged();
         return this;
@@ -1550,7 +1572,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1650,7 +1674,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettingsOrBuilder
       getGitRemoteSettingsOrBuilder() {
-    return getGitRemoteSettings();
+    return gitRemoteSettings_ == null
+        ? com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.getDefaultInstance()
+        : gitRemoteSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1864,12 +1890,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (gitRemoteSettingsBuilder_ == null) {
-        gitRemoteSettings_ = null;
-      } else {
-        gitRemoteSettings_ = null;
+      gitRemoteSettings_ = null;
+      if (gitRemoteSettingsBuilder_ != null) {
+        gitRemoteSettingsBuilder_.dispose();
         gitRemoteSettingsBuilder_ = null;
       }
       return this;
@@ -1899,14 +1924,24 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataform.v1alpha2.Repository buildPartial() {
       com.google.cloud.dataform.v1alpha2.Repository result =
           new com.google.cloud.dataform.v1alpha2.Repository(this);
-      result.name_ = name_;
-      if (gitRemoteSettingsBuilder_ == null) {
-        result.gitRemoteSettings_ = gitRemoteSettings_;
-      } else {
-        result.gitRemoteSettings_ = gitRemoteSettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataform.v1alpha2.Repository result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gitRemoteSettings_ =
+            gitRemoteSettingsBuilder_ == null
+                ? gitRemoteSettings_
+                : gitRemoteSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1956,6 +1991,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataform.v1alpha2.Repository.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGitRemoteSettings()) {
@@ -1990,14 +2026,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getGitRemoteSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2016,6 +2052,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2078,8 +2116,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2095,8 +2133,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2117,8 +2155,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2143,7 +2181,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gitRemoteSettings field is set.
      */
     public boolean hasGitRemoteSettings() {
-      return gitRemoteSettingsBuilder_ != null || gitRemoteSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2185,11 +2223,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gitRemoteSettings_ = value;
-        onChanged();
       } else {
         gitRemoteSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2207,11 +2245,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.Builder builderForValue) {
       if (gitRemoteSettingsBuilder_ == null) {
         gitRemoteSettings_ = builderForValue.build();
-        onChanged();
       } else {
         gitRemoteSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2228,20 +2266,20 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGitRemoteSettings(
         com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings value) {
       if (gitRemoteSettingsBuilder_ == null) {
-        if (gitRemoteSettings_ != null) {
-          gitRemoteSettings_ =
-              com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.newBuilder(
-                      gitRemoteSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && gitRemoteSettings_ != null
+            && gitRemoteSettings_
+                != com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings
+                    .getDefaultInstance()) {
+          getGitRemoteSettingsBuilder().mergeFrom(value);
         } else {
           gitRemoteSettings_ = value;
         }
-        onChanged();
       } else {
         gitRemoteSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2256,14 +2294,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGitRemoteSettings() {
-      if (gitRemoteSettingsBuilder_ == null) {
-        gitRemoteSettings_ = null;
-        onChanged();
-      } else {
-        gitRemoteSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      gitRemoteSettings_ = null;
+      if (gitRemoteSettingsBuilder_ != null) {
+        gitRemoteSettingsBuilder_.dispose();
         gitRemoteSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2279,7 +2316,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataform.v1alpha2.Repository.GitRemoteSettings.Builder
         getGitRemoteSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGitRemoteSettingsFieldBuilder().getBuilder();
     }

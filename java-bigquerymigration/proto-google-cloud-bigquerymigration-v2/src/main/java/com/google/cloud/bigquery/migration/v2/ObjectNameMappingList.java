@@ -69,6 +69,8 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_MAP_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2.ObjectNameMapping> nameMap_;
   /**
    *
@@ -339,6 +341,7 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nameMapBuilder_ == null) {
         nameMap_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
     public com.google.cloud.bigquery.migration.v2.ObjectNameMappingList buildPartial() {
       com.google.cloud.bigquery.migration.v2.ObjectNameMappingList result =
           new com.google.cloud.bigquery.migration.v2.ObjectNameMappingList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.migration.v2.ObjectNameMappingList result) {
       if (nameMapBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nameMap_ = java.util.Collections.unmodifiableList(nameMap_);
@@ -384,8 +396,11 @@ public final class ObjectNameMappingList extends com.google.protobuf.GeneratedMe
       } else {
         result.nameMap_ = nameMapBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.migration.v2.ObjectNameMappingList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -69,7 +69,9 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
-  private volatile java.lang.Object backendService_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendService_ = "";
   /**
    *
    *
@@ -183,7 +185,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
   }
 
   public static final int WEIGHT_FIELD_NUMBER = 282149496;
-  private int weight_;
+  private int weight_ = 0;
   /**
    *
    *
@@ -455,16 +457,14 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       backendService_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-      } else {
-        headerActionBuilder_.clear();
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       weight_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -492,27 +492,30 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.WeightedBackendService buildPartial() {
       com.google.cloud.compute.v1.WeightedBackendService result =
           new com.google.cloud.compute.v1.WeightedBackendService(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.WeightedBackendService result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendService_ = backendService_;
         to_bitField0_ |= 0x00000001;
       }
-      result.backendService_ = backendService_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (headerActionBuilder_ == null) {
-          result.headerAction_ = headerAction_;
-        } else {
-          result.headerAction_ = headerActionBuilder_.build();
-        }
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.weight_ = weight_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,8 +565,8 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.WeightedBackendService.getDefaultInstance())
         return this;
       if (other.hasBackendService()) {
-        bitField0_ |= 0x00000001;
         backendService_ = other.backendService_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHeaderAction()) {
@@ -710,8 +713,8 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,8 +730,8 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       backendService_ = getDefaultInstance().getBackendService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +752,8 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       backendService_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,11 +813,11 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         headerAction_ = value;
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,11 +833,11 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
       if (headerActionBuilder_ == null) {
         headerAction_ = builderForValue.build();
-        onChanged();
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,18 +854,15 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
         if (((bitField0_ & 0x00000002) != 0)
             && headerAction_ != null
             && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
-          headerAction_ =
-              com.google.cloud.compute.v1.HttpHeaderAction.newBuilder(headerAction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHeaderActionBuilder().mergeFrom(value);
         } else {
           headerAction_ = value;
         }
-        onChanged();
       } else {
         headerActionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,13 +875,13 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
-      if (headerActionBuilder_ == null) {
-        headerAction_ = null;
-        onChanged();
-      } else {
-        headerActionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      headerAction_ = null;
+      if (headerActionBuilder_ != null) {
+        headerActionBuilder_.dispose();
+        headerActionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -986,8 +986,9 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setWeight(int value) {
-      bitField0_ |= 0x00000004;
+
       weight_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

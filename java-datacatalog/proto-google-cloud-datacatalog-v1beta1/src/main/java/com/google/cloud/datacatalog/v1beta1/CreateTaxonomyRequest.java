@@ -69,7 +69,9 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -166,7 +168,9 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder getTaxonomyOrBuilder() {
-    return getTaxonomy();
+    return taxonomy_ == null
+        ? com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()
+        : taxonomy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +386,11 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (taxonomyBuilder_ == null) {
-        taxonomy_ = null;
-      } else {
-        taxonomy_ = null;
+      taxonomy_ = null;
+      if (taxonomyBuilder_ != null) {
+        taxonomyBuilder_.dispose();
         taxonomyBuilder_ = null;
       }
       return this;
@@ -417,14 +420,21 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest result =
           new com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest(this);
-      result.parent_ = parent_;
-      if (taxonomyBuilder_ == null) {
-        result.taxonomy_ = taxonomy_;
-      } else {
-        result.taxonomy_ = taxonomyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.taxonomy_ = taxonomyBuilder_ == null ? taxonomy_ : taxonomyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +485,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTaxonomy()) {
@@ -509,13 +520,13 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTaxonomyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +545,8 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -602,8 +615,8 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,8 +634,8 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +658,8 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,7 +682,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the taxonomy field is set.
      */
     public boolean hasTaxonomy() {
-      return taxonomyBuilder_ != null || taxonomy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -706,11 +719,11 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         taxonomy_ = value;
-        onChanged();
       } else {
         taxonomyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -726,11 +739,11 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder builderForValue) {
       if (taxonomyBuilder_ == null) {
         taxonomy_ = builderForValue.build();
-        onChanged();
       } else {
         taxonomyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,19 +757,18 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTaxonomy(com.google.cloud.datacatalog.v1beta1.Taxonomy value) {
       if (taxonomyBuilder_ == null) {
-        if (taxonomy_ != null) {
-          taxonomy_ =
-              com.google.cloud.datacatalog.v1beta1.Taxonomy.newBuilder(taxonomy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && taxonomy_ != null
+            && taxonomy_ != com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()) {
+          getTaxonomyBuilder().mergeFrom(value);
         } else {
           taxonomy_ = value;
         }
-        onChanged();
       } else {
         taxonomyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -769,14 +781,13 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
      */
     public Builder clearTaxonomy() {
-      if (taxonomyBuilder_ == null) {
-        taxonomy_ = null;
-        onChanged();
-      } else {
-        taxonomy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      taxonomy_ = null;
+      if (taxonomyBuilder_ != null) {
+        taxonomyBuilder_.dispose();
         taxonomyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -789,7 +800,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
      */
     public com.google.cloud.datacatalog.v1beta1.Taxonomy.Builder getTaxonomyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTaxonomyFieldBuilder().getBuilder();
     }

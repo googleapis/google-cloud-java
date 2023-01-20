@@ -134,7 +134,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -189,7 +191,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -238,7 +242,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_REPEATABLE_FIELD_NUMBER = 2;
-  private boolean isRepeatable_;
+  private boolean isRepeatable_ = false;
   /**
    *
    *
@@ -256,7 +260,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_FILTERABLE_FIELD_NUMBER = 3;
-  private boolean isFilterable_;
+  private boolean isFilterable_ = false;
   /**
    *
    *
@@ -275,7 +279,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_SEARCHABLE_FIELD_NUMBER = 4;
-  private boolean isSearchable_;
+  private boolean isSearchable_ = false;
   /**
    *
    *
@@ -293,7 +297,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_METADATA_FIELD_NUMBER = 5;
-  private boolean isMetadata_;
+  private boolean isMetadata_ = false;
   /**
    *
    *
@@ -311,7 +315,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_REQUIRED_FIELD_NUMBER = 14;
-  private boolean isRequired_;
+  private boolean isRequired_ = false;
   /**
    *
    *
@@ -1143,20 +1147,14 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       isRepeatable_ = false;
-
       isFilterable_ = false;
-
       isSearchable_ = false;
-
       isMetadata_ = false;
-
       isRequired_ = false;
-
       if (integerTypeOptionsBuilder_ != null) {
         integerTypeOptionsBuilder_.clear();
       }
@@ -1210,72 +1208,67 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.contentwarehouse.v1.PropertyDefinition buildPartial() {
       com.google.cloud.contentwarehouse.v1.PropertyDefinition result =
           new com.google.cloud.contentwarehouse.v1.PropertyDefinition(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.isRepeatable_ = isRepeatable_;
-      result.isFilterable_ = isFilterable_;
-      result.isSearchable_ = isSearchable_;
-      result.isMetadata_ = isMetadata_;
-      result.isRequired_ = isRequired_;
-      if (valueTypeOptionsCase_ == 7) {
-        if (integerTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = integerTypeOptionsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueTypeOptionsCase_ == 8) {
-        if (floatTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = floatTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 9) {
-        if (textTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = textTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 10) {
-        if (propertyTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = propertyTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 11) {
-        if (enumTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = enumTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 13) {
-        if (dateTimeTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = dateTimeTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 15) {
-        if (mapTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = mapTypeOptionsBuilder_.build();
-        }
-      }
-      if (valueTypeOptionsCase_ == 16) {
-        if (timestampTypeOptionsBuilder_ == null) {
-          result.valueTypeOptions_ = valueTypeOptions_;
-        } else {
-          result.valueTypeOptions_ = timestampTypeOptionsBuilder_.build();
-        }
-      }
-      result.valueTypeOptionsCase_ = valueTypeOptionsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.PropertyDefinition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.isRepeatable_ = isRepeatable_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.isFilterable_ = isFilterable_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isSearchable_ = isSearchable_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.isMetadata_ = isMetadata_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.isRequired_ = isRequired_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition result) {
+      result.valueTypeOptionsCase_ = valueTypeOptionsCase_;
+      result.valueTypeOptions_ = this.valueTypeOptions_;
+      if (valueTypeOptionsCase_ == 7 && integerTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = integerTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 8 && floatTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = floatTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 9 && textTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = textTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 10 && propertyTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = propertyTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 11 && enumTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = enumTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 13 && dateTimeTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = dateTimeTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 15 && mapTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = mapTypeOptionsBuilder_.build();
+      }
+      if (valueTypeOptionsCase_ == 16 && timestampTypeOptionsBuilder_ != null) {
+        result.valueTypeOptions_ = timestampTypeOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1326,10 +1319,12 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getIsRepeatable() != false) {
@@ -1422,31 +1417,31 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 isRepeatable_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 24:
               {
                 isFilterable_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 isSearchable_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 isMetadata_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 58:
@@ -1485,7 +1480,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             case 98:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 98
             case 106:
@@ -1498,7 +1493,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
             case 112:
               {
                 isRequired_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 112
             case 122:
@@ -1544,6 +1539,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1615,8 +1612,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1635,8 +1632,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1660,8 +1657,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1727,8 +1724,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1744,8 +1741,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1766,8 +1763,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1803,6 +1800,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder setIsRepeatable(boolean value) {
 
       isRepeatable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1818,7 +1816,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsRepeatable() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       isRepeatable_ = false;
       onChanged();
       return this;
@@ -1857,6 +1855,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder setIsFilterable(boolean value) {
 
       isFilterable_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1873,7 +1872,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsFilterable() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       isFilterable_ = false;
       onChanged();
       return this;
@@ -1910,6 +1909,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder setIsSearchable(boolean value) {
 
       isSearchable_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1925,7 +1925,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsSearchable() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       isSearchable_ = false;
       onChanged();
       return this;
@@ -1962,6 +1962,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder setIsMetadata(boolean value) {
 
       isMetadata_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1977,7 +1978,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       isMetadata_ = false;
       onChanged();
       return this;
@@ -2018,6 +2019,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder setIsRequired(boolean value) {
 
       isRequired_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2035,7 +2037,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsRequired() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       isRequired_ = false;
       onChanged();
       return this;
@@ -2253,7 +2255,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 7;
       onChanged();
-      ;
       return integerTypeOptionsBuilder_;
     }
 
@@ -2469,7 +2470,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 8;
       onChanged();
-      ;
       return floatTypeOptionsBuilder_;
     }
 
@@ -2684,7 +2684,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 9;
       onChanged();
-      ;
       return textTypeOptionsBuilder_;
     }
 
@@ -2909,7 +2908,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 10;
       onChanged();
-      ;
       return propertyTypeOptionsBuilder_;
     }
 
@@ -3124,7 +3122,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 11;
       onChanged();
-      ;
       return enumTypeOptionsBuilder_;
     }
 
@@ -3358,7 +3355,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 13;
       onChanged();
-      ;
       return dateTimeTypeOptionsBuilder_;
     }
 
@@ -3571,7 +3567,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 15;
       onChanged();
-      ;
       return mapTypeOptionsBuilder_;
     }
 
@@ -3805,7 +3800,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       valueTypeOptionsCase_ = 16;
       onChanged();
-      ;
       return timestampTypeOptionsBuilder_;
     }
 

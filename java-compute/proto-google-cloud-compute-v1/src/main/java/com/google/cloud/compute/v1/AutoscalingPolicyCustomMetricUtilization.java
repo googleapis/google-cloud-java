@@ -258,7 +258,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
 
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -322,7 +324,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
   }
 
   public static final int METRIC_FIELD_NUMBER = 533067184;
-  private volatile java.lang.Object metric_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    *
    *
@@ -386,7 +390,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
   }
 
   public static final int SINGLE_INSTANCE_ASSIGNMENT_FIELD_NUMBER = 504768064;
-  private double singleInstanceAssignment_;
+  private double singleInstanceAssignment_ = 0D;
   /**
    *
    *
@@ -419,7 +423,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
   }
 
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
-  private double utilizationTarget_;
+  private double utilizationTarget_ = 0D;
   /**
    *
    *
@@ -452,7 +456,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
   }
 
   public static final int UTILIZATION_TARGET_TYPE_FIELD_NUMBER = 340169355;
-  private volatile java.lang.Object utilizationTargetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object utilizationTargetType_ = "";
   /**
    *
    *
@@ -792,16 +798,12 @@ public final class AutoscalingPolicyCustomMetricUtilization
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       metric_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       singleInstanceAssignment_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000004);
       utilizationTarget_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000008);
       utilizationTargetType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -831,16 +833,25 @@ public final class AutoscalingPolicyCustomMetricUtilization
     public com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization result =
           new com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000001;
       }
-      result.filter_ = filter_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metric_ = metric_;
         to_bitField0_ |= 0x00000002;
       }
-      result.metric_ = metric_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.singleInstanceAssignment_ = singleInstanceAssignment_;
         to_bitField0_ |= 0x00000004;
@@ -850,12 +861,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.utilizationTargetType_ = utilizationTargetType_;
         to_bitField0_ |= 0x00000010;
       }
-      result.utilizationTargetType_ = utilizationTargetType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -908,13 +917,13 @@ public final class AutoscalingPolicyCustomMetricUtilization
           == com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization
               .getDefaultInstance()) return this;
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetric()) {
-        bitField0_ |= 0x00000002;
         metric_ = other.metric_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSingleInstanceAssignment()) {
@@ -924,8 +933,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
         setUtilizationTarget(other.getUtilizationTarget());
       }
       if (other.hasUtilizationTargetType()) {
-        bitField0_ |= 0x00000010;
         utilizationTargetType_ = other.utilizationTargetType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1078,8 +1087,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1095,8 +1104,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1117,8 +1126,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1198,8 +1207,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       metric_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1215,8 +1224,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1237,8 +1246,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       metric_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1287,8 +1296,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * @return This builder for chaining.
      */
     public Builder setSingleInstanceAssignment(double value) {
-      bitField0_ |= 0x00000004;
+
       singleInstanceAssignment_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1354,8 +1364,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-      bitField0_ |= 0x00000008;
+
       utilizationTarget_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1456,8 +1467,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       utilizationTargetType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1474,8 +1485,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * @return This builder for chaining.
      */
     public Builder clearUtilizationTargetType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       utilizationTargetType_ = getDefaultInstance().getUtilizationTargetType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1497,8 +1508,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       utilizationTargetType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

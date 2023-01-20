@@ -117,7 +117,9 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder
       getPhraseMatcherOrBuilder() {
-    return getPhraseMatcher();
+    return phraseMatcher_ == null
+        ? com.google.cloud.contactcenterinsights.v1.PhraseMatcher.getDefaultInstance()
+        : phraseMatcher_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -163,7 +165,7 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (phraseMatcherBuilder_ == null) {
-        phraseMatcher_ = null;
-      } else {
-        phraseMatcher_ = null;
+      bitField0_ = 0;
+      phraseMatcher_ = null;
+      if (phraseMatcherBuilder_ != null) {
+        phraseMatcherBuilder_.dispose();
         phraseMatcherBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -426,18 +427,23 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
     public com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest result =
           new com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest(this);
-      if (phraseMatcherBuilder_ == null) {
-        result.phraseMatcher_ = phraseMatcher_;
-      } else {
-        result.phraseMatcher_ = phraseMatcherBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.phraseMatcher_ =
+            phraseMatcherBuilder_ == null ? phraseMatcher_ : phraseMatcherBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +530,13 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getPhraseMatcherFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -549,6 +555,8 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.contactcenterinsights.v1.PhraseMatcher phraseMatcher_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -570,7 +578,7 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      * @return Whether the phraseMatcher field is set.
      */
     public boolean hasPhraseMatcher() {
-      return phraseMatcherBuilder_ != null || phraseMatcher_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -611,11 +619,11 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         phraseMatcher_ = value;
-        onChanged();
       } else {
         phraseMatcherBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,11 +641,11 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
         com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder builderForValue) {
       if (phraseMatcherBuilder_ == null) {
         phraseMatcher_ = builderForValue.build();
-        onChanged();
       } else {
         phraseMatcherBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,19 +662,19 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
     public Builder mergePhraseMatcher(
         com.google.cloud.contactcenterinsights.v1.PhraseMatcher value) {
       if (phraseMatcherBuilder_ == null) {
-        if (phraseMatcher_ != null) {
-          phraseMatcher_ =
-              com.google.cloud.contactcenterinsights.v1.PhraseMatcher.newBuilder(phraseMatcher_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && phraseMatcher_ != null
+            && phraseMatcher_
+                != com.google.cloud.contactcenterinsights.v1.PhraseMatcher.getDefaultInstance()) {
+          getPhraseMatcherBuilder().mergeFrom(value);
         } else {
           phraseMatcher_ = value;
         }
-        onChanged();
       } else {
         phraseMatcherBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -681,14 +689,13 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearPhraseMatcher() {
-      if (phraseMatcherBuilder_ == null) {
-        phraseMatcher_ = null;
-        onChanged();
-      } else {
-        phraseMatcher_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      phraseMatcher_ = null;
+      if (phraseMatcherBuilder_ != null) {
+        phraseMatcherBuilder_.dispose();
         phraseMatcherBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -704,7 +711,7 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder
         getPhraseMatcherBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPhraseMatcherFieldBuilder().getBuilder();
     }
@@ -775,7 +782,7 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -812,11 +819,11 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +838,11 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,17 +856,18 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +880,13 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -892,7 +899,7 @@ public final class UpdatePhraseMatcherRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

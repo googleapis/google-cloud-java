@@ -211,7 +211,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int I_PV4_RANGE_FIELD_NUMBER = 59234358;
-  private volatile java.lang.Object iPv4Range_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iPv4Range_ = "";
   /**
    *
    *
@@ -275,7 +277,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER = 256156690;
-  private boolean autoCreateSubnetworks_;
+  private boolean autoCreateSubnetworks_ = false;
   /**
    *
    *
@@ -308,7 +310,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
-  private volatile java.lang.Object creationTimestamp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationTimestamp_ = "";
   /**
    *
    *
@@ -372,7 +376,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -436,7 +442,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_ULA_INTERNAL_IPV6_FIELD_NUMBER = 423757720;
-  private boolean enableUlaInternalIpv6_;
+  private boolean enableUlaInternalIpv6_ = false;
   /**
    *
    *
@@ -469,7 +475,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -533,7 +541,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GATEWAY_I_PV4_FIELD_NUMBER = 178678877;
-  private volatile java.lang.Object gatewayIPv4_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gatewayIPv4_ = "";
   /**
    *
    *
@@ -597,7 +607,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
-  private long id_;
+  private long id_ = 0L;
   /**
    *
    *
@@ -630,7 +640,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERNAL_IPV6_RANGE_FIELD_NUMBER = 277456807;
-  private volatile java.lang.Object internalIpv6Range_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalIpv6Range_ = "";
   /**
    *
    *
@@ -694,7 +706,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -758,7 +772,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MTU_FIELD_NUMBER = 108462;
-  private int mtu_;
+  private int mtu_ = 0;
   /**
    *
    *
@@ -791,7 +805,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -855,7 +871,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER_FIELD_NUMBER = 6504784;
-  private volatile java.lang.Object networkFirewallPolicyEnforcementOrder_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkFirewallPolicyEnforcementOrder_ = "";
   /**
    *
    *
@@ -922,6 +940,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PEERINGS_FIELD_NUMBER = 69883187;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkPeering> peerings_;
   /**
    *
@@ -1041,7 +1061,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -1105,7 +1127,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_WITH_ID_FIELD_NUMBER = 44520962;
-  private volatile java.lang.Object selfLinkWithId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLinkWithId_ = "";
   /**
    *
    *
@@ -1169,6 +1193,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList subnetworks_;
   /**
    *
@@ -1686,32 +1712,20 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iPv4Range_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       autoCreateSubnetworks_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       enableUlaInternalIpv6_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       firewallPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       gatewayIPv4_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000080);
       internalIpv6Range_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
       mtu_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
       networkFirewallPolicyEnforcementOrder_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
       } else {
@@ -1719,16 +1733,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         peeringsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
-      if (routingConfigBuilder_ == null) {
-        routingConfig_ = null;
-      } else {
-        routingConfigBuilder_.clear();
+      routingConfig_ = null;
+      if (routingConfigBuilder_ != null) {
+        routingConfigBuilder_.dispose();
+        routingConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
       selfLinkWithId_ = "";
-      bitField0_ = (bitField0_ & ~0x00010000);
       subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00020000);
       return this;
@@ -1757,60 +1768,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Network buildPartial() {
       com.google.cloud.compute.v1.Network result = new com.google.cloud.compute.v1.Network(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.iPv4Range_ = iPv4Range_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000004;
-      }
-      result.creationTimestamp_ = creationTimestamp_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        to_bitField0_ |= 0x00000008;
-      }
-      result.description_ = description_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.enableUlaInternalIpv6_ = enableUlaInternalIpv6_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        to_bitField0_ |= 0x00000020;
-      }
-      result.firewallPolicy_ = firewallPolicy_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        to_bitField0_ |= 0x00000040;
-      }
-      result.gatewayIPv4_ = gatewayIPv4_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        to_bitField0_ |= 0x00000100;
-      }
-      result.internalIpv6Range_ = internalIpv6Range_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.mtu_ = mtu_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000800;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        to_bitField0_ |= 0x00001000;
-      }
-      result.networkFirewallPolicyEnforcementOrder_ = networkFirewallPolicyEnforcementOrder_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Network result) {
       if (peeringsBuilder_ == null) {
         if (((bitField0_ & 0x00002000) != 0)) {
           peerings_ = java.util.Collections.unmodifiableList(peerings_);
@@ -1820,30 +1786,82 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.peerings_ = peeringsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        if (routingConfigBuilder_ == null) {
-          result.routingConfig_ = routingConfig_;
-        } else {
-          result.routingConfig_ = routingConfigBuilder_.build();
-        }
-        to_bitField0_ |= 0x00002000;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        to_bitField0_ |= 0x00004000;
-      }
-      result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        to_bitField0_ |= 0x00008000;
-      }
-      result.selfLinkWithId_ = selfLinkWithId_;
       if (((bitField0_ & 0x00020000) != 0)) {
         subnetworks_ = subnetworks_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00020000);
       }
       result.subnetworks_ = subnetworks_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.Network result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iPv4Range_ = iPv4Range_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableUlaInternalIpv6_ = enableUlaInternalIpv6_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.gatewayIPv4_ = gatewayIPv4_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.internalIpv6Range_ = internalIpv6Range_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.mtu_ = mtu_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.networkFirewallPolicyEnforcementOrder_ = networkFirewallPolicyEnforcementOrder_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.routingConfig_ =
+            routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.selfLinkWithId_ = selfLinkWithId_;
+        to_bitField0_ |= 0x00008000;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1892,60 +1910,60 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Network other) {
       if (other == com.google.cloud.compute.v1.Network.getDefaultInstance()) return this;
       if (other.hasIPv4Range()) {
-        bitField0_ |= 0x00000001;
         iPv4Range_ = other.iPv4Range_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAutoCreateSubnetworks()) {
         setAutoCreateSubnetworks(other.getAutoCreateSubnetworks());
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasEnableUlaInternalIpv6()) {
         setEnableUlaInternalIpv6(other.getEnableUlaInternalIpv6());
       }
       if (other.hasFirewallPolicy()) {
-        bitField0_ |= 0x00000020;
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasGatewayIPv4()) {
-        bitField0_ |= 0x00000040;
         gatewayIPv4_ = other.gatewayIPv4_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasInternalIpv6Range()) {
-        bitField0_ |= 0x00000100;
         internalIpv6Range_ = other.internalIpv6Range_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasMtu()) {
         setMtu(other.getMtu());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000800;
         name_ = other.name_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasNetworkFirewallPolicyEnforcementOrder()) {
-        bitField0_ |= 0x00001000;
         networkFirewallPolicyEnforcementOrder_ = other.networkFirewallPolicyEnforcementOrder_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (peeringsBuilder_ == null) {
@@ -1979,13 +1997,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         mergeRoutingConfig(other.getRoutingConfig());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00008000;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
-        bitField0_ |= 0x00010000;
         selfLinkWithId_ = other.selfLinkWithId_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.subnetworks_.isEmpty()) {
@@ -2234,8 +2252,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       iPv4Range_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2251,8 +2269,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIPv4Range() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       iPv4Range_ = getDefaultInstance().getIPv4Range();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2273,8 +2291,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       iPv4Range_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2323,8 +2341,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoCreateSubnetworks(boolean value) {
-      bitField0_ |= 0x00000002;
+
       autoCreateSubnetworks_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2421,8 +2440,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2438,8 +2457,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2460,8 +2479,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2541,8 +2560,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2558,8 +2577,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2580,8 +2599,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2630,8 +2649,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnableUlaInternalIpv6(boolean value) {
-      bitField0_ |= 0x00000010;
+
       enableUlaInternalIpv6_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2728,8 +2748,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2745,8 +2765,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2767,8 +2787,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2848,8 +2868,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       gatewayIPv4_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2865,8 +2885,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayIPv4() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       gatewayIPv4_ = getDefaultInstance().getGatewayIPv4();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2887,8 +2907,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       gatewayIPv4_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2937,8 +2957,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000080;
+
       id_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3035,8 +3056,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
       internalIpv6Range_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3052,8 +3073,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInternalIpv6Range() {
-      bitField0_ = (bitField0_ & ~0x00000100);
       internalIpv6Range_ = getDefaultInstance().getInternalIpv6Range();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3074,8 +3095,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
       internalIpv6Range_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3155,8 +3176,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3172,8 +3193,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3194,8 +3215,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
       kind_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3244,8 +3265,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMtu(int value) {
-      bitField0_ |= 0x00000400;
+
       mtu_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3342,8 +3364,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3359,8 +3381,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000800);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3381,8 +3403,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
       name_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3466,8 +3488,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
       networkFirewallPolicyEnforcementOrder_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3484,9 +3506,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkFirewallPolicyEnforcementOrder() {
-      bitField0_ = (bitField0_ & ~0x00001000);
       networkFirewallPolicyEnforcementOrder_ =
           getDefaultInstance().getNetworkFirewallPolicyEnforcementOrder();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3509,8 +3531,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
       networkFirewallPolicyEnforcementOrder_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3922,11 +3944,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         routingConfig_ = value;
-        onChanged();
       } else {
         routingConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3943,11 +3965,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.compute.v1.NetworkRoutingConfig.Builder builderForValue) {
       if (routingConfigBuilder_ == null) {
         routingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3966,18 +3988,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()) {
-          routingConfig_ =
-              com.google.cloud.compute.v1.NetworkRoutingConfig.newBuilder(routingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRoutingConfigBuilder().mergeFrom(value);
         } else {
           routingConfig_ = value;
         }
-        onChanged();
       } else {
         routingConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3991,13 +4010,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRoutingConfig() {
-      if (routingConfigBuilder_ == null) {
-        routingConfig_ = null;
-        onChanged();
-      } else {
-        routingConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00004000);
+      routingConfig_ = null;
+      if (routingConfigBuilder_ != null) {
+        routingConfigBuilder_.dispose();
+        routingConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -4136,8 +4155,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
       selfLink_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4153,8 +4172,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00008000);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4175,8 +4194,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
       selfLink_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4256,8 +4275,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
       selfLinkWithId_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4273,8 +4292,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLinkWithId() {
-      bitField0_ = (bitField0_ & ~0x00010000);
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4295,8 +4314,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
       selfLinkWithId_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

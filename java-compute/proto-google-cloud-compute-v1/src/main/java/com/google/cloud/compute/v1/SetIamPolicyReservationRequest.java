@@ -71,7 +71,9 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -269,7 +275,9 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder
       getZoneSetPolicyRequestResourceOrBuilder() {
-    return getZoneSetPolicyRequestResource();
+    return zoneSetPolicyRequestResource_ == null
+        ? com.google.cloud.compute.v1.ZoneSetPolicyRequest.getDefaultInstance()
+        : zoneSetPolicyRequestResource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -505,16 +513,13 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       resource_ = "";
-
       zone_ = "";
-
-      if (zoneSetPolicyRequestResourceBuilder_ == null) {
-        zoneSetPolicyRequestResource_ = null;
-      } else {
-        zoneSetPolicyRequestResource_ = null;
+      zoneSetPolicyRequestResource_ = null;
+      if (zoneSetPolicyRequestResourceBuilder_ != null) {
+        zoneSetPolicyRequestResourceBuilder_.dispose();
         zoneSetPolicyRequestResourceBuilder_ = null;
       }
       return this;
@@ -544,16 +549,30 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.SetIamPolicyReservationRequest buildPartial() {
       com.google.cloud.compute.v1.SetIamPolicyReservationRequest result =
           new com.google.cloud.compute.v1.SetIamPolicyReservationRequest(this);
-      result.project_ = project_;
-      result.resource_ = resource_;
-      result.zone_ = zone_;
-      if (zoneSetPolicyRequestResourceBuilder_ == null) {
-        result.zoneSetPolicyRequestResource_ = zoneSetPolicyRequestResource_;
-      } else {
-        result.zoneSetPolicyRequestResource_ = zoneSetPolicyRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetIamPolicyReservationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zoneSetPolicyRequestResource_ =
+            zoneSetPolicyRequestResourceBuilder_ == null
+                ? zoneSetPolicyRequestResource_
+                : zoneSetPolicyRequestResourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -604,14 +623,17 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasZoneSetPolicyRequestResource()) {
@@ -646,26 +668,26 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29957474
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1238310438:
               {
                 input.readMessage(
                     getZoneSetPolicyRequestResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1238310438
             default:
@@ -684,6 +706,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -746,8 +770,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,8 +787,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -785,8 +809,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,8 +876,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,8 +893,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -891,8 +915,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -958,8 +982,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -975,8 +999,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -997,8 +1021,8 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1023,7 +1047,7 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      * @return Whether the zoneSetPolicyRequestResource field is set.
      */
     public boolean hasZoneSetPolicyRequestResource() {
-      return zoneSetPolicyRequestResourceBuilder_ != null || zoneSetPolicyRequestResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1065,11 +1089,11 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         zoneSetPolicyRequestResource_ = value;
-        onChanged();
       } else {
         zoneSetPolicyRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1087,11 +1111,11 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder builderForValue) {
       if (zoneSetPolicyRequestResourceBuilder_ == null) {
         zoneSetPolicyRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         zoneSetPolicyRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1108,20 +1132,19 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
     public Builder mergeZoneSetPolicyRequestResource(
         com.google.cloud.compute.v1.ZoneSetPolicyRequest value) {
       if (zoneSetPolicyRequestResourceBuilder_ == null) {
-        if (zoneSetPolicyRequestResource_ != null) {
-          zoneSetPolicyRequestResource_ =
-              com.google.cloud.compute.v1.ZoneSetPolicyRequest.newBuilder(
-                      zoneSetPolicyRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && zoneSetPolicyRequestResource_ != null
+            && zoneSetPolicyRequestResource_
+                != com.google.cloud.compute.v1.ZoneSetPolicyRequest.getDefaultInstance()) {
+          getZoneSetPolicyRequestResourceBuilder().mergeFrom(value);
         } else {
           zoneSetPolicyRequestResource_ = value;
         }
-        onChanged();
       } else {
         zoneSetPolicyRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1136,14 +1159,13 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearZoneSetPolicyRequestResource() {
-      if (zoneSetPolicyRequestResourceBuilder_ == null) {
-        zoneSetPolicyRequestResource_ = null;
-        onChanged();
-      } else {
-        zoneSetPolicyRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      zoneSetPolicyRequestResource_ = null;
+      if (zoneSetPolicyRequestResourceBuilder_ != null) {
+        zoneSetPolicyRequestResourceBuilder_.dispose();
         zoneSetPolicyRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1159,7 +1181,7 @@ public final class SetIamPolicyReservationRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder
         getZoneSetPolicyRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getZoneSetPolicyRequestResourceFieldBuilder().getBuilder();
     }

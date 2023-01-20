@@ -384,7 +384,9 @@ public final class SecurityPolicyAdvancedOptionsConfig
   }
 
   public static final int JSON_PARSING_FIELD_NUMBER = 282493529;
-  private volatile java.lang.Object jsonParsing_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jsonParsing_ = "";
   /**
    *
    *
@@ -451,7 +453,9 @@ public final class SecurityPolicyAdvancedOptionsConfig
   }
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 140582601;
-  private volatile java.lang.Object logLevel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logLevel_ = "";
   /**
    *
    *
@@ -758,16 +762,14 @@ public final class SecurityPolicyAdvancedOptionsConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jsonCustomConfigBuilder_ == null) {
-        jsonCustomConfig_ = null;
-      } else {
-        jsonCustomConfigBuilder_.clear();
+      bitField0_ = 0;
+      jsonCustomConfig_ = null;
+      if (jsonCustomConfigBuilder_ != null) {
+        jsonCustomConfigBuilder_.dispose();
+        jsonCustomConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       jsonParsing_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       logLevel_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -796,27 +798,31 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (jsonCustomConfigBuilder_ == null) {
-          result.jsonCustomConfig_ = jsonCustomConfig_;
-        } else {
-          result.jsonCustomConfig_ = jsonCustomConfigBuilder_.build();
-        }
+        result.jsonCustomConfig_ =
+            jsonCustomConfigBuilder_ == null ? jsonCustomConfig_ : jsonCustomConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.jsonParsing_ = jsonParsing_;
         to_bitField0_ |= 0x00000002;
       }
-      result.jsonParsing_ = jsonParsing_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.logLevel_ = logLevel_;
         to_bitField0_ |= 0x00000004;
       }
-      result.logLevel_ = logLevel_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -871,13 +877,13 @@ public final class SecurityPolicyAdvancedOptionsConfig
         mergeJsonCustomConfig(other.getJsonCustomConfig());
       }
       if (other.hasJsonParsing()) {
-        bitField0_ |= 0x00000002;
         jsonParsing_ = other.jsonParsing_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLogLevel()) {
-        bitField0_ |= 0x00000004;
         logLevel_ = other.logLevel_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1010,11 +1016,11 @@ public final class SecurityPolicyAdvancedOptionsConfig
           throw new NullPointerException();
         }
         jsonCustomConfig_ = value;
-        onChanged();
       } else {
         jsonCustomConfigBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1033,11 +1039,11 @@ public final class SecurityPolicyAdvancedOptionsConfig
             builderForValue) {
       if (jsonCustomConfigBuilder_ == null) {
         jsonCustomConfig_ = builderForValue.build();
-        onChanged();
       } else {
         jsonCustomConfigBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1059,19 +1065,15 @@ public final class SecurityPolicyAdvancedOptionsConfig
             && jsonCustomConfig_
                 != com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
                     .getDefaultInstance()) {
-          jsonCustomConfig_ =
-              com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
-                  .newBuilder(jsonCustomConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getJsonCustomConfigBuilder().mergeFrom(value);
         } else {
           jsonCustomConfig_ = value;
         }
-        onChanged();
       } else {
         jsonCustomConfigBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1086,13 +1088,13 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * </code>
      */
     public Builder clearJsonCustomConfig() {
-      if (jsonCustomConfigBuilder_ == null) {
-        jsonCustomConfig_ = null;
-        onChanged();
-      } else {
-        jsonCustomConfigBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      jsonCustomConfig_ = null;
+      if (jsonCustomConfigBuilder_ != null) {
+        jsonCustomConfigBuilder_.dispose();
+        jsonCustomConfigBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1244,8 +1246,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       jsonParsing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1262,8 +1264,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return This builder for chaining.
      */
     public Builder clearJsonParsing() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       jsonParsing_ = getDefaultInstance().getJsonParsing();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1285,8 +1287,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       jsonParsing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1370,8 +1372,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       logLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1388,8 +1390,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       logLevel_ = getDefaultInstance().getLogLevel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1411,8 +1413,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       logLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

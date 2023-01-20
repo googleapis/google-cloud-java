@@ -68,6 +68,8 @@ public final class IntegerArray extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList values_;
   /**
    *
@@ -329,8 +331,8 @@ public final class IntegerArray extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       values_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -358,14 +360,25 @@ public final class IntegerArray extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.IntegerArray buildPartial() {
       com.google.cloud.contentwarehouse.v1.IntegerArray result =
           new com.google.cloud.contentwarehouse.v1.IntegerArray(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.IntegerArray result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         values_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.IntegerArray result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -554,6 +567,7 @@ public final class IntegerArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValues(int index, int value) {
+
       ensureValuesIsMutable();
       values_.setInt(index, value);
       onChanged();
@@ -572,6 +586,7 @@ public final class IntegerArray extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addValues(int value) {
+
       ensureValuesIsMutable();
       values_.addInt(value);
       onChanged();

@@ -69,7 +69,9 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,6 +124,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   }
 
   public static final int PATHS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList paths_;
   /**
    *
@@ -187,7 +191,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   }
 
   public static final int CLEAN_FIELD_NUMBER = 3;
-  private boolean clean_;
+  private boolean clean_ = false;
   /**
    *
    *
@@ -427,12 +431,11 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       clean_ = false;
-
       return this;
     }
 
@@ -461,16 +464,32 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest result =
           new com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        paths_ = paths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.paths_ = paths_;
-      result.clean_ = clean_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        paths_ = paths_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.paths_ = paths_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clean_ = clean_;
+      }
     }
 
     @java.lang.Override
@@ -522,12 +541,13 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.paths_.isEmpty()) {
         if (paths_.isEmpty()) {
           paths_ = other.paths_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePathsIsMutable();
           paths_.addAll(other.paths_);
@@ -566,7 +586,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -579,7 +599,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
             case 24:
               {
                 clean_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -668,8 +688,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,8 +707,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +731,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,9 +741,9 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePathsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -866,7 +886,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
      */
     public Builder clearPaths() {
       paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -925,6 +945,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public Builder setClean(boolean value) {
 
       clean_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -940,7 +961,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearClean() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       clean_ = false;
       onChanged();
       return this;

@@ -342,7 +342,7 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -371,16 +371,17 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.NameMappingKey.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2.NameMappingKey.Type result =
-        com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.valueOf(type_);
+        com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int DATABASE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -431,7 +432,9 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 3;
-  private volatile java.lang.Object schema_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object schema_ = "";
   /**
    *
    *
@@ -480,7 +483,9 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object relation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relation_ = "";
   /**
    *
    *
@@ -531,7 +536,9 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object attribute_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attribute_ = "";
   /**
    *
    *
@@ -820,16 +827,12 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       database_ = "";
-
       schema_ = "";
-
       relation_ = "";
-
       attribute_ = "";
-
       return this;
     }
 
@@ -857,13 +860,30 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.NameMappingKey buildPartial() {
       com.google.cloud.bigquery.migration.v2.NameMappingKey result =
           new com.google.cloud.bigquery.migration.v2.NameMappingKey(this);
-      result.type_ = type_;
-      result.database_ = database_;
-      result.schema_ = schema_;
-      result.relation_ = relation_;
-      result.attribute_ = attribute_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.NameMappingKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.schema_ = schema_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.relation_ = relation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.attribute_ = attribute_;
+      }
     }
 
     @java.lang.Override
@@ -917,18 +937,22 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSchema().isEmpty()) {
         schema_ = other.schema_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRelation().isEmpty()) {
         relation_ = other.relation_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getAttribute().isEmpty()) {
         attribute_ = other.attribute_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -960,31 +984,31 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 schema_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 relation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 attribute_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1003,6 +1027,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -1033,8 +1059,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1051,9 +1077,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2.NameMappingKey.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2.NameMappingKey.Type result =
-          com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.valueOf(type_);
+          com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2.NameMappingKey.Type.UNRECOGNIZED
           : result;
@@ -1074,7 +1099,7 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1091,7 +1116,7 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1161,8 +1186,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1179,8 +1204,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1202,8 +1227,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1269,8 +1294,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       schema_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1286,8 +1311,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchema() {
-
       schema_ = getDefaultInstance().getSchema();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1308,8 +1333,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       schema_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1378,8 +1403,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       relation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1396,8 +1421,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelation() {
-
       relation_ = getDefaultInstance().getRelation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1419,8 +1444,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1489,8 +1514,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       attribute_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1507,8 +1532,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttribute() {
-
       attribute_ = getDefaultInstance().getAttribute();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1530,8 +1555,8 @@ public final class NameMappingKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attribute_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

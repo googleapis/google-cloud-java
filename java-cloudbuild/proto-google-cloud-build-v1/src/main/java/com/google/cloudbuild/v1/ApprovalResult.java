@@ -230,7 +230,9 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPROVER_ACCOUNT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object approverAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object approverAccount_ = "";
   /**
    *
    *
@@ -331,11 +333,13 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getApprovalTimeOrBuilder() {
-    return getApprovalTime();
+    return approvalTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : approvalTime_;
   }
 
   public static final int DECISION_FIELD_NUMBER = 4;
-  private int decision_;
+  private int decision_ = 0;
   /**
    *
    *
@@ -368,14 +372,15 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.ApprovalResult.Decision getDecision() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.ApprovalResult.Decision result =
-        com.google.cloudbuild.v1.ApprovalResult.Decision.valueOf(decision_);
+        com.google.cloudbuild.v1.ApprovalResult.Decision.forNumber(decision_);
     return result == null ? com.google.cloudbuild.v1.ApprovalResult.Decision.UNRECOGNIZED : result;
   }
 
   public static final int COMMENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object comment_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object comment_ = "";
   /**
    *
    *
@@ -424,7 +429,9 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -718,20 +725,16 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       approverAccount_ = "";
-
-      if (approvalTimeBuilder_ == null) {
-        approvalTime_ = null;
-      } else {
-        approvalTime_ = null;
+      approvalTime_ = null;
+      if (approvalTimeBuilder_ != null) {
+        approvalTimeBuilder_.dispose();
         approvalTimeBuilder_ = null;
       }
       decision_ = 0;
-
       comment_ = "";
-
       url_ = "";
-
       return this;
     }
 
@@ -759,17 +762,31 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.ApprovalResult buildPartial() {
       com.google.cloudbuild.v1.ApprovalResult result =
           new com.google.cloudbuild.v1.ApprovalResult(this);
-      result.approverAccount_ = approverAccount_;
-      if (approvalTimeBuilder_ == null) {
-        result.approvalTime_ = approvalTime_;
-      } else {
-        result.approvalTime_ = approvalTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.decision_ = decision_;
-      result.comment_ = comment_;
-      result.url_ = url_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.ApprovalResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.approverAccount_ = approverAccount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.approvalTime_ =
+            approvalTimeBuilder_ == null ? approvalTime_ : approvalTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.decision_ = decision_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.comment_ = comment_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.url_ = url_;
+      }
     }
 
     @java.lang.Override
@@ -819,6 +836,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance()) return this;
       if (!other.getApproverAccount().isEmpty()) {
         approverAccount_ = other.approverAccount_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApprovalTime()) {
@@ -829,10 +847,12 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getComment().isEmpty()) {
         comment_ = other.comment_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -864,31 +884,31 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 approverAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getApprovalTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 decision_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
               {
                 comment_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -907,6 +927,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object approverAccount_ = "";
     /**
@@ -972,8 +994,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       approverAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -990,8 +1012,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApproverAccount() {
-
       approverAccount_ = getDefaultInstance().getApproverAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1013,8 +1035,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       approverAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1039,7 +1061,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the approvalTime field is set.
      */
     public boolean hasApprovalTime() {
-      return approvalTimeBuilder_ != null || approvalTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1080,11 +1102,11 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         approvalTime_ = value;
-        onChanged();
       } else {
         approvalTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1101,11 +1123,11 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setApprovalTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (approvalTimeBuilder_ == null) {
         approvalTime_ = builderForValue.build();
-        onChanged();
       } else {
         approvalTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1121,19 +1143,18 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeApprovalTime(com.google.protobuf.Timestamp value) {
       if (approvalTimeBuilder_ == null) {
-        if (approvalTime_ != null) {
-          approvalTime_ =
-              com.google.protobuf.Timestamp.newBuilder(approvalTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && approvalTime_ != null
+            && approvalTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getApprovalTimeBuilder().mergeFrom(value);
         } else {
           approvalTime_ = value;
         }
-        onChanged();
       } else {
         approvalTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1148,14 +1169,13 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearApprovalTime() {
-      if (approvalTimeBuilder_ == null) {
-        approvalTime_ = null;
-        onChanged();
-      } else {
-        approvalTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      approvalTime_ = null;
+      if (approvalTimeBuilder_ != null) {
+        approvalTimeBuilder_.dispose();
         approvalTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1170,7 +1190,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getApprovalTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApprovalTimeFieldBuilder().getBuilder();
     }
@@ -1255,8 +1275,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDecisionValue(int value) {
-
       decision_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1275,9 +1295,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.ApprovalResult.Decision getDecision() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.ApprovalResult.Decision result =
-          com.google.cloudbuild.v1.ApprovalResult.Decision.valueOf(decision_);
+          com.google.cloudbuild.v1.ApprovalResult.Decision.forNumber(decision_);
       return result == null
           ? com.google.cloudbuild.v1.ApprovalResult.Decision.UNRECOGNIZED
           : result;
@@ -1300,7 +1319,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       decision_ = value.getNumber();
       onChanged();
       return this;
@@ -1319,7 +1338,7 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       decision_ = 0;
       onChanged();
       return this;
@@ -1386,8 +1405,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       comment_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1403,8 +1422,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearComment() {
-
       comment_ = getDefaultInstance().getComment();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1425,8 +1444,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       comment_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1501,8 +1520,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1521,8 +1540,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1546,8 +1565,8 @@ public final class ApprovalResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

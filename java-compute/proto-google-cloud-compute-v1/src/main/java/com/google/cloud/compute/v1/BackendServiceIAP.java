@@ -71,7 +71,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1018689;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -104,7 +104,9 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OAUTH2_CLIENT_ID_FIELD_NUMBER = 314017611;
-  private volatile java.lang.Object oauth2ClientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oauth2ClientId_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OAUTH2_CLIENT_SECRET_FIELD_NUMBER = 50999520;
-  private volatile java.lang.Object oauth2ClientSecret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oauth2ClientSecret_ = "";
   /**
    *
    *
@@ -232,7 +236,9 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OAUTH2_CLIENT_SECRET_SHA256_FIELD_NUMBER = 112903782;
-  private volatile java.lang.Object oauth2ClientSecretSha256_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oauth2ClientSecretSha256_ = "";
   /**
    *
    *
@@ -543,14 +549,11 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       oauth2ClientId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       oauth2ClientSecret_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       oauth2ClientSecretSha256_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -578,6 +581,14 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.BackendServiceIAP buildPartial() {
       com.google.cloud.compute.v1.BackendServiceIAP result =
           new com.google.cloud.compute.v1.BackendServiceIAP(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BackendServiceIAP result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -585,20 +596,18 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.oauth2ClientId_ = oauth2ClientId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.oauth2ClientId_ = oauth2ClientId_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.oauth2ClientSecret_ = oauth2ClientSecret_;
         to_bitField0_ |= 0x00000004;
       }
-      result.oauth2ClientSecret_ = oauth2ClientSecret_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.oauth2ClientSecretSha256_ = oauth2ClientSecretSha256_;
         to_bitField0_ |= 0x00000008;
       }
-      result.oauth2ClientSecretSha256_ = oauth2ClientSecretSha256_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -650,18 +659,18 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         setEnabled(other.getEnabled());
       }
       if (other.hasOauth2ClientId()) {
-        bitField0_ |= 0x00000002;
         oauth2ClientId_ = other.oauth2ClientId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasOauth2ClientSecret()) {
-        bitField0_ |= 0x00000004;
         oauth2ClientSecret_ = other.oauth2ClientSecret_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasOauth2ClientSecretSha256()) {
-        bitField0_ |= 0x00000008;
         oauth2ClientSecretSha256_ = other.oauth2ClientSecretSha256_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -777,8 +786,9 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnabled(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -875,8 +885,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       oauth2ClientId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -892,8 +902,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOauth2ClientId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       oauth2ClientId_ = getDefaultInstance().getOauth2ClientId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -914,8 +924,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       oauth2ClientId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -995,8 +1005,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       oauth2ClientSecret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1012,8 +1022,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOauth2ClientSecret() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       oauth2ClientSecret_ = getDefaultInstance().getOauth2ClientSecret();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1034,8 +1044,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       oauth2ClientSecret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1115,8 +1125,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       oauth2ClientSecretSha256_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1132,8 +1142,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOauth2ClientSecretSha256() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       oauth2ClientSecretSha256_ = getDefaultInstance().getOauth2ClientSecretSha256();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1154,8 +1164,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       oauth2ClientSecretSha256_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

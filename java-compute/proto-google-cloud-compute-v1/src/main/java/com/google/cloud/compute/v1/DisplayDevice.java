@@ -67,7 +67,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ENABLE_DISPLAY_FIELD_NUMBER = 14266886;
-  private boolean enableDisplay_;
+  private boolean enableDisplay_ = false;
   /**
    *
    *
@@ -301,8 +301,8 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableDisplay_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -330,15 +330,21 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.DisplayDevice buildPartial() {
       com.google.cloud.compute.v1.DisplayDevice result =
           new com.google.cloud.compute.v1.DisplayDevice(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DisplayDevice result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enableDisplay_ = enableDisplay_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -484,8 +490,9 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnableDisplay(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enableDisplay_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

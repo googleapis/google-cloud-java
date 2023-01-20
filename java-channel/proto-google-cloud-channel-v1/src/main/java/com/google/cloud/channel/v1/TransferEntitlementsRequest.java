@@ -72,7 +72,9 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,6 +127,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
   }
 
   public static final int ENTITLEMENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Entitlement> entitlements_;
   /**
    *
@@ -204,7 +208,9 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
   }
 
   public static final int AUTH_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object authToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authToken_ = "";
   /**
    *
    *
@@ -259,7 +265,9 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -553,19 +561,17 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (entitlementsBuilder_ == null) {
         entitlements_ = java.util.Collections.emptyList();
       } else {
         entitlements_ = null;
         entitlementsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       authToken_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -593,21 +599,38 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
     public com.google.cloud.channel.v1.TransferEntitlementsRequest buildPartial() {
       com.google.cloud.channel.v1.TransferEntitlementsRequest result =
           new com.google.cloud.channel.v1.TransferEntitlementsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.TransferEntitlementsRequest result) {
       if (entitlementsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           entitlements_ = java.util.Collections.unmodifiableList(entitlements_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entitlements_ = entitlements_;
       } else {
         result.entitlements_ = entitlementsBuilder_.build();
       }
-      result.authToken_ = authToken_;
-      result.requestId_ = requestId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.TransferEntitlementsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.authToken_ = authToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -658,13 +681,14 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (entitlementsBuilder_ == null) {
         if (!other.entitlements_.isEmpty()) {
           if (entitlements_.isEmpty()) {
             entitlements_ = other.entitlements_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntitlementsIsMutable();
             entitlements_.addAll(other.entitlements_);
@@ -677,7 +701,7 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
             entitlementsBuilder_.dispose();
             entitlementsBuilder_ = null;
             entitlements_ = other.entitlements_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             entitlementsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitlementsFieldBuilder()
@@ -689,10 +713,12 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
       }
       if (!other.getAuthToken().isEmpty()) {
         authToken_ = other.authToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -724,7 +750,7 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -743,13 +769,13 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
             case 34:
               {
                 authToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 50:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -838,8 +864,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -857,8 +883,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -881,8 +907,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -891,10 +917,10 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
         java.util.Collections.emptyList();
 
     private void ensureEntitlementsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entitlements_ =
             new java.util.ArrayList<com.google.cloud.channel.v1.Entitlement>(entitlements_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1132,7 +1158,7 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
     public Builder clearEntitlements() {
       if (entitlementsBuilder_ == null) {
         entitlements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         entitlementsBuilder_.clear();
@@ -1268,7 +1294,7 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
                 com.google.cloud.channel.v1.Entitlement,
                 com.google.cloud.channel.v1.Entitlement.Builder,
                 com.google.cloud.channel.v1.EntitlementOrBuilder>(
-                entitlements_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entitlements_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         entitlements_ = null;
       }
       return entitlementsBuilder_;
@@ -1344,8 +1370,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       authToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1364,8 +1390,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAuthToken() {
-
       authToken_ = getDefaultInstance().getAuthToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1389,8 +1415,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1483,8 +1509,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1509,8 +1535,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1540,8 +1566,8 @@ public final class TransferEntitlementsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class InsertPublicAdvertisedPrefixeRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class InsertPublicAdvertisedPrefixeRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.PublicAdvertisedPrefixOrBuilder
       getPublicAdvertisedPrefixResourceOrBuilder() {
-    return getPublicAdvertisedPrefixResource();
+    return publicAdvertisedPrefixResource_ == null
+        ? com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDefaultInstance()
+        : publicAdvertisedPrefixResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -473,16 +479,14 @@ public final class InsertPublicAdvertisedPrefixeRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        publicAdvertisedPrefixResource_ = null;
-      } else {
-        publicAdvertisedPrefixResource_ = null;
+      publicAdvertisedPrefixResource_ = null;
+      if (publicAdvertisedPrefixResourceBuilder_ != null) {
+        publicAdvertisedPrefixResourceBuilder_.dispose();
         publicAdvertisedPrefixResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -511,21 +515,31 @@ public final class InsertPublicAdvertisedPrefixeRequest
     public com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest buildPartial() {
       com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest result =
           new com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        result.publicAdvertisedPrefixResource_ = publicAdvertisedPrefixResource_;
-      } else {
-        result.publicAdvertisedPrefixResource_ = publicAdvertisedPrefixResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicAdvertisedPrefixResource_ =
+            publicAdvertisedPrefixResourceBuilder_ == null
+                ? publicAdvertisedPrefixResource_
+                : publicAdvertisedPrefixResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -578,14 +592,15 @@ public final class InsertPublicAdvertisedPrefixeRequest
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPublicAdvertisedPrefixResource()) {
         mergePublicAdvertisedPrefixResource(other.getPublicAdvertisedPrefixResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -617,13 +632,13 @@ public final class InsertPublicAdvertisedPrefixeRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case 1868913786:
@@ -631,7 +646,7 @@ public final class InsertPublicAdvertisedPrefixeRequest
                 input.readMessage(
                     getPublicAdvertisedPrefixResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1868913786
             default:
@@ -720,8 +735,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +754,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -763,8 +778,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +804,7 @@ public final class InsertPublicAdvertisedPrefixeRequest
      * @return Whether the publicAdvertisedPrefixResource field is set.
      */
     public boolean hasPublicAdvertisedPrefixResource() {
-      return publicAdvertisedPrefixResourceBuilder_ != null
-          || publicAdvertisedPrefixResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -832,11 +846,11 @@ public final class InsertPublicAdvertisedPrefixeRequest
           throw new NullPointerException();
         }
         publicAdvertisedPrefixResource_ = value;
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,11 +868,11 @@ public final class InsertPublicAdvertisedPrefixeRequest
         com.google.cloud.compute.v1.PublicAdvertisedPrefix.Builder builderForValue) {
       if (publicAdvertisedPrefixResourceBuilder_ == null) {
         publicAdvertisedPrefixResource_ = builderForValue.build();
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,20 +889,19 @@ public final class InsertPublicAdvertisedPrefixeRequest
     public Builder mergePublicAdvertisedPrefixResource(
         com.google.cloud.compute.v1.PublicAdvertisedPrefix value) {
       if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        if (publicAdvertisedPrefixResource_ != null) {
-          publicAdvertisedPrefixResource_ =
-              com.google.cloud.compute.v1.PublicAdvertisedPrefix.newBuilder(
-                      publicAdvertisedPrefixResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && publicAdvertisedPrefixResource_ != null
+            && publicAdvertisedPrefixResource_
+                != com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDefaultInstance()) {
+          getPublicAdvertisedPrefixResourceBuilder().mergeFrom(value);
         } else {
           publicAdvertisedPrefixResource_ = value;
         }
-        onChanged();
       } else {
         publicAdvertisedPrefixResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,14 +916,13 @@ public final class InsertPublicAdvertisedPrefixeRequest
      * </code>
      */
     public Builder clearPublicAdvertisedPrefixResource() {
-      if (publicAdvertisedPrefixResourceBuilder_ == null) {
-        publicAdvertisedPrefixResource_ = null;
-        onChanged();
-      } else {
-        publicAdvertisedPrefixResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      publicAdvertisedPrefixResource_ = null;
+      if (publicAdvertisedPrefixResourceBuilder_ != null) {
+        publicAdvertisedPrefixResourceBuilder_.dispose();
         publicAdvertisedPrefixResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -926,7 +938,7 @@ public final class InsertPublicAdvertisedPrefixeRequest
      */
     public com.google.cloud.compute.v1.PublicAdvertisedPrefix.Builder
         getPublicAdvertisedPrefixResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPublicAdvertisedPrefixResourceFieldBuilder().getBuilder();
     }
@@ -992,7 +1004,7 @@ public final class InsertPublicAdvertisedPrefixeRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1054,8 +1066,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1071,8 +1083,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1093,8 +1105,8 @@ public final class InsertPublicAdvertisedPrefixeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TAXONOMY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taxonomy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object taxonomy_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       taxonomy_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1.CrossRegionalSource buildPartial() {
       com.google.cloud.datacatalog.v1.CrossRegionalSource result =
           new com.google.cloud.datacatalog.v1.CrossRegionalSource(this);
-      result.taxonomy_ = taxonomy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.CrossRegionalSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.taxonomy_ = taxonomy_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +412,7 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getTaxonomy().isEmpty()) {
         taxonomy_ = other.taxonomy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +444,7 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 taxonomy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +463,8 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object taxonomy_ = "";
     /**
@@ -519,8 +533,8 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       taxonomy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,8 +552,8 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTaxonomy() {
-
       taxonomy_ = getDefaultInstance().getTaxonomy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -562,8 +576,8 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       taxonomy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

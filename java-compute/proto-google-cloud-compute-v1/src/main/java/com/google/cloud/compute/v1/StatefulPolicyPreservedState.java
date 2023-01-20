@@ -95,6 +95,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
       disks_;
@@ -166,9 +167,11 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrDefault(
-      java.lang.String key,
-      com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
+  public /* nullable */ com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice
+      getDisksOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -432,6 +435,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDisks().clear();
       return this;
     }
@@ -460,11 +464,19 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.StatefulPolicyPreservedState buildPartial() {
       com.google.cloud.compute.v1.StatefulPolicyPreservedState result =
           new com.google.cloud.compute.v1.StatefulPolicyPreservedState(this);
-      int from_bitField0_ = bitField0_;
-      result.disks_ = internalGetDisks();
-      result.disks_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.StatefulPolicyPreservedState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disks_ = internalGetDisks();
+        result.disks_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -514,6 +526,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
       if (other == com.google.cloud.compute.v1.StatefulPolicyPreservedState.getDefaultInstance())
         return this;
       internalGetMutableDisks().mergeFrom(other.internalGetDisks());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -550,6 +563,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
                             DisksDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableDisks().getMutableMap().put(disks__.getKey(), disks__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 764752818
             default:
@@ -587,14 +601,14 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
         internalGetMutableDisks() {
-      onChanged();
-      ;
       if (disks_ == null) {
         disks_ = com.google.protobuf.MapField.newMapField(DisksDefaultEntryHolder.defaultEntry);
       }
       if (!disks_.isMutable()) {
         disks_ = disks_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return disks_;
     }
 
@@ -656,9 +670,11 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrDefault(
-        java.lang.String key,
-        com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
+    public /* nullable */ com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice
+        getDisksOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -694,6 +710,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     }
 
     public Builder clearDisks() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDisks().getMutableMap().clear();
       return this;
     }
@@ -720,6 +737,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     public java.util.Map<
             java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
         getMutableDisks() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDisks().getMutableMap();
     }
     /**
@@ -742,8 +760,8 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDisks().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -763,6 +781,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
                 com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
             values) {
       internalGetMutableDisks().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

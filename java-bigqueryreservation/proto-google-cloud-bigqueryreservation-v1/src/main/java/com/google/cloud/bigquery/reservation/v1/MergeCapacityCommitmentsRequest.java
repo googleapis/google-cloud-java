@@ -70,7 +70,9 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   }
 
   public static final int CAPACITY_COMMITMENT_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList capacityCommitmentIds_;
   /**
    *
@@ -416,10 +420,10 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -450,15 +454,29 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result =
           new com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        capacityCommitmentIds_ = capacityCommitmentIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.capacityCommitmentIds_ = capacityCommitmentIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        capacityCommitmentIds_ = capacityCommitmentIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.capacityCommitmentIds_ = capacityCommitmentIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -513,12 +531,13 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.capacityCommitmentIds_.isEmpty()) {
         if (capacityCommitmentIds_.isEmpty()) {
           capacityCommitmentIds_ = other.capacityCommitmentIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureCapacityCommitmentIdsIsMutable();
           capacityCommitmentIds_.addAll(other.capacityCommitmentIds_);
@@ -554,7 +573,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -647,8 +666,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +684,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +707,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,10 +717,10 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCapacityCommitmentIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         capacityCommitmentIds_ =
             new com.google.protobuf.LazyStringArrayList(capacityCommitmentIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -868,7 +887,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      */
     public Builder clearCapacityCommitmentIds() {
       capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

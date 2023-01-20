@@ -402,7 +402,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ANNOTATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object annotationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationId_ = "";
   /**
    *
    *
@@ -497,7 +499,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_BOUNDARY_FIELD_NUMBER = 3;
@@ -546,7 +548,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder
       getStartBoundaryOrBuilder() {
-    return getStartBoundary();
+    return startBoundary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
+        : startBoundary_;
   }
 
   public static final int END_BOUNDARY_FIELD_NUMBER = 4;
@@ -595,7 +599,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder
       getEndBoundaryOrBuilder() {
-    return getEndBoundary();
+    return endBoundary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.getDefaultInstance()
+        : endBoundary_;
   }
 
   public static final int ANSWER_FEEDBACK_FIELD_NUMBER = 5;
@@ -644,7 +650,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnswerFeedbackOrBuilder
       getAnswerFeedbackOrBuilder() {
-    return getAnswerFeedback();
+    return answerFeedback_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnswerFeedback.getDefaultInstance()
+        : answerFeedback_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -988,6 +996,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (articleSuggestionBuilder_ != null) {
         articleSuggestionBuilder_.clear();
       }
@@ -1004,29 +1013,24 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         dialogflowInteractionBuilder_.clear();
       }
       annotationId_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (startBoundaryBuilder_ == null) {
-        startBoundary_ = null;
-      } else {
-        startBoundary_ = null;
+      startBoundary_ = null;
+      if (startBoundaryBuilder_ != null) {
+        startBoundaryBuilder_.dispose();
         startBoundaryBuilder_ = null;
       }
-      if (endBoundaryBuilder_ == null) {
-        endBoundary_ = null;
-      } else {
-        endBoundary_ = null;
+      endBoundary_ = null;
+      if (endBoundaryBuilder_ != null) {
+        endBoundaryBuilder_.dispose();
         endBoundaryBuilder_ = null;
       }
-      if (answerFeedbackBuilder_ == null) {
-        answerFeedback_ = null;
-      } else {
-        answerFeedback_ = null;
+      answerFeedback_ = null;
+      if (answerFeedbackBuilder_ != null) {
+        answerFeedbackBuilder_.dispose();
         answerFeedbackBuilder_ = null;
       }
       dataCase_ = 0;
@@ -1058,65 +1062,55 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation buildPartial() {
       com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation result =
           new com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation(this);
-      if (dataCase_ == 6) {
-        if (articleSuggestionBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = articleSuggestionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dataCase_ == 7) {
-        if (faqAnswerBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = faqAnswerBuilder_.build();
-        }
-      }
-      if (dataCase_ == 8) {
-        if (smartReplyBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = smartReplyBuilder_.build();
-        }
-      }
-      if (dataCase_ == 9) {
-        if (smartComposeSuggestionBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = smartComposeSuggestionBuilder_.build();
-        }
-      }
-      if (dataCase_ == 10) {
-        if (dialogflowInteractionBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = dialogflowInteractionBuilder_.build();
-        }
-      }
-      result.annotationId_ = annotationId_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (startBoundaryBuilder_ == null) {
-        result.startBoundary_ = startBoundary_;
-      } else {
-        result.startBoundary_ = startBoundaryBuilder_.build();
-      }
-      if (endBoundaryBuilder_ == null) {
-        result.endBoundary_ = endBoundary_;
-      } else {
-        result.endBoundary_ = endBoundaryBuilder_.build();
-      }
-      if (answerFeedbackBuilder_ == null) {
-        result.answerFeedback_ = answerFeedback_;
-      } else {
-        result.answerFeedback_ = answerFeedbackBuilder_.build();
-      }
-      result.dataCase_ = dataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.annotationId_ = annotationId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.startBoundary_ =
+            startBoundaryBuilder_ == null ? startBoundary_ : startBoundaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.endBoundary_ =
+            endBoundaryBuilder_ == null ? endBoundary_ : endBoundaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.answerFeedback_ =
+            answerFeedbackBuilder_ == null ? answerFeedback_ : answerFeedbackBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation result) {
+      result.dataCase_ = dataCase_;
+      result.data_ = this.data_;
+      if (dataCase_ == 6 && articleSuggestionBuilder_ != null) {
+        result.data_ = articleSuggestionBuilder_.build();
+      }
+      if (dataCase_ == 7 && faqAnswerBuilder_ != null) {
+        result.data_ = faqAnswerBuilder_.build();
+      }
+      if (dataCase_ == 8 && smartReplyBuilder_ != null) {
+        result.data_ = smartReplyBuilder_.build();
+      }
+      if (dataCase_ == 9 && smartComposeSuggestionBuilder_ != null) {
+        result.data_ = smartComposeSuggestionBuilder_.build();
+      }
+      if (dataCase_ == 10 && dialogflowInteractionBuilder_ != null) {
+        result.data_ = dialogflowInteractionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1167,6 +1161,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getAnnotationId().isEmpty()) {
         annotationId_ = other.annotationId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1241,31 +1236,31 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 annotationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStartBoundaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEndBoundaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getAnswerFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
@@ -1331,6 +1326,8 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData,
@@ -1554,7 +1551,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
       dataCase_ = 6;
       onChanged();
-      ;
       return articleSuggestionBuilder_;
     }
 
@@ -1766,7 +1762,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
       dataCase_ = 7;
       onChanged();
-      ;
       return faqAnswerBuilder_;
     }
 
@@ -1978,7 +1973,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
       dataCase_ = 8;
       onChanged();
-      ;
       return smartReplyBuilder_;
     }
 
@@ -2219,7 +2213,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
       dataCase_ = 9;
       onChanged();
-      ;
       return smartComposeSuggestionBuilder_;
     }
 
@@ -2460,7 +2453,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
       dataCase_ = 10;
       onChanged();
-      ;
       return dialogflowInteractionBuilder_;
     }
 
@@ -2531,8 +2523,8 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2550,8 +2542,8 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAnnotationId() {
-
       annotationId_ = getDefaultInstance().getAnnotationId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2574,8 +2566,8 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2598,7 +2590,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2635,11 +2627,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2654,11 +2646,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2672,17 +2664,18 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2695,14 +2688,13 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2715,7 +2707,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2781,7 +2773,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * @return Whether the startBoundary field is set.
      */
     public boolean hasStartBoundary() {
-      return startBoundaryBuilder_ != null || startBoundary_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2819,11 +2811,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         startBoundary_ = value;
-        onChanged();
       } else {
         startBoundaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2839,11 +2831,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder builderForValue) {
       if (startBoundaryBuilder_ == null) {
         startBoundary_ = builderForValue.build();
-        onChanged();
       } else {
         startBoundaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2858,20 +2850,20 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     public Builder mergeStartBoundary(
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary value) {
       if (startBoundaryBuilder_ == null) {
-        if (startBoundary_ != null) {
-          startBoundary_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.newBuilder(
-                      startBoundary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && startBoundary_ != null
+            && startBoundary_
+                != com.google.cloud.contactcenterinsights.v1.AnnotationBoundary
+                    .getDefaultInstance()) {
+          getStartBoundaryBuilder().mergeFrom(value);
         } else {
           startBoundary_ = value;
         }
-        onChanged();
       } else {
         startBoundaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2884,14 +2876,13 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.contactcenterinsights.v1.AnnotationBoundary start_boundary = 3;</code>
      */
     public Builder clearStartBoundary() {
-      if (startBoundaryBuilder_ == null) {
-        startBoundary_ = null;
-        onChanged();
-      } else {
-        startBoundary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      startBoundary_ = null;
+      if (startBoundaryBuilder_ != null) {
+        startBoundaryBuilder_.dispose();
         startBoundaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2905,7 +2896,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder
         getStartBoundaryBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStartBoundaryFieldBuilder().getBuilder();
     }
@@ -2972,7 +2963,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * @return Whether the endBoundary field is set.
      */
     public boolean hasEndBoundary() {
-      return endBoundaryBuilder_ != null || endBoundary_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3010,11 +3001,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         endBoundary_ = value;
-        onChanged();
       } else {
         endBoundaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3030,11 +3021,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder builderForValue) {
       if (endBoundaryBuilder_ == null) {
         endBoundary_ = builderForValue.build();
-        onChanged();
       } else {
         endBoundaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3049,19 +3040,20 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     public Builder mergeEndBoundary(
         com.google.cloud.contactcenterinsights.v1.AnnotationBoundary value) {
       if (endBoundaryBuilder_ == null) {
-        if (endBoundary_ != null) {
-          endBoundary_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.newBuilder(endBoundary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && endBoundary_ != null
+            && endBoundary_
+                != com.google.cloud.contactcenterinsights.v1.AnnotationBoundary
+                    .getDefaultInstance()) {
+          getEndBoundaryBuilder().mergeFrom(value);
         } else {
           endBoundary_ = value;
         }
-        onChanged();
       } else {
         endBoundaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3074,14 +3066,13 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.contactcenterinsights.v1.AnnotationBoundary end_boundary = 4;</code>
      */
     public Builder clearEndBoundary() {
-      if (endBoundaryBuilder_ == null) {
-        endBoundary_ = null;
-        onChanged();
-      } else {
-        endBoundary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      endBoundary_ = null;
+      if (endBoundaryBuilder_ != null) {
+        endBoundaryBuilder_.dispose();
         endBoundaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3095,7 +3086,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder
         getEndBoundaryBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getEndBoundaryFieldBuilder().getBuilder();
     }
@@ -3162,7 +3153,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * @return Whether the answerFeedback field is set.
      */
     public boolean hasAnswerFeedback() {
-      return answerFeedbackBuilder_ != null || answerFeedback_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3200,11 +3191,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         answerFeedback_ = value;
-        onChanged();
       } else {
         answerFeedbackBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3220,11 +3211,11 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         com.google.cloud.contactcenterinsights.v1.AnswerFeedback.Builder builderForValue) {
       if (answerFeedbackBuilder_ == null) {
         answerFeedback_ = builderForValue.build();
-        onChanged();
       } else {
         answerFeedbackBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3239,19 +3230,19 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     public Builder mergeAnswerFeedback(
         com.google.cloud.contactcenterinsights.v1.AnswerFeedback value) {
       if (answerFeedbackBuilder_ == null) {
-        if (answerFeedback_ != null) {
-          answerFeedback_ =
-              com.google.cloud.contactcenterinsights.v1.AnswerFeedback.newBuilder(answerFeedback_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && answerFeedback_ != null
+            && answerFeedback_
+                != com.google.cloud.contactcenterinsights.v1.AnswerFeedback.getDefaultInstance()) {
+          getAnswerFeedbackBuilder().mergeFrom(value);
         } else {
           answerFeedback_ = value;
         }
-        onChanged();
       } else {
         answerFeedbackBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3264,14 +3255,13 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.contactcenterinsights.v1.AnswerFeedback answer_feedback = 5;</code>
      */
     public Builder clearAnswerFeedback() {
-      if (answerFeedbackBuilder_ == null) {
-        answerFeedback_ = null;
-        onChanged();
-      } else {
-        answerFeedback_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      answerFeedback_ = null;
+      if (answerFeedbackBuilder_ != null) {
+        answerFeedbackBuilder_.dispose();
         answerFeedbackBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3285,7 +3275,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.contactcenterinsights.v1.AnswerFeedback.Builder
         getAnswerFeedbackBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getAnswerFeedbackFieldBuilder().getBuilder();
     }

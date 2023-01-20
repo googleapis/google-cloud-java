@@ -69,6 +69,8 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILE_PATTERN_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList filePattern_;
   /**
    *
@@ -198,7 +200,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object fileType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fileType_ = "";
   /**
    *
    *
@@ -459,10 +463,10 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filePattern_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       fileType_ = "";
-
       return this;
     }
 
@@ -490,15 +494,28 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1.StorageProperties buildPartial() {
       com.google.cloud.datacatalog.v1.StorageProperties result =
           new com.google.cloud.datacatalog.v1.StorageProperties(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.v1.StorageProperties result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         filePattern_ = filePattern_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.filePattern_ = filePattern_;
-      result.fileType_ = fileType_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.StorageProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileType_ = fileType_;
+      }
     }
 
     @java.lang.Override
@@ -559,6 +576,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getFileType().isEmpty()) {
         fileType_ = other.fileType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -597,7 +615,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 fileType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1001,8 +1019,8 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       fileType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,8 +1036,8 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFileType() {
-
       fileType_ = getDefaultInstance().getFileType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1040,8 +1058,8 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fileType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

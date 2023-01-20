@@ -71,7 +71,9 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
 
   private int bitField0_;
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
   }
 
   public static final int MAC_ADDRESS_FIELD_NUMBER = 332540164;
-  private volatile java.lang.Object macAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object macAddress_ = "";
   /**
    *
    *
@@ -415,10 +419,9 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       macAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -446,19 +449,25 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000001;
       }
-      result.ipAddress_ = ipAddress_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.macAddress_ = macAddress_;
         to_bitField0_ |= 0x00000002;
       }
-      result.macAddress_ = macAddress_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -508,13 +517,13 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       if (other == com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.getDefaultInstance())
         return this;
       if (other.hasIpAddress()) {
-        bitField0_ |= 0x00000001;
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMacAddress()) {
-        bitField0_ |= 0x00000002;
         macAddress_ = other.macAddress_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -649,8 +658,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,8 +675,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +697,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +778,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       macAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -786,8 +795,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       macAddress_ = getDefaultInstance().getMacAddress();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -808,8 +817,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       macAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

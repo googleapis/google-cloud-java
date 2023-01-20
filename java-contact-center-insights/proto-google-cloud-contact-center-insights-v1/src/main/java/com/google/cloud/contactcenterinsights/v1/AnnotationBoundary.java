@@ -147,7 +147,7 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRANSCRIPT_INDEX_FIELD_NUMBER = 1;
-  private int transcriptIndex_;
+  private int transcriptIndex_ = 0;
   /**
    *
    *
@@ -387,8 +387,8 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       transcriptIndex_ = 0;
-
       detailedBoundaryCase_ = 0;
       detailedBoundary_ = null;
       return this;
@@ -419,13 +419,26 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary buildPartial() {
       com.google.cloud.contactcenterinsights.v1.AnnotationBoundary result =
           new com.google.cloud.contactcenterinsights.v1.AnnotationBoundary(this);
-      if (detailedBoundaryCase_ == 3) {
-        result.detailedBoundary_ = detailedBoundary_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.transcriptIndex_ = transcriptIndex_;
-      result.detailedBoundaryCase_ = detailedBoundaryCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.AnnotationBoundary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transcriptIndex_ = transcriptIndex_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.AnnotationBoundary result) {
+      result.detailedBoundaryCase_ = detailedBoundaryCase_;
+      result.detailedBoundary_ = this.detailedBoundary_;
     }
 
     @java.lang.Override
@@ -518,7 +531,7 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 transcriptIndex_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 8
             case 24:
@@ -557,6 +570,8 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -605,6 +620,7 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setWordIndex(int value) {
+
       detailedBoundaryCase_ = 3;
       detailedBoundary_ = value;
       onChanged();
@@ -664,6 +680,7 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
     public Builder setTranscriptIndex(int value) {
 
       transcriptIndex_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -680,7 +697,7 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTranscriptIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       transcriptIndex_ = 0;
       onChanged();
       return this;

@@ -197,7 +197,9 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
 
   private int bitField0_;
   public static final int TARGET_FIELD_NUMBER = 192835985;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -261,7 +263,9 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -543,10 +547,9 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       target_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -575,19 +578,26 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
     public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.target_ = target_;
         to_bitField0_ |= 0x00000001;
       }
-      result.target_ = target_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
         to_bitField0_ |= 0x00000002;
       }
-      result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -638,13 +648,13 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
           == com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance())
         return this;
       if (other.hasTarget()) {
-        bitField0_ |= 0x00000001;
         target_ = other.target_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000002;
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -779,8 +789,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -796,8 +806,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -818,8 +828,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -903,8 +913,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -921,8 +931,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -944,8 +954,8 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

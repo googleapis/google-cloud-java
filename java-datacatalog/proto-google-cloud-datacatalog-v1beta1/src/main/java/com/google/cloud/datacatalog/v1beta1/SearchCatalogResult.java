@@ -72,7 +72,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SEARCH_RESULT_TYPE_FIELD_NUMBER = 1;
-  private int searchResultType_;
+  private int searchResultType_ = 0;
   /**
    *
    *
@@ -103,16 +103,17 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1beta1.SearchResultType result =
-        com.google.cloud.datacatalog.v1beta1.SearchResultType.valueOf(searchResultType_);
+        com.google.cloud.datacatalog.v1beta1.SearchResultType.forNumber(searchResultType_);
     return result == null
         ? com.google.cloud.datacatalog.v1beta1.SearchResultType.UNRECOGNIZED
         : result;
   }
 
   public static final int SEARCH_RESULT_SUBTYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object searchResultSubtype_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object searchResultSubtype_ = "";
   /**
    *
    *
@@ -167,7 +168,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RELATIVE_RESOURCE_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object relativeResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relativeResourceName_ = "";
   /**
    *
    *
@@ -222,7 +225,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LINKED_RESOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object linkedResource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkedResource_ = "";
   /**
    *
    *
@@ -506,14 +511,11 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       searchResultType_ = 0;
-
       searchResultSubtype_ = "";
-
       relativeResourceName_ = "";
-
       linkedResource_ = "";
-
       return this;
     }
 
@@ -541,12 +543,27 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogResult buildPartial() {
       com.google.cloud.datacatalog.v1beta1.SearchCatalogResult result =
           new com.google.cloud.datacatalog.v1beta1.SearchCatalogResult(this);
-      result.searchResultType_ = searchResultType_;
-      result.searchResultSubtype_ = searchResultSubtype_;
-      result.relativeResourceName_ = relativeResourceName_;
-      result.linkedResource_ = linkedResource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.SearchCatalogResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.searchResultType_ = searchResultType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.searchResultSubtype_ = searchResultSubtype_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.relativeResourceName_ = relativeResourceName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.linkedResource_ = linkedResource_;
+      }
     }
 
     @java.lang.Override
@@ -600,14 +617,17 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (!other.getSearchResultSubtype().isEmpty()) {
         searchResultSubtype_ = other.searchResultSubtype_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRelativeResourceName().isEmpty()) {
         relativeResourceName_ = other.relativeResourceName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLinkedResource().isEmpty()) {
         linkedResource_ = other.linkedResource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -639,25 +659,25 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 searchResultType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 searchResultSubtype_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 relativeResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 linkedResource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -676,6 +696,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int searchResultType_ = 0;
     /**
@@ -708,8 +730,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setSearchResultTypeValue(int value) {
-
       searchResultType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,9 +749,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1beta1.SearchResultType result =
-          com.google.cloud.datacatalog.v1beta1.SearchResultType.valueOf(searchResultType_);
+          com.google.cloud.datacatalog.v1beta1.SearchResultType.forNumber(searchResultType_);
       return result == null
           ? com.google.cloud.datacatalog.v1beta1.SearchResultType.UNRECOGNIZED
           : result;
@@ -752,7 +773,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       searchResultType_ = value.getNumber();
       onChanged();
       return this;
@@ -770,7 +791,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSearchResultType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       searchResultType_ = 0;
       onChanged();
       return this;
@@ -846,8 +867,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       searchResultSubtype_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -866,8 +887,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSearchResultSubtype() {
-
       searchResultSubtype_ = getDefaultInstance().getSearchResultSubtype();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -891,8 +912,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       searchResultSubtype_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -967,8 +988,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       relativeResourceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -987,8 +1008,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRelativeResourceName() {
-
       relativeResourceName_ = getDefaultInstance().getRelativeResourceName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1012,8 +1033,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relativeResourceName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1088,8 +1109,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       linkedResource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1108,8 +1129,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLinkedResource() {
-
       linkedResource_ = getDefaultInstance().getLinkedResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1133,8 +1154,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       linkedResource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

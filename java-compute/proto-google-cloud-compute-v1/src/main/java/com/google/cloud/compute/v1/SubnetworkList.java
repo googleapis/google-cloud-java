@@ -73,7 +73,9 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -137,6 +139,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ITEMS_FIELD_NUMBER = 100526016;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Subnetwork> items_;
   /**
    *
@@ -206,7 +210,9 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -270,7 +276,9 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 79797525;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -334,7 +342,9 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -722,8 +732,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
       } else {
@@ -732,17 +742,13 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       nextPageToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      if (warningBuilder_ == null) {
-        warning_ = null;
-      } else {
-        warningBuilder_.clear();
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -770,12 +776,15 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SubnetworkList buildPartial() {
       com.google.cloud.compute.v1.SubnetworkList result =
           new com.google.cloud.compute.v1.SubnetworkList(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.id_ = id_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SubnetworkList result) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -785,29 +794,32 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.items_ = itemsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SubnetworkList result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000002;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
         to_bitField0_ |= 0x00000004;
       }
-      result.nextPageToken_ = nextPageToken_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000008;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        if (warningBuilder_ == null) {
-          result.warning_ = warning_;
-        } else {
-          result.warning_ = warningBuilder_.build();
-        }
+        result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -856,8 +868,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.SubnetworkList other) {
       if (other == com.google.cloud.compute.v1.SubnetworkList.getDefaultInstance()) return this;
       if (other.hasId()) {
-        bitField0_ |= 0x00000001;
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (itemsBuilder_ == null) {
@@ -888,18 +900,18 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasNextPageToken()) {
-        bitField0_ |= 0x00000008;
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000010;
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasWarning()) {
@@ -1068,8 +1080,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1085,8 +1097,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1107,8 +1119,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1536,8 +1548,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1553,8 +1565,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1575,8 +1587,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       kind_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1656,8 +1668,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1673,8 +1685,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1695,8 +1707,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1776,8 +1788,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       selfLink_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1793,8 +1805,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1815,8 +1827,8 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       selfLink_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1876,11 +1888,11 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         warning_ = value;
-        onChanged();
       } else {
         warningBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1895,11 +1907,11 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
         warning_ = builderForValue.build();
-        onChanged();
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1916,18 +1928,15 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000020) != 0)
             && warning_ != null
             && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
-          warning_ =
-              com.google.cloud.compute.v1.Warning.newBuilder(warning_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWarningBuilder().mergeFrom(value);
         } else {
           warning_ = value;
         }
-        onChanged();
       } else {
         warningBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1940,13 +1949,13 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
-      if (warningBuilder_ == null) {
-        warning_ = null;
-        onChanged();
-      } else {
-        warningBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000020);
+      warning_ = null;
+      if (warningBuilder_ != null) {
+        warningBuilder_.dispose();
+        warningBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

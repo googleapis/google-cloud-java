@@ -392,18 +392,17 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (abortBuilder_ == null) {
-        abort_ = null;
-      } else {
-        abortBuilder_.clear();
+      bitField0_ = 0;
+      abort_ = null;
+      if (abortBuilder_ != null) {
+        abortBuilder_.dispose();
+        abortBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (delayBuilder_ == null) {
-        delay_ = null;
-      } else {
-        delayBuilder_.clear();
+      delay_ = null;
+      if (delayBuilder_ != null) {
+        delayBuilder_.dispose();
+        delayBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -431,27 +430,25 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.HttpFaultInjection buildPartial() {
       com.google.cloud.compute.v1.HttpFaultInjection result =
           new com.google.cloud.compute.v1.HttpFaultInjection(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpFaultInjection result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (abortBuilder_ == null) {
-          result.abort_ = abort_;
-        } else {
-          result.abort_ = abortBuilder_.build();
-        }
+        result.abort_ = abortBuilder_ == null ? abort_ : abortBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (delayBuilder_ == null) {
-          result.delay_ = delay_;
-        } else {
-          result.delay_ = delayBuilder_.build();
-        }
+        result.delay_ = delayBuilder_ == null ? delay_ : delayBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -617,11 +614,11 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         abort_ = value;
-        onChanged();
       } else {
         abortBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +633,11 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     public Builder setAbort(com.google.cloud.compute.v1.HttpFaultAbort.Builder builderForValue) {
       if (abortBuilder_ == null) {
         abort_ = builderForValue.build();
-        onChanged();
       } else {
         abortBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,18 +654,15 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         if (((bitField0_ & 0x00000001) != 0)
             && abort_ != null
             && abort_ != com.google.cloud.compute.v1.HttpFaultAbort.getDefaultInstance()) {
-          abort_ =
-              com.google.cloud.compute.v1.HttpFaultAbort.newBuilder(abort_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getAbortBuilder().mergeFrom(value);
         } else {
           abort_ = value;
         }
-        onChanged();
       } else {
         abortBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -681,13 +675,13 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
      */
     public Builder clearAbort() {
-      if (abortBuilder_ == null) {
-        abort_ = null;
-        onChanged();
-      } else {
-        abortBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      abort_ = null;
+      if (abortBuilder_ != null) {
+        abortBuilder_.dispose();
+        abortBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -803,11 +797,11 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         delay_ = value;
-        onChanged();
       } else {
         delayBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +816,11 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
     public Builder setDelay(com.google.cloud.compute.v1.HttpFaultDelay.Builder builderForValue) {
       if (delayBuilder_ == null) {
         delay_ = builderForValue.build();
-        onChanged();
       } else {
         delayBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -843,18 +837,15 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
         if (((bitField0_ & 0x00000002) != 0)
             && delay_ != null
             && delay_ != com.google.cloud.compute.v1.HttpFaultDelay.getDefaultInstance()) {
-          delay_ =
-              com.google.cloud.compute.v1.HttpFaultDelay.newBuilder(delay_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDelayBuilder().mergeFrom(value);
         } else {
           delay_ = value;
         }
-        onChanged();
       } else {
         delayBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,13 +858,13 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
      */
     public Builder clearDelay() {
-      if (delayBuilder_ == null) {
-        delay_ = null;
-        onChanged();
-      } else {
-        delayBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      delay_ = null;
+      if (delayBuilder_ != null) {
+        delayBuilder_.dispose();
+        delayBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

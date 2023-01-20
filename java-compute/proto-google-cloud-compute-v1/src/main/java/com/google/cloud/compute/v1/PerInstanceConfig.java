@@ -315,7 +315,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
-  private volatile java.lang.Object fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
   /**
    *
    *
@@ -379,7 +381,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -493,7 +497,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -812,18 +818,15 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (preservedStateBuilder_ == null) {
-        preservedState_ = null;
-      } else {
-        preservedStateBuilder_.clear();
+      preservedState_ = null;
+      if (preservedStateBuilder_ != null) {
+        preservedStateBuilder_.dispose();
+        preservedStateBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -851,31 +854,34 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.PerInstanceConfig buildPartial() {
       com.google.cloud.compute.v1.PerInstanceConfig result =
           new com.google.cloud.compute.v1.PerInstanceConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PerInstanceConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000001;
       }
-      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000002;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (preservedStateBuilder_ == null) {
-          result.preservedState_ = preservedState_;
-        } else {
-          result.preservedState_ = preservedStateBuilder_.build();
-        }
+        result.preservedState_ =
+            preservedStateBuilder_ == null ? preservedState_ : preservedStateBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
         to_bitField0_ |= 0x00000008;
       }
-      result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -924,21 +930,21 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.cloud.compute.v1.PerInstanceConfig other) {
       if (other == com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance()) return this;
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000002;
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPreservedState()) {
         mergePreservedState(other.getPreservedState());
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00000008;
         status_ = other.status_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1085,8 +1091,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1102,8 +1108,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1124,8 +1130,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1205,8 +1211,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1222,8 +1228,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1244,8 +1250,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1305,11 +1311,11 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         preservedState_ = value;
-        onChanged();
       } else {
         preservedStateBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1325,11 +1331,11 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.compute.v1.PreservedState.Builder builderForValue) {
       if (preservedStateBuilder_ == null) {
         preservedState_ = builderForValue.build();
-        onChanged();
       } else {
         preservedStateBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1346,18 +1352,15 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         if (((bitField0_ & 0x00000004) != 0)
             && preservedState_ != null
             && preservedState_ != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
-          preservedState_ =
-              com.google.cloud.compute.v1.PreservedState.newBuilder(preservedState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getPreservedStateBuilder().mergeFrom(value);
         } else {
           preservedState_ = value;
         }
-        onChanged();
       } else {
         preservedStateBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1370,13 +1373,13 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public Builder clearPreservedState() {
-      if (preservedStateBuilder_ == null) {
-        preservedState_ = null;
-        onChanged();
-      } else {
-        preservedStateBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      preservedState_ = null;
+      if (preservedStateBuilder_ != null) {
+        preservedStateBuilder_.dispose();
+        preservedStateBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1516,8 +1519,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1534,8 +1537,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1557,8 +1560,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

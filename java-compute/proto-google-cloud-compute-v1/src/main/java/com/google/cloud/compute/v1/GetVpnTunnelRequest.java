@@ -70,7 +70,9 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VPN_TUNNEL_FIELD_NUMBER = 143821331;
-  private volatile java.lang.Object vpnTunnel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpnTunnel_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
       vpnTunnel_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.GetVpnTunnelRequest buildPartial() {
       com.google.cloud.compute.v1.GetVpnTunnelRequest result =
           new com.google.cloud.compute.v1.GetVpnTunnelRequest(this);
-      result.project_ = project_;
-      result.region_ = region_;
-      result.vpnTunnel_ = vpnTunnel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetVpnTunnelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vpnTunnel_ = vpnTunnel_;
+      }
     }
 
     @java.lang.Override
@@ -519,14 +536,17 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVpnTunnel().isEmpty()) {
         vpnTunnel_ = other.vpnTunnel_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -558,19 +578,19 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1150570650:
               {
                 vpnTunnel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1150570650
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -589,6 +609,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -651,8 +673,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +690,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +712,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +779,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,8 +796,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +818,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +885,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpnTunnel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -880,8 +902,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVpnTunnel() {
-
       vpnTunnel_ = getDefaultInstance().getVpnTunnel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class GetVpnTunnelRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpnTunnel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

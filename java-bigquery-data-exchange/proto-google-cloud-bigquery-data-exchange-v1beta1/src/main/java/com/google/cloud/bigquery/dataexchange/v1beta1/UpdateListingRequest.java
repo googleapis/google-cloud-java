@@ -117,7 +117,7 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int LISTING_FIELD_NUMBER = 2;
@@ -171,7 +171,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.bigquery.dataexchange.v1beta1.ListingOrBuilder getListingOrBuilder() {
-    return getListing();
+    return listing_ == null
+        ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.getDefaultInstance()
+        : listing_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,16 +395,15 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (listingBuilder_ == null) {
-        listing_ = null;
-      } else {
-        listing_ = null;
+      listing_ = null;
+      if (listingBuilder_ != null) {
+        listingBuilder_.dispose();
         listingBuilder_ = null;
       }
       return this;
@@ -434,18 +435,22 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest buildPartial() {
       com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (listingBuilder_ == null) {
-        result.listing_ = listing_;
-      } else {
-        result.listing_ = listingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.listing_ = listingBuilder_ == null ? listing_ : listingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -532,13 +537,13 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getListingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -557,6 +562,8 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -579,7 +586,7 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -622,11 +629,11 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,11 +651,11 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -665,17 +672,18 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -691,14 +699,13 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -714,7 +721,7 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -788,7 +795,7 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the listing field is set.
      */
     public boolean hasListing() {
-      return listingBuilder_ != null || listing_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -829,11 +836,11 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         listing_ = value;
-        onChanged();
       } else {
         listingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,11 +858,11 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Builder builderForValue) {
       if (listingBuilder_ == null) {
         listing_ = builderForValue.build();
-        onChanged();
       } else {
         listingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -871,19 +878,19 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeListing(com.google.cloud.bigquery.dataexchange.v1beta1.Listing value) {
       if (listingBuilder_ == null) {
-        if (listing_ != null) {
-          listing_ =
-              com.google.cloud.bigquery.dataexchange.v1beta1.Listing.newBuilder(listing_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && listing_ != null
+            && listing_
+                != com.google.cloud.bigquery.dataexchange.v1beta1.Listing.getDefaultInstance()) {
+          getListingBuilder().mergeFrom(value);
         } else {
           listing_ = value;
         }
-        onChanged();
       } else {
         listingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,14 +905,13 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearListing() {
-      if (listingBuilder_ == null) {
-        listing_ = null;
-        onChanged();
-      } else {
-        listing_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      listing_ = null;
+      if (listingBuilder_ != null) {
+        listingBuilder_.dispose();
         listingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -920,7 +926,7 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Builder getListingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getListingFieldBuilder().getBuilder();
     }

@@ -74,7 +74,9 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
 
   private int bitField0_;
   public static final int LAST_RUN_START_TIME_FIELD_NUMBER = 303069063;
-  private volatile java.lang.Object lastRunStartTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastRunStartTime_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
   }
 
   public static final int NEXT_RUN_START_TIME_FIELD_NUMBER = 318642570;
-  private volatile java.lang.Object nextRunStartTime_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextRunStartTime_ = "";
   /**
    *
    *
@@ -433,10 +437,9 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       lastRunStartTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       nextRunStartTime_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -470,19 +473,27 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus result =
           new com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus(
               this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
+            result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastRunStartTime_ = lastRunStartTime_;
         to_bitField0_ |= 0x00000001;
       }
-      result.lastRunStartTime_ = lastRunStartTime_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextRunStartTime_ = nextRunStartTime_;
         to_bitField0_ |= 0x00000002;
       }
-      result.nextRunStartTime_ = nextRunStartTime_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -539,13 +550,13 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
           == com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
               .getDefaultInstance()) return this;
       if (other.hasLastRunStartTime()) {
-        bitField0_ |= 0x00000001;
         lastRunStartTime_ = other.lastRunStartTime_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNextRunStartTime()) {
-        bitField0_ |= 0x00000002;
         nextRunStartTime_ = other.nextRunStartTime_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -680,8 +691,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       lastRunStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,8 +708,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
      * @return This builder for chaining.
      */
     public Builder clearLastRunStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       lastRunStartTime_ = getDefaultInstance().getLastRunStartTime();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -719,8 +730,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       lastRunStartTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -800,8 +811,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       nextRunStartTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,8 +828,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
      * @return This builder for chaining.
      */
     public Builder clearNextRunStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       nextRunStartTime_ = getDefaultInstance().getNextRunStartTime();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -839,8 +850,8 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       nextRunStartTime_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

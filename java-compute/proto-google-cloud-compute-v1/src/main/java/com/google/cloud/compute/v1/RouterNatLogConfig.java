@@ -248,7 +248,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private boolean enable_;
+  private boolean enable_ = false;
   /**
    *
    *
@@ -281,7 +281,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -563,10 +565,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enable_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -594,6 +595,14 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.RouterNatLogConfig buildPartial() {
       com.google.cloud.compute.v1.RouterNatLogConfig result =
           new com.google.cloud.compute.v1.RouterNatLogConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouterNatLogConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -601,12 +610,10 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
         to_bitField0_ |= 0x00000002;
       }
-      result.filter_ = filter_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -658,8 +665,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         setEnable(other.getEnable());
       }
       if (other.hasFilter()) {
-        bitField0_ |= 0x00000002;
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -763,8 +770,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,8 +873,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,8 +891,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -906,8 +914,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

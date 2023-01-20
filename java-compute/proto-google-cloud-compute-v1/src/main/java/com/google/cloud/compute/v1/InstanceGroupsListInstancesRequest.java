@@ -228,7 +228,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
 
   private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
-  private volatile java.lang.Object instanceState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceState_ = "";
   /**
    *
    *
@@ -496,8 +498,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -526,15 +528,22 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceState_ = instanceState_;
         to_bitField0_ |= 0x00000001;
       }
-      result.instanceState_ = instanceState_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -585,8 +594,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
           == com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.getDefaultInstance())
         return this;
       if (other.hasInstanceState()) {
-        bitField0_ |= 0x00000001;
         instanceState_ = other.instanceState_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -719,8 +728,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       instanceState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +746,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearInstanceState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       instanceState_ = getDefaultInstance().getInstanceState();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -760,8 +769,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       instanceState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

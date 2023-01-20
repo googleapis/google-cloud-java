@@ -1288,6 +1288,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryDialectBuilder_ != null) {
         bigqueryDialectBuilder_.clear();
       }
@@ -1359,107 +1360,63 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.Dialect buildPartial() {
       com.google.cloud.bigquery.migration.v2.Dialect result =
           new com.google.cloud.bigquery.migration.v2.Dialect(this);
-      if (dialectValueCase_ == 1) {
-        if (bigqueryDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = bigqueryDialectBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dialectValueCase_ == 2) {
-        if (hiveqlDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = hiveqlDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 3) {
-        if (redshiftDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = redshiftDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 4) {
-        if (teradataDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = teradataDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 5) {
-        if (oracleDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = oracleDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 6) {
-        if (sparksqlDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = sparksqlDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 7) {
-        if (snowflakeDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = snowflakeDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 8) {
-        if (netezzaDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = netezzaDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 9) {
-        if (azureSynapseDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = azureSynapseDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 10) {
-        if (verticaDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = verticaDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 11) {
-        if (sqlServerDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = sqlServerDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 12) {
-        if (postgresqlDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = postgresqlDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 13) {
-        if (prestoDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = prestoDialectBuilder_.build();
-        }
-      }
-      if (dialectValueCase_ == 14) {
-        if (mysqlDialectBuilder_ == null) {
-          result.dialectValue_ = dialectValue_;
-        } else {
-          result.dialectValue_ = mysqlDialectBuilder_.build();
-        }
-      }
-      result.dialectValueCase_ = dialectValueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2.Dialect result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.migration.v2.Dialect result) {
+      result.dialectValueCase_ = dialectValueCase_;
+      result.dialectValue_ = this.dialectValue_;
+      if (dialectValueCase_ == 1 && bigqueryDialectBuilder_ != null) {
+        result.dialectValue_ = bigqueryDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 2 && hiveqlDialectBuilder_ != null) {
+        result.dialectValue_ = hiveqlDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 3 && redshiftDialectBuilder_ != null) {
+        result.dialectValue_ = redshiftDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 4 && teradataDialectBuilder_ != null) {
+        result.dialectValue_ = teradataDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 5 && oracleDialectBuilder_ != null) {
+        result.dialectValue_ = oracleDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 6 && sparksqlDialectBuilder_ != null) {
+        result.dialectValue_ = sparksqlDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 7 && snowflakeDialectBuilder_ != null) {
+        result.dialectValue_ = snowflakeDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 8 && netezzaDialectBuilder_ != null) {
+        result.dialectValue_ = netezzaDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 9 && azureSynapseDialectBuilder_ != null) {
+        result.dialectValue_ = azureSynapseDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 10 && verticaDialectBuilder_ != null) {
+        result.dialectValue_ = verticaDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 11 && sqlServerDialectBuilder_ != null) {
+        result.dialectValue_ = sqlServerDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 12 && postgresqlDialectBuilder_ != null) {
+        result.dialectValue_ = postgresqlDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 13 && prestoDialectBuilder_ != null) {
+        result.dialectValue_ = prestoDialectBuilder_.build();
+      }
+      if (dialectValueCase_ == 14 && mysqlDialectBuilder_ != null) {
+        result.dialectValue_ = mysqlDialectBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1728,6 +1685,8 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2.BigQueryDialect,
             com.google.cloud.bigquery.migration.v2.BigQueryDialect.Builder,
@@ -1940,7 +1899,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 1;
       onChanged();
-      ;
       return bigqueryDialectBuilder_;
     }
 
@@ -2152,7 +2110,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 2;
       onChanged();
-      ;
       return hiveqlDialectBuilder_;
     }
 
@@ -2368,7 +2325,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 3;
       onChanged();
-      ;
       return redshiftDialectBuilder_;
     }
 
@@ -2584,7 +2540,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 4;
       onChanged();
-      ;
       return teradataDialectBuilder_;
     }
 
@@ -2796,7 +2751,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 5;
       onChanged();
-      ;
       return oracleDialectBuilder_;
     }
 
@@ -3012,7 +2966,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 6;
       onChanged();
-      ;
       return sparksqlDialectBuilder_;
     }
 
@@ -3228,7 +3181,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 7;
       onChanged();
-      ;
       return snowflakeDialectBuilder_;
     }
 
@@ -3443,7 +3395,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 8;
       onChanged();
-      ;
       return netezzaDialectBuilder_;
     }
 
@@ -3669,7 +3620,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 9;
       onChanged();
-      ;
       return azureSynapseDialectBuilder_;
     }
 
@@ -3884,7 +3834,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 10;
       onChanged();
-      ;
       return verticaDialectBuilder_;
     }
 
@@ -4100,7 +4049,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 11;
       onChanged();
-      ;
       return sqlServerDialectBuilder_;
     }
 
@@ -4316,7 +4264,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 12;
       onChanged();
-      ;
       return postgresqlDialectBuilder_;
     }
 
@@ -4528,7 +4475,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 13;
       onChanged();
-      ;
       return prestoDialectBuilder_;
     }
 
@@ -4739,7 +4685,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       }
       dialectValueCase_ = 14;
       onChanged();
-      ;
       return mysqlDialectBuilder_;
     }
 

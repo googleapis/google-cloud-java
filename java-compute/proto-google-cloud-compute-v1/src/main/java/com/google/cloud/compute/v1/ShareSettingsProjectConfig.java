@@ -69,7 +69,9 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 177513473;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -335,8 +337,8 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -364,15 +366,21 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.ShareSettingsProjectConfig buildPartial() {
       com.google.cloud.compute.v1.ShareSettingsProjectConfig result =
           new com.google.cloud.compute.v1.ShareSettingsProjectConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ShareSettingsProjectConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
         to_bitField0_ |= 0x00000001;
       }
-      result.projectId_ = projectId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -422,8 +430,8 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.ShareSettingsProjectConfig.getDefaultInstance())
         return this;
       if (other.hasProjectId()) {
-        bitField0_ |= 0x00000001;
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -552,8 +560,8 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -569,8 +577,8 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -591,8 +599,8 @@ public final class ShareSettingsProjectConfig extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -121,7 +121,9 @@ public final class UpdateChannelPartnerRepricingConfigRequest
   @java.lang.Override
   public com.google.cloud.channel.v1.ChannelPartnerRepricingConfigOrBuilder
       getChannelPartnerRepricingConfigOrBuilder() {
-    return getChannelPartnerRepricingConfig();
+    return channelPartnerRepricingConfig_ == null
+        ? com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance()
+        : channelPartnerRepricingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -334,10 +336,10 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (channelPartnerRepricingConfigBuilder_ == null) {
-        channelPartnerRepricingConfig_ = null;
-      } else {
-        channelPartnerRepricingConfig_ = null;
+      bitField0_ = 0;
+      channelPartnerRepricingConfig_ = null;
+      if (channelPartnerRepricingConfigBuilder_ != null) {
+        channelPartnerRepricingConfigBuilder_.dispose();
         channelPartnerRepricingConfigBuilder_ = null;
       }
       return this;
@@ -370,13 +372,22 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     public com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest buildPartial() {
       com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest result =
           new com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest(this);
-      if (channelPartnerRepricingConfigBuilder_ == null) {
-        result.channelPartnerRepricingConfig_ = channelPartnerRepricingConfig_;
-      } else {
-        result.channelPartnerRepricingConfig_ = channelPartnerRepricingConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channelPartnerRepricingConfig_ =
+            channelPartnerRepricingConfigBuilder_ == null
+                ? channelPartnerRepricingConfig_
+                : channelPartnerRepricingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -461,7 +472,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
               {
                 input.readMessage(
                     getChannelPartnerRepricingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -480,6 +491,8 @@ public final class UpdateChannelPartnerRepricingConfigRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
         channelPartnerRepricingConfig_;
@@ -502,8 +515,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
      * @return Whether the channelPartnerRepricingConfig field is set.
      */
     public boolean hasChannelPartnerRepricingConfig() {
-      return channelPartnerRepricingConfigBuilder_ != null
-          || channelPartnerRepricingConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -546,11 +558,11 @@ public final class UpdateChannelPartnerRepricingConfigRequest
           throw new NullPointerException();
         }
         channelPartnerRepricingConfig_ = value;
-        onChanged();
       } else {
         channelPartnerRepricingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -568,11 +580,11 @@ public final class UpdateChannelPartnerRepricingConfigRequest
         com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.Builder builderForValue) {
       if (channelPartnerRepricingConfigBuilder_ == null) {
         channelPartnerRepricingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         channelPartnerRepricingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -589,20 +601,19 @@ public final class UpdateChannelPartnerRepricingConfigRequest
     public Builder mergeChannelPartnerRepricingConfig(
         com.google.cloud.channel.v1.ChannelPartnerRepricingConfig value) {
       if (channelPartnerRepricingConfigBuilder_ == null) {
-        if (channelPartnerRepricingConfig_ != null) {
-          channelPartnerRepricingConfig_ =
-              com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.newBuilder(
-                      channelPartnerRepricingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && channelPartnerRepricingConfig_ != null
+            && channelPartnerRepricingConfig_
+                != com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance()) {
+          getChannelPartnerRepricingConfigBuilder().mergeFrom(value);
         } else {
           channelPartnerRepricingConfig_ = value;
         }
-        onChanged();
       } else {
         channelPartnerRepricingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -617,14 +628,13 @@ public final class UpdateChannelPartnerRepricingConfigRequest
      * </code>
      */
     public Builder clearChannelPartnerRepricingConfig() {
-      if (channelPartnerRepricingConfigBuilder_ == null) {
-        channelPartnerRepricingConfig_ = null;
-        onChanged();
-      } else {
-        channelPartnerRepricingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      channelPartnerRepricingConfig_ = null;
+      if (channelPartnerRepricingConfigBuilder_ != null) {
+        channelPartnerRepricingConfigBuilder_.dispose();
         channelPartnerRepricingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -640,7 +650,7 @@ public final class UpdateChannelPartnerRepricingConfigRequest
      */
     public com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.Builder
         getChannelPartnerRepricingConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getChannelPartnerRepricingConfigFieldBuilder().getBuilder();
     }

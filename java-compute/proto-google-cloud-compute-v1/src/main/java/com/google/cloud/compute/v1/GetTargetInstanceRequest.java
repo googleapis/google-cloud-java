@@ -70,7 +70,9 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
   }
 
   public static final int TARGET_INSTANCE_FIELD_NUMBER = 289769347;
-  private volatile java.lang.Object targetInstance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetInstance_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       targetInstance_ = "";
-
       zone_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.GetTargetInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.GetTargetInstanceRequest result =
           new com.google.cloud.compute.v1.GetTargetInstanceRequest(this);
-      result.project_ = project_;
-      result.targetInstance_ = targetInstance_;
-      result.zone_ = zone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetTargetInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetInstance_ = targetInstance_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zone_;
+      }
     }
 
     @java.lang.Override
@@ -519,14 +536,17 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetInstance().isEmpty()) {
         targetInstance_ = other.targetInstance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -558,19 +578,19 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29957474
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case -1976812518:
               {
                 targetInstance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1976812518
             default:
@@ -589,6 +609,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -651,8 +673,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +690,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +712,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +779,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetInstance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,8 +796,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTargetInstance() {
-
       targetInstance_ = getDefaultInstance().getTargetInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +818,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetInstance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +885,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -880,8 +902,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class GetTargetInstanceRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

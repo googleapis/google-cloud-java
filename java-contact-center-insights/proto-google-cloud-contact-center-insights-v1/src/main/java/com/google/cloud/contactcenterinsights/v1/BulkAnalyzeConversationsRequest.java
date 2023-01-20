@@ -71,7 +71,9 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -173,7 +177,7 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
   }
 
   public static final int ANALYSIS_PERCENTAGE_FIELD_NUMBER = 3;
-  private float analysisPercentage_;
+  private float analysisPercentage_ = 0F;
   /**
    *
    *
@@ -240,7 +244,9 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
       getAnnotatorSelectorOrBuilder() {
-    return getAnnotatorSelector();
+    return annotatorSelector_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+        : annotatorSelector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -478,16 +484,13 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       analysisPercentage_ = 0F;
-
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-      } else {
-        annotatorSelector_ = null;
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
       return this;
@@ -521,16 +524,31 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest result =
           new com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.analysisPercentage_ = analysisPercentage_;
-      if (annotatorSelectorBuilder_ == null) {
-        result.annotatorSelector_ = annotatorSelector_;
-      } else {
-        result.annotatorSelector_ = annotatorSelectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.analysisPercentage_ = analysisPercentage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotatorSelector_ =
+            annotatorSelectorBuilder_ == null
+                ? annotatorSelector_
+                : annotatorSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -585,10 +603,12 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getAnalysisPercentage() != 0F) {
@@ -626,26 +646,26 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 29:
               {
                 analysisPercentage_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 66:
               {
                 input.readMessage(
                     getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             default:
@@ -664,6 +684,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -732,8 +754,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,8 +773,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -775,8 +797,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -842,8 +864,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,8 +881,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -881,8 +903,8 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -920,6 +942,7 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     public Builder setAnalysisPercentage(float value) {
 
       analysisPercentage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -936,7 +959,7 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearAnalysisPercentage() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       analysisPercentage_ = 0F;
       onChanged();
       return this;
@@ -961,7 +984,7 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      * @return Whether the annotatorSelector field is set.
      */
     public boolean hasAnnotatorSelector() {
-      return annotatorSelectorBuilder_ != null || annotatorSelector_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1001,11 +1024,11 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         annotatorSelector_ = value;
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1022,11 +1045,11 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder builderForValue) {
       if (annotatorSelectorBuilder_ == null) {
         annotatorSelector_ = builderForValue.build();
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1042,20 +1065,20 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
     public Builder mergeAnnotatorSelector(
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
       if (annotatorSelectorBuilder_ == null) {
-        if (annotatorSelector_ != null) {
-          annotatorSelector_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.newBuilder(
-                      annotatorSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && annotatorSelector_ != null
+            && annotatorSelector_
+                != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                    .getDefaultInstance()) {
+          getAnnotatorSelectorBuilder().mergeFrom(value);
         } else {
           annotatorSelector_ = value;
         }
-        onChanged();
       } else {
         annotatorSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1069,14 +1092,13 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 8;</code>
      */
     public Builder clearAnnotatorSelector() {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-        onChanged();
-      } else {
-        annotatorSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1091,7 +1113,7 @@ public final class BulkAnalyzeConversationsRequest extends com.google.protobuf.G
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
         getAnnotatorSelectorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAnnotatorSelectorFieldBuilder().getBuilder();
     }

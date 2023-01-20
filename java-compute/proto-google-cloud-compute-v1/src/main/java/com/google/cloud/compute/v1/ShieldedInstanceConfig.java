@@ -67,7 +67,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 409071030;
-  private boolean enableIntegrityMonitoring_;
+  private boolean enableIntegrityMonitoring_ = false;
   /**
    *
    *
@@ -100,7 +100,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 123568638;
-  private boolean enableSecureBoot_;
+  private boolean enableSecureBoot_ = false;
   /**
    *
    *
@@ -133,7 +133,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_VTPM_FIELD_NUMBER = 181858935;
-  private boolean enableVtpm_;
+  private boolean enableVtpm_ = false;
   /**
    *
    *
@@ -397,12 +397,10 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableIntegrityMonitoring_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       enableSecureBoot_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       enableVtpm_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -430,6 +428,14 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ShieldedInstanceConfig buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceConfig result =
           new com.google.cloud.compute.v1.ShieldedInstanceConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.ShieldedInstanceConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -444,9 +450,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
         result.enableVtpm_ = enableVtpm_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -611,8 +615,9 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEnableIntegrityMonitoring(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enableIntegrityMonitoring_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,8 +683,9 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEnableSecureBoot(boolean value) {
-      bitField0_ |= 0x00000002;
+
       enableSecureBoot_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -745,8 +751,9 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEnableVtpm(boolean value) {
-      bitField0_ |= 0x00000004;
+
       enableVtpm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

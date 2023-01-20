@@ -125,11 +125,15 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.compute.v1.BulkInsertInstanceResourceOrBuilder
       getBulkInsertInstanceResourceResourceOrBuilder() {
-    return getBulkInsertInstanceResourceResource();
+    return bulkInsertInstanceResourceResource_ == null
+        ? com.google.cloud.compute.v1.BulkInsertInstanceResource.getDefaultInstance()
+        : bulkInsertInstanceResourceResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -182,7 +186,9 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -235,7 +241,9 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -537,18 +545,15 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bulkInsertInstanceResourceResourceBuilder_ == null) {
-        bulkInsertInstanceResourceResource_ = null;
-      } else {
-        bulkInsertInstanceResourceResource_ = null;
+      bitField0_ = 0;
+      bulkInsertInstanceResourceResource_ = null;
+      if (bulkInsertInstanceResourceResourceBuilder_ != null) {
+        bulkInsertInstanceResourceResourceBuilder_.dispose();
         bulkInsertInstanceResourceResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -576,23 +581,33 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest result =
           new com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (bulkInsertInstanceResourceResourceBuilder_ == null) {
-        result.bulkInsertInstanceResourceResource_ = bulkInsertInstanceResourceResource_;
-      } else {
-        result.bulkInsertInstanceResourceResource_ =
-            bulkInsertInstanceResourceResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bulkInsertInstanceResourceResource_ =
+            bulkInsertInstanceResourceResourceBuilder_ == null
+                ? bulkInsertInstanceResourceResource_
+                : bulkInsertInstanceResourceResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -646,15 +661,17 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -686,7 +703,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 331418226:
@@ -694,19 +711,19 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
                 input.readMessage(
                     getBulkInsertInstanceResourceResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 331418226
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -749,8 +766,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * @return Whether the bulkInsertInstanceResourceResource field is set.
      */
     public boolean hasBulkInsertInstanceResourceResource() {
-      return bulkInsertInstanceResourceResourceBuilder_ != null
-          || bulkInsertInstanceResourceResource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -793,11 +809,11 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         bulkInsertInstanceResourceResource_ = value;
-        onChanged();
       } else {
         bulkInsertInstanceResourceResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -815,11 +831,11 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         com.google.cloud.compute.v1.BulkInsertInstanceResource.Builder builderForValue) {
       if (bulkInsertInstanceResourceResourceBuilder_ == null) {
         bulkInsertInstanceResourceResource_ = builderForValue.build();
-        onChanged();
       } else {
         bulkInsertInstanceResourceResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -836,20 +852,19 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
     public Builder mergeBulkInsertInstanceResourceResource(
         com.google.cloud.compute.v1.BulkInsertInstanceResource value) {
       if (bulkInsertInstanceResourceResourceBuilder_ == null) {
-        if (bulkInsertInstanceResourceResource_ != null) {
-          bulkInsertInstanceResourceResource_ =
-              com.google.cloud.compute.v1.BulkInsertInstanceResource.newBuilder(
-                      bulkInsertInstanceResourceResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && bulkInsertInstanceResourceResource_ != null
+            && bulkInsertInstanceResourceResource_
+                != com.google.cloud.compute.v1.BulkInsertInstanceResource.getDefaultInstance()) {
+          getBulkInsertInstanceResourceResourceBuilder().mergeFrom(value);
         } else {
           bulkInsertInstanceResourceResource_ = value;
         }
-        onChanged();
       } else {
         bulkInsertInstanceResourceResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -864,14 +879,13 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearBulkInsertInstanceResourceResource() {
-      if (bulkInsertInstanceResourceResourceBuilder_ == null) {
-        bulkInsertInstanceResourceResource_ = null;
-        onChanged();
-      } else {
-        bulkInsertInstanceResourceResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      bulkInsertInstanceResourceResource_ = null;
+      if (bulkInsertInstanceResourceResourceBuilder_ != null) {
+        bulkInsertInstanceResourceResourceBuilder_.dispose();
         bulkInsertInstanceResourceResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -887,7 +901,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      */
     public com.google.cloud.compute.v1.BulkInsertInstanceResource.Builder
         getBulkInsertInstanceResourceResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBulkInsertInstanceResourceResourceFieldBuilder().getBuilder();
     }
@@ -1007,8 +1021,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1026,8 +1040,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1050,8 +1064,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1123,8 +1137,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,8 +1156,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1166,8 +1180,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1185,7 +1199,7 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1247,8 +1261,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1264,8 +1278,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1286,8 +1300,8 @@ public final class BulkInsertRegionInstanceRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

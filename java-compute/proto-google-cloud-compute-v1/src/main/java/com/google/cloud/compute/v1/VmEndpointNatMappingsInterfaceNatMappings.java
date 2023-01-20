@@ -75,6 +75,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   private int bitField0_;
   public static final int DRAIN_NAT_IP_PORT_RANGES_FIELD_NUMBER = 395440577;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList drainNatIpPortRanges_;
   /**
    *
@@ -136,6 +138,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int NAT_IP_PORT_RANGES_FIELD_NUMBER = 531830810;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList natIpPortRanges_;
   /**
    *
@@ -197,7 +201,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 335532793;
-  private int numTotalDrainNatPorts_;
+  private int numTotalDrainNatPorts_ = 0;
   /**
    *
    *
@@ -230,7 +234,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 299904384;
-  private int numTotalNatPorts_;
+  private int numTotalNatPorts_ = 0;
   /**
    *
    *
@@ -263,6 +267,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int RULE_MAPPINGS_FIELD_NUMBER = 486192968;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
       ruleMappings_;
@@ -352,7 +358,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER = 440340952;
-  private volatile java.lang.Object sourceAliasIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceAliasIpRange_ = "";
   /**
    *
    *
@@ -416,7 +424,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   public static final int SOURCE_VIRTUAL_IP_FIELD_NUMBER = 149836159;
-  private volatile java.lang.Object sourceVirtualIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceVirtualIp_ = "";
   /**
    *
    *
@@ -774,14 +784,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       numTotalDrainNatPorts_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       numTotalNatPorts_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       if (ruleMappingsBuilder_ == null) {
         ruleMappings_ = java.util.Collections.emptyList();
       } else {
@@ -790,9 +799,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       bitField0_ = (bitField0_ & ~0x00000010);
       sourceAliasIpRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       sourceVirtualIp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -822,8 +829,16 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings buildPartial() {
       com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result =
           new com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         drainNatIpPortRanges_ = drainNatIpPortRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -834,14 +849,6 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.natIpPortRanges_ = natIpPortRanges_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.numTotalNatPorts_ = numTotalNatPorts_;
-        to_bitField0_ |= 0x00000002;
-      }
       if (ruleMappingsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           ruleMappings_ = java.util.Collections.unmodifiableList(ruleMappings_);
@@ -851,17 +858,29 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       } else {
         result.ruleMappings_ = ruleMappingsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.numTotalNatPorts_ = numTotalNatPorts_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sourceAliasIpRange_ = sourceAliasIpRange_;
         to_bitField0_ |= 0x00000004;
       }
-      result.sourceAliasIpRange_ = sourceAliasIpRange_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sourceVirtualIp_ = sourceVirtualIp_;
         to_bitField0_ |= 0x00000008;
       }
-      result.sourceVirtualIp_ = sourceVirtualIp_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -967,13 +986,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         }
       }
       if (other.hasSourceAliasIpRange()) {
-        bitField0_ |= 0x00000020;
         sourceAliasIpRange_ = other.sourceAliasIpRange_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasSourceVirtualIp()) {
-        bitField0_ |= 0x00000040;
         sourceVirtualIp_ = other.sourceVirtualIp_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1455,8 +1474,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder setNumTotalDrainNatPorts(int value) {
-      bitField0_ |= 0x00000004;
+
       numTotalDrainNatPorts_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1522,8 +1542,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder setNumTotalNatPorts(int value) {
-      bitField0_ |= 0x00000008;
+
       numTotalNatPorts_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2055,8 +2076,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
       sourceAliasIpRange_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2072,8 +2093,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearSourceAliasIpRange() {
-      bitField0_ = (bitField0_ & ~0x00000020);
       sourceAliasIpRange_ = getDefaultInstance().getSourceAliasIpRange();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2094,8 +2115,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
       sourceAliasIpRange_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2175,8 +2196,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
       sourceVirtualIp_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2192,8 +2213,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearSourceVirtualIp() {
-      bitField0_ = (bitField0_ & ~0x00000040);
       sourceVirtualIp_ = getDefaultInstance().getSourceVirtualIp();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2214,8 +2235,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
       sourceVirtualIp_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

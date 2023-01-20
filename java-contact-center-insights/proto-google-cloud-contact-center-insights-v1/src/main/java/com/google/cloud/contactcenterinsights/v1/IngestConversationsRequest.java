@@ -149,7 +149,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     }
 
     public static final int BUCKET_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object bucketUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bucketUri_ = "";
     /**
      *
      *
@@ -409,8 +411,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bucketUri_ = "";
-
         return this;
       }
 
@@ -444,9 +446,19 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource result =
             new com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource(
                 this);
-        result.bucketUri_ = bucketUri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bucketUri_ = bucketUri_;
+        }
       }
 
       @java.lang.Override
@@ -505,6 +517,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (!other.getBucketUri().isEmpty()) {
           bucketUri_ = other.bucketUri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -536,7 +549,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   bucketUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -555,6 +568,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object bucketUri_ = "";
       /**
@@ -617,8 +632,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         bucketUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -634,8 +649,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearBucketUri() {
-
         bucketUri_ = getDefaultInstance().getBucketUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -656,8 +671,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bucketUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -818,7 +833,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     }
 
     public static final int MEDIUM_FIELD_NUMBER = 1;
-    private int medium_;
+    private int medium_ = 0;
     /**
      *
      *
@@ -851,9 +866,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
-          com.google.cloud.contactcenterinsights.v1.Conversation.Medium.valueOf(medium_);
+          com.google.cloud.contactcenterinsights.v1.Conversation.Medium.forNumber(medium_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
           : result;
@@ -1093,8 +1107,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         medium_ = 0;
-
         return this;
       }
 
@@ -1132,9 +1146,21 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             result =
                 new com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
                     .TranscriptObjectConfig(this);
-        result.medium_ = medium_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
+                  .TranscriptObjectConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.medium_ = medium_;
+        }
       }
 
       @java.lang.Override
@@ -1227,7 +1253,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               case 8:
                 {
                   medium_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -1246,6 +1272,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int medium_ = 0;
       /**
@@ -1280,8 +1308,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder setMediumValue(int value) {
-
         medium_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1300,9 +1328,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        */
       @java.lang.Override
       public com.google.cloud.contactcenterinsights.v1.Conversation.Medium getMedium() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.contactcenterinsights.v1.Conversation.Medium result =
-            com.google.cloud.contactcenterinsights.v1.Conversation.Medium.valueOf(medium_);
+            com.google.cloud.contactcenterinsights.v1.Conversation.Medium.forNumber(medium_);
         return result == null
             ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
             : result;
@@ -1326,7 +1353,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         medium_ = value.getNumber();
         onChanged();
         return this;
@@ -1345,7 +1372,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearMedium() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         medium_ = 0;
         onChanged();
         return this;
@@ -1508,7 +1535,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     }
 
     public static final int AGENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object agentId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object agentId_ = "";
     /**
      *
      *
@@ -1788,8 +1817,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         agentId_ = "";
-
         return this;
       }
 
@@ -1824,9 +1853,20 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             result =
                 new com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
                     .ConversationConfig(this);
-        result.agentId_ = agentId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.agentId_ = agentId_;
+        }
       }
 
       @java.lang.Override
@@ -1888,6 +1928,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                 .ConversationConfig.getDefaultInstance()) return this;
         if (!other.getAgentId().isEmpty()) {
           agentId_ = other.agentId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1919,7 +1960,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   agentId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1938,6 +1979,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object agentId_ = "";
       /**
@@ -2003,8 +2046,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         agentId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2021,8 +2064,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearAgentId() {
-
         agentId_ = getDefaultInstance().getAgentId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2044,8 +2087,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         agentId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2339,7 +2382,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -2447,7 +2492,10 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
           .ConversationConfigOrBuilder
       getConversationConfigOrBuilder() {
-    return getConversationConfig();
+    return conversationConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
+            .getDefaultInstance()
+        : conversationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2723,6 +2771,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -2730,11 +2779,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         transcriptObjectConfigBuilder_.clear();
       }
       parent_ = "";
-
-      if (conversationConfigBuilder_ == null) {
-        conversationConfig_ = null;
-      } else {
-        conversationConfig_ = null;
+      conversationConfig_ = null;
+      if (conversationConfigBuilder_ != null) {
+        conversationConfigBuilder_.dispose();
         conversationConfigBuilder_ = null;
       }
       sourceCase_ = 0;
@@ -2770,30 +2817,40 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest result =
           new com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest(this);
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (objectConfigCase_ == 3) {
-        if (transcriptObjectConfigBuilder_ == null) {
-          result.objectConfig_ = objectConfig_;
-        } else {
-          result.objectConfig_ = transcriptObjectConfigBuilder_.build();
-        }
-      }
-      result.parent_ = parent_;
-      if (conversationConfigBuilder_ == null) {
-        result.conversationConfig_ = conversationConfig_;
-      } else {
-        result.conversationConfig_ = conversationConfigBuilder_.build();
-      }
-      result.sourceCase_ = sourceCase_;
-      result.objectConfigCase_ = objectConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.conversationConfig_ =
+            conversationConfigBuilder_ == null
+                ? conversationConfig_
+                : conversationConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      result.objectConfigCase_ = objectConfigCase_;
+      result.objectConfig_ = this.objectConfig_;
+      if (objectConfigCase_ == 3 && transcriptObjectConfigBuilder_ != null) {
+        result.objectConfig_ = transcriptObjectConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2847,6 +2904,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasConversationConfig()) {
@@ -2903,7 +2961,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -2923,7 +2981,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     getConversationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2970,6 +3028,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource,
@@ -3216,7 +3276,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -3481,7 +3540,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       objectConfigCase_ = 3;
       onChanged();
-      ;
       return transcriptObjectConfigBuilder_;
     }
 
@@ -3552,8 +3610,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3571,8 +3629,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3595,8 +3653,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3624,7 +3682,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return Whether the conversationConfig field is set.
      */
     public boolean hasConversationConfig() {
-      return conversationConfigBuilder_ != null || conversationConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3669,11 +3727,11 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         conversationConfig_ = value;
-        onChanged();
       } else {
         conversationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3693,11 +3751,11 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             builderForValue) {
       if (conversationConfigBuilder_ == null) {
         conversationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         conversationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3715,20 +3773,20 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
             value) {
       if (conversationConfigBuilder_ == null) {
-        if (conversationConfig_ != null) {
-          conversationConfig_ =
-              com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
-                  .ConversationConfig.newBuilder(conversationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && conversationConfig_ != null
+            && conversationConfig_
+                != com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
+                    .ConversationConfig.getDefaultInstance()) {
+          getConversationConfigBuilder().mergeFrom(value);
         } else {
           conversationConfig_ = value;
         }
-        onChanged();
       } else {
         conversationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3743,14 +3801,13 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearConversationConfig() {
-      if (conversationConfigBuilder_ == null) {
-        conversationConfig_ = null;
-        onChanged();
-      } else {
-        conversationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      conversationConfig_ = null;
+      if (conversationConfigBuilder_ != null) {
+        conversationConfigBuilder_.dispose();
         conversationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3767,7 +3824,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfig
             .Builder
         getConversationConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getConversationConfigFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int TARGET_FIELD_NUMBER = 192835985;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    * <code>optional string target = 192835985;</code>
    *
@@ -314,8 +316,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       target_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -343,15 +345,21 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.TargetReference buildPartial() {
       com.google.cloud.compute.v1.TargetReference result =
           new com.google.cloud.compute.v1.TargetReference(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.TargetReference result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.target_ = target_;
         to_bitField0_ |= 0x00000001;
       }
-      result.target_ = target_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -400,8 +408,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetReference other) {
       if (other == com.google.cloud.compute.v1.TargetReference.getDefaultInstance()) return this;
       if (other.hasTarget()) {
-        bitField0_ |= 0x00000001;
         target_ = other.target_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,8 +514,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -517,8 +525,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -533,8 +541,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

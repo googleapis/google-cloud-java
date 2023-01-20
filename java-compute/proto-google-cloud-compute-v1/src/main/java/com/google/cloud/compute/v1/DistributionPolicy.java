@@ -248,7 +248,9 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
-  private volatile java.lang.Object targetShape_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetShape_ = "";
   /**
    *
    *
@@ -315,6 +317,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ZONES_FIELD_NUMBER = 116085319;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration> zones_;
   /**
    *
@@ -603,8 +607,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetShape_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (zonesBuilder_ == null) {
         zones_ = java.util.Collections.emptyList();
       } else {
@@ -639,12 +643,15 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.DistributionPolicy buildPartial() {
       com.google.cloud.compute.v1.DistributionPolicy result =
           new com.google.cloud.compute.v1.DistributionPolicy(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.targetShape_ = targetShape_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.DistributionPolicy result) {
       if (zonesBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           zones_ = java.util.Collections.unmodifiableList(zones_);
@@ -654,9 +661,16 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       } else {
         result.zones_ = zonesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.DistributionPolicy result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetShape_ = targetShape_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -705,8 +719,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.DistributionPolicy other) {
       if (other == com.google.cloud.compute.v1.DistributionPolicy.getDefaultInstance()) return this;
       if (other.hasTargetShape()) {
-        bitField0_ |= 0x00000001;
         targetShape_ = other.targetShape_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (zonesBuilder_ == null) {
@@ -880,8 +894,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       targetShape_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -898,8 +912,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetShape() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       targetShape_ = getDefaultInstance().getTargetShape();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,8 +935,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       targetShape_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

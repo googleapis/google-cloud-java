@@ -71,7 +71,9 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 373540533;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
   }
 
   public static final int URL_MASK_FIELD_NUMBER = 103352252;
-  private volatile java.lang.Object urlMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlMask_ = "";
   /**
    *
    *
@@ -199,7 +203,9 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
   }
 
   public static final int VERSION_FIELD_NUMBER = 351608024;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -493,12 +499,10 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       urlMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -526,23 +530,29 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
         to_bitField0_ |= 0x00000001;
       }
-      result.service_ = service_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.urlMask_ = urlMask_;
         to_bitField0_ |= 0x00000002;
       }
-      result.urlMask_ = urlMask_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.version_ = version_;
         to_bitField0_ |= 0x00000004;
       }
-      result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -592,18 +602,18 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance())
         return this;
       if (other.hasService()) {
-        bitField0_ |= 0x00000001;
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUrlMask()) {
-        bitField0_ |= 0x00000002;
         urlMask_ = other.urlMask_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVersion()) {
-        bitField0_ |= 0x00000004;
         version_ = other.version_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -744,8 +754,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,8 +771,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -783,8 +793,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,8 +874,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       urlMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,8 +891,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = getDefaultInstance().getUrlMask();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -903,8 +913,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       urlMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,8 +994,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       version_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1001,8 +1011,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1023,8 +1033,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       version_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

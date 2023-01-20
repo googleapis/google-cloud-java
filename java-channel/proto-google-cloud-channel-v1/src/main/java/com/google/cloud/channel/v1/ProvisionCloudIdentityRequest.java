@@ -69,7 +69,9 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
   }
 
   public static final int CUSTOMER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object customer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customer_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.CloudIdentityInfoOrBuilder getCloudIdentityInfoOrBuilder() {
-    return getCloudIdentityInfo();
+    return cloudIdentityInfo_ == null
+        ? com.google.cloud.channel.v1.CloudIdentityInfo.getDefaultInstance()
+        : cloudIdentityInfo_;
   }
 
   public static final int USER_FIELD_NUMBER = 3;
@@ -214,11 +218,11 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.channel.v1.AdminUserOrBuilder getUserOrBuilder() {
-    return getUser();
+    return user_ == null ? com.google.cloud.channel.v1.AdminUser.getDefaultInstance() : user_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -471,22 +475,19 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       customer_ = "";
-
-      if (cloudIdentityInfoBuilder_ == null) {
-        cloudIdentityInfo_ = null;
-      } else {
-        cloudIdentityInfo_ = null;
+      cloudIdentityInfo_ = null;
+      if (cloudIdentityInfoBuilder_ != null) {
+        cloudIdentityInfoBuilder_.dispose();
         cloudIdentityInfoBuilder_ = null;
       }
-      if (userBuilder_ == null) {
-        user_ = null;
-      } else {
-        user_ = null;
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
         userBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -514,20 +515,30 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public com.google.cloud.channel.v1.ProvisionCloudIdentityRequest buildPartial() {
       com.google.cloud.channel.v1.ProvisionCloudIdentityRequest result =
           new com.google.cloud.channel.v1.ProvisionCloudIdentityRequest(this);
-      result.customer_ = customer_;
-      if (cloudIdentityInfoBuilder_ == null) {
-        result.cloudIdentityInfo_ = cloudIdentityInfo_;
-      } else {
-        result.cloudIdentityInfo_ = cloudIdentityInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (userBuilder_ == null) {
-        result.user_ = user_;
-      } else {
-        result.user_ = userBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.ProvisionCloudIdentityRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customer_ = customer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cloudIdentityInfo_ =
+            cloudIdentityInfoBuilder_ == null
+                ? cloudIdentityInfo_
+                : cloudIdentityInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.user_ = userBuilder_ == null ? user_ : userBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -578,6 +589,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getCustomer().isEmpty()) {
         customer_ = other.customer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCloudIdentityInfo()) {
@@ -618,26 +630,26 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
             case 10:
               {
                 customer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getCloudIdentityInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUserFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -656,6 +668,8 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object customer_ = "";
     /**
@@ -727,8 +741,8 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       customer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -747,8 +761,8 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearCustomer() {
-
       customer_ = getDefaultInstance().getCustomer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -772,8 +786,8 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       customer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -796,7 +810,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * @return Whether the cloudIdentityInfo field is set.
      */
     public boolean hasCloudIdentityInfo() {
-      return cloudIdentityInfoBuilder_ != null || cloudIdentityInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -833,11 +847,11 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         cloudIdentityInfo_ = value;
-        onChanged();
       } else {
         cloudIdentityInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,11 +867,11 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
         com.google.cloud.channel.v1.CloudIdentityInfo.Builder builderForValue) {
       if (cloudIdentityInfoBuilder_ == null) {
         cloudIdentityInfo_ = builderForValue.build();
-        onChanged();
       } else {
         cloudIdentityInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -871,19 +885,19 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      */
     public Builder mergeCloudIdentityInfo(com.google.cloud.channel.v1.CloudIdentityInfo value) {
       if (cloudIdentityInfoBuilder_ == null) {
-        if (cloudIdentityInfo_ != null) {
-          cloudIdentityInfo_ =
-              com.google.cloud.channel.v1.CloudIdentityInfo.newBuilder(cloudIdentityInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cloudIdentityInfo_ != null
+            && cloudIdentityInfo_
+                != com.google.cloud.channel.v1.CloudIdentityInfo.getDefaultInstance()) {
+          getCloudIdentityInfoBuilder().mergeFrom(value);
         } else {
           cloudIdentityInfo_ = value;
         }
-        onChanged();
       } else {
         cloudIdentityInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -896,14 +910,13 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * <code>.google.cloud.channel.v1.CloudIdentityInfo cloud_identity_info = 2;</code>
      */
     public Builder clearCloudIdentityInfo() {
-      if (cloudIdentityInfoBuilder_ == null) {
-        cloudIdentityInfo_ = null;
-        onChanged();
-      } else {
-        cloudIdentityInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cloudIdentityInfo_ = null;
+      if (cloudIdentityInfoBuilder_ != null) {
+        cloudIdentityInfoBuilder_.dispose();
         cloudIdentityInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -916,7 +929,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * <code>.google.cloud.channel.v1.CloudIdentityInfo cloud_identity_info = 2;</code>
      */
     public com.google.cloud.channel.v1.CloudIdentityInfo.Builder getCloudIdentityInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCloudIdentityInfoFieldBuilder().getBuilder();
     }
@@ -982,7 +995,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return userBuilder_ != null || user_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1017,11 +1030,11 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         user_ = value;
-        onChanged();
       } else {
         userBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1036,11 +1049,11 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public Builder setUser(com.google.cloud.channel.v1.AdminUser.Builder builderForValue) {
       if (userBuilder_ == null) {
         user_ = builderForValue.build();
-        onChanged();
       } else {
         userBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1054,19 +1067,18 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUser(com.google.cloud.channel.v1.AdminUser value) {
       if (userBuilder_ == null) {
-        if (user_ != null) {
-          user_ =
-              com.google.cloud.channel.v1.AdminUser.newBuilder(user_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && user_ != null
+            && user_ != com.google.cloud.channel.v1.AdminUser.getDefaultInstance()) {
+          getUserBuilder().mergeFrom(value);
         } else {
           user_ = value;
         }
-        onChanged();
       } else {
         userBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1079,14 +1091,13 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * <code>.google.cloud.channel.v1.AdminUser user = 3;</code>
      */
     public Builder clearUser() {
-      if (userBuilder_ == null) {
-        user_ = null;
-        onChanged();
-      } else {
-        user_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
         userBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1099,7 +1110,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * <code>.google.cloud.channel.v1.AdminUser user = 3;</code>
      */
     public com.google.cloud.channel.v1.AdminUser.Builder getUserBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
@@ -1176,6 +1187,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1191,7 +1203,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

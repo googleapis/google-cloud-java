@@ -74,7 +74,9 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int PATHS_FIELD_NUMBER = 106438894;
-  private volatile java.lang.Object paths_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object paths_ = "";
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -120,7 +122,9 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -237,7 +243,9 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   }
 
   public static final int RESERVATION_FIELD_NUMBER = 47530956;
-  private volatile java.lang.Object reservation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservation_ = "";
   /**
    *
    *
@@ -336,11 +344,15 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationOrBuilder getReservationResourceOrBuilder() {
-    return getReservationResource();
+    return reservationResource_ == null
+        ? com.google.cloud.compute.v1.Reservation.getDefaultInstance()
+        : reservationResource_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 500079778;
-  private volatile java.lang.Object updateMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateMask_ = "";
   /**
    *
    *
@@ -404,7 +416,9 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -729,24 +743,18 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       paths_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       reservation_ = "";
-
-      if (reservationResourceBuilder_ == null) {
-        reservationResource_ = null;
-      } else {
-        reservationResource_ = null;
+      reservationResource_ = null;
+      if (reservationResourceBuilder_ != null) {
+        reservationResourceBuilder_.dispose();
         reservationResourceBuilder_ = null;
       }
       updateMask_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       zone_ = "";
-
       return this;
     }
 
@@ -774,31 +782,44 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.UpdateReservationRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateReservationRequest result =
           new com.google.cloud.compute.v1.UpdateReservationRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UpdateReservationRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.paths_ = paths_;
         to_bitField0_ |= 0x00000001;
       }
-      result.paths_ = paths_;
-      result.project_ = project_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.requestId_ = requestId_;
-      result.reservation_ = reservation_;
-      if (reservationResourceBuilder_ == null) {
-        result.reservationResource_ = reservationResource_;
-      } else {
-        result.reservationResource_ = reservationResourceBuilder_.build();
+        result.project_ = project_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reservation_ = reservation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reservationResource_ =
+            reservationResourceBuilder_ == null
+                ? reservationResource_
+                : reservationResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateMask_ = updateMask_;
         to_bitField0_ |= 0x00000004;
       }
-      result.updateMask_ = updateMask_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -848,33 +869,36 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (other == com.google.cloud.compute.v1.UpdateReservationRequest.getDefaultInstance())
         return this;
       if (other.hasPaths()) {
-        bitField0_ |= 0x00000001;
         paths_ = other.paths_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getReservation().isEmpty()) {
         reservation_ = other.reservation_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasReservationResource()) {
         mergeReservationResource(other.getReservationResource());
       }
       if (other.hasUpdateMask()) {
-        bitField0_ |= 0x00000004;
         updateMask_ = other.updateMask_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -906,19 +930,19 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 29957474
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 380247650:
               {
                 reservation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 380247650
             case 851511154:
@@ -930,20 +954,20 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -2014725878:
               {
                 input.readMessage(
                     getReservationResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case -2014725878
             case -294329070:
               {
                 updateMask_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -294329070
             default:
@@ -1016,8 +1040,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1027,8 +1051,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       paths_ = getDefaultInstance().getPaths();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1043,8 +1067,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       paths_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1116,8 +1140,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1135,8 +1159,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1159,8 +1183,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1178,7 +1202,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1240,8 +1264,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1257,8 +1281,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1279,8 +1303,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1346,8 +1370,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       reservation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1363,8 +1387,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearReservation() {
-
       reservation_ = getDefaultInstance().getReservation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1385,8 +1409,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reservation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1411,7 +1435,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return Whether the reservationResource field is set.
      */
     public boolean hasReservationResource() {
-      return reservationResourceBuilder_ != null || reservationResource_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1452,11 +1476,11 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         reservationResource_ = value;
-        onChanged();
       } else {
         reservationResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1474,11 +1498,11 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
       if (reservationResourceBuilder_ == null) {
         reservationResource_ = builderForValue.build();
-        onChanged();
       } else {
         reservationResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1494,19 +1518,19 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      */
     public Builder mergeReservationResource(com.google.cloud.compute.v1.Reservation value) {
       if (reservationResourceBuilder_ == null) {
-        if (reservationResource_ != null) {
-          reservationResource_ =
-              com.google.cloud.compute.v1.Reservation.newBuilder(reservationResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && reservationResource_ != null
+            && reservationResource_
+                != com.google.cloud.compute.v1.Reservation.getDefaultInstance()) {
+          getReservationResourceBuilder().mergeFrom(value);
         } else {
           reservationResource_ = value;
         }
-        onChanged();
       } else {
         reservationResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1521,14 +1545,13 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearReservationResource() {
-      if (reservationResourceBuilder_ == null) {
-        reservationResource_ = null;
-        onChanged();
-      } else {
-        reservationResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      reservationResource_ = null;
+      if (reservationResourceBuilder_ != null) {
+        reservationResourceBuilder_.dispose();
         reservationResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1543,7 +1566,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder getReservationResourceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReservationResourceFieldBuilder().getBuilder();
     }
@@ -1608,7 +1631,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1670,8 +1693,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1687,8 +1710,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearUpdateMask() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       updateMask_ = getDefaultInstance().getUpdateMask();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1709,8 +1732,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       updateMask_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1782,8 +1805,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1801,8 +1824,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1825,8 +1848,8 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

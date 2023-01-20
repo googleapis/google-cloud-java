@@ -74,7 +74,9 @@ public final class RemoveResourcePoliciesRegionDiskRequest
 
   private int bitField0_;
   public static final int DISK_FIELD_NUMBER = 3083677;
-  private volatile java.lang.Object disk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object disk_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class RemoveResourcePoliciesRegionDiskRequest
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class RemoveResourcePoliciesRegionDiskRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -283,11 +289,15 @@ public final class RemoveResourcePoliciesRegionDiskRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequestOrBuilder
       getRegionDisksRemoveResourcePoliciesRequestResourceOrBuilder() {
-    return getRegionDisksRemoveResourcePoliciesRequestResource();
+    return regionDisksRemoveResourcePoliciesRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest.getDefaultInstance()
+        : regionDisksRemoveResourcePoliciesRequestResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -600,20 +610,16 @@ public final class RemoveResourcePoliciesRegionDiskRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disk_ = "";
-
       project_ = "";
-
       region_ = "";
-
-      if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null) {
-        regionDisksRemoveResourcePoliciesRequestResource_ = null;
-      } else {
-        regionDisksRemoveResourcePoliciesRequestResource_ = null;
+      regionDisksRemoveResourcePoliciesRequestResource_ = null;
+      if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ != null) {
+        regionDisksRemoveResourcePoliciesRequestResourceBuilder_.dispose();
         regionDisksRemoveResourcePoliciesRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -643,25 +649,37 @@ public final class RemoveResourcePoliciesRegionDiskRequest
     public com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest buildPartial() {
       com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest result =
           new com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.disk_ = disk_;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null) {
-        result.regionDisksRemoveResourcePoliciesRequestResource_ =
-            regionDisksRemoveResourcePoliciesRequestResource_;
-      } else {
-        result.regionDisksRemoveResourcePoliciesRequestResource_ =
-            regionDisksRemoveResourcePoliciesRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disk_ = disk_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regionDisksRemoveResourcePoliciesRequestResource_ =
+            regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null
+                ? regionDisksRemoveResourcePoliciesRequestResource_
+                : regionDisksRemoveResourcePoliciesRequestResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -715,14 +733,17 @@ public final class RemoveResourcePoliciesRegionDiskRequest
               .getDefaultInstance()) return this;
       if (!other.getDisk().isEmpty()) {
         disk_ = other.disk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegionDisksRemoveResourcePoliciesRequestResource()) {
@@ -730,8 +751,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
             other.getRegionDisksRemoveResourcePoliciesRequestResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -763,7 +784,7 @@ public final class RemoveResourcePoliciesRegionDiskRequest
             case 24669418:
               {
                 disk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24669418
             case 69930266:
@@ -771,25 +792,25 @@ public final class RemoveResourcePoliciesRegionDiskRequest
                 input.readMessage(
                     getRegionDisksRemoveResourcePoliciesRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 69930266
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             default:
@@ -872,8 +893,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -889,8 +910,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return This builder for chaining.
      */
     public Builder clearDisk() {
-
       disk_ = getDefaultInstance().getDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -911,8 +932,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -984,8 +1005,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1003,8 +1024,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1027,8 +1048,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,8 +1121,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,8 +1140,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1143,8 +1164,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1170,8 +1191,7 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return Whether the regionDisksRemoveResourcePoliciesRequestResource field is set.
      */
     public boolean hasRegionDisksRemoveResourcePoliciesRequestResource() {
-      return regionDisksRemoveResourcePoliciesRequestResourceBuilder_ != null
-          || regionDisksRemoveResourcePoliciesRequestResource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1215,11 +1235,11 @@ public final class RemoveResourcePoliciesRegionDiskRequest
           throw new NullPointerException();
         }
         regionDisksRemoveResourcePoliciesRequestResource_ = value;
-        onChanged();
       } else {
         regionDisksRemoveResourcePoliciesRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1238,12 +1258,12 @@ public final class RemoveResourcePoliciesRegionDiskRequest
             builderForValue) {
       if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null) {
         regionDisksRemoveResourcePoliciesRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionDisksRemoveResourcePoliciesRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1260,20 +1280,20 @@ public final class RemoveResourcePoliciesRegionDiskRequest
     public Builder mergeRegionDisksRemoveResourcePoliciesRequestResource(
         com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest value) {
       if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null) {
-        if (regionDisksRemoveResourcePoliciesRequestResource_ != null) {
-          regionDisksRemoveResourcePoliciesRequestResource_ =
-              com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest.newBuilder(
-                      regionDisksRemoveResourcePoliciesRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && regionDisksRemoveResourcePoliciesRequestResource_ != null
+            && regionDisksRemoveResourcePoliciesRequestResource_
+                != com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest
+                    .getDefaultInstance()) {
+          getRegionDisksRemoveResourcePoliciesRequestResourceBuilder().mergeFrom(value);
         } else {
           regionDisksRemoveResourcePoliciesRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionDisksRemoveResourcePoliciesRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1288,14 +1308,13 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * </code>
      */
     public Builder clearRegionDisksRemoveResourcePoliciesRequestResource() {
-      if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ == null) {
-        regionDisksRemoveResourcePoliciesRequestResource_ = null;
-        onChanged();
-      } else {
-        regionDisksRemoveResourcePoliciesRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regionDisksRemoveResourcePoliciesRequestResource_ = null;
+      if (regionDisksRemoveResourcePoliciesRequestResourceBuilder_ != null) {
+        regionDisksRemoveResourcePoliciesRequestResourceBuilder_.dispose();
         regionDisksRemoveResourcePoliciesRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1311,7 +1330,7 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      */
     public com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest.Builder
         getRegionDisksRemoveResourcePoliciesRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRegionDisksRemoveResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
@@ -1380,7 +1399,7 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1442,8 +1461,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1459,8 +1478,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1481,8 +1500,8 @@ public final class RemoveResourcePoliciesRegionDiskRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

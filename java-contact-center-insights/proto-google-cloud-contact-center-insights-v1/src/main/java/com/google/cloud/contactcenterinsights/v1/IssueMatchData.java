@@ -111,7 +111,9 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.IssueAssignmentOrBuilder
       getIssueAssignmentOrBuilder() {
-    return getIssueAssignment();
+    return issueAssignment_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IssueAssignment.getDefaultInstance()
+        : issueAssignment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,10 +319,10 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (issueAssignmentBuilder_ == null) {
-        issueAssignment_ = null;
-      } else {
-        issueAssignment_ = null;
+      bitField0_ = 0;
+      issueAssignment_ = null;
+      if (issueAssignmentBuilder_ != null) {
+        issueAssignmentBuilder_.dispose();
         issueAssignmentBuilder_ = null;
       }
       return this;
@@ -350,13 +352,19 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.IssueMatchData buildPartial() {
       com.google.cloud.contactcenterinsights.v1.IssueMatchData result =
           new com.google.cloud.contactcenterinsights.v1.IssueMatchData(this);
-      if (issueAssignmentBuilder_ == null) {
-        result.issueAssignment_ = issueAssignment_;
-      } else {
-        result.issueAssignment_ = issueAssignmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contactcenterinsights.v1.IssueMatchData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issueAssignment_ =
+            issueAssignmentBuilder_ == null ? issueAssignment_ : issueAssignmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +445,7 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIssueAssignmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -457,6 +465,8 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.contactcenterinsights.v1.IssueAssignment issueAssignment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.IssueAssignment,
@@ -475,7 +485,7 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the issueAssignment field is set.
      */
     public boolean hasIssueAssignment() {
-      return issueAssignmentBuilder_ != null || issueAssignment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -513,11 +523,11 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         issueAssignment_ = value;
-        onChanged();
       } else {
         issueAssignmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -533,11 +543,11 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.contactcenterinsights.v1.IssueAssignment.Builder builderForValue) {
       if (issueAssignmentBuilder_ == null) {
         issueAssignment_ = builderForValue.build();
-        onChanged();
       } else {
         issueAssignmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,19 +562,19 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeIssueAssignment(
         com.google.cloud.contactcenterinsights.v1.IssueAssignment value) {
       if (issueAssignmentBuilder_ == null) {
-        if (issueAssignment_ != null) {
-          issueAssignment_ =
-              com.google.cloud.contactcenterinsights.v1.IssueAssignment.newBuilder(issueAssignment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && issueAssignment_ != null
+            && issueAssignment_
+                != com.google.cloud.contactcenterinsights.v1.IssueAssignment.getDefaultInstance()) {
+          getIssueAssignmentBuilder().mergeFrom(value);
         } else {
           issueAssignment_ = value;
         }
-        onChanged();
       } else {
         issueAssignmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -577,14 +587,13 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.contactcenterinsights.v1.IssueAssignment issue_assignment = 1;</code>
      */
     public Builder clearIssueAssignment() {
-      if (issueAssignmentBuilder_ == null) {
-        issueAssignment_ = null;
-        onChanged();
-      } else {
-        issueAssignment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      issueAssignment_ = null;
+      if (issueAssignmentBuilder_ != null) {
+        issueAssignmentBuilder_.dispose();
         issueAssignmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -598,7 +607,7 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.IssueAssignment.Builder
         getIssueAssignmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIssueAssignmentFieldBuilder().getBuilder();
     }

@@ -381,7 +381,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -434,7 +436,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
@@ -487,7 +491,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
@@ -787,12 +793,10 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         projectId_ = "";
-
         dataset_ = "";
-
         table_ = "";
-
         return this;
       }
 
@@ -827,11 +831,26 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             result =
                 new com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest
                     .BigQueryDestination(this);
-        result.projectId_ = projectId_;
-        result.dataset_ = dataset_;
-        result.table_ = table_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.table_ = table_;
+        }
       }
 
       @java.lang.Override
@@ -893,14 +912,17 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
                 .BigQueryDestination.getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -932,19 +954,19 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 18:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 26:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 26
               default:
@@ -963,6 +985,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -1031,8 +1055,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1050,8 +1074,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1074,8 +1098,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1147,8 +1171,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1166,8 +1190,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1190,8 +1214,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1263,8 +1287,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1282,8 +1306,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1306,8 +1330,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1494,7 +1518,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1547,7 +1573,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   public static final int FILTER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -1598,7 +1626,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   public static final int KMS_KEY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object kmsKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
   /**
    *
    *
@@ -1651,7 +1681,7 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   public static final int WRITE_DISPOSITION_FIELD_NUMBER = 5;
-  private int writeDisposition_;
+  private int writeDisposition_ = 0;
   /**
    *
    *
@@ -1685,10 +1715,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
       getWriteDisposition() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition result =
         com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
-            .valueOf(writeDisposition_);
+            .forNumber(writeDisposition_);
     return result == null
         ? com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
             .UNRECOGNIZED
@@ -1958,17 +1987,14 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigQueryDestinationBuilder_ != null) {
         bigQueryDestinationBuilder_.clear();
       }
       parent_ = "";
-
       filter_ = "";
-
       kmsKey_ = "";
-
       writeDisposition_ = 0;
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -2000,20 +2026,38 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest result =
           new com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest(this);
-      if (destinationCase_ == 2) {
-        if (bigQueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigQueryDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.kmsKey_ = kmsKey_;
-      result.writeDisposition_ = writeDisposition_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.writeDisposition_ = writeDisposition_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 2 && bigQueryDestinationBuilder_ != null) {
+        result.destination_ = bigQueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2067,14 +2111,17 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.writeDisposition_ != 0) {
@@ -2120,7 +2167,7 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -2133,19 +2180,19 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
             case 26:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 kmsKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 writeDisposition_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -2178,6 +2225,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination,
@@ -2437,7 +2486,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return bigQueryDestinationBuilder_;
     }
 
@@ -2508,8 +2556,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2527,8 +2575,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2551,8 +2599,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2621,8 +2669,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2639,8 +2687,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2662,8 +2710,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2735,8 +2783,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2754,8 +2802,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearKmsKey() {
-
       kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2778,8 +2826,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2817,8 +2865,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setWriteDispositionValue(int value) {
-
       writeDisposition_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2838,10 +2886,9 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
         getWriteDisposition() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition result =
           com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
-              .valueOf(writeDisposition_);
+              .forNumber(writeDisposition_);
       return result == null
           ? com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
               .UNRECOGNIZED
@@ -2867,7 +2914,7 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       writeDisposition_ = value.getNumber();
       onChanged();
       return this;
@@ -2886,7 +2933,7 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearWriteDisposition() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       writeDisposition_ = 0;
       onChanged();
       return this;

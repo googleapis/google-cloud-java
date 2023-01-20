@@ -252,7 +252,9 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
 
   private int bitField0_;
   public static final int QUIC_OVERRIDE_FIELD_NUMBER = 456577197;
-  private volatile java.lang.Object quicOverride_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object quicOverride_ = "";
   /**
    *
    *
@@ -522,8 +524,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       quicOverride_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -553,15 +555,22 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest buildPartial() {
       com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest result =
           new com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.quicOverride_ = quicOverride_;
         to_bitField0_ |= 0x00000001;
       }
-      result.quicOverride_ = quicOverride_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -614,8 +623,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
           == com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest
               .getDefaultInstance()) return this;
       if (other.hasQuicOverride()) {
-        bitField0_ |= 0x00000001;
         quicOverride_ = other.quicOverride_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -748,8 +757,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       quicOverride_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * @return This builder for chaining.
      */
     public Builder clearQuicOverride() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       quicOverride_ = getDefaultInstance().getQuicOverride();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -789,8 +798,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       quicOverride_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -112,7 +112,6 @@ public interface TargetHttpsProxyAggregatedListOrBuilder
    * map&lt;string, .google.cloud.compute.v1.TargetHttpsProxiesScopedList&gt; items = 100526016;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.compute.v1.TargetHttpsProxiesScopedList getItemsOrDefault(
       java.lang.String key,

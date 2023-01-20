@@ -69,7 +69,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
 
   private int bitField0_;
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
-  private double utilizationTarget_;
+  private double utilizationTarget_ = 0D;
   /**
    *
    *
@@ -311,8 +311,8 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       utilizationTarget_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -342,15 +342,22 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization result =
           new com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.utilizationTarget_ = utilizationTarget_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -500,8 +507,9 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-      bitField0_ |= 0x00000001;
+
       utilizationTarget_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -225,7 +225,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -254,14 +254,13 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.Hash.HashType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.Hash.HashType result =
-        com.google.cloudbuild.v1.Hash.HashType.valueOf(type_);
+        com.google.cloudbuild.v1.Hash.HashType.forNumber(type_);
     return result == null ? com.google.cloudbuild.v1.Hash.HashType.UNRECOGNIZED : result;
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString value_;
+  private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -481,10 +480,9 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       value_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -511,10 +509,21 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloudbuild.v1.Hash buildPartial() {
       com.google.cloudbuild.v1.Hash result = new com.google.cloudbuild.v1.Hash(this);
-      result.type_ = type_;
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.Hash result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -597,13 +606,13 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 value_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -622,6 +631,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -652,8 +663,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,9 +681,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.Hash.HashType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.Hash.HashType result =
-          com.google.cloudbuild.v1.Hash.HashType.valueOf(type_);
+          com.google.cloudbuild.v1.Hash.HashType.forNumber(type_);
       return result == null ? com.google.cloudbuild.v1.Hash.HashType.UNRECOGNIZED : result;
     }
     /**
@@ -691,7 +701,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -708,7 +718,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -746,8 +756,8 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -763,7 +773,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;

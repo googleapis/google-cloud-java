@@ -68,7 +68,9 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccountOrBuilder getAccountOrBuilder() {
-    return getAccount();
+    return account_ == null
+        ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
+        : account_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -220,7 +224,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -449,18 +453,16 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (accountBuilder_ == null) {
-        account_ = null;
-      } else {
-        account_ = null;
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -490,19 +492,24 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     public com.google.cloud.billing.v1.UpdateBillingAccountRequest buildPartial() {
       com.google.cloud.billing.v1.UpdateBillingAccountRequest result =
           new com.google.cloud.billing.v1.UpdateBillingAccountRequest(this);
-      result.name_ = name_;
-      if (accountBuilder_ == null) {
-        result.account_ = account_;
-      } else {
-        result.account_ = accountBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.billing.v1.UpdateBillingAccountRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.account_ = accountBuilder_ == null ? account_ : accountBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -553,6 +560,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAccount()) {
@@ -590,19 +598,19 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -621,6 +629,8 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -689,8 +699,8 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +718,8 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +742,8 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,7 +768,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * @return Whether the account field is set.
      */
     public boolean hasAccount() {
-      return accountBuilder_ != null || account_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -799,11 +809,11 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         account_ = value;
-        onChanged();
       } else {
         accountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,11 +830,11 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     public Builder setAccount(com.google.cloud.billing.v1.BillingAccount.Builder builderForValue) {
       if (accountBuilder_ == null) {
         account_ = builderForValue.build();
-        onChanged();
       } else {
         accountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,19 +850,18 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      */
     public Builder mergeAccount(com.google.cloud.billing.v1.BillingAccount value) {
       if (accountBuilder_ == null) {
-        if (account_ != null) {
-          account_ =
-              com.google.cloud.billing.v1.BillingAccount.newBuilder(account_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && account_ != null
+            && account_ != com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()) {
+          getAccountBuilder().mergeFrom(value);
         } else {
           account_ = value;
         }
-        onChanged();
       } else {
         accountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +876,13 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearAccount() {
-      if (accountBuilder_ == null) {
-        account_ = null;
-        onChanged();
-      } else {
-        account_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -889,7 +897,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.billing.v1.BillingAccount.Builder getAccountBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
@@ -960,7 +968,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -999,11 +1007,11 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1019,11 +1027,11 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1038,17 +1046,18 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1062,14 +1071,13 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1083,7 +1091,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

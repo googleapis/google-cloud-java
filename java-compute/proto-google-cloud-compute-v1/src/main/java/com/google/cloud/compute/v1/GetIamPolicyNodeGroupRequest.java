@@ -71,7 +71,7 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 499220029;
-  private int optionsRequestedPolicyVersion_;
+  private int optionsRequestedPolicyVersion_ = 0;
   /**
    *
    *
@@ -104,7 +104,9 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -153,7 +155,9 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -202,7 +206,9 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -484,14 +490,11 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       optionsRequestedPolicyVersion_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
-
       resource_ = "";
-
       zone_ = "";
-
       return this;
     }
 
@@ -519,18 +522,30 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.GetIamPolicyNodeGroupRequest buildPartial() {
       com.google.cloud.compute.v1.GetIamPolicyNodeGroupRequest result =
           new com.google.cloud.compute.v1.GetIamPolicyNodeGroupRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.GetIamPolicyNodeGroupRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.optionsRequestedPolicyVersion_ = optionsRequestedPolicyVersion_;
         to_bitField0_ |= 0x00000001;
       }
-      result.project_ = project_;
-      result.resource_ = resource_;
-      result.zone_ = zone_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.zone_ = zone_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -584,14 +599,17 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -623,19 +641,19 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 29957474
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1820481738
             case -301207064:
@@ -707,8 +725,9 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setOptionsRequestedPolicyVersion(int value) {
-      bitField0_ |= 0x00000001;
+
       optionsRequestedPolicyVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +810,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -808,8 +827,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -830,8 +849,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +916,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -914,8 +933,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -936,8 +955,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1003,8 +1022,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1020,8 +1039,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1042,8 +1061,8 @@ public final class GetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

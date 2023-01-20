@@ -237,7 +237,6 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -302,7 +301,6 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; options = 9;</code>
    */
-
   /* nullable */
   java.lang.String getOptionsOrDefault(
       java.lang.String key,

@@ -72,7 +72,9 @@ public final class SetDefaultNetworkTierProjectRequest
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -179,11 +181,15 @@ public final class SetDefaultNetworkTierProjectRequest
   @java.lang.Override
   public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequestOrBuilder
       getProjectsSetDefaultNetworkTierRequestResourceOrBuilder() {
-    return getProjectsSetDefaultNetworkTierRequestResource();
+    return projectsSetDefaultNetworkTierRequestResource_ == null
+        ? com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.getDefaultInstance()
+        : projectsSetDefaultNetworkTierRequestResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -476,16 +482,14 @@ public final class SetDefaultNetworkTierProjectRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
-      if (projectsSetDefaultNetworkTierRequestResourceBuilder_ == null) {
-        projectsSetDefaultNetworkTierRequestResource_ = null;
-      } else {
-        projectsSetDefaultNetworkTierRequestResource_ = null;
+      projectsSetDefaultNetworkTierRequestResource_ = null;
+      if (projectsSetDefaultNetworkTierRequestResourceBuilder_ != null) {
+        projectsSetDefaultNetworkTierRequestResourceBuilder_.dispose();
         projectsSetDefaultNetworkTierRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -514,23 +518,31 @@ public final class SetDefaultNetworkTierProjectRequest
     public com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest buildPartial() {
       com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest result =
           new com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      if (projectsSetDefaultNetworkTierRequestResourceBuilder_ == null) {
-        result.projectsSetDefaultNetworkTierRequestResource_ =
-            projectsSetDefaultNetworkTierRequestResource_;
-      } else {
-        result.projectsSetDefaultNetworkTierRequestResource_ =
-            projectsSetDefaultNetworkTierRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectsSetDefaultNetworkTierRequestResource_ =
+            projectsSetDefaultNetworkTierRequestResourceBuilder_ == null
+                ? projectsSetDefaultNetworkTierRequestResource_
+                : projectsSetDefaultNetworkTierRequestResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -583,6 +595,7 @@ public final class SetDefaultNetworkTierProjectRequest
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProjectsSetDefaultNetworkTierRequestResource()) {
@@ -590,8 +603,8 @@ public final class SetDefaultNetworkTierProjectRequest
             other.getProjectsSetDefaultNetworkTierRequestResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -623,7 +636,7 @@ public final class SetDefaultNetworkTierProjectRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 296879706
             case 1011286098:
@@ -631,13 +644,13 @@ public final class SetDefaultNetworkTierProjectRequest
                 input.readMessage(
                     getProjectsSetDefaultNetworkTierRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1011286098
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             default:
@@ -726,8 +739,8 @@ public final class SetDefaultNetworkTierProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -745,8 +758,8 @@ public final class SetDefaultNetworkTierProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -769,8 +782,8 @@ public final class SetDefaultNetworkTierProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -796,8 +809,7 @@ public final class SetDefaultNetworkTierProjectRequest
      * @return Whether the projectsSetDefaultNetworkTierRequestResource field is set.
      */
     public boolean hasProjectsSetDefaultNetworkTierRequestResource() {
-      return projectsSetDefaultNetworkTierRequestResourceBuilder_ != null
-          || projectsSetDefaultNetworkTierRequestResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -840,11 +852,11 @@ public final class SetDefaultNetworkTierProjectRequest
           throw new NullPointerException();
         }
         projectsSetDefaultNetworkTierRequestResource_ = value;
-        onChanged();
       } else {
         projectsSetDefaultNetworkTierRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,11 +874,11 @@ public final class SetDefaultNetworkTierProjectRequest
         com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.Builder builderForValue) {
       if (projectsSetDefaultNetworkTierRequestResourceBuilder_ == null) {
         projectsSetDefaultNetworkTierRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         projectsSetDefaultNetworkTierRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -883,20 +895,20 @@ public final class SetDefaultNetworkTierProjectRequest
     public Builder mergeProjectsSetDefaultNetworkTierRequestResource(
         com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest value) {
       if (projectsSetDefaultNetworkTierRequestResourceBuilder_ == null) {
-        if (projectsSetDefaultNetworkTierRequestResource_ != null) {
-          projectsSetDefaultNetworkTierRequestResource_ =
-              com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.newBuilder(
-                      projectsSetDefaultNetworkTierRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && projectsSetDefaultNetworkTierRequestResource_ != null
+            && projectsSetDefaultNetworkTierRequestResource_
+                != com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest
+                    .getDefaultInstance()) {
+          getProjectsSetDefaultNetworkTierRequestResourceBuilder().mergeFrom(value);
         } else {
           projectsSetDefaultNetworkTierRequestResource_ = value;
         }
-        onChanged();
       } else {
         projectsSetDefaultNetworkTierRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -911,14 +923,13 @@ public final class SetDefaultNetworkTierProjectRequest
      * </code>
      */
     public Builder clearProjectsSetDefaultNetworkTierRequestResource() {
-      if (projectsSetDefaultNetworkTierRequestResourceBuilder_ == null) {
-        projectsSetDefaultNetworkTierRequestResource_ = null;
-        onChanged();
-      } else {
-        projectsSetDefaultNetworkTierRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      projectsSetDefaultNetworkTierRequestResource_ = null;
+      if (projectsSetDefaultNetworkTierRequestResourceBuilder_ != null) {
+        projectsSetDefaultNetworkTierRequestResourceBuilder_.dispose();
         projectsSetDefaultNetworkTierRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -934,7 +945,7 @@ public final class SetDefaultNetworkTierProjectRequest
      */
     public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.Builder
         getProjectsSetDefaultNetworkTierRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProjectsSetDefaultNetworkTierRequestResourceFieldBuilder().getBuilder();
     }
@@ -1002,7 +1013,7 @@ public final class SetDefaultNetworkTierProjectRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1064,8 +1075,8 @@ public final class SetDefaultNetworkTierProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1081,8 +1092,8 @@ public final class SetDefaultNetworkTierProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1103,8 +1114,8 @@ public final class SetDefaultNetworkTierProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

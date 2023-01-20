@@ -197,7 +197,9 @@ public final class TargetSslProxiesSetProxyHeaderRequest
 
   private int bitField0_;
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
-  private volatile java.lang.Object proxyHeader_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyHeader_ = "";
   /**
    *
    *
@@ -467,8 +469,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       proxyHeader_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -497,15 +499,22 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest buildPartial() {
       com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest result =
           new com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.proxyHeader_ = proxyHeader_;
         to_bitField0_ |= 0x00000001;
       }
-      result.proxyHeader_ = proxyHeader_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -557,8 +566,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
           == com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.getDefaultInstance())
         return this;
       if (other.hasProxyHeader()) {
-        bitField0_ |= 0x00000001;
         proxyHeader_ = other.proxyHeader_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -691,8 +700,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       proxyHeader_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +718,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
      * @return This builder for chaining.
      */
     public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       proxyHeader_ = getDefaultInstance().getProxyHeader();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +741,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       proxyHeader_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

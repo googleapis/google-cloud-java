@@ -69,7 +69,9 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
   }
 
   public static final int SLOT_COUNT_FIELD_NUMBER = 2;
-  private long slotCount_;
+  private long slotCount_ = 0L;
   /**
    *
    *
@@ -351,10 +353,9 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       slotCount_ = 0L;
-
       return this;
     }
 
@@ -385,10 +386,22 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest result =
           new com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest(this);
-      result.name_ = name_;
-      result.slotCount_ = slotCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.slotCount_ = slotCount_;
+      }
     }
 
     @java.lang.Override
@@ -443,6 +456,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSlotCount() != 0L) {
@@ -477,13 +491,13 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 slotCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -502,6 +516,8 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -573,8 +589,8 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -593,8 +609,8 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +634,8 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -655,6 +671,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     public Builder setSlotCount(long value) {
 
       slotCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -670,7 +687,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSlotCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       slotCount_ = 0L;
       onChanged();
       return this;

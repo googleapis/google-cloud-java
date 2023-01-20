@@ -68,7 +68,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALGORITHM_FIELD_NUMBER = 1;
-  private int algorithm_;
+  private int algorithm_ = 0;
   /**
    *
    *
@@ -97,14 +97,13 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.AutoscalingAlgorithm getAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.dataflow.v1beta3.AutoscalingAlgorithm result =
-        com.google.dataflow.v1beta3.AutoscalingAlgorithm.valueOf(algorithm_);
+        com.google.dataflow.v1beta3.AutoscalingAlgorithm.forNumber(algorithm_);
     return result == null ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED : result;
   }
 
   public static final int MAX_NUM_WORKERS_FIELD_NUMBER = 2;
-  private int maxNumWorkers_;
+  private int maxNumWorkers_ = 0;
   /**
    *
    *
@@ -331,10 +330,9 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       algorithm_ = 0;
-
       maxNumWorkers_ = 0;
-
       return this;
     }
 
@@ -362,10 +360,21 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public com.google.dataflow.v1beta3.AutoscalingSettings buildPartial() {
       com.google.dataflow.v1beta3.AutoscalingSettings result =
           new com.google.dataflow.v1beta3.AutoscalingSettings(this);
-      result.algorithm_ = algorithm_;
-      result.maxNumWorkers_ = maxNumWorkers_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.AutoscalingSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.algorithm_ = algorithm_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxNumWorkers_ = maxNumWorkers_;
+      }
     }
 
     @java.lang.Override
@@ -449,13 +458,13 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 algorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxNumWorkers_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -474,6 +483,8 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int algorithm_ = 0;
     /**
@@ -504,8 +515,8 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
-
       algorithm_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -522,9 +533,8 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.dataflow.v1beta3.AutoscalingAlgorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.dataflow.v1beta3.AutoscalingAlgorithm result =
-          com.google.dataflow.v1beta3.AutoscalingAlgorithm.valueOf(algorithm_);
+          com.google.dataflow.v1beta3.AutoscalingAlgorithm.forNumber(algorithm_);
       return result == null
           ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED
           : result;
@@ -545,7 +555,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       algorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -562,7 +572,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       algorithm_ = 0;
       onChanged();
       return this;
@@ -599,6 +609,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
     public Builder setMaxNumWorkers(int value) {
 
       maxNumWorkers_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -614,7 +625,7 @@ public final class AutoscalingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMaxNumWorkers() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxNumWorkers_ = 0;
       onChanged();
       return this;

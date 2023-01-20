@@ -68,7 +68,9 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HISTOGRAM_QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object histogramQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object histogramQuery_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_PRECISE_RESULT_SIZE_FIELD_NUMBER = 2;
-  private boolean requirePreciseResultSize_;
+  private boolean requirePreciseResultSize_ = false;
   /**
    *
    *
@@ -204,7 +206,9 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilterOrBuilder
       getFiltersOrBuilder() {
-    return getFilters();
+    return filters_ == null
+        ? com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.getDefaultInstance()
+        : filters_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -427,14 +431,12 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       histogramQuery_ = "";
-
       requirePreciseResultSize_ = false;
-
-      if (filtersBuilder_ == null) {
-        filters_ = null;
-      } else {
-        filters_ = null;
+      filters_ = null;
+      if (filtersBuilder_ != null) {
+        filtersBuilder_.dispose();
         filtersBuilder_ = null;
       }
       return this;
@@ -464,15 +466,24 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.HistogramQuery buildPartial() {
       com.google.cloud.contentwarehouse.v1.HistogramQuery result =
           new com.google.cloud.contentwarehouse.v1.HistogramQuery(this);
-      result.histogramQuery_ = histogramQuery_;
-      result.requirePreciseResultSize_ = requirePreciseResultSize_;
-      if (filtersBuilder_ == null) {
-        result.filters_ = filters_;
-      } else {
-        result.filters_ = filtersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.HistogramQuery result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.histogramQuery_ = histogramQuery_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requirePreciseResultSize_ = requirePreciseResultSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filters_ = filtersBuilder_ == null ? filters_ : filtersBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -523,6 +534,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getHistogramQuery().isEmpty()) {
         histogramQuery_ = other.histogramQuery_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getRequirePreciseResultSize() != false) {
@@ -560,19 +572,19 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 histogramQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 requirePreciseResultSize_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getFiltersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -591,6 +603,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object histogramQuery_ = "";
     /**
@@ -659,8 +673,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       histogramQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,8 +692,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHistogramQuery() {
-
       histogramQuery_ = getDefaultInstance().getHistogramQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -702,8 +716,8 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       histogramQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -743,6 +757,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequirePreciseResultSize(boolean value) {
 
       requirePreciseResultSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -760,7 +775,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequirePreciseResultSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requirePreciseResultSize_ = false;
       onChanged();
       return this;
@@ -790,7 +805,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the filters field is set.
      */
     public boolean hasFilters() {
-      return filtersBuilder_ != null || filters_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -841,11 +856,11 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         filters_ = value;
-        onChanged();
       } else {
         filtersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -868,11 +883,11 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (filtersBuilder_ == null) {
         filters_ = builderForValue.build();
-        onChanged();
       } else {
         filtersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -893,20 +908,20 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFilters(
         com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter value) {
       if (filtersBuilder_ == null) {
-        if (filters_ != null) {
-          filters_ =
-              com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.newBuilder(
-                      filters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && filters_ != null
+            && filters_
+                != com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter
+                    .getDefaultInstance()) {
+          getFiltersBuilder().mergeFrom(value);
         } else {
           filters_ = value;
         }
-        onChanged();
       } else {
         filtersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -925,14 +940,13 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFilters() {
-      if (filtersBuilder_ == null) {
-        filters_ = null;
-        onChanged();
-      } else {
-        filters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      filters_ = null;
+      if (filtersBuilder_ != null) {
+        filtersBuilder_.dispose();
         filtersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -952,7 +966,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter.Builder
         getFiltersBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFiltersFieldBuilder().getBuilder();
     }

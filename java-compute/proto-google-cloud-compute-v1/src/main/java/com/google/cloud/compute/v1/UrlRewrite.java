@@ -70,7 +70,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int HOST_REWRITE_FIELD_NUMBER = 159819253;
-  private volatile java.lang.Object hostRewrite_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostRewrite_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_PREFIX_REWRITE_FIELD_NUMBER = 41186361;
-  private volatile java.lang.Object pathPrefixRewrite_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathPrefixRewrite_ = "";
   /**
    *
    *
@@ -413,10 +417,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostRewrite_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       pathPrefixRewrite_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -444,19 +447,25 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.UrlRewrite buildPartial() {
       com.google.cloud.compute.v1.UrlRewrite result =
           new com.google.cloud.compute.v1.UrlRewrite(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UrlRewrite result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostRewrite_ = hostRewrite_;
         to_bitField0_ |= 0x00000001;
       }
-      result.hostRewrite_ = hostRewrite_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pathPrefixRewrite_ = pathPrefixRewrite_;
         to_bitField0_ |= 0x00000002;
       }
-      result.pathPrefixRewrite_ = pathPrefixRewrite_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlRewrite other) {
       if (other == com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) return this;
       if (other.hasHostRewrite()) {
-        bitField0_ |= 0x00000001;
         hostRewrite_ = other.hostRewrite_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPathPrefixRewrite()) {
-        bitField0_ |= 0x00000002;
         pathPrefixRewrite_ = other.pathPrefixRewrite_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -646,8 +655,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       hostRewrite_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +672,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHostRewrite() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       hostRewrite_ = getDefaultInstance().getHostRewrite();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -685,8 +694,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       hostRewrite_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +775,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       pathPrefixRewrite_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,8 +792,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPathPrefixRewrite() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       pathPrefixRewrite_ = getDefaultInstance().getPathPrefixRewrite();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +814,8 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       pathPrefixRewrite_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

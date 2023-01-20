@@ -68,6 +68,8 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SNAPSHOTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.Snapshot> snapshots_;
   /**
    *
@@ -335,6 +337,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (snapshotsBuilder_ == null) {
         snapshots_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     public com.google.dataflow.v1beta3.ListSnapshotsResponse buildPartial() {
       com.google.dataflow.v1beta3.ListSnapshotsResponse result =
           new com.google.dataflow.v1beta3.ListSnapshotsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.dataflow.v1beta3.ListSnapshotsResponse result) {
       if (snapshotsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           snapshots_ = java.util.Collections.unmodifiableList(snapshots_);
@@ -379,8 +391,10 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.snapshots_ = snapshotsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.dataflow.v1beta3.ListSnapshotsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

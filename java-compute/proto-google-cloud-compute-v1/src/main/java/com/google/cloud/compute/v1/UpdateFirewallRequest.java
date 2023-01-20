@@ -71,7 +71,9 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int FIREWALL_FIELD_NUMBER = 511016192;
-  private volatile java.lang.Object firewall_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewall_ = "";
   /**
    *
    *
@@ -170,11 +172,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder() {
-    return getFirewallResource();
+    return firewallResource_ == null
+        ? com.google.cloud.compute.v1.Firewall.getDefaultInstance()
+        : firewallResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -227,7 +233,9 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -525,18 +533,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewall_ = "";
-
-      if (firewallResourceBuilder_ == null) {
-        firewallResource_ = null;
-      } else {
-        firewallResource_ = null;
+      firewallResource_ = null;
+      if (firewallResourceBuilder_ != null) {
+        firewallResourceBuilder_.dispose();
         firewallResourceBuilder_ = null;
       }
       project_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -564,22 +569,31 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.UpdateFirewallRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateFirewallRequest result =
           new com.google.cloud.compute.v1.UpdateFirewallRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewall_ = firewall_;
-      if (firewallResourceBuilder_ == null) {
-        result.firewallResource_ = firewallResource_;
-      } else {
-        result.firewallResource_ = firewallResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.UpdateFirewallRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewall_ = firewall_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firewallResource_ =
+            firewallResourceBuilder_ == null ? firewallResource_ : firewallResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -630,6 +644,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getFirewall().isEmpty()) {
         firewall_ = other.firewall_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirewallResource()) {
@@ -637,11 +652,12 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -673,26 +689,26 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 331400042:
               {
                 input.readMessage(
                     getFirewallResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 331400042
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -206837758:
               {
                 firewall_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -206837758
             default:
@@ -775,8 +791,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewall_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -792,8 +808,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFirewall() {
-
       firewall_ = getDefaultInstance().getFirewall();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -814,8 +830,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewall_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,7 +856,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the firewallResource field is set.
      */
     public boolean hasFirewallResource() {
-      return firewallResourceBuilder_ != null || firewallResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -881,11 +897,11 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         firewallResource_ = value;
-        onChanged();
       } else {
         firewallResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +919,11 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.compute.v1.Firewall.Builder builderForValue) {
       if (firewallResourceBuilder_ == null) {
         firewallResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -923,19 +939,18 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeFirewallResource(com.google.cloud.compute.v1.Firewall value) {
       if (firewallResourceBuilder_ == null) {
-        if (firewallResource_ != null) {
-          firewallResource_ =
-              com.google.cloud.compute.v1.Firewall.newBuilder(firewallResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firewallResource_ != null
+            && firewallResource_ != com.google.cloud.compute.v1.Firewall.getDefaultInstance()) {
+          getFirewallResourceBuilder().mergeFrom(value);
         } else {
           firewallResource_ = value;
         }
-        onChanged();
       } else {
         firewallResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,14 +965,13 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearFirewallResource() {
-      if (firewallResourceBuilder_ == null) {
-        firewallResource_ = null;
-        onChanged();
-      } else {
-        firewallResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firewallResource_ = null;
+      if (firewallResourceBuilder_ != null) {
+        firewallResourceBuilder_.dispose();
         firewallResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -972,7 +986,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.compute.v1.Firewall.Builder getFirewallResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirewallResourceFieldBuilder().getBuilder();
     }
@@ -1091,8 +1105,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1110,8 +1124,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1134,8 +1148,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1153,7 +1167,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1215,8 +1229,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1232,8 +1246,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1254,8 +1268,8 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

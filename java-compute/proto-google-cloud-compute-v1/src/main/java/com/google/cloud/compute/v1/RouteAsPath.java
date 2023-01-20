@@ -208,6 +208,8 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int AS_LISTS_FIELD_NUMBER = 134112584;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList asLists_;
   /**
    *
@@ -257,7 +259,9 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
   private int asListsMemoizedSerializedSize = -1;
 
   public static final int PATH_SEGMENT_TYPE_FIELD_NUMBER = 513464992;
-  private volatile java.lang.Object pathSegmentType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathSegmentType_ = "";
   /**
    *
    *
@@ -549,10 +553,9 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       asLists_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       pathSegmentType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -580,20 +583,30 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.RouteAsPath buildPartial() {
       com.google.cloud.compute.v1.RouteAsPath result =
           new com.google.cloud.compute.v1.RouteAsPath(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouteAsPath result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         asLists_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.asLists_ = asLists_;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.RouteAsPath result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pathSegmentType_ = pathSegmentType_;
         to_bitField0_ |= 0x00000001;
       }
-      result.pathSegmentType_ = pathSegmentType_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -652,8 +665,8 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasPathSegmentType()) {
-        bitField0_ |= 0x00000002;
         pathSegmentType_ = other.pathSegmentType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -792,6 +805,7 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAsLists(int index, int value) {
+
       ensureAsListsIsMutable();
       asLists_.setInt(index, value);
       onChanged();
@@ -810,6 +824,7 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addAsLists(int value) {
+
       ensureAsListsIsMutable();
       asLists_.addInt(value);
       onChanged();
@@ -930,8 +945,8 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       pathSegmentType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -948,8 +963,8 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPathSegmentType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       pathSegmentType_ = getDefaultInstance().getPathSegmentType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -971,8 +986,8 @@ public final class RouteAsPath extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       pathSegmentType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

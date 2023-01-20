@@ -61,7 +61,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GROUP_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList groupIds_;
   /**
    *
@@ -387,10 +391,10 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       groupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -418,15 +422,27 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.UserInfo buildPartial() {
       com.google.cloud.contentwarehouse.v1.UserInfo result =
           new com.google.cloud.contentwarehouse.v1.UserInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        groupIds_ = groupIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.groupIds_ = groupIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.contentwarehouse.v1.UserInfo result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        groupIds_ = groupIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.groupIds_ = groupIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.contentwarehouse.v1.UserInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
     }
 
     @java.lang.Override
@@ -476,12 +492,13 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.groupIds_.isEmpty()) {
         if (groupIds_.isEmpty()) {
           groupIds_ = other.groupIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureGroupIdsIsMutable();
           groupIds_.addAll(other.groupIds_);
@@ -517,7 +534,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -619,8 +636,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -640,8 +657,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +683,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,9 +693,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         groupIds_ = new com.google.protobuf.LazyStringArrayList(groupIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -821,7 +838,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGroupIds() {
       groupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

@@ -74,7 +74,9 @@ public final class PatchRegionNetworkFirewallPolicyRequest
 
   private int bitField0_;
   public static final int FIREWALL_POLICY_FIELD_NUMBER = 498173265;
-  private volatile java.lang.Object firewallPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firewallPolicy_ = "";
   /**
    *
    *
@@ -173,11 +175,15 @@ public final class PatchRegionNetworkFirewallPolicyRequest
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyOrBuilder getFirewallPolicyResourceOrBuilder() {
-    return getFirewallPolicyResource();
+    return firewallPolicyResource_ == null
+        ? com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()
+        : firewallPolicyResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -230,7 +236,9 @@ public final class PatchRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -283,7 +291,9 @@ public final class PatchRegionNetworkFirewallPolicyRequest
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -594,20 +604,16 @@ public final class PatchRegionNetworkFirewallPolicyRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firewallPolicy_ = "";
-
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-      } else {
-        firewallPolicyResource_ = null;
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -637,23 +643,37 @@ public final class PatchRegionNetworkFirewallPolicyRequest
     public com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest result =
           new com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.firewallPolicy_ = firewallPolicy_;
-      if (firewallPolicyResourceBuilder_ == null) {
-        result.firewallPolicyResource_ = firewallPolicyResource_;
-      } else {
-        result.firewallPolicyResource_ = firewallPolicyResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.project_ = project_;
-      result.region_ = region_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firewallPolicy_ = firewallPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firewallPolicyResource_ =
+            firewallPolicyResourceBuilder_ == null
+                ? firewallPolicyResource_
+                : firewallPolicyResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -707,6 +727,7 @@ public final class PatchRegionNetworkFirewallPolicyRequest
               .getDefaultInstance()) return this;
       if (!other.getFirewallPolicy().isEmpty()) {
         firewallPolicy_ = other.firewallPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirewallPolicyResource()) {
@@ -714,15 +735,17 @@ public final class PatchRegionNetworkFirewallPolicyRequest
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -754,32 +777,32 @@ public final class PatchRegionNetworkFirewallPolicyRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -334571038:
               {
                 input.readMessage(
                     getFirewallPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case -334571038
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case -309581174
             default:
@@ -862,8 +885,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,8 +902,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicy() {
-
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -901,8 +924,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firewallPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,7 +950,7 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return Whether the firewallPolicyResource field is set.
      */
     public boolean hasFirewallPolicyResource() {
-      return firewallPolicyResourceBuilder_ != null || firewallPolicyResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -968,11 +991,11 @@ public final class PatchRegionNetworkFirewallPolicyRequest
           throw new NullPointerException();
         }
         firewallPolicyResource_ = value;
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -990,11 +1013,11 @@ public final class PatchRegionNetworkFirewallPolicyRequest
         com.google.cloud.compute.v1.FirewallPolicy.Builder builderForValue) {
       if (firewallPolicyResourceBuilder_ == null) {
         firewallPolicyResource_ = builderForValue.build();
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1010,19 +1033,19 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      */
     public Builder mergeFirewallPolicyResource(com.google.cloud.compute.v1.FirewallPolicy value) {
       if (firewallPolicyResourceBuilder_ == null) {
-        if (firewallPolicyResource_ != null) {
-          firewallPolicyResource_ =
-              com.google.cloud.compute.v1.FirewallPolicy.newBuilder(firewallPolicyResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firewallPolicyResource_ != null
+            && firewallPolicyResource_
+                != com.google.cloud.compute.v1.FirewallPolicy.getDefaultInstance()) {
+          getFirewallPolicyResourceBuilder().mergeFrom(value);
         } else {
           firewallPolicyResource_ = value;
         }
-        onChanged();
       } else {
         firewallPolicyResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1037,14 +1060,13 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * </code>
      */
     public Builder clearFirewallPolicyResource() {
-      if (firewallPolicyResourceBuilder_ == null) {
-        firewallPolicyResource_ = null;
-        onChanged();
-      } else {
-        firewallPolicyResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firewallPolicyResource_ = null;
+      if (firewallPolicyResourceBuilder_ != null) {
+        firewallPolicyResourceBuilder_.dispose();
         firewallPolicyResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1059,7 +1081,7 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * </code>
      */
     public com.google.cloud.compute.v1.FirewallPolicy.Builder getFirewallPolicyResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirewallPolicyResourceFieldBuilder().getBuilder();
     }
@@ -1179,8 +1201,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1198,8 +1220,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1222,8 +1244,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1295,8 +1317,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1314,8 +1336,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1338,8 +1360,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1357,7 +1379,7 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1419,8 +1441,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1436,8 +1458,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1458,8 +1480,8 @@ public final class PatchRegionNetworkFirewallPolicyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

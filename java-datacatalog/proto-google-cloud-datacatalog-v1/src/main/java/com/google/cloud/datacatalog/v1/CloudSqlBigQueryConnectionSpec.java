@@ -230,7 +230,9 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -279,7 +281,9 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
   }
 
   public static final int DATABASE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object database_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
   /**
    *
    *
@@ -328,7 +332,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -357,9 +361,9 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType result =
-        com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.valueOf(type_);
+        com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.forNumber(
+            type_);
     return result == null
         ? com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.UNRECOGNIZED
         : result;
@@ -587,12 +591,10 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceId_ = "";
-
       database_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -621,11 +623,25 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     public com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec buildPartial() {
       com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec result =
           new com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec(this);
-      result.instanceId_ = instanceId_;
-      result.database_ = database_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -677,10 +693,12 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         return this;
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -715,19 +733,19 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
             case 10:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 database_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -746,6 +764,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
     /**
@@ -808,8 +828,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,8 +845,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -847,8 +867,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -914,8 +934,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -931,8 +951,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDatabase() {
-
       database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -953,8 +973,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       database_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -990,8 +1010,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1009,9 +1029,8 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType result =
-          com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.valueOf(
+          com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.forNumber(
               type_);
       return result == null
           ? com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.UNRECOGNIZED
@@ -1035,7 +1054,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1053,7 +1072,7 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;

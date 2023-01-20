@@ -485,7 +485,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -538,7 +540,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -635,11 +639,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getDetailsOrBuilder() {
-    return getDetails();
+    return details_ == null ? com.google.protobuf.Any.getDefaultInstance() : details_;
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -672,9 +676,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State result =
-        com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.valueOf(state_);
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.forNumber(state_);
     return result == null
         ? com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.UNRECOGNIZED
         : result;
@@ -728,7 +731,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.ErrorInfoOrBuilder getProcessingErrorOrBuilder() {
-    return getProcessingError();
+    return processingError_ == null
+        ? com.google.rpc.ErrorInfo.getDefaultInstance()
+        : processingError_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
@@ -774,7 +779,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 7;
@@ -822,7 +827,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
-    return getLastUpdateTime();
+    return lastUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastUpdateTime_;
   }
 
   public static final int ORCHESTRATION_RESULT_FIELD_NUMBER = 10;
@@ -880,7 +887,10 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder
       getOrchestrationResultOrBuilder() {
-    return getOrchestrationResult();
+    return orchestrationResult_ == null
+        ? com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+            .getDefaultInstance()
+        : orchestrationResult_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1217,6 +1227,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (assessmentTaskDetailsBuilder_ != null) {
         assessmentTaskDetailsBuilder_.clear();
       }
@@ -1224,39 +1235,31 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         translationTaskDetailsBuilder_.clear();
       }
       id_ = "";
-
       type_ = "";
-
-      if (detailsBuilder_ == null) {
-        details_ = null;
-      } else {
-        details_ = null;
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
       state_ = 0;
-
-      if (processingErrorBuilder_ == null) {
-        processingError_ = null;
-      } else {
-        processingError_ = null;
+      processingError_ = null;
+      if (processingErrorBuilder_ != null) {
+        processingErrorBuilder_.dispose();
         processingErrorBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-      } else {
-        lastUpdateTime_ = null;
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
-      if (orchestrationResultBuilder_ == null) {
-        orchestrationResult_ = null;
-      } else {
-        orchestrationResult_ = null;
+      orchestrationResult_ = null;
+      if (orchestrationResultBuilder_ != null) {
+        orchestrationResultBuilder_.dispose();
         orchestrationResultBuilder_ = null;
       }
       taskDetailsCase_ = 0;
@@ -1288,51 +1291,57 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.MigrationTask buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.MigrationTask result =
           new com.google.cloud.bigquery.migration.v2alpha.MigrationTask(this);
-      if (taskDetailsCase_ == 12) {
-        if (assessmentTaskDetailsBuilder_ == null) {
-          result.taskDetails_ = taskDetails_;
-        } else {
-          result.taskDetails_ = assessmentTaskDetailsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (taskDetailsCase_ == 13) {
-        if (translationTaskDetailsBuilder_ == null) {
-          result.taskDetails_ = taskDetails_;
-        } else {
-          result.taskDetails_ = translationTaskDetailsBuilder_.build();
-        }
-      }
-      result.id_ = id_;
-      result.type_ = type_;
-      if (detailsBuilder_ == null) {
-        result.details_ = details_;
-      } else {
-        result.details_ = detailsBuilder_.build();
-      }
-      result.state_ = state_;
-      if (processingErrorBuilder_ == null) {
-        result.processingError_ = processingError_;
-      } else {
-        result.processingError_ = processingErrorBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (lastUpdateTimeBuilder_ == null) {
-        result.lastUpdateTime_ = lastUpdateTime_;
-      } else {
-        result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
-      }
-      if (orchestrationResultBuilder_ == null) {
-        result.orchestrationResult_ = orchestrationResult_;
-      } else {
-        result.orchestrationResult_ = orchestrationResultBuilder_.build();
-      }
-      result.taskDetailsCase_ = taskDetailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.MigrationTask result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.processingError_ =
+            processingErrorBuilder_ == null ? processingError_ : processingErrorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.lastUpdateTime_ =
+            lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.orchestrationResult_ =
+            orchestrationResultBuilder_ == null
+                ? orchestrationResult_
+                : orchestrationResultBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.migration.v2alpha.MigrationTask result) {
+      result.taskDetailsCase_ = taskDetailsCase_;
+      result.taskDetails_ = this.taskDetails_;
+      if (taskDetailsCase_ == 12 && assessmentTaskDetailsBuilder_ != null) {
+        result.taskDetails_ = assessmentTaskDetailsBuilder_.build();
+      }
+      if (taskDetailsCase_ == 13 && translationTaskDetailsBuilder_ != null) {
+        result.taskDetails_ = translationTaskDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1383,10 +1392,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDetails()) {
@@ -1452,50 +1463,50 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getProcessingErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 82:
               {
                 input.readMessage(
                     getOrchestrationResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 98:
@@ -1542,6 +1553,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails,
@@ -1780,7 +1793,6 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       taskDetailsCase_ = 12;
       onChanged();
-      ;
       return assessmentTaskDetailsBuilder_;
     }
 
@@ -2022,7 +2034,6 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
       taskDetailsCase_ = 13;
       onChanged();
-      ;
       return translationTaskDetailsBuilder_;
     }
 
@@ -2093,8 +2104,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2112,8 +2123,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2136,8 +2147,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2203,8 +2214,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2220,8 +2231,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2242,8 +2253,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2268,7 +2279,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return detailsBuilder_ != null || details_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2307,11 +2318,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         details_ = value;
-        onChanged();
       } else {
         detailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2328,11 +2339,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public Builder setDetails(com.google.protobuf.Any.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
-        onChanged();
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2348,16 +2359,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDetails(com.google.protobuf.Any value) {
       if (detailsBuilder_ == null) {
-        if (details_ != null) {
-          details_ = com.google.protobuf.Any.newBuilder(details_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && details_ != null
+            && details_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getDetailsBuilder().mergeFrom(value);
         } else {
           details_ = value;
         }
-        onChanged();
       } else {
         detailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2372,14 +2385,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any details = 3;</code>
      */
     public Builder clearDetails() {
-      if (detailsBuilder_ == null) {
-        details_ = null;
-        onChanged();
-      } else {
-        details_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2394,7 +2406,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Any details = 3;</code>
      */
     public com.google.protobuf.Any.Builder getDetailsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
@@ -2476,8 +2488,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2496,9 +2508,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State result =
-          com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.valueOf(state_);
+          com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.forNumber(state_);
       return result == null
           ? com.google.cloud.bigquery.migration.v2alpha.MigrationTask.State.UNRECOGNIZED
           : result;
@@ -2521,7 +2532,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2540,7 +2551,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2566,7 +2577,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the processingError field is set.
      */
     public boolean hasProcessingError() {
-      return processingErrorBuilder_ != null || processingError_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2607,11 +2618,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         processingError_ = value;
-        onChanged();
       } else {
         processingErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2628,11 +2639,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public Builder setProcessingError(com.google.rpc.ErrorInfo.Builder builderForValue) {
       if (processingErrorBuilder_ == null) {
         processingError_ = builderForValue.build();
-        onChanged();
       } else {
         processingErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2648,17 +2659,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProcessingError(com.google.rpc.ErrorInfo value) {
       if (processingErrorBuilder_ == null) {
-        if (processingError_ != null) {
-          processingError_ =
-              com.google.rpc.ErrorInfo.newBuilder(processingError_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && processingError_ != null
+            && processingError_ != com.google.rpc.ErrorInfo.getDefaultInstance()) {
+          getProcessingErrorBuilder().mergeFrom(value);
         } else {
           processingError_ = value;
         }
-        onChanged();
       } else {
         processingErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2673,14 +2685,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearProcessingError() {
-      if (processingErrorBuilder_ == null) {
-        processingError_ = null;
-        onChanged();
-      } else {
-        processingError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      processingError_ = null;
+      if (processingErrorBuilder_ != null) {
+        processingErrorBuilder_.dispose();
         processingErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2695,7 +2706,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.rpc.ErrorInfo.Builder getProcessingErrorBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getProcessingErrorFieldBuilder().getBuilder();
     }
@@ -2765,7 +2776,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2802,11 +2813,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2821,11 +2832,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2839,17 +2850,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2862,14 +2874,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2882,7 +2893,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2948,7 +2959,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
-      return lastUpdateTimeBuilder_ != null || lastUpdateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2985,11 +2996,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastUpdateTime_ = value;
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3004,11 +3015,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
         lastUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3022,19 +3033,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
-        if (lastUpdateTime_ != null) {
-          lastUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && lastUpdateTime_ != null
+            && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastUpdateTimeBuilder().mergeFrom(value);
         } else {
           lastUpdateTime_ = value;
         }
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3047,14 +3057,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
      */
     public Builder clearLastUpdateTime() {
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-        onChanged();
-      } else {
-        lastUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3067,7 +3076,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3136,7 +3145,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the orchestrationResult field is set.
      */
     public boolean hasOrchestrationResult() {
-      return orchestrationResultBuilder_ != null || orchestrationResult_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3180,11 +3189,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         orchestrationResult_ = value;
-        onChanged();
       } else {
         orchestrationResultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3203,11 +3212,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (orchestrationResultBuilder_ == null) {
         orchestrationResult_ = builderForValue.build();
-        onChanged();
       } else {
         orchestrationResultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3224,20 +3233,20 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOrchestrationResult(
         com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult value) {
       if (orchestrationResultBuilder_ == null) {
-        if (orchestrationResult_ != null) {
-          orchestrationResult_ =
-              com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
-                  .newBuilder(orchestrationResult_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && orchestrationResult_ != null
+            && orchestrationResult_
+                != com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
+                    .getDefaultInstance()) {
+          getOrchestrationResultBuilder().mergeFrom(value);
         } else {
           orchestrationResult_ = value;
         }
-        onChanged();
       } else {
         orchestrationResultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3252,14 +3261,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOrchestrationResult() {
-      if (orchestrationResultBuilder_ == null) {
-        orchestrationResult_ = null;
-        onChanged();
-      } else {
-        orchestrationResult_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      orchestrationResult_ = null;
+      if (orchestrationResultBuilder_ != null) {
+        orchestrationResultBuilder_.dispose();
         orchestrationResultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3275,7 +3283,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.Builder
         getOrchestrationResultBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getOrchestrationResultFieldBuilder().getBuilder();
     }

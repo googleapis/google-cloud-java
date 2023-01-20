@@ -122,7 +122,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateTimeOrBuilder getUsageStartDateTimeOrBuilder() {
-    return getUsageStartDateTime();
+    return usageStartDateTime_ == null
+        ? com.google.type.DateTime.getDefaultInstance()
+        : usageStartDateTime_;
   }
 
   public static final int USAGE_END_DATE_TIME_FIELD_NUMBER = 2;
@@ -182,7 +184,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateTimeOrBuilder getUsageEndDateTimeOrBuilder() {
-    return getUsageEndDateTime();
+    return usageEndDateTime_ == null
+        ? com.google.type.DateTime.getDefaultInstance()
+        : usageEndDateTime_;
   }
 
   public static final int INVOICE_START_DATE_FIELD_NUMBER = 3;
@@ -236,7 +240,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getInvoiceStartDateOrBuilder() {
-    return getInvoiceStartDate();
+    return invoiceStartDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : invoiceStartDate_;
   }
 
   public static final int INVOICE_END_DATE_FIELD_NUMBER = 4;
@@ -291,7 +297,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getInvoiceEndDateOrBuilder() {
-    return getInvoiceEndDate();
+    return invoiceEndDate_ == null ? com.google.type.Date.getDefaultInstance() : invoiceEndDate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -536,28 +542,25 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (usageStartDateTimeBuilder_ == null) {
-        usageStartDateTime_ = null;
-      } else {
-        usageStartDateTime_ = null;
+      bitField0_ = 0;
+      usageStartDateTime_ = null;
+      if (usageStartDateTimeBuilder_ != null) {
+        usageStartDateTimeBuilder_.dispose();
         usageStartDateTimeBuilder_ = null;
       }
-      if (usageEndDateTimeBuilder_ == null) {
-        usageEndDateTime_ = null;
-      } else {
-        usageEndDateTime_ = null;
+      usageEndDateTime_ = null;
+      if (usageEndDateTimeBuilder_ != null) {
+        usageEndDateTimeBuilder_.dispose();
         usageEndDateTimeBuilder_ = null;
       }
-      if (invoiceStartDateBuilder_ == null) {
-        invoiceStartDate_ = null;
-      } else {
-        invoiceStartDate_ = null;
+      invoiceStartDate_ = null;
+      if (invoiceStartDateBuilder_ != null) {
+        invoiceStartDateBuilder_.dispose();
         invoiceStartDateBuilder_ = null;
       }
-      if (invoiceEndDateBuilder_ == null) {
-        invoiceEndDate_ = null;
-      } else {
-        invoiceEndDate_ = null;
+      invoiceEndDate_ = null;
+      if (invoiceEndDateBuilder_ != null) {
+        invoiceEndDateBuilder_.dispose();
         invoiceEndDateBuilder_ = null;
       }
       return this;
@@ -587,28 +590,33 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.channel.v1.DateRange buildPartial() {
       com.google.cloud.channel.v1.DateRange result =
           new com.google.cloud.channel.v1.DateRange(this);
-      if (usageStartDateTimeBuilder_ == null) {
-        result.usageStartDateTime_ = usageStartDateTime_;
-      } else {
-        result.usageStartDateTime_ = usageStartDateTimeBuilder_.build();
-      }
-      if (usageEndDateTimeBuilder_ == null) {
-        result.usageEndDateTime_ = usageEndDateTime_;
-      } else {
-        result.usageEndDateTime_ = usageEndDateTimeBuilder_.build();
-      }
-      if (invoiceStartDateBuilder_ == null) {
-        result.invoiceStartDate_ = invoiceStartDate_;
-      } else {
-        result.invoiceStartDate_ = invoiceStartDateBuilder_.build();
-      }
-      if (invoiceEndDateBuilder_ == null) {
-        result.invoiceEndDate_ = invoiceEndDate_;
-      } else {
-        result.invoiceEndDate_ = invoiceEndDateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.DateRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.usageStartDateTime_ =
+            usageStartDateTimeBuilder_ == null
+                ? usageStartDateTime_
+                : usageStartDateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.usageEndDateTime_ =
+            usageEndDateTimeBuilder_ == null ? usageEndDateTime_ : usageEndDateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invoiceStartDate_ =
+            invoiceStartDateBuilder_ == null ? invoiceStartDate_ : invoiceStartDateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.invoiceEndDate_ =
+            invoiceEndDateBuilder_ == null ? invoiceEndDate_ : invoiceEndDateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -698,27 +706,27 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getUsageStartDateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getUsageEndDateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getInvoiceStartDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getInvoiceEndDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -737,6 +745,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.type.DateTime usageStartDateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -760,7 +770,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usageStartDateTime field is set.
      */
     public boolean hasUsageStartDateTime() {
-      return usageStartDateTimeBuilder_ != null || usageStartDateTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -805,11 +815,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         usageStartDateTime_ = value;
-        onChanged();
       } else {
         usageStartDateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -828,11 +838,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setUsageStartDateTime(com.google.type.DateTime.Builder builderForValue) {
       if (usageStartDateTimeBuilder_ == null) {
         usageStartDateTime_ = builderForValue.build();
-        onChanged();
       } else {
         usageStartDateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -850,19 +860,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUsageStartDateTime(com.google.type.DateTime value) {
       if (usageStartDateTimeBuilder_ == null) {
-        if (usageStartDateTime_ != null) {
-          usageStartDateTime_ =
-              com.google.type.DateTime.newBuilder(usageStartDateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && usageStartDateTime_ != null
+            && usageStartDateTime_ != com.google.type.DateTime.getDefaultInstance()) {
+          getUsageStartDateTimeBuilder().mergeFrom(value);
         } else {
           usageStartDateTime_ = value;
         }
-        onChanged();
       } else {
         usageStartDateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -879,14 +888,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.DateTime usage_start_date_time = 1;</code>
      */
     public Builder clearUsageStartDateTime() {
-      if (usageStartDateTimeBuilder_ == null) {
-        usageStartDateTime_ = null;
-        onChanged();
-      } else {
-        usageStartDateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      usageStartDateTime_ = null;
+      if (usageStartDateTimeBuilder_ != null) {
+        usageStartDateTimeBuilder_.dispose();
         usageStartDateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,7 +911,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.DateTime usage_start_date_time = 1;</code>
      */
     public com.google.type.DateTime.Builder getUsageStartDateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUsageStartDateTimeFieldBuilder().getBuilder();
     }
@@ -981,7 +989,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usageEndDateTime field is set.
      */
     public boolean hasUsageEndDateTime() {
-      return usageEndDateTimeBuilder_ != null || usageEndDateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1026,11 +1034,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         usageEndDateTime_ = value;
-        onChanged();
       } else {
         usageEndDateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1049,11 +1057,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setUsageEndDateTime(com.google.type.DateTime.Builder builderForValue) {
       if (usageEndDateTimeBuilder_ == null) {
         usageEndDateTime_ = builderForValue.build();
-        onChanged();
       } else {
         usageEndDateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1071,19 +1079,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUsageEndDateTime(com.google.type.DateTime value) {
       if (usageEndDateTimeBuilder_ == null) {
-        if (usageEndDateTime_ != null) {
-          usageEndDateTime_ =
-              com.google.type.DateTime.newBuilder(usageEndDateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && usageEndDateTime_ != null
+            && usageEndDateTime_ != com.google.type.DateTime.getDefaultInstance()) {
+          getUsageEndDateTimeBuilder().mergeFrom(value);
         } else {
           usageEndDateTime_ = value;
         }
-        onChanged();
       } else {
         usageEndDateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1100,14 +1107,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.DateTime usage_end_date_time = 2;</code>
      */
     public Builder clearUsageEndDateTime() {
-      if (usageEndDateTimeBuilder_ == null) {
-        usageEndDateTime_ = null;
-        onChanged();
-      } else {
-        usageEndDateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      usageEndDateTime_ = null;
+      if (usageEndDateTimeBuilder_ != null) {
+        usageEndDateTimeBuilder_.dispose();
         usageEndDateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1124,7 +1130,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.DateTime usage_end_date_time = 2;</code>
      */
     public com.google.type.DateTime.Builder getUsageEndDateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUsageEndDateTimeFieldBuilder().getBuilder();
     }
@@ -1198,7 +1204,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the invoiceStartDate field is set.
      */
     public boolean hasInvoiceStartDate() {
-      return invoiceStartDateBuilder_ != null || invoiceStartDate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1239,11 +1245,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         invoiceStartDate_ = value;
-        onChanged();
       } else {
         invoiceStartDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1260,11 +1266,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvoiceStartDate(com.google.type.Date.Builder builderForValue) {
       if (invoiceStartDateBuilder_ == null) {
         invoiceStartDate_ = builderForValue.build();
-        onChanged();
       } else {
         invoiceStartDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1280,17 +1286,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInvoiceStartDate(com.google.type.Date value) {
       if (invoiceStartDateBuilder_ == null) {
-        if (invoiceStartDate_ != null) {
-          invoiceStartDate_ =
-              com.google.type.Date.newBuilder(invoiceStartDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && invoiceStartDate_ != null
+            && invoiceStartDate_ != com.google.type.Date.getDefaultInstance()) {
+          getInvoiceStartDateBuilder().mergeFrom(value);
         } else {
           invoiceStartDate_ = value;
         }
-        onChanged();
       } else {
         invoiceStartDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1305,14 +1312,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date invoice_start_date = 3;</code>
      */
     public Builder clearInvoiceStartDate() {
-      if (invoiceStartDateBuilder_ == null) {
-        invoiceStartDate_ = null;
-        onChanged();
-      } else {
-        invoiceStartDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      invoiceStartDate_ = null;
+      if (invoiceStartDateBuilder_ != null) {
+        invoiceStartDateBuilder_.dispose();
         invoiceStartDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1327,7 +1333,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date invoice_start_date = 3;</code>
      */
     public com.google.type.Date.Builder getInvoiceStartDateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInvoiceStartDateFieldBuilder().getBuilder();
     }
@@ -1394,7 +1400,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the invoiceEndDate field is set.
      */
     public boolean hasInvoiceEndDate() {
-      return invoiceEndDateBuilder_ != null || invoiceEndDate_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1437,11 +1443,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         invoiceEndDate_ = value;
-        onChanged();
       } else {
         invoiceEndDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1459,11 +1465,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvoiceEndDate(com.google.type.Date.Builder builderForValue) {
       if (invoiceEndDateBuilder_ == null) {
         invoiceEndDate_ = builderForValue.build();
-        onChanged();
       } else {
         invoiceEndDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1480,17 +1486,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInvoiceEndDate(com.google.type.Date value) {
       if (invoiceEndDateBuilder_ == null) {
-        if (invoiceEndDate_ != null) {
-          invoiceEndDate_ =
-              com.google.type.Date.newBuilder(invoiceEndDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && invoiceEndDate_ != null
+            && invoiceEndDate_ != com.google.type.Date.getDefaultInstance()) {
+          getInvoiceEndDateBuilder().mergeFrom(value);
         } else {
           invoiceEndDate_ = value;
         }
-        onChanged();
       } else {
         invoiceEndDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1506,14 +1513,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date invoice_end_date = 4;</code>
      */
     public Builder clearInvoiceEndDate() {
-      if (invoiceEndDateBuilder_ == null) {
-        invoiceEndDate_ = null;
-        onChanged();
-      } else {
-        invoiceEndDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      invoiceEndDate_ = null;
+      if (invoiceEndDateBuilder_ != null) {
+        invoiceEndDateBuilder_.dispose();
         invoiceEndDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1529,7 +1535,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date invoice_end_date = 4;</code>
      */
     public com.google.type.Date.Builder getInvoiceEndDateBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInvoiceEndDateFieldBuilder().getBuilder();
     }

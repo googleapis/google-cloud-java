@@ -69,7 +69,9 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -172,7 +174,9 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.EntryOverviewOrBuilder getEntryOverviewOrBuilder() {
-    return getEntryOverview();
+    return entryOverview_ == null
+        ? com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()
+        : entryOverview_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (entryOverviewBuilder_ == null) {
-        entryOverview_ = null;
-      } else {
-        entryOverview_ = null;
+      entryOverview_ = null;
+      if (entryOverviewBuilder_ != null) {
+        entryOverviewBuilder_.dispose();
         entryOverviewBuilder_ = null;
       }
       return this;
@@ -423,14 +426,22 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
     public com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest buildPartial() {
       com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest result =
           new com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest(this);
-      result.name_ = name_;
-      if (entryOverviewBuilder_ == null) {
-        result.entryOverview_ = entryOverview_;
-      } else {
-        result.entryOverview_ = entryOverviewBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entryOverview_ =
+            entryOverviewBuilder_ == null ? entryOverview_ : entryOverviewBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +492,7 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEntryOverview()) {
@@ -515,13 +527,13 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntryOverviewFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +552,8 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -608,8 +622,8 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +641,8 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +665,8 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +691,7 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
      * @return Whether the entryOverview field is set.
      */
     public boolean hasEntryOverview() {
-      return entryOverviewBuilder_ != null || entryOverview_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +732,11 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         entryOverview_ = value;
-        onChanged();
       } else {
         entryOverviewBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +754,11 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
         com.google.cloud.datacatalog.v1.EntryOverview.Builder builderForValue) {
       if (entryOverviewBuilder_ == null) {
         entryOverview_ = builderForValue.build();
-        onChanged();
       } else {
         entryOverviewBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,19 +774,19 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
      */
     public Builder mergeEntryOverview(com.google.cloud.datacatalog.v1.EntryOverview value) {
       if (entryOverviewBuilder_ == null) {
-        if (entryOverview_ != null) {
-          entryOverview_ =
-              com.google.cloud.datacatalog.v1.EntryOverview.newBuilder(entryOverview_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && entryOverview_ != null
+            && entryOverview_
+                != com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()) {
+          getEntryOverviewBuilder().mergeFrom(value);
         } else {
           entryOverview_ = value;
         }
-        onChanged();
       } else {
         entryOverviewBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +801,13 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearEntryOverview() {
-      if (entryOverviewBuilder_ == null) {
-        entryOverview_ = null;
-        onChanged();
-      } else {
-        entryOverview_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entryOverview_ = null;
+      if (entryOverviewBuilder_ != null) {
+        entryOverviewBuilder_.dispose();
         entryOverviewBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -809,7 +822,7 @@ public final class ModifyEntryOverviewRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.datacatalog.v1.EntryOverview.Builder getEntryOverviewBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEntryOverviewFieldBuilder().getBuilder();
     }

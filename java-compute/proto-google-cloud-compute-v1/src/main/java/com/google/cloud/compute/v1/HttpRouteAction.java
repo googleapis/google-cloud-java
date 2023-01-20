@@ -422,6 +422,8 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int WEIGHTED_BACKEND_SERVICES_FIELD_NUMBER = 337028049;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.WeightedBackendService>
       weightedBackendServices_;
   /**
@@ -824,48 +826,42 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (corsPolicyBuilder_ == null) {
-        corsPolicy_ = null;
-      } else {
-        corsPolicyBuilder_.clear();
+      bitField0_ = 0;
+      corsPolicy_ = null;
+      if (corsPolicyBuilder_ != null) {
+        corsPolicyBuilder_.dispose();
+        corsPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (faultInjectionPolicyBuilder_ == null) {
-        faultInjectionPolicy_ = null;
-      } else {
-        faultInjectionPolicyBuilder_.clear();
+      faultInjectionPolicy_ = null;
+      if (faultInjectionPolicyBuilder_ != null) {
+        faultInjectionPolicyBuilder_.dispose();
+        faultInjectionPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (maxStreamDurationBuilder_ == null) {
-        maxStreamDuration_ = null;
-      } else {
-        maxStreamDurationBuilder_.clear();
+      maxStreamDuration_ = null;
+      if (maxStreamDurationBuilder_ != null) {
+        maxStreamDurationBuilder_.dispose();
+        maxStreamDurationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (requestMirrorPolicyBuilder_ == null) {
-        requestMirrorPolicy_ = null;
-      } else {
-        requestMirrorPolicyBuilder_.clear();
+      requestMirrorPolicy_ = null;
+      if (requestMirrorPolicyBuilder_ != null) {
+        requestMirrorPolicyBuilder_.dispose();
+        requestMirrorPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (retryPolicyBuilder_ == null) {
-        retryPolicy_ = null;
-      } else {
-        retryPolicyBuilder_.clear();
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
+        retryPolicyBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeoutBuilder_.clear();
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
-      if (urlRewriteBuilder_ == null) {
-        urlRewrite_ = null;
-      } else {
-        urlRewriteBuilder_.clear();
+      urlRewrite_ = null;
+      if (urlRewriteBuilder_ != null) {
+        urlRewriteBuilder_.dispose();
+        urlRewriteBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       if (weightedBackendServicesBuilder_ == null) {
         weightedBackendServices_ = java.util.Collections.emptyList();
       } else {
@@ -900,64 +896,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.HttpRouteAction buildPartial() {
       com.google.cloud.compute.v1.HttpRouteAction result =
           new com.google.cloud.compute.v1.HttpRouteAction(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (corsPolicyBuilder_ == null) {
-          result.corsPolicy_ = corsPolicy_;
-        } else {
-          result.corsPolicy_ = corsPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (faultInjectionPolicyBuilder_ == null) {
-          result.faultInjectionPolicy_ = faultInjectionPolicy_;
-        } else {
-          result.faultInjectionPolicy_ = faultInjectionPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (maxStreamDurationBuilder_ == null) {
-          result.maxStreamDuration_ = maxStreamDuration_;
-        } else {
-          result.maxStreamDuration_ = maxStreamDurationBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (requestMirrorPolicyBuilder_ == null) {
-          result.requestMirrorPolicy_ = requestMirrorPolicy_;
-        } else {
-          result.requestMirrorPolicy_ = requestMirrorPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        if (retryPolicyBuilder_ == null) {
-          result.retryPolicy_ = retryPolicy_;
-        } else {
-          result.retryPolicy_ = retryPolicyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        if (timeoutBuilder_ == null) {
-          result.timeout_ = timeout_;
-        } else {
-          result.timeout_ = timeoutBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        if (urlRewriteBuilder_ == null) {
-          result.urlRewrite_ = urlRewrite_;
-        } else {
-          result.urlRewrite_ = urlRewriteBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000040;
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRouteAction result) {
       if (weightedBackendServicesBuilder_ == null) {
         if (((bitField0_ & 0x00000080) != 0)) {
           weightedBackendServices_ =
@@ -968,9 +915,50 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         result.weightedBackendServices_ = weightedBackendServicesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HttpRouteAction result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.corsPolicy_ = corsPolicyBuilder_ == null ? corsPolicy_ : corsPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.faultInjectionPolicy_ =
+            faultInjectionPolicyBuilder_ == null
+                ? faultInjectionPolicy_
+                : faultInjectionPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxStreamDuration_ =
+            maxStreamDurationBuilder_ == null
+                ? maxStreamDuration_
+                : maxStreamDurationBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestMirrorPolicy_ =
+            requestMirrorPolicyBuilder_ == null
+                ? requestMirrorPolicy_
+                : requestMirrorPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.urlRewrite_ = urlRewriteBuilder_ == null ? urlRewrite_ : urlRewriteBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1225,11 +1213,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         corsPolicy_ = value;
-        onChanged();
       } else {
         corsPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1244,11 +1232,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     public Builder setCorsPolicy(com.google.cloud.compute.v1.CorsPolicy.Builder builderForValue) {
       if (corsPolicyBuilder_ == null) {
         corsPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         corsPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1265,18 +1253,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000001) != 0)
             && corsPolicy_ != null
             && corsPolicy_ != com.google.cloud.compute.v1.CorsPolicy.getDefaultInstance()) {
-          corsPolicy_ =
-              com.google.cloud.compute.v1.CorsPolicy.newBuilder(corsPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getCorsPolicyBuilder().mergeFrom(value);
         } else {
           corsPolicy_ = value;
         }
-        onChanged();
       } else {
         corsPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1289,13 +1274,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
      */
     public Builder clearCorsPolicy() {
-      if (corsPolicyBuilder_ == null) {
-        corsPolicy_ = null;
-        onChanged();
-      } else {
-        corsPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      corsPolicy_ = null;
+      if (corsPolicyBuilder_ != null) {
+        corsPolicyBuilder_.dispose();
+        corsPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1417,11 +1402,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         faultInjectionPolicy_ = value;
-        onChanged();
       } else {
         faultInjectionPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1439,11 +1424,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.HttpFaultInjection.Builder builderForValue) {
       if (faultInjectionPolicyBuilder_ == null) {
         faultInjectionPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         faultInjectionPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1463,18 +1448,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
             && faultInjectionPolicy_ != null
             && faultInjectionPolicy_
                 != com.google.cloud.compute.v1.HttpFaultInjection.getDefaultInstance()) {
-          faultInjectionPolicy_ =
-              com.google.cloud.compute.v1.HttpFaultInjection.newBuilder(faultInjectionPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getFaultInjectionPolicyBuilder().mergeFrom(value);
         } else {
           faultInjectionPolicy_ = value;
         }
-        onChanged();
       } else {
         faultInjectionPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1489,13 +1471,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearFaultInjectionPolicy() {
-      if (faultInjectionPolicyBuilder_ == null) {
-        faultInjectionPolicy_ = null;
-        onChanged();
-      } else {
-        faultInjectionPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      faultInjectionPolicy_ = null;
+      if (faultInjectionPolicyBuilder_ != null) {
+        faultInjectionPolicyBuilder_.dispose();
+        faultInjectionPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1618,11 +1600,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         maxStreamDuration_ = value;
-        onChanged();
       } else {
         maxStreamDurationBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1638,11 +1620,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (maxStreamDurationBuilder_ == null) {
         maxStreamDuration_ = builderForValue.build();
-        onChanged();
       } else {
         maxStreamDurationBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1659,18 +1641,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000004) != 0)
             && maxStreamDuration_ != null
             && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          maxStreamDuration_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(maxStreamDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getMaxStreamDurationBuilder().mergeFrom(value);
         } else {
           maxStreamDuration_ = value;
         }
-        onChanged();
       } else {
         maxStreamDurationBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1683,13 +1662,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder clearMaxStreamDuration() {
-      if (maxStreamDurationBuilder_ == null) {
-        maxStreamDuration_ = null;
-        onChanged();
-      } else {
-        maxStreamDurationBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      maxStreamDuration_ = null;
+      if (maxStreamDurationBuilder_ != null) {
+        maxStreamDurationBuilder_.dispose();
+        maxStreamDurationBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1811,11 +1790,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestMirrorPolicy_ = value;
-        onChanged();
       } else {
         requestMirrorPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1833,11 +1812,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.RequestMirrorPolicy.Builder builderForValue) {
       if (requestMirrorPolicyBuilder_ == null) {
         requestMirrorPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         requestMirrorPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1857,18 +1836,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
             && requestMirrorPolicy_ != null
             && requestMirrorPolicy_
                 != com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance()) {
-          requestMirrorPolicy_ =
-              com.google.cloud.compute.v1.RequestMirrorPolicy.newBuilder(requestMirrorPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRequestMirrorPolicyBuilder().mergeFrom(value);
         } else {
           requestMirrorPolicy_ = value;
         }
-        onChanged();
       } else {
         requestMirrorPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1883,13 +1859,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearRequestMirrorPolicy() {
-      if (requestMirrorPolicyBuilder_ == null) {
-        requestMirrorPolicy_ = null;
-        onChanged();
-      } else {
-        requestMirrorPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      requestMirrorPolicy_ = null;
+      if (requestMirrorPolicyBuilder_ != null) {
+        requestMirrorPolicyBuilder_.dispose();
+        requestMirrorPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2012,11 +1988,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         retryPolicy_ = value;
-        onChanged();
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2032,11 +2008,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.compute.v1.HttpRetryPolicy.Builder builderForValue) {
       if (retryPolicyBuilder_ == null) {
         retryPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2053,18 +2029,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000010) != 0)
             && retryPolicy_ != null
             && retryPolicy_ != com.google.cloud.compute.v1.HttpRetryPolicy.getDefaultInstance()) {
-          retryPolicy_ =
-              com.google.cloud.compute.v1.HttpRetryPolicy.newBuilder(retryPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getRetryPolicyBuilder().mergeFrom(value);
         } else {
           retryPolicy_ = value;
         }
-        onChanged();
       } else {
         retryPolicyBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2077,13 +2050,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public Builder clearRetryPolicy() {
-      if (retryPolicyBuilder_ == null) {
-        retryPolicy_ = null;
-        onChanged();
-      } else {
-        retryPolicyBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000010);
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
+        retryPolicyBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2199,11 +2172,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2218,11 +2191,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     public Builder setTimeout(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2239,18 +2212,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000020) != 0)
             && timeout_ != null
             && timeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
-          timeout_ =
-              com.google.cloud.compute.v1.Duration.newBuilder(timeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2263,13 +2233,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeoutBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000020);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -2385,11 +2355,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         urlRewrite_ = value;
-        onChanged();
       } else {
         urlRewriteBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2404,11 +2374,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     public Builder setUrlRewrite(com.google.cloud.compute.v1.UrlRewrite.Builder builderForValue) {
       if (urlRewriteBuilder_ == null) {
         urlRewrite_ = builderForValue.build();
-        onChanged();
       } else {
         urlRewriteBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2425,18 +2395,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (((bitField0_ & 0x00000040) != 0)
             && urlRewrite_ != null
             && urlRewrite_ != com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) {
-          urlRewrite_ =
-              com.google.cloud.compute.v1.UrlRewrite.newBuilder(urlRewrite_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getUrlRewriteBuilder().mergeFrom(value);
         } else {
           urlRewrite_ = value;
         }
-        onChanged();
       } else {
         urlRewriteBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2449,13 +2416,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public Builder clearUrlRewrite() {
-      if (urlRewriteBuilder_ == null) {
-        urlRewrite_ = null;
-        onChanged();
-      } else {
-        urlRewriteBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000040);
+      urlRewrite_ = null;
+      if (urlRewriteBuilder_ != null) {
+        urlRewriteBuilder_.dispose();
+        urlRewriteBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

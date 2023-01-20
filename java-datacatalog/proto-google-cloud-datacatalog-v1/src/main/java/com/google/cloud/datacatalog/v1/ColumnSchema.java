@@ -73,7 +73,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object column_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object column_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -230,7 +236,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -285,6 +293,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBCOLUMNS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> subcolumns_;
   /**
    *
@@ -599,21 +609,18 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       column_ = "";
-
       type_ = "";
-
       description_ = "";
-
       mode_ = "";
-
       if (subcolumnsBuilder_ == null) {
         subcolumns_ = java.util.Collections.emptyList();
       } else {
         subcolumns_ = null;
         subcolumnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -641,22 +648,40 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.ColumnSchema buildPartial() {
       com.google.cloud.datacatalog.v1.ColumnSchema result =
           new com.google.cloud.datacatalog.v1.ColumnSchema(this);
-      int from_bitField0_ = bitField0_;
-      result.column_ = column_;
-      result.type_ = type_;
-      result.description_ = description_;
-      result.mode_ = mode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1.ColumnSchema result) {
       if (subcolumnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           subcolumns_ = java.util.Collections.unmodifiableList(subcolumns_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.subcolumns_ = subcolumns_;
       } else {
         result.subcolumns_ = subcolumnsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1.ColumnSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.column_ = column_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -706,25 +731,29 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datacatalog.v1.ColumnSchema.getDefaultInstance()) return this;
       if (!other.getColumn().isEmpty()) {
         column_ = other.column_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMode().isEmpty()) {
         mode_ = other.mode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (subcolumnsBuilder_ == null) {
         if (!other.subcolumns_.isEmpty()) {
           if (subcolumns_.isEmpty()) {
             subcolumns_ = other.subcolumns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureSubcolumnsIsMutable();
             subcolumns_.addAll(other.subcolumns_);
@@ -737,7 +766,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             subcolumnsBuilder_.dispose();
             subcolumnsBuilder_ = null;
             subcolumns_ = other.subcolumns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             subcolumnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubcolumnsFieldBuilder()
@@ -776,25 +805,25 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 mode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 50:
               {
                 column_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             case 58:
@@ -896,8 +925,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       column_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -915,8 +944,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumn() {
-
       column_ = getDefaultInstance().getColumn();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -939,8 +968,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       column_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,8 +1038,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1027,8 +1056,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1050,8 +1079,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1123,8 +1152,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,8 +1171,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1166,8 +1195,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1242,8 +1271,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1262,8 +1291,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1287,8 +1316,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1297,10 +1326,10 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubcolumnsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         subcolumns_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1.ColumnSchema>(subcolumns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1538,7 +1567,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubcolumns() {
       if (subcolumnsBuilder_ == null) {
         subcolumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         subcolumnsBuilder_.clear();
@@ -1674,7 +1703,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.v1.ColumnSchema,
                 com.google.cloud.datacatalog.v1.ColumnSchema.Builder,
                 com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder>(
-                subcolumns_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                subcolumns_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         subcolumns_ = null;
       }
       return subcolumnsBuilder_;

@@ -72,7 +72,9 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
 
   private int bitField0_;
   public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
-  private volatile java.lang.Object autoscaler_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoscaler_ = "";
   /**
    *
    *
@@ -186,11 +188,15 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalerResourceOrBuilder() {
-    return getAutoscalerResource();
+    return autoscalerResource_ == null
+        ? com.google.cloud.compute.v1.Autoscaler.getDefaultInstance()
+        : autoscalerResource_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -296,7 +304,9 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -610,20 +620,16 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       autoscaler_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (autoscalerResourceBuilder_ == null) {
-        autoscalerResource_ = null;
-      } else {
-        autoscalerResource_ = null;
+      autoscalerResource_ = null;
+      if (autoscalerResourceBuilder_ != null) {
+        autoscalerResourceBuilder_.dispose();
         autoscalerResourceBuilder_ = null;
       }
       project_ = "";
-
       region_ = "";
-
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -651,26 +657,37 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.PatchRegionAutoscalerRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionAutoscalerRequest result =
           new com.google.cloud.compute.v1.PatchRegionAutoscalerRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.PatchRegionAutoscalerRequest result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoscaler_ = autoscaler_;
         to_bitField0_ |= 0x00000001;
       }
-      result.autoscaler_ = autoscaler_;
-      if (autoscalerResourceBuilder_ == null) {
-        result.autoscalerResource_ = autoscalerResource_;
-      } else {
-        result.autoscalerResource_ = autoscalerResourceBuilder_.build();
-      }
-      result.project_ = project_;
-      result.region_ = region_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.autoscalerResource_ =
+            autoscalerResourceBuilder_ == null
+                ? autoscalerResource_
+                : autoscalerResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
       }
-      result.requestId_ = requestId_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -720,8 +737,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       if (other == com.google.cloud.compute.v1.PatchRegionAutoscalerRequest.getDefaultInstance())
         return this;
       if (other.hasAutoscaler()) {
-        bitField0_ |= 0x00000001;
         autoscaler_ = other.autoscaler_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAutoscalerResource()) {
@@ -729,15 +746,17 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -769,26 +788,26 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
             case 1660928946:
               {
                 input.readMessage(
                     getAutoscalerResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1660928946
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case -156895558:
@@ -891,8 +910,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       autoscaler_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -908,8 +927,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearAutoscaler() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       autoscaler_ = getDefaultInstance().getAutoscaler();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -930,8 +949,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       autoscaler_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -956,7 +975,7 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return Whether the autoscalerResource field is set.
      */
     public boolean hasAutoscalerResource() {
-      return autoscalerResourceBuilder_ != null || autoscalerResource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -997,11 +1016,11 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         autoscalerResource_ = value;
-        onChanged();
       } else {
         autoscalerResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1019,11 +1038,11 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
         com.google.cloud.compute.v1.Autoscaler.Builder builderForValue) {
       if (autoscalerResourceBuilder_ == null) {
         autoscalerResource_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalerResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1039,19 +1058,18 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      */
     public Builder mergeAutoscalerResource(com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalerResourceBuilder_ == null) {
-        if (autoscalerResource_ != null) {
-          autoscalerResource_ =
-              com.google.cloud.compute.v1.Autoscaler.newBuilder(autoscalerResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && autoscalerResource_ != null
+            && autoscalerResource_ != com.google.cloud.compute.v1.Autoscaler.getDefaultInstance()) {
+          getAutoscalerResourceBuilder().mergeFrom(value);
         } else {
           autoscalerResource_ = value;
         }
-        onChanged();
       } else {
         autoscalerResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1066,14 +1084,13 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearAutoscalerResource() {
-      if (autoscalerResourceBuilder_ == null) {
-        autoscalerResource_ = null;
-        onChanged();
-      } else {
-        autoscalerResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      autoscalerResource_ = null;
+      if (autoscalerResourceBuilder_ != null) {
+        autoscalerResourceBuilder_.dispose();
         autoscalerResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1088,7 +1105,7 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.compute.v1.Autoscaler.Builder getAutoscalerResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAutoscalerResourceFieldBuilder().getBuilder();
     }
@@ -1207,8 +1224,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,8 +1243,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1250,8 +1267,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1323,8 +1340,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1342,8 +1359,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1366,8 +1383,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1385,7 +1402,7 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1447,8 +1464,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1464,8 +1481,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1486,8 +1503,8 @@ public final class PatchRegionAutoscalerRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       requestId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -229,11 +233,15 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.compute.v1.RegionSetLabelsRequestOrBuilder
       getRegionSetLabelsRequestResourceOrBuilder() {
-    return getRegionSetLabelsRequestResource();
+    return regionSetLabelsRequestResource_ == null
+        ? com.google.cloud.compute.v1.RegionSetLabelsRequest.getDefaultInstance()
+        : regionSetLabelsRequestResource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -297,7 +305,9 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -592,20 +602,16 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       region_ = "";
-
-      if (regionSetLabelsRequestResourceBuilder_ == null) {
-        regionSetLabelsRequestResource_ = null;
-      } else {
-        regionSetLabelsRequestResource_ = null;
+      regionSetLabelsRequestResource_ = null;
+      if (regionSetLabelsRequestResourceBuilder_ != null) {
+        regionSetLabelsRequestResourceBuilder_.dispose();
         regionSetLabelsRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       resource_ = "";
-
       return this;
     }
 
@@ -633,23 +639,36 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.SetLabelsAddressRequest buildPartial() {
       com.google.cloud.compute.v1.SetLabelsAddressRequest result =
           new com.google.cloud.compute.v1.SetLabelsAddressRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.project_ = project_;
-      result.region_ = region_;
-      if (regionSetLabelsRequestResourceBuilder_ == null) {
-        result.regionSetLabelsRequestResource_ = regionSetLabelsRequestResource_;
-      } else {
-        result.regionSetLabelsRequestResource_ = regionSetLabelsRequestResourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.requestId_ = requestId_;
-      result.resource_ = resource_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.SetLabelsAddressRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.regionSetLabelsRequestResource_ =
+            regionSetLabelsRequestResourceBuilder_ == null
+                ? regionSetLabelsRequestResource_
+                : regionSetLabelsRequestResourceBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resource_ = resource_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -700,22 +719,25 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRegionSetLabelsRequestResource()) {
         mergeRegionSetLabelsRequestResource(other.getRegionSetLabelsRequestResource());
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -747,25 +769,25 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 1111570338
             case 1566449778:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1566449778
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
             case 2074862258:
@@ -773,7 +795,7 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
                 input.readMessage(
                     getRegionSetLabelsRequestResourceFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 2074862258
             default:
@@ -862,8 +884,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -881,8 +903,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +927,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -978,8 +1000,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -997,8 +1019,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1021,8 +1043,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1047,8 +1069,7 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return Whether the regionSetLabelsRequestResource field is set.
      */
     public boolean hasRegionSetLabelsRequestResource() {
-      return regionSetLabelsRequestResourceBuilder_ != null
-          || regionSetLabelsRequestResource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1090,11 +1111,11 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         regionSetLabelsRequestResource_ = value;
-        onChanged();
       } else {
         regionSetLabelsRequestResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1112,11 +1133,11 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         com.google.cloud.compute.v1.RegionSetLabelsRequest.Builder builderForValue) {
       if (regionSetLabelsRequestResourceBuilder_ == null) {
         regionSetLabelsRequestResource_ = builderForValue.build();
-        onChanged();
       } else {
         regionSetLabelsRequestResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1133,20 +1154,19 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
     public Builder mergeRegionSetLabelsRequestResource(
         com.google.cloud.compute.v1.RegionSetLabelsRequest value) {
       if (regionSetLabelsRequestResourceBuilder_ == null) {
-        if (regionSetLabelsRequestResource_ != null) {
-          regionSetLabelsRequestResource_ =
-              com.google.cloud.compute.v1.RegionSetLabelsRequest.newBuilder(
-                      regionSetLabelsRequestResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && regionSetLabelsRequestResource_ != null
+            && regionSetLabelsRequestResource_
+                != com.google.cloud.compute.v1.RegionSetLabelsRequest.getDefaultInstance()) {
+          getRegionSetLabelsRequestResourceBuilder().mergeFrom(value);
         } else {
           regionSetLabelsRequestResource_ = value;
         }
-        onChanged();
       } else {
         regionSetLabelsRequestResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1161,14 +1181,13 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearRegionSetLabelsRequestResource() {
-      if (regionSetLabelsRequestResourceBuilder_ == null) {
-        regionSetLabelsRequestResource_ = null;
-        onChanged();
-      } else {
-        regionSetLabelsRequestResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      regionSetLabelsRequestResource_ = null;
+      if (regionSetLabelsRequestResourceBuilder_ != null) {
+        regionSetLabelsRequestResourceBuilder_.dispose();
         regionSetLabelsRequestResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1184,7 +1203,7 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      */
     public com.google.cloud.compute.v1.RegionSetLabelsRequest.Builder
         getRegionSetLabelsRequestResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRegionSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
@@ -1250,7 +1269,7 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1312,8 +1331,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1329,8 +1348,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1351,8 +1370,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1418,8 +1437,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1435,8 +1454,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1457,8 +1476,8 @@ public final class SetLabelsAddressRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

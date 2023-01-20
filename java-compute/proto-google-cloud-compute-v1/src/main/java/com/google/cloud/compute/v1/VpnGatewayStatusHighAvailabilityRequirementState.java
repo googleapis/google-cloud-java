@@ -360,7 +360,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
 
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -427,7 +429,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
   }
 
   public static final int UNSATISFIED_REASON_FIELD_NUMBER = 55016330;
-  private volatile java.lang.Object unsatisfiedReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unsatisfiedReason_ = "";
   /**
    *
    *
@@ -720,10 +724,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       unsatisfiedReason_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -755,19 +758,26 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState result =
           new com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000001;
       }
-      result.state_ = state_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.unsatisfiedReason_ = unsatisfiedReason_;
         to_bitField0_ |= 0x00000002;
       }
-      result.unsatisfiedReason_ = unsatisfiedReason_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -821,13 +831,13 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
           == com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
               .getDefaultInstance()) return this;
       if (other.hasState()) {
-        bitField0_ |= 0x00000001;
         state_ = other.state_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUnsatisfiedReason()) {
-        bitField0_ |= 0x00000002;
         unsatisfiedReason_ = other.unsatisfiedReason_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -966,8 +976,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -984,8 +994,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1007,8 +1017,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1092,8 +1102,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       unsatisfiedReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1110,8 +1120,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder clearUnsatisfiedReason() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       unsatisfiedReason_ = getDefaultInstance().getUnsatisfiedReason();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1133,8 +1143,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       unsatisfiedReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

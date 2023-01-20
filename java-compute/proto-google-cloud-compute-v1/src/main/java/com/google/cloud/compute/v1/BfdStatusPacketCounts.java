@@ -66,7 +66,7 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   public static final int NUM_RX_FIELD_NUMBER = 39375263;
-  private int numRx_;
+  private int numRx_ = 0;
   /**
    *
    *
@@ -99,7 +99,7 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NUM_RX_REJECTED_FIELD_NUMBER = 281007902;
-  private int numRxRejected_;
+  private int numRxRejected_ = 0;
   /**
    *
    *
@@ -132,7 +132,7 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NUM_RX_SUCCESSFUL_FIELD_NUMBER = 455361850;
-  private int numRxSuccessful_;
+  private int numRxSuccessful_ = 0;
   /**
    *
    *
@@ -165,7 +165,7 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NUM_TX_FIELD_NUMBER = 39375325;
-  private int numTx_;
+  private int numTx_ = 0;
   /**
    *
    *
@@ -440,14 +440,11 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       numRx_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       numRxRejected_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       numRxSuccessful_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
       numTx_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -475,6 +472,14 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.BfdStatusPacketCounts buildPartial() {
       com.google.cloud.compute.v1.BfdStatusPacketCounts result =
           new com.google.cloud.compute.v1.BfdStatusPacketCounts(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.BfdStatusPacketCounts result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -493,9 +498,7 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
         result.numTx_ = numTx_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -669,8 +672,9 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setNumRx(int value) {
-      bitField0_ |= 0x00000001;
+
       numRx_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -736,8 +740,9 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setNumRxRejected(int value) {
-      bitField0_ |= 0x00000002;
+
       numRxRejected_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -803,8 +808,9 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setNumRxSuccessful(int value) {
-      bitField0_ |= 0x00000004;
+
       numRxSuccessful_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -870,8 +876,9 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setNumTx(int value) {
-      bitField0_ |= 0x00000008;
+
       numTx_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

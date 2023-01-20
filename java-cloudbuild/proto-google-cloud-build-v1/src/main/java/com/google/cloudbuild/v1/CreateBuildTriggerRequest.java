@@ -69,7 +69,9 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -217,7 +221,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder() {
-    return getTrigger();
+    return trigger_ == null ? com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance() : trigger_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -440,14 +444,12 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       projectId_ = "";
-
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-      } else {
-        trigger_ = null;
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
       return this;
@@ -477,15 +479,24 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     public com.google.cloudbuild.v1.CreateBuildTriggerRequest buildPartial() {
       com.google.cloudbuild.v1.CreateBuildTriggerRequest result =
           new com.google.cloudbuild.v1.CreateBuildTriggerRequest(this);
-      result.parent_ = parent_;
-      result.projectId_ = projectId_;
-      if (triggerBuilder_ == null) {
-        result.trigger_ = trigger_;
-      } else {
-        result.trigger_ = triggerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloudbuild.v1.CreateBuildTriggerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trigger_ = triggerBuilder_ == null ? trigger_ : triggerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -536,10 +547,12 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTrigger()) {
@@ -574,19 +587,19 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -605,6 +618,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -670,8 +685,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +703,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +726,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +793,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -795,8 +810,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -817,8 +832,8 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -843,7 +858,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      * @return Whether the trigger field is set.
      */
     public boolean hasTrigger() {
-      return triggerBuilder_ != null || trigger_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -884,11 +899,11 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         trigger_ = value;
-        onChanged();
       } else {
         triggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -905,11 +920,11 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     public Builder setTrigger(com.google.cloudbuild.v1.BuildTrigger.Builder builderForValue) {
       if (triggerBuilder_ == null) {
         trigger_ = builderForValue.build();
-        onChanged();
       } else {
         triggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -925,19 +940,18 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      */
     public Builder mergeTrigger(com.google.cloudbuild.v1.BuildTrigger value) {
       if (triggerBuilder_ == null) {
-        if (trigger_ != null) {
-          trigger_ =
-              com.google.cloudbuild.v1.BuildTrigger.newBuilder(trigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && trigger_ != null
+            && trigger_ != com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance()) {
+          getTriggerBuilder().mergeFrom(value);
         } else {
           trigger_ = value;
         }
-        onChanged();
       } else {
         triggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +966,13 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearTrigger() {
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-        onChanged();
-      } else {
-        trigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -974,7 +987,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloudbuild.v1.BuildTrigger.Builder getTriggerBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTriggerFieldBuilder().getBuilder();
     }

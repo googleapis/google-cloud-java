@@ -68,7 +68,9 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENTITLEMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entitlement_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entitlement_ = "";
   /**
    *
    *
@@ -321,8 +323,8 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entitlement_ = "";
-
       return this;
     }
 
@@ -350,9 +352,18 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.channel.v1.LookupOfferRequest buildPartial() {
       com.google.cloud.channel.v1.LookupOfferRequest result =
           new com.google.cloud.channel.v1.LookupOfferRequest(this);
-      result.entitlement_ = entitlement_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.channel.v1.LookupOfferRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entitlement_ = entitlement_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +413,7 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.channel.v1.LookupOfferRequest.getDefaultInstance()) return this;
       if (!other.getEntitlement().isEmpty()) {
         entitlement_ = other.entitlement_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +445,7 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 entitlement_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +464,8 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object entitlement_ = "";
     /**
@@ -526,8 +540,8 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       entitlement_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEntitlement() {
-
       entitlement_ = getDefaultInstance().getEntitlement();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -573,8 +587,8 @@ public final class LookupOfferRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entitlement_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

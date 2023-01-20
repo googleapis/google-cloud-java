@@ -70,7 +70,9 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENTRY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object entryId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entryId_ = "";
   /**
    *
    *
@@ -228,7 +232,9 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryOrBuilder getEntryOrBuilder() {
-    return getEntry();
+    return entry_ == null
+        ? com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()
+        : entry_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,14 +459,12 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       entryId_ = "";
-
-      if (entryBuilder_ == null) {
-        entry_ = null;
-      } else {
-        entry_ = null;
+      entry_ = null;
+      if (entryBuilder_ != null) {
+        entryBuilder_.dispose();
         entryBuilder_ = null;
       }
       return this;
@@ -490,15 +494,24 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.v1beta1.CreateEntryRequest buildPartial() {
       com.google.cloud.datacatalog.v1beta1.CreateEntryRequest result =
           new com.google.cloud.datacatalog.v1beta1.CreateEntryRequest(this);
-      result.parent_ = parent_;
-      result.entryId_ = entryId_;
-      if (entryBuilder_ == null) {
-        result.entry_ = entry_;
-      } else {
-        result.entry_ = entryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.v1beta1.CreateEntryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entryId_ = entryId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entry_ = entryBuilder_ == null ? entry_ : entryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -549,10 +562,12 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEntryId().isEmpty()) {
         entryId_ = other.entryId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasEntry()) {
@@ -587,19 +602,19 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 entryId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -618,6 +633,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +712,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +734,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -744,8 +761,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -811,8 +828,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       entryId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -828,8 +845,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEntryId() {
-
       entryId_ = getDefaultInstance().getEntryId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -850,8 +867,8 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entryId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -876,7 +893,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the entry field is set.
      */
     public boolean hasEntry() {
-      return entryBuilder_ != null || entry_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -917,11 +934,11 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         entry_ = value;
-        onChanged();
       } else {
         entryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -938,11 +955,11 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     public Builder setEntry(com.google.cloud.datacatalog.v1beta1.Entry.Builder builderForValue) {
       if (entryBuilder_ == null) {
         entry_ = builderForValue.build();
-        onChanged();
       } else {
         entryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -958,19 +975,18 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEntry(com.google.cloud.datacatalog.v1beta1.Entry value) {
       if (entryBuilder_ == null) {
-        if (entry_ != null) {
-          entry_ =
-              com.google.cloud.datacatalog.v1beta1.Entry.newBuilder(entry_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && entry_ != null
+            && entry_ != com.google.cloud.datacatalog.v1beta1.Entry.getDefaultInstance()) {
+          getEntryBuilder().mergeFrom(value);
         } else {
           entry_ = value;
         }
-        onChanged();
       } else {
         entryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -985,14 +1001,13 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEntry() {
-      if (entryBuilder_ == null) {
-        entry_ = null;
-        onChanged();
-      } else {
-        entry_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      entry_ = null;
+      if (entryBuilder_ != null) {
+        entryBuilder_.dispose();
         entryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1007,7 +1022,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.datacatalog.v1beta1.Entry.Builder getEntryBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }

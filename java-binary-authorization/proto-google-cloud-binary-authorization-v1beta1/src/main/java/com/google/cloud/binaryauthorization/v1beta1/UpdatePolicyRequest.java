@@ -122,7 +122,9 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null
+        ? com.google.cloud.binaryauthorization.v1beta1.Policy.getDefaultInstance()
+        : policy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -328,10 +330,10 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      bitField0_ = 0;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
       return this;
@@ -362,13 +364,19 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest result =
           new com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest(this);
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -451,7 +459,7 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -470,6 +478,8 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.binaryauthorization.v1beta1.Policy policy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -493,7 +503,7 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -538,11 +548,11 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -562,11 +572,11 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.binaryauthorization.v1beta1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -584,19 +594,19 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePolicy(com.google.cloud.binaryauthorization.v1beta1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.cloud.binaryauthorization.v1beta1.Policy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && policy_ != null
+            && policy_
+                != com.google.cloud.binaryauthorization.v1beta1.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -613,14 +623,13 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -637,7 +646,7 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }

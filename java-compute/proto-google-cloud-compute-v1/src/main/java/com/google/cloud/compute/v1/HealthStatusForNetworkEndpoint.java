@@ -421,7 +421,9 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
-  private volatile java.lang.Object healthState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object healthState_ = "";
   /**
    *
    *
@@ -761,32 +763,28 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (backendServiceBuilder_ == null) {
-        backendService_ = null;
-      } else {
-        backendServiceBuilder_.clear();
+      bitField0_ = 0;
+      backendService_ = null;
+      if (backendServiceBuilder_ != null) {
+        backendServiceBuilder_.dispose();
+        backendServiceBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (forwardingRuleBuilder_ == null) {
-        forwardingRule_ = null;
-      } else {
-        forwardingRuleBuilder_.clear();
+      forwardingRule_ = null;
+      if (forwardingRuleBuilder_ != null) {
+        forwardingRuleBuilder_.dispose();
+        forwardingRuleBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (healthCheckBuilder_ == null) {
-        healthCheck_ = null;
-      } else {
-        healthCheckBuilder_.clear();
+      healthCheck_ = null;
+      if (healthCheckBuilder_ != null) {
+        healthCheckBuilder_.dispose();
+        healthCheckBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (healthCheckServiceBuilder_ == null) {
-        healthCheckService_ = null;
-      } else {
-        healthCheckServiceBuilder_.clear();
+      healthCheckService_ = null;
+      if (healthCheckServiceBuilder_ != null) {
+        healthCheckServiceBuilder_.dispose();
+        healthCheckServiceBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       healthState_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -814,47 +812,43 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint buildPartial() {
       com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint result =
           new com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (backendServiceBuilder_ == null) {
-          result.backendService_ = backendService_;
-        } else {
-          result.backendService_ = backendServiceBuilder_.build();
-        }
+        result.backendService_ =
+            backendServiceBuilder_ == null ? backendService_ : backendServiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (forwardingRuleBuilder_ == null) {
-          result.forwardingRule_ = forwardingRule_;
-        } else {
-          result.forwardingRule_ = forwardingRuleBuilder_.build();
-        }
+        result.forwardingRule_ =
+            forwardingRuleBuilder_ == null ? forwardingRule_ : forwardingRuleBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        if (healthCheckBuilder_ == null) {
-          result.healthCheck_ = healthCheck_;
-        } else {
-          result.healthCheck_ = healthCheckBuilder_.build();
-        }
+        result.healthCheck_ =
+            healthCheckBuilder_ == null ? healthCheck_ : healthCheckBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (healthCheckServiceBuilder_ == null) {
-          result.healthCheckService_ = healthCheckService_;
-        } else {
-          result.healthCheckService_ = healthCheckServiceBuilder_.build();
-        }
+        result.healthCheckService_ =
+            healthCheckServiceBuilder_ == null
+                ? healthCheckService_
+                : healthCheckServiceBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.healthState_ = healthState_;
         to_bitField0_ |= 0x00000010;
       }
-      result.healthState_ = healthState_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -916,8 +910,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         mergeHealthCheckService(other.getHealthCheckService());
       }
       if (other.hasHealthState()) {
-        bitField0_ |= 0x00000010;
         healthState_ = other.healthState_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1054,11 +1048,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         backendService_ = value;
-        onChanged();
       } else {
         backendServiceBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1075,11 +1069,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.BackendServiceReference.Builder builderForValue) {
       if (backendServiceBuilder_ == null) {
         backendService_ = builderForValue.build();
-        onChanged();
       } else {
         backendServiceBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1098,18 +1092,15 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             && backendService_ != null
             && backendService_
                 != com.google.cloud.compute.v1.BackendServiceReference.getDefaultInstance()) {
-          backendService_ =
-              com.google.cloud.compute.v1.BackendServiceReference.newBuilder(backendService_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getBackendServiceBuilder().mergeFrom(value);
         } else {
           backendService_ = value;
         }
-        onChanged();
       } else {
         backendServiceBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1123,13 +1114,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearBackendService() {
-      if (backendServiceBuilder_ == null) {
-        backendService_ = null;
-        onChanged();
-      } else {
-        backendServiceBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      backendService_ = null;
+      if (backendServiceBuilder_ != null) {
+        backendServiceBuilder_.dispose();
+        backendServiceBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1252,11 +1243,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         forwardingRule_ = value;
-        onChanged();
       } else {
         forwardingRuleBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1273,11 +1264,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.ForwardingRuleReference.Builder builderForValue) {
       if (forwardingRuleBuilder_ == null) {
         forwardingRule_ = builderForValue.build();
-        onChanged();
       } else {
         forwardingRuleBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1296,18 +1287,15 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             && forwardingRule_ != null
             && forwardingRule_
                 != com.google.cloud.compute.v1.ForwardingRuleReference.getDefaultInstance()) {
-          forwardingRule_ =
-              com.google.cloud.compute.v1.ForwardingRuleReference.newBuilder(forwardingRule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getForwardingRuleBuilder().mergeFrom(value);
         } else {
           forwardingRule_ = value;
         }
-        onChanged();
       } else {
         forwardingRuleBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1321,13 +1309,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearForwardingRule() {
-      if (forwardingRuleBuilder_ == null) {
-        forwardingRule_ = null;
-        onChanged();
-      } else {
-        forwardingRuleBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      forwardingRule_ = null;
+      if (forwardingRuleBuilder_ != null) {
+        forwardingRuleBuilder_.dispose();
+        forwardingRuleBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1447,11 +1435,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         healthCheck_ = value;
-        onChanged();
       } else {
         healthCheckBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1467,11 +1455,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.HealthCheckReference.Builder builderForValue) {
       if (healthCheckBuilder_ == null) {
         healthCheck_ = builderForValue.build();
-        onChanged();
       } else {
         healthCheckBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1489,18 +1477,15 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             && healthCheck_ != null
             && healthCheck_
                 != com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance()) {
-          healthCheck_ =
-              com.google.cloud.compute.v1.HealthCheckReference.newBuilder(healthCheck_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHealthCheckBuilder().mergeFrom(value);
         } else {
           healthCheck_ = value;
         }
-        onChanged();
       } else {
         healthCheckBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1513,13 +1498,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public Builder clearHealthCheck() {
-      if (healthCheckBuilder_ == null) {
-        healthCheck_ = null;
-        onChanged();
-      } else {
-        healthCheckBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000004);
+      healthCheck_ = null;
+      if (healthCheckBuilder_ != null) {
+        healthCheckBuilder_.dispose();
+        healthCheckBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1642,11 +1627,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         healthCheckService_ = value;
-        onChanged();
       } else {
         healthCheckServiceBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1664,11 +1649,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         com.google.cloud.compute.v1.HealthCheckServiceReference.Builder builderForValue) {
       if (healthCheckServiceBuilder_ == null) {
         healthCheckService_ = builderForValue.build();
-        onChanged();
       } else {
         healthCheckServiceBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1689,19 +1674,15 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             && healthCheckService_ != null
             && healthCheckService_
                 != com.google.cloud.compute.v1.HealthCheckServiceReference.getDefaultInstance()) {
-          healthCheckService_ =
-              com.google.cloud.compute.v1.HealthCheckServiceReference.newBuilder(
-                      healthCheckService_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getHealthCheckServiceBuilder().mergeFrom(value);
         } else {
           healthCheckService_ = value;
         }
-        onChanged();
       } else {
         healthCheckServiceBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1716,13 +1697,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearHealthCheckService() {
-      if (healthCheckServiceBuilder_ == null) {
-        healthCheckService_ = null;
-        onChanged();
-      } else {
-        healthCheckServiceBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      healthCheckService_ = null;
+      if (healthCheckServiceBuilder_ != null) {
+        healthCheckServiceBuilder_.dispose();
+        healthCheckServiceBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -1870,8 +1851,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
       healthState_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1888,8 +1869,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       healthState_ = getDefaultInstance().getHealthState();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1911,8 +1892,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
       healthState_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

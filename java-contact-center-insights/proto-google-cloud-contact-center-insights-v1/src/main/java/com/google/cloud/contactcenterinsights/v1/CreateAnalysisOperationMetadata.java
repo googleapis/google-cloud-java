@@ -115,7 +115,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -164,11 +164,13 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int CONVERSATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object conversation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversation_ = "";
   /**
    *
    *
@@ -272,7 +274,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
       getAnnotatorSelectorOrBuilder() {
-    return getAnnotatorSelector();
+    return annotatorSelector_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+        : annotatorSelector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -519,24 +523,21 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       conversation_ = "";
-
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-      } else {
-        annotatorSelector_ = null;
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
       return this;
@@ -570,24 +571,31 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata result =
           new com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.conversation_ = conversation_;
-      if (annotatorSelectorBuilder_ == null) {
-        result.annotatorSelector_ = annotatorSelector_;
-      } else {
-        result.annotatorSelector_ = annotatorSelectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conversation_ = conversation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotatorSelector_ =
+            annotatorSelectorBuilder_ == null
+                ? annotatorSelector_
+                : annotatorSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -648,6 +656,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       }
       if (!other.getConversation().isEmpty()) {
         conversation_ = other.conversation_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasAnnotatorSelector()) {
@@ -682,26 +691,26 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 conversation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -720,6 +729,8 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -741,7 +752,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -782,11 +793,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -803,11 +814,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -823,17 +834,18 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -848,14 +860,13 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -870,7 +881,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -941,7 +952,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -978,11 +989,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -998,11 +1009,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1017,17 +1028,18 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1041,14 +1053,13 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1062,7 +1073,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1177,8 +1188,8 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       conversation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1196,8 +1207,8 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearConversation() {
-
       conversation_ = getDefaultInstance().getConversation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1220,8 +1231,8 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       conversation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1246,7 +1257,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * @return Whether the annotatorSelector field is set.
      */
     public boolean hasAnnotatorSelector() {
-      return annotatorSelectorBuilder_ != null || annotatorSelector_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1288,11 +1299,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
           throw new NullPointerException();
         }
         annotatorSelector_ = value;
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1310,11 +1321,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder builderForValue) {
       if (annotatorSelectorBuilder_ == null) {
         annotatorSelector_ = builderForValue.build();
-        onChanged();
       } else {
         annotatorSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1331,20 +1342,20 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     public Builder mergeAnnotatorSelector(
         com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
       if (annotatorSelectorBuilder_ == null) {
-        if (annotatorSelector_ != null) {
-          annotatorSelector_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.newBuilder(
-                      annotatorSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && annotatorSelector_ != null
+            && annotatorSelector_
+                != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                    .getDefaultInstance()) {
+          getAnnotatorSelectorBuilder().mergeFrom(value);
         } else {
           annotatorSelector_ = value;
         }
-        onChanged();
       } else {
         annotatorSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1359,14 +1370,13 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      * </code>
      */
     public Builder clearAnnotatorSelector() {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
-        onChanged();
-      } else {
-        annotatorSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      annotatorSelector_ = null;
+      if (annotatorSelectorBuilder_ != null) {
+        annotatorSelectorBuilder_.dispose();
         annotatorSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1382,7 +1392,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      */
     public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
         getAnnotatorSelectorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAnnotatorSelectorFieldBuilder().getBuilder();
     }
