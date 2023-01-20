@@ -160,7 +160,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.devtools.source.v1.RepoIdOrBuilder getRepoIdOrBuilder() {
-    return getRepoId();
+    return repoId_ == null ? com.google.devtools.source.v1.RepoId.getDefaultInstance() : repoId_;
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
@@ -616,10 +616,10 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (repoIdBuilder_ == null) {
-        repoId_ = null;
-      } else {
-        repoId_ = null;
+      bitField0_ = 0;
+      repoId_ = null;
+      if (repoIdBuilder_ != null) {
+        repoIdBuilder_.dispose();
         repoIdBuilder_ = null;
       }
       if (aliasContextBuilder_ != null) {
@@ -654,27 +654,27 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public com.google.devtools.source.v1.CloudRepoSourceContext buildPartial() {
       com.google.devtools.source.v1.CloudRepoSourceContext result =
           new com.google.devtools.source.v1.CloudRepoSourceContext(this);
-      if (repoIdBuilder_ == null) {
-        result.repoId_ = repoId_;
-      } else {
-        result.repoId_ = repoIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (revisionCase_ == 2) {
-        result.revision_ = revision_;
-      }
-      if (revisionCase_ == 3) {
-        result.revision_ = revision_;
-      }
-      if (revisionCase_ == 4) {
-        if (aliasContextBuilder_ == null) {
-          result.revision_ = revision_;
-        } else {
-          result.revision_ = aliasContextBuilder_.build();
-        }
-      }
-      result.revisionCase_ = revisionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.source.v1.CloudRepoSourceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.repoId_ = repoIdBuilder_ == null ? repoId_ : repoIdBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.devtools.source.v1.CloudRepoSourceContext result) {
+      result.revisionCase_ = revisionCase_;
+      result.revision_ = this.revision_;
+      if (revisionCase_ == 4 && aliasContextBuilder_ != null) {
+        result.revision_ = aliasContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -780,7 +780,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getRepoIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -834,6 +834,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.devtools.source.v1.RepoId repoId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.source.v1.RepoId,
@@ -852,7 +854,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      * @return Whether the repoId field is set.
      */
     public boolean hasRepoId() {
-      return repoIdBuilder_ != null || repoId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -889,11 +891,11 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         repoId_ = value;
-        onChanged();
       } else {
         repoIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -908,11 +910,11 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public Builder setRepoId(com.google.devtools.source.v1.RepoId.Builder builderForValue) {
       if (repoIdBuilder_ == null) {
         repoId_ = builderForValue.build();
-        onChanged();
       } else {
         repoIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -926,19 +928,18 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      */
     public Builder mergeRepoId(com.google.devtools.source.v1.RepoId value) {
       if (repoIdBuilder_ == null) {
-        if (repoId_ != null) {
-          repoId_ =
-              com.google.devtools.source.v1.RepoId.newBuilder(repoId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && repoId_ != null
+            && repoId_ != com.google.devtools.source.v1.RepoId.getDefaultInstance()) {
+          getRepoIdBuilder().mergeFrom(value);
         } else {
           repoId_ = value;
         }
-        onChanged();
       } else {
         repoIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -951,14 +952,13 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.source.v1.RepoId repo_id = 1;</code>
      */
     public Builder clearRepoId() {
-      if (repoIdBuilder_ == null) {
-        repoId_ = null;
-        onChanged();
-      } else {
-        repoId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      repoId_ = null;
+      if (repoIdBuilder_ != null) {
+        repoIdBuilder_.dispose();
         repoIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -971,7 +971,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      * <code>.google.devtools.source.v1.RepoId repo_id = 1;</code>
      */
     public com.google.devtools.source.v1.RepoId.Builder getRepoIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRepoIdFieldBuilder().getBuilder();
     }
@@ -1511,7 +1511,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       }
       revisionCase_ = 4;
       onChanged();
-      ;
       return aliasContextBuilder_;
     }
 
