@@ -570,7 +570,9 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -619,7 +621,9 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -668,7 +672,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -697,14 +701,13 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Lun.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Lun.State result =
-        com.google.cloud.baremetalsolution.v2.Lun.State.valueOf(state_);
+        com.google.cloud.baremetalsolution.v2.Lun.State.forNumber(state_);
     return result == null ? com.google.cloud.baremetalsolution.v2.Lun.State.UNRECOGNIZED : result;
   }
 
   public static final int SIZE_GB_FIELD_NUMBER = 3;
-  private long sizeGb_;
+  private long sizeGb_ = 0L;
   /**
    *
    *
@@ -722,7 +725,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTIPROTOCOL_TYPE_FIELD_NUMBER = 4;
-  private int multiprotocolType_;
+  private int multiprotocolType_ = 0;
   /**
    *
    *
@@ -753,16 +756,17 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType getMultiprotocolType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType result =
-        com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.valueOf(multiprotocolType_);
+        com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.forNumber(multiprotocolType_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.UNRECOGNIZED
         : result;
   }
 
   public static final int STORAGE_VOLUME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object storageVolume_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storageVolume_ = "";
   /**
    *
    *
@@ -811,7 +815,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHAREABLE_FIELD_NUMBER = 6;
-  private boolean shareable_;
+  private boolean shareable_ = false;
   /**
    *
    *
@@ -829,7 +833,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOT_LUN_FIELD_NUMBER = 7;
-  private boolean bootLun_;
+  private boolean bootLun_ = false;
   /**
    *
    *
@@ -847,7 +851,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_TYPE_FIELD_NUMBER = 8;
-  private int storageType_;
+  private int storageType_ = 0;
   /**
    *
    *
@@ -876,16 +880,17 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Lun.StorageType getStorageType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Lun.StorageType result =
-        com.google.cloud.baremetalsolution.v2.Lun.StorageType.valueOf(storageType_);
+        com.google.cloud.baremetalsolution.v2.Lun.StorageType.forNumber(storageType_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Lun.StorageType.UNRECOGNIZED
         : result;
   }
 
   public static final int WWID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object wwid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object wwid_ = "";
   /**
    *
    *
@@ -1221,26 +1226,17 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       state_ = 0;
-
       sizeGb_ = 0L;
-
       multiprotocolType_ = 0;
-
       storageVolume_ = "";
-
       shareable_ = false;
-
       bootLun_ = false;
-
       storageType_ = 0;
-
       wwid_ = "";
-
       return this;
     }
 
@@ -1268,18 +1264,45 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.Lun buildPartial() {
       com.google.cloud.baremetalsolution.v2.Lun result =
           new com.google.cloud.baremetalsolution.v2.Lun(this);
-      result.name_ = name_;
-      result.id_ = id_;
-      result.state_ = state_;
-      result.sizeGb_ = sizeGb_;
-      result.multiprotocolType_ = multiprotocolType_;
-      result.storageVolume_ = storageVolume_;
-      result.shareable_ = shareable_;
-      result.bootLun_ = bootLun_;
-      result.storageType_ = storageType_;
-      result.wwid_ = wwid_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.Lun result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sizeGb_ = sizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.multiprotocolType_ = multiprotocolType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.storageVolume_ = storageVolume_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.shareable_ = shareable_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.bootLun_ = bootLun_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.storageType_ = storageType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.wwid_ = wwid_;
+      }
     }
 
     @java.lang.Override
@@ -1329,10 +1352,12 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.baremetalsolution.v2.Lun.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1346,6 +1371,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStorageVolume().isEmpty()) {
         storageVolume_ = other.storageVolume_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getShareable() != false) {
@@ -1359,6 +1385,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWwid().isEmpty()) {
         wwid_ = other.wwid_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1390,61 +1417,61 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 24:
               {
                 sizeGb_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 multiprotocolType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 storageVolume_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 shareable_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 56:
               {
                 bootLun_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 64:
               {
                 storageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 74:
               {
                 wwid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 82
             default:
@@ -1463,6 +1490,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1525,8 +1554,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1542,8 +1571,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1564,8 +1593,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1631,8 +1660,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1648,8 +1677,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1670,8 +1699,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1705,8 +1734,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1723,9 +1752,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Lun.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Lun.State result =
-          com.google.cloud.baremetalsolution.v2.Lun.State.valueOf(state_);
+          com.google.cloud.baremetalsolution.v2.Lun.State.forNumber(state_);
       return result == null ? com.google.cloud.baremetalsolution.v2.Lun.State.UNRECOGNIZED : result;
     }
     /**
@@ -1744,7 +1772,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1761,7 +1789,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -1798,6 +1826,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(long value) {
 
       sizeGb_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1813,7 +1842,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sizeGb_ = 0L;
       onChanged();
       return this;
@@ -1850,8 +1879,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMultiprotocolTypeValue(int value) {
-
       multiprotocolType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1869,9 +1898,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType getMultiprotocolType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType result =
-          com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.valueOf(multiprotocolType_);
+          com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.forNumber(multiprotocolType_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Lun.MultiprotocolType.UNRECOGNIZED
           : result;
@@ -1894,7 +1922,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       multiprotocolType_ = value.getNumber();
       onChanged();
       return this;
@@ -1912,7 +1940,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMultiprotocolType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       multiprotocolType_ = 0;
       onChanged();
       return this;
@@ -1979,8 +2007,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       storageVolume_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1996,8 +2024,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageVolume() {
-
       storageVolume_ = getDefaultInstance().getStorageVolume();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2018,8 +2046,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       storageVolume_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2055,6 +2083,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     public Builder setShareable(boolean value) {
 
       shareable_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2070,7 +2099,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShareable() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       shareable_ = false;
       onChanged();
       return this;
@@ -2107,6 +2136,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     public Builder setBootLun(boolean value) {
 
       bootLun_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2122,7 +2152,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBootLun() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       bootLun_ = false;
       onChanged();
       return this;
@@ -2157,8 +2187,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStorageTypeValue(int value) {
-
       storageType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2175,9 +2205,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Lun.StorageType getStorageType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Lun.StorageType result =
-          com.google.cloud.baremetalsolution.v2.Lun.StorageType.valueOf(storageType_);
+          com.google.cloud.baremetalsolution.v2.Lun.StorageType.forNumber(storageType_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Lun.StorageType.UNRECOGNIZED
           : result;
@@ -2198,7 +2227,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       storageType_ = value.getNumber();
       onChanged();
       return this;
@@ -2215,7 +2244,7 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       storageType_ = 0;
       onChanged();
       return this;
@@ -2282,8 +2311,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       wwid_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2299,8 +2328,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWwid() {
-
       wwid_ = getDefaultInstance().getWwid();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2321,8 +2350,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       wwid_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

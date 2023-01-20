@@ -67,7 +67,9 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceUrl_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILES_COUNT_FIELD_NUMBER = 4;
-  private int filesCount_;
+  private int filesCount_ = 0;
   /**
    *
    *
@@ -342,10 +344,9 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceUrl_ = "";
-
       filesCount_ = 0;
-
       return this;
     }
 
@@ -372,10 +373,21 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.ZipInfo buildPartial() {
       com.google.appengine.v1.ZipInfo result = new com.google.appengine.v1.ZipInfo(this);
-      result.sourceUrl_ = sourceUrl_;
-      result.filesCount_ = filesCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ZipInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceUrl_ = sourceUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filesCount_ = filesCount_;
+      }
     }
 
     @java.lang.Override
@@ -425,6 +437,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.ZipInfo.getDefaultInstance()) return this;
       if (!other.getSourceUrl().isEmpty()) {
         sourceUrl_ = other.sourceUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getFilesCount() != 0) {
@@ -459,13 +472,13 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 sourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 32:
               {
                 filesCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             default:
@@ -484,6 +497,8 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceUrl_ = "";
     /**
@@ -552,8 +567,8 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceUrl() {
-
       sourceUrl_ = getDefaultInstance().getSourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -595,8 +610,8 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,6 +651,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setFilesCount(int value) {
 
       filesCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -653,7 +669,7 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilesCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       filesCount_ = 0;
       onChanged();
       return this;

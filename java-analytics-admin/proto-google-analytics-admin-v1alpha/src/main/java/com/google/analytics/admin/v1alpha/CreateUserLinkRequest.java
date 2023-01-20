@@ -74,7 +74,9 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NOTIFY_NEW_USER_FIELD_NUMBER = 2;
-  private boolean notifyNewUser_;
+  private boolean notifyNewUser_ = false;
   /**
    *
    *
@@ -196,7 +198,9 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.UserLinkOrBuilder getUserLinkOrBuilder() {
-    return getUserLink();
+    return userLink_ == null
+        ? com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()
+        : userLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -426,14 +430,12 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       notifyNewUser_ = false;
-
-      if (userLinkBuilder_ == null) {
-        userLink_ = null;
-      } else {
-        userLink_ = null;
+      userLink_ = null;
+      if (userLinkBuilder_ != null) {
+        userLinkBuilder_.dispose();
         userLinkBuilder_ = null;
       }
       return this;
@@ -463,15 +465,24 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.CreateUserLinkRequest buildPartial() {
       com.google.analytics.admin.v1alpha.CreateUserLinkRequest result =
           new com.google.analytics.admin.v1alpha.CreateUserLinkRequest(this);
-      result.parent_ = parent_;
-      result.notifyNewUser_ = notifyNewUser_;
-      if (userLinkBuilder_ == null) {
-        result.userLink_ = userLink_;
-      } else {
-        result.userLink_ = userLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.CreateUserLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.notifyNewUser_ = notifyNewUser_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userLink_ = userLinkBuilder_ == null ? userLink_ : userLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,6 +533,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getNotifyNewUser() != false) {
@@ -559,19 +571,19 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 notifyNewUser_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getUserLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -590,6 +602,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -658,8 +672,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +691,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -701,8 +715,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,6 +754,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
     public Builder setNotifyNewUser(boolean value) {
 
       notifyNewUser_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -756,7 +771,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNotifyNewUser() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       notifyNewUser_ = false;
       onChanged();
       return this;
@@ -782,7 +797,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the userLink field is set.
      */
     public boolean hasUserLink() {
-      return userLinkBuilder_ != null || userLink_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -823,11 +838,11 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         userLink_ = value;
-        onChanged();
       } else {
         userLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -845,11 +860,11 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
         com.google.analytics.admin.v1alpha.UserLink.Builder builderForValue) {
       if (userLinkBuilder_ == null) {
         userLink_ = builderForValue.build();
-        onChanged();
       } else {
         userLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -865,19 +880,18 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUserLink(com.google.analytics.admin.v1alpha.UserLink value) {
       if (userLinkBuilder_ == null) {
-        if (userLink_ != null) {
-          userLink_ =
-              com.google.analytics.admin.v1alpha.UserLink.newBuilder(userLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && userLink_ != null
+            && userLink_ != com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()) {
+          getUserLinkBuilder().mergeFrom(value);
         } else {
           userLink_ = value;
         }
-        onChanged();
       } else {
         userLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -892,14 +906,13 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUserLink() {
-      if (userLinkBuilder_ == null) {
-        userLink_ = null;
-        onChanged();
-      } else {
-        userLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      userLink_ = null;
+      if (userLinkBuilder_ != null) {
+        userLinkBuilder_.dispose();
         userLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -914,7 +927,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.analytics.admin.v1alpha.UserLink.Builder getUserLinkBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUserLinkFieldBuilder().getBuilder();
     }

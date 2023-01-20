@@ -69,7 +69,9 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiSpecOrBuilder getApiSpecOrBuilder() {
-    return getApiSpec();
+    return apiSpec_ == null
+        ? com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance()
+        : apiSpec_;
   }
 
   public static final int API_SPEC_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object apiSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiSpecId_ = "";
   /**
    *
    *
@@ -455,16 +461,14 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (apiSpecBuilder_ == null) {
-        apiSpec_ = null;
-      } else {
-        apiSpec_ = null;
+      apiSpec_ = null;
+      if (apiSpecBuilder_ != null) {
+        apiSpecBuilder_.dispose();
         apiSpecBuilder_ = null;
       }
       apiSpecId_ = "";
-
       return this;
     }
 
@@ -492,15 +496,24 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest result =
           new com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest(this);
-      result.parent_ = parent_;
-      if (apiSpecBuilder_ == null) {
-        result.apiSpec_ = apiSpec_;
-      } else {
-        result.apiSpec_ = apiSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.apiSpecId_ = apiSpecId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiSpec_ = apiSpecBuilder_ == null ? apiSpec_ : apiSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.apiSpecId_ = apiSpecId_;
+      }
     }
 
     @java.lang.Override
@@ -551,6 +564,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApiSpec()) {
@@ -558,6 +572,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getApiSpecId().isEmpty()) {
         apiSpecId_ = other.apiSpecId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +604,19 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApiSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 apiSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +635,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +708,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +728,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +753,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,7 +779,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the apiSpec field is set.
      */
     public boolean hasApiSpec() {
-      return apiSpecBuilder_ != null || apiSpec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -803,11 +820,11 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         apiSpec_ = value;
-        onChanged();
       } else {
         apiSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,11 +841,11 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public Builder setApiSpec(com.google.cloud.apigeeregistry.v1.ApiSpec.Builder builderForValue) {
       if (apiSpecBuilder_ == null) {
         apiSpec_ = builderForValue.build();
-        onChanged();
       } else {
         apiSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,19 +861,18 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeApiSpec(com.google.cloud.apigeeregistry.v1.ApiSpec value) {
       if (apiSpecBuilder_ == null) {
-        if (apiSpec_ != null) {
-          apiSpec_ =
-              com.google.cloud.apigeeregistry.v1.ApiSpec.newBuilder(apiSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && apiSpec_ != null
+            && apiSpec_ != com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance()) {
+          getApiSpecBuilder().mergeFrom(value);
         } else {
           apiSpec_ = value;
         }
-        onChanged();
       } else {
         apiSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -871,14 +887,13 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearApiSpec() {
-      if (apiSpecBuilder_ == null) {
-        apiSpec_ = null;
-        onChanged();
-      } else {
-        apiSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      apiSpec_ = null;
+      if (apiSpecBuilder_ != null) {
+        apiSpecBuilder_.dispose();
         apiSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +908,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec.Builder getApiSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApiSpecFieldBuilder().getBuilder();
     }
@@ -1018,8 +1033,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiSpecId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1039,8 +1054,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearApiSpecId() {
-
       apiSpecId_ = getDefaultInstance().getApiSpecId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1065,8 +1080,8 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiSpecId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

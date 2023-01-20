@@ -68,6 +68,8 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
   }
 
   public static final int NETWORKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkUsage> networks_;
   /**
    *
@@ -337,6 +339,7 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (networksBuilder_ == null) {
         networks_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,16 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
     public com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse buildPartial() {
       com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse result =
           new com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse result) {
       if (networksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           networks_ = java.util.Collections.unmodifiableList(networks_);
@@ -382,8 +394,11 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
       } else {
         result.networks_ = networksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

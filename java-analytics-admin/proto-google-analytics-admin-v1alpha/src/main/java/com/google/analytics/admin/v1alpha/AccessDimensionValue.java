@@ -68,7 +68,9 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
     public com.google.analytics.admin.v1alpha.AccessDimensionValue buildPartial() {
       com.google.analytics.admin.v1alpha.AccessDimensionValue result =
           new com.google.analytics.admin.v1alpha.AccessDimensionValue(this);
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessDimensionValue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getValue().isEmpty()) {
         value_ = other.value_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 value_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object value_ = "";
     /**
@@ -513,8 +527,8 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +545,8 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -554,8 +568,8 @@ public final class AccessDimensionValue extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

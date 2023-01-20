@@ -71,7 +71,9 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -164,11 +166,13 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.PayloadOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null
+        ? com.google.cloud.apigeeconnect.v1.Payload.getDefaultInstance()
+        : payload_;
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 3;
-  private int endpoint_;
+  private int endpoint_ = 0;
   /**
    *
    *
@@ -197,14 +201,15 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.TetherEndpoint getEndpoint() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.apigeeconnect.v1.TetherEndpoint result =
-        com.google.cloud.apigeeconnect.v1.TetherEndpoint.valueOf(endpoint_);
+        com.google.cloud.apigeeconnect.v1.TetherEndpoint.forNumber(endpoint_);
     return result == null ? com.google.cloud.apigeeconnect.v1.TetherEndpoint.UNRECOGNIZED : result;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -255,7 +260,9 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACE_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object traceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
   /**
    *
    *
@@ -346,7 +353,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -605,24 +612,19 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
       endpoint_ = 0;
-
       project_ = "";
-
       traceId_ = "";
-
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       return this;
@@ -652,22 +654,33 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.EgressRequest buildPartial() {
       com.google.cloud.apigeeconnect.v1.EgressRequest result =
           new com.google.cloud.apigeeconnect.v1.EgressRequest(this);
-      result.id_ = id_;
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
-      }
-      result.endpoint_ = endpoint_;
-      result.project_ = project_;
-      result.traceId_ = traceId_;
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.EgressRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.traceId_ = traceId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -718,6 +731,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -728,10 +742,12 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTimeout()) {
@@ -766,37 +782,37 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 endpoint_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 traceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -815,6 +831,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -877,8 +895,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,8 +912,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -916,8 +934,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -940,7 +958,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -977,11 +995,11 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -996,11 +1014,11 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setPayload(com.google.cloud.apigeeconnect.v1.Payload.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1014,19 +1032,18 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePayload(com.google.cloud.apigeeconnect.v1.Payload value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.cloud.apigeeconnect.v1.Payload.newBuilder(payload_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && payload_ != null
+            && payload_ != com.google.cloud.apigeeconnect.v1.Payload.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1039,14 +1056,13 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.Payload payload = 2;</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1059,7 +1075,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.Payload payload = 2;</code>
      */
     public com.google.cloud.apigeeconnect.v1.Payload.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
@@ -1136,8 +1152,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEndpointValue(int value) {
-
       endpoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1154,9 +1170,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.apigeeconnect.v1.TetherEndpoint getEndpoint() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.apigeeconnect.v1.TetherEndpoint result =
-          com.google.cloud.apigeeconnect.v1.TetherEndpoint.valueOf(endpoint_);
+          com.google.cloud.apigeeconnect.v1.TetherEndpoint.forNumber(endpoint_);
       return result == null
           ? com.google.cloud.apigeeconnect.v1.TetherEndpoint.UNRECOGNIZED
           : result;
@@ -1177,7 +1192,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       endpoint_ = value.getNumber();
       onChanged();
       return this;
@@ -1194,7 +1209,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       endpoint_ = 0;
       onChanged();
       return this;
@@ -1264,8 +1279,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1282,8 +1297,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1305,8 +1320,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1372,8 +1387,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       traceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1389,8 +1404,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTraceId() {
-
       traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1411,8 +1426,8 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       traceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1435,7 +1450,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1470,11 +1485,11 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1489,11 +1504,11 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1507,17 +1522,18 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1530,14 +1546,13 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1550,7 +1565,7 @@ public final class EgressRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }

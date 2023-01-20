@@ -212,7 +212,9 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -263,7 +265,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int EGRESS_SETTING_FIELD_NUMBER = 2;
-  private int egressSetting_;
+  private int egressSetting_ = 0;
   /**
    *
    *
@@ -294,9 +296,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.appengine.v1.VpcAccessConnector.EgressSetting getEgressSetting() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.VpcAccessConnector.EgressSetting result =
-        com.google.appengine.v1.VpcAccessConnector.EgressSetting.valueOf(egressSetting_);
+        com.google.appengine.v1.VpcAccessConnector.EgressSetting.forNumber(egressSetting_);
     return result == null
         ? com.google.appengine.v1.VpcAccessConnector.EgressSetting.UNRECOGNIZED
         : result;
@@ -512,10 +513,9 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       egressSetting_ = 0;
-
       return this;
     }
 
@@ -543,10 +543,21 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.VpcAccessConnector buildPartial() {
       com.google.appengine.v1.VpcAccessConnector result =
           new com.google.appengine.v1.VpcAccessConnector(this);
-      result.name_ = name_;
-      result.egressSetting_ = egressSetting_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.VpcAccessConnector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.egressSetting_ = egressSetting_;
+      }
     }
 
     @java.lang.Override
@@ -596,6 +607,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       if (other == com.google.appengine.v1.VpcAccessConnector.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.egressSetting_ != 0) {
@@ -630,13 +642,13 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 egressSetting_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -655,6 +667,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -720,8 +734,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -738,8 +752,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -761,8 +775,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +812,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setEgressSettingValue(int value) {
-
       egressSetting_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,9 +831,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.appengine.v1.VpcAccessConnector.EgressSetting getEgressSetting() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.VpcAccessConnector.EgressSetting result =
-          com.google.appengine.v1.VpcAccessConnector.EgressSetting.valueOf(egressSetting_);
+          com.google.appengine.v1.VpcAccessConnector.EgressSetting.forNumber(egressSetting_);
       return result == null
           ? com.google.appengine.v1.VpcAccessConnector.EgressSetting.UNRECOGNIZED
           : result;
@@ -842,7 +855,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       egressSetting_ = value.getNumber();
       onChanged();
       return this;
@@ -860,7 +873,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEgressSetting() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       egressSetting_ = 0;
       onChanged();
       return this;

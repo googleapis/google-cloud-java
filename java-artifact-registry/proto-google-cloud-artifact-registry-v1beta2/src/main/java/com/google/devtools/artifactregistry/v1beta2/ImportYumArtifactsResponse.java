@@ -69,6 +69,8 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   }
 
   public static final int YUM_ARTIFACTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.YumArtifact> yumArtifacts_;
   /**
    *
@@ -140,6 +142,8 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
   }
 
   public static final int ERRORS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo>
       errors_;
   /**
@@ -438,6 +442,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (yumArtifactsBuilder_ == null) {
         yumArtifacts_ = java.util.Collections.emptyList();
       } else {
@@ -482,7 +487,16 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     public com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse buildPartial() {
       com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse result =
           new com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse result) {
       if (yumArtifactsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           yumArtifacts_ = java.util.Collections.unmodifiableList(yumArtifacts_);
@@ -501,8 +515,11 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

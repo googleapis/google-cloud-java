@@ -575,7 +575,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -628,7 +630,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object annotationSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecId_ = "";
   /**
    *
    *
@@ -691,7 +695,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 15;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -802,11 +808,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int EVALUATED_EXAMPLE_COUNT_FIELD_NUMBER = 6;
-  private int evaluatedExampleCount_;
+  private int evaluatedExampleCount_ = 0;
   /**
    *
    *
@@ -1207,6 +1213,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (classificationEvaluationMetricsBuilder_ != null) {
         classificationEvaluationMetricsBuilder_.clear();
       }
@@ -1229,19 +1236,14 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         textExtractionEvaluationMetricsBuilder_.clear();
       }
       name_ = "";
-
       annotationSpecId_ = "";
-
       displayName_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       evaluatedExampleCount_ = 0;
-
       metricsCase_ = 0;
       metrics_ = null;
       return this;
@@ -1271,67 +1273,57 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.automl.v1beta1.ModelEvaluation buildPartial() {
       com.google.cloud.automl.v1beta1.ModelEvaluation result =
           new com.google.cloud.automl.v1beta1.ModelEvaluation(this);
-      if (metricsCase_ == 8) {
-        if (classificationEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = classificationEvaluationMetricsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (metricsCase_ == 24) {
-        if (regressionEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = regressionEvaluationMetricsBuilder_.build();
-        }
-      }
-      if (metricsCase_ == 9) {
-        if (translationEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = translationEvaluationMetricsBuilder_.build();
-        }
-      }
-      if (metricsCase_ == 12) {
-        if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = imageObjectDetectionEvaluationMetricsBuilder_.build();
-        }
-      }
-      if (metricsCase_ == 14) {
-        if (videoObjectTrackingEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = videoObjectTrackingEvaluationMetricsBuilder_.build();
-        }
-      }
-      if (metricsCase_ == 11) {
-        if (textSentimentEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = textSentimentEvaluationMetricsBuilder_.build();
-        }
-      }
-      if (metricsCase_ == 13) {
-        if (textExtractionEvaluationMetricsBuilder_ == null) {
-          result.metrics_ = metrics_;
-        } else {
-          result.metrics_ = textExtractionEvaluationMetricsBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.annotationSpecId_ = annotationSpecId_;
-      result.displayName_ = displayName_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      result.evaluatedExampleCount_ = evaluatedExampleCount_;
-      result.metricsCase_ = metricsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.ModelEvaluation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.annotationSpecId_ = annotationSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.evaluatedExampleCount_ = evaluatedExampleCount_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.ModelEvaluation result) {
+      result.metricsCase_ = metricsCase_;
+      result.metrics_ = this.metrics_;
+      if (metricsCase_ == 8 && classificationEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = classificationEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 24 && regressionEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = regressionEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 9 && translationEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = translationEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 12 && imageObjectDetectionEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = imageObjectDetectionEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 14 && videoObjectTrackingEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = videoObjectTrackingEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 11 && textSentimentEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = textSentimentEvaluationMetricsBuilder_.build();
+      }
+      if (metricsCase_ == 13 && textExtractionEvaluationMetricsBuilder_ != null) {
+        result.metrics_ = textExtractionEvaluationMetricsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1382,14 +1374,17 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getAnnotationSpecId().isEmpty()) {
         annotationSpecId_ = other.annotationSpecId_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1470,25 +1465,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 18:
               {
                 annotationSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 18
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 42
             case 48:
               {
                 evaluatedExampleCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 48
             case 66:
@@ -1541,7 +1536,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             case 122:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 122
             case 194:
@@ -1581,6 +1576,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics,
@@ -1863,7 +1860,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 8;
       onChanged();
-      ;
       return classificationEvaluationMetricsBuilder_;
     }
 
@@ -2128,7 +2124,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 24;
       onChanged();
-      ;
       return regressionEvaluationMetricsBuilder_;
     }
 
@@ -2364,7 +2359,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 9;
       onChanged();
-      ;
       return translationEvaluationMetricsBuilder_;
     }
 
@@ -2606,7 +2600,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 12;
       onChanged();
-      ;
       return imageObjectDetectionEvaluationMetricsBuilder_;
     }
 
@@ -2848,7 +2841,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 14;
       onChanged();
-      ;
       return videoObjectTrackingEvaluationMetricsBuilder_;
     }
 
@@ -3102,7 +3094,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 11;
       onChanged();
-      ;
       return textSentimentEvaluationMetricsBuilder_;
     }
 
@@ -3338,7 +3329,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       metricsCase_ = 13;
       onChanged();
-      ;
       return textExtractionEvaluationMetricsBuilder_;
     }
 
@@ -3409,8 +3399,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3428,8 +3418,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3452,8 +3442,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3540,8 +3530,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3564,8 +3554,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecId() {
-
       annotationSpecId_ = getDefaultInstance().getAnnotationSpecId();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3593,8 +3583,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3690,8 +3680,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3717,8 +3707,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3749,8 +3739,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3773,7 +3763,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3810,11 +3800,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3829,11 +3819,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3847,17 +3837,18 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3870,14 +3861,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3890,7 +3880,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3983,6 +3973,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public Builder setEvaluatedExampleCount(int value) {
 
       evaluatedExampleCount_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4005,7 +3996,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedExampleCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       evaluatedExampleCount_ = 0;
       onChanged();
       return this;

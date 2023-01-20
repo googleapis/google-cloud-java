@@ -78,7 +78,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_SCREENLOCK_FIELD_NUMBER = 1;
-  private boolean requireScreenlock_;
+  private boolean requireScreenlock_ = false;
   /**
    *
    *
@@ -97,7 +97,10 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOWED_ENCRYPTION_STATUSES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> allowedEncryptionStatuses_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>
       allowedEncryptionStatuses_converter_ =
@@ -106,9 +109,8 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>() {
             public com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus result =
-                  com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus.valueOf(
+                  com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus.forNumber(
                       from);
               return result == null
                   ? com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus
@@ -211,6 +213,8 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   private int allowedEncryptionStatusesMemoizedSerializedSize;
 
   public static final int OS_CONSTRAINTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.OsConstraint> osConstraints_;
   /**
    *
@@ -282,7 +286,10 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOWED_DEVICE_MANAGEMENT_LEVELS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> allowedDeviceManagementLevels_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.identity.accesscontextmanager.type.DeviceManagementLevel>
       allowedDeviceManagementLevels_converter_ =
@@ -291,9 +298,9 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.identity.accesscontextmanager.type.DeviceManagementLevel>() {
             public com.google.identity.accesscontextmanager.type.DeviceManagementLevel convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.identity.accesscontextmanager.type.DeviceManagementLevel result =
-                  com.google.identity.accesscontextmanager.type.DeviceManagementLevel.valueOf(from);
+                  com.google.identity.accesscontextmanager.type.DeviceManagementLevel.forNumber(
+                      from);
               return result == null
                   ? com.google.identity.accesscontextmanager.type.DeviceManagementLevel.UNRECOGNIZED
                   : result;
@@ -401,7 +408,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   private int allowedDeviceManagementLevelsMemoizedSerializedSize;
 
   public static final int REQUIRE_ADMIN_APPROVAL_FIELD_NUMBER = 7;
-  private boolean requireAdminApproval_;
+  private boolean requireAdminApproval_ = false;
   /**
    *
    *
@@ -419,7 +426,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_CORP_OWNED_FIELD_NUMBER = 8;
-  private boolean requireCorpOwned_;
+  private boolean requireCorpOwned_ = false;
   /**
    *
    *
@@ -724,23 +731,21 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       requireScreenlock_ = false;
-
       allowedEncryptionStatuses_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (osConstraintsBuilder_ == null) {
         osConstraints_ = java.util.Collections.emptyList();
       } else {
         osConstraints_ = null;
         osConstraintsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      allowedDeviceManagementLevels_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      allowedDeviceManagementLevels_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       requireAdminApproval_ = false;
-
       requireCorpOwned_ = false;
-
       return this;
     }
 
@@ -768,33 +773,50 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.DevicePolicy buildPartial() {
       com.google.identity.accesscontextmanager.v1.DevicePolicy result =
           new com.google.identity.accesscontextmanager.v1.DevicePolicy(this);
-      int from_bitField0_ = bitField0_;
-      result.requireScreenlock_ = requireScreenlock_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.DevicePolicy result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         allowedEncryptionStatuses_ =
             java.util.Collections.unmodifiableList(allowedEncryptionStatuses_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.allowedEncryptionStatuses_ = allowedEncryptionStatuses_;
       if (osConstraintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           osConstraints_ = java.util.Collections.unmodifiableList(osConstraints_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.osConstraints_ = osConstraints_;
       } else {
         result.osConstraints_ = osConstraintsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         allowedDeviceManagementLevels_ =
             java.util.Collections.unmodifiableList(allowedDeviceManagementLevels_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.allowedDeviceManagementLevels_ = allowedDeviceManagementLevels_;
-      result.requireAdminApproval_ = requireAdminApproval_;
-      result.requireCorpOwned_ = requireCorpOwned_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.identity.accesscontextmanager.v1.DevicePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requireScreenlock_ = requireScreenlock_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requireAdminApproval_ = requireAdminApproval_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requireCorpOwned_ = requireCorpOwned_;
+      }
     }
 
     @java.lang.Override
@@ -849,7 +871,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedEncryptionStatuses_.isEmpty()) {
         if (allowedEncryptionStatuses_.isEmpty()) {
           allowedEncryptionStatuses_ = other.allowedEncryptionStatuses_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAllowedEncryptionStatusesIsMutable();
           allowedEncryptionStatuses_.addAll(other.allowedEncryptionStatuses_);
@@ -860,7 +882,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.osConstraints_.isEmpty()) {
           if (osConstraints_.isEmpty()) {
             osConstraints_ = other.osConstraints_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOsConstraintsIsMutable();
             osConstraints_.addAll(other.osConstraints_);
@@ -873,7 +895,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
             osConstraintsBuilder_.dispose();
             osConstraintsBuilder_ = null;
             osConstraints_ = other.osConstraints_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             osConstraintsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOsConstraintsFieldBuilder()
@@ -886,7 +908,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedDeviceManagementLevels_.isEmpty()) {
         if (allowedDeviceManagementLevels_.isEmpty()) {
           allowedDeviceManagementLevels_ = other.allowedDeviceManagementLevels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureAllowedDeviceManagementLevelsIsMutable();
           allowedDeviceManagementLevels_.addAll(other.allowedDeviceManagementLevels_);
@@ -928,7 +950,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 requireScreenlock_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
@@ -986,13 +1008,13 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 requireAdminApproval_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 56
             case 64:
               {
                 requireCorpOwned_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             default:
@@ -1047,6 +1069,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireScreenlock(boolean value) {
 
       requireScreenlock_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1063,7 +1086,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireScreenlock() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requireScreenlock_ = false;
       onChanged();
       return this;
@@ -1073,10 +1096,10 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAllowedEncryptionStatusesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         allowedEncryptionStatuses_ =
             new java.util.ArrayList<java.lang.Integer>(allowedEncryptionStatuses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1221,7 +1244,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAllowedEncryptionStatuses() {
       allowedEncryptionStatuses_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1327,11 +1350,11 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         osConstraints_ = java.util.Collections.emptyList();
 
     private void ensureOsConstraintsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         osConstraints_ =
             new java.util.ArrayList<com.google.identity.accesscontextmanager.v1.OsConstraint>(
                 osConstraints_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1565,7 +1588,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOsConstraints() {
       if (osConstraintsBuilder_ == null) {
         osConstraints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         osConstraintsBuilder_.clear();
@@ -1702,7 +1725,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.identity.accesscontextmanager.v1.OsConstraint.Builder,
                 com.google.identity.accesscontextmanager.v1.OsConstraintOrBuilder>(
                 osConstraints_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         osConstraints_ = null;
@@ -1714,10 +1737,10 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAllowedDeviceManagementLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         allowedDeviceManagementLevels_ =
             new java.util.ArrayList<java.lang.Integer>(allowedDeviceManagementLevels_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1870,7 +1893,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAllowedDeviceManagementLevels() {
       allowedDeviceManagementLevels_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2010,6 +2033,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireAdminApproval(boolean value) {
 
       requireAdminApproval_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2025,7 +2049,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireAdminApproval() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       requireAdminApproval_ = false;
       onChanged();
       return this;
@@ -2062,6 +2086,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireCorpOwned(boolean value) {
 
       requireCorpOwned_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2077,7 +2102,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireCorpOwned() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       requireCorpOwned_ = false;
       onChanged();
       return this;

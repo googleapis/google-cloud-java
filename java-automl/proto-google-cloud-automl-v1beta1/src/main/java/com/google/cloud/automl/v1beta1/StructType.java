@@ -92,6 +92,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.automl.v1beta1.DataType.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloud.automl.v1beta1.DataType>
       fields_;
 
@@ -157,8 +158,10 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
-      java.lang.String key, com.google.cloud.automl.v1beta1.DataType defaultValue) {
+  public /* nullable */ com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.automl.v1beta1.DataType defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -416,6 +419,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableFields().clear();
       return this;
     }
@@ -444,11 +448,19 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.StructType buildPartial() {
       com.google.cloud.automl.v1beta1.StructType result =
           new com.google.cloud.automl.v1beta1.StructType(this);
-      int from_bitField0_ = bitField0_;
-      result.fields_ = internalGetFields();
-      result.fields_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.StructType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fields_ = internalGetFields();
+        result.fields_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +509,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.StructType other) {
       if (other == com.google.cloud.automl.v1beta1.StructType.getDefaultInstance()) return this;
       internalGetMutableFields().mergeFrom(other.internalGetFields());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -534,6 +547,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableFields()
                     .getMutableMap()
                     .put(fields__.getKey(), fields__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -568,14 +582,14 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.cloud.automl.v1beta1.DataType>
         internalGetMutableFields() {
-      onChanged();
-      ;
       if (fields_ == null) {
         fields_ = com.google.protobuf.MapField.newMapField(FieldsDefaultEntryHolder.defaultEntry);
       }
       if (!fields_.isMutable()) {
         fields_ = fields_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return fields_;
     }
 
@@ -634,8 +648,10 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
      */
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
-        java.lang.String key, com.google.cloud.automl.v1beta1.DataType defaultValue) {
+    public /* nullable */ com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.automl.v1beta1.DataType defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -668,6 +684,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFields() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableFields().getMutableMap().clear();
       return this;
     }
@@ -693,6 +710,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType>
         getMutableFields() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableFields().getMutableMap();
     }
     /**
@@ -713,8 +731,8 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFields().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -731,6 +749,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFields(
         java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> values) {
       internalGetMutableFields().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

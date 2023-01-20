@@ -293,7 +293,7 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OPERATION_FIELD_NUMBER = 1;
-  private int operation_;
+  private int operation_ = 0;
   /**
    *
    *
@@ -322,9 +322,8 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation getOperation() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation result =
-        com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.valueOf(operation_);
+        com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.forNumber(operation_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.UNRECOGNIZED
         : result;
@@ -375,7 +374,9 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.NumericValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    return value_ == null
+        ? com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()
+        : value_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -594,12 +595,11 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operation_ = 0;
-
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
       return this;
@@ -629,14 +629,21 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.AccessNumericFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AccessNumericFilter result =
           new com.google.analytics.admin.v1alpha.AccessNumericFilter(this);
-      result.operation_ = operation_;
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessNumericFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operation_ = operation_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -720,13 +727,13 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 operation_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -745,6 +752,8 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int operation_ = 0;
     /**
@@ -775,8 +784,8 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setOperationValue(int value) {
-
       operation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,9 +802,8 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation getOperation() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation result =
-          com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.valueOf(operation_);
+          com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.forNumber(operation_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AccessNumericFilter.Operation.UNRECOGNIZED
           : result;
@@ -817,7 +825,7 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       operation_ = value.getNumber();
       onChanged();
       return this;
@@ -834,7 +842,7 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       operation_ = 0;
       onChanged();
       return this;
@@ -858,7 +866,7 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -895,11 +903,11 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         value_ = value;
-        onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -915,11 +923,11 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
         com.google.analytics.admin.v1alpha.NumericValue.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
-        onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -933,19 +941,18 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeValue(com.google.analytics.admin.v1alpha.NumericValue value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ =
-              com.google.analytics.admin.v1alpha.NumericValue.newBuilder(value_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && value_ != null
+            && value_ != com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()) {
+          getValueBuilder().mergeFrom(value);
         } else {
           value_ = value;
         }
-        onChanged();
       } else {
         valueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -958,14 +965,13 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue value = 2;</code>
      */
     public Builder clearValue() {
-      if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
-      } else {
-        value_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -978,7 +984,7 @@ public final class AccessNumericFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue value = 2;</code>
      */
     public com.google.analytics.admin.v1alpha.NumericValue.Builder getValueBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.DatasetOrBuilder getDatasetOrBuilder() {
-    return getDataset();
+    return dataset_ == null
+        ? com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance()
+        : dataset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +389,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (datasetBuilder_ == null) {
-        dataset_ = null;
-      } else {
-        dataset_ = null;
+      dataset_ = null;
+      if (datasetBuilder_ != null) {
+        datasetBuilder_.dispose();
         datasetBuilder_ = null;
       }
       return this;
@@ -420,14 +423,21 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.automl.v1beta1.CreateDatasetRequest buildPartial() {
       com.google.cloud.automl.v1beta1.CreateDatasetRequest result =
           new com.google.cloud.automl.v1beta1.CreateDatasetRequest(this);
-      result.parent_ = parent_;
-      if (datasetBuilder_ == null) {
-        result.dataset_ = dataset_;
-      } else {
-        result.dataset_ = datasetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.CreateDatasetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataset_ = datasetBuilder_ == null ? dataset_ : datasetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -478,6 +488,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDataset()) {
@@ -512,13 +523,13 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDatasetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +548,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -605,8 +618,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,8 +637,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -648,8 +661,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -674,7 +687,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the dataset field is set.
      */
     public boolean hasDataset() {
-      return datasetBuilder_ != null || dataset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -715,11 +728,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         dataset_ = value;
-        onChanged();
       } else {
         datasetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +749,11 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
     public Builder setDataset(com.google.cloud.automl.v1beta1.Dataset.Builder builderForValue) {
       if (datasetBuilder_ == null) {
         dataset_ = builderForValue.build();
-        onChanged();
       } else {
         datasetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,19 +769,18 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDataset(com.google.cloud.automl.v1beta1.Dataset value) {
       if (datasetBuilder_ == null) {
-        if (dataset_ != null) {
-          dataset_ =
-              com.google.cloud.automl.v1beta1.Dataset.newBuilder(dataset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataset_ != null
+            && dataset_ != com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance()) {
+          getDatasetBuilder().mergeFrom(value);
         } else {
           dataset_ = value;
         }
-        onChanged();
       } else {
         datasetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,14 +795,13 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearDataset() {
-      if (datasetBuilder_ == null) {
-        dataset_ = null;
-        onChanged();
-      } else {
-        dataset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataset_ = null;
+      if (datasetBuilder_ != null) {
+        datasetBuilder_.dispose();
         datasetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +816,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.automl.v1beta1.Dataset.Builder getDatasetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDatasetFieldBuilder().getBuilder();
     }

@@ -209,7 +209,7 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,13 +445,13 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       sourceCase_ = 0;
@@ -486,21 +486,29 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     public com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo buildPartial() {
       com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo result =
           new com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -602,7 +610,7 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
             case 18:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -635,6 +643,8 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource,
@@ -864,7 +874,6 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -884,7 +893,7 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -919,11 +928,11 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -938,11 +947,11 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -956,16 +965,18 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -978,14 +989,13 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
      * <code>.google.rpc.Status error = 2;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -998,7 +1008,7 @@ public final class ImportAptArtifactsErrorInfo extends com.google.protobuf.Gener
      * <code>.google.rpc.Status error = 2;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

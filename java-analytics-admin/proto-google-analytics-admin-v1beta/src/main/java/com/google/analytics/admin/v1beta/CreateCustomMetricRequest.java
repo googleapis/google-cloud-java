@@ -68,7 +68,9 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.CustomMetricOrBuilder getCustomMetricOrBuilder() {
-    return getCustomMetric();
+    return customMetric_ == null
+        ? com.google.analytics.admin.v1beta.CustomMetric.getDefaultInstance()
+        : customMetric_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (customMetricBuilder_ == null) {
-        customMetric_ = null;
-      } else {
-        customMetric_ = null;
+      customMetric_ = null;
+      if (customMetricBuilder_ != null) {
+        customMetricBuilder_.dispose();
         customMetricBuilder_ = null;
       }
       return this;
@@ -421,14 +424,22 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
     public com.google.analytics.admin.v1beta.CreateCustomMetricRequest buildPartial() {
       com.google.analytics.admin.v1beta.CreateCustomMetricRequest result =
           new com.google.analytics.admin.v1beta.CreateCustomMetricRequest(this);
-      result.parent_ = parent_;
-      if (customMetricBuilder_ == null) {
-        result.customMetric_ = customMetric_;
-      } else {
-        result.customMetric_ = customMetricBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.CreateCustomMetricRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customMetric_ =
+            customMetricBuilder_ == null ? customMetric_ : customMetricBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +490,7 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCustomMetric()) {
@@ -513,13 +525,13 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCustomMetricFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +550,8 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -606,8 +620,8 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +639,8 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +663,8 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,7 +689,7 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
      * @return Whether the customMetric field is set.
      */
     public boolean hasCustomMetric() {
-      return customMetricBuilder_ != null || customMetric_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -716,11 +730,11 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         customMetric_ = value;
-        onChanged();
       } else {
         customMetricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -738,11 +752,11 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
         com.google.analytics.admin.v1beta.CustomMetric.Builder builderForValue) {
       if (customMetricBuilder_ == null) {
         customMetric_ = builderForValue.build();
-        onChanged();
       } else {
         customMetricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,19 +772,19 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
      */
     public Builder mergeCustomMetric(com.google.analytics.admin.v1beta.CustomMetric value) {
       if (customMetricBuilder_ == null) {
-        if (customMetric_ != null) {
-          customMetric_ =
-              com.google.analytics.admin.v1beta.CustomMetric.newBuilder(customMetric_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && customMetric_ != null
+            && customMetric_
+                != com.google.analytics.admin.v1beta.CustomMetric.getDefaultInstance()) {
+          getCustomMetricBuilder().mergeFrom(value);
         } else {
           customMetric_ = value;
         }
-        onChanged();
       } else {
         customMetricBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +799,13 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearCustomMetric() {
-      if (customMetricBuilder_ == null) {
-        customMetric_ = null;
-        onChanged();
-      } else {
-        customMetric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customMetric_ = null;
+      if (customMetricBuilder_ != null) {
+        customMetricBuilder_.dispose();
         customMetricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +820,7 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.analytics.admin.v1beta.CustomMetric.Builder getCustomMetricBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCustomMetricFieldBuilder().getBuilder();
     }

@@ -466,7 +466,6 @@ public interface ApiDeploymentOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -546,7 +545,6 @@ public interface ApiDeploymentOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

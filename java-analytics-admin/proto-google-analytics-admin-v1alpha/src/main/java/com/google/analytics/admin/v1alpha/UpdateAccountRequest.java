@@ -119,7 +119,9 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccountOrBuilder getAccountOrBuilder() {
-    return getAccount();
+    return account_ == null
+        ? com.google.analytics.admin.v1alpha.Account.getDefaultInstance()
+        : account_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -174,7 +176,7 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,16 +396,15 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (accountBuilder_ == null) {
-        account_ = null;
-      } else {
-        account_ = null;
+      bitField0_ = 0;
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -433,18 +434,21 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
     public com.google.analytics.admin.v1alpha.UpdateAccountRequest buildPartial() {
       com.google.analytics.admin.v1alpha.UpdateAccountRequest result =
           new com.google.analytics.admin.v1alpha.UpdateAccountRequest(this);
-      if (accountBuilder_ == null) {
-        result.account_ = account_;
-      } else {
-        result.account_ = accountBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.UpdateAccountRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.account_ = accountBuilder_ == null ? account_ : accountBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -528,13 +532,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -553,6 +557,8 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.Account account_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -575,7 +581,7 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the account field is set.
      */
     public boolean hasAccount() {
-      return accountBuilder_ != null || account_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -618,11 +624,11 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         account_ = value;
-        onChanged();
       } else {
         accountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,11 +646,11 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
     public Builder setAccount(com.google.analytics.admin.v1alpha.Account.Builder builderForValue) {
       if (accountBuilder_ == null) {
         account_ = builderForValue.build();
-        onChanged();
       } else {
         accountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -661,19 +667,18 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeAccount(com.google.analytics.admin.v1alpha.Account value) {
       if (accountBuilder_ == null) {
-        if (account_ != null) {
-          account_ =
-              com.google.analytics.admin.v1alpha.Account.newBuilder(account_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && account_ != null
+            && account_ != com.google.analytics.admin.v1alpha.Account.getDefaultInstance()) {
+          getAccountBuilder().mergeFrom(value);
         } else {
           account_ = value;
         }
-        onChanged();
       } else {
         accountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -689,14 +694,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearAccount() {
-      if (accountBuilder_ == null) {
-        account_ = null;
-        onChanged();
-      } else {
-        account_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -712,7 +716,7 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.analytics.admin.v1alpha.Account.Builder getAccountBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
@@ -787,7 +791,7 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -830,11 +834,11 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,11 +856,11 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -873,17 +877,18 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,14 +904,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -922,7 +926,7 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -69,6 +69,8 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
   }
 
   public static final int REPORTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.RunReportResponse> reports_;
   /**
    *
@@ -139,7 +141,9 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
   }
 
   public static final int KIND_FIELD_NUMBER = 2;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -400,6 +404,7 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (reportsBuilder_ == null) {
         reports_ = java.util.Collections.emptyList();
       } else {
@@ -408,7 +413,6 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-
       return this;
     }
 
@@ -436,7 +440,16 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1beta.BatchRunReportsResponse buildPartial() {
       com.google.analytics.data.v1beta.BatchRunReportsResponse result =
           new com.google.analytics.data.v1beta.BatchRunReportsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.BatchRunReportsResponse result) {
       if (reportsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           reports_ = java.util.Collections.unmodifiableList(reports_);
@@ -446,9 +459,13 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       } else {
         result.reports_ = reportsBuilder_.build();
       }
-      result.kind_ = kind_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.BatchRunReportsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kind_;
+      }
     }
 
     @java.lang.Override
@@ -526,6 +543,7 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       }
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -571,7 +589,7 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
             case 18:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1013,8 +1031,8 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1050,8 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1056,8 +1074,8 @@ public final class BatchRunReportsResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

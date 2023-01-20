@@ -122,7 +122,9 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiSpecOrBuilder getApiSpecOrBuilder() {
-    return getApiSpec();
+    return apiSpec_ == null
+        ? com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance()
+        : apiSpec_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -177,11 +179,11 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -425,20 +427,18 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (apiSpecBuilder_ == null) {
-        apiSpec_ = null;
-      } else {
-        apiSpec_ = null;
+      bitField0_ = 0;
+      apiSpec_ = null;
+      if (apiSpecBuilder_ != null) {
+        apiSpecBuilder_.dispose();
         apiSpecBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -466,19 +466,24 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest result =
           new com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest(this);
-      if (apiSpecBuilder_ == null) {
-        result.apiSpec_ = apiSpec_;
-      } else {
-        result.apiSpec_ = apiSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.apiSpec_ = apiSpecBuilder_ == null ? apiSpec_ : apiSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -565,19 +570,19 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getApiSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -596,6 +601,8 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.apigeeregistry.v1.ApiSpec apiSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,7 +626,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the apiSpec field is set.
      */
     public boolean hasApiSpec() {
-      return apiSpecBuilder_ != null || apiSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -664,11 +671,11 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         apiSpec_ = value;
-        onChanged();
       } else {
         apiSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -687,11 +694,11 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public Builder setApiSpec(com.google.cloud.apigeeregistry.v1.ApiSpec.Builder builderForValue) {
       if (apiSpecBuilder_ == null) {
         apiSpec_ = builderForValue.build();
-        onChanged();
       } else {
         apiSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -709,19 +716,18 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeApiSpec(com.google.cloud.apigeeregistry.v1.ApiSpec value) {
       if (apiSpecBuilder_ == null) {
-        if (apiSpec_ != null) {
-          apiSpec_ =
-              com.google.cloud.apigeeregistry.v1.ApiSpec.newBuilder(apiSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && apiSpec_ != null
+            && apiSpec_ != com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance()) {
+          getApiSpecBuilder().mergeFrom(value);
         } else {
           apiSpec_ = value;
         }
-        onChanged();
       } else {
         apiSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -738,14 +744,13 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearApiSpec() {
-      if (apiSpecBuilder_ == null) {
-        apiSpec_ = null;
-        onChanged();
-      } else {
-        apiSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      apiSpec_ = null;
+      if (apiSpecBuilder_ != null) {
+        apiSpecBuilder_.dispose();
         apiSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -762,7 +767,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec.Builder getApiSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getApiSpecFieldBuilder().getBuilder();
     }
@@ -839,7 +844,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -882,11 +887,11 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -904,11 +909,11 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,17 +930,18 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -951,14 +957,13 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -974,7 +979,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1061,6 +1066,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1077,7 +1083,7 @@ public final class UpdateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

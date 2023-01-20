@@ -69,7 +69,9 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PUBLIC_CERTIFICATE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object publicCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicCertificate_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRIVATE_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object privateKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateKey_ = "";
   /**
    *
    *
@@ -400,10 +404,9 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       publicCertificate_ = "";
-
       privateKey_ = "";
-
       return this;
     }
 
@@ -431,10 +434,21 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.CertificateRawData buildPartial() {
       com.google.appengine.v1.CertificateRawData result =
           new com.google.appengine.v1.CertificateRawData(this);
-      result.publicCertificate_ = publicCertificate_;
-      result.privateKey_ = privateKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CertificateRawData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.publicCertificate_ = publicCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateKey_ = privateKey_;
+      }
     }
 
     @java.lang.Override
@@ -484,10 +498,12 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
       if (other == com.google.appengine.v1.CertificateRawData.getDefaultInstance()) return this;
       if (!other.getPublicCertificate().isEmpty()) {
         publicCertificate_ = other.publicCertificate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPrivateKey().isEmpty()) {
         privateKey_ = other.privateKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -519,13 +535,13 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 publicCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 privateKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +560,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object publicCertificate_ = "";
     /**
@@ -624,8 +642,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicCertificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,8 +665,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPublicCertificate() {
-
       publicCertificate_ = getDefaultInstance().getPublicCertificate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -675,8 +693,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicCertificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +784,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -791,8 +809,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrivateKey() {
-
       privateKey_ = getDefaultInstance().getPrivateKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -821,8 +839,8 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

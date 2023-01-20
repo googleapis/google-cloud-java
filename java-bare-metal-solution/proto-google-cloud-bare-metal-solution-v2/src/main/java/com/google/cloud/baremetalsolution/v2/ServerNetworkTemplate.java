@@ -365,7 +365,9 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -422,7 +424,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -457,11 +459,10 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
             .InterfaceType
         getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface.InterfaceType
           result =
               com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
-                  .InterfaceType.valueOf(type_);
+                  .InterfaceType.forNumber(type_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
               .InterfaceType.UNRECOGNIZED
@@ -469,7 +470,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     }
 
     public static final int REQUIRED_FIELD_NUMBER = 3;
-    private boolean required_;
+    private boolean required_ = false;
     /**
      *
      *
@@ -721,12 +722,10 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         type_ = 0;
-
         required_ = false;
-
         return this;
       }
 
@@ -758,11 +757,25 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
           buildPartial() {
         com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface result =
             new com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface(this);
-        result.name_ = name_;
-        result.type_ = type_;
-        result.required_ = required_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.required_ = required_;
+        }
       }
 
       @java.lang.Override
@@ -820,6 +833,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -857,19 +871,19 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   required_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -888,6 +902,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -962,8 +978,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -983,8 +999,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1009,8 +1025,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1048,8 +1064,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1070,11 +1086,10 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       public com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
               .InterfaceType
           getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface.InterfaceType
             result =
                 com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
-                    .InterfaceType.valueOf(type_);
+                    .InterfaceType.forNumber(type_);
         return result == null
             ? com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface
                 .InterfaceType.UNRECOGNIZED
@@ -1100,7 +1115,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1119,7 +1134,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -1156,6 +1171,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       public Builder setRequired(boolean value) {
 
         required_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1171,7 +1187,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearRequired() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         required_ = false;
         onChanged();
         return this;
@@ -1247,7 +1263,9 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1302,6 +1320,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int APPLICABLE_INSTANCE_TYPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList applicableInstanceTypes_;
   /**
    *
@@ -1363,6 +1383,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LOGICAL_INTERFACES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface>
       logicalInterfaces_;
@@ -1677,17 +1699,17 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (logicalInterfacesBuilder_ == null) {
         logicalInterfaces_ = java.util.Collections.emptyList();
       } else {
         logicalInterfaces_ = null;
         logicalInterfacesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1715,24 +1737,37 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate buildPartial() {
       com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate result =
           new com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         applicableInstanceTypes_ = applicableInstanceTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.applicableInstanceTypes_ = applicableInstanceTypes_;
       if (logicalInterfacesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           logicalInterfaces_ = java.util.Collections.unmodifiableList(logicalInterfaces_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.logicalInterfaces_ = logicalInterfaces_;
       } else {
         result.logicalInterfaces_ = logicalInterfacesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -1783,12 +1818,13 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.applicableInstanceTypes_.isEmpty()) {
         if (applicableInstanceTypes_.isEmpty()) {
           applicableInstanceTypes_ = other.applicableInstanceTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureApplicableInstanceTypesIsMutable();
           applicableInstanceTypes_.addAll(other.applicableInstanceTypes_);
@@ -1799,7 +1835,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         if (!other.logicalInterfaces_.isEmpty()) {
           if (logicalInterfaces_.isEmpty()) {
             logicalInterfaces_ = other.logicalInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLogicalInterfacesIsMutable();
             logicalInterfaces_.addAll(other.logicalInterfaces_);
@@ -1812,7 +1848,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
             logicalInterfacesBuilder_.dispose();
             logicalInterfacesBuilder_ = null;
             logicalInterfaces_ = other.logicalInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             logicalInterfacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLogicalInterfacesFieldBuilder()
@@ -1851,7 +1887,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1965,8 +2001,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1985,8 +2021,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2010,8 +2046,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2020,10 +2056,10 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureApplicableInstanceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         applicableInstanceTypes_ =
             new com.google.protobuf.LazyStringArrayList(applicableInstanceTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2158,7 +2194,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      */
     public Builder clearApplicableInstanceTypes() {
       applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2190,12 +2226,12 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
         logicalInterfaces_ = java.util.Collections.emptyList();
 
     private void ensureLogicalInterfacesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         logicalInterfaces_ =
             new java.util.ArrayList<
                 com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate.LogicalInterface>(
                 logicalInterfaces_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2449,7 +2485,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public Builder clearLogicalInterfaces() {
       if (logicalInterfacesBuilder_ == null) {
         logicalInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         logicalInterfacesBuilder_.clear();
@@ -2601,7 +2637,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
                 com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate
                     .LogicalInterfaceOrBuilder>(
                 logicalInterfaces_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         logicalInterfaces_ = null;

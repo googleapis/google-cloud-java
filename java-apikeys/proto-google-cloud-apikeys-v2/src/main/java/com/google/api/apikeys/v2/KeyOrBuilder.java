@@ -312,7 +312,6 @@ public interface KeyOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 8;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

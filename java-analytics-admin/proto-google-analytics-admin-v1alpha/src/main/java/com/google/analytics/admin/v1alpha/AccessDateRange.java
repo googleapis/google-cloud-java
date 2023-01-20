@@ -69,7 +69,9 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int START_DATE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object startDate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startDate_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int END_DATE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object endDate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endDate_ = "";
   /**
    *
    *
@@ -384,10 +388,9 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startDate_ = "";
-
       endDate_ = "";
-
       return this;
     }
 
@@ -415,10 +418,21 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.admin.v1alpha.AccessDateRange buildPartial() {
       com.google.analytics.admin.v1alpha.AccessDateRange result =
           new com.google.analytics.admin.v1alpha.AccessDateRange(this);
-      result.startDate_ = startDate_;
-      result.endDate_ = endDate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessDateRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startDate_ = startDate_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endDate_ = endDate_;
+      }
     }
 
     @java.lang.Override
@@ -469,10 +483,12 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getStartDate().isEmpty()) {
         startDate_ = other.startDate_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEndDate().isEmpty()) {
         endDate_ = other.endDate_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -504,13 +520,13 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 startDate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 endDate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +545,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object startDate_ = "";
     /**
@@ -600,8 +618,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       startDate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +638,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearStartDate() {
-
       startDate_ = getDefaultInstance().getStartDate();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -645,8 +663,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       startDate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +739,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       endDate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -741,8 +759,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEndDate() {
-
       endDate_ = getDefaultInstance().getEndDate();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -766,8 +784,8 @@ public final class AccessDateRange extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endDate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

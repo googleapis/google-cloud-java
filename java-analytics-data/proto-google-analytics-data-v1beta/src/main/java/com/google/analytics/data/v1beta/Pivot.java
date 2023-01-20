@@ -70,6 +70,8 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIELD_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList fieldNames_;
   /**
    *
@@ -143,6 +145,8 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORDER_BYS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.OrderBy> orderBys_;
   /**
    *
@@ -232,7 +236,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OFFSET_FIELD_NUMBER = 3;
-  private long offset_;
+  private long offset_ = 0L;
   /**
    *
    *
@@ -250,7 +254,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIMIT_FIELD_NUMBER = 4;
-  private long limit_;
+  private long limit_ = 0L;
   /**
    *
    *
@@ -273,7 +277,10 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_AGGREGATIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> metricAggregations_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>
       metricAggregations_converter_ =
@@ -281,9 +288,8 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>() {
             public com.google.analytics.data.v1beta.MetricAggregation convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.analytics.data.v1beta.MetricAggregation result =
-                  com.google.analytics.data.v1beta.MetricAggregation.valueOf(from);
+                  com.google.analytics.data.v1beta.MetricAggregation.forNumber(from);
               return result == null
                   ? com.google.analytics.data.v1beta.MetricAggregation.UNRECOGNIZED
                   : result;
@@ -635,6 +641,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fieldNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (orderBysBuilder_ == null) {
@@ -645,11 +652,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       offset_ = 0L;
-
       limit_ = 0L;
-
       metricAggregations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -677,7 +682,15 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.Pivot buildPartial() {
       com.google.analytics.data.v1beta.Pivot result =
           new com.google.analytics.data.v1beta.Pivot(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.data.v1beta.Pivot result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         fieldNames_ = fieldNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -692,15 +705,21 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.orderBys_ = orderBysBuilder_.build();
       }
-      result.offset_ = offset_;
-      result.limit_ = limit_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         metricAggregations_ = java.util.Collections.unmodifiableList(metricAggregations_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.metricAggregations_ = metricAggregations_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.Pivot result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.offset_ = offset_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.limit_ = limit_;
+      }
     }
 
     @java.lang.Override
@@ -794,7 +813,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       if (!other.metricAggregations_.isEmpty()) {
         if (metricAggregations_.isEmpty()) {
           metricAggregations_ = other.metricAggregations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureMetricAggregationsIsMutable();
           metricAggregations_.addAll(other.metricAggregations_);
@@ -850,13 +869,13 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 offset_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 limit_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
@@ -1544,6 +1563,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public Builder setOffset(long value) {
 
       offset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1559,7 +1579,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       offset_ = 0L;
       onChanged();
       return this;
@@ -1606,6 +1626,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public Builder setLimit(long value) {
 
       limit_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1626,7 +1647,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       limit_ = 0L;
       onChanged();
       return this;
@@ -1636,9 +1657,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricAggregationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         metricAggregations_ = new java.util.ArrayList<java.lang.Integer>(metricAggregations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1779,7 +1800,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMetricAggregations() {
       metricAggregations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

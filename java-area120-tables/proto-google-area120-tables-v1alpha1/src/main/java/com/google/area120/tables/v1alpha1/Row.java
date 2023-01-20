@@ -79,7 +79,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -146,6 +148,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> values_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -210,8 +213,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getValuesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -474,8 +479,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableValues().clear();
       return this;
     }
@@ -504,12 +509,22 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.area120.tables.v1alpha1.Row buildPartial() {
       com.google.area120.tables.v1alpha1.Row result =
           new com.google.area120.tables.v1alpha1.Row(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.values_ = internalGetValues();
-      result.values_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.Row result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.values_ = internalGetValues();
+        result.values_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -559,9 +574,11 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.area120.tables.v1alpha1.Row.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableValues().mergeFrom(other.internalGetValues());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -591,7 +608,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -603,6 +620,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableValues()
                     .getMutableMap()
                     .put(values__.getKey(), values__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -691,8 +709,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +728,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +752,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -752,14 +770,14 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableValues() {
-      onChanged();
-      ;
       if (values_ == null) {
         values_ = com.google.protobuf.MapField.newMapField(ValuesDefaultEntryHolder.defaultEntry);
       }
       if (!values_.isMutable()) {
         values_ = values_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return values_;
     }
 
@@ -817,8 +835,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getValuesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getValuesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -849,6 +869,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearValues() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableValues().getMutableMap().clear();
       return this;
     }
@@ -873,6 +894,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableValues() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableValues().getMutableMap();
     }
     /**
@@ -893,8 +915,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableValues().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -910,6 +932,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllValues(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableValues().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

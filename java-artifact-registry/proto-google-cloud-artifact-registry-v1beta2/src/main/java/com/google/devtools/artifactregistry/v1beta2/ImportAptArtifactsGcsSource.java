@@ -68,6 +68,8 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
   }
 
   public static final int URIS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -129,7 +131,7 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
   }
 
   public static final int USE_WILDCARDS_FIELD_NUMBER = 2;
-  private boolean useWildcards_;
+  private boolean useWildcards_ = false;
   /**
    *
    *
@@ -364,10 +366,10 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       useWildcards_ = false;
-
       return this;
     }
 
@@ -398,15 +400,29 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
     public com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource buildPartial() {
       com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource result =
           new com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         uris_ = uris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.uris_ = uris_;
-      result.useWildcards_ = useWildcards_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsGcsSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.useWildcards_ = useWildcards_;
+      }
     }
 
     @java.lang.Override
@@ -508,7 +524,7 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
             case 16:
               {
                 useWildcards_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -729,6 +745,7 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
     public Builder setUseWildcards(boolean value) {
 
       useWildcards_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -744,7 +761,7 @@ public final class ImportAptArtifactsGcsSource extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearUseWildcards() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       useWildcards_ = false;
       onChanged();
       return this;

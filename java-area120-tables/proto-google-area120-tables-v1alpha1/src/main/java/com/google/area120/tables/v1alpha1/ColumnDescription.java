@@ -71,7 +71,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dataType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataType_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -230,6 +236,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> labels_;
   /**
    *
@@ -378,7 +386,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder
       getRelationshipDetailsOrBuilder() {
-    return getRelationshipDetails();
+    return relationshipDetails_ == null
+        ? com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()
+        : relationshipDetails_;
   }
 
   public static final int LOOKUP_DETAILS_FIELD_NUMBER = 6;
@@ -441,7 +451,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder getLookupDetailsOrBuilder() {
-    return getLookupDetails();
+    return lookupDetails_ == null
+        ? com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()
+        : lookupDetails_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -698,29 +710,25 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       dataType_ = "";
-
       id_ = "";
-
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
       } else {
         labels_ = null;
         labelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (relationshipDetailsBuilder_ == null) {
-        relationshipDetails_ = null;
-      } else {
-        relationshipDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      relationshipDetails_ = null;
+      if (relationshipDetailsBuilder_ != null) {
+        relationshipDetailsBuilder_.dispose();
         relationshipDetailsBuilder_ = null;
       }
-      if (lookupDetailsBuilder_ == null) {
-        lookupDetails_ = null;
-      } else {
-        lookupDetails_ = null;
+      lookupDetails_ = null;
+      if (lookupDetailsBuilder_ != null) {
+        lookupDetailsBuilder_.dispose();
         lookupDetailsBuilder_ = null;
       }
       return this;
@@ -750,31 +758,48 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public com.google.area120.tables.v1alpha1.ColumnDescription buildPartial() {
       com.google.area120.tables.v1alpha1.ColumnDescription result =
           new com.google.area120.tables.v1alpha1.ColumnDescription(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.dataType_ = dataType_;
-      result.id_ = id_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.area120.tables.v1alpha1.ColumnDescription result) {
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           labels_ = java.util.Collections.unmodifiableList(labels_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.labels_ = labels_;
       } else {
         result.labels_ = labelsBuilder_.build();
       }
-      if (relationshipDetailsBuilder_ == null) {
-        result.relationshipDetails_ = relationshipDetails_;
-      } else {
-        result.relationshipDetails_ = relationshipDetailsBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.ColumnDescription result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (lookupDetailsBuilder_ == null) {
-        result.lookupDetails_ = lookupDetails_;
-      } else {
-        result.lookupDetails_ = lookupDetailsBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataType_ = dataType_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.relationshipDetails_ =
+            relationshipDetailsBuilder_ == null
+                ? relationshipDetails_
+                : relationshipDetailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.lookupDetails_ =
+            lookupDetailsBuilder_ == null ? lookupDetails_ : lookupDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -825,21 +850,24 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDataType().isEmpty()) {
         dataType_ = other.dataType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (labelsBuilder_ == null) {
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -852,7 +880,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             labelsBuilder_.dispose();
             labelsBuilder_ = null;
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             labelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLabelsFieldBuilder()
@@ -897,19 +925,19 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dataType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -929,13 +957,13 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getRelationshipDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getLookupDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1018,8 +1046,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1035,8 +1063,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1057,8 +1085,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1142,8 +1170,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1165,8 +1193,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
       dataType_ = getDefaultInstance().getDataType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1193,8 +1221,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1260,8 +1288,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1277,8 +1305,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1299,8 +1327,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1309,9 +1337,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         labels_ = new java.util.ArrayList<com.google.area120.tables.v1alpha1.LabeledItem>(labels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1582,7 +1610,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public Builder clearLabels() {
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         labelsBuilder_.clear();
@@ -1739,7 +1767,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
                 com.google.area120.tables.v1alpha1.LabeledItem,
                 com.google.area120.tables.v1alpha1.LabeledItem.Builder,
                 com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>(
-                labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                labels_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         labels_ = null;
       }
       return labelsBuilder_;
@@ -1766,7 +1794,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * @return Whether the relationshipDetails field is set.
      */
     public boolean hasRelationshipDetails() {
-      return relationshipDetailsBuilder_ != null || relationshipDetails_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1810,11 +1838,11 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         relationshipDetails_ = value;
-        onChanged();
       } else {
         relationshipDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1833,11 +1861,11 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         com.google.area120.tables.v1alpha1.RelationshipDetails.Builder builderForValue) {
       if (relationshipDetailsBuilder_ == null) {
         relationshipDetails_ = builderForValue.build();
-        onChanged();
       } else {
         relationshipDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1855,20 +1883,19 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public Builder mergeRelationshipDetails(
         com.google.area120.tables.v1alpha1.RelationshipDetails value) {
       if (relationshipDetailsBuilder_ == null) {
-        if (relationshipDetails_ != null) {
-          relationshipDetails_ =
-              com.google.area120.tables.v1alpha1.RelationshipDetails.newBuilder(
-                      relationshipDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && relationshipDetails_ != null
+            && relationshipDetails_
+                != com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()) {
+          getRelationshipDetailsBuilder().mergeFrom(value);
         } else {
           relationshipDetails_ = value;
         }
-        onChanged();
       } else {
         relationshipDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1884,14 +1911,13 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRelationshipDetails() {
-      if (relationshipDetailsBuilder_ == null) {
-        relationshipDetails_ = null;
-        onChanged();
-      } else {
-        relationshipDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      relationshipDetails_ = null;
+      if (relationshipDetailsBuilder_ != null) {
+        relationshipDetailsBuilder_.dispose();
         relationshipDetailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1908,7 +1934,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      */
     public com.google.area120.tables.v1alpha1.RelationshipDetails.Builder
         getRelationshipDetailsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRelationshipDetailsFieldBuilder().getBuilder();
     }
@@ -1986,7 +2012,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * @return Whether the lookupDetails field is set.
      */
     public boolean hasLookupDetails() {
-      return lookupDetailsBuilder_ != null || lookupDetails_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2033,11 +2059,11 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         lookupDetails_ = value;
-        onChanged();
       } else {
         lookupDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2058,11 +2084,11 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         com.google.area120.tables.v1alpha1.LookupDetails.Builder builderForValue) {
       if (lookupDetailsBuilder_ == null) {
         lookupDetails_ = builderForValue.build();
-        onChanged();
       } else {
         lookupDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2081,19 +2107,19 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLookupDetails(com.google.area120.tables.v1alpha1.LookupDetails value) {
       if (lookupDetailsBuilder_ == null) {
-        if (lookupDetails_ != null) {
-          lookupDetails_ =
-              com.google.area120.tables.v1alpha1.LookupDetails.newBuilder(lookupDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && lookupDetails_ != null
+            && lookupDetails_
+                != com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()) {
+          getLookupDetailsBuilder().mergeFrom(value);
         } else {
           lookupDetails_ = value;
         }
-        onChanged();
       } else {
         lookupDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2111,14 +2137,13 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLookupDetails() {
-      if (lookupDetailsBuilder_ == null) {
-        lookupDetails_ = null;
-        onChanged();
-      } else {
-        lookupDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lookupDetails_ = null;
+      if (lookupDetailsBuilder_ != null) {
+        lookupDetailsBuilder_.dispose();
         lookupDetailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2136,7 +2161,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.area120.tables.v1alpha1.LookupDetails.Builder getLookupDetailsBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLookupDetailsFieldBuilder().getBuilder();
     }

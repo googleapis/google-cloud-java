@@ -69,7 +69,9 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int API_CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object apiConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiConfigId_ = "";
   /**
    *
    *
@@ -225,7 +229,9 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.apigateway.v1.ApiConfigOrBuilder getApiConfigOrBuilder() {
-    return getApiConfig();
+    return apiConfig_ == null
+        ? com.google.cloud.apigateway.v1.ApiConfig.getDefaultInstance()
+        : apiConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -449,14 +455,12 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       apiConfigId_ = "";
-
-      if (apiConfigBuilder_ == null) {
-        apiConfig_ = null;
-      } else {
-        apiConfig_ = null;
+      apiConfig_ = null;
+      if (apiConfigBuilder_ != null) {
+        apiConfigBuilder_.dispose();
         apiConfigBuilder_ = null;
       }
       return this;
@@ -486,15 +490,24 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.apigateway.v1.CreateApiConfigRequest buildPartial() {
       com.google.cloud.apigateway.v1.CreateApiConfigRequest result =
           new com.google.cloud.apigateway.v1.CreateApiConfigRequest(this);
-      result.parent_ = parent_;
-      result.apiConfigId_ = apiConfigId_;
-      if (apiConfigBuilder_ == null) {
-        result.apiConfig_ = apiConfig_;
-      } else {
-        result.apiConfig_ = apiConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigateway.v1.CreateApiConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiConfigId_ = apiConfigId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.apiConfig_ = apiConfigBuilder_ == null ? apiConfig_ : apiConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -545,10 +558,12 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getApiConfigId().isEmpty()) {
         apiConfigId_ = other.apiConfigId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasApiConfig()) {
@@ -583,19 +598,19 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 apiConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getApiConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +629,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -685,8 +702,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +722,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +747,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -800,8 +817,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,8 +835,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearApiConfigId() {
-
       apiConfigId_ = getDefaultInstance().getApiConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -841,8 +858,8 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -867,7 +884,7 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      * @return Whether the apiConfig field is set.
      */
     public boolean hasApiConfig() {
-      return apiConfigBuilder_ != null || apiConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -908,11 +925,11 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         apiConfig_ = value;
-        onChanged();
       } else {
         apiConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -929,11 +946,11 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
     public Builder setApiConfig(com.google.cloud.apigateway.v1.ApiConfig.Builder builderForValue) {
       if (apiConfigBuilder_ == null) {
         apiConfig_ = builderForValue.build();
-        onChanged();
       } else {
         apiConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -949,19 +966,18 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeApiConfig(com.google.cloud.apigateway.v1.ApiConfig value) {
       if (apiConfigBuilder_ == null) {
-        if (apiConfig_ != null) {
-          apiConfig_ =
-              com.google.cloud.apigateway.v1.ApiConfig.newBuilder(apiConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && apiConfig_ != null
+            && apiConfig_ != com.google.cloud.apigateway.v1.ApiConfig.getDefaultInstance()) {
+          getApiConfigBuilder().mergeFrom(value);
         } else {
           apiConfig_ = value;
         }
-        onChanged();
       } else {
         apiConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -976,14 +992,13 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearApiConfig() {
-      if (apiConfigBuilder_ == null) {
-        apiConfig_ = null;
-        onChanged();
-      } else {
-        apiConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      apiConfig_ = null;
+      if (apiConfigBuilder_ != null) {
+        apiConfigBuilder_.dispose();
         apiConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -998,7 +1013,7 @@ public final class CreateApiConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.apigateway.v1.ApiConfig.Builder getApiConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getApiConfigFieldBuilder().getBuilder();
     }

@@ -84,7 +84,9 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UPLOAD_PATH_REGEX_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uploadPathRegex_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uploadPathRegex_ = "";
   /**
    *
    *
@@ -200,6 +204,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> httpHeaders_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -258,8 +263,10 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; http_headers = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getHttpHeadersOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getHttpHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -288,7 +295,9 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -386,11 +395,11 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExpirationOrBuilder() {
-    return getExpiration();
+    return expiration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : expiration_;
   }
 
   public static final int REQUIRE_MATCHING_FILE_FIELD_NUMBER = 6;
-  private boolean requireMatchingFile_;
+  private boolean requireMatchingFile_ = false;
   /**
    *
    *
@@ -409,7 +418,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int APPLICATION_READABLE_FIELD_NUMBER = 7;
-  private boolean applicationReadable_;
+  private boolean applicationReadable_ = false;
   /**
    *
    *
@@ -717,23 +726,18 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       uploadPathRegex_ = "";
-
       internalGetMutableHttpHeaders().clear();
       mimeType_ = "";
-
-      if (expirationBuilder_ == null) {
-        expiration_ = null;
-      } else {
-        expiration_ = null;
+      expiration_ = null;
+      if (expirationBuilder_ != null) {
+        expirationBuilder_.dispose();
         expirationBuilder_ = null;
       }
       requireMatchingFile_ = false;
-
       applicationReadable_ = false;
-
       return this;
     }
 
@@ -761,21 +765,37 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.StaticFilesHandler buildPartial() {
       com.google.appengine.v1.StaticFilesHandler result =
           new com.google.appengine.v1.StaticFilesHandler(this);
-      int from_bitField0_ = bitField0_;
-      result.path_ = path_;
-      result.uploadPathRegex_ = uploadPathRegex_;
-      result.httpHeaders_ = internalGetHttpHeaders();
-      result.httpHeaders_.makeImmutable();
-      result.mimeType_ = mimeType_;
-      if (expirationBuilder_ == null) {
-        result.expiration_ = expiration_;
-      } else {
-        result.expiration_ = expirationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requireMatchingFile_ = requireMatchingFile_;
-      result.applicationReadable_ = applicationReadable_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.StaticFilesHandler result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uploadPathRegex_ = uploadPathRegex_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.httpHeaders_ = internalGetHttpHeaders();
+        result.httpHeaders_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.expiration_ = expirationBuilder_ == null ? expiration_ : expirationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requireMatchingFile_ = requireMatchingFile_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.applicationReadable_ = applicationReadable_;
+      }
     }
 
     @java.lang.Override
@@ -825,15 +845,19 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (other == com.google.appengine.v1.StaticFilesHandler.getDefaultInstance()) return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUploadPathRegex().isEmpty()) {
         uploadPathRegex_ = other.uploadPathRegex_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableHttpHeaders().mergeFrom(other.internalGetHttpHeaders());
+      bitField0_ |= 0x00000004;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasExpiration()) {
@@ -874,13 +898,13 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uploadPathRegex_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -892,30 +916,31 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
                 internalGetMutableHttpHeaders()
                     .getMutableMap()
                     .put(httpHeaders__.getKey(), httpHeaders__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getExpirationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 requireMatchingFile_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 applicationReadable_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1004,8 +1029,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1023,8 +1048,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1047,8 +1072,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1117,8 +1142,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       uploadPathRegex_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1135,8 +1160,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUploadPathRegex() {
-
       uploadPathRegex_ = getDefaultInstance().getUploadPathRegex();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1158,8 +1183,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uploadPathRegex_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1177,8 +1202,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableHttpHeaders() {
-      onChanged();
-      ;
       if (httpHeaders_ == null) {
         httpHeaders_ =
             com.google.protobuf.MapField.newMapField(HttpHeadersDefaultEntryHolder.defaultEntry);
@@ -1186,6 +1209,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (!httpHeaders_.isMutable()) {
         httpHeaders_ = httpHeaders_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return httpHeaders_;
     }
 
@@ -1237,8 +1262,10 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; http_headers = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getHttpHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHttpHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1267,6 +1294,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearHttpHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableHttpHeaders().getMutableMap().clear();
       return this;
     }
@@ -1289,6 +1317,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHttpHeaders() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableHttpHeaders().getMutableMap();
     }
     /**
@@ -1307,8 +1336,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableHttpHeaders().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1322,6 +1351,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllHttpHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHttpHeaders().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1392,8 +1422,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1411,8 +1441,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1435,8 +1465,8 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1460,7 +1490,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return Whether the expiration field is set.
      */
     public boolean hasExpiration() {
-      return expirationBuilder_ != null || expiration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1499,11 +1529,11 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         expiration_ = value;
-        onChanged();
       } else {
         expirationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1519,11 +1549,11 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public Builder setExpiration(com.google.protobuf.Duration.Builder builderForValue) {
       if (expirationBuilder_ == null) {
         expiration_ = builderForValue.build();
-        onChanged();
       } else {
         expirationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1538,17 +1568,18 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeExpiration(com.google.protobuf.Duration value) {
       if (expirationBuilder_ == null) {
-        if (expiration_ != null) {
-          expiration_ =
-              com.google.protobuf.Duration.newBuilder(expiration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && expiration_ != null
+            && expiration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getExpirationBuilder().mergeFrom(value);
         } else {
           expiration_ = value;
         }
-        onChanged();
       } else {
         expirationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1562,14 +1593,13 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration expiration = 5;</code>
      */
     public Builder clearExpiration() {
-      if (expirationBuilder_ == null) {
-        expiration_ = null;
-        onChanged();
-      } else {
-        expiration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      expiration_ = null;
+      if (expirationBuilder_ != null) {
+        expirationBuilder_.dispose();
         expirationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1583,7 +1613,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration expiration = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getExpirationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getExpirationFieldBuilder().getBuilder();
     }
@@ -1666,6 +1696,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public Builder setRequireMatchingFile(boolean value) {
 
       requireMatchingFile_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1682,7 +1713,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequireMatchingFile() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       requireMatchingFile_ = false;
       onChanged();
       return this;
@@ -1727,6 +1758,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     public Builder setApplicationReadable(boolean value) {
 
       applicationReadable_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1746,7 +1778,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearApplicationReadable() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       applicationReadable_ = false;
       onChanged();
       return this;

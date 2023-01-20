@@ -68,7 +68,7 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int AT_ANY_POINT_IN_TIME_FIELD_NUMBER = 1;
-  private boolean atAnyPointInTime_;
+  private boolean atAnyPointInTime_ = false;
   /**
    *
    *
@@ -324,8 +324,8 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       atAnyPointInTime_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -353,15 +353,21 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
     public com.google.analytics.data.v1alpha.SegmentFilterScoping buildPartial() {
       com.google.analytics.data.v1alpha.SegmentFilterScoping result =
           new com.google.analytics.data.v1alpha.SegmentFilterScoping(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.SegmentFilterScoping result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.atAnyPointInTime_ = atAnyPointInTime_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -538,8 +544,9 @@ public final class SegmentFilterScoping extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setAtAnyPointInTime(boolean value) {
-      bitField0_ |= 0x00000001;
+
       atAnyPointInTime_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

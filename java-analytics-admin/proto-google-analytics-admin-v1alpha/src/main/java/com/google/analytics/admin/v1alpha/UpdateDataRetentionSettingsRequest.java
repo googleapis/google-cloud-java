@@ -121,7 +121,9 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder
       getDataRetentionSettingsOrBuilder() {
-    return getDataRetentionSettings();
+    return dataRetentionSettings_ == null
+        ? com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance()
+        : dataRetentionSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -176,7 +178,7 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,16 +401,15 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dataRetentionSettingsBuilder_ == null) {
-        dataRetentionSettings_ = null;
-      } else {
-        dataRetentionSettings_ = null;
+      bitField0_ = 0;
+      dataRetentionSettings_ = null;
+      if (dataRetentionSettingsBuilder_ != null) {
+        dataRetentionSettingsBuilder_.dispose();
         dataRetentionSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -440,18 +441,25 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
     public com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest buildPartial() {
       com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest result =
           new com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest(this);
-      if (dataRetentionSettingsBuilder_ == null) {
-        result.dataRetentionSettings_ = dataRetentionSettings_;
-      } else {
-        result.dataRetentionSettings_ = dataRetentionSettingsBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataRetentionSettings_ =
+            dataRetentionSettingsBuilder_ == null
+                ? dataRetentionSettings_
+                : dataRetentionSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +547,13 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
               {
                 input.readMessage(
                     getDataRetentionSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +572,8 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.DataRetentionSettings dataRetentionSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -586,7 +596,7 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      * @return Whether the dataRetentionSettings field is set.
      */
     public boolean hasDataRetentionSettings() {
-      return dataRetentionSettingsBuilder_ != null || dataRetentionSettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -630,11 +640,11 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
           throw new NullPointerException();
         }
         dataRetentionSettings_ = value;
-        onChanged();
       } else {
         dataRetentionSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,11 +663,11 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
         com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder builderForValue) {
       if (dataRetentionSettingsBuilder_ == null) {
         dataRetentionSettings_ = builderForValue.build();
-        onChanged();
       } else {
         dataRetentionSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,20 +685,19 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
     public Builder mergeDataRetentionSettings(
         com.google.analytics.admin.v1alpha.DataRetentionSettings value) {
       if (dataRetentionSettingsBuilder_ == null) {
-        if (dataRetentionSettings_ != null) {
-          dataRetentionSettings_ =
-              com.google.analytics.admin.v1alpha.DataRetentionSettings.newBuilder(
-                      dataRetentionSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dataRetentionSettings_ != null
+            && dataRetentionSettings_
+                != com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance()) {
+          getDataRetentionSettingsBuilder().mergeFrom(value);
         } else {
           dataRetentionSettings_ = value;
         }
-        onChanged();
       } else {
         dataRetentionSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -704,14 +713,13 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      * </code>
      */
     public Builder clearDataRetentionSettings() {
-      if (dataRetentionSettingsBuilder_ == null) {
-        dataRetentionSettings_ = null;
-        onChanged();
-      } else {
-        dataRetentionSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dataRetentionSettings_ = null;
+      if (dataRetentionSettingsBuilder_ != null) {
+        dataRetentionSettingsBuilder_.dispose();
         dataRetentionSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -728,7 +736,7 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      */
     public com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder
         getDataRetentionSettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDataRetentionSettingsFieldBuilder().getBuilder();
     }
@@ -804,7 +812,7 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -847,11 +855,11 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -869,11 +877,11 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,17 +898,18 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -916,14 +925,13 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -939,7 +947,7 @@ public final class UpdateDataRetentionSettingsRequest extends com.google.protobu
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

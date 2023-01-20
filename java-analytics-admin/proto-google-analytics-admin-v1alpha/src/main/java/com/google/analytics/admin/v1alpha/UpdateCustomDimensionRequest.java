@@ -110,7 +110,9 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder getCustomDimensionOrBuilder() {
-    return getCustomDimension();
+    return customDimension_ == null
+        ? com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance()
+        : customDimension_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (customDimensionBuilder_ == null) {
-        customDimension_ = null;
-      } else {
-        customDimension_ = null;
+      bitField0_ = 0;
+      customDimension_ = null;
+      if (customDimensionBuilder_ != null) {
+        customDimensionBuilder_.dispose();
         customDimensionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -425,18 +426,23 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
     public com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest buildPartial() {
       com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest result =
           new com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest(this);
-      if (customDimensionBuilder_ == null) {
-        result.customDimension_ = customDimension_;
-      } else {
-        result.customDimension_ = customDimensionBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customDimension_ =
+            customDimensionBuilder_ == null ? customDimension_ : customDimensionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +528,13 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getCustomDimensionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +554,8 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.analytics.admin.v1alpha.CustomDimension customDimension_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.CustomDimension,
@@ -566,7 +574,7 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * @return Whether the customDimension field is set.
      */
     public boolean hasCustomDimension() {
-      return customDimensionBuilder_ != null || customDimension_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -603,11 +611,11 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         customDimension_ = value;
-        onChanged();
       } else {
         customDimensionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,11 +631,11 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
         com.google.analytics.admin.v1alpha.CustomDimension.Builder builderForValue) {
       if (customDimensionBuilder_ == null) {
         customDimension_ = builderForValue.build();
-        onChanged();
       } else {
         customDimensionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -641,19 +649,19 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeCustomDimension(com.google.analytics.admin.v1alpha.CustomDimension value) {
       if (customDimensionBuilder_ == null) {
-        if (customDimension_ != null) {
-          customDimension_ =
-              com.google.analytics.admin.v1alpha.CustomDimension.newBuilder(customDimension_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && customDimension_ != null
+            && customDimension_
+                != com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance()) {
+          getCustomDimensionBuilder().mergeFrom(value);
         } else {
           customDimension_ = value;
         }
-        onChanged();
       } else {
         customDimensionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -666,14 +674,13 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 1;</code>
      */
     public Builder clearCustomDimension() {
-      if (customDimensionBuilder_ == null) {
-        customDimension_ = null;
-        onChanged();
-      } else {
-        customDimension_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      customDimension_ = null;
+      if (customDimensionBuilder_ != null) {
+        customDimensionBuilder_.dispose();
         customDimensionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -686,7 +693,7 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * <code>.google.analytics.admin.v1alpha.CustomDimension custom_dimension = 1;</code>
      */
     public com.google.analytics.admin.v1alpha.CustomDimension.Builder getCustomDimensionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCustomDimensionFieldBuilder().getBuilder();
     }
@@ -756,7 +763,7 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -799,11 +806,11 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +828,11 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,17 +849,18 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,14 +876,13 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +898,7 @@ public final class UpdateCustomDimensionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

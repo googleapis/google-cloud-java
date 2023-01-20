@@ -91,6 +91,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -166,8 +167,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -428,6 +431,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableMetadata().clear();
       return this;
     }
@@ -456,11 +460,19 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1.BatchPredictResult buildPartial() {
       com.google.cloud.automl.v1.BatchPredictResult result =
           new com.google.cloud.automl.v1.BatchPredictResult(this);
-      int from_bitField0_ = bitField0_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.BatchPredictResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -509,6 +521,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.automl.v1.BatchPredictResult other) {
       if (other == com.google.cloud.automl.v1.BatchPredictResult.getDefaultInstance()) return this;
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -544,6 +557,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -576,8 +590,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -585,6 +597,8 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return metadata_;
     }
 
@@ -654,8 +668,10 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; metadata = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -690,6 +706,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -718,6 +735,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -742,8 +760,8 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -763,6 +781,7 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

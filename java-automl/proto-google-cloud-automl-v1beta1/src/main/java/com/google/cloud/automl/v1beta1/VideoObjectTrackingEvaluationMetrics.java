@@ -72,7 +72,7 @@ public final class VideoObjectTrackingEvaluationMetrics
   }
 
   public static final int EVALUATED_FRAME_COUNT_FIELD_NUMBER = 1;
-  private int evaluatedFrameCount_;
+  private int evaluatedFrameCount_ = 0;
   /**
    *
    *
@@ -90,7 +90,7 @@ public final class VideoObjectTrackingEvaluationMetrics
   }
 
   public static final int EVALUATED_BOUNDING_BOX_COUNT_FIELD_NUMBER = 2;
-  private int evaluatedBoundingBoxCount_;
+  private int evaluatedBoundingBoxCount_ = 0;
   /**
    *
    *
@@ -109,6 +109,8 @@ public final class VideoObjectTrackingEvaluationMetrics
   }
 
   public static final int BOUNDING_BOX_METRICS_ENTRIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       boundingBoxMetricsEntries_;
   /**
@@ -207,7 +209,7 @@ public final class VideoObjectTrackingEvaluationMetrics
   }
 
   public static final int BOUNDING_BOX_MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 6;
-  private float boundingBoxMeanAveragePrecision_;
+  private float boundingBoxMeanAveragePrecision_ = 0F;
   /**
    *
    *
@@ -462,19 +464,17 @@ public final class VideoObjectTrackingEvaluationMetrics
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       evaluatedFrameCount_ = 0;
-
       evaluatedBoundingBoxCount_ = 0;
-
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
       } else {
         boundingBoxMetricsEntries_ = null;
         boundingBoxMetricsEntriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       boundingBoxMeanAveragePrecision_ = 0F;
-
       return this;
     }
 
@@ -504,22 +504,40 @@ public final class VideoObjectTrackingEvaluationMetrics
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics buildPartial() {
       com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics result =
           new com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics(this);
-      int from_bitField0_ = bitField0_;
-      result.evaluatedFrameCount_ = evaluatedFrameCount_;
-      result.evaluatedBoundingBoxCount_ = evaluatedBoundingBoxCount_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics result) {
       if (boundingBoxMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           boundingBoxMetricsEntries_ =
               java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntries_;
       } else {
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntriesBuilder_.build();
       }
-      result.boundingBoxMeanAveragePrecision_ = boundingBoxMeanAveragePrecision_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluatedFrameCount_ = evaluatedFrameCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.evaluatedBoundingBoxCount_ = evaluatedBoundingBoxCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.boundingBoxMeanAveragePrecision_ = boundingBoxMeanAveragePrecision_;
+      }
     }
 
     @java.lang.Override
@@ -581,7 +599,7 @@ public final class VideoObjectTrackingEvaluationMetrics
         if (!other.boundingBoxMetricsEntries_.isEmpty()) {
           if (boundingBoxMetricsEntries_.isEmpty()) {
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureBoundingBoxMetricsEntriesIsMutable();
             boundingBoxMetricsEntries_.addAll(other.boundingBoxMetricsEntries_);
@@ -594,7 +612,7 @@ public final class VideoObjectTrackingEvaluationMetrics
             boundingBoxMetricsEntriesBuilder_.dispose();
             boundingBoxMetricsEntriesBuilder_ = null;
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             boundingBoxMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBoundingBoxMetricsEntriesFieldBuilder()
@@ -636,13 +654,13 @@ public final class VideoObjectTrackingEvaluationMetrics
             case 8:
               {
                 evaluatedFrameCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 evaluatedBoundingBoxCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
@@ -662,7 +680,7 @@ public final class VideoObjectTrackingEvaluationMetrics
             case 53:
               {
                 boundingBoxMeanAveragePrecision_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 53
             default:
@@ -715,6 +733,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public Builder setEvaluatedFrameCount(int value) {
 
       evaluatedFrameCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,7 +749,7 @@ public final class VideoObjectTrackingEvaluationMetrics
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedFrameCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       evaluatedFrameCount_ = 0;
       onChanged();
       return this;
@@ -769,6 +788,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public Builder setEvaluatedBoundingBoxCount(int value) {
 
       evaluatedBoundingBoxCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,7 +805,7 @@ public final class VideoObjectTrackingEvaluationMetrics
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedBoundingBoxCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       evaluatedBoundingBoxCount_ = 0;
       onChanged();
       return this;
@@ -795,11 +815,11 @@ public final class VideoObjectTrackingEvaluationMetrics
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureBoundingBoxMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         boundingBoxMetricsEntries_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>(
                 boundingBoxMetricsEntries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1078,7 +1098,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public Builder clearBoundingBoxMetricsEntries() {
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         boundingBoxMetricsEntriesBuilder_.clear();
@@ -1242,7 +1262,7 @@ public final class VideoObjectTrackingEvaluationMetrics
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.Builder,
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder>(
                 boundingBoxMetricsEntries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         boundingBoxMetricsEntries_ = null;
@@ -1283,6 +1303,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     public Builder setBoundingBoxMeanAveragePrecision(float value) {
 
       boundingBoxMeanAveragePrecision_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1299,7 +1320,7 @@ public final class VideoObjectTrackingEvaluationMetrics
      * @return This builder for chaining.
      */
     public Builder clearBoundingBoxMeanAveragePrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       boundingBoxMeanAveragePrecision_ = 0F;
       onChanged();
       return this;

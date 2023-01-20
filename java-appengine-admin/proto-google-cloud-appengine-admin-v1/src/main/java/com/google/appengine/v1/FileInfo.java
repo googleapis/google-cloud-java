@@ -70,7 +70,9 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceUrl_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHA1_SUM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sha1Sum_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha1Sum_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -436,12 +442,10 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceUrl_ = "";
-
       sha1Sum_ = "";
-
       mimeType_ = "";
-
       return this;
     }
 
@@ -468,11 +472,24 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.FileInfo buildPartial() {
       com.google.appengine.v1.FileInfo result = new com.google.appengine.v1.FileInfo(this);
-      result.sourceUrl_ = sourceUrl_;
-      result.sha1Sum_ = sha1Sum_;
-      result.mimeType_ = mimeType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.FileInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceUrl_ = sourceUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sha1Sum_ = sha1Sum_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
     }
 
     @java.lang.Override
@@ -522,14 +539,17 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.FileInfo.getDefaultInstance()) return this;
       if (!other.getSourceUrl().isEmpty()) {
         sourceUrl_ = other.sourceUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSha1Sum().isEmpty()) {
         sha1Sum_ = other.sha1Sum_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -561,19 +581,19 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sha1Sum_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -592,6 +612,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceUrl_ = "";
     /**
@@ -660,8 +682,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,8 +701,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceUrl() {
-
       sourceUrl_ = getDefaultInstance().getSourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -703,8 +725,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,8 +792,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sha1Sum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -787,8 +809,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSha1Sum() {
-
       sha1Sum_ = getDefaultInstance().getSha1Sum();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +831,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sha1Sum_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,8 +901,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -897,8 +919,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -920,8 +942,8 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
   }
 
   public static final int MODEL_HINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object modelHint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelHint_ = "";
   /**
    *
    *
@@ -320,8 +322,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelHint_ = "";
-
       return this;
     }
 
@@ -349,9 +351,18 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.TextExtractionModelMetadata result =
           new com.google.cloud.automl.v1beta1.TextExtractionModelMetadata(this);
-      result.modelHint_ = modelHint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.TextExtractionModelMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelHint_ = modelHint_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +413,7 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
         return this;
       if (!other.getModelHint().isEmpty()) {
         modelHint_ = other.modelHint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +445,7 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
             case 26:
               {
                 modelHint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -452,6 +464,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object modelHint_ = "";
     /**
@@ -523,8 +537,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelHint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -543,8 +557,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearModelHint() {
-
       modelHint_ = getDefaultInstance().getModelHint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -568,8 +582,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelHint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

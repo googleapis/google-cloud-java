@@ -231,7 +231,9 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -282,7 +284,9 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PARAMETER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parameterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parameterName_ = "";
   /**
    *
    *
@@ -347,7 +351,9 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -404,7 +410,9 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -453,7 +461,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SCOPE_FIELD_NUMBER = 5;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -486,16 +494,15 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope result =
-        com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.valueOf(scope_);
+        com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.forNumber(scope_);
     return result == null
         ? com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.UNRECOGNIZED
         : result;
   }
 
   public static final int DISALLOW_ADS_PERSONALIZATION_FIELD_NUMBER = 6;
-  private boolean disallowAdsPersonalization_;
+  private boolean disallowAdsPersonalization_ = false;
   /**
    *
    *
@@ -762,18 +769,13 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       parameterName_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       scope_ = 0;
-
       disallowAdsPersonalization_ = false;
-
       return this;
     }
 
@@ -801,14 +803,33 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.admin.v1alpha.CustomDimension buildPartial() {
       com.google.analytics.admin.v1alpha.CustomDimension result =
           new com.google.analytics.admin.v1alpha.CustomDimension(this);
-      result.name_ = name_;
-      result.parameterName_ = parameterName_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.scope_ = scope_;
-      result.disallowAdsPersonalization_ = disallowAdsPersonalization_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.CustomDimension result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parameterName_ = parameterName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.disallowAdsPersonalization_ = disallowAdsPersonalization_;
+      }
     }
 
     @java.lang.Override
@@ -859,18 +880,22 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParameterName().isEmpty()) {
         parameterName_ = other.parameterName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.scope_ != 0) {
@@ -908,37 +933,37 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parameterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 disallowAdsPersonalization_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -957,6 +982,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1022,8 +1049,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1040,8 +1067,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1063,8 +1090,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1154,8 +1181,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       parameterName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1179,8 +1206,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearParameterName() {
-
       parameterName_ = getDefaultInstance().getParameterName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1209,8 +1236,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parameterName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1288,8 +1315,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1309,8 +1336,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1335,8 +1362,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1402,8 +1429,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1419,8 +1446,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1441,8 +1468,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1480,8 +1507,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1500,9 +1527,8 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope result =
-          com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.valueOf(scope_);
+          com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.forNumber(scope_);
       return result == null
           ? com.google.analytics.admin.v1alpha.CustomDimension.DimensionScope.UNRECOGNIZED
           : result;
@@ -1526,7 +1552,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -1545,7 +1571,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       scope_ = 0;
       onChanged();
       return this;
@@ -1586,6 +1612,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
     public Builder setDisallowAdsPersonalization(boolean value) {
 
       disallowAdsPersonalization_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1603,7 +1630,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisallowAdsPersonalization() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       disallowAdsPersonalization_ = false;
       onChanged();
       return this;

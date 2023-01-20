@@ -122,7 +122,9 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ArtifactOrBuilder getArtifactOrBuilder() {
-    return getArtifact();
+    return artifact_ == null
+        ? com.google.cloud.apigeeregistry.v1.Artifact.getDefaultInstance()
+        : artifact_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -328,10 +330,10 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-      } else {
-        artifact_ = null;
+      bitField0_ = 0;
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
       return this;
@@ -361,13 +363,18 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest result =
           new com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest(this);
-      if (artifactBuilder_ == null) {
-        result.artifact_ = artifact_;
-      } else {
-        result.artifact_ = artifactBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.artifact_ = artifactBuilder_ == null ? artifact_ : artifactBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -448,7 +455,7 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getArtifactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -467,6 +474,8 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.apigeeregistry.v1.Artifact artifact_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -490,7 +499,7 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
      * @return Whether the artifact field is set.
      */
     public boolean hasArtifact() {
-      return artifactBuilder_ != null || artifact_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -535,11 +544,11 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         artifact_ = value;
-        onChanged();
       } else {
         artifactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,11 +568,11 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.apigeeregistry.v1.Artifact.Builder builderForValue) {
       if (artifactBuilder_ == null) {
         artifact_ = builderForValue.build();
-        onChanged();
       } else {
         artifactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,19 +590,18 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeArtifact(com.google.cloud.apigeeregistry.v1.Artifact value) {
       if (artifactBuilder_ == null) {
-        if (artifact_ != null) {
-          artifact_ =
-              com.google.cloud.apigeeregistry.v1.Artifact.newBuilder(artifact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && artifact_ != null
+            && artifact_ != com.google.cloud.apigeeregistry.v1.Artifact.getDefaultInstance()) {
+          getArtifactBuilder().mergeFrom(value);
         } else {
           artifact_ = value;
         }
-        onChanged();
       } else {
         artifactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,14 +618,13 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearArtifact() {
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-        onChanged();
-      } else {
-        artifact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -634,7 +641,7 @@ public final class ReplaceArtifactRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact.Builder getArtifactBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }

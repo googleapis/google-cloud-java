@@ -69,7 +69,9 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -189,7 +191,9 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
       getServicePerimeterOrBuilder() {
-    return getServicePerimeter();
+    return servicePerimeter_ == null
+        ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance()
+        : servicePerimeter_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -408,12 +412,11 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (servicePerimeterBuilder_ == null) {
-        servicePerimeter_ = null;
-      } else {
-        servicePerimeter_ = null;
+      servicePerimeter_ = null;
+      if (servicePerimeterBuilder_ != null) {
+        servicePerimeterBuilder_.dispose();
         servicePerimeterBuilder_ = null;
       }
       return this;
@@ -447,14 +450,23 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest result =
           new com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest(this);
-      result.parent_ = parent_;
-      if (servicePerimeterBuilder_ == null) {
-        result.servicePerimeter_ = servicePerimeter_;
-      } else {
-        result.servicePerimeter_ = servicePerimeterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.servicePerimeter_ =
+            servicePerimeterBuilder_ == null ? servicePerimeter_ : servicePerimeterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -509,6 +521,7 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasServicePerimeter()) {
@@ -543,14 +556,14 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getServicePerimeterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -569,6 +582,8 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -643,8 +658,8 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,8 +679,8 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +705,8 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,7 +735,7 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
      * @return Whether the servicePerimeter field is set.
      */
     public boolean hasServicePerimeter() {
-      return servicePerimeterBuilder_ != null || servicePerimeter_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -770,11 +785,11 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         servicePerimeter_ = value;
-        onChanged();
       } else {
         servicePerimeterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,11 +811,11 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
         com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder builderForValue) {
       if (servicePerimeterBuilder_ == null) {
         servicePerimeter_ = builderForValue.build();
-        onChanged();
       } else {
         servicePerimeterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,20 +836,20 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
     public Builder mergeServicePerimeter(
         com.google.identity.accesscontextmanager.v1.ServicePerimeter value) {
       if (servicePerimeterBuilder_ == null) {
-        if (servicePerimeter_ != null) {
-          servicePerimeter_ =
-              com.google.identity.accesscontextmanager.v1.ServicePerimeter.newBuilder(
-                      servicePerimeter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && servicePerimeter_ != null
+            && servicePerimeter_
+                != com.google.identity.accesscontextmanager.v1.ServicePerimeter
+                    .getDefaultInstance()) {
+          getServicePerimeterBuilder().mergeFrom(value);
         } else {
           servicePerimeter_ = value;
         }
-        onChanged();
       } else {
         servicePerimeterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,14 +868,13 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearServicePerimeter() {
-      if (servicePerimeterBuilder_ == null) {
-        servicePerimeter_ = null;
-        onChanged();
-      } else {
-        servicePerimeter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      servicePerimeter_ = null;
+      if (servicePerimeterBuilder_ != null) {
+        servicePerimeterBuilder_.dispose();
         servicePerimeterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -880,7 +894,7 @@ public final class CreateServicePerimeterRequest extends com.google.protobuf.Gen
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder
         getServicePerimeterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getServicePerimeterFieldBuilder().getBuilder();
     }

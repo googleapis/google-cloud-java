@@ -236,7 +236,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object apiName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiName_ = "";
   /**
    *
    *
@@ -287,7 +289,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UI_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uiName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uiName_ = "";
   /**
    *
    *
@@ -338,7 +342,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -387,6 +393,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPRECATED_API_NAMES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList deprecatedApiNames_;
   /**
    *
@@ -460,7 +468,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 5;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -489,14 +497,15 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.MetricType getType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.data.v1beta.MetricType result =
-        com.google.analytics.data.v1beta.MetricType.valueOf(type_);
+        com.google.analytics.data.v1beta.MetricType.forNumber(type_);
     return result == null ? com.google.analytics.data.v1beta.MetricType.UNRECOGNIZED : result;
   }
 
   public static final int EXPRESSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object expression_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expression_ = "";
   /**
    *
    *
@@ -549,7 +558,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_DEFINITION_FIELD_NUMBER = 7;
-  private boolean customDefinition_;
+  private boolean customDefinition_ = false;
   /**
    *
    *
@@ -567,7 +576,10 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLOCKED_REASONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> blockedReasons_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>
       blockedReasons_converter_ =
@@ -575,9 +587,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.analytics.data.v1beta.MetricMetadata.BlockedReason>() {
             public com.google.analytics.data.v1beta.MetricMetadata.BlockedReason convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.analytics.data.v1beta.MetricMetadata.BlockedReason result =
-                  com.google.analytics.data.v1beta.MetricMetadata.BlockedReason.valueOf(from);
+                  com.google.analytics.data.v1beta.MetricMetadata.BlockedReason.forNumber(from);
               return result == null
                   ? com.google.analytics.data.v1beta.MetricMetadata.BlockedReason.UNRECOGNIZED
                   : result;
@@ -703,7 +714,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
   private int blockedReasonsMemoizedSerializedSize;
 
   public static final int CATEGORY_FIELD_NUMBER = 10;
-  private volatile java.lang.Object category_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object category_ = "";
   /**
    *
    *
@@ -1046,24 +1059,18 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       apiName_ = "";
-
       uiName_ = "";
-
       description_ = "";
-
       deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       type_ = 0;
-
       expression_ = "";
-
       customDefinition_ = false;
-
       blockedReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       category_ = "";
-
       return this;
     }
 
@@ -1091,26 +1098,51 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.MetricMetadata buildPartial() {
       com.google.analytics.data.v1beta.MetricMetadata result =
           new com.google.analytics.data.v1beta.MetricMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.apiName_ = apiName_;
-      result.uiName_ = uiName_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deprecatedApiNames_ = deprecatedApiNames_;
-      result.type_ = type_;
-      result.expression_ = expression_;
-      result.customDefinition_ = customDefinition_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        blockedReasons_ = java.util.Collections.unmodifiableList(blockedReasons_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.blockedReasons_ = blockedReasons_;
-      result.category_ = category_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.MetricMetadata result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.deprecatedApiNames_ = deprecatedApiNames_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        blockedReasons_ = java.util.Collections.unmodifiableList(blockedReasons_);
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.blockedReasons_ = blockedReasons_;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.MetricMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.apiName_ = apiName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uiName_ = uiName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.expression_ = expression_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customDefinition_ = customDefinition_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.category_ = category_;
+      }
     }
 
     @java.lang.Override
@@ -1161,20 +1193,23 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getApiName().isEmpty()) {
         apiName_ = other.apiName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUiName().isEmpty()) {
         uiName_ = other.uiName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.deprecatedApiNames_.isEmpty()) {
         if (deprecatedApiNames_.isEmpty()) {
           deprecatedApiNames_ = other.deprecatedApiNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDeprecatedApiNamesIsMutable();
           deprecatedApiNames_.addAll(other.deprecatedApiNames_);
@@ -1186,6 +1221,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExpression().isEmpty()) {
         expression_ = other.expression_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getCustomDefinition() != false) {
@@ -1194,7 +1230,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (!other.blockedReasons_.isEmpty()) {
         if (blockedReasons_.isEmpty()) {
           blockedReasons_ = other.blockedReasons_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureBlockedReasonsIsMutable();
           blockedReasons_.addAll(other.blockedReasons_);
@@ -1203,6 +1239,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1234,19 +1271,19 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 apiName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uiName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1259,19 +1296,19 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 expression_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 customDefinition_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
@@ -1296,7 +1333,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 category_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -1382,8 +1419,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1400,8 +1437,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApiName() {
-
       apiName_ = getDefaultInstance().getApiName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1423,8 +1460,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1493,8 +1530,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uiName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1511,8 +1548,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUiName() {
-
       uiName_ = getDefaultInstance().getUiName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1534,8 +1571,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uiName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1601,8 +1638,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1618,8 +1655,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1640,8 +1677,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1650,9 +1687,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDeprecatedApiNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         deprecatedApiNames_ = new com.google.protobuf.LazyStringArrayList(deprecatedApiNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1811,7 +1848,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDeprecatedApiNames() {
       deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1870,8 +1907,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1888,9 +1925,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.data.v1beta.MetricType getType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1beta.MetricType result =
-          com.google.analytics.data.v1beta.MetricType.valueOf(type_);
+          com.google.analytics.data.v1beta.MetricType.forNumber(type_);
       return result == null ? com.google.analytics.data.v1beta.MetricType.UNRECOGNIZED : result;
     }
     /**
@@ -1909,7 +1945,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1926,7 +1962,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = 0;
       onChanged();
       return this;
@@ -1999,8 +2035,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       expression_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2018,8 +2054,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpression() {
-
       expression_ = getDefaultInstance().getExpression();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2042,8 +2078,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       expression_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2079,6 +2115,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     public Builder setCustomDefinition(boolean value) {
 
       customDefinition_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2094,7 +2131,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomDefinition() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       customDefinition_ = false;
       onChanged();
       return this;
@@ -2103,9 +2140,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> blockedReasons_ = java.util.Collections.emptyList();
 
     private void ensureBlockedReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         blockedReasons_ = new java.util.ArrayList<java.lang.Integer>(blockedReasons_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2291,7 +2328,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBlockedReasons() {
       blockedReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2486,8 +2523,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       category_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2504,8 +2541,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
       category_ = getDefaultInstance().getCategory();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2527,8 +2564,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       category_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -110,7 +110,9 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippetOrBuilder getTranslatedContentOrBuilder() {
-    return getTranslatedContent();
+    return translatedContent_ == null
+        ? com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()
+        : translatedContent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (translatedContentBuilder_ == null) {
-        translatedContent_ = null;
-      } else {
-        translatedContent_ = null;
+      bitField0_ = 0;
+      translatedContent_ = null;
+      if (translatedContentBuilder_ != null) {
+        translatedContentBuilder_.dispose();
         translatedContentBuilder_ = null;
       }
       return this;
@@ -348,13 +350,21 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
     public com.google.cloud.automl.v1.TranslationAnnotation buildPartial() {
       com.google.cloud.automl.v1.TranslationAnnotation result =
           new com.google.cloud.automl.v1.TranslationAnnotation(this);
-      if (translatedContentBuilder_ == null) {
-        result.translatedContent_ = translatedContent_;
-      } else {
-        result.translatedContent_ = translatedContentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.TranslationAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.translatedContent_ =
+            translatedContentBuilder_ == null
+                ? translatedContent_
+                : translatedContentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +446,7 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getTranslatedContentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -456,6 +466,8 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.automl.v1.TextSnippet translatedContent_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.TextSnippet,
@@ -474,7 +486,7 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
      * @return Whether the translatedContent field is set.
      */
     public boolean hasTranslatedContent() {
-      return translatedContentBuilder_ != null || translatedContent_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -511,11 +523,11 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         translatedContent_ = value;
-        onChanged();
       } else {
         translatedContentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -531,11 +543,11 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
         com.google.cloud.automl.v1.TextSnippet.Builder builderForValue) {
       if (translatedContentBuilder_ == null) {
         translatedContent_ = builderForValue.build();
-        onChanged();
       } else {
         translatedContentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -549,19 +561,18 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTranslatedContent(com.google.cloud.automl.v1.TextSnippet value) {
       if (translatedContentBuilder_ == null) {
-        if (translatedContent_ != null) {
-          translatedContent_ =
-              com.google.cloud.automl.v1.TextSnippet.newBuilder(translatedContent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && translatedContent_ != null
+            && translatedContent_ != com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()) {
+          getTranslatedContentBuilder().mergeFrom(value);
         } else {
           translatedContent_ = value;
         }
-        onChanged();
       } else {
         translatedContentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,14 +585,13 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.automl.v1.TextSnippet translated_content = 1;</code>
      */
     public Builder clearTranslatedContent() {
-      if (translatedContentBuilder_ == null) {
-        translatedContent_ = null;
-        onChanged();
-      } else {
-        translatedContent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      translatedContent_ = null;
+      if (translatedContentBuilder_ != null) {
+        translatedContentBuilder_.dispose();
         translatedContentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -594,7 +604,7 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.automl.v1.TextSnippet translated_content = 1;</code>
      */
     public com.google.cloud.automl.v1.TextSnippet.Builder getTranslatedContentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTranslatedContentFieldBuilder().getBuilder();
     }

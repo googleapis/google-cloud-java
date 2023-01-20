@@ -124,7 +124,9 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOrBuilder
       getGcpUserAccessBindingOrBuilder() {
-    return getGcpUserAccessBinding();
+    return gcpUserAccessBinding_ == null
+        ? com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.getDefaultInstance()
+        : gcpUserAccessBinding_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -185,7 +187,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -416,16 +418,15 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gcpUserAccessBindingBuilder_ == null) {
-        gcpUserAccessBinding_ = null;
-      } else {
-        gcpUserAccessBinding_ = null;
+      bitField0_ = 0;
+      gcpUserAccessBinding_ = null;
+      if (gcpUserAccessBindingBuilder_ != null) {
+        gcpUserAccessBindingBuilder_.dispose();
         gcpUserAccessBindingBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -459,18 +460,25 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest result =
           new com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest(this);
-      if (gcpUserAccessBindingBuilder_ == null) {
-        result.gcpUserAccessBinding_ = gcpUserAccessBinding_;
-      } else {
-        result.gcpUserAccessBinding_ = gcpUserAccessBindingBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcpUserAccessBinding_ =
+            gcpUserAccessBindingBuilder_ == null
+                ? gcpUserAccessBinding_
+                : gcpUserAccessBindingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,13 +568,13 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
               {
                 input.readMessage(
                     getGcpUserAccessBindingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -585,6 +593,8 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding gcpUserAccessBinding_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -607,7 +617,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * @return Whether the gcpUserAccessBinding field is set.
      */
     public boolean hasGcpUserAccessBinding() {
-      return gcpUserAccessBindingBuilder_ != null || gcpUserAccessBinding_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -652,11 +662,11 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         gcpUserAccessBinding_ = value;
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,11 +685,11 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
         com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.Builder builderForValue) {
       if (gcpUserAccessBindingBuilder_ == null) {
         gcpUserAccessBinding_ = builderForValue.build();
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -697,20 +707,20 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
     public Builder mergeGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding value) {
       if (gcpUserAccessBindingBuilder_ == null) {
-        if (gcpUserAccessBinding_ != null) {
-          gcpUserAccessBinding_ =
-              com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.newBuilder(
-                      gcpUserAccessBinding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && gcpUserAccessBinding_ != null
+            && gcpUserAccessBinding_
+                != com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding
+                    .getDefaultInstance()) {
+          getGcpUserAccessBindingBuilder().mergeFrom(value);
         } else {
           gcpUserAccessBinding_ = value;
         }
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -726,14 +736,13 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearGcpUserAccessBinding() {
-      if (gcpUserAccessBindingBuilder_ == null) {
-        gcpUserAccessBinding_ = null;
-        onChanged();
-      } else {
-        gcpUserAccessBinding_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      gcpUserAccessBinding_ = null;
+      if (gcpUserAccessBindingBuilder_ != null) {
+        gcpUserAccessBindingBuilder_.dispose();
         gcpUserAccessBindingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -750,7 +759,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      */
     public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.Builder
         getGcpUserAccessBindingBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGcpUserAccessBindingFieldBuilder().getBuilder();
     }
@@ -828,7 +837,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -875,11 +884,11 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,11 +908,11 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -922,17 +931,18 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,14 +960,13 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +984,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

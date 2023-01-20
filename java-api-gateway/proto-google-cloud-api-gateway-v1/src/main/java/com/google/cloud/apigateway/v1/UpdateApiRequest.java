@@ -120,7 +120,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int API_FIELD_NUMBER = 2;
@@ -166,7 +166,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.apigateway.v1.ApiOrBuilder getApiOrBuilder() {
-    return getApi();
+    return api_ == null ? com.google.cloud.apigateway.v1.Api.getDefaultInstance() : api_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +385,15 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (apiBuilder_ == null) {
-        api_ = null;
-      } else {
-        api_ = null;
+      api_ = null;
+      if (apiBuilder_ != null) {
+        apiBuilder_.dispose();
         apiBuilder_ = null;
       }
       return this;
@@ -424,18 +423,21 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.apigateway.v1.UpdateApiRequest buildPartial() {
       com.google.cloud.apigateway.v1.UpdateApiRequest result =
           new com.google.cloud.apigateway.v1.UpdateApiRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (apiBuilder_ == null) {
-        result.api_ = api_;
-      } else {
-        result.api_ = apiBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigateway.v1.UpdateApiRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.api_ = apiBuilder_ == null ? api_ : apiBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +521,13 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApiFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +546,8 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -567,7 +571,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +616,11 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -635,11 +639,11 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,17 +661,18 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -684,14 +689,13 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -708,7 +712,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -783,7 +787,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the api field is set.
      */
     public boolean hasApi() {
-      return apiBuilder_ != null || api_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -820,11 +824,11 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         api_ = value;
-        onChanged();
       } else {
         apiBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,11 +844,11 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
     public Builder setApi(com.google.cloud.apigateway.v1.Api.Builder builderForValue) {
       if (apiBuilder_ == null) {
         api_ = builderForValue.build();
-        onChanged();
       } else {
         apiBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -859,17 +863,18 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeApi(com.google.cloud.apigateway.v1.Api value) {
       if (apiBuilder_ == null) {
-        if (api_ != null) {
-          api_ =
-              com.google.cloud.apigateway.v1.Api.newBuilder(api_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && api_ != null
+            && api_ != com.google.cloud.apigateway.v1.Api.getDefaultInstance()) {
+          getApiBuilder().mergeFrom(value);
         } else {
           api_ = value;
         }
-        onChanged();
       } else {
         apiBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -883,14 +888,13 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearApi() {
-      if (apiBuilder_ == null) {
-        api_ = null;
-        onChanged();
-      } else {
-        api_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      api_ = null;
+      if (apiBuilder_ != null) {
+        apiBuilder_.dispose();
         apiBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -904,7 +908,7 @@ public final class UpdateApiRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.apigateway.v1.Api.Builder getApiBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApiFieldBuilder().getBuilder();
     }

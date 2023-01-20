@@ -79,7 +79,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.BatchPredictInputConfigOrBuilder
       getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.automl.v1beta1.BatchPredictInputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
@@ -241,7 +245,9 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.BatchPredictOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   public static final int PARAMS_FIELD_NUMBER = 5;
@@ -257,6 +263,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
@@ -485,7 +492,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
-  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -832,18 +842,16 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       internalGetMutableParams().clear();
@@ -874,22 +882,30 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.automl.v1beta1.BatchPredictRequest buildPartial() {
       com.google.cloud.automl.v1beta1.BatchPredictRequest result =
           new com.google.cloud.automl.v1beta1.BatchPredictRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
-      }
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.BatchPredictRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -940,6 +956,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInputConfig()) {
@@ -949,6 +966,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         mergeOutputConfig(other.getOutputConfig());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -978,19 +996,19 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -1002,6 +1020,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1090,8 +1109,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1109,8 +1128,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1133,8 +1152,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1159,7 +1178,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1200,11 +1219,11 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1222,11 +1241,11 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.automl.v1beta1.BatchPredictInputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1242,19 +1261,19 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeInputConfig(com.google.cloud.automl.v1beta1.BatchPredictInputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.automl.v1beta1.BatchPredictInputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.automl.v1beta1.BatchPredictInputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1269,14 +1288,13 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1291,7 +1309,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.automl.v1beta1.BatchPredictInputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1365,7 +1383,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1408,11 +1426,11 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1431,11 +1449,11 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1453,19 +1471,19 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeOutputConfig(
         com.google.cloud.automl.v1beta1.BatchPredictOutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1481,14 +1499,13 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1505,7 +1522,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.Builder
         getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -1571,14 +1588,14 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return params_;
     }
 
@@ -1801,8 +1818,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1888,6 +1907,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -1967,6 +1987,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -2042,8 +2063,8 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2114,6 +2135,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

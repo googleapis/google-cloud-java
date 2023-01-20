@@ -251,7 +251,7 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INGRESS_TRAFFIC_ALLOWED_FIELD_NUMBER = 1;
-  private int ingressTrafficAllowed_;
+  private int ingressTrafficAllowed_ = 0;
   /**
    *
    *
@@ -282,9 +282,8 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed getIngressTrafficAllowed() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed result =
-        com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.valueOf(
+        com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.forNumber(
             ingressTrafficAllowed_);
     return result == null
         ? com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.UNRECOGNIZED
@@ -494,8 +493,8 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ingressTrafficAllowed_ = 0;
-
       return this;
     }
 
@@ -523,9 +522,18 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
     public com.google.appengine.v1.NetworkSettings buildPartial() {
       com.google.appengine.v1.NetworkSettings result =
           new com.google.appengine.v1.NetworkSettings(this);
-      result.ingressTrafficAllowed_ = ingressTrafficAllowed_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.NetworkSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ingressTrafficAllowed_ = ingressTrafficAllowed_;
+      }
     }
 
     @java.lang.Override
@@ -605,7 +613,7 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 ingressTrafficAllowed_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -624,6 +632,8 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int ingressTrafficAllowed_ = 0;
     /**
@@ -656,8 +666,8 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setIngressTrafficAllowedValue(int value) {
-
       ingressTrafficAllowed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,9 +686,8 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed
         getIngressTrafficAllowed() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed result =
-          com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.valueOf(
+          com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.forNumber(
               ingressTrafficAllowed_);
       return result == null
           ? com.google.appengine.v1.NetworkSettings.IngressTrafficAllowed.UNRECOGNIZED
@@ -702,7 +711,7 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ingressTrafficAllowed_ = value.getNumber();
       onChanged();
       return this;
@@ -720,7 +729,7 @@ public final class NetworkSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIngressTrafficAllowed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ingressTrafficAllowed_ = 0;
       onChanged();
       return this;

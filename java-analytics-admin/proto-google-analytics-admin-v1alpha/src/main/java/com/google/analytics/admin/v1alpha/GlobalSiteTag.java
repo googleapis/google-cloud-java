@@ -70,7 +70,9 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SNIPPET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object snippet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snippet_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       snippet_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.GlobalSiteTag buildPartial() {
       com.google.analytics.admin.v1alpha.GlobalSiteTag result =
           new com.google.analytics.admin.v1alpha.GlobalSiteTag(this);
-      result.name_ = name_;
-      result.snippet_ = snippet_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.GlobalSiteTag result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snippet_ = snippet_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSnippet().isEmpty()) {
         snippet_ = other.snippet_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 snippet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -593,8 +611,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +630,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +654,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +724,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       snippet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSnippet() {
-
       snippet_ = getDefaultInstance().getSnippet();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -747,8 +765,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snippet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

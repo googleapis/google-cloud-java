@@ -69,7 +69,9 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -147,9 +149,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.devtools.artifactregistry.v1beta2.VersionView getView() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.artifactregistry.v1beta2.VersionView result =
-        com.google.devtools.artifactregistry.v1beta2.VersionView.valueOf(view_);
+        com.google.devtools.artifactregistry.v1beta2.VersionView.forNumber(view_);
     return result == null
         ? com.google.devtools.artifactregistry.v1beta2.VersionView.UNRECOGNIZED
         : result;
@@ -366,10 +367,9 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -398,10 +398,22 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
     public com.google.devtools.artifactregistry.v1beta2.GetVersionRequest buildPartial() {
       com.google.devtools.artifactregistry.v1beta2.GetVersionRequest result =
           new com.google.devtools.artifactregistry.v1beta2.GetVersionRequest(this);
-      result.name_ = name_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1beta2.GetVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -453,6 +465,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -487,13 +500,13 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -512,6 +525,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -574,8 +589,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -591,8 +606,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -613,8 +628,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -648,8 +663,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -666,9 +681,8 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.devtools.artifactregistry.v1beta2.VersionView getView() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.artifactregistry.v1beta2.VersionView result =
-          com.google.devtools.artifactregistry.v1beta2.VersionView.valueOf(view_);
+          com.google.devtools.artifactregistry.v1beta2.VersionView.forNumber(view_);
       return result == null
           ? com.google.devtools.artifactregistry.v1beta2.VersionView.UNRECOGNIZED
           : result;
@@ -689,7 +703,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -706,7 +720,7 @@ public final class GetVersionRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       view_ = 0;
       onChanged();
       return this;

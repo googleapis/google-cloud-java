@@ -723,7 +723,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -776,7 +778,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_FIELD_NUMBER = 2;
-  private int acquisitionConversionEventLookbackWindow_;
+  private int acquisitionConversionEventLookbackWindow_ = 0;
   /**
    *
    *
@@ -813,11 +815,10 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   public com.google.analytics.admin.v1alpha.AttributionSettings
           .AcquisitionConversionEventLookbackWindow
       getAcquisitionConversionEventLookbackWindow() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AttributionSettings.AcquisitionConversionEventLookbackWindow
         result =
             com.google.analytics.admin.v1alpha.AttributionSettings
-                .AcquisitionConversionEventLookbackWindow.valueOf(
+                .AcquisitionConversionEventLookbackWindow.forNumber(
                 acquisitionConversionEventLookbackWindow_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AttributionSettings
@@ -826,7 +827,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_FIELD_NUMBER = 3;
-  private int otherConversionEventLookbackWindow_;
+  private int otherConversionEventLookbackWindow_ = 0;
   /**
    *
    *
@@ -862,11 +863,10 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AttributionSettings.OtherConversionEventLookbackWindow
       getOtherConversionEventLookbackWindow() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AttributionSettings.OtherConversionEventLookbackWindow
         result =
             com.google.analytics.admin.v1alpha.AttributionSettings
-                .OtherConversionEventLookbackWindow.valueOf(otherConversionEventLookbackWindow_);
+                .OtherConversionEventLookbackWindow.forNumber(otherConversionEventLookbackWindow_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AttributionSettings.OtherConversionEventLookbackWindow
             .UNRECOGNIZED
@@ -874,7 +874,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REPORTING_ATTRIBUTION_MODEL_FIELD_NUMBER = 4;
-  private int reportingAttributionModel_;
+  private int reportingAttributionModel_ = 0;
   /**
    *
    *
@@ -916,9 +916,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
       getReportingAttributionModel() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel result =
-        com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel.valueOf(
+        com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel.forNumber(
             reportingAttributionModel_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
@@ -1178,14 +1177,11 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       acquisitionConversionEventLookbackWindow_ = 0;
-
       otherConversionEventLookbackWindow_ = 0;
-
       reportingAttributionModel_ = 0;
-
       return this;
     }
 
@@ -1213,12 +1209,28 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.AttributionSettings buildPartial() {
       com.google.analytics.admin.v1alpha.AttributionSettings result =
           new com.google.analytics.admin.v1alpha.AttributionSettings(this);
-      result.name_ = name_;
-      result.acquisitionConversionEventLookbackWindow_ = acquisitionConversionEventLookbackWindow_;
-      result.otherConversionEventLookbackWindow_ = otherConversionEventLookbackWindow_;
-      result.reportingAttributionModel_ = reportingAttributionModel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AttributionSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.acquisitionConversionEventLookbackWindow_ =
+            acquisitionConversionEventLookbackWindow_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.otherConversionEventLookbackWindow_ = otherConversionEventLookbackWindow_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reportingAttributionModel_ = reportingAttributionModel_;
+      }
     }
 
     @java.lang.Override
@@ -1269,6 +1281,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.acquisitionConversionEventLookbackWindow_ != 0) {
@@ -1311,25 +1324,25 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 acquisitionConversionEventLookbackWindow_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 otherConversionEventLookbackWindow_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 reportingAttributionModel_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -1348,6 +1361,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1416,8 +1431,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1435,8 +1450,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1459,8 +1474,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1501,8 +1516,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAcquisitionConversionEventLookbackWindowValue(int value) {
-
       acquisitionConversionEventLookbackWindow_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1524,12 +1539,11 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.AttributionSettings
             .AcquisitionConversionEventLookbackWindow
         getAcquisitionConversionEventLookbackWindow() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AttributionSettings
               .AcquisitionConversionEventLookbackWindow
           result =
               com.google.analytics.admin.v1alpha.AttributionSettings
-                  .AcquisitionConversionEventLookbackWindow.valueOf(
+                  .AcquisitionConversionEventLookbackWindow.forNumber(
                   acquisitionConversionEventLookbackWindow_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AttributionSettings
@@ -1558,7 +1572,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       acquisitionConversionEventLookbackWindow_ = value.getNumber();
       onChanged();
       return this;
@@ -1578,7 +1592,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAcquisitionConversionEventLookbackWindow() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       acquisitionConversionEventLookbackWindow_ = 0;
       onChanged();
       return this;
@@ -1620,8 +1634,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setOtherConversionEventLookbackWindowValue(int value) {
-
       otherConversionEventLookbackWindow_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1642,11 +1656,11 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AttributionSettings.OtherConversionEventLookbackWindow
         getOtherConversionEventLookbackWindow() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AttributionSettings.OtherConversionEventLookbackWindow
           result =
               com.google.analytics.admin.v1alpha.AttributionSettings
-                  .OtherConversionEventLookbackWindow.valueOf(otherConversionEventLookbackWindow_);
+                  .OtherConversionEventLookbackWindow.forNumber(
+                  otherConversionEventLookbackWindow_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AttributionSettings
               .OtherConversionEventLookbackWindow.UNRECOGNIZED
@@ -1673,7 +1687,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       otherConversionEventLookbackWindow_ = value.getNumber();
       onChanged();
       return this;
@@ -1693,7 +1707,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOtherConversionEventLookbackWindow() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       otherConversionEventLookbackWindow_ = 0;
       onChanged();
       return this;
@@ -1740,8 +1754,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setReportingAttributionModelValue(int value) {
-
       reportingAttributionModel_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1765,10 +1779,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
         getReportingAttributionModel() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel result =
-          com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel.valueOf(
-              reportingAttributionModel_);
+          com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
+              .forNumber(reportingAttributionModel_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
               .UNRECOGNIZED
@@ -1797,7 +1810,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       reportingAttributionModel_ = value.getNumber();
       onChanged();
       return this;
@@ -1820,7 +1833,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearReportingAttributionModel() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       reportingAttributionModel_ = 0;
       onChanged();
       return this;

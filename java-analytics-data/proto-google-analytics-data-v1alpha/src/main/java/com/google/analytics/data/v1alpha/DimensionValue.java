@@ -389,6 +389,7 @@ public final class DimensionValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       oneValueCase_ = 0;
       oneValue_ = null;
       return this;
@@ -418,12 +419,21 @@ public final class DimensionValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.DimensionValue buildPartial() {
       com.google.analytics.data.v1alpha.DimensionValue result =
           new com.google.analytics.data.v1alpha.DimensionValue(this);
-      if (oneValueCase_ == 1) {
-        result.oneValue_ = oneValue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.oneValueCase_ = oneValueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.DimensionValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1alpha.DimensionValue result) {
+      result.oneValueCase_ = oneValueCase_;
+      result.oneValue_ = this.oneValue_;
     }
 
     @java.lang.Override
@@ -548,6 +558,8 @@ public final class DimensionValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

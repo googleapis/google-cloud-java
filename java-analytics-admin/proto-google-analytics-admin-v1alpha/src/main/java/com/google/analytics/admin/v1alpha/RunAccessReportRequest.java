@@ -73,7 +73,9 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENTITY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DIMENSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessDimension> dimensions_;
   /**
    *
@@ -201,6 +205,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessMetric> metrics_;
   /**
    *
@@ -275,6 +281,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DATE_RANGES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessDateRange> dateRanges_;
   /**
    *
@@ -422,7 +430,9 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessFilterExpressionOrBuilder
       getDimensionFilterOrBuilder() {
-    return getDimensionFilter();
+    return dimensionFilter_ == null
+        ? com.google.analytics.admin.v1alpha.AccessFilterExpression.getDefaultInstance()
+        : dimensionFilter_;
   }
 
   public static final int METRIC_FILTER_FIELD_NUMBER = 6;
@@ -480,11 +490,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessFilterExpressionOrBuilder
       getMetricFilterOrBuilder() {
-    return getMetricFilter();
+    return metricFilter_ == null
+        ? com.google.analytics.admin.v1alpha.AccessFilterExpression.getDefaultInstance()
+        : metricFilter_;
   }
 
   public static final int OFFSET_FIELD_NUMBER = 7;
-  private long offset_;
+  private long offset_ = 0L;
   /**
    *
    *
@@ -506,7 +518,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int LIMIT_FIELD_NUMBER = 8;
-  private long limit_;
+  private long limit_ = 0L;
   /**
    *
    *
@@ -533,7 +545,9 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 9;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -592,6 +606,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ORDER_BYS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessOrderBy> orderBys_;
   /**
    *
@@ -661,7 +677,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int RETURN_ENTITY_QUOTA_FIELD_NUMBER = 11;
-  private boolean returnEntityQuota_;
+  private boolean returnEntityQuota_ = false;
   /**
    *
    *
@@ -985,56 +1001,50 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entity_ = "";
-
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
       } else {
         dimensions_ = null;
         dimensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (dateRangesBuilder_ == null) {
         dateRanges_ = java.util.Collections.emptyList();
       } else {
         dateRanges_ = null;
         dateRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (dimensionFilterBuilder_ == null) {
-        dimensionFilter_ = null;
-      } else {
-        dimensionFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dimensionFilter_ = null;
+      if (dimensionFilterBuilder_ != null) {
+        dimensionFilterBuilder_.dispose();
         dimensionFilterBuilder_ = null;
       }
-      if (metricFilterBuilder_ == null) {
-        metricFilter_ = null;
-      } else {
-        metricFilter_ = null;
+      metricFilter_ = null;
+      if (metricFilterBuilder_ != null) {
+        metricFilterBuilder_.dispose();
         metricFilterBuilder_ = null;
       }
       offset_ = 0L;
-
       limit_ = 0L;
-
       timeZone_ = "";
-
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
       } else {
         orderBys_ = null;
         orderBysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000200);
       returnEntityQuota_ = false;
-
       return this;
     }
 
@@ -1062,60 +1072,79 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public com.google.analytics.admin.v1alpha.RunAccessReportRequest buildPartial() {
       com.google.analytics.admin.v1alpha.RunAccessReportRequest result =
           new com.google.analytics.admin.v1alpha.RunAccessReportRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.entity_ = entity_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest result) {
       if (dimensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dimensions_ = dimensions_;
       } else {
         result.dimensions_ = dimensionsBuilder_.build();
       }
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
       if (dateRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           dateRanges_ = java.util.Collections.unmodifiableList(dateRanges_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.dateRanges_ = dateRanges_;
       } else {
         result.dateRanges_ = dateRangesBuilder_.build();
       }
-      if (dimensionFilterBuilder_ == null) {
-        result.dimensionFilter_ = dimensionFilter_;
-      } else {
-        result.dimensionFilter_ = dimensionFilterBuilder_.build();
-      }
-      if (metricFilterBuilder_ == null) {
-        result.metricFilter_ = metricFilter_;
-      } else {
-        result.metricFilter_ = metricFilterBuilder_.build();
-      }
-      result.offset_ = offset_;
-      result.limit_ = limit_;
-      result.timeZone_ = timeZone_;
       if (orderBysBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           orderBys_ = java.util.Collections.unmodifiableList(orderBys_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.orderBys_ = orderBys_;
       } else {
         result.orderBys_ = orderBysBuilder_.build();
       }
-      result.returnEntityQuota_ = returnEntityQuota_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.RunAccessReportRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entity_ = entity_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dimensionFilter_ =
+            dimensionFilterBuilder_ == null ? dimensionFilter_ : dimensionFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.metricFilter_ =
+            metricFilterBuilder_ == null ? metricFilter_ : metricFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.offset_ = offset_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.limit_ = limit_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.returnEntityQuota_ = returnEntityQuota_;
+      }
     }
 
     @java.lang.Override
@@ -1166,13 +1195,14 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getEntity().isEmpty()) {
         entity_ = other.entity_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (dimensionsBuilder_ == null) {
         if (!other.dimensions_.isEmpty()) {
           if (dimensions_.isEmpty()) {
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDimensionsIsMutable();
             dimensions_.addAll(other.dimensions_);
@@ -1185,7 +1215,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             dimensionsBuilder_.dispose();
             dimensionsBuilder_ = null;
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             dimensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDimensionsFieldBuilder()
@@ -1199,7 +1229,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -1212,7 +1242,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -1226,7 +1256,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         if (!other.dateRanges_.isEmpty()) {
           if (dateRanges_.isEmpty()) {
             dateRanges_ = other.dateRanges_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDateRangesIsMutable();
             dateRanges_.addAll(other.dateRanges_);
@@ -1239,7 +1269,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             dateRangesBuilder_.dispose();
             dateRangesBuilder_ = null;
             dateRanges_ = other.dateRanges_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             dateRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDateRangesFieldBuilder()
@@ -1263,13 +1293,14 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (orderBysBuilder_ == null) {
         if (!other.orderBys_.isEmpty()) {
           if (orderBys_.isEmpty()) {
             orderBys_ = other.orderBys_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureOrderBysIsMutable();
             orderBys_.addAll(other.orderBys_);
@@ -1282,7 +1313,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             orderBysBuilder_.dispose();
             orderBysBuilder_ = null;
             orderBys_ = other.orderBys_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
             orderBysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOrderBysFieldBuilder()
@@ -1324,7 +1355,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 entity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1372,31 +1403,31 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             case 42:
               {
                 input.readMessage(getDimensionFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getMetricFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 offset_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 limit_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -1416,7 +1447,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
             case 88:
               {
                 returnEntityQuota_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             default:
@@ -1505,8 +1536,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       entity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1524,8 +1555,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEntity() {
-
       entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1548,8 +1579,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1558,11 +1589,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureDimensionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dimensions_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.AccessDimension>(
                 dimensions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1791,7 +1822,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder clearDimensions() {
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         dimensionsBuilder_.clear();
@@ -1924,7 +1955,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
                 com.google.analytics.admin.v1alpha.AccessDimension,
                 com.google.analytics.admin.v1alpha.AccessDimension.Builder,
                 com.google.analytics.admin.v1alpha.AccessDimensionOrBuilder>(
-                dimensions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                dimensions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         dimensions_ = null;
       }
       return dimensionsBuilder_;
@@ -1934,10 +1965,10 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         metrics_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.AccessMetric>(metrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2164,7 +2195,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -2293,7 +2324,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
                 com.google.analytics.admin.v1alpha.AccessMetric,
                 com.google.analytics.admin.v1alpha.AccessMetric.Builder,
                 com.google.analytics.admin.v1alpha.AccessMetricOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
@@ -2303,11 +2334,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureDateRangesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         dateRanges_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.AccessDateRange>(
                 dateRanges_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2569,7 +2600,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder clearDateRanges() {
       if (dateRangesBuilder_ == null) {
         dateRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         dateRangesBuilder_.clear();
@@ -2723,7 +2754,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
                 com.google.analytics.admin.v1alpha.AccessDateRange,
                 com.google.analytics.admin.v1alpha.AccessDateRange.Builder,
                 com.google.analytics.admin.v1alpha.AccessDateRangeOrBuilder>(
-                dateRanges_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                dateRanges_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         dateRanges_ = null;
       }
       return dateRangesBuilder_;
@@ -2751,7 +2782,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return Whether the dimensionFilter field is set.
      */
     public boolean hasDimensionFilter() {
-      return dimensionFilterBuilder_ != null || dimensionFilter_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2797,11 +2828,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         dimensionFilter_ = value;
-        onChanged();
       } else {
         dimensionFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2821,11 +2852,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         com.google.analytics.admin.v1alpha.AccessFilterExpression.Builder builderForValue) {
       if (dimensionFilterBuilder_ == null) {
         dimensionFilter_ = builderForValue.build();
-        onChanged();
       } else {
         dimensionFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2844,19 +2875,19 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder mergeDimensionFilter(
         com.google.analytics.admin.v1alpha.AccessFilterExpression value) {
       if (dimensionFilterBuilder_ == null) {
-        if (dimensionFilter_ != null) {
-          dimensionFilter_ =
-              com.google.analytics.admin.v1alpha.AccessFilterExpression.newBuilder(dimensionFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && dimensionFilter_ != null
+            && dimensionFilter_
+                != com.google.analytics.admin.v1alpha.AccessFilterExpression.getDefaultInstance()) {
+          getDimensionFilterBuilder().mergeFrom(value);
         } else {
           dimensionFilter_ = value;
         }
-        onChanged();
       } else {
         dimensionFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2873,14 +2904,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.admin.v1alpha.AccessFilterExpression dimension_filter = 5;</code>
      */
     public Builder clearDimensionFilter() {
-      if (dimensionFilterBuilder_ == null) {
-        dimensionFilter_ = null;
-        onChanged();
-      } else {
-        dimensionFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      dimensionFilter_ = null;
+      if (dimensionFilterBuilder_ != null) {
+        dimensionFilterBuilder_.dispose();
         dimensionFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2898,7 +2928,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.analytics.admin.v1alpha.AccessFilterExpression.Builder
         getDimensionFilterBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDimensionFilterFieldBuilder().getBuilder();
     }
@@ -2976,7 +3006,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return Whether the metricFilter field is set.
      */
     public boolean hasMetricFilter() {
-      return metricFilterBuilder_ != null || metricFilter_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3020,11 +3050,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         metricFilter_ = value;
-        onChanged();
       } else {
         metricFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3043,11 +3073,11 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         com.google.analytics.admin.v1alpha.AccessFilterExpression.Builder builderForValue) {
       if (metricFilterBuilder_ == null) {
         metricFilter_ = builderForValue.build();
-        onChanged();
       } else {
         metricFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3065,19 +3095,19 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder mergeMetricFilter(
         com.google.analytics.admin.v1alpha.AccessFilterExpression value) {
       if (metricFilterBuilder_ == null) {
-        if (metricFilter_ != null) {
-          metricFilter_ =
-              com.google.analytics.admin.v1alpha.AccessFilterExpression.newBuilder(metricFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && metricFilter_ != null
+            && metricFilter_
+                != com.google.analytics.admin.v1alpha.AccessFilterExpression.getDefaultInstance()) {
+          getMetricFilterBuilder().mergeFrom(value);
         } else {
           metricFilter_ = value;
         }
-        onChanged();
       } else {
         metricFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3093,14 +3123,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.admin.v1alpha.AccessFilterExpression metric_filter = 6;</code>
      */
     public Builder clearMetricFilter() {
-      if (metricFilterBuilder_ == null) {
-        metricFilter_ = null;
-        onChanged();
-      } else {
-        metricFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      metricFilter_ = null;
+      if (metricFilterBuilder_ != null) {
+        metricFilterBuilder_.dispose();
         metricFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3117,7 +3146,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.analytics.admin.v1alpha.AccessFilterExpression.Builder
         getMetricFilterBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getMetricFilterFieldBuilder().getBuilder();
     }
@@ -3211,6 +3240,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder setOffset(long value) {
 
       offset_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3230,7 +3260,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       offset_ = 0L;
       onChanged();
       return this;
@@ -3285,6 +3315,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder setLimit(long value) {
 
       limit_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3309,7 +3340,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       limit_ = 0L;
       onChanged();
       return this;
@@ -3391,8 +3422,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3413,8 +3444,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3440,8 +3471,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3450,10 +3481,10 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureOrderBysIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         orderBys_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.AccessOrderBy>(orderBys_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3669,7 +3700,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder clearOrderBys() {
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         orderBysBuilder_.clear();
@@ -3792,7 +3823,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
                 com.google.analytics.admin.v1alpha.AccessOrderBy,
                 com.google.analytics.admin.v1alpha.AccessOrderBy.Builder,
                 com.google.analytics.admin.v1alpha.AccessOrderByOrBuilder>(
-                orderBys_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                orderBys_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         orderBys_ = null;
       }
       return orderBysBuilder_;
@@ -3831,6 +3862,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder setReturnEntityQuota(boolean value) {
 
       returnEntityQuota_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3847,7 +3879,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearReturnEntityQuota() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       returnEntityQuota_ = false;
       onChanged();
       return this;

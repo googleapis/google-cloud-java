@@ -68,6 +68,8 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    *
@@ -129,7 +131,7 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CASE_SENSITIVE_FIELD_NUMBER = 2;
-  private boolean caseSensitive_;
+  private boolean caseSensitive_ = false;
   /**
    *
    *
@@ -360,10 +362,10 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       caseSensitive_ = false;
-
       return this;
     }
 
@@ -391,15 +393,28 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
     public com.google.analytics.admin.v1alpha.AccessInListFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AccessInListFilter result =
           new com.google.analytics.admin.v1alpha.AccessInListFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.AccessInListFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      result.caseSensitive_ = caseSensitive_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessInListFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.caseSensitive_ = caseSensitive_;
+      }
     }
 
     @java.lang.Override
@@ -497,7 +512,7 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
             case 16:
               {
                 caseSensitive_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -718,6 +733,7 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
     public Builder setCaseSensitive(boolean value) {
 
       caseSensitive_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -733,7 +749,7 @@ public final class AccessInListFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCaseSensitive() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       caseSensitive_ = false;
       onChanged();
       return this;

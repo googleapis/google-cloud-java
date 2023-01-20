@@ -252,7 +252,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UNIT_FIELD_NUMBER = 1;
-  private int unit_;
+  private int unit_ = 0;
   /**
    *
    *
@@ -281,16 +281,15 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit result =
-        com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.valueOf(unit_);
+        com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.forNumber(unit_);
     return result == null
         ? com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.UNRECOGNIZED
         : result;
   }
 
   public static final int WIDTH_FIELD_NUMBER = 2;
-  private float width_;
+  private float width_ = 0F;
   /**
    *
    *
@@ -308,7 +307,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HEIGHT_FIELD_NUMBER = 3;
-  private float height_;
+  private float height_ = 0F;
   /**
    *
    *
@@ -548,12 +547,10 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       unit_ = 0;
-
       width_ = 0F;
-
       height_ = 0F;
-
       return this;
     }
 
@@ -581,11 +578,24 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1beta1.DocumentDimensions buildPartial() {
       com.google.cloud.automl.v1beta1.DocumentDimensions result =
           new com.google.cloud.automl.v1beta1.DocumentDimensions(this);
-      result.unit_ = unit_;
-      result.width_ = width_;
-      result.height_ = height_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DocumentDimensions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.unit_ = unit_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.width_ = width_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.height_ = height_;
+      }
     }
 
     @java.lang.Override
@@ -672,19 +682,19 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 unit_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 21:
               {
                 width_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 height_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -703,6 +713,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int unit_ = 0;
     /**
@@ -733,8 +745,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setUnitValue(int value) {
-
       unit_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,9 +763,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit result =
-          com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.valueOf(unit_);
+          com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.forNumber(unit_);
       return result == null
           ? com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit.UNRECOGNIZED
           : result;
@@ -775,7 +786,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       unit_ = value.getNumber();
       onChanged();
       return this;
@@ -792,7 +803,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUnit() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       unit_ = 0;
       onChanged();
       return this;
@@ -829,6 +840,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public Builder setWidth(float value) {
 
       width_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,7 +856,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearWidth() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       width_ = 0F;
       onChanged();
       return this;
@@ -881,6 +893,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public Builder setHeight(float value) {
 
       height_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -896,7 +909,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearHeight() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       height_ = 0F;
       onChanged();
       return this;

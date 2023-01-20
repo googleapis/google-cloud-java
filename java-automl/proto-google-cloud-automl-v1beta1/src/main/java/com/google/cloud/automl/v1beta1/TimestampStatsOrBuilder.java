@@ -91,7 +91,6 @@ public interface TimestampStatsOrBuilder
    * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrDefault(
       java.lang.String key,

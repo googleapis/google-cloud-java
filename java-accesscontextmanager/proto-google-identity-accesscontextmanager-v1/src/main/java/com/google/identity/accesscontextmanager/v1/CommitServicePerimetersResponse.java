@@ -71,6 +71,8 @@ public final class CommitServicePerimetersResponse extends com.google.protobuf.G
   }
 
   public static final int SERVICE_PERIMETERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
       servicePerimeters_;
   /**
@@ -380,6 +382,7 @@ public final class CommitServicePerimetersResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (servicePerimetersBuilder_ == null) {
         servicePerimeters_ = java.util.Collections.emptyList();
       } else {
@@ -418,7 +421,16 @@ public final class CommitServicePerimetersResponse extends com.google.protobuf.G
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse result =
           new com.google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse result) {
       if (servicePerimetersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           servicePerimeters_ = java.util.Collections.unmodifiableList(servicePerimeters_);
@@ -428,8 +440,11 @@ public final class CommitServicePerimetersResponse extends com.google.protobuf.G
       } else {
         result.servicePerimeters_ = servicePerimetersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

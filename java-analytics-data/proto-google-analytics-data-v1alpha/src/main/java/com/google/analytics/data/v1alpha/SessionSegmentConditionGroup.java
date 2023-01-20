@@ -69,7 +69,7 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
   }
 
   public static final int CONDITION_SCOPING_FIELD_NUMBER = 1;
-  private int conditionScoping_;
+  private int conditionScoping_ = 0;
   /**
    *
    *
@@ -120,9 +120,8 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.SessionCriteriaScoping getConditionScoping() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.data.v1alpha.SessionCriteriaScoping result =
-        com.google.analytics.data.v1alpha.SessionCriteriaScoping.valueOf(conditionScoping_);
+        com.google.analytics.data.v1alpha.SessionCriteriaScoping.forNumber(conditionScoping_);
     return result == null
         ? com.google.analytics.data.v1alpha.SessionCriteriaScoping.UNRECOGNIZED
         : result;
@@ -183,7 +182,9 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.analytics.data.v1alpha.SegmentFilterExpressionOrBuilder
       getSegmentFilterExpressionOrBuilder() {
-    return getSegmentFilterExpression();
+    return segmentFilterExpression_ == null
+        ? com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()
+        : segmentFilterExpression_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -406,12 +407,11 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conditionScoping_ = 0;
-
-      if (segmentFilterExpressionBuilder_ == null) {
-        segmentFilterExpression_ = null;
-      } else {
-        segmentFilterExpression_ = null;
+      segmentFilterExpression_ = null;
+      if (segmentFilterExpressionBuilder_ != null) {
+        segmentFilterExpressionBuilder_.dispose();
         segmentFilterExpressionBuilder_ = null;
       }
       return this;
@@ -442,14 +442,25 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
     public com.google.analytics.data.v1alpha.SessionSegmentConditionGroup buildPartial() {
       com.google.analytics.data.v1alpha.SessionSegmentConditionGroup result =
           new com.google.analytics.data.v1alpha.SessionSegmentConditionGroup(this);
-      result.conditionScoping_ = conditionScoping_;
-      if (segmentFilterExpressionBuilder_ == null) {
-        result.segmentFilterExpression_ = segmentFilterExpression_;
-      } else {
-        result.segmentFilterExpression_ = segmentFilterExpressionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.SessionSegmentConditionGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conditionScoping_ = conditionScoping_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.segmentFilterExpression_ =
+            segmentFilterExpressionBuilder_ == null
+                ? segmentFilterExpression_
+                : segmentFilterExpressionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,14 +545,14 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
             case 8:
               {
                 conditionScoping_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getSegmentFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -560,6 +571,8 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int conditionScoping_ = 0;
     /**
@@ -612,8 +625,8 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setConditionScopingValue(int value) {
-
       conditionScoping_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,9 +654,8 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.analytics.data.v1alpha.SessionCriteriaScoping getConditionScoping() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1alpha.SessionCriteriaScoping result =
-          com.google.analytics.data.v1alpha.SessionCriteriaScoping.valueOf(conditionScoping_);
+          com.google.analytics.data.v1alpha.SessionCriteriaScoping.forNumber(conditionScoping_);
       return result == null
           ? com.google.analytics.data.v1alpha.SessionCriteriaScoping.UNRECOGNIZED
           : result;
@@ -676,7 +688,7 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       conditionScoping_ = value.getNumber();
       onChanged();
       return this;
@@ -704,7 +716,7 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearConditionScoping() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       conditionScoping_ = 0;
       onChanged();
       return this;
@@ -731,7 +743,7 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      * @return Whether the segmentFilterExpression field is set.
      */
     public boolean hasSegmentFilterExpression() {
-      return segmentFilterExpressionBuilder_ != null || segmentFilterExpression_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -775,11 +787,11 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         segmentFilterExpression_ = value;
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -798,11 +810,11 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
         com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder builderForValue) {
       if (segmentFilterExpressionBuilder_ == null) {
         segmentFilterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,20 +832,19 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
     public Builder mergeSegmentFilterExpression(
         com.google.analytics.data.v1alpha.SegmentFilterExpression value) {
       if (segmentFilterExpressionBuilder_ == null) {
-        if (segmentFilterExpression_ != null) {
-          segmentFilterExpression_ =
-              com.google.analytics.data.v1alpha.SegmentFilterExpression.newBuilder(
-                      segmentFilterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && segmentFilterExpression_ != null
+            && segmentFilterExpression_
+                != com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()) {
+          getSegmentFilterExpressionBuilder().mergeFrom(value);
         } else {
           segmentFilterExpression_ = value;
         }
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,14 +860,13 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSegmentFilterExpression() {
-      if (segmentFilterExpressionBuilder_ == null) {
-        segmentFilterExpression_ = null;
-        onChanged();
-      } else {
-        segmentFilterExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      segmentFilterExpression_ = null;
+      if (segmentFilterExpressionBuilder_ != null) {
+        segmentFilterExpressionBuilder_.dispose();
         segmentFilterExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -873,7 +883,7 @@ public final class SessionSegmentConditionGroup extends com.google.protobuf.Gene
      */
     public com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder
         getSegmentFilterExpressionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSegmentFilterExpressionFieldBuilder().getBuilder();
     }

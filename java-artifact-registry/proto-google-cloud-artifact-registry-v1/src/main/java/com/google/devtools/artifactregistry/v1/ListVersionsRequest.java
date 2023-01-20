@@ -71,7 +71,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -187,7 +191,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VIEW_FIELD_NUMBER = 4;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -216,16 +220,17 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.devtools.artifactregistry.v1.VersionView getView() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.artifactregistry.v1.VersionView result =
-        com.google.devtools.artifactregistry.v1.VersionView.valueOf(view_);
+        com.google.devtools.artifactregistry.v1.VersionView.forNumber(view_);
     return result == null
         ? com.google.devtools.artifactregistry.v1.VersionView.UNRECOGNIZED
         : result;
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -511,16 +516,12 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       view_ = 0;
-
       orderBy_ = "";
-
       return this;
     }
 
@@ -548,13 +549,30 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     public com.google.devtools.artifactregistry.v1.ListVersionsRequest buildPartial() {
       com.google.devtools.artifactregistry.v1.ListVersionsRequest result =
           new com.google.devtools.artifactregistry.v1.ListVersionsRequest(this);
-      result.parent_ = parent_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.view_ = view_;
-      result.orderBy_ = orderBy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.artifactregistry.v1.ListVersionsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.view_ = view_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
     }
 
     @java.lang.Override
@@ -605,6 +623,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -612,6 +631,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -619,6 +639,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -650,31 +671,31 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -693,6 +714,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -755,8 +778,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,8 +795,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -794,8 +817,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -831,6 +854,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -846,7 +870,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -913,8 +937,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -930,8 +954,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -952,8 +976,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -987,8 +1011,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1005,9 +1029,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.devtools.artifactregistry.v1.VersionView getView() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.artifactregistry.v1.VersionView result =
-          com.google.devtools.artifactregistry.v1.VersionView.valueOf(view_);
+          com.google.devtools.artifactregistry.v1.VersionView.forNumber(view_);
       return result == null
           ? com.google.devtools.artifactregistry.v1.VersionView.UNRECOGNIZED
           : result;
@@ -1028,7 +1051,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1045,7 +1068,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       view_ = 0;
       onChanged();
       return this;
@@ -1112,8 +1135,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1129,8 +1152,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1151,8 +1174,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

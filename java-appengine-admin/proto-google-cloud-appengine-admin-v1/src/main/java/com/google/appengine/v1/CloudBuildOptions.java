@@ -70,7 +70,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int APP_YAML_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object appYamlPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appYamlPath_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCloudBuildTimeoutOrBuilder() {
-    return getCloudBuildTimeout();
+    return cloudBuildTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : cloudBuildTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       appYamlPath_ = "";
-
-      if (cloudBuildTimeoutBuilder_ == null) {
-        cloudBuildTimeout_ = null;
-      } else {
-        cloudBuildTimeout_ = null;
+      cloudBuildTimeout_ = null;
+      if (cloudBuildTimeoutBuilder_ != null) {
+        cloudBuildTimeoutBuilder_.dispose();
         cloudBuildTimeoutBuilder_ = null;
       }
       return this;
@@ -425,14 +428,24 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     public com.google.appengine.v1.CloudBuildOptions buildPartial() {
       com.google.appengine.v1.CloudBuildOptions result =
           new com.google.appengine.v1.CloudBuildOptions(this);
-      result.appYamlPath_ = appYamlPath_;
-      if (cloudBuildTimeoutBuilder_ == null) {
-        result.cloudBuildTimeout_ = cloudBuildTimeout_;
-      } else {
-        result.cloudBuildTimeout_ = cloudBuildTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CloudBuildOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.appYamlPath_ = appYamlPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cloudBuildTimeout_ =
+            cloudBuildTimeoutBuilder_ == null
+                ? cloudBuildTimeout_
+                : cloudBuildTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -482,6 +495,7 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       if (other == com.google.appengine.v1.CloudBuildOptions.getDefaultInstance()) return this;
       if (!other.getAppYamlPath().isEmpty()) {
         appYamlPath_ = other.appYamlPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCloudBuildTimeout()) {
@@ -516,14 +530,14 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 appYamlPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getCloudBuildTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +556,8 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object appYamlPath_ = "";
     /**
@@ -616,8 +632,8 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       appYamlPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,8 +653,8 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAppYamlPath() {
-
       appYamlPath_ = getDefaultInstance().getAppYamlPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -663,8 +679,8 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appYamlPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,7 +704,7 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * @return Whether the cloudBuildTimeout field is set.
      */
     public boolean hasCloudBuildTimeout() {
-      return cloudBuildTimeoutBuilder_ != null || cloudBuildTimeout_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -727,11 +743,11 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         cloudBuildTimeout_ = value;
-        onChanged();
       } else {
         cloudBuildTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +763,11 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     public Builder setCloudBuildTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (cloudBuildTimeoutBuilder_ == null) {
         cloudBuildTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         cloudBuildTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -766,19 +782,18 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCloudBuildTimeout(com.google.protobuf.Duration value) {
       if (cloudBuildTimeoutBuilder_ == null) {
-        if (cloudBuildTimeout_ != null) {
-          cloudBuildTimeout_ =
-              com.google.protobuf.Duration.newBuilder(cloudBuildTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cloudBuildTimeout_ != null
+            && cloudBuildTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCloudBuildTimeoutBuilder().mergeFrom(value);
         } else {
           cloudBuildTimeout_ = value;
         }
-        onChanged();
       } else {
         cloudBuildTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +807,13 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration cloud_build_timeout = 2;</code>
      */
     public Builder clearCloudBuildTimeout() {
-      if (cloudBuildTimeoutBuilder_ == null) {
-        cloudBuildTimeout_ = null;
-        onChanged();
-      } else {
-        cloudBuildTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cloudBuildTimeout_ = null;
+      if (cloudBuildTimeoutBuilder_ != null) {
+        cloudBuildTimeoutBuilder_.dispose();
         cloudBuildTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +827,7 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration cloud_build_timeout = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getCloudBuildTimeoutBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCloudBuildTimeoutFieldBuilder().getBuilder();
     }

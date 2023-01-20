@@ -113,7 +113,9 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.data.v1alpha.EventSegmentCriteriaOrBuilder
       getEventInclusionCriteriaOrBuilder() {
-    return getEventInclusionCriteria();
+    return eventInclusionCriteria_ == null
+        ? com.google.analytics.data.v1alpha.EventSegmentCriteria.getDefaultInstance()
+        : eventInclusionCriteria_;
   }
 
   public static final int EXCLUSION_FIELD_NUMBER = 2;
@@ -161,7 +163,9 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.EventSegmentExclusionOrBuilder getExclusionOrBuilder() {
-    return getExclusion();
+    return exclusion_ == null
+        ? com.google.analytics.data.v1alpha.EventSegmentExclusion.getDefaultInstance()
+        : exclusion_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +387,15 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (eventInclusionCriteriaBuilder_ == null) {
-        eventInclusionCriteria_ = null;
-      } else {
-        eventInclusionCriteria_ = null;
+      bitField0_ = 0;
+      eventInclusionCriteria_ = null;
+      if (eventInclusionCriteriaBuilder_ != null) {
+        eventInclusionCriteriaBuilder_.dispose();
         eventInclusionCriteriaBuilder_ = null;
       }
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-      } else {
-        exclusion_ = null;
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
       return this;
@@ -422,18 +425,24 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.EventSegment buildPartial() {
       com.google.analytics.data.v1alpha.EventSegment result =
           new com.google.analytics.data.v1alpha.EventSegment(this);
-      if (eventInclusionCriteriaBuilder_ == null) {
-        result.eventInclusionCriteria_ = eventInclusionCriteria_;
-      } else {
-        result.eventInclusionCriteria_ = eventInclusionCriteriaBuilder_.build();
-      }
-      if (exclusionBuilder_ == null) {
-        result.exclusion_ = exclusion_;
-      } else {
-        result.exclusion_ = exclusionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.EventSegment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventInclusionCriteria_ =
+            eventInclusionCriteriaBuilder_ == null
+                ? eventInclusionCriteria_
+                : eventInclusionCriteriaBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exclusion_ = exclusionBuilder_ == null ? exclusion_ : exclusionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -517,13 +526,13 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getEventInclusionCriteriaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExclusionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +551,8 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.data.v1alpha.EventSegmentCriteria eventInclusionCriteria_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -562,7 +573,7 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventInclusionCriteria field is set.
      */
     public boolean hasEventInclusionCriteria() {
-      return eventInclusionCriteriaBuilder_ != null || eventInclusionCriteria_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -602,11 +613,11 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         eventInclusionCriteria_ = value;
-        onChanged();
       } else {
         eventInclusionCriteriaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,11 +634,11 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.data.v1alpha.EventSegmentCriteria.Builder builderForValue) {
       if (eventInclusionCriteriaBuilder_ == null) {
         eventInclusionCriteria_ = builderForValue.build();
-        onChanged();
       } else {
         eventInclusionCriteriaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,20 +654,19 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEventInclusionCriteria(
         com.google.analytics.data.v1alpha.EventSegmentCriteria value) {
       if (eventInclusionCriteriaBuilder_ == null) {
-        if (eventInclusionCriteria_ != null) {
-          eventInclusionCriteria_ =
-              com.google.analytics.data.v1alpha.EventSegmentCriteria.newBuilder(
-                      eventInclusionCriteria_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && eventInclusionCriteria_ != null
+            && eventInclusionCriteria_
+                != com.google.analytics.data.v1alpha.EventSegmentCriteria.getDefaultInstance()) {
+          getEventInclusionCriteriaBuilder().mergeFrom(value);
         } else {
           eventInclusionCriteria_ = value;
         }
-        onChanged();
       } else {
         eventInclusionCriteriaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -670,14 +680,13 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEventInclusionCriteria() {
-      if (eventInclusionCriteriaBuilder_ == null) {
-        eventInclusionCriteria_ = null;
-        onChanged();
-      } else {
-        eventInclusionCriteria_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      eventInclusionCriteria_ = null;
+      if (eventInclusionCriteriaBuilder_ != null) {
+        eventInclusionCriteriaBuilder_.dispose();
         eventInclusionCriteriaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -692,7 +701,7 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.data.v1alpha.EventSegmentCriteria.Builder
         getEventInclusionCriteriaBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEventInclusionCriteriaFieldBuilder().getBuilder();
     }
@@ -761,7 +770,7 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the exclusion field is set.
      */
     public boolean hasExclusion() {
-      return exclusionBuilder_ != null || exclusion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -798,11 +807,11 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         exclusion_ = value;
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -818,11 +827,11 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.data.v1alpha.EventSegmentExclusion.Builder builderForValue) {
       if (exclusionBuilder_ == null) {
         exclusion_ = builderForValue.build();
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,19 +845,19 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExclusion(com.google.analytics.data.v1alpha.EventSegmentExclusion value) {
       if (exclusionBuilder_ == null) {
-        if (exclusion_ != null) {
-          exclusion_ =
-              com.google.analytics.data.v1alpha.EventSegmentExclusion.newBuilder(exclusion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && exclusion_ != null
+            && exclusion_
+                != com.google.analytics.data.v1alpha.EventSegmentExclusion.getDefaultInstance()) {
+          getExclusionBuilder().mergeFrom(value);
         } else {
           exclusion_ = value;
         }
-        onChanged();
       } else {
         exclusionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,14 +870,13 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1alpha.EventSegmentExclusion exclusion = 2;</code>
      */
     public Builder clearExclusion() {
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-        onChanged();
-      } else {
-        exclusion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -881,7 +889,7 @@ public final class EventSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1alpha.EventSegmentExclusion exclusion = 2;</code>
      */
     public com.google.analytics.data.v1alpha.EventSegmentExclusion.Builder getExclusionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExclusionFieldBuilder().getBuilder();
     }

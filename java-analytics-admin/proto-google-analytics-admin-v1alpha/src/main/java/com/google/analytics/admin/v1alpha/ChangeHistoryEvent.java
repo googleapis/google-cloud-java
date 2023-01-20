@@ -74,7 +74,9 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -165,11 +167,11 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getChangeTimeOrBuilder() {
-    return getChangeTime();
+    return changeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : changeTime_;
   }
 
   public static final int ACTOR_TYPE_FIELD_NUMBER = 3;
-  private int actorType_;
+  private int actorType_ = 0;
   /**
    *
    *
@@ -198,14 +200,15 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.ActorType getActorType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.ActorType result =
-        com.google.analytics.admin.v1alpha.ActorType.valueOf(actorType_);
+        com.google.analytics.admin.v1alpha.ActorType.forNumber(actorType_);
     return result == null ? com.google.analytics.admin.v1alpha.ActorType.UNRECOGNIZED : result;
   }
 
   public static final int USER_ACTOR_EMAIL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userActorEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userActorEmail_ = "";
   /**
    *
    *
@@ -258,7 +261,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CHANGES_FILTERED_FIELD_NUMBER = 5;
-  private boolean changesFiltered_;
+  private boolean changesFiltered_ = false;
   /**
    *
    *
@@ -277,6 +280,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CHANGES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.ChangeHistoryChange> changes_;
   /**
    *
@@ -606,27 +611,23 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
-      if (changeTimeBuilder_ == null) {
-        changeTime_ = null;
-      } else {
-        changeTime_ = null;
+      changeTime_ = null;
+      if (changeTimeBuilder_ != null) {
+        changeTimeBuilder_.dispose();
         changeTimeBuilder_ = null;
       }
       actorType_ = 0;
-
       userActorEmail_ = "";
-
       changesFiltered_ = false;
-
       if (changesBuilder_ == null) {
         changes_ = java.util.Collections.emptyList();
       } else {
         changes_ = null;
         changesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -654,27 +655,44 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public com.google.analytics.admin.v1alpha.ChangeHistoryEvent buildPartial() {
       com.google.analytics.admin.v1alpha.ChangeHistoryEvent result =
           new com.google.analytics.admin.v1alpha.ChangeHistoryEvent(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      if (changeTimeBuilder_ == null) {
-        result.changeTime_ = changeTime_;
-      } else {
-        result.changeTime_ = changeTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.actorType_ = actorType_;
-      result.userActorEmail_ = userActorEmail_;
-      result.changesFiltered_ = changesFiltered_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.ChangeHistoryEvent result) {
       if (changesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           changes_ = java.util.Collections.unmodifiableList(changes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.changes_ = changes_;
       } else {
         result.changes_ = changesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.ChangeHistoryEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.changeTime_ = changeTimeBuilder_ == null ? changeTime_ : changeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actorType_ = actorType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.userActorEmail_ = userActorEmail_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.changesFiltered_ = changesFiltered_;
+      }
     }
 
     @java.lang.Override
@@ -725,6 +743,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasChangeTime()) {
@@ -735,6 +754,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getUserActorEmail().isEmpty()) {
         userActorEmail_ = other.userActorEmail_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getChangesFiltered() != false) {
@@ -744,7 +764,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         if (!other.changes_.isEmpty()) {
           if (changes_.isEmpty()) {
             changes_ = other.changes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureChangesIsMutable();
             changes_.addAll(other.changes_);
@@ -757,7 +777,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
             changesBuilder_.dispose();
             changesBuilder_ = null;
             changes_ = other.changes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             changesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChangesFieldBuilder()
@@ -796,31 +816,31 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getChangeTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 actorType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 userActorEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 changesFiltered_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
@@ -917,8 +937,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -934,8 +954,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -956,8 +976,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -980,7 +1000,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return Whether the changeTime field is set.
      */
     public boolean hasChangeTime() {
-      return changeTimeBuilder_ != null || changeTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1017,11 +1037,11 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         changeTime_ = value;
-        onChanged();
       } else {
         changeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1036,11 +1056,11 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public Builder setChangeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (changeTimeBuilder_ == null) {
         changeTime_ = builderForValue.build();
-        onChanged();
       } else {
         changeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1054,17 +1074,18 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeChangeTime(com.google.protobuf.Timestamp value) {
       if (changeTimeBuilder_ == null) {
-        if (changeTime_ != null) {
-          changeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(changeTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && changeTime_ != null
+            && changeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getChangeTimeBuilder().mergeFrom(value);
         } else {
           changeTime_ = value;
         }
-        onChanged();
       } else {
         changeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1077,14 +1098,13 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp change_time = 2;</code>
      */
     public Builder clearChangeTime() {
-      if (changeTimeBuilder_ == null) {
-        changeTime_ = null;
-        onChanged();
-      } else {
-        changeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      changeTime_ = null;
+      if (changeTimeBuilder_ != null) {
+        changeTimeBuilder_.dispose();
         changeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1097,7 +1117,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp change_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getChangeTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getChangeTimeFieldBuilder().getBuilder();
     }
@@ -1174,8 +1194,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setActorTypeValue(int value) {
-
       actorType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1192,9 +1212,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.ActorType getActorType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.ActorType result =
-          com.google.analytics.admin.v1alpha.ActorType.valueOf(actorType_);
+          com.google.analytics.admin.v1alpha.ActorType.forNumber(actorType_);
       return result == null ? com.google.analytics.admin.v1alpha.ActorType.UNRECOGNIZED : result;
     }
     /**
@@ -1213,7 +1232,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       actorType_ = value.getNumber();
       onChanged();
       return this;
@@ -1230,7 +1249,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearActorType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       actorType_ = 0;
       onChanged();
       return this;
@@ -1303,8 +1322,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       userActorEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1322,8 +1341,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUserActorEmail() {
-
       userActorEmail_ = getDefaultInstance().getUserActorEmail();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1346,8 +1365,8 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userActorEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1385,6 +1404,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public Builder setChangesFiltered(boolean value) {
 
       changesFiltered_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1401,7 +1421,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearChangesFiltered() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       changesFiltered_ = false;
       onChanged();
       return this;
@@ -1411,11 +1431,11 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureChangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         changes_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.ChangeHistoryChange>(
                 changes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1645,7 +1665,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     public Builder clearChanges() {
       if (changesBuilder_ == null) {
         changes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         changesBuilder_.clear();
@@ -1778,7 +1798,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
                 com.google.analytics.admin.v1alpha.ChangeHistoryChange,
                 com.google.analytics.admin.v1alpha.ChangeHistoryChange.Builder,
                 com.google.analytics.admin.v1alpha.ChangeHistoryChangeOrBuilder>(
-                changes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                changes_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         changes_ = null;
       }
       return changesBuilder_;

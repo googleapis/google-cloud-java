@@ -69,6 +69,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_SPEC_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList columnSpecIds_;
   /**
    *
@@ -154,6 +156,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Value> values_;
   /**
    *
@@ -454,6 +458,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       columnSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (valuesBuilder_ == null) {
@@ -489,7 +494,15 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.Row buildPartial() {
       com.google.cloud.automl.v1beta1.Row result = new com.google.cloud.automl.v1beta1.Row(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.automl.v1beta1.Row result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         columnSpecIds_ = columnSpecIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -504,8 +517,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.values_ = valuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.Row result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

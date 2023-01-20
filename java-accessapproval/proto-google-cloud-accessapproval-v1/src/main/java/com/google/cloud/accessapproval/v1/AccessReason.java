@@ -312,7 +312,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -341,16 +341,17 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessReason.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.accessapproval.v1.AccessReason.Type result =
-        com.google.cloud.accessapproval.v1.AccessReason.Type.valueOf(type_);
+        com.google.cloud.accessapproval.v1.AccessReason.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.accessapproval.v1.AccessReason.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int DETAIL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object detail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detail_ = "";
   /**
    *
    *
@@ -598,10 +599,9 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       detail_ = "";
-
       return this;
     }
 
@@ -629,10 +629,21 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.accessapproval.v1.AccessReason buildPartial() {
       com.google.cloud.accessapproval.v1.AccessReason result =
           new com.google.cloud.accessapproval.v1.AccessReason(this);
-      result.type_ = type_;
-      result.detail_ = detail_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.AccessReason result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.detail_ = detail_;
+      }
     }
 
     @java.lang.Override
@@ -686,6 +697,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDetail().isEmpty()) {
         detail_ = other.detail_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -717,13 +729,13 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 detail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -742,6 +754,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -772,8 +786,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -790,9 +804,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.accessapproval.v1.AccessReason.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.accessapproval.v1.AccessReason.Type result =
-          com.google.cloud.accessapproval.v1.AccessReason.Type.valueOf(type_);
+          com.google.cloud.accessapproval.v1.AccessReason.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.accessapproval.v1.AccessReason.Type.UNRECOGNIZED
           : result;
@@ -813,7 +826,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -830,7 +843,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -897,8 +910,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       detail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -914,8 +927,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetail() {
-
       detail_ = getDefaultInstance().getDetail();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -936,8 +949,8 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

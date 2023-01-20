@@ -926,6 +926,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
@@ -961,23 +962,28 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
     public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.BatchPredictOutputConfig result =
           new com.google.cloud.automl.v1beta1.BatchPredictOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationCase_ == 2) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
-      }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.BatchPredictOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.automl.v1beta1.BatchPredictOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 2 && bigqueryDestinationBuilder_ != null) {
+        result.destination_ = bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1111,6 +1117,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.GcsDestination,
@@ -1328,7 +1336,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -1543,7 +1550,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return bigqueryDestinationBuilder_;
     }
 

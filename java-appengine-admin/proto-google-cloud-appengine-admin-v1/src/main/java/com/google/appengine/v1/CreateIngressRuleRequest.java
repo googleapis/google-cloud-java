@@ -68,7 +68,9 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -184,7 +186,9 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.appengine.v1.firewall.FirewallRuleOrBuilder getRuleOrBuilder() {
-    return getRule();
+    return rule_ == null
+        ? com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance()
+        : rule_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -398,12 +402,11 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-      } else {
-        rule_ = null;
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
       return this;
@@ -433,14 +436,21 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     public com.google.appengine.v1.CreateIngressRuleRequest buildPartial() {
       com.google.appengine.v1.CreateIngressRuleRequest result =
           new com.google.appengine.v1.CreateIngressRuleRequest(this);
-      result.parent_ = parent_;
-      if (ruleBuilder_ == null) {
-        result.rule_ = rule_;
-      } else {
-        result.rule_ = ruleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CreateIngressRuleRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rule_ = ruleBuilder_ == null ? rule_ : ruleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +501,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRule()) {
@@ -525,13 +536,13 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +561,8 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -615,8 +628,8 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +646,8 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +700,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      * @return Whether the rule field is set.
      */
     public boolean hasRule() {
-      return ruleBuilder_ != null || rule_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -738,11 +751,11 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         rule_ = value;
-        onChanged();
       } else {
         ruleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,11 +777,11 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
     public Builder setRule(com.google.appengine.v1.firewall.FirewallRule.Builder builderForValue) {
       if (ruleBuilder_ == null) {
         rule_ = builderForValue.build();
-        onChanged();
       } else {
         ruleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -789,19 +802,18 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      */
     public Builder mergeRule(com.google.appengine.v1.firewall.FirewallRule value) {
       if (ruleBuilder_ == null) {
-        if (rule_ != null) {
-          rule_ =
-              com.google.appengine.v1.firewall.FirewallRule.newBuilder(rule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && rule_ != null
+            && rule_ != com.google.appengine.v1.firewall.FirewallRule.getDefaultInstance()) {
+          getRuleBuilder().mergeFrom(value);
         } else {
           rule_ = value;
         }
-        onChanged();
       } else {
         ruleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,14 +833,13 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      * <code>.google.appengine.v1.FirewallRule rule = 2;</code>
      */
     public Builder clearRule() {
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-        onChanged();
-      } else {
-        rule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -848,7 +859,7 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      * <code>.google.appengine.v1.FirewallRule rule = 2;</code>
      */
     public com.google.appengine.v1.firewall.FirewallRule.Builder getRuleBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }

@@ -66,7 +66,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ACCUMULATE_FIELD_NUMBER = 1;
-  private boolean accumulate_;
+  private boolean accumulate_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accumulate_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     public com.google.analytics.data.v1beta.CohortReportSettings buildPartial() {
       com.google.analytics.data.v1beta.CohortReportSettings result =
           new com.google.analytics.data.v1beta.CohortReportSettings(this);
-      result.accumulate_ = accumulate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.CohortReportSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accumulate_ = accumulate_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 accumulate_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean accumulate_;
     /**
@@ -447,6 +458,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     public Builder setAccumulate(boolean value) {
 
       accumulate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -463,7 +475,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAccumulate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       accumulate_ = false;
       onChanged();
       return this;

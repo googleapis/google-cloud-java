@@ -585,6 +585,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
@@ -663,7 +664,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1303,6 +1307,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -1339,26 +1344,31 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.InputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.InputConfig result =
           new com.google.cloud.automl.v1beta1.InputConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (bigquerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigquerySourceBuilder_.build();
-        }
-      }
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.InputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.InputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && bigquerySourceBuilder_ != null) {
+        result.source_ = bigquerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1407,6 +1417,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.InputConfig other) {
       if (other == com.google.cloud.automl.v1beta1.InputConfig.getDefaultInstance()) return this;
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000004;
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
           {
@@ -1464,6 +1475,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -1728,7 +1740,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1938,7 +1949,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return bigquerySourceBuilder_;
     }
 
@@ -1953,14 +1963,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return params_;
     }
 
@@ -2033,8 +2043,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2070,6 +2082,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -2099,6 +2112,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -2124,8 +2138,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -2146,6 +2160,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

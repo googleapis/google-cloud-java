@@ -73,7 +73,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AUTH_FAIL_ACTION_FIELD_NUMBER = 1;
-  private int authFailAction_;
+  private int authFailAction_ = 0;
   /**
    *
    *
@@ -104,14 +104,13 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.appengine.v1.AuthFailAction getAuthFailAction() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.AuthFailAction result =
-        com.google.appengine.v1.AuthFailAction.valueOf(authFailAction_);
+        com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
     return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
   }
 
   public static final int LOGIN_FIELD_NUMBER = 2;
-  private int login_;
+  private int login_ = 0;
   /**
    *
    *
@@ -142,14 +141,15 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.appengine.v1.LoginRequirement getLogin() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.LoginRequirement result =
-        com.google.appengine.v1.LoginRequirement.valueOf(login_);
+        com.google.appengine.v1.LoginRequirement.forNumber(login_);
     return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
   }
 
   public static final int SCRIPT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object script_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object script_ = "";
   /**
    *
    *
@@ -198,7 +198,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 4;
-  private int securityLevel_;
+  private int securityLevel_ = 0;
   /**
    *
    *
@@ -227,14 +227,15 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.appengine.v1.SecurityLevel getSecurityLevel() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.SecurityLevel result =
-        com.google.appengine.v1.SecurityLevel.valueOf(securityLevel_);
+        com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
     return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
   }
 
   public static final int URL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -517,16 +518,12 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authFailAction_ = 0;
-
       login_ = 0;
-
       script_ = "";
-
       securityLevel_ = 0;
-
       url_ = "";
-
       return this;
     }
 
@@ -554,13 +551,30 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
     public com.google.appengine.v1.ApiConfigHandler buildPartial() {
       com.google.appengine.v1.ApiConfigHandler result =
           new com.google.appengine.v1.ApiConfigHandler(this);
-      result.authFailAction_ = authFailAction_;
-      result.login_ = login_;
-      result.script_ = script_;
-      result.securityLevel_ = securityLevel_;
-      result.url_ = url_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ApiConfigHandler result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authFailAction_ = authFailAction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.login_ = login_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.script_ = script_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.securityLevel_ = securityLevel_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.url_ = url_;
+      }
     }
 
     @java.lang.Override
@@ -616,6 +630,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getScript().isEmpty()) {
         script_ = other.script_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.securityLevel_ != 0) {
@@ -623,6 +638,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -654,31 +670,31 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 authFailAction_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 login_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 script_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 securityLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -697,6 +713,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int authFailAction_ = 0;
     /**
@@ -729,8 +747,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAuthFailActionValue(int value) {
-
       authFailAction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,9 +766,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.appengine.v1.AuthFailAction getAuthFailAction() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.AuthFailAction result =
-          com.google.appengine.v1.AuthFailAction.valueOf(authFailAction_);
+          com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
       return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
     }
     /**
@@ -770,7 +787,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       authFailAction_ = value.getNumber();
       onChanged();
       return this;
@@ -788,7 +805,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAuthFailAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       authFailAction_ = 0;
       onChanged();
       return this;
@@ -825,8 +842,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setLoginValue(int value) {
-
       login_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,9 +861,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.appengine.v1.LoginRequirement getLogin() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.LoginRequirement result =
-          com.google.appengine.v1.LoginRequirement.valueOf(login_);
+          com.google.appengine.v1.LoginRequirement.forNumber(login_);
       return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
     }
     /**
@@ -866,7 +882,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       login_ = value.getNumber();
       onChanged();
       return this;
@@ -884,7 +900,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLogin() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       login_ = 0;
       onChanged();
       return this;
@@ -951,8 +967,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       script_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -968,8 +984,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScript() {
-
       script_ = getDefaultInstance().getScript();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -990,8 +1006,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       script_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1025,8 +1041,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSecurityLevelValue(int value) {
-
       securityLevel_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1043,9 +1059,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.appengine.v1.SecurityLevel getSecurityLevel() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.SecurityLevel result =
-          com.google.appengine.v1.SecurityLevel.valueOf(securityLevel_);
+          com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
       return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1064,7 +1079,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       securityLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1081,7 +1096,7 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSecurityLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       securityLevel_ = 0;
       onChanged();
       return this;
@@ -1148,8 +1163,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1165,8 +1180,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1187,8 +1202,8 @@ public final class ApiConfigHandler extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -591,6 +591,7 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (andGroupBuilder_ != null) {
         andGroupBuilder_.clear();
       }
@@ -632,37 +633,34 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
     public com.google.analytics.admin.v1alpha.AccessFilterExpression buildPartial() {
       com.google.analytics.admin.v1alpha.AccessFilterExpression result =
           new com.google.analytics.admin.v1alpha.AccessFilterExpression(this);
-      if (oneExpressionCase_ == 1) {
-        if (andGroupBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = andGroupBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneExpressionCase_ == 2) {
-        if (orGroupBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = orGroupBuilder_.build();
-        }
-      }
-      if (oneExpressionCase_ == 3) {
-        if (notExpressionBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = notExpressionBuilder_.build();
-        }
-      }
-      if (oneExpressionCase_ == 4) {
-        if (accessFilterBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = accessFilterBuilder_.build();
-        }
-      }
-      result.oneExpressionCase_ = oneExpressionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessFilterExpression result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.admin.v1alpha.AccessFilterExpression result) {
+      result.oneExpressionCase_ = oneExpressionCase_;
+      result.oneExpression_ = this.oneExpression_;
+      if (oneExpressionCase_ == 1 && andGroupBuilder_ != null) {
+        result.oneExpression_ = andGroupBuilder_.build();
+      }
+      if (oneExpressionCase_ == 2 && orGroupBuilder_ != null) {
+        result.oneExpression_ = orGroupBuilder_.build();
+      }
+      if (oneExpressionCase_ == 3 && notExpressionBuilder_ != null) {
+        result.oneExpression_ = notExpressionBuilder_.build();
+      }
+      if (oneExpressionCase_ == 4 && accessFilterBuilder_ != null) {
+        result.oneExpression_ = accessFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -817,6 +815,8 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.AccessFilterExpressionList,
@@ -1032,7 +1032,6 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
       }
       oneExpressionCase_ = 1;
       onChanged();
-      ;
       return andGroupBuilder_;
     }
 
@@ -1249,7 +1248,6 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
       }
       oneExpressionCase_ = 2;
       onChanged();
-      ;
       return orGroupBuilder_;
     }
 
@@ -1465,7 +1463,6 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
       }
       oneExpressionCase_ = 3;
       onChanged();
-      ;
       return notExpressionBuilder_;
     }
 
@@ -1685,7 +1682,6 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
       }
       oneExpressionCase_ = 4;
       onChanged();
-      ;
       return accessFilterBuilder_;
     }
 

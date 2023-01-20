@@ -71,7 +71,7 @@ public final class ImageObjectDetectionEvaluationMetrics
   }
 
   public static final int EVALUATED_BOUNDING_BOX_COUNT_FIELD_NUMBER = 1;
-  private int evaluatedBoundingBoxCount_;
+  private int evaluatedBoundingBoxCount_ = 0;
   /**
    *
    *
@@ -90,6 +90,8 @@ public final class ImageObjectDetectionEvaluationMetrics
   }
 
   public static final int BOUNDING_BOX_METRICS_ENTRIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       boundingBoxMetricsEntries_;
   /**
@@ -188,7 +190,7 @@ public final class ImageObjectDetectionEvaluationMetrics
   }
 
   public static final int BOUNDING_BOX_MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 3;
-  private float boundingBoxMeanAveragePrecision_;
+  private float boundingBoxMeanAveragePrecision_ = 0F;
   /**
    *
    *
@@ -433,17 +435,16 @@ public final class ImageObjectDetectionEvaluationMetrics
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       evaluatedBoundingBoxCount_ = 0;
-
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
       } else {
         boundingBoxMetricsEntries_ = null;
         boundingBoxMetricsEntriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       boundingBoxMeanAveragePrecision_ = 0F;
-
       return this;
     }
 
@@ -473,21 +474,37 @@ public final class ImageObjectDetectionEvaluationMetrics
     public com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics buildPartial() {
       com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics result =
           new com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics(this);
-      int from_bitField0_ = bitField0_;
-      result.evaluatedBoundingBoxCount_ = evaluatedBoundingBoxCount_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics result) {
       if (boundingBoxMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           boundingBoxMetricsEntries_ =
               java.util.Collections.unmodifiableList(boundingBoxMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntries_;
       } else {
         result.boundingBoxMetricsEntries_ = boundingBoxMetricsEntriesBuilder_.build();
       }
-      result.boundingBoxMeanAveragePrecision_ = boundingBoxMeanAveragePrecision_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluatedBoundingBoxCount_ = evaluatedBoundingBoxCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.boundingBoxMeanAveragePrecision_ = boundingBoxMeanAveragePrecision_;
+      }
     }
 
     @java.lang.Override
@@ -546,7 +563,7 @@ public final class ImageObjectDetectionEvaluationMetrics
         if (!other.boundingBoxMetricsEntries_.isEmpty()) {
           if (boundingBoxMetricsEntries_.isEmpty()) {
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBoundingBoxMetricsEntriesIsMutable();
             boundingBoxMetricsEntries_.addAll(other.boundingBoxMetricsEntries_);
@@ -559,7 +576,7 @@ public final class ImageObjectDetectionEvaluationMetrics
             boundingBoxMetricsEntriesBuilder_.dispose();
             boundingBoxMetricsEntriesBuilder_ = null;
             boundingBoxMetricsEntries_ = other.boundingBoxMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             boundingBoxMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBoundingBoxMetricsEntriesFieldBuilder()
@@ -601,7 +618,7 @@ public final class ImageObjectDetectionEvaluationMetrics
             case 8:
               {
                 evaluatedBoundingBoxCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -621,7 +638,7 @@ public final class ImageObjectDetectionEvaluationMetrics
             case 29:
               {
                 boundingBoxMeanAveragePrecision_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -676,6 +693,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     public Builder setEvaluatedBoundingBoxCount(int value) {
 
       evaluatedBoundingBoxCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +710,7 @@ public final class ImageObjectDetectionEvaluationMetrics
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedBoundingBoxCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       evaluatedBoundingBoxCount_ = 0;
       onChanged();
       return this;
@@ -702,11 +720,11 @@ public final class ImageObjectDetectionEvaluationMetrics
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureBoundingBoxMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         boundingBoxMetricsEntries_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>(
                 boundingBoxMetricsEntries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -985,7 +1003,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     public Builder clearBoundingBoxMetricsEntries() {
       if (boundingBoxMetricsEntriesBuilder_ == null) {
         boundingBoxMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         boundingBoxMetricsEntriesBuilder_.clear();
@@ -1149,7 +1167,7 @@ public final class ImageObjectDetectionEvaluationMetrics
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.Builder,
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder>(
                 boundingBoxMetricsEntries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         boundingBoxMetricsEntries_ = null;
@@ -1190,6 +1208,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     public Builder setBoundingBoxMeanAveragePrecision(float value) {
 
       boundingBoxMeanAveragePrecision_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1206,7 +1225,7 @@ public final class ImageObjectDetectionEvaluationMetrics
      * @return This builder for chaining.
      */
     public Builder clearBoundingBoxMeanAveragePrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       boundingBoxMeanAveragePrecision_ = 0F;
       onChanged();
       return this;

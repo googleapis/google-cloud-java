@@ -717,7 +717,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESERVED_SPACE_GIB_FIELD_NUMBER = 1;
-    private long reservedSpaceGib_;
+    private long reservedSpaceGib_ = 0L;
     /**
      *
      *
@@ -735,7 +735,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESERVED_SPACE_USED_PERCENT_FIELD_NUMBER = 2;
-    private int reservedSpaceUsedPercent_;
+    private int reservedSpaceUsedPercent_ = 0;
     /**
      *
      *
@@ -756,7 +756,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESERVED_SPACE_REMAINING_GIB_FIELD_NUMBER = 3;
-    private long reservedSpaceRemainingGib_;
+    private long reservedSpaceRemainingGib_ = 0L;
     /**
      *
      *
@@ -775,7 +775,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESERVED_SPACE_PERCENT_FIELD_NUMBER = 4;
-    private int reservedSpacePercent_;
+    private int reservedSpacePercent_ = 0;
     /**
      *
      *
@@ -1029,14 +1029,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         reservedSpaceGib_ = 0L;
-
         reservedSpaceUsedPercent_ = 0;
-
         reservedSpaceRemainingGib_ = 0L;
-
         reservedSpacePercent_ = 0;
-
         return this;
       }
 
@@ -1067,12 +1064,28 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail buildPartial() {
         com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail result =
             new com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail(this);
-        result.reservedSpaceGib_ = reservedSpaceGib_;
-        result.reservedSpaceUsedPercent_ = reservedSpaceUsedPercent_;
-        result.reservedSpaceRemainingGib_ = reservedSpaceRemainingGib_;
-        result.reservedSpacePercent_ = reservedSpacePercent_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reservedSpaceGib_ = reservedSpaceGib_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reservedSpaceUsedPercent_ = reservedSpaceUsedPercent_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.reservedSpaceRemainingGib_ = reservedSpaceRemainingGib_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.reservedSpacePercent_ = reservedSpacePercent_;
+        }
       }
 
       @java.lang.Override
@@ -1168,25 +1181,25 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   reservedSpaceGib_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   reservedSpaceUsedPercent_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   reservedSpaceRemainingGib_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   reservedSpacePercent_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1205,6 +1218,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long reservedSpaceGib_;
       /**
@@ -1237,6 +1252,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       public Builder setReservedSpaceGib(long value) {
 
         reservedSpaceGib_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1252,7 +1268,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearReservedSpaceGib() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         reservedSpaceGib_ = 0L;
         onChanged();
         return this;
@@ -1295,6 +1311,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       public Builder setReservedSpaceUsedPercent(int value) {
 
         reservedSpaceUsedPercent_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1313,7 +1330,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearReservedSpaceUsedPercent() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         reservedSpaceUsedPercent_ = 0;
         onChanged();
         return this;
@@ -1352,6 +1369,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       public Builder setReservedSpaceRemainingGib(long value) {
 
         reservedSpaceRemainingGib_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1368,7 +1386,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearReservedSpaceRemainingGib() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         reservedSpaceRemainingGib_ = 0L;
         onChanged();
         return this;
@@ -1413,6 +1431,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       public Builder setReservedSpacePercent(int value) {
 
         reservedSpacePercent_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1432,7 +1451,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearReservedSpacePercent() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         reservedSpacePercent_ = 0;
         onChanged();
         return this;
@@ -1507,7 +1526,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1564,7 +1585,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 11;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -1613,7 +1636,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_TYPE_FIELD_NUMBER = 2;
-  private int storageType_;
+  private int storageType_ = 0;
   /**
    *
    *
@@ -1642,16 +1665,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Volume.StorageType getStorageType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Volume.StorageType result =
-        com.google.cloud.baremetalsolution.v2.Volume.StorageType.valueOf(storageType_);
+        com.google.cloud.baremetalsolution.v2.Volume.StorageType.forNumber(storageType_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Volume.StorageType.UNRECOGNIZED
         : result;
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1680,16 +1702,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Volume.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Volume.State result =
-        com.google.cloud.baremetalsolution.v2.Volume.State.valueOf(state_);
+        com.google.cloud.baremetalsolution.v2.Volume.State.forNumber(state_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Volume.State.UNRECOGNIZED
         : result;
   }
 
   public static final int REQUESTED_SIZE_GIB_FIELD_NUMBER = 4;
-  private long requestedSizeGib_;
+  private long requestedSizeGib_ = 0L;
   /**
    *
    *
@@ -1707,7 +1728,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CURRENT_SIZE_GIB_FIELD_NUMBER = 5;
-  private long currentSizeGib_;
+  private long currentSizeGib_ = 0L;
   /**
    *
    *
@@ -1727,7 +1748,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMERGENCY_SIZE_GIB_FIELD_NUMBER = 14;
-  private long emergencySizeGib_;
+  private long emergencySizeGib_ = 0L;
   /**
    *
    *
@@ -1746,7 +1767,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTO_GROWN_SIZE_GIB_FIELD_NUMBER = 6;
-  private long autoGrownSizeGib_;
+  private long autoGrownSizeGib_ = 0L;
   /**
    *
    *
@@ -1765,7 +1786,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMAINING_SPACE_GIB_FIELD_NUMBER = 7;
-  private long remainingSpaceGib_;
+  private long remainingSpaceGib_ = 0L;
   /**
    *
    *
@@ -1838,11 +1859,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetailOrBuilder
       getSnapshotReservationDetailOrBuilder() {
-    return getSnapshotReservationDetail();
+    return snapshotReservationDetail_ == null
+        ? com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail
+            .getDefaultInstance()
+        : snapshotReservationDetail_;
   }
 
   public static final int SNAPSHOT_AUTO_DELETE_BEHAVIOR_FIELD_NUMBER = 9;
-  private int snapshotAutoDeleteBehavior_;
+  private int snapshotAutoDeleteBehavior_ = 0;
   /**
    *
    *
@@ -1876,9 +1900,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior
       getSnapshotAutoDeleteBehavior() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior result =
-        com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.valueOf(
+        com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.forNumber(
             snapshotAutoDeleteBehavior_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.UNRECOGNIZED
@@ -1898,6 +1921,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1955,7 +1979,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1984,7 +2011,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SNAPSHOT_ENABLED_FIELD_NUMBER = 13;
-  private boolean snapshotEnabled_;
+  private boolean snapshotEnabled_ = false;
   /**
    *
    *
@@ -2002,7 +2029,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POD_FIELD_NUMBER = 15;
-  private volatile java.lang.Object pod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pod_ = "";
   /**
    *
    *
@@ -2412,37 +2441,25 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       storageType_ = 0;
-
       state_ = 0;
-
       requestedSizeGib_ = 0L;
-
       currentSizeGib_ = 0L;
-
       emergencySizeGib_ = 0L;
-
       autoGrownSizeGib_ = 0L;
-
       remainingSpaceGib_ = 0L;
-
-      if (snapshotReservationDetailBuilder_ == null) {
-        snapshotReservationDetail_ = null;
-      } else {
-        snapshotReservationDetail_ = null;
+      snapshotReservationDetail_ = null;
+      if (snapshotReservationDetailBuilder_ != null) {
+        snapshotReservationDetailBuilder_.dispose();
         snapshotReservationDetailBuilder_ = null;
       }
       snapshotAutoDeleteBehavior_ = 0;
-
       internalGetMutableLabels().clear();
       snapshotEnabled_ = false;
-
       pod_ = "";
-
       return this;
     }
 
@@ -2470,28 +2487,61 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.Volume buildPartial() {
       com.google.cloud.baremetalsolution.v2.Volume result =
           new com.google.cloud.baremetalsolution.v2.Volume(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      result.storageType_ = storageType_;
-      result.state_ = state_;
-      result.requestedSizeGib_ = requestedSizeGib_;
-      result.currentSizeGib_ = currentSizeGib_;
-      result.emergencySizeGib_ = emergencySizeGib_;
-      result.autoGrownSizeGib_ = autoGrownSizeGib_;
-      result.remainingSpaceGib_ = remainingSpaceGib_;
-      if (snapshotReservationDetailBuilder_ == null) {
-        result.snapshotReservationDetail_ = snapshotReservationDetail_;
-      } else {
-        result.snapshotReservationDetail_ = snapshotReservationDetailBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.snapshotAutoDeleteBehavior_ = snapshotAutoDeleteBehavior_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.snapshotEnabled_ = snapshotEnabled_;
-      result.pod_ = pod_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.Volume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.storageType_ = storageType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestedSizeGib_ = requestedSizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.currentSizeGib_ = currentSizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.emergencySizeGib_ = emergencySizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.autoGrownSizeGib_ = autoGrownSizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.remainingSpaceGib_ = remainingSpaceGib_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.snapshotReservationDetail_ =
+            snapshotReservationDetailBuilder_ == null
+                ? snapshotReservationDetail_
+                : snapshotReservationDetailBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.snapshotAutoDeleteBehavior_ = snapshotAutoDeleteBehavior_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.snapshotEnabled_ = snapshotEnabled_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.pod_ = pod_;
+      }
     }
 
     @java.lang.Override
@@ -2541,10 +2591,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.baremetalsolution.v2.Volume.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.storageType_ != 0) {
@@ -2575,11 +2627,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         setSnapshotAutoDeleteBehaviorValue(other.getSnapshotAutoDeleteBehaviorValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000800;
       if (other.getSnapshotEnabled() != false) {
         setSnapshotEnabled(other.getSnapshotEnabled());
       }
       if (!other.getPod().isEmpty()) {
         pod_ = other.pod_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2611,62 +2665,62 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 storageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 requestedSizeGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 currentSizeGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 48:
               {
                 autoGrownSizeGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 56:
               {
                 remainingSpaceGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getSnapshotReservationDetailFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 72:
               {
                 snapshotAutoDeleteBehavior_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 72
             case 90:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 90
             case 98:
@@ -2678,24 +2732,25 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 104:
               {
                 snapshotEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 112:
               {
                 emergencySizeGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 112
             case 122:
               {
                 pod_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             default:
@@ -2790,8 +2845,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2811,8 +2866,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2837,8 +2892,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2904,8 +2959,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2921,8 +2976,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2943,8 +2998,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2978,8 +3033,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStorageTypeValue(int value) {
-
       storageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2996,9 +3051,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Volume.StorageType getStorageType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Volume.StorageType result =
-          com.google.cloud.baremetalsolution.v2.Volume.StorageType.valueOf(storageType_);
+          com.google.cloud.baremetalsolution.v2.Volume.StorageType.forNumber(storageType_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Volume.StorageType.UNRECOGNIZED
           : result;
@@ -3019,7 +3073,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       storageType_ = value.getNumber();
       onChanged();
       return this;
@@ -3036,7 +3090,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       storageType_ = 0;
       onChanged();
       return this;
@@ -3071,8 +3125,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3089,9 +3143,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Volume.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Volume.State result =
-          com.google.cloud.baremetalsolution.v2.Volume.State.valueOf(state_);
+          com.google.cloud.baremetalsolution.v2.Volume.State.forNumber(state_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Volume.State.UNRECOGNIZED
           : result;
@@ -3112,7 +3165,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3129,7 +3182,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -3166,6 +3219,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequestedSizeGib(long value) {
 
       requestedSizeGib_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3181,7 +3235,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestedSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       requestedSizeGib_ = 0L;
       onChanged();
       return this;
@@ -3222,6 +3276,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setCurrentSizeGib(long value) {
 
       currentSizeGib_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3239,7 +3294,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCurrentSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       currentSizeGib_ = 0L;
       onChanged();
       return this;
@@ -3278,6 +3333,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setEmergencySizeGib(long value) {
 
       emergencySizeGib_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3294,7 +3350,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmergencySizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       emergencySizeGib_ = 0L;
       onChanged();
       return this;
@@ -3333,6 +3389,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setAutoGrownSizeGib(long value) {
 
       autoGrownSizeGib_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3349,7 +3406,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoGrownSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       autoGrownSizeGib_ = 0L;
       onChanged();
       return this;
@@ -3388,6 +3445,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setRemainingSpaceGib(long value) {
 
       remainingSpaceGib_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3404,7 +3462,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemainingSpaceGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       remainingSpaceGib_ = 0L;
       onChanged();
       return this;
@@ -3431,7 +3489,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the snapshotReservationDetail field is set.
      */
     public boolean hasSnapshotReservationDetail() {
-      return snapshotReservationDetailBuilder_ != null || snapshotReservationDetail_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3475,11 +3533,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         snapshotReservationDetail_ = value;
-        onChanged();
       } else {
         snapshotReservationDetailBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3498,11 +3556,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (snapshotReservationDetailBuilder_ == null) {
         snapshotReservationDetail_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotReservationDetailBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3519,20 +3577,20 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSnapshotReservationDetail(
         com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail value) {
       if (snapshotReservationDetailBuilder_ == null) {
-        if (snapshotReservationDetail_ != null) {
-          snapshotReservationDetail_ =
-              com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail.newBuilder(
-                      snapshotReservationDetail_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && snapshotReservationDetail_ != null
+            && snapshotReservationDetail_
+                != com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail
+                    .getDefaultInstance()) {
+          getSnapshotReservationDetailBuilder().mergeFrom(value);
         } else {
           snapshotReservationDetail_ = value;
         }
-        onChanged();
       } else {
         snapshotReservationDetailBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3547,14 +3605,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSnapshotReservationDetail() {
-      if (snapshotReservationDetailBuilder_ == null) {
-        snapshotReservationDetail_ = null;
-        onChanged();
-      } else {
-        snapshotReservationDetail_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      snapshotReservationDetail_ = null;
+      if (snapshotReservationDetailBuilder_ != null) {
+        snapshotReservationDetailBuilder_.dispose();
         snapshotReservationDetailBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3570,7 +3627,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail.Builder
         getSnapshotReservationDetailBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getSnapshotReservationDetailFieldBuilder().getBuilder();
     }
@@ -3657,8 +3714,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSnapshotAutoDeleteBehaviorValue(int value) {
-
       snapshotAutoDeleteBehavior_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3678,9 +3735,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior
         getSnapshotAutoDeleteBehavior() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior result =
-          com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.valueOf(
+          com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.forNumber(
               snapshotAutoDeleteBehavior_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior.UNRECOGNIZED
@@ -3705,7 +3761,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       snapshotAutoDeleteBehavior_ = value.getNumber();
       onChanged();
       return this;
@@ -3724,7 +3780,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSnapshotAutoDeleteBehavior() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       snapshotAutoDeleteBehavior_ = 0;
       onChanged();
       return this;
@@ -3741,14 +3797,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000800;
+      onChanged();
       return labels_;
     }
 
@@ -3800,8 +3856,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3830,6 +3888,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3852,6 +3911,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000800;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3870,8 +3930,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3885,6 +3945,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -3919,6 +3980,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setSnapshotEnabled(boolean value) {
 
       snapshotEnabled_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3934,7 +3996,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSnapshotEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       snapshotEnabled_ = false;
       onChanged();
       return this;
@@ -4001,8 +4063,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pod_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4018,8 +4080,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPod() {
-
       pod_ = getDefaultInstance().getPod();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4040,8 +4102,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pod_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

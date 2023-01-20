@@ -68,6 +68,8 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
   }
 
   public static final int ROWS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.Row> rows_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
     public com.google.area120.tables.v1alpha1.BatchCreateRowsResponse buildPartial() {
       com.google.area120.tables.v1alpha1.BatchCreateRowsResponse result =
           new com.google.area120.tables.v1alpha1.BatchCreateRowsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.area120.tables.v1alpha1.BatchCreateRowsResponse result) {
       if (rowsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
@@ -380,8 +392,10 @@ public final class BatchCreateRowsResponse extends com.google.protobuf.Generated
       } else {
         result.rows_ = rowsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.BatchCreateRowsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

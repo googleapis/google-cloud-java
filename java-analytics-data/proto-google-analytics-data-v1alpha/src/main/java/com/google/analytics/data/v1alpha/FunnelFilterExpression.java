@@ -663,6 +663,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (andGroupBuilder_ != null) {
         andGroupBuilder_.clear();
       }
@@ -707,44 +708,37 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.FunnelFilterExpression buildPartial() {
       com.google.analytics.data.v1alpha.FunnelFilterExpression result =
           new com.google.analytics.data.v1alpha.FunnelFilterExpression(this);
-      if (exprCase_ == 1) {
-        if (andGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = andGroupBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (exprCase_ == 2) {
-        if (orGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = orGroupBuilder_.build();
-        }
-      }
-      if (exprCase_ == 3) {
-        if (notExpressionBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = notExpressionBuilder_.build();
-        }
-      }
-      if (exprCase_ == 4) {
-        if (funnelFieldFilterBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = funnelFieldFilterBuilder_.build();
-        }
-      }
-      if (exprCase_ == 5) {
-        if (funnelEventFilterBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = funnelEventFilterBuilder_.build();
-        }
-      }
-      result.exprCase_ = exprCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelFilterExpression result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.data.v1alpha.FunnelFilterExpression result) {
+      result.exprCase_ = exprCase_;
+      result.expr_ = this.expr_;
+      if (exprCase_ == 1 && andGroupBuilder_ != null) {
+        result.expr_ = andGroupBuilder_.build();
+      }
+      if (exprCase_ == 2 && orGroupBuilder_ != null) {
+        result.expr_ = orGroupBuilder_.build();
+      }
+      if (exprCase_ == 3 && notExpressionBuilder_ != null) {
+        result.expr_ = notExpressionBuilder_.build();
+      }
+      if (exprCase_ == 4 && funnelFieldFilterBuilder_ != null) {
+        result.expr_ = funnelFieldFilterBuilder_.build();
+      }
+      if (exprCase_ == 5 && funnelEventFilterBuilder_ != null) {
+        result.expr_ = funnelEventFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -912,6 +906,8 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.FunnelFilterExpressionList,
@@ -1124,7 +1120,6 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       }
       exprCase_ = 1;
       onChanged();
-      ;
       return andGroupBuilder_;
     }
 
@@ -1339,7 +1334,6 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       }
       exprCase_ = 2;
       onChanged();
-      ;
       return orGroupBuilder_;
     }
 
@@ -1554,7 +1548,6 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       }
       exprCase_ = 3;
       onChanged();
-      ;
       return notExpressionBuilder_;
     }
 
@@ -1767,7 +1760,6 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       }
       exprCase_ = 4;
       onChanged();
-      ;
       return funnelFieldFilterBuilder_;
     }
 
@@ -2007,7 +1999,6 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       }
       exprCase_ = 5;
       onChanged();
-      ;
       return funnelEventFilterBuilder_;
     }
 

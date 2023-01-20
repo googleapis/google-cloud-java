@@ -70,7 +70,9 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -170,7 +174,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILURE_THRESHOLD_FIELD_NUMBER = 3;
-  private int failureThreshold_;
+  private int failureThreshold_ = 0;
   /**
    *
    *
@@ -189,7 +193,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUCCESS_THRESHOLD_FIELD_NUMBER = 4;
-  private int successThreshold_;
+  private int successThreshold_ = 0;
   /**
    *
    *
@@ -252,7 +256,9 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCheckIntervalOrBuilder() {
-    return getCheckInterval();
+    return checkInterval_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : checkInterval_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 6;
@@ -298,7 +304,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int APP_START_TIMEOUT_FIELD_NUMBER = 7;
@@ -352,7 +358,9 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAppStartTimeoutOrBuilder() {
-    return getAppStartTimeout();
+    return appStartTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : appStartTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -621,30 +629,24 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       host_ = "";
-
       failureThreshold_ = 0;
-
       successThreshold_ = 0;
-
-      if (checkIntervalBuilder_ == null) {
-        checkInterval_ = null;
-      } else {
-        checkInterval_ = null;
+      checkInterval_ = null;
+      if (checkIntervalBuilder_ != null) {
+        checkIntervalBuilder_.dispose();
         checkIntervalBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-      if (appStartTimeoutBuilder_ == null) {
-        appStartTimeout_ = null;
-      } else {
-        appStartTimeout_ = null;
+      appStartTimeout_ = null;
+      if (appStartTimeoutBuilder_ != null) {
+        appStartTimeoutBuilder_.dispose();
         appStartTimeoutBuilder_ = null;
       }
       return this;
@@ -674,27 +676,38 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.ReadinessCheck buildPartial() {
       com.google.appengine.v1.ReadinessCheck result =
           new com.google.appengine.v1.ReadinessCheck(this);
-      result.path_ = path_;
-      result.host_ = host_;
-      result.failureThreshold_ = failureThreshold_;
-      result.successThreshold_ = successThreshold_;
-      if (checkIntervalBuilder_ == null) {
-        result.checkInterval_ = checkInterval_;
-      } else {
-        result.checkInterval_ = checkIntervalBuilder_.build();
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      if (appStartTimeoutBuilder_ == null) {
-        result.appStartTimeout_ = appStartTimeout_;
-      } else {
-        result.appStartTimeout_ = appStartTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ReadinessCheck result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failureThreshold_ = failureThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.successThreshold_ = successThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.checkInterval_ =
+            checkIntervalBuilder_ == null ? checkInterval_ : checkIntervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.appStartTimeout_ =
+            appStartTimeoutBuilder_ == null ? appStartTimeout_ : appStartTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -744,10 +757,12 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.ReadinessCheck.getDefaultInstance()) return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getFailureThreshold() != 0) {
@@ -794,43 +809,43 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 host_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 failureThreshold_ = input.readUInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 successThreshold_ = input.readUInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getCheckIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getAppStartTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -849,6 +864,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object path_ = "";
     /**
@@ -911,8 +928,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -928,8 +945,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -950,8 +967,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1020,8 +1037,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1038,8 +1055,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1061,8 +1078,8 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,6 +1117,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setFailureThreshold(int value) {
 
       failureThreshold_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1116,7 +1134,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       failureThreshold_ = 0;
       onChanged();
       return this;
@@ -1155,6 +1173,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setSuccessThreshold(int value) {
 
       successThreshold_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1171,7 +1190,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSuccessThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       successThreshold_ = 0;
       onChanged();
       return this;
@@ -1195,7 +1214,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the checkInterval field is set.
      */
     public boolean hasCheckInterval() {
-      return checkIntervalBuilder_ != null || checkInterval_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1232,11 +1251,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkInterval_ = value;
-        onChanged();
       } else {
         checkIntervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1251,11 +1270,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setCheckInterval(com.google.protobuf.Duration.Builder builderForValue) {
       if (checkIntervalBuilder_ == null) {
         checkInterval_ = builderForValue.build();
-        onChanged();
       } else {
         checkIntervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1269,19 +1288,18 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCheckInterval(com.google.protobuf.Duration value) {
       if (checkIntervalBuilder_ == null) {
-        if (checkInterval_ != null) {
-          checkInterval_ =
-              com.google.protobuf.Duration.newBuilder(checkInterval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && checkInterval_ != null
+            && checkInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCheckIntervalBuilder().mergeFrom(value);
         } else {
           checkInterval_ = value;
         }
-        onChanged();
       } else {
         checkIntervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1294,14 +1312,13 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration check_interval = 5;</code>
      */
     public Builder clearCheckInterval() {
-      if (checkIntervalBuilder_ == null) {
-        checkInterval_ = null;
-        onChanged();
-      } else {
-        checkInterval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      checkInterval_ = null;
+      if (checkIntervalBuilder_ != null) {
+        checkIntervalBuilder_.dispose();
         checkIntervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1314,7 +1331,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration check_interval = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getCheckIntervalBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCheckIntervalFieldBuilder().getBuilder();
     }
@@ -1380,7 +1397,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1415,11 +1432,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1434,11 +1451,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1452,17 +1469,18 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1475,14 +1493,13 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1495,7 +1512,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -1561,7 +1578,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the appStartTimeout field is set.
      */
     public boolean hasAppStartTimeout() {
-      return appStartTimeoutBuilder_ != null || appStartTimeout_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1602,11 +1619,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         appStartTimeout_ = value;
-        onChanged();
       } else {
         appStartTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1623,11 +1640,11 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setAppStartTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (appStartTimeoutBuilder_ == null) {
         appStartTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         appStartTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1643,19 +1660,18 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAppStartTimeout(com.google.protobuf.Duration value) {
       if (appStartTimeoutBuilder_ == null) {
-        if (appStartTimeout_ != null) {
-          appStartTimeout_ =
-              com.google.protobuf.Duration.newBuilder(appStartTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && appStartTimeout_ != null
+            && appStartTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAppStartTimeoutBuilder().mergeFrom(value);
         } else {
           appStartTimeout_ = value;
         }
-        onChanged();
       } else {
         appStartTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1670,14 +1686,13 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration app_start_timeout = 7;</code>
      */
     public Builder clearAppStartTimeout() {
-      if (appStartTimeoutBuilder_ == null) {
-        appStartTimeout_ = null;
-        onChanged();
-      } else {
-        appStartTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      appStartTimeout_ = null;
+      if (appStartTimeoutBuilder_ != null) {
+        appStartTimeoutBuilder_.dispose();
         appStartTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1692,7 +1707,7 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration app_start_timeout = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getAppStartTimeoutBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAppStartTimeoutFieldBuilder().getBuilder();
     }

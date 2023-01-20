@@ -74,7 +74,9 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -180,7 +184,9 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -231,6 +237,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DOMAIN_NAMES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList domainNames_;
   /**
    *
@@ -351,7 +359,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int CERTIFICATE_RAW_DATA_FIELD_NUMBER = 6;
@@ -402,7 +410,9 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.appengine.v1.CertificateRawDataOrBuilder getCertificateRawDataOrBuilder() {
-    return getCertificateRawData();
+    return certificateRawData_ == null
+        ? com.google.appengine.v1.CertificateRawData.getDefaultInstance()
+        : certificateRawData_;
   }
 
   public static final int MANAGED_CERTIFICATE_FIELD_NUMBER = 7;
@@ -462,10 +472,14 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.appengine.v1.ManagedCertificateOrBuilder getManagedCertificateOrBuilder() {
-    return getManagedCertificate();
+    return managedCertificate_ == null
+        ? com.google.appengine.v1.ManagedCertificate.getDefaultInstance()
+        : managedCertificate_;
   }
 
   public static final int VISIBLE_DOMAIN_MAPPINGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList visibleDomainMappings_;
   /**
    *
@@ -555,7 +569,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DOMAIN_MAPPINGS_COUNT_FIELD_NUMBER = 9;
-  private int domainMappingsCount_;
+  private int domainMappingsCount_ = 0;
   /**
    *
    *
@@ -878,36 +892,30 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       displayName_ = "";
-
       domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-      if (certificateRawDataBuilder_ == null) {
-        certificateRawData_ = null;
-      } else {
-        certificateRawData_ = null;
+      certificateRawData_ = null;
+      if (certificateRawDataBuilder_ != null) {
+        certificateRawDataBuilder_.dispose();
         certificateRawDataBuilder_ = null;
       }
-      if (managedCertificateBuilder_ == null) {
-        managedCertificate_ = null;
-      } else {
-        managedCertificate_ = null;
+      managedCertificate_ = null;
+      if (managedCertificateBuilder_ != null) {
+        managedCertificateBuilder_.dispose();
         managedCertificateBuilder_ = null;
       }
       visibleDomainMappings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       domainMappingsCount_ = 0;
-
       return this;
     }
 
@@ -935,38 +943,56 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public com.google.appengine.v1.AuthorizedCertificate buildPartial() {
       com.google.appengine.v1.AuthorizedCertificate result =
           new com.google.appengine.v1.AuthorizedCertificate(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        domainNames_ = domainNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.domainNames_ = domainNames_;
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      if (certificateRawDataBuilder_ == null) {
-        result.certificateRawData_ = certificateRawData_;
-      } else {
-        result.certificateRawData_ = certificateRawDataBuilder_.build();
-      }
-      if (managedCertificateBuilder_ == null) {
-        result.managedCertificate_ = managedCertificate_;
-      } else {
-        result.managedCertificate_ = managedCertificateBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        visibleDomainMappings_ = visibleDomainMappings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.visibleDomainMappings_ = visibleDomainMappings_;
-      result.domainMappingsCount_ = domainMappingsCount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.appengine.v1.AuthorizedCertificate result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        domainNames_ = domainNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.domainNames_ = domainNames_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        visibleDomainMappings_ = visibleDomainMappings_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.visibleDomainMappings_ = visibleDomainMappings_;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.AuthorizedCertificate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.certificateRawData_ =
+            certificateRawDataBuilder_ == null
+                ? certificateRawData_
+                : certificateRawDataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.managedCertificate_ =
+            managedCertificateBuilder_ == null
+                ? managedCertificate_
+                : managedCertificateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.domainMappingsCount_ = domainMappingsCount_;
+      }
     }
 
     @java.lang.Override
@@ -1016,20 +1042,23 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       if (other == com.google.appengine.v1.AuthorizedCertificate.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.domainNames_.isEmpty()) {
         if (domainNames_.isEmpty()) {
           domainNames_ = other.domainNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDomainNamesIsMutable();
           domainNames_.addAll(other.domainNames_);
@@ -1048,7 +1077,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       if (!other.visibleDomainMappings_.isEmpty()) {
         if (visibleDomainMappings_.isEmpty()) {
           visibleDomainMappings_ = other.visibleDomainMappings_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureVisibleDomainMappingsIsMutable();
           visibleDomainMappings_.addAll(other.visibleDomainMappings_);
@@ -1087,19 +1116,19 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1112,21 +1141,21 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             case 42:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getCertificateRawDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getManagedCertificateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1139,7 +1168,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
             case 72:
               {
                 domainMappingsCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             default:
@@ -1228,8 +1257,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1247,8 +1276,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1271,8 +1300,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1344,8 +1373,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1363,8 +1392,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1387,8 +1416,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1457,8 +1486,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1475,8 +1504,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1498,8 +1527,8 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1508,9 +1537,9 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDomainNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         domainNames_ = new com.google.protobuf.LazyStringArrayList(domainNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1661,7 +1690,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      */
     public Builder clearDomainNames() {
       domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1711,7 +1740,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1754,11 +1783,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1776,11 +1805,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1797,17 +1826,18 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1823,14 +1853,13 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp expire_time = 5;</code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1846,7 +1875,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp expire_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -1919,7 +1948,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return Whether the certificateRawData field is set.
      */
     public boolean hasCertificateRawData() {
-      return certificateRawDataBuilder_ != null || certificateRawData_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1958,11 +1987,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         certificateRawData_ = value;
-        onChanged();
       } else {
         certificateRawDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1979,11 +2008,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         com.google.appengine.v1.CertificateRawData.Builder builderForValue) {
       if (certificateRawDataBuilder_ == null) {
         certificateRawData_ = builderForValue.build();
-        onChanged();
       } else {
         certificateRawDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1998,19 +2027,19 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCertificateRawData(com.google.appengine.v1.CertificateRawData value) {
       if (certificateRawDataBuilder_ == null) {
-        if (certificateRawData_ != null) {
-          certificateRawData_ =
-              com.google.appengine.v1.CertificateRawData.newBuilder(certificateRawData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && certificateRawData_ != null
+            && certificateRawData_
+                != com.google.appengine.v1.CertificateRawData.getDefaultInstance()) {
+          getCertificateRawDataBuilder().mergeFrom(value);
         } else {
           certificateRawData_ = value;
         }
-        onChanged();
       } else {
         certificateRawDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2024,14 +2053,13 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.appengine.v1.CertificateRawData certificate_raw_data = 6;</code>
      */
     public Builder clearCertificateRawData() {
-      if (certificateRawDataBuilder_ == null) {
-        certificateRawData_ = null;
-        onChanged();
-      } else {
-        certificateRawData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      certificateRawData_ = null;
+      if (certificateRawDataBuilder_ != null) {
+        certificateRawDataBuilder_.dispose();
         certificateRawDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2045,7 +2073,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.appengine.v1.CertificateRawData certificate_raw_data = 6;</code>
      */
     public com.google.appengine.v1.CertificateRawData.Builder getCertificateRawDataBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCertificateRawDataFieldBuilder().getBuilder();
     }
@@ -2117,7 +2145,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return Whether the managedCertificate field is set.
      */
     public boolean hasManagedCertificate() {
-      return managedCertificateBuilder_ != null || managedCertificate_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2162,11 +2190,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         managedCertificate_ = value;
-        onChanged();
       } else {
         managedCertificateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2186,11 +2214,11 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         com.google.appengine.v1.ManagedCertificate.Builder builderForValue) {
       if (managedCertificateBuilder_ == null) {
         managedCertificate_ = builderForValue.build();
-        onChanged();
       } else {
         managedCertificateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2208,19 +2236,19 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeManagedCertificate(com.google.appengine.v1.ManagedCertificate value) {
       if (managedCertificateBuilder_ == null) {
-        if (managedCertificate_ != null) {
-          managedCertificate_ =
-              com.google.appengine.v1.ManagedCertificate.newBuilder(managedCertificate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && managedCertificate_ != null
+            && managedCertificate_
+                != com.google.appengine.v1.ManagedCertificate.getDefaultInstance()) {
+          getManagedCertificateBuilder().mergeFrom(value);
         } else {
           managedCertificate_ = value;
         }
-        onChanged();
       } else {
         managedCertificateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2237,14 +2265,13 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.appengine.v1.ManagedCertificate managed_certificate = 7;</code>
      */
     public Builder clearManagedCertificate() {
-      if (managedCertificateBuilder_ == null) {
-        managedCertificate_ = null;
-        onChanged();
-      } else {
-        managedCertificate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      managedCertificate_ = null;
+      if (managedCertificateBuilder_ != null) {
+        managedCertificateBuilder_.dispose();
         managedCertificateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2261,7 +2288,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * <code>.google.appengine.v1.ManagedCertificate managed_certificate = 7;</code>
      */
     public com.google.appengine.v1.ManagedCertificate.Builder getManagedCertificateBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getManagedCertificateFieldBuilder().getBuilder();
     }
@@ -2321,10 +2348,10 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureVisibleDomainMappingsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         visibleDomainMappings_ =
             new com.google.protobuf.LazyStringArrayList(visibleDomainMappings_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2515,7 +2542,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      */
     public Builder clearVisibleDomainMappings() {
       visibleDomainMappings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2590,6 +2617,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
     public Builder setDomainMappingsCount(int value) {
 
       domainMappingsCount_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2610,7 +2638,7 @@ public final class AuthorizedCertificate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDomainMappingsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       domainMappingsCount_ = 0;
       onChanged();
       return this;

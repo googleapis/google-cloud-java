@@ -82,7 +82,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PRIMARY_TABLE_SPEC_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object primaryTableSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryTableSpecId_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TARGET_COLUMN_SPEC_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetColumnSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetColumnSpecId_ = "";
   /**
    *
    *
@@ -198,7 +202,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   public static final int WEIGHT_COLUMN_SPEC_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object weightColumnSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object weightColumnSpecId_ = "";
   /**
    *
    *
@@ -263,7 +269,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ML_USE_COLUMN_SPEC_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object mlUseColumnSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mlUseColumnSpecId_ = "";
   /**
    *
    *
@@ -352,6 +360,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
                         com.google.cloud.automl.v1beta1.CorrelationStats.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
       targetColumnCorrelations_;
@@ -443,8 +452,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
-      java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
+  public /* nullable */ com.google.cloud.automl.v1beta1.CorrelationStats
+      getTargetColumnCorrelationsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -544,7 +556,9 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStatsUpdateTimeOrBuilder() {
-    return getStatsUpdateTime();
+    return statsUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : statsUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -830,19 +844,15 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       primaryTableSpecId_ = "";
-
       targetColumnSpecId_ = "";
-
       weightColumnSpecId_ = "";
-
       mlUseColumnSpecId_ = "";
-
       internalGetMutableTargetColumnCorrelations().clear();
-      if (statsUpdateTimeBuilder_ == null) {
-        statsUpdateTime_ = null;
-      } else {
-        statsUpdateTime_ = null;
+      statsUpdateTime_ = null;
+      if (statsUpdateTimeBuilder_ != null) {
+        statsUpdateTimeBuilder_.dispose();
         statsUpdateTimeBuilder_ = null;
       }
       return this;
@@ -872,20 +882,35 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public com.google.cloud.automl.v1beta1.TablesDatasetMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.TablesDatasetMetadata result =
           new com.google.cloud.automl.v1beta1.TablesDatasetMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.primaryTableSpecId_ = primaryTableSpecId_;
-      result.targetColumnSpecId_ = targetColumnSpecId_;
-      result.weightColumnSpecId_ = weightColumnSpecId_;
-      result.mlUseColumnSpecId_ = mlUseColumnSpecId_;
-      result.targetColumnCorrelations_ = internalGetTargetColumnCorrelations();
-      result.targetColumnCorrelations_.makeImmutable();
-      if (statsUpdateTimeBuilder_ == null) {
-        result.statsUpdateTime_ = statsUpdateTime_;
-      } else {
-        result.statsUpdateTime_ = statsUpdateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.TablesDatasetMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.primaryTableSpecId_ = primaryTableSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetColumnSpecId_ = targetColumnSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.weightColumnSpecId_ = weightColumnSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mlUseColumnSpecId_ = mlUseColumnSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetColumnCorrelations_ = internalGetTargetColumnCorrelations();
+        result.targetColumnCorrelations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.statsUpdateTime_ =
+            statsUpdateTimeBuilder_ == null ? statsUpdateTime_ : statsUpdateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -936,22 +961,27 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getPrimaryTableSpecId().isEmpty()) {
         primaryTableSpecId_ = other.primaryTableSpecId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetColumnSpecId().isEmpty()) {
         targetColumnSpecId_ = other.targetColumnSpecId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getWeightColumnSpecId().isEmpty()) {
         weightColumnSpecId_ = other.weightColumnSpecId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMlUseColumnSpecId().isEmpty()) {
         mlUseColumnSpecId_ = other.mlUseColumnSpecId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableTargetColumnCorrelations()
           .mergeFrom(other.internalGetTargetColumnCorrelations());
+      bitField0_ |= 0x00000010;
       if (other.hasStatsUpdateTime()) {
         mergeStatsUpdateTime(other.getStatsUpdateTime());
       }
@@ -984,25 +1014,25 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 primaryTableSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetColumnSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 weightColumnSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 mlUseColumnSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
@@ -1018,12 +1048,13 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
                     .getMutableMap()
                     .put(
                         targetColumnCorrelations__.getKey(), targetColumnCorrelations__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getStatsUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -1106,8 +1137,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryTableSpecId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1123,8 +1154,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPrimaryTableSpecId() {
-
       primaryTableSpecId_ = getDefaultInstance().getPrimaryTableSpecId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1145,8 +1176,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryTableSpecId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1239,8 +1270,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetColumnSpecId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1265,8 +1296,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTargetColumnSpecId() {
-
       targetColumnSpecId_ = getDefaultInstance().getTargetColumnSpecId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1296,8 +1327,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetColumnSpecId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1387,8 +1418,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       weightColumnSpecId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1412,8 +1443,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearWeightColumnSpecId() {
-
       weightColumnSpecId_ = getDefaultInstance().getWeightColumnSpecId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1442,8 +1473,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       weightColumnSpecId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1545,8 +1576,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       mlUseColumnSpecId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1574,8 +1605,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMlUseColumnSpecId() {
-
       mlUseColumnSpecId_ = getDefaultInstance().getMlUseColumnSpecId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1608,8 +1639,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mlUseColumnSpecId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1631,8 +1662,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
         internalGetMutableTargetColumnCorrelations() {
-      onChanged();
-      ;
       if (targetColumnCorrelations_ == null) {
         targetColumnCorrelations_ =
             com.google.protobuf.MapField.newMapField(
@@ -1641,6 +1670,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (!targetColumnCorrelations_.isMutable()) {
         targetColumnCorrelations_ = targetColumnCorrelations_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return targetColumnCorrelations_;
     }
 
@@ -1721,8 +1752,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
-        java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
+    public /* nullable */ com.google.cloud.automl.v1beta1.CorrelationStats
+        getTargetColumnCorrelationsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1763,6 +1797,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearTargetColumnCorrelations() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableTargetColumnCorrelations().getMutableMap().clear();
       return this;
     }
@@ -1795,6 +1830,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
         getMutableTargetColumnCorrelations() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableTargetColumnCorrelations().getMutableMap();
     }
     /**
@@ -1823,8 +1859,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTargetColumnCorrelations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1848,6 +1884,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public Builder putAllTargetColumnCorrelations(
         java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats> values) {
       internalGetMutableTargetColumnCorrelations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -1874,7 +1911,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * @return Whether the statsUpdateTime field is set.
      */
     public boolean hasStatsUpdateTime() {
-      return statsUpdateTimeBuilder_ != null || statsUpdateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1921,11 +1958,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         statsUpdateTime_ = value;
-        onChanged();
       } else {
         statsUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1945,11 +1982,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public Builder setStatsUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (statsUpdateTimeBuilder_ == null) {
         statsUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         statsUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1968,19 +2005,18 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeStatsUpdateTime(com.google.protobuf.Timestamp value) {
       if (statsUpdateTimeBuilder_ == null) {
-        if (statsUpdateTime_ != null) {
-          statsUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(statsUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && statsUpdateTime_ != null
+            && statsUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStatsUpdateTimeBuilder().mergeFrom(value);
         } else {
           statsUpdateTime_ = value;
         }
-        onChanged();
       } else {
         statsUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1998,14 +2034,13 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
      */
     public Builder clearStatsUpdateTime() {
-      if (statsUpdateTimeBuilder_ == null) {
-        statsUpdateTime_ = null;
-        onChanged();
-      } else {
-        statsUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      statsUpdateTime_ = null;
+      if (statsUpdateTimeBuilder_ != null) {
+        statsUpdateTimeBuilder_.dispose();
         statsUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2023,7 +2058,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStatsUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStatsUpdateTimeFieldBuilder().getBuilder();
     }

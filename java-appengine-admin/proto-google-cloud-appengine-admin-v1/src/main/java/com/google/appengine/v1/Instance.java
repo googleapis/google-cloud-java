@@ -853,7 +853,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -904,7 +906,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -955,7 +959,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APP_ENGINE_RELEASE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object appEngineRelease_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appEngineRelease_ = "";
   /**
    *
    *
@@ -1004,7 +1010,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABILITY_FIELD_NUMBER = 4;
-  private int availability_;
+  private int availability_ = 0;
   /**
    *
    *
@@ -1037,14 +1043,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.Instance.Availability getAvailability() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.Instance.Availability result =
-        com.google.appengine.v1.Instance.Availability.valueOf(availability_);
+        com.google.appengine.v1.Instance.Availability.forNumber(availability_);
     return result == null ? com.google.appengine.v1.Instance.Availability.UNRECOGNIZED : result;
   }
 
   public static final int VM_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object vmName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmName_ = "";
   /**
    *
    *
@@ -1095,7 +1102,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_ZONE_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object vmZoneName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmZoneName_ = "";
   /**
    *
    *
@@ -1146,7 +1155,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -1245,11 +1256,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 9;
-  private int requests_;
+  private int requests_ = 0;
   /**
    *
    *
@@ -1267,7 +1278,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 10;
-  private int errors_;
+  private int errors_ = 0;
   /**
    *
    *
@@ -1285,7 +1296,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QPS_FIELD_NUMBER = 11;
-  private float qps_;
+  private float qps_ = 0F;
   /**
    *
    *
@@ -1303,7 +1314,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVERAGE_LATENCY_FIELD_NUMBER = 12;
-  private int averageLatency_;
+  private int averageLatency_ = 0;
   /**
    *
    *
@@ -1321,7 +1332,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMORY_USAGE_FIELD_NUMBER = 13;
-  private long memoryUsage_;
+  private long memoryUsage_ = 0L;
   /**
    *
    *
@@ -1339,7 +1350,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_STATUS_FIELD_NUMBER = 14;
-  private volatile java.lang.Object vmStatus_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmStatus_ = "";
   /**
    *
    *
@@ -1390,7 +1403,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_DEBUG_ENABLED_FIELD_NUMBER = 15;
-  private boolean vmDebugEnabled_;
+  private boolean vmDebugEnabled_ = false;
   /**
    *
    *
@@ -1409,7 +1422,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_IP_FIELD_NUMBER = 16;
-  private volatile java.lang.Object vmIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmIp_ = "";
   /**
    *
    *
@@ -1460,7 +1475,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_LIVENESS_FIELD_NUMBER = 17;
-  private int vmLiveness_;
+  private int vmLiveness_ = 0;
   /**
    *
    *
@@ -1495,9 +1510,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.Instance.Liveness.LivenessState getVmLiveness() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.Instance.Liveness.LivenessState result =
-        com.google.appengine.v1.Instance.Liveness.LivenessState.valueOf(vmLiveness_);
+        com.google.appengine.v1.Instance.Liveness.LivenessState.forNumber(vmLiveness_);
     return result == null
         ? com.google.appengine.v1.Instance.Liveness.LivenessState.UNRECOGNIZED
         : result;
@@ -1853,44 +1867,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       appEngineRelease_ = "";
-
       availability_ = 0;
-
       vmName_ = "";
-
       vmZoneName_ = "";
-
       vmId_ = "";
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
       requests_ = 0;
-
       errors_ = 0;
-
       qps_ = 0F;
-
       averageLatency_ = 0;
-
       memoryUsage_ = 0L;
-
       vmStatus_ = "";
-
       vmDebugEnabled_ = false;
-
       vmIp_ = "";
-
       vmLiveness_ = 0;
-
       return this;
     }
 
@@ -1917,29 +1915,66 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Instance buildPartial() {
       com.google.appengine.v1.Instance result = new com.google.appengine.v1.Instance(this);
-      result.name_ = name_;
-      result.id_ = id_;
-      result.appEngineRelease_ = appEngineRelease_;
-      result.availability_ = availability_;
-      result.vmName_ = vmName_;
-      result.vmZoneName_ = vmZoneName_;
-      result.vmId_ = vmId_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requests_ = requests_;
-      result.errors_ = errors_;
-      result.qps_ = qps_;
-      result.averageLatency_ = averageLatency_;
-      result.memoryUsage_ = memoryUsage_;
-      result.vmStatus_ = vmStatus_;
-      result.vmDebugEnabled_ = vmDebugEnabled_;
-      result.vmIp_ = vmIp_;
-      result.vmLiveness_ = vmLiveness_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Instance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appEngineRelease_ = appEngineRelease_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.availability_ = availability_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vmName_ = vmName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.vmZoneName_ = vmZoneName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.vmId_ = vmId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.requests_ = requests_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.errors_ = errors_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.qps_ = qps_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.averageLatency_ = averageLatency_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.memoryUsage_ = memoryUsage_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.vmStatus_ = vmStatus_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.vmDebugEnabled_ = vmDebugEnabled_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.vmIp_ = vmIp_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.vmLiveness_ = vmLiveness_;
+      }
     }
 
     @java.lang.Override
@@ -1989,14 +2024,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.Instance.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAppEngineRelease().isEmpty()) {
         appEngineRelease_ = other.appEngineRelease_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.availability_ != 0) {
@@ -2004,14 +2042,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVmName().isEmpty()) {
         vmName_ = other.vmName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getVmZoneName().isEmpty()) {
         vmZoneName_ = other.vmZoneName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -2034,6 +2075,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVmStatus().isEmpty()) {
         vmStatus_ = other.vmStatus_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.getVmDebugEnabled() != false) {
@@ -2041,6 +2083,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVmIp().isEmpty()) {
         vmIp_ = other.vmIp_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.vmLiveness_ != 0) {
@@ -2075,103 +2118,103 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 appEngineRelease_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 availability_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 vmName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 vmZoneName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 requests_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 errors_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 93:
               {
                 qps_ = input.readFloat();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 93
             case 96:
               {
                 averageLatency_ = input.readInt32();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 104:
               {
                 memoryUsage_ = input.readInt64();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 114:
               {
                 vmStatus_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 120:
               {
                 vmDebugEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 130:
               {
                 vmIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 136:
               {
                 vmLiveness_ = input.readEnum();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 136
             default:
@@ -2190,6 +2233,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2255,8 +2300,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2273,8 +2318,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2296,8 +2341,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2366,8 +2411,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2384,8 +2429,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2407,8 +2452,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2474,8 +2519,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       appEngineRelease_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2491,8 +2536,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAppEngineRelease() {
-
       appEngineRelease_ = getDefaultInstance().getAppEngineRelease();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2513,8 +2558,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appEngineRelease_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2552,8 +2597,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAvailabilityValue(int value) {
-
       availability_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2572,9 +2617,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.Instance.Availability getAvailability() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.Instance.Availability result =
-          com.google.appengine.v1.Instance.Availability.valueOf(availability_);
+          com.google.appengine.v1.Instance.Availability.forNumber(availability_);
       return result == null ? com.google.appengine.v1.Instance.Availability.UNRECOGNIZED : result;
     }
     /**
@@ -2595,7 +2639,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       availability_ = value.getNumber();
       onChanged();
       return this;
@@ -2614,7 +2658,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailability() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       availability_ = 0;
       onChanged();
       return this;
@@ -2684,8 +2728,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2702,8 +2746,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmName() {
-
       vmName_ = getDefaultInstance().getVmName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2725,8 +2769,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2795,8 +2839,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmZoneName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2813,8 +2857,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmZoneName() {
-
       vmZoneName_ = getDefaultInstance().getVmZoneName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2836,8 +2880,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmZoneName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2906,8 +2950,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2924,8 +2968,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2947,8 +2991,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2973,7 +3017,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3012,11 +3056,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3033,11 +3077,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3053,17 +3097,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3078,14 +3123,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3100,7 +3144,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -3181,6 +3225,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequests(int value) {
 
       requests_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3196,7 +3241,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequests() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       requests_ = 0;
       onChanged();
       return this;
@@ -3233,6 +3278,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setErrors(int value) {
 
       errors_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3248,7 +3294,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrors() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       errors_ = 0;
       onChanged();
       return this;
@@ -3285,6 +3331,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setQps(float value) {
 
       qps_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3300,7 +3347,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQps() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       qps_ = 0F;
       onChanged();
       return this;
@@ -3337,6 +3384,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setAverageLatency(int value) {
 
       averageLatency_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3352,7 +3400,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAverageLatency() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       averageLatency_ = 0;
       onChanged();
       return this;
@@ -3389,6 +3437,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setMemoryUsage(long value) {
 
       memoryUsage_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3404,7 +3453,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryUsage() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       memoryUsage_ = 0L;
       onChanged();
       return this;
@@ -3474,8 +3523,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmStatus_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3492,8 +3541,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmStatus() {
-
       vmStatus_ = getDefaultInstance().getVmStatus();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3515,8 +3564,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmStatus_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3554,6 +3603,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setVmDebugEnabled(boolean value) {
 
       vmDebugEnabled_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3570,7 +3620,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmDebugEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       vmDebugEnabled_ = false;
       onChanged();
       return this;
@@ -3640,8 +3690,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmIp_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3658,8 +3708,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmIp() {
-
       vmIp_ = getDefaultInstance().getVmIp();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -3681,8 +3731,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmIp_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3722,8 +3772,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setVmLivenessValue(int value) {
-
       vmLiveness_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3743,9 +3793,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.Instance.Liveness.LivenessState getVmLiveness() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.Instance.Liveness.LivenessState result =
-          com.google.appengine.v1.Instance.Liveness.LivenessState.valueOf(vmLiveness_);
+          com.google.appengine.v1.Instance.Liveness.LivenessState.forNumber(vmLiveness_);
       return result == null
           ? com.google.appengine.v1.Instance.Liveness.LivenessState.UNRECOGNIZED
           : result;
@@ -3769,7 +3818,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       vmLiveness_ = value.getNumber();
       onChanged();
       return this;
@@ -3789,7 +3838,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmLiveness() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       vmLiveness_ = 0;
       onChanged();
       return this;

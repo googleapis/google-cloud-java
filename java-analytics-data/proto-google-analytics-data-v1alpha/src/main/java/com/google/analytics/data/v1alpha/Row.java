@@ -102,6 +102,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIMENSION_VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.DimensionValue> dimensionValues_;
   /**
    *
@@ -177,6 +179,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_VALUES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.MetricValue> metricValues_;
   /**
    *
@@ -487,6 +491,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dimensionValuesBuilder_ == null) {
         dimensionValues_ = java.util.Collections.emptyList();
       } else {
@@ -528,7 +533,15 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.Row buildPartial() {
       com.google.analytics.data.v1alpha.Row result =
           new com.google.analytics.data.v1alpha.Row(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.data.v1alpha.Row result) {
       if (dimensionValuesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensionValues_ = java.util.Collections.unmodifiableList(dimensionValues_);
@@ -547,8 +560,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.metricValues_ = metricValuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.Row result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

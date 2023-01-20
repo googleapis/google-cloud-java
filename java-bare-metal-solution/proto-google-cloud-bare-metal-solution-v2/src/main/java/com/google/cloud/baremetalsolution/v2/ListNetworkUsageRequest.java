@@ -68,7 +68,9 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       return this;
     }
 
@@ -348,9 +350,19 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
     public com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest buildPartial() {
       com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest result =
           new com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest(this);
-      result.location_ = location_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +414,7 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +446,7 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +465,8 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object location_ = "";
     /**
@@ -520,8 +535,8 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -539,8 +554,8 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -563,8 +578,8 @@ public final class ListNetworkUsageRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

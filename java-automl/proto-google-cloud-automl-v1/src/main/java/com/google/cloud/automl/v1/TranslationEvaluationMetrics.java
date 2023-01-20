@@ -66,7 +66,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
   }
 
   public static final int BLEU_SCORE_FIELD_NUMBER = 1;
-  private double bleuScore_;
+  private double bleuScore_ = 0D;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
   }
 
   public static final int BASE_BLEU_SCORE_FIELD_NUMBER = 2;
-  private double baseBleuScore_;
+  private double baseBleuScore_ = 0D;
   /**
    *
    *
@@ -316,10 +316,9 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bleuScore_ = 0D;
-
       baseBleuScore_ = 0D;
-
       return this;
     }
 
@@ -347,10 +346,21 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     public com.google.cloud.automl.v1.TranslationEvaluationMetrics buildPartial() {
       com.google.cloud.automl.v1.TranslationEvaluationMetrics result =
           new com.google.cloud.automl.v1.TranslationEvaluationMetrics(this);
-      result.bleuScore_ = bleuScore_;
-      result.baseBleuScore_ = baseBleuScore_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.TranslationEvaluationMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bleuScore_ = bleuScore_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.baseBleuScore_ = baseBleuScore_;
+      }
     }
 
     @java.lang.Override
@@ -434,13 +444,13 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
             case 9:
               {
                 bleuScore_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 baseBleuScore_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -459,6 +469,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double bleuScore_;
     /**
@@ -491,6 +503,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     public Builder setBleuScore(double value) {
 
       bleuScore_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -506,7 +519,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearBleuScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       bleuScore_ = 0D;
       onChanged();
       return this;
@@ -543,6 +556,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     public Builder setBaseBleuScore(double value) {
 
       baseBleuScore_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -558,7 +572,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearBaseBleuScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       baseBleuScore_ = 0D;
       onChanged();
       return this;

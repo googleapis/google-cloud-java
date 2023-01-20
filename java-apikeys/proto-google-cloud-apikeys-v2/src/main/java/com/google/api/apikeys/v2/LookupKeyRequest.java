@@ -68,7 +68,9 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KEY_STRING_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyString_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyString_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyString_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
     public com.google.api.apikeys.v2.LookupKeyRequest buildPartial() {
       com.google.api.apikeys.v2.LookupKeyRequest result =
           new com.google.api.apikeys.v2.LookupKeyRequest(this);
-      result.keyString_ = keyString_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.LookupKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyString_ = keyString_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +405,7 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
       if (other == com.google.api.apikeys.v2.LookupKeyRequest.getDefaultInstance()) return this;
       if (!other.getKeyString().isEmpty()) {
         keyString_ = other.keyString_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -425,7 +437,7 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 keyString_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -444,6 +456,8 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyString_ = "";
     /**
@@ -506,8 +520,8 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyString_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -523,8 +537,8 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKeyString() {
-
       keyString_ = getDefaultInstance().getKeyString();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyString_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

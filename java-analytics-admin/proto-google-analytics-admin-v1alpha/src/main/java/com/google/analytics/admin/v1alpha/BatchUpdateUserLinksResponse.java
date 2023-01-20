@@ -68,6 +68,8 @@ public final class BatchUpdateUserLinksResponse extends com.google.protobuf.Gene
   }
 
   public static final int USER_LINKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.UserLink> userLinks_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BatchUpdateUserLinksResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (userLinksBuilder_ == null) {
         userLinks_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,16 @@ public final class BatchUpdateUserLinksResponse extends com.google.protobuf.Gene
     public com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse buildPartial() {
       com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse result =
           new com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse result) {
       if (userLinksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           userLinks_ = java.util.Collections.unmodifiableList(userLinks_);
@@ -381,8 +393,11 @@ public final class BatchUpdateUserLinksResponse extends com.google.protobuf.Gene
       } else {
         result.userLinks_ = userLinksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

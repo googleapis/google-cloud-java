@@ -636,11 +636,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.automl.v1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
-      return getTextSegment();
+      return textSegment_ == null
+          ? com.google.cloud.automl.v1.TextSegment.getDefaultInstance()
+          : textSegment_;
     }
 
     public static final int PAGE_NUMBER_FIELD_NUMBER = 2;
-    private int pageNumber_;
+    private int pageNumber_ = 0;
     /**
      *
      *
@@ -724,11 +726,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.automl.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-      return getBoundingPoly();
+      return boundingPoly_ == null
+          ? com.google.cloud.automl.v1.BoundingPoly.getDefaultInstance()
+          : boundingPoly_;
     }
 
     public static final int TEXT_SEGMENT_TYPE_FIELD_NUMBER = 4;
-    private int textSegmentType_;
+    private int textSegmentType_ = 0;
     /**
      *
      *
@@ -757,9 +761,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.automl.v1.Document.Layout.TextSegmentType getTextSegmentType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1.Document.Layout.TextSegmentType result =
-          com.google.cloud.automl.v1.Document.Layout.TextSegmentType.valueOf(textSegmentType_);
+          com.google.cloud.automl.v1.Document.Layout.TextSegmentType.forNumber(textSegmentType_);
       return result == null
           ? com.google.cloud.automl.v1.Document.Layout.TextSegmentType.UNRECOGNIZED
           : result;
@@ -1007,22 +1010,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (textSegmentBuilder_ == null) {
-          textSegment_ = null;
-        } else {
-          textSegment_ = null;
+        bitField0_ = 0;
+        textSegment_ = null;
+        if (textSegmentBuilder_ != null) {
+          textSegmentBuilder_.dispose();
           textSegmentBuilder_ = null;
         }
         pageNumber_ = 0;
-
-        if (boundingPolyBuilder_ == null) {
-          boundingPoly_ = null;
-        } else {
-          boundingPoly_ = null;
+        boundingPoly_ = null;
+        if (boundingPolyBuilder_ != null) {
+          boundingPolyBuilder_.dispose();
           boundingPolyBuilder_ = null;
         }
         textSegmentType_ = 0;
-
         return this;
       }
 
@@ -1050,20 +1050,29 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.automl.v1.Document.Layout buildPartial() {
         com.google.cloud.automl.v1.Document.Layout result =
             new com.google.cloud.automl.v1.Document.Layout(this);
-        if (textSegmentBuilder_ == null) {
-          result.textSegment_ = textSegment_;
-        } else {
-          result.textSegment_ = textSegmentBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.pageNumber_ = pageNumber_;
-        if (boundingPolyBuilder_ == null) {
-          result.boundingPoly_ = boundingPoly_;
-        } else {
-          result.boundingPoly_ = boundingPolyBuilder_.build();
-        }
-        result.textSegmentType_ = textSegmentType_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.automl.v1.Document.Layout result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.textSegment_ =
+              textSegmentBuilder_ == null ? textSegment_ : textSegmentBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pageNumber_ = pageNumber_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.boundingPoly_ =
+              boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.textSegmentType_ = textSegmentType_;
+        }
       }
 
       @java.lang.Override
@@ -1154,25 +1163,25 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getTextSegmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   pageNumber_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   textSegmentType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1191,6 +1200,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.automl.v1.TextSegment textSegment_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1211,7 +1222,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the textSegment field is set.
        */
       public boolean hasTextSegment() {
-        return textSegmentBuilder_ != null || textSegment_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1250,11 +1261,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           textSegment_ = value;
-          onChanged();
         } else {
           textSegmentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1271,11 +1282,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.automl.v1.TextSegment.Builder builderForValue) {
         if (textSegmentBuilder_ == null) {
           textSegment_ = builderForValue.build();
-          onChanged();
         } else {
           textSegmentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1290,19 +1301,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTextSegment(com.google.cloud.automl.v1.TextSegment value) {
         if (textSegmentBuilder_ == null) {
-          if (textSegment_ != null) {
-            textSegment_ =
-                com.google.cloud.automl.v1.TextSegment.newBuilder(textSegment_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && textSegment_ != null
+              && textSegment_ != com.google.cloud.automl.v1.TextSegment.getDefaultInstance()) {
+            getTextSegmentBuilder().mergeFrom(value);
           } else {
             textSegment_ = value;
           }
-          onChanged();
         } else {
           textSegmentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1316,14 +1326,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.automl.v1.TextSegment text_segment = 1;</code>
        */
       public Builder clearTextSegment() {
-        if (textSegmentBuilder_ == null) {
-          textSegment_ = null;
-          onChanged();
-        } else {
-          textSegment_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        textSegment_ = null;
+        if (textSegmentBuilder_ != null) {
+          textSegmentBuilder_.dispose();
           textSegmentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1337,7 +1346,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.automl.v1.TextSegment text_segment = 1;</code>
        */
       public com.google.cloud.automl.v1.TextSegment.Builder getTextSegmentBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTextSegmentFieldBuilder().getBuilder();
       }
@@ -1420,6 +1429,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public Builder setPageNumber(int value) {
 
         pageNumber_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1436,7 +1446,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPageNumber() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         pageNumber_ = 0;
         onChanged();
         return this;
@@ -1467,7 +1477,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the boundingPoly field is set.
        */
       public boolean hasBoundingPoly() {
-        return boundingPolyBuilder_ != null || boundingPoly_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1518,11 +1528,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           boundingPoly_ = value;
-          onChanged();
         } else {
           boundingPolyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1545,11 +1555,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.automl.v1.BoundingPoly.Builder builderForValue) {
         if (boundingPolyBuilder_ == null) {
           boundingPoly_ = builderForValue.build();
-          onChanged();
         } else {
           boundingPolyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1570,19 +1580,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeBoundingPoly(com.google.cloud.automl.v1.BoundingPoly value) {
         if (boundingPolyBuilder_ == null) {
-          if (boundingPoly_ != null) {
-            boundingPoly_ =
-                com.google.cloud.automl.v1.BoundingPoly.newBuilder(boundingPoly_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && boundingPoly_ != null
+              && boundingPoly_ != com.google.cloud.automl.v1.BoundingPoly.getDefaultInstance()) {
+            getBoundingPolyBuilder().mergeFrom(value);
           } else {
             boundingPoly_ = value;
           }
-          onChanged();
         } else {
           boundingPolyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1602,14 +1611,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.automl.v1.BoundingPoly bounding_poly = 3;</code>
        */
       public Builder clearBoundingPoly() {
-        if (boundingPolyBuilder_ == null) {
-          boundingPoly_ = null;
-          onChanged();
-        } else {
-          boundingPoly_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        boundingPoly_ = null;
+        if (boundingPolyBuilder_ != null) {
+          boundingPolyBuilder_.dispose();
           boundingPolyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1629,7 +1637,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.automl.v1.BoundingPoly bounding_poly = 3;</code>
        */
       public com.google.cloud.automl.v1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getBoundingPolyFieldBuilder().getBuilder();
       }
@@ -1720,8 +1728,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTextSegmentTypeValue(int value) {
-
         textSegmentType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1738,9 +1746,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.automl.v1.Document.Layout.TextSegmentType getTextSegmentType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.automl.v1.Document.Layout.TextSegmentType result =
-            com.google.cloud.automl.v1.Document.Layout.TextSegmentType.valueOf(textSegmentType_);
+            com.google.cloud.automl.v1.Document.Layout.TextSegmentType.forNumber(textSegmentType_);
         return result == null
             ? com.google.cloud.automl.v1.Document.Layout.TextSegmentType.UNRECOGNIZED
             : result;
@@ -1762,7 +1769,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         textSegmentType_ = value.getNumber();
         onChanged();
         return this;
@@ -1779,7 +1786,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTextSegmentType() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         textSegmentType_ = 0;
         onChanged();
         return this;
@@ -1894,7 +1901,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.DocumentInputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.automl.v1.DocumentInputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int DOCUMENT_TEXT_FIELD_NUMBER = 2;
@@ -1942,10 +1951,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippetOrBuilder getDocumentTextOrBuilder() {
-    return getDocumentText();
+    return documentText_ == null
+        ? com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()
+        : documentText_;
   }
 
   public static final int LAYOUT_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1.Document.Layout> layout_;
   /**
    *
@@ -2064,11 +2077,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.DocumentDimensionsOrBuilder getDocumentDimensionsOrBuilder() {
-    return getDocumentDimensions();
+    return documentDimensions_ == null
+        ? com.google.cloud.automl.v1.DocumentDimensions.getDefaultInstance()
+        : documentDimensions_;
   }
 
   public static final int PAGE_COUNT_FIELD_NUMBER = 5;
-  private int pageCount_;
+  private int pageCount_ = 0;
   /**
    *
    *
@@ -2333,16 +2348,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      bitField0_ = 0;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (documentTextBuilder_ == null) {
-        documentText_ = null;
-      } else {
-        documentText_ = null;
+      documentText_ = null;
+      if (documentTextBuilder_ != null) {
+        documentTextBuilder_.dispose();
         documentTextBuilder_ = null;
       }
       if (layoutBuilder_ == null) {
@@ -2351,15 +2365,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         layout_ = null;
         layoutBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (documentDimensionsBuilder_ == null) {
-        documentDimensions_ = null;
-      } else {
-        documentDimensions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentDimensions_ = null;
+      if (documentDimensionsBuilder_ != null) {
+        documentDimensionsBuilder_.dispose();
         documentDimensionsBuilder_ = null;
       }
       pageCount_ = 0;
-
       return this;
     }
 
@@ -2386,34 +2398,45 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.automl.v1.Document buildPartial() {
       com.google.cloud.automl.v1.Document result = new com.google.cloud.automl.v1.Document(this);
-      int from_bitField0_ = bitField0_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentTextBuilder_ == null) {
-        result.documentText_ = documentText_;
-      } else {
-        result.documentText_ = documentTextBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.automl.v1.Document result) {
       if (layoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           layout_ = java.util.Collections.unmodifiableList(layout_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.layout_ = layout_;
       } else {
         result.layout_ = layoutBuilder_.build();
       }
-      if (documentDimensionsBuilder_ == null) {
-        result.documentDimensions_ = documentDimensions_;
-      } else {
-        result.documentDimensions_ = documentDimensionsBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.Document result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
       }
-      result.pageCount_ = pageCount_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentText_ =
+            documentTextBuilder_ == null ? documentText_ : documentTextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.documentDimensions_ =
+            documentDimensionsBuilder_ == null
+                ? documentDimensions_
+                : documentDimensionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageCount_ = pageCount_;
+      }
     }
 
     @java.lang.Override
@@ -2471,7 +2494,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.layout_.isEmpty()) {
           if (layout_.isEmpty()) {
             layout_ = other.layout_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLayoutIsMutable();
             layout_.addAll(other.layout_);
@@ -2484,7 +2507,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             layoutBuilder_.dispose();
             layoutBuilder_ = null;
             layout_ = other.layout_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             layoutBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLayoutFieldBuilder()
@@ -2529,13 +2552,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentTextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2555,13 +2578,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getDocumentDimensionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 pageCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -2601,7 +2624,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2638,11 +2661,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2658,11 +2681,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.automl.v1.DocumentInputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2676,19 +2699,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInputConfig(com.google.cloud.automl.v1.DocumentInputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.automl.v1.DocumentInputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.automl.v1.DocumentInputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2701,14 +2724,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.DocumentInputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2721,7 +2743,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.DocumentInputConfig input_config = 1;</code>
      */
     public com.google.cloud.automl.v1.DocumentInputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -2787,7 +2809,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentText field is set.
      */
     public boolean hasDocumentText() {
-      return documentTextBuilder_ != null || documentText_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2824,11 +2846,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         documentText_ = value;
-        onChanged();
       } else {
         documentTextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2843,11 +2865,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder setDocumentText(com.google.cloud.automl.v1.TextSnippet.Builder builderForValue) {
       if (documentTextBuilder_ == null) {
         documentText_ = builderForValue.build();
-        onChanged();
       } else {
         documentTextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2861,19 +2883,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDocumentText(com.google.cloud.automl.v1.TextSnippet value) {
       if (documentTextBuilder_ == null) {
-        if (documentText_ != null) {
-          documentText_ =
-              com.google.cloud.automl.v1.TextSnippet.newBuilder(documentText_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && documentText_ != null
+            && documentText_ != com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()) {
+          getDocumentTextBuilder().mergeFrom(value);
         } else {
           documentText_ = value;
         }
-        onChanged();
       } else {
         documentTextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2886,14 +2907,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.TextSnippet document_text = 2;</code>
      */
     public Builder clearDocumentText() {
-      if (documentTextBuilder_ == null) {
-        documentText_ = null;
-        onChanged();
-      } else {
-        documentText_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      documentText_ = null;
+      if (documentTextBuilder_ != null) {
+        documentTextBuilder_.dispose();
         documentTextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2906,7 +2926,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.TextSnippet document_text = 2;</code>
      */
     public com.google.cloud.automl.v1.TextSnippet.Builder getDocumentTextBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDocumentTextFieldBuilder().getBuilder();
     }
@@ -2958,9 +2978,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLayoutIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         layout_ = new java.util.ArrayList<com.google.cloud.automl.v1.Document.Layout>(layout_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3186,7 +3206,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLayout() {
       if (layoutBuilder_ == null) {
         layout_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         layoutBuilder_.clear();
@@ -3315,7 +3335,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.automl.v1.Document.Layout,
                 com.google.cloud.automl.v1.Document.Layout.Builder,
                 com.google.cloud.automl.v1.Document.LayoutOrBuilder>(
-                layout_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                layout_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         layout_ = null;
       }
       return layoutBuilder_;
@@ -3339,7 +3359,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentDimensions field is set.
      */
     public boolean hasDocumentDimensions() {
-      return documentDimensionsBuilder_ != null || documentDimensions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3376,11 +3396,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         documentDimensions_ = value;
-        onChanged();
       } else {
         documentDimensionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3396,11 +3416,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.automl.v1.DocumentDimensions.Builder builderForValue) {
       if (documentDimensionsBuilder_ == null) {
         documentDimensions_ = builderForValue.build();
-        onChanged();
       } else {
         documentDimensionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3414,19 +3434,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDocumentDimensions(com.google.cloud.automl.v1.DocumentDimensions value) {
       if (documentDimensionsBuilder_ == null) {
-        if (documentDimensions_ != null) {
-          documentDimensions_ =
-              com.google.cloud.automl.v1.DocumentDimensions.newBuilder(documentDimensions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && documentDimensions_ != null
+            && documentDimensions_
+                != com.google.cloud.automl.v1.DocumentDimensions.getDefaultInstance()) {
+          getDocumentDimensionsBuilder().mergeFrom(value);
         } else {
           documentDimensions_ = value;
         }
-        onChanged();
       } else {
         documentDimensionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3439,14 +3459,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.DocumentDimensions document_dimensions = 4;</code>
      */
     public Builder clearDocumentDimensions() {
-      if (documentDimensionsBuilder_ == null) {
-        documentDimensions_ = null;
-        onChanged();
-      } else {
-        documentDimensions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      documentDimensions_ = null;
+      if (documentDimensionsBuilder_ != null) {
+        documentDimensionsBuilder_.dispose();
         documentDimensionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3459,7 +3478,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.DocumentDimensions document_dimensions = 4;</code>
      */
     public com.google.cloud.automl.v1.DocumentDimensions.Builder getDocumentDimensionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDocumentDimensionsFieldBuilder().getBuilder();
     }
@@ -3538,6 +3557,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder setPageCount(int value) {
 
       pageCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3553,7 +3573,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPageCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageCount_ = 0;
       onChanged();
       return this;

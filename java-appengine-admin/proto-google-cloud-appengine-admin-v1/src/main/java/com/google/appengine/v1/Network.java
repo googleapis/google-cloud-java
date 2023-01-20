@@ -71,6 +71,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARDED_PORTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList forwardedPorts_;
   /**
    *
@@ -140,7 +142,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_TAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceTag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceTag_ = "";
   /**
    *
    *
@@ -191,7 +195,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -244,7 +250,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object subnetworkName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetworkName_ = "";
   /**
    *
    *
@@ -321,7 +329,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 5;
-  private boolean sessionAffinity_;
+  private boolean sessionAffinity_ = false;
   /**
    *
    *
@@ -577,16 +585,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       forwardedPorts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       instanceTag_ = "";
-
       name_ = "";
-
       subnetworkName_ = "";
-
       sessionAffinity_ = false;
-
       return this;
     }
 
@@ -613,18 +618,36 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Network buildPartial() {
       com.google.appengine.v1.Network result = new com.google.appengine.v1.Network(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.appengine.v1.Network result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         forwardedPorts_ = forwardedPorts_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.forwardedPorts_ = forwardedPorts_;
-      result.instanceTag_ = instanceTag_;
-      result.name_ = name_;
-      result.subnetworkName_ = subnetworkName_;
-      result.sessionAffinity_ = sessionAffinity_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Network result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceTag_ = instanceTag_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.subnetworkName_ = subnetworkName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sessionAffinity_ = sessionAffinity_;
+      }
     }
 
     @java.lang.Override
@@ -684,14 +707,17 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInstanceTag().isEmpty()) {
         instanceTag_ = other.instanceTag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSubnetworkName().isEmpty()) {
         subnetworkName_ = other.subnetworkName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getSessionAffinity() != false) {
@@ -733,25 +759,25 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 instanceTag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 subnetworkName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 sessionAffinity_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1023,8 +1049,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceTag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,8 +1067,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceTag() {
-
       instanceTag_ = getDefaultInstance().getInstanceTag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1064,8 +1090,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceTag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1137,8 +1163,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1156,8 +1182,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1180,8 +1206,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1289,8 +1315,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetworkName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1320,8 +1346,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetworkName() {
-
       subnetworkName_ = getDefaultInstance().getSubnetworkName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1356,8 +1382,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetworkName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1395,6 +1421,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder setSessionAffinity(boolean value) {
 
       sessionAffinity_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1411,7 +1438,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sessionAffinity_ = false;
       onChanged();
       return this;

@@ -73,7 +73,9 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -132,6 +134,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
   }
 
   public static final int SERVICE_PERIMETERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
       servicePerimeters_;
   /**
@@ -241,7 +245,9 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
   }
 
   public static final int ETAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -530,17 +536,16 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (servicePerimetersBuilder_ == null) {
         servicePerimeters_ = java.util.Collections.emptyList();
       } else {
         servicePerimeters_ = null;
         servicePerimetersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = "";
-
       return this;
     }
 
@@ -572,20 +577,36 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest result =
           new com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest result) {
       if (servicePerimetersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           servicePerimeters_ = java.util.Collections.unmodifiableList(servicePerimeters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.servicePerimeters_ = servicePerimeters_;
       } else {
         result.servicePerimeters_ = servicePerimetersBuilder_.build();
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -640,13 +661,14 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (servicePerimetersBuilder_ == null) {
         if (!other.servicePerimeters_.isEmpty()) {
           if (servicePerimeters_.isEmpty()) {
             servicePerimeters_ = other.servicePerimeters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureServicePerimetersIsMutable();
             servicePerimeters_.addAll(other.servicePerimeters_);
@@ -659,7 +681,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
             servicePerimetersBuilder_.dispose();
             servicePerimetersBuilder_ = null;
             servicePerimeters_ = other.servicePerimeters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             servicePerimetersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServicePerimetersFieldBuilder()
@@ -671,6 +693,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -702,7 +725,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -722,7 +745,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
             case 26:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -820,8 +843,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -842,8 +865,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -869,8 +892,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,11 +902,11 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
         servicePerimeters_ = java.util.Collections.emptyList();
 
     private void ensureServicePerimetersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         servicePerimeters_ =
             new java.util.ArrayList<com.google.identity.accesscontextmanager.v1.ServicePerimeter>(
                 servicePerimeters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1184,7 +1207,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
     public Builder clearServicePerimeters() {
       if (servicePerimetersBuilder_ == null) {
         servicePerimeters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         servicePerimetersBuilder_.clear();
@@ -1364,7 +1387,7 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
                 com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder,
                 com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>(
                 servicePerimeters_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         servicePerimeters_ = null;
@@ -1451,8 +1474,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1474,8 +1497,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1502,8 +1525,8 @@ public final class ReplaceServicePerimetersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

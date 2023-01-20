@@ -69,7 +69,9 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -165,11 +167,11 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.RowOrBuilder getRowOrBuilder() {
-    return getRow();
+    return row_ == null ? com.google.area120.tables.v1alpha1.Row.getDefaultInstance() : row_;
   }
 
   public static final int VIEW_FIELD_NUMBER = 3;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -202,9 +204,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.View getView() {
-    @SuppressWarnings("deprecation")
     com.google.area120.tables.v1alpha1.View result =
-        com.google.area120.tables.v1alpha1.View.valueOf(view_);
+        com.google.area120.tables.v1alpha1.View.forNumber(view_);
     return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
   }
 
@@ -428,16 +429,14 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (rowBuilder_ == null) {
-        row_ = null;
-      } else {
-        row_ = null;
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
       view_ = 0;
-
       return this;
     }
 
@@ -465,15 +464,24 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
     public com.google.area120.tables.v1alpha1.CreateRowRequest buildPartial() {
       com.google.area120.tables.v1alpha1.CreateRowRequest result =
           new com.google.area120.tables.v1alpha1.CreateRowRequest(this);
-      result.parent_ = parent_;
-      if (rowBuilder_ == null) {
-        result.row_ = row_;
-      } else {
-        result.row_ = rowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.view_ = view_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.CreateRowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.row_ = rowBuilder_ == null ? row_ : rowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +532,7 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRow()) {
@@ -561,19 +570,19 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -592,6 +601,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -657,8 +668,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,8 +686,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -698,8 +709,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,7 +734,7 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the row field is set.
      */
     public boolean hasRow() {
-      return rowBuilder_ != null || row_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -760,11 +771,11 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         row_ = value;
-        onChanged();
       } else {
         rowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -780,11 +791,11 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
     public Builder setRow(com.google.area120.tables.v1alpha1.Row.Builder builderForValue) {
       if (rowBuilder_ == null) {
         row_ = builderForValue.build();
-        onChanged();
       } else {
         rowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,19 +810,18 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRow(com.google.area120.tables.v1alpha1.Row value) {
       if (rowBuilder_ == null) {
-        if (row_ != null) {
-          row_ =
-              com.google.area120.tables.v1alpha1.Row.newBuilder(row_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && row_ != null
+            && row_ != com.google.area120.tables.v1alpha1.Row.getDefaultInstance()) {
+          getRowBuilder().mergeFrom(value);
         } else {
           row_ = value;
         }
-        onChanged();
       } else {
         rowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,14 +835,13 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRow() {
-      if (rowBuilder_ == null) {
-        row_ = null;
-        onChanged();
-      } else {
-        row_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -846,7 +855,7 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.area120.tables.v1alpha1.Row.Builder getRowBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRowFieldBuilder().getBuilder();
     }
@@ -929,8 +938,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -950,9 +959,8 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.area120.tables.v1alpha1.View getView() {
-      @SuppressWarnings("deprecation")
       com.google.area120.tables.v1alpha1.View result =
-          com.google.area120.tables.v1alpha1.View.valueOf(view_);
+          com.google.area120.tables.v1alpha1.View.forNumber(view_);
       return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
     }
     /**
@@ -974,7 +982,7 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -994,7 +1002,7 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
       onChanged();
       return this;

@@ -70,7 +70,9 @@ public final class CreateMeasurementProtocolSecretRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,7 +179,9 @@ public final class CreateMeasurementProtocolSecretRequest
   @java.lang.Override
   public com.google.analytics.admin.v1beta.MeasurementProtocolSecretOrBuilder
       getMeasurementProtocolSecretOrBuilder() {
-    return getMeasurementProtocolSecret();
+    return measurementProtocolSecret_ == null
+        ? com.google.analytics.admin.v1beta.MeasurementProtocolSecret.getDefaultInstance()
+        : measurementProtocolSecret_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class CreateMeasurementProtocolSecretRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (measurementProtocolSecretBuilder_ == null) {
-        measurementProtocolSecret_ = null;
-      } else {
-        measurementProtocolSecret_ = null;
+      measurementProtocolSecret_ = null;
+      if (measurementProtocolSecretBuilder_ != null) {
+        measurementProtocolSecretBuilder_.dispose();
         measurementProtocolSecretBuilder_ = null;
       }
       return this;
@@ -437,14 +440,25 @@ public final class CreateMeasurementProtocolSecretRequest
     public com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest buildPartial() {
       com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest result =
           new com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest(this);
-      result.parent_ = parent_;
-      if (measurementProtocolSecretBuilder_ == null) {
-        result.measurementProtocolSecret_ = measurementProtocolSecret_;
-      } else {
-        result.measurementProtocolSecret_ = measurementProtocolSecretBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.measurementProtocolSecret_ =
+            measurementProtocolSecretBuilder_ == null
+                ? measurementProtocolSecret_
+                : measurementProtocolSecretBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -499,6 +513,7 @@ public final class CreateMeasurementProtocolSecretRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMeasurementProtocolSecret()) {
@@ -533,14 +548,14 @@ public final class CreateMeasurementProtocolSecretRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getMeasurementProtocolSecretFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -559,6 +574,8 @@ public final class CreateMeasurementProtocolSecretRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -630,8 +647,8 @@ public final class CreateMeasurementProtocolSecretRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -650,8 +667,8 @@ public final class CreateMeasurementProtocolSecretRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -675,8 +692,8 @@ public final class CreateMeasurementProtocolSecretRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,7 +718,7 @@ public final class CreateMeasurementProtocolSecretRequest
      * @return Whether the measurementProtocolSecret field is set.
      */
     public boolean hasMeasurementProtocolSecret() {
-      return measurementProtocolSecretBuilder_ != null || measurementProtocolSecret_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -744,11 +761,11 @@ public final class CreateMeasurementProtocolSecretRequest
           throw new NullPointerException();
         }
         measurementProtocolSecret_ = value;
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -766,11 +783,11 @@ public final class CreateMeasurementProtocolSecretRequest
         com.google.analytics.admin.v1beta.MeasurementProtocolSecret.Builder builderForValue) {
       if (measurementProtocolSecretBuilder_ == null) {
         measurementProtocolSecret_ = builderForValue.build();
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,20 +804,20 @@ public final class CreateMeasurementProtocolSecretRequest
     public Builder mergeMeasurementProtocolSecret(
         com.google.analytics.admin.v1beta.MeasurementProtocolSecret value) {
       if (measurementProtocolSecretBuilder_ == null) {
-        if (measurementProtocolSecret_ != null) {
-          measurementProtocolSecret_ =
-              com.google.analytics.admin.v1beta.MeasurementProtocolSecret.newBuilder(
-                      measurementProtocolSecret_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && measurementProtocolSecret_ != null
+            && measurementProtocolSecret_
+                != com.google.analytics.admin.v1beta.MeasurementProtocolSecret
+                    .getDefaultInstance()) {
+          getMeasurementProtocolSecretBuilder().mergeFrom(value);
         } else {
           measurementProtocolSecret_ = value;
         }
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,14 +832,13 @@ public final class CreateMeasurementProtocolSecretRequest
      * </code>
      */
     public Builder clearMeasurementProtocolSecret() {
-      if (measurementProtocolSecretBuilder_ == null) {
-        measurementProtocolSecret_ = null;
-        onChanged();
-      } else {
-        measurementProtocolSecret_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      measurementProtocolSecret_ = null;
+      if (measurementProtocolSecretBuilder_ != null) {
+        measurementProtocolSecretBuilder_.dispose();
         measurementProtocolSecretBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -838,7 +854,7 @@ public final class CreateMeasurementProtocolSecretRequest
      */
     public com.google.analytics.admin.v1beta.MeasurementProtocolSecret.Builder
         getMeasurementProtocolSecretBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMeasurementProtocolSecretFieldBuilder().getBuilder();
     }

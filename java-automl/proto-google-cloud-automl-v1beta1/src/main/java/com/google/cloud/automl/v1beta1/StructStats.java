@@ -92,6 +92,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
       fieldStats_;
 
@@ -156,8 +157,10 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
-      java.lang.String key, com.google.cloud.automl.v1beta1.DataStats defaultValue) {
+  public /* nullable */ com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.automl.v1beta1.DataStats defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -414,6 +417,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableFieldStats().clear();
       return this;
     }
@@ -442,11 +446,19 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.StructStats buildPartial() {
       com.google.cloud.automl.v1beta1.StructStats result =
           new com.google.cloud.automl.v1beta1.StructStats(this);
-      int from_bitField0_ = bitField0_;
-      result.fieldStats_ = internalGetFieldStats();
-      result.fieldStats_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.StructStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fieldStats_ = internalGetFieldStats();
+        result.fieldStats_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -495,6 +507,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.StructStats other) {
       if (other == com.google.cloud.automl.v1beta1.StructStats.getDefaultInstance()) return this;
       internalGetMutableFieldStats().mergeFrom(other.internalGetFieldStats());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -532,6 +545,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableFieldStats()
                     .getMutableMap()
                     .put(fieldStats__.getKey(), fieldStats__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -570,8 +584,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
         internalGetMutableFieldStats() {
-      onChanged();
-      ;
       if (fieldStats_ == null) {
         fieldStats_ =
             com.google.protobuf.MapField.newMapField(FieldStatsDefaultEntryHolder.defaultEntry);
@@ -579,6 +591,8 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       if (!fieldStats_.isMutable()) {
         fieldStats_ = fieldStats_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return fieldStats_;
     }
 
@@ -635,8 +649,10 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
      */
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
-        java.lang.String key, com.google.cloud.automl.v1beta1.DataStats defaultValue) {
+    public /* nullable */ com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.automl.v1beta1.DataStats defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -668,6 +684,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFieldStats() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableFieldStats().getMutableMap().clear();
       return this;
     }
@@ -692,6 +709,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
         getMutableFieldStats() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableFieldStats().getMutableMap();
     }
     /**
@@ -712,8 +730,8 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFieldStats().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -729,6 +747,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFieldStats(
         java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats> values) {
       internalGetMutableFieldStats().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

@@ -72,7 +72,9 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.HttpResponseOrBuilder getHttpResponseOrBuilder() {
-    return getHttpResponse();
+    return httpResponse_ == null
+        ? com.google.cloud.apigeeconnect.v1.HttpResponse.getDefaultInstance()
+        : httpResponse_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
@@ -211,11 +215,13 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   public static final int PROJECT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -266,7 +272,9 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACE_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object traceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
   /**
    *
    *
@@ -317,7 +325,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 6;
-  private int endpoint_;
+  private int endpoint_ = 0;
   /**
    *
    *
@@ -346,14 +354,15 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.TetherEndpoint getEndpoint() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.apigeeconnect.v1.TetherEndpoint result =
-        com.google.cloud.apigeeconnect.v1.TetherEndpoint.valueOf(endpoint_);
+        com.google.cloud.apigeeconnect.v1.TetherEndpoint.forNumber(endpoint_);
     return result == null ? com.google.cloud.apigeeconnect.v1.TetherEndpoint.UNRECOGNIZED : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -668,28 +677,22 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
-      if (httpResponseBuilder_ == null) {
-        httpResponse_ = null;
-      } else {
-        httpResponse_ = null;
+      httpResponse_ = null;
+      if (httpResponseBuilder_ != null) {
+        httpResponseBuilder_.dispose();
         httpResponseBuilder_ = null;
       }
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       project_ = "";
-
       traceId_ = "";
-
       endpoint_ = 0;
-
       name_ = "";
-
       return this;
     }
 
@@ -717,23 +720,37 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.EgressResponse buildPartial() {
       com.google.cloud.apigeeconnect.v1.EgressResponse result =
           new com.google.cloud.apigeeconnect.v1.EgressResponse(this);
-      result.id_ = id_;
-      if (httpResponseBuilder_ == null) {
-        result.httpResponse_ = httpResponse_;
-      } else {
-        result.httpResponse_ = httpResponseBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
-      result.project_ = project_;
-      result.traceId_ = traceId_;
-      result.endpoint_ = endpoint_;
-      result.name_ = name_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.EgressResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.httpResponse_ =
+            httpResponseBuilder_ == null ? httpResponse_ : httpResponseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.traceId_ = traceId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -784,6 +801,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHttpResponse()) {
@@ -794,10 +812,12 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.endpoint_ != 0) {
@@ -805,6 +825,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -836,43 +857,43 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getHttpResponseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 traceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 endpoint_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -891,6 +912,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -953,8 +976,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -970,8 +993,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -992,8 +1015,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1016,7 +1039,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the httpResponse field is set.
      */
     public boolean hasHttpResponse() {
-      return httpResponseBuilder_ != null || httpResponse_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1053,11 +1076,11 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         httpResponse_ = value;
-        onChanged();
       } else {
         httpResponseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1073,11 +1096,11 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.apigeeconnect.v1.HttpResponse.Builder builderForValue) {
       if (httpResponseBuilder_ == null) {
         httpResponse_ = builderForValue.build();
-        onChanged();
       } else {
         httpResponseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1091,19 +1114,19 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHttpResponse(com.google.cloud.apigeeconnect.v1.HttpResponse value) {
       if (httpResponseBuilder_ == null) {
-        if (httpResponse_ != null) {
-          httpResponse_ =
-              com.google.cloud.apigeeconnect.v1.HttpResponse.newBuilder(httpResponse_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && httpResponse_ != null
+            && httpResponse_
+                != com.google.cloud.apigeeconnect.v1.HttpResponse.getDefaultInstance()) {
+          getHttpResponseBuilder().mergeFrom(value);
         } else {
           httpResponse_ = value;
         }
-        onChanged();
       } else {
         httpResponseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1116,14 +1139,13 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.HttpResponse http_response = 2;</code>
      */
     public Builder clearHttpResponse() {
-      if (httpResponseBuilder_ == null) {
-        httpResponse_ = null;
-        onChanged();
-      } else {
-        httpResponse_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      httpResponse_ = null;
+      if (httpResponseBuilder_ != null) {
+        httpResponseBuilder_.dispose();
         httpResponseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1136,7 +1158,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.HttpResponse http_response = 2;</code>
      */
     public com.google.cloud.apigeeconnect.v1.HttpResponse.Builder getHttpResponseBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHttpResponseFieldBuilder().getBuilder();
     }
@@ -1200,7 +1222,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1235,11 +1257,11 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1254,11 +1276,11 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1272,16 +1294,18 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1294,14 +1318,13 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 3;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1314,7 +1337,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status status = 3;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -1421,8 +1444,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1439,8 +1462,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1462,8 +1485,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1532,8 +1555,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       traceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1550,8 +1573,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTraceId() {
-
       traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1573,8 +1596,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       traceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1608,8 +1631,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEndpointValue(int value) {
-
       endpoint_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1626,9 +1649,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.apigeeconnect.v1.TetherEndpoint getEndpoint() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.apigeeconnect.v1.TetherEndpoint result =
-          com.google.cloud.apigeeconnect.v1.TetherEndpoint.valueOf(endpoint_);
+          com.google.cloud.apigeeconnect.v1.TetherEndpoint.forNumber(endpoint_);
       return result == null
           ? com.google.cloud.apigeeconnect.v1.TetherEndpoint.UNRECOGNIZED
           : result;
@@ -1649,7 +1671,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       endpoint_ = value.getNumber();
       onChanged();
       return this;
@@ -1666,7 +1688,7 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       endpoint_ = 0;
       onChanged();
       return this;
@@ -1736,8 +1758,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1754,8 +1776,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1777,8 +1799,8 @@ public final class EgressResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

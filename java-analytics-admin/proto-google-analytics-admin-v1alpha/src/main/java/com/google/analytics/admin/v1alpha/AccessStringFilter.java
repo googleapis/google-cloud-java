@@ -316,7 +316,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MATCH_TYPE_FIELD_NUMBER = 1;
-  private int matchType_;
+  private int matchType_ = 0;
   /**
    *
    *
@@ -345,16 +345,17 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType getMatchType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType result =
-        com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.valueOf(matchType_);
+        com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.forNumber(matchType_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.UNRECOGNIZED
         : result;
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -403,7 +404,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CASE_SENSITIVE_FIELD_NUMBER = 3;
-  private boolean caseSensitive_;
+  private boolean caseSensitive_ = false;
   /**
    *
    *
@@ -640,12 +641,10 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       matchType_ = 0;
-
       value_ = "";
-
       caseSensitive_ = false;
-
       return this;
     }
 
@@ -673,11 +672,24 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
     public com.google.analytics.admin.v1alpha.AccessStringFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AccessStringFilter result =
           new com.google.analytics.admin.v1alpha.AccessStringFilter(this);
-      result.matchType_ = matchType_;
-      result.value_ = value_;
-      result.caseSensitive_ = caseSensitive_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessStringFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.matchType_ = matchType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.caseSensitive_ = caseSensitive_;
+      }
     }
 
     @java.lang.Override
@@ -731,6 +743,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getValue().isEmpty()) {
         value_ = other.value_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getCaseSensitive() != false) {
@@ -765,19 +778,19 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 matchType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 value_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 caseSensitive_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -796,6 +809,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int matchType_ = 0;
     /**
@@ -826,8 +841,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setMatchTypeValue(int value) {
-
       matchType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,9 +859,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType getMatchType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType result =
-          com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.valueOf(matchType_);
+          com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.forNumber(matchType_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AccessStringFilter.MatchType.UNRECOGNIZED
           : result;
@@ -868,7 +882,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       matchType_ = value.getNumber();
       onChanged();
       return this;
@@ -885,7 +899,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMatchType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       matchType_ = 0;
       onChanged();
       return this;
@@ -952,8 +966,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,8 +983,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -991,8 +1005,8 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1028,6 +1042,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
     public Builder setCaseSensitive(boolean value) {
 
       caseSensitive_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1043,7 +1058,7 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCaseSensitive() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       caseSensitive_ = false;
       onChanged();
       return this;

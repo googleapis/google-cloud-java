@@ -89,7 +89,6 @@ public interface BatchPredictResultOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

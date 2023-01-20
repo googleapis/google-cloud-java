@@ -69,7 +69,9 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
   }
 
   public static final int ACCOUNT_TICKET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object accountTicketId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accountTicketId_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accountTicketId_ = "";
-
       return this;
     }
 
@@ -347,9 +349,19 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
     public com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse buildPartial() {
       com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse result =
           new com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse(this);
-      result.accountTicketId_ = accountTicketId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accountTicketId_ = accountTicketId_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +414,7 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
         return this;
       if (!other.getAccountTicketId().isEmpty()) {
         accountTicketId_ = other.accountTicketId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +446,7 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
             case 10:
               {
                 accountTicketId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +465,8 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object accountTicketId_ = "";
     /**
@@ -514,8 +529,8 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       accountTicketId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +546,8 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAccountTicketId() {
-
       accountTicketId_ = getDefaultInstance().getAccountTicketId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -553,8 +568,8 @@ public final class ProvisionAccountTicketResponse extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accountTicketId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

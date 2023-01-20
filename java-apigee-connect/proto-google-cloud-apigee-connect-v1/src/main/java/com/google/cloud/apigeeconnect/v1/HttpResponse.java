@@ -71,7 +71,9 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object status_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    *
    *
@@ -169,7 +173,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_CODE_FIELD_NUMBER = 3;
-  private int statusCode_;
+  private int statusCode_ = 0;
   /**
    *
    *
@@ -187,7 +191,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BODY_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString body_;
+  private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -205,6 +209,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEADERS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apigeeconnect.v1.Header> headers_;
   /**
    *
@@ -274,7 +280,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_LENGTH_FIELD_NUMBER = 6;
-  private long contentLength_;
+  private long contentLength_ = 0L;
   /**
    *
    *
@@ -538,23 +544,19 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       status_ = "";
-
       statusCode_ = 0;
-
       body_ = com.google.protobuf.ByteString.EMPTY;
-
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
       } else {
         headers_ = null;
         headersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       contentLength_ = 0L;
-
       return this;
     }
 
@@ -582,23 +584,43 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.HttpResponse buildPartial() {
       com.google.cloud.apigeeconnect.v1.HttpResponse result =
           new com.google.cloud.apigeeconnect.v1.HttpResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.status_ = status_;
-      result.statusCode_ = statusCode_;
-      result.body_ = body_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apigeeconnect.v1.HttpResponse result) {
       if (headersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           headers_ = java.util.Collections.unmodifiableList(headers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.headers_ = headers_;
       } else {
         result.headers_ = headersBuilder_.build();
       }
-      result.contentLength_ = contentLength_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.HttpResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.statusCode_ = statusCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.body_ = body_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.contentLength_ = contentLength_;
+      }
     }
 
     @java.lang.Override
@@ -648,10 +670,12 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeconnect.v1.HttpResponse.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getStatusCode() != 0) {
@@ -664,7 +688,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
         if (!other.headers_.isEmpty()) {
           if (headers_.isEmpty()) {
             headers_ = other.headers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureHeadersIsMutable();
             headers_.addAll(other.headers_);
@@ -677,7 +701,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
             headersBuilder_.dispose();
             headersBuilder_ = null;
             headers_ = other.headers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             headersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHeadersFieldBuilder()
@@ -719,25 +743,25 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 status_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 statusCode_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 body_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -756,7 +780,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 contentLength_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -839,8 +863,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -856,8 +880,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -878,8 +902,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -945,8 +969,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       status_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -962,8 +986,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -984,8 +1008,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       status_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1021,6 +1045,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setStatusCode(int value) {
 
       statusCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1036,7 +1061,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatusCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       statusCode_ = 0;
       onChanged();
       return this;
@@ -1074,8 +1099,8 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       body_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1091,7 +1116,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBody() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
@@ -1101,9 +1126,9 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         headers_ = new java.util.ArrayList<com.google.cloud.apigeeconnect.v1.Header>(headers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1318,7 +1343,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHeaders() {
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         headersBuilder_.clear();
@@ -1440,7 +1465,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.apigeeconnect.v1.Header,
                 com.google.cloud.apigeeconnect.v1.Header.Builder,
                 com.google.cloud.apigeeconnect.v1.HeaderOrBuilder>(
-                headers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                headers_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         headers_ = null;
       }
       return headersBuilder_;
@@ -1483,6 +1508,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setContentLength(long value) {
 
       contentLength_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1501,7 +1527,7 @@ public final class HttpResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContentLength() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       contentLength_ = 0L;
       onChanged();
       return this;

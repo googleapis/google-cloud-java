@@ -126,7 +126,7 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
   }
 
   public static final int COMPATIBILITY_FIELD_NUMBER = 2;
-  private int compatibility_;
+  private int compatibility_ = 0;
   /**
    *
    *
@@ -173,9 +173,8 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.Compatibility getCompatibility() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.data.v1beta.Compatibility result =
-        com.google.analytics.data.v1beta.Compatibility.valueOf(compatibility_);
+        com.google.analytics.data.v1beta.Compatibility.forNumber(compatibility_);
     return result == null ? com.google.analytics.data.v1beta.Compatibility.UNRECOGNIZED : result;
   }
 
@@ -405,14 +404,13 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dimensionMetadataBuilder_ == null) {
-        dimensionMetadata_ = null;
-      } else {
-        dimensionMetadataBuilder_.clear();
+      bitField0_ = 0;
+      dimensionMetadata_ = null;
+      if (dimensionMetadataBuilder_ != null) {
+        dimensionMetadataBuilder_.dispose();
+        dimensionMetadataBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       compatibility_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -440,23 +438,28 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1beta.DimensionCompatibility buildPartial() {
       com.google.analytics.data.v1beta.DimensionCompatibility result =
           new com.google.analytics.data.v1beta.DimensionCompatibility(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.DimensionCompatibility result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (dimensionMetadataBuilder_ == null) {
-          result.dimensionMetadata_ = dimensionMetadata_;
-        } else {
-          result.dimensionMetadata_ = dimensionMetadataBuilder_.build();
-        }
+        result.dimensionMetadata_ =
+            dimensionMetadataBuilder_ == null
+                ? dimensionMetadata_
+                : dimensionMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.compatibility_ = compatibility_;
         to_bitField0_ |= 0x00000002;
       }
-      result.compatibility_ = compatibility_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -630,11 +633,11 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         dimensionMetadata_ = value;
-        onChanged();
       } else {
         dimensionMetadataBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,11 +655,11 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
         com.google.analytics.data.v1beta.DimensionMetadata.Builder builderForValue) {
       if (dimensionMetadataBuilder_ == null) {
         dimensionMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         dimensionMetadataBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,18 +680,15 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
             && dimensionMetadata_ != null
             && dimensionMetadata_
                 != com.google.analytics.data.v1beta.DimensionMetadata.getDefaultInstance()) {
-          dimensionMetadata_ =
-              com.google.analytics.data.v1beta.DimensionMetadata.newBuilder(dimensionMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getDimensionMetadataBuilder().mergeFrom(value);
         } else {
           dimensionMetadata_ = value;
         }
-        onChanged();
       } else {
         dimensionMetadataBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,13 +703,13 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder clearDimensionMetadata() {
-      if (dimensionMetadataBuilder_ == null) {
-        dimensionMetadata_ = null;
-        onChanged();
-      } else {
-        dimensionMetadataBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      dimensionMetadata_ = null;
+      if (dimensionMetadataBuilder_ != null) {
+        dimensionMetadataBuilder_.dispose();
+        dimensionMetadataBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -825,8 +825,8 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setCompatibilityValue(int value) {
-      bitField0_ |= 0x00000002;
       compatibility_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -844,9 +844,8 @@ public final class DimensionCompatibility extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.analytics.data.v1beta.Compatibility getCompatibility() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1beta.Compatibility result =
-          com.google.analytics.data.v1beta.Compatibility.valueOf(compatibility_);
+          com.google.analytics.data.v1beta.Compatibility.forNumber(compatibility_);
       return result == null ? com.google.analytics.data.v1beta.Compatibility.UNRECOGNIZED : result;
     }
     /**

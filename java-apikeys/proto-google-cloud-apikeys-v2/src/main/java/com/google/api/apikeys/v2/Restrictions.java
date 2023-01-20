@@ -328,6 +328,8 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_TARGETS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.apikeys.v2.ApiTarget> apiTargets_;
   /**
    *
@@ -680,6 +682,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (browserKeyRestrictionsBuilder_ != null) {
         browserKeyRestrictionsBuilder_.clear();
       }
@@ -698,7 +701,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         apiTargets_ = null;
         apiTargetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       clientRestrictionsCase_ = 0;
       clientRestrictions_ = null;
       return this;
@@ -728,47 +731,46 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.apikeys.v2.Restrictions buildPartial() {
       com.google.api.apikeys.v2.Restrictions result =
           new com.google.api.apikeys.v2.Restrictions(this);
-      int from_bitField0_ = bitField0_;
-      if (clientRestrictionsCase_ == 1) {
-        if (browserKeyRestrictionsBuilder_ == null) {
-          result.clientRestrictions_ = clientRestrictions_;
-        } else {
-          result.clientRestrictions_ = browserKeyRestrictionsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (clientRestrictionsCase_ == 2) {
-        if (serverKeyRestrictionsBuilder_ == null) {
-          result.clientRestrictions_ = clientRestrictions_;
-        } else {
-          result.clientRestrictions_ = serverKeyRestrictionsBuilder_.build();
-        }
-      }
-      if (clientRestrictionsCase_ == 3) {
-        if (androidKeyRestrictionsBuilder_ == null) {
-          result.clientRestrictions_ = clientRestrictions_;
-        } else {
-          result.clientRestrictions_ = androidKeyRestrictionsBuilder_.build();
-        }
-      }
-      if (clientRestrictionsCase_ == 4) {
-        if (iosKeyRestrictionsBuilder_ == null) {
-          result.clientRestrictions_ = clientRestrictions_;
-        } else {
-          result.clientRestrictions_ = iosKeyRestrictionsBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.apikeys.v2.Restrictions result) {
       if (apiTargetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           apiTargets_ = java.util.Collections.unmodifiableList(apiTargets_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.apiTargets_ = apiTargets_;
       } else {
         result.apiTargets_ = apiTargetsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.Restrictions result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.api.apikeys.v2.Restrictions result) {
       result.clientRestrictionsCase_ = clientRestrictionsCase_;
-      onBuilt();
-      return result;
+      result.clientRestrictions_ = this.clientRestrictions_;
+      if (clientRestrictionsCase_ == 1 && browserKeyRestrictionsBuilder_ != null) {
+        result.clientRestrictions_ = browserKeyRestrictionsBuilder_.build();
+      }
+      if (clientRestrictionsCase_ == 2 && serverKeyRestrictionsBuilder_ != null) {
+        result.clientRestrictions_ = serverKeyRestrictionsBuilder_.build();
+      }
+      if (clientRestrictionsCase_ == 3 && androidKeyRestrictionsBuilder_ != null) {
+        result.clientRestrictions_ = androidKeyRestrictionsBuilder_.build();
+      }
+      if (clientRestrictionsCase_ == 4 && iosKeyRestrictionsBuilder_ != null) {
+        result.clientRestrictions_ = iosKeyRestrictionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -820,7 +822,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         if (!other.apiTargets_.isEmpty()) {
           if (apiTargets_.isEmpty()) {
             apiTargets_ = other.apiTargets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureApiTargetsIsMutable();
             apiTargets_.addAll(other.apiTargets_);
@@ -833,7 +835,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             apiTargetsBuilder_.dispose();
             apiTargetsBuilder_ = null;
             apiTargets_ = other.apiTargets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             apiTargetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getApiTargetsFieldBuilder()
@@ -1181,7 +1183,6 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       clientRestrictionsCase_ = 1;
       onChanged();
-      ;
       return browserKeyRestrictionsBuilder_;
     }
 
@@ -1396,7 +1397,6 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       clientRestrictionsCase_ = 2;
       onChanged();
-      ;
       return serverKeyRestrictionsBuilder_;
     }
 
@@ -1612,7 +1612,6 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       clientRestrictionsCase_ = 3;
       onChanged();
-      ;
       return androidKeyRestrictionsBuilder_;
     }
 
@@ -1823,7 +1822,6 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       clientRestrictionsCase_ = 4;
       onChanged();
-      ;
       return iosKeyRestrictionsBuilder_;
     }
 
@@ -1831,9 +1829,9 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureApiTargetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         apiTargets_ = new java.util.ArrayList<com.google.api.apikeys.v2.ApiTarget>(apiTargets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2081,7 +2079,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public Builder clearApiTargets() {
       if (apiTargetsBuilder_ == null) {
         apiTargets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         apiTargetsBuilder_.clear();
@@ -2223,7 +2221,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.apikeys.v2.ApiTarget,
                 com.google.api.apikeys.v2.ApiTarget.Builder,
                 com.google.api.apikeys.v2.ApiTargetOrBuilder>(
-                apiTargets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                apiTargets_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         apiTargets_ = null;
       }
       return apiTargetsBuilder_;

@@ -283,7 +283,9 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -580,8 +582,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       target_ = "";
-
       projectOrWorkloadResourceCase_ = 0;
       projectOrWorkloadResource_ = null;
       return this;
@@ -613,16 +615,26 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest buildPartial() {
       com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest result =
           new com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest(this);
-      if (projectOrWorkloadResourceCase_ == 1) {
-        result.projectOrWorkloadResource_ = projectOrWorkloadResource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (projectOrWorkloadResourceCase_ == 3) {
-        result.projectOrWorkloadResource_ = projectOrWorkloadResource_;
-      }
-      result.target_ = target_;
-      result.projectOrWorkloadResourceCase_ = projectOrWorkloadResourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.target_ = target_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest result) {
+      result.projectOrWorkloadResourceCase_ = projectOrWorkloadResourceCase_;
+      result.projectOrWorkloadResource_ = this.projectOrWorkloadResource_;
     }
 
     @java.lang.Override
@@ -676,6 +688,7 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
               .getDefaultInstance()) return this;
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getProjectOrWorkloadResourceCase()) {
@@ -734,7 +747,7 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
             case 18:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -774,6 +787,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1173,8 +1188,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1195,8 +1210,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1222,8 +1237,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

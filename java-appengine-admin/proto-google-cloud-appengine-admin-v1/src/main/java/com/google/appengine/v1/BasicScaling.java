@@ -114,11 +114,11 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder() {
-    return getIdleTimeout();
+    return idleTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleTimeout_;
   }
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 2;
-  private int maxInstances_;
+  private int maxInstances_ = 0;
   /**
    *
    *
@@ -347,14 +347,13 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idleTimeoutBuilder_ == null) {
-        idleTimeout_ = null;
-      } else {
-        idleTimeout_ = null;
+      bitField0_ = 0;
+      idleTimeout_ = null;
+      if (idleTimeoutBuilder_ != null) {
+        idleTimeoutBuilder_.dispose();
         idleTimeoutBuilder_ = null;
       }
       maxInstances_ = 0;
-
       return this;
     }
 
@@ -381,14 +380,22 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.BasicScaling buildPartial() {
       com.google.appengine.v1.BasicScaling result = new com.google.appengine.v1.BasicScaling(this);
-      if (idleTimeoutBuilder_ == null) {
-        result.idleTimeout_ = idleTimeout_;
-      } else {
-        result.idleTimeout_ = idleTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.maxInstances_ = maxInstances_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.BasicScaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.idleTimeout_ =
+            idleTimeoutBuilder_ == null ? idleTimeout_ : idleTimeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxInstances_ = maxInstances_;
+      }
     }
 
     @java.lang.Override
@@ -471,13 +478,13 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIdleTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -496,6 +503,8 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration idleTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -516,7 +525,7 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the idleTimeout field is set.
      */
     public boolean hasIdleTimeout() {
-      return idleTimeoutBuilder_ != null || idleTimeout_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -555,11 +564,11 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         idleTimeout_ = value;
-        onChanged();
       } else {
         idleTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,11 +584,11 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
     public Builder setIdleTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleTimeoutBuilder_ == null) {
         idleTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         idleTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -594,17 +603,18 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIdleTimeout(com.google.protobuf.Duration value) {
       if (idleTimeoutBuilder_ == null) {
-        if (idleTimeout_ != null) {
-          idleTimeout_ =
-              com.google.protobuf.Duration.newBuilder(idleTimeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && idleTimeout_ != null
+            && idleTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getIdleTimeoutBuilder().mergeFrom(value);
         } else {
           idleTimeout_ = value;
         }
-        onChanged();
       } else {
         idleTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -618,14 +628,13 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration idle_timeout = 1;</code>
      */
     public Builder clearIdleTimeout() {
-      if (idleTimeoutBuilder_ == null) {
-        idleTimeout_ = null;
-        onChanged();
-      } else {
-        idleTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      idleTimeout_ = null;
+      if (idleTimeoutBuilder_ != null) {
+        idleTimeoutBuilder_.dispose();
         idleTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -639,7 +648,7 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration idle_timeout = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getIdleTimeoutBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdleTimeoutFieldBuilder().getBuilder();
     }
@@ -720,6 +729,7 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxInstances(int value) {
 
       maxInstances_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -735,7 +745,7 @@ public final class BasicScaling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxInstances_ = 0;
       onChanged();
       return this;

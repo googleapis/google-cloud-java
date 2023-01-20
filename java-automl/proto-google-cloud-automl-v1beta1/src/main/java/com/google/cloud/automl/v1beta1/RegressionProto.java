@@ -148,7 +148,7 @@ public final class RegressionProto {
     }
 
     public static final int ROOT_MEAN_SQUARED_ERROR_FIELD_NUMBER = 1;
-    private float rootMeanSquaredError_;
+    private float rootMeanSquaredError_ = 0F;
     /**
      *
      *
@@ -166,7 +166,7 @@ public final class RegressionProto {
     }
 
     public static final int MEAN_ABSOLUTE_ERROR_FIELD_NUMBER = 2;
-    private float meanAbsoluteError_;
+    private float meanAbsoluteError_ = 0F;
     /**
      *
      *
@@ -184,7 +184,7 @@ public final class RegressionProto {
     }
 
     public static final int MEAN_ABSOLUTE_PERCENTAGE_ERROR_FIELD_NUMBER = 3;
-    private float meanAbsolutePercentageError_;
+    private float meanAbsolutePercentageError_ = 0F;
     /**
      *
      *
@@ -203,7 +203,7 @@ public final class RegressionProto {
     }
 
     public static final int R_SQUARED_FIELD_NUMBER = 4;
-    private float rSquared_;
+    private float rSquared_ = 0F;
     /**
      *
      *
@@ -221,7 +221,7 @@ public final class RegressionProto {
     }
 
     public static final int ROOT_MEAN_SQUARED_LOG_ERROR_FIELD_NUMBER = 5;
-    private float rootMeanSquaredLogError_;
+    private float rootMeanSquaredLogError_ = 0F;
     /**
      *
      *
@@ -489,16 +489,12 @@ public final class RegressionProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rootMeanSquaredError_ = 0F;
-
         meanAbsoluteError_ = 0F;
-
         meanAbsolutePercentageError_ = 0F;
-
         rSquared_ = 0F;
-
         rootMeanSquaredLogError_ = 0F;
-
         return this;
       }
 
@@ -530,13 +526,31 @@ public final class RegressionProto {
           buildPartial() {
         com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics result =
             new com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics(this);
-        result.rootMeanSquaredError_ = rootMeanSquaredError_;
-        result.meanAbsoluteError_ = meanAbsoluteError_;
-        result.meanAbsolutePercentageError_ = meanAbsolutePercentageError_;
-        result.rSquared_ = rSquared_;
-        result.rootMeanSquaredLogError_ = rootMeanSquaredLogError_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rootMeanSquaredError_ = rootMeanSquaredError_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.meanAbsoluteError_ = meanAbsoluteError_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.meanAbsolutePercentageError_ = meanAbsolutePercentageError_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.rSquared_ = rSquared_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rootMeanSquaredLogError_ = rootMeanSquaredLogError_;
+        }
       }
 
       @java.lang.Override
@@ -636,31 +650,31 @@ public final class RegressionProto {
               case 13:
                 {
                   rootMeanSquaredError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   meanAbsoluteError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   meanAbsolutePercentageError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 37:
                 {
                   rSquared_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 37
               case 45:
                 {
                   rootMeanSquaredLogError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 45
               default:
@@ -679,6 +693,8 @@ public final class RegressionProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float rootMeanSquaredError_;
       /**
@@ -711,6 +727,7 @@ public final class RegressionProto {
       public Builder setRootMeanSquaredError(float value) {
 
         rootMeanSquaredError_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,7 +743,7 @@ public final class RegressionProto {
        * @return This builder for chaining.
        */
       public Builder clearRootMeanSquaredError() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         rootMeanSquaredError_ = 0F;
         onChanged();
         return this;
@@ -763,6 +780,7 @@ public final class RegressionProto {
       public Builder setMeanAbsoluteError(float value) {
 
         meanAbsoluteError_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -778,7 +796,7 @@ public final class RegressionProto {
        * @return This builder for chaining.
        */
       public Builder clearMeanAbsoluteError() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         meanAbsoluteError_ = 0F;
         onChanged();
         return this;
@@ -817,6 +835,7 @@ public final class RegressionProto {
       public Builder setMeanAbsolutePercentageError(float value) {
 
         meanAbsolutePercentageError_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -833,7 +852,7 @@ public final class RegressionProto {
        * @return This builder for chaining.
        */
       public Builder clearMeanAbsolutePercentageError() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         meanAbsolutePercentageError_ = 0F;
         onChanged();
         return this;
@@ -870,6 +889,7 @@ public final class RegressionProto {
       public Builder setRSquared(float value) {
 
         rSquared_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -885,7 +905,7 @@ public final class RegressionProto {
        * @return This builder for chaining.
        */
       public Builder clearRSquared() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         rSquared_ = 0F;
         onChanged();
         return this;
@@ -922,6 +942,7 @@ public final class RegressionProto {
       public Builder setRootMeanSquaredLogError(float value) {
 
         rootMeanSquaredLogError_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -937,7 +958,7 @@ public final class RegressionProto {
        * @return This builder for chaining.
        */
       public Builder clearRootMeanSquaredLogError() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         rootMeanSquaredLogError_ = 0F;
         onChanged();
         return this;

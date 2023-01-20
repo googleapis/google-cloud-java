@@ -510,6 +510,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imageBuilder_ != null) {
         imageBuilder_.clear();
       }
@@ -548,30 +549,30 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1.ExamplePayload buildPartial() {
       com.google.cloud.automl.v1.ExamplePayload result =
           new com.google.cloud.automl.v1.ExamplePayload(this);
-      if (payloadCase_ == 1) {
-        if (imageBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = imageBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (payloadCase_ == 2) {
-        if (textSnippetBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = textSnippetBuilder_.build();
-        }
-      }
-      if (payloadCase_ == 4) {
-        if (documentBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = documentBuilder_.build();
-        }
-      }
-      result.payloadCase_ = payloadCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.ExamplePayload result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1.ExamplePayload result) {
+      result.payloadCase_ = payloadCase_;
+      result.payload_ = this.payload_;
+      if (payloadCase_ == 1 && imageBuilder_ != null) {
+        result.payload_ = imageBuilder_.build();
+      }
+      if (payloadCase_ == 2 && textSnippetBuilder_ != null) {
+        result.payload_ = textSnippetBuilder_.build();
+      }
+      if (payloadCase_ == 4 && documentBuilder_ != null) {
+        result.payload_ = documentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -714,6 +715,8 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.Image,
@@ -918,7 +921,6 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 1;
       onChanged();
-      ;
       return imageBuilder_;
     }
 
@@ -1127,7 +1129,6 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 2;
       onChanged();
-      ;
       return textSnippetBuilder_;
     }
 
@@ -1334,7 +1335,6 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 4;
       onChanged();
-      ;
       return documentBuilder_;
     }
 

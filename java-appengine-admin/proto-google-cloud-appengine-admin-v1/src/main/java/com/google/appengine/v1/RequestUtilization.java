@@ -67,7 +67,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_REQUEST_COUNT_PER_SECOND_FIELD_NUMBER = 1;
-  private int targetRequestCountPerSecond_;
+  private int targetRequestCountPerSecond_ = 0;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_CONCURRENT_REQUESTS_FIELD_NUMBER = 2;
-  private int targetConcurrentRequests_;
+  private int targetConcurrentRequests_ = 0;
   /**
    *
    *
@@ -310,10 +310,9 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetRequestCountPerSecond_ = 0;
-
       targetConcurrentRequests_ = 0;
-
       return this;
     }
 
@@ -341,10 +340,21 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.RequestUtilization buildPartial() {
       com.google.appengine.v1.RequestUtilization result =
           new com.google.appengine.v1.RequestUtilization(this);
-      result.targetRequestCountPerSecond_ = targetRequestCountPerSecond_;
-      result.targetConcurrentRequests_ = targetConcurrentRequests_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.RequestUtilization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetRequestCountPerSecond_ = targetRequestCountPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetConcurrentRequests_ = targetConcurrentRequests_;
+      }
     }
 
     @java.lang.Override
@@ -427,13 +437,13 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 targetRequestCountPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 targetConcurrentRequests_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -452,6 +462,8 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int targetRequestCountPerSecond_;
     /**
@@ -484,6 +496,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetRequestCountPerSecond(int value) {
 
       targetRequestCountPerSecond_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -499,7 +512,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetRequestCountPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetRequestCountPerSecond_ = 0;
       onChanged();
       return this;
@@ -536,6 +549,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetConcurrentRequests(int value) {
 
       targetConcurrentRequests_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -551,7 +565,7 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetConcurrentRequests() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetConcurrentRequests_ = 0;
       onChanged();
       return this;

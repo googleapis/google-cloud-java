@@ -71,7 +71,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIMENSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dimension_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dimension_ = "";
   /**
    *
    *
@@ -260,7 +264,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.DateRangeOrBuilder getDateRangeOrBuilder() {
-    return getDateRange();
+    return dateRange_ == null
+        ? com.google.analytics.data.v1beta.DateRange.getDefaultInstance()
+        : dateRange_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -484,14 +490,12 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       dimension_ = "";
-
-      if (dateRangeBuilder_ == null) {
-        dateRange_ = null;
-      } else {
-        dateRange_ = null;
+      dateRange_ = null;
+      if (dateRangeBuilder_ != null) {
+        dateRangeBuilder_.dispose();
         dateRangeBuilder_ = null;
       }
       return this;
@@ -521,15 +525,24 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.Cohort buildPartial() {
       com.google.analytics.data.v1beta.Cohort result =
           new com.google.analytics.data.v1beta.Cohort(this);
-      result.name_ = name_;
-      result.dimension_ = dimension_;
-      if (dateRangeBuilder_ == null) {
-        result.dateRange_ = dateRange_;
-      } else {
-        result.dateRange_ = dateRangeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.Cohort result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dimension_ = dimension_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dateRange_ = dateRangeBuilder_ == null ? dateRange_ : dateRangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -579,10 +592,12 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.data.v1beta.Cohort.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDimension().isEmpty()) {
         dimension_ = other.dimension_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDateRange()) {
@@ -617,19 +632,19 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dimension_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDateRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -648,6 +663,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -719,8 +736,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +756,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -764,8 +781,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,8 +851,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dimension_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +869,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDimension() {
-
       dimension_ = getDefaultInstance().getDimension();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -875,8 +892,8 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dimension_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -912,7 +929,7 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dateRange field is set.
      */
     public boolean hasDateRange() {
-      return dateRangeBuilder_ != null || dateRange_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -975,11 +992,11 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dateRange_ = value;
-        onChanged();
       } else {
         dateRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,11 +1025,11 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.data.v1beta.DateRange.Builder builderForValue) {
       if (dateRangeBuilder_ == null) {
         dateRange_ = builderForValue.build();
-        onChanged();
       } else {
         dateRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1039,19 +1056,18 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDateRange(com.google.analytics.data.v1beta.DateRange value) {
       if (dateRangeBuilder_ == null) {
-        if (dateRange_ != null) {
-          dateRange_ =
-              com.google.analytics.data.v1beta.DateRange.newBuilder(dateRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && dateRange_ != null
+            && dateRange_ != com.google.analytics.data.v1beta.DateRange.getDefaultInstance()) {
+          getDateRangeBuilder().mergeFrom(value);
         } else {
           dateRange_ = value;
         }
-        onChanged();
       } else {
         dateRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1077,14 +1093,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1beta.DateRange date_range = 3;</code>
      */
     public Builder clearDateRange() {
-      if (dateRangeBuilder_ == null) {
-        dateRange_ = null;
-        onChanged();
-      } else {
-        dateRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dateRange_ = null;
+      if (dateRangeBuilder_ != null) {
+        dateRangeBuilder_.dispose();
         dateRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1110,7 +1125,7 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1beta.DateRange date_range = 3;</code>
      */
     public com.google.analytics.data.v1beta.DateRange.Builder getDateRangeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDateRangeFieldBuilder().getBuilder();
     }

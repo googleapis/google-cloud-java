@@ -68,6 +68,8 @@ public final class FunnelFilterExpressionList extends com.google.protobuf.Genera
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.FunnelFilterExpression> expressions_;
   /**
    *
@@ -338,6 +340,7 @@ public final class FunnelFilterExpressionList extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (expressionsBuilder_ == null) {
         expressions_ = java.util.Collections.emptyList();
       } else {
@@ -373,7 +376,16 @@ public final class FunnelFilterExpressionList extends com.google.protobuf.Genera
     public com.google.analytics.data.v1alpha.FunnelFilterExpressionList buildPartial() {
       com.google.analytics.data.v1alpha.FunnelFilterExpressionList result =
           new com.google.analytics.data.v1alpha.FunnelFilterExpressionList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.FunnelFilterExpressionList result) {
       if (expressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           expressions_ = java.util.Collections.unmodifiableList(expressions_);
@@ -383,8 +395,11 @@ public final class FunnelFilterExpressionList extends com.google.protobuf.Genera
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.FunnelFilterExpressionList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

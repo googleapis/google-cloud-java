@@ -822,6 +822,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -857,23 +858,28 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.BatchPredictInputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.BatchPredictInputConfig result =
           new com.google.cloud.automl.v1beta1.BatchPredictInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (bigquerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigquerySourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.BatchPredictInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.automl.v1beta1.BatchPredictInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 2 && bigquerySourceBuilder_ != null) {
+        result.source_ = bigquerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1006,6 +1012,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.GcsSource,
@@ -1212,7 +1220,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1422,7 +1429,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return bigquerySourceBuilder_;
     }
 

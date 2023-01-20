@@ -70,7 +70,9 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DIMENSION_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dimensionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dimensionName_ = "";
   /**
    *
    *
@@ -323,8 +325,8 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dimensionName_ = "";
-
       return this;
     }
 
@@ -352,9 +354,18 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.admin.v1alpha.AccessDimension buildPartial() {
       com.google.analytics.admin.v1alpha.AccessDimension result =
           new com.google.analytics.admin.v1alpha.AccessDimension(this);
-      result.dimensionName_ = dimensionName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessDimension result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dimensionName_ = dimensionName_;
+      }
     }
 
     @java.lang.Override
@@ -405,6 +416,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getDimensionName().isEmpty()) {
         dimensionName_ = other.dimensionName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -436,7 +448,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 dimensionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +467,8 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dimensionName_ = "";
     /**
@@ -526,8 +540,8 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       dimensionName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -546,8 +560,8 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDimensionName() {
-
       dimensionName_ = getDefaultInstance().getDimensionName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -571,8 +585,8 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dimensionName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

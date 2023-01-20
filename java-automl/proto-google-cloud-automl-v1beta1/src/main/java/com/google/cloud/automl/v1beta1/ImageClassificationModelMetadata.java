@@ -71,7 +71,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int BASE_MODEL_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object baseModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseModelId_ = "";
   /**
    *
    *
@@ -128,7 +130,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int TRAIN_BUDGET_FIELD_NUMBER = 2;
-  private long trainBudget_;
+  private long trainBudget_ = 0L;
   /**
    *
    *
@@ -147,7 +149,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int TRAIN_COST_FIELD_NUMBER = 3;
-  private long trainCost_;
+  private long trainCost_ = 0L;
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int STOP_REASON_FIELD_NUMBER = 5;
-  private volatile java.lang.Object stopReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stopReason_ = "";
   /**
    *
    *
@@ -218,7 +222,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object modelType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelType_ = "";
   /**
    *
    *
@@ -331,7 +337,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int NODE_QPS_FIELD_NUMBER = 13;
-  private double nodeQps_;
+  private double nodeQps_ = 0D;
   /**
    *
    *
@@ -350,7 +356,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 14;
-  private long nodeCount_;
+  private long nodeCount_ = 0L;
   /**
    *
    *
@@ -625,20 +631,14 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       baseModelId_ = "";
-
       trainBudget_ = 0L;
-
       trainCost_ = 0L;
-
       stopReason_ = "";
-
       modelType_ = "";
-
       nodeQps_ = 0D;
-
       nodeCount_ = 0L;
-
       return this;
     }
 
@@ -667,15 +667,37 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata result =
           new com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata(this);
-      result.baseModelId_ = baseModelId_;
-      result.trainBudget_ = trainBudget_;
-      result.trainCost_ = trainCost_;
-      result.stopReason_ = stopReason_;
-      result.modelType_ = modelType_;
-      result.nodeQps_ = nodeQps_;
-      result.nodeCount_ = nodeCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.baseModelId_ = baseModelId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trainBudget_ = trainBudget_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trainCost_ = trainCost_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.stopReason_ = stopReason_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nodeQps_ = nodeQps_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
     }
 
     @java.lang.Override
@@ -728,6 +750,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
         return this;
       if (!other.getBaseModelId().isEmpty()) {
         baseModelId_ = other.baseModelId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTrainBudget() != 0L) {
@@ -738,10 +761,12 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       }
       if (!other.getStopReason().isEmpty()) {
         stopReason_ = other.stopReason_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getModelType().isEmpty()) {
         modelType_ = other.modelType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getNodeQps() != 0D) {
@@ -779,43 +804,43 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
             case 10:
               {
                 baseModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 trainBudget_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 trainCost_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 42:
               {
                 stopReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 58:
               {
                 modelType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 105:
               {
                 nodeQps_ = input.readDouble();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 105
             case 112:
               {
                 nodeCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 112
             default:
@@ -834,6 +859,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object baseModelId_ = "";
     /**
@@ -908,8 +935,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -929,8 +956,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearBaseModelId() {
-
       baseModelId_ = getDefaultInstance().getBaseModelId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -955,8 +982,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -994,6 +1021,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     public Builder setTrainBudget(long value) {
 
       trainBudget_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1010,7 +1038,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearTrainBudget() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       trainBudget_ = 0L;
       onChanged();
       return this;
@@ -1051,6 +1079,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     public Builder setTrainCost(long value) {
 
       trainCost_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1068,7 +1097,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearTrainCost() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       trainCost_ = 0L;
       onChanged();
       return this;
@@ -1138,8 +1167,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       stopReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1156,8 +1185,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearStopReason() {
-
       stopReason_ = getDefaultInstance().getStopReason();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1179,8 +1208,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stopReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1342,8 +1371,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1391,8 +1420,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
       modelType_ = getDefaultInstance().getModelType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1445,8 +1474,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1484,6 +1513,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     public Builder setNodeQps(double value) {
 
       nodeQps_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1500,7 +1530,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearNodeQps() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       nodeQps_ = 0D;
       onChanged();
       return this;
@@ -1541,6 +1571,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     public Builder setNodeCount(long value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1558,7 +1589,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       nodeCount_ = 0L;
       onChanged();
       return this;

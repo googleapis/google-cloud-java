@@ -110,7 +110,9 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.CustomMetricOrBuilder getCustomMetricOrBuilder() {
-    return getCustomMetric();
+    return customMetric_ == null
+        ? com.google.analytics.admin.v1beta.CustomMetric.getDefaultInstance()
+        : customMetric_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (customMetricBuilder_ == null) {
-        customMetric_ = null;
-      } else {
-        customMetric_ = null;
+      bitField0_ = 0;
+      customMetric_ = null;
+      if (customMetricBuilder_ != null) {
+        customMetricBuilder_.dispose();
         customMetricBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +425,22 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
     public com.google.analytics.admin.v1beta.UpdateCustomMetricRequest buildPartial() {
       com.google.analytics.admin.v1beta.UpdateCustomMetricRequest result =
           new com.google.analytics.admin.v1beta.UpdateCustomMetricRequest(this);
-      if (customMetricBuilder_ == null) {
-        result.customMetric_ = customMetric_;
-      } else {
-        result.customMetric_ = customMetricBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.UpdateCustomMetricRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.customMetric_ =
+            customMetricBuilder_ == null ? customMetric_ : customMetricBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +524,13 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getCustomMetricFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +550,8 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.analytics.admin.v1beta.CustomMetric customMetric_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1beta.CustomMetric,
@@ -563,7 +570,7 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * @return Whether the customMetric field is set.
      */
     public boolean hasCustomMetric() {
-      return customMetricBuilder_ != null || customMetric_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,11 +607,11 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         customMetric_ = value;
-        onChanged();
       } else {
         customMetricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +627,11 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
         com.google.analytics.admin.v1beta.CustomMetric.Builder builderForValue) {
       if (customMetricBuilder_ == null) {
         customMetric_ = builderForValue.build();
-        onChanged();
       } else {
         customMetricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,19 +645,19 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      */
     public Builder mergeCustomMetric(com.google.analytics.admin.v1beta.CustomMetric value) {
       if (customMetricBuilder_ == null) {
-        if (customMetric_ != null) {
-          customMetric_ =
-              com.google.analytics.admin.v1beta.CustomMetric.newBuilder(customMetric_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && customMetric_ != null
+            && customMetric_
+                != com.google.analytics.admin.v1beta.CustomMetric.getDefaultInstance()) {
+          getCustomMetricBuilder().mergeFrom(value);
         } else {
           customMetric_ = value;
         }
-        onChanged();
       } else {
         customMetricBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +670,13 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * <code>.google.analytics.admin.v1beta.CustomMetric custom_metric = 1;</code>
      */
     public Builder clearCustomMetric() {
-      if (customMetricBuilder_ == null) {
-        customMetric_ = null;
-        onChanged();
-      } else {
-        customMetric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      customMetric_ = null;
+      if (customMetricBuilder_ != null) {
+        customMetricBuilder_.dispose();
         customMetricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -683,7 +689,7 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * <code>.google.analytics.admin.v1beta.CustomMetric custom_metric = 1;</code>
      */
     public com.google.analytics.admin.v1beta.CustomMetric.Builder getCustomMetricBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCustomMetricFieldBuilder().getBuilder();
     }
@@ -752,7 +758,7 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -795,11 +801,11 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,11 +823,11 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,17 +844,18 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -864,14 +871,13 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -887,7 +893,7 @@ public final class UpdateCustomMetricRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

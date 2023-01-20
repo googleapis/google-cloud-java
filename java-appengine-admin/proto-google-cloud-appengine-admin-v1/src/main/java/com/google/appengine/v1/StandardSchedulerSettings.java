@@ -66,7 +66,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
   }
 
   public static final int TARGET_CPU_UTILIZATION_FIELD_NUMBER = 1;
-  private double targetCpuUtilization_;
+  private double targetCpuUtilization_ = 0D;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
   }
 
   public static final int TARGET_THROUGHPUT_UTILIZATION_FIELD_NUMBER = 2;
-  private double targetThroughputUtilization_;
+  private double targetThroughputUtilization_ = 0D;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
   }
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 3;
-  private int minInstances_;
+  private int minInstances_ = 0;
   /**
    *
    *
@@ -121,7 +121,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
   }
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 4;
-  private int maxInstances_;
+  private int maxInstances_ = 0;
   /**
    *
    *
@@ -372,14 +372,11 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetCpuUtilization_ = 0D;
-
       targetThroughputUtilization_ = 0D;
-
       minInstances_ = 0;
-
       maxInstances_ = 0;
-
       return this;
     }
 
@@ -407,12 +404,27 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public com.google.appengine.v1.StandardSchedulerSettings buildPartial() {
       com.google.appengine.v1.StandardSchedulerSettings result =
           new com.google.appengine.v1.StandardSchedulerSettings(this);
-      result.targetCpuUtilization_ = targetCpuUtilization_;
-      result.targetThroughputUtilization_ = targetThroughputUtilization_;
-      result.minInstances_ = minInstances_;
-      result.maxInstances_ = maxInstances_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.StandardSchedulerSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetCpuUtilization_ = targetCpuUtilization_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetThroughputUtilization_ = targetThroughputUtilization_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minInstances_ = minInstances_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxInstances_ = maxInstances_;
+      }
     }
 
     @java.lang.Override
@@ -502,25 +514,25 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
             case 9:
               {
                 targetCpuUtilization_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 targetThroughputUtilization_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 24:
               {
                 minInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 maxInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -539,6 +551,8 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double targetCpuUtilization_;
     /**
@@ -571,6 +585,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public Builder setTargetCpuUtilization(double value) {
 
       targetCpuUtilization_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -586,7 +601,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTargetCpuUtilization() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetCpuUtilization_ = 0D;
       onChanged();
       return this;
@@ -623,6 +638,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public Builder setTargetThroughputUtilization(double value) {
 
       targetThroughputUtilization_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -638,7 +654,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTargetThroughputUtilization() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetThroughputUtilization_ = 0D;
       onChanged();
       return this;
@@ -677,6 +693,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public Builder setMinInstances(int value) {
 
       minInstances_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -693,7 +710,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMinInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minInstances_ = 0;
       onChanged();
       return this;
@@ -732,6 +749,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public Builder setMaxInstances(int value) {
 
       maxInstances_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -748,7 +766,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxInstances_ = 0;
       onChanged();
       return this;

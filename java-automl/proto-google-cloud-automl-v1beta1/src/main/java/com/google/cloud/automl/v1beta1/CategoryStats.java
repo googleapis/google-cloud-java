@@ -160,7 +160,9 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -209,7 +211,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COUNT_FIELD_NUMBER = 2;
-    private long count_;
+    private long count_ = 0L;
     /**
      *
      *
@@ -437,10 +439,9 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = "";
-
         count_ = 0L;
-
         return this;
       }
 
@@ -470,10 +471,22 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats buildPartial() {
         com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats result =
             new com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats(this);
-        result.value_ = value_;
-        result.count_ = count_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.count_ = count_;
+        }
       }
 
       @java.lang.Override
@@ -529,6 +542,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getCount() != 0L) {
@@ -563,13 +577,13 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   count_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -588,6 +602,8 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object value_ = "";
       /**
@@ -650,8 +666,8 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -667,8 +683,8 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -689,8 +705,8 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,6 +742,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       public Builder setCount(long value) {
 
         count_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -741,7 +758,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         count_ = 0L;
         onChanged();
         return this;
@@ -815,6 +832,8 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOP_CATEGORY_STATS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats>
       topCategoryStats_;
   /**
@@ -1102,6 +1121,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (topCategoryStatsBuilder_ == null) {
         topCategoryStats_ = java.util.Collections.emptyList();
       } else {
@@ -1136,7 +1156,15 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.CategoryStats buildPartial() {
       com.google.cloud.automl.v1beta1.CategoryStats result =
           new com.google.cloud.automl.v1beta1.CategoryStats(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.automl.v1beta1.CategoryStats result) {
       if (topCategoryStatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           topCategoryStats_ = java.util.Collections.unmodifiableList(topCategoryStats_);
@@ -1146,8 +1174,10 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.topCategoryStats_ = topCategoryStatsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.CategoryStats result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

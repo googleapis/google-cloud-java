@@ -68,7 +68,7 @@ public final class ImageClassificationModelDeploymentMetadata
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 1;
-  private long nodeCount_;
+  private long nodeCount_ = 0L;
   /**
    *
    *
@@ -289,8 +289,8 @@ public final class ImageClassificationModelDeploymentMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodeCount_ = 0L;
-
       return this;
     }
 
@@ -320,9 +320,19 @@ public final class ImageClassificationModelDeploymentMetadata
     public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata buildPartial() {
       com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata result =
           new com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata(this);
-      result.nodeCount_ = nodeCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
     }
 
     @java.lang.Override
@@ -406,7 +416,7 @@ public final class ImageClassificationModelDeploymentMetadata
             case 8:
               {
                 nodeCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -425,6 +435,8 @@ public final class ImageClassificationModelDeploymentMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long nodeCount_;
     /**
@@ -465,6 +477,7 @@ public final class ImageClassificationModelDeploymentMetadata
     public Builder setNodeCount(long value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -484,7 +497,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       nodeCount_ = 0L;
       onChanged();
       return this;

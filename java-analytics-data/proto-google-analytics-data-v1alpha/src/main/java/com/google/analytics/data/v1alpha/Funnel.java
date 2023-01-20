@@ -74,7 +74,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_OPEN_FUNNEL_FIELD_NUMBER = 1;
-  private boolean isOpenFunnel_;
+  private boolean isOpenFunnel_ = false;
   /**
    *
    *
@@ -94,6 +94,8 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STEPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.FunnelStep> steps_;
   /**
    *
@@ -375,15 +377,15 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isOpenFunnel_ = false;
-
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
       } else {
         steps_ = null;
         stepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -411,19 +413,31 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.Funnel buildPartial() {
       com.google.analytics.data.v1alpha.Funnel result =
           new com.google.analytics.data.v1alpha.Funnel(this);
-      int from_bitField0_ = bitField0_;
-      result.isOpenFunnel_ = isOpenFunnel_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.data.v1alpha.Funnel result) {
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.Funnel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isOpenFunnel_ = isOpenFunnel_;
+      }
     }
 
     @java.lang.Override
@@ -478,7 +492,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -491,7 +505,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -530,7 +544,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 isOpenFunnel_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -600,6 +614,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsOpenFunnel(boolean value) {
 
       isOpenFunnel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -617,7 +632,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsOpenFunnel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isOpenFunnel_ = false;
       onChanged();
       return this;
@@ -627,9 +642,9 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         steps_ = new java.util.ArrayList<com.google.analytics.data.v1alpha.FunnelStep>(steps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -844,7 +859,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -966,7 +981,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
                 com.google.analytics.data.v1alpha.FunnelStep,
                 com.google.analytics.data.v1alpha.FunnelStep.Builder,
                 com.google.analytics.data.v1alpha.FunnelStepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;

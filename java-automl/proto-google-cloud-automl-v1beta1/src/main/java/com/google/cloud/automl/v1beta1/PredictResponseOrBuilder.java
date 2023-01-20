@@ -217,7 +217,6 @@ public interface PredictResponseOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

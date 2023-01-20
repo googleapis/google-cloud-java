@@ -68,6 +68,8 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedBundleIds_;
   /**
    *
@@ -332,6 +334,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -361,14 +364,24 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public com.google.api.apikeys.v2.IosKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.IosKeyRestrictions result =
           new com.google.api.apikeys.v2.IosKeyRestrictions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.apikeys.v2.IosKeyRestrictions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowedBundleIds_ = allowedBundleIds_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.IosKeyRestrictions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

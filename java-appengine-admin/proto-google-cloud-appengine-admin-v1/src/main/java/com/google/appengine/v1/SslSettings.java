@@ -236,7 +236,9 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CERTIFICATE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object certificateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificateId_ = "";
   /**
    *
    *
@@ -299,7 +301,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSL_MANAGEMENT_TYPE_FIELD_NUMBER = 3;
-  private int sslManagementType_;
+  private int sslManagementType_ = 0;
   /**
    *
    *
@@ -332,16 +334,17 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.SslSettings.SslManagementType getSslManagementType() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.SslSettings.SslManagementType result =
-        com.google.appengine.v1.SslSettings.SslManagementType.valueOf(sslManagementType_);
+        com.google.appengine.v1.SslSettings.SslManagementType.forNumber(sslManagementType_);
     return result == null
         ? com.google.appengine.v1.SslSettings.SslManagementType.UNRECOGNIZED
         : result;
   }
 
   public static final int PENDING_MANAGED_CERTIFICATE_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pendingManagedCertificateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pendingManagedCertificateId_ = "";
   /**
    *
    *
@@ -622,12 +625,10 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       certificateId_ = "";
-
       sslManagementType_ = 0;
-
       pendingManagedCertificateId_ = "";
-
       return this;
     }
 
@@ -654,11 +655,24 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.SslSettings buildPartial() {
       com.google.appengine.v1.SslSettings result = new com.google.appengine.v1.SslSettings(this);
-      result.certificateId_ = certificateId_;
-      result.sslManagementType_ = sslManagementType_;
-      result.pendingManagedCertificateId_ = pendingManagedCertificateId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.SslSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificateId_ = certificateId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sslManagementType_ = sslManagementType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pendingManagedCertificateId_ = pendingManagedCertificateId_;
+      }
     }
 
     @java.lang.Override
@@ -708,6 +722,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.SslSettings.getDefaultInstance()) return this;
       if (!other.getCertificateId().isEmpty()) {
         certificateId_ = other.certificateId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.sslManagementType_ != 0) {
@@ -715,6 +730,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPendingManagedCertificateId().isEmpty()) {
         pendingManagedCertificateId_ = other.pendingManagedCertificateId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -746,19 +762,19 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 certificateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 sslManagementType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 34:
               {
                 pendingManagedCertificateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -777,6 +793,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object certificateId_ = "";
     /**
@@ -860,8 +878,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       certificateId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,8 +902,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCertificateId() {
-
       certificateId_ = getDefaultInstance().getCertificateId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -913,8 +931,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       certificateId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -952,8 +970,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSslManagementTypeValue(int value) {
-
       sslManagementType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -972,9 +990,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.SslSettings.SslManagementType getSslManagementType() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.SslSettings.SslManagementType result =
-          com.google.appengine.v1.SslSettings.SslManagementType.valueOf(sslManagementType_);
+          com.google.appengine.v1.SslSettings.SslManagementType.forNumber(sslManagementType_);
       return result == null
           ? com.google.appengine.v1.SslSettings.SslManagementType.UNRECOGNIZED
           : result;
@@ -998,7 +1015,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       sslManagementType_ = value.getNumber();
       onChanged();
       return this;
@@ -1017,7 +1034,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSslManagementType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sslManagementType_ = 0;
       onChanged();
       return this;
@@ -1105,8 +1122,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pendingManagedCertificateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1129,8 +1146,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPendingManagedCertificateId() {
-
       pendingManagedCertificateId_ = getDefaultInstance().getPendingManagedCertificateId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1158,8 +1175,8 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pendingManagedCertificateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

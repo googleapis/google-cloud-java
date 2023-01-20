@@ -70,7 +70,9 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIONSHIP_COLUMN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object relationshipColumn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relationshipColumn_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIONSHIP_COLUMN_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object relationshipColumnId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relationshipColumnId_ = "";
   /**
    *
    *
@@ -374,10 +378,9 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       relationshipColumn_ = "";
-
       relationshipColumnId_ = "";
-
       return this;
     }
 
@@ -405,10 +408,21 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.area120.tables.v1alpha1.LookupDetails buildPartial() {
       com.google.area120.tables.v1alpha1.LookupDetails result =
           new com.google.area120.tables.v1alpha1.LookupDetails(this);
-      result.relationshipColumn_ = relationshipColumn_;
-      result.relationshipColumnId_ = relationshipColumnId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.LookupDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.relationshipColumn_ = relationshipColumn_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.relationshipColumnId_ = relationshipColumnId_;
+      }
     }
 
     @java.lang.Override
@@ -459,10 +473,12 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getRelationshipColumn().isEmpty()) {
         relationshipColumn_ = other.relationshipColumn_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRelationshipColumnId().isEmpty()) {
         relationshipColumnId_ = other.relationshipColumnId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -494,13 +510,13 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 relationshipColumn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 relationshipColumnId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -519,6 +535,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object relationshipColumn_ = "";
     /**
@@ -581,8 +599,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       relationshipColumn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,8 +616,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelationshipColumn() {
-
       relationshipColumn_ = getDefaultInstance().getRelationshipColumn();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -620,8 +638,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relationshipColumn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,8 +705,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       relationshipColumnId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -704,8 +722,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelationshipColumnId() {
-
       relationshipColumnId_ = getDefaultInstance().getRelationshipColumnId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -726,8 +744,8 @@ public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relationshipColumnId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

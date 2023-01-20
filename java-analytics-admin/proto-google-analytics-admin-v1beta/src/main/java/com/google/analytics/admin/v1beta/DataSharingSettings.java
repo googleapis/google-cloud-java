@@ -69,7 +69,9 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHARING_WITH_GOOGLE_SUPPORT_ENABLED_FIELD_NUMBER = 2;
-  private boolean sharingWithGoogleSupportEnabled_;
+  private boolean sharingWithGoogleSupportEnabled_ = false;
   /**
    *
    *
@@ -141,7 +143,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHARING_WITH_GOOGLE_ASSIGNED_SALES_ENABLED_FIELD_NUMBER = 3;
-  private boolean sharingWithGoogleAssignedSalesEnabled_;
+  private boolean sharingWithGoogleAssignedSalesEnabled_ = false;
   /**
    *
    *
@@ -161,7 +163,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHARING_WITH_GOOGLE_ANY_SALES_ENABLED_FIELD_NUMBER = 4;
-  private boolean sharingWithGoogleAnySalesEnabled_;
+  private boolean sharingWithGoogleAnySalesEnabled_ = false;
   /**
    *
    *
@@ -180,7 +182,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHARING_WITH_GOOGLE_PRODUCTS_ENABLED_FIELD_NUMBER = 5;
-  private boolean sharingWithGoogleProductsEnabled_;
+  private boolean sharingWithGoogleProductsEnabled_ = false;
   /**
    *
    *
@@ -198,7 +200,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHARING_WITH_OTHERS_ENABLED_FIELD_NUMBER = 6;
-  private boolean sharingWithOthersEnabled_;
+  private boolean sharingWithOthersEnabled_ = false;
   /**
    *
    *
@@ -479,18 +481,13 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       sharingWithGoogleSupportEnabled_ = false;
-
       sharingWithGoogleAssignedSalesEnabled_ = false;
-
       sharingWithGoogleAnySalesEnabled_ = false;
-
       sharingWithGoogleProductsEnabled_ = false;
-
       sharingWithOthersEnabled_ = false;
-
       return this;
     }
 
@@ -518,14 +515,33 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1beta.DataSharingSettings buildPartial() {
       com.google.analytics.admin.v1beta.DataSharingSettings result =
           new com.google.analytics.admin.v1beta.DataSharingSettings(this);
-      result.name_ = name_;
-      result.sharingWithGoogleSupportEnabled_ = sharingWithGoogleSupportEnabled_;
-      result.sharingWithGoogleAssignedSalesEnabled_ = sharingWithGoogleAssignedSalesEnabled_;
-      result.sharingWithGoogleAnySalesEnabled_ = sharingWithGoogleAnySalesEnabled_;
-      result.sharingWithGoogleProductsEnabled_ = sharingWithGoogleProductsEnabled_;
-      result.sharingWithOthersEnabled_ = sharingWithOthersEnabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.DataSharingSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sharingWithGoogleSupportEnabled_ = sharingWithGoogleSupportEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sharingWithGoogleAssignedSalesEnabled_ = sharingWithGoogleAssignedSalesEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sharingWithGoogleAnySalesEnabled_ = sharingWithGoogleAnySalesEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sharingWithGoogleProductsEnabled_ = sharingWithGoogleProductsEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sharingWithOthersEnabled_ = sharingWithOthersEnabled_;
+      }
     }
 
     @java.lang.Override
@@ -576,6 +592,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSharingWithGoogleSupportEnabled() != false) {
@@ -622,37 +639,37 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 sharingWithGoogleSupportEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 sharingWithGoogleAssignedSalesEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 sharingWithGoogleAnySalesEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 sharingWithGoogleProductsEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 sharingWithOthersEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -671,6 +688,8 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -739,8 +758,8 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,8 +777,8 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -782,8 +801,8 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,6 +840,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public Builder setSharingWithGoogleSupportEnabled(boolean value) {
 
       sharingWithGoogleSupportEnabled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -837,7 +857,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSharingWithGoogleSupportEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sharingWithGoogleSupportEnabled_ = false;
       onChanged();
       return this;
@@ -878,6 +898,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public Builder setSharingWithGoogleAssignedSalesEnabled(boolean value) {
 
       sharingWithGoogleAssignedSalesEnabled_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -895,7 +916,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSharingWithGoogleAssignedSalesEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       sharingWithGoogleAssignedSalesEnabled_ = false;
       onChanged();
       return this;
@@ -934,6 +955,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public Builder setSharingWithGoogleAnySalesEnabled(boolean value) {
 
       sharingWithGoogleAnySalesEnabled_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -950,7 +972,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSharingWithGoogleAnySalesEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sharingWithGoogleAnySalesEnabled_ = false;
       onChanged();
       return this;
@@ -987,6 +1009,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public Builder setSharingWithGoogleProductsEnabled(boolean value) {
 
       sharingWithGoogleProductsEnabled_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1002,7 +1025,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSharingWithGoogleProductsEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sharingWithGoogleProductsEnabled_ = false;
       onChanged();
       return this;
@@ -1039,6 +1062,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public Builder setSharingWithOthersEnabled(boolean value) {
 
       sharingWithOthersEnabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1054,7 +1078,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSharingWithOthersEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       sharingWithOthersEnabled_ = false;
       onChanged();
       return this;

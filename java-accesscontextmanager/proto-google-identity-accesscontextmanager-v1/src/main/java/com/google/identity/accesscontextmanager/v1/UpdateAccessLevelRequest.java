@@ -129,7 +129,9 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
       getAccessLevelOrBuilder() {
-    return getAccessLevel();
+    return accessLevel_ == null
+        ? com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance()
+        : accessLevel_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -178,7 +180,7 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -400,16 +402,15 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (accessLevelBuilder_ == null) {
-        accessLevel_ = null;
-      } else {
-        accessLevel_ = null;
+      bitField0_ = 0;
+      accessLevel_ = null;
+      if (accessLevelBuilder_ != null) {
+        accessLevelBuilder_.dispose();
         accessLevelBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -441,18 +442,23 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
     public com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest buildPartial() {
       com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest result =
           new com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest(this);
-      if (accessLevelBuilder_ == null) {
-        result.accessLevel_ = accessLevel_;
-      } else {
-        result.accessLevel_ = accessLevelBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessLevel_ =
+            accessLevelBuilder_ == null ? accessLevel_ : accessLevelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +545,13 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getAccessLevelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +570,8 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.identity.accesscontextmanager.v1.AccessLevel accessLevel_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -589,7 +597,7 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * @return Whether the accessLevel field is set.
      */
     public boolean hasAccessLevel() {
-      return accessLevelBuilder_ != null || accessLevel_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -638,11 +646,11 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         accessLevel_ = value;
-        onChanged();
       } else {
         accessLevelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,11 +672,11 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
         com.google.identity.accesscontextmanager.v1.AccessLevel.Builder builderForValue) {
       if (accessLevelBuilder_ == null) {
         accessLevel_ = builderForValue.build();
-        onChanged();
       } else {
         accessLevelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -688,19 +696,19 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAccessLevel(com.google.identity.accesscontextmanager.v1.AccessLevel value) {
       if (accessLevelBuilder_ == null) {
-        if (accessLevel_ != null) {
-          accessLevel_ =
-              com.google.identity.accesscontextmanager.v1.AccessLevel.newBuilder(accessLevel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && accessLevel_ != null
+            && accessLevel_
+                != com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance()) {
+          getAccessLevelBuilder().mergeFrom(value);
         } else {
           accessLevel_ = value;
         }
-        onChanged();
       } else {
         accessLevelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -719,14 +727,13 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAccessLevel() {
-      if (accessLevelBuilder_ == null) {
-        accessLevel_ = null;
-        onChanged();
-      } else {
-        accessLevel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      accessLevel_ = null;
+      if (accessLevelBuilder_ != null) {
+        accessLevelBuilder_.dispose();
         accessLevelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -745,7 +752,7 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.identity.accesscontextmanager.v1.AccessLevel.Builder getAccessLevelBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAccessLevelFieldBuilder().getBuilder();
     }
@@ -825,7 +832,7 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -864,11 +871,11 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -884,11 +891,11 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,17 +910,18 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,14 +935,13 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -948,7 +955,7 @@ public final class UpdateAccessLevelRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

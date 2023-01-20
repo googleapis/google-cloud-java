@@ -72,7 +72,9 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int EVENT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object eventName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventName_ = "";
   /**
    *
    *
@@ -438,14 +440,13 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       eventName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (funnelParameterFilterExpressionBuilder_ == null) {
-        funnelParameterFilterExpression_ = null;
-      } else {
-        funnelParameterFilterExpressionBuilder_.clear();
+      funnelParameterFilterExpression_ = null;
+      if (funnelParameterFilterExpressionBuilder_ != null) {
+        funnelParameterFilterExpressionBuilder_.dispose();
+        funnelParameterFilterExpressionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -473,23 +474,28 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
     public com.google.analytics.data.v1alpha.FunnelEventFilter buildPartial() {
       com.google.analytics.data.v1alpha.FunnelEventFilter result =
           new com.google.analytics.data.v1alpha.FunnelEventFilter(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelEventFilter result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventName_ = eventName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.eventName_ = eventName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (funnelParameterFilterExpressionBuilder_ == null) {
-          result.funnelParameterFilterExpression_ = funnelParameterFilterExpression_;
-        } else {
-          result.funnelParameterFilterExpression_ = funnelParameterFilterExpressionBuilder_.build();
-        }
+        result.funnelParameterFilterExpression_ =
+            funnelParameterFilterExpressionBuilder_ == null
+                ? funnelParameterFilterExpression_
+                : funnelParameterFilterExpressionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -539,8 +545,8 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
       if (other == com.google.analytics.data.v1alpha.FunnelEventFilter.getDefaultInstance())
         return this;
       if (other.hasEventName()) {
-        bitField0_ |= 0x00000001;
         eventName_ = other.eventName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFunnelParameterFilterExpression()) {
@@ -684,8 +690,8 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +708,8 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEventName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       eventName_ = getDefaultInstance().getEventName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -725,8 +731,8 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,11 +810,11 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         funnelParameterFilterExpression_ = value;
-        onChanged();
       } else {
         funnelParameterFilterExpressionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +835,11 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
         com.google.analytics.data.v1alpha.FunnelParameterFilterExpression.Builder builderForValue) {
       if (funnelParameterFilterExpressionBuilder_ == null) {
         funnelParameterFilterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         funnelParameterFilterExpressionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,19 +864,15 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
             && funnelParameterFilterExpression_
                 != com.google.analytics.data.v1alpha.FunnelParameterFilterExpression
                     .getDefaultInstance()) {
-          funnelParameterFilterExpression_ =
-              com.google.analytics.data.v1alpha.FunnelParameterFilterExpression.newBuilder(
-                      funnelParameterFilterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getFunnelParameterFilterExpressionBuilder().mergeFrom(value);
         } else {
           funnelParameterFilterExpression_ = value;
         }
-        onChanged();
       } else {
         funnelParameterFilterExpressionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -888,13 +890,13 @@ public final class FunnelEventFilter extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearFunnelParameterFilterExpression() {
-      if (funnelParameterFilterExpressionBuilder_ == null) {
-        funnelParameterFilterExpression_ = null;
-        onChanged();
-      } else {
-        funnelParameterFilterExpressionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      funnelParameterFilterExpression_ = null;
+      if (funnelParameterFilterExpressionBuilder_ != null) {
+        funnelParameterFilterExpressionBuilder_.dispose();
+        funnelParameterFilterExpressionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

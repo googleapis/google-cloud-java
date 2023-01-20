@@ -68,7 +68,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -89,7 +89,9 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -144,7 +146,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHOW_DELETED_FIELD_NUMBER = 3;
-  private boolean showDeleted_;
+  private boolean showDeleted_ = false;
   /**
    *
    *
@@ -379,12 +381,10 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pageSize_ = 0;
-
       pageToken_ = "";
-
       showDeleted_ = false;
-
       return this;
     }
 
@@ -412,11 +412,24 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.ListAccountsRequest buildPartial() {
       com.google.analytics.admin.v1alpha.ListAccountsRequest result =
           new com.google.analytics.admin.v1alpha.ListAccountsRequest(this);
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.showDeleted_ = showDeleted_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.ListAccountsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.showDeleted_ = showDeleted_;
+      }
     }
 
     @java.lang.Override
@@ -470,6 +483,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getShowDeleted() != false) {
@@ -504,19 +518,19 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 showDeleted_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -535,6 +549,8 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int pageSize_;
     /**
@@ -573,6 +589,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -591,7 +608,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -667,8 +684,8 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -687,8 +704,8 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -712,8 +729,8 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -753,6 +770,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
     public Builder setShowDeleted(boolean value) {
 
       showDeleted_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -770,7 +788,7 @@ public final class ListAccountsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearShowDeleted() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       showDeleted_ = false;
       onChanged();
       return this;

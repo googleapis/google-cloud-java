@@ -69,7 +69,9 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
   }
 
   public static final int ACCOUNT_EMAIL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object accountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accountEmail_ = "";
   /**
    *
    *
@@ -379,10 +383,9 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       accountEmail_ = "";
-
       return this;
     }
 
@@ -411,10 +414,22 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
     public com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount buildPartial() {
       com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount result =
           new com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount(this);
-      result.name_ = name_;
-      result.accountEmail_ = accountEmail_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.accountEmail_ = accountEmail_;
+      }
     }
 
     @java.lang.Override
@@ -467,10 +482,12 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAccountEmail().isEmpty()) {
         accountEmail_ = other.accountEmail_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -502,13 +519,13 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 accountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -527,6 +544,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -598,8 +617,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,8 +637,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -643,8 +662,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +729,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       accountEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -727,8 +746,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearAccountEmail() {
-
       accountEmail_ = getDefaultInstance().getAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -749,8 +768,8 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accountEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

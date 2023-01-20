@@ -258,7 +258,9 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   }
 
   public static final int MODEL_FORMAT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object modelFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelFormat_ = "";
   /**
    *
    *
@@ -401,6 +403,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
@@ -473,7 +476,10 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -780,6 +786,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
@@ -787,7 +794,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         gcrDestinationBuilder_.clear();
       }
       modelFormat_ = "";
-
       internalGetMutableParams().clear();
       destinationCase_ = 0;
       destination_ = null;
@@ -818,27 +824,35 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.ModelExportOutputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.ModelExportOutputConfig result =
           new com.google.cloud.automl.v1beta1.ModelExportOutputConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationCase_ == 3) {
-        if (gcrDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcrDestinationBuilder_.build();
-        }
-      }
-      result.modelFormat_ = modelFormat_;
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.ModelExportOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.modelFormat_ = modelFormat_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.automl.v1beta1.ModelExportOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 3 && gcrDestinationBuilder_ != null) {
+        result.destination_ = gcrDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -889,9 +903,11 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         return this;
       if (!other.getModelFormat().isEmpty()) {
         modelFormat_ = other.modelFormat_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000008;
       switch (other.getDestinationCase()) {
         case GCS_DESTINATION:
           {
@@ -949,6 +965,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -960,7 +977,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             case 34:
               {
                 modelFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -1266,7 +1283,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -1504,7 +1520,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       }
       destinationCase_ = 3;
       onChanged();
-      ;
       return gcrDestinationBuilder_;
     }
 
@@ -1692,8 +1707,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1750,8 +1765,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearModelFormat() {
-
       modelFormat_ = getDefaultInstance().getModelFormat();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1813,8 +1828,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelFormat_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1830,14 +1845,14 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return params_;
     }
 
@@ -1904,8 +1919,10 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1939,6 +1956,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -1966,6 +1984,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -1989,8 +2008,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2009,6 +2028,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

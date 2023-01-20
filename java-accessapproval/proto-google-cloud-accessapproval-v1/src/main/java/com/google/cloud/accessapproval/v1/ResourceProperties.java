@@ -66,7 +66,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int EXCLUDES_DESCENDANTS_FIELD_NUMBER = 1;
-  private boolean excludesDescendants_;
+  private boolean excludesDescendants_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       excludesDescendants_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.accessapproval.v1.ResourceProperties buildPartial() {
       com.google.cloud.accessapproval.v1.ResourceProperties result =
           new com.google.cloud.accessapproval.v1.ResourceProperties(this);
-      result.excludesDescendants_ = excludesDescendants_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.ResourceProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.excludesDescendants_ = excludesDescendants_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 excludesDescendants_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean excludesDescendants_;
     /**
@@ -447,6 +458,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     public Builder setExcludesDescendants(boolean value) {
 
       excludesDescendants_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -463,7 +475,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearExcludesDescendants() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       excludesDescendants_ = false;
       onChanged();
       return this;

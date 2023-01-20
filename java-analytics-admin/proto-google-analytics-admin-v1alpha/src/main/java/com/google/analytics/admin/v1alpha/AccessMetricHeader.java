@@ -71,7 +71,9 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int METRIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metricName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricName_ = "";
   /**
    *
    *
@@ -320,8 +322,8 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metricName_ = "";
-
       return this;
     }
 
@@ -349,9 +351,18 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
     public com.google.analytics.admin.v1alpha.AccessMetricHeader buildPartial() {
       com.google.analytics.admin.v1alpha.AccessMetricHeader result =
           new com.google.analytics.admin.v1alpha.AccessMetricHeader(this);
-      result.metricName_ = metricName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessMetricHeader result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metricName_ = metricName_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +413,7 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getMetricName().isEmpty()) {
         metricName_ = other.metricName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +445,7 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 metricName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +464,8 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object metricName_ = "";
     /**
@@ -514,8 +528,8 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +545,8 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMetricName() {
-
       metricName_ = getDefaultInstance().getMetricName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class AccessMetricHeader extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUME_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object volumeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object volumeType_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_GB_FIELD_NUMBER = 3;
-  private double sizeGb_;
+  private double sizeGb_ = 0D;
   /**
    *
    *
@@ -400,12 +404,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       volumeType_ = "";
-
       sizeGb_ = 0D;
-
       return this;
     }
 
@@ -432,11 +434,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Volume buildPartial() {
       com.google.appengine.v1.Volume result = new com.google.appengine.v1.Volume(this);
-      result.name_ = name_;
-      result.volumeType_ = volumeType_;
-      result.sizeGb_ = sizeGb_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Volume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.volumeType_ = volumeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sizeGb_ = sizeGb_;
+      }
     }
 
     @java.lang.Override
@@ -486,10 +501,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.Volume.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVolumeType().isEmpty()) {
         volumeType_ = other.volumeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSizeGb() != 0D) {
@@ -524,19 +541,19 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 volumeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 25:
               {
                 sizeGb_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             default:
@@ -555,6 +572,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -617,8 +636,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +653,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +675,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +742,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       volumeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVolumeType() {
-
       volumeType_ = getDefaultInstance().getVolumeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -762,8 +781,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       volumeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,6 +818,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(double value) {
 
       sizeGb_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -814,7 +834,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       sizeGb_ = 0D;
       onChanged();
       return this;

@@ -69,7 +69,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
   }
 
   public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceLanguageCode_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetLanguageCode_ = "";
   /**
    *
    *
@@ -373,10 +377,9 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceLanguageCode_ = "";
-
       targetLanguageCode_ = "";
-
       return this;
     }
 
@@ -404,10 +407,21 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
     public com.google.cloud.automl.v1beta1.TranslationDatasetMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.TranslationDatasetMetadata result =
           new com.google.cloud.automl.v1beta1.TranslationDatasetMetadata(this);
-      result.sourceLanguageCode_ = sourceLanguageCode_;
-      result.targetLanguageCode_ = targetLanguageCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.TranslationDatasetMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceLanguageCode_ = sourceLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetLanguageCode_ = targetLanguageCode_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
         return this;
       if (!other.getSourceLanguageCode().isEmpty()) {
         sourceLanguageCode_ = other.sourceLanguageCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetLanguageCode().isEmpty()) {
         targetLanguageCode_ = other.targetLanguageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
             case 10:
               {
                 sourceLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -518,6 +534,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceLanguageCode_ = "";
     /**
@@ -580,8 +598,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
-
       sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,8 +704,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,8 +721,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
-
       targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

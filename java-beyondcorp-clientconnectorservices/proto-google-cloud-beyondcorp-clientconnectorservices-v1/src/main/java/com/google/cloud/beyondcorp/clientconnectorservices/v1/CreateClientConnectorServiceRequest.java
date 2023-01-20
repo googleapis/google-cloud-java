@@ -78,7 +78,9 @@ public final class CreateClientConnectorServiceRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class CreateClientConnectorServiceRequest
   }
 
   public static final int CLIENT_CONNECTOR_SERVICE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clientConnectorServiceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientConnectorServiceId_ = "";
   /**
    *
    *
@@ -244,11 +248,16 @@ public final class CreateClientConnectorServiceRequest
   @java.lang.Override
   public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOrBuilder
       getClientConnectorServiceOrBuilder() {
-    return getClientConnectorService();
+    return clientConnectorService_ == null
+        ? com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+            .getDefaultInstance()
+        : clientConnectorService_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -317,7 +326,7 @@ public final class CreateClientConnectorServiceRequest
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -608,20 +617,16 @@ public final class CreateClientConnectorServiceRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       clientConnectorServiceId_ = "";
-
-      if (clientConnectorServiceBuilder_ == null) {
-        clientConnectorService_ = null;
-      } else {
-        clientConnectorService_ = null;
+      clientConnectorService_ = null;
+      if (clientConnectorServiceBuilder_ != null) {
+        clientConnectorServiceBuilder_.dispose();
         clientConnectorServiceBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -660,17 +665,35 @@ public final class CreateClientConnectorServiceRequest
           result =
               new com.google.cloud.beyondcorp.clientconnectorservices.v1
                   .CreateClientConnectorServiceRequest(this);
-      result.parent_ = parent_;
-      result.clientConnectorServiceId_ = clientConnectorServiceId_;
-      if (clientConnectorServiceBuilder_ == null) {
-        result.clientConnectorService_ = clientConnectorService_;
-      } else {
-        result.clientConnectorService_ = clientConnectorServiceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientConnectorServiceId_ = clientConnectorServiceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientConnectorService_ =
+            clientConnectorServiceBuilder_ == null
+                ? clientConnectorService_
+                : clientConnectorServiceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -730,10 +753,12 @@ public final class CreateClientConnectorServiceRequest
               .CreateClientConnectorServiceRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClientConnectorServiceId().isEmpty()) {
         clientConnectorServiceId_ = other.clientConnectorServiceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasClientConnectorService()) {
@@ -741,6 +766,7 @@ public final class CreateClientConnectorServiceRequest
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -775,32 +801,32 @@ public final class CreateClientConnectorServiceRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clientConnectorServiceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getClientConnectorServiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -819,6 +845,8 @@ public final class CreateClientConnectorServiceRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -887,8 +915,8 @@ public final class CreateClientConnectorServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -906,8 +934,8 @@ public final class CreateClientConnectorServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -930,8 +958,8 @@ public final class CreateClientConnectorServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1015,8 +1043,8 @@ public final class CreateClientConnectorServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientConnectorServiceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1038,8 +1066,8 @@ public final class CreateClientConnectorServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearClientConnectorServiceId() {
-
       clientConnectorServiceId_ = getDefaultInstance().getClientConnectorServiceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1066,8 +1094,8 @@ public final class CreateClientConnectorServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientConnectorServiceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1093,7 +1121,7 @@ public final class CreateClientConnectorServiceRequest
      * @return Whether the clientConnectorService field is set.
      */
     public boolean hasClientConnectorService() {
-      return clientConnectorServiceBuilder_ != null || clientConnectorService_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1137,11 +1165,11 @@ public final class CreateClientConnectorServiceRequest
           throw new NullPointerException();
         }
         clientConnectorService_ = value;
-        onChanged();
       } else {
         clientConnectorServiceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1160,11 +1188,11 @@ public final class CreateClientConnectorServiceRequest
             builderForValue) {
       if (clientConnectorServiceBuilder_ == null) {
         clientConnectorService_ = builderForValue.build();
-        onChanged();
       } else {
         clientConnectorServiceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1181,20 +1209,20 @@ public final class CreateClientConnectorServiceRequest
     public Builder mergeClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService value) {
       if (clientConnectorServiceBuilder_ == null) {
-        if (clientConnectorService_ != null) {
-          clientConnectorService_ =
-              com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                  .newBuilder(clientConnectorService_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && clientConnectorService_ != null
+            && clientConnectorService_
+                != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                    .getDefaultInstance()) {
+          getClientConnectorServiceBuilder().mergeFrom(value);
         } else {
           clientConnectorService_ = value;
         }
-        onChanged();
       } else {
         clientConnectorServiceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1209,14 +1237,13 @@ public final class CreateClientConnectorServiceRequest
      * </code>
      */
     public Builder clearClientConnectorService() {
-      if (clientConnectorServiceBuilder_ == null) {
-        clientConnectorService_ = null;
-        onChanged();
-      } else {
-        clientConnectorService_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      clientConnectorService_ = null;
+      if (clientConnectorServiceBuilder_ != null) {
+        clientConnectorServiceBuilder_.dispose();
         clientConnectorServiceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1232,7 +1259,7 @@ public final class CreateClientConnectorServiceRequest
      */
     public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Builder
         getClientConnectorServiceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getClientConnectorServiceFieldBuilder().getBuilder();
     }
@@ -1379,8 +1406,8 @@ public final class CreateClientConnectorServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1406,8 +1433,8 @@ public final class CreateClientConnectorServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1438,8 +1465,8 @@ public final class CreateClientConnectorServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1477,6 +1504,7 @@ public final class CreateClientConnectorServiceRequest
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1493,7 +1521,7 @@ public final class CreateClientConnectorServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -71,7 +71,9 @@ public final class AcknowledgeUserDataCollectionRequest
   }
 
   public static final int PROPERTY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object property_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object property_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AcknowledgeUserDataCollectionRequest
   }
 
   public static final int ACKNOWLEDGEMENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object acknowledgement_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acknowledgement_ = "";
   /**
    *
    *
@@ -394,10 +398,9 @@ public final class AcknowledgeUserDataCollectionRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       property_ = "";
-
       acknowledgement_ = "";
-
       return this;
     }
 
@@ -428,10 +431,22 @@ public final class AcknowledgeUserDataCollectionRequest
     public com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest buildPartial() {
       com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest result =
           new com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest(this);
-      result.property_ = property_;
-      result.acknowledgement_ = acknowledgement_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = property_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.acknowledgement_ = acknowledgement_;
+      }
     }
 
     @java.lang.Override
@@ -486,10 +501,12 @@ public final class AcknowledgeUserDataCollectionRequest
               .getDefaultInstance()) return this;
       if (!other.getProperty().isEmpty()) {
         property_ = other.property_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAcknowledgement().isEmpty()) {
         acknowledgement_ = other.acknowledgement_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -521,13 +538,13 @@ public final class AcknowledgeUserDataCollectionRequest
             case 10:
               {
                 property_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 acknowledgement_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +563,8 @@ public final class AcknowledgeUserDataCollectionRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object property_ = "";
     /**
@@ -614,8 +633,8 @@ public final class AcknowledgeUserDataCollectionRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +652,8 @@ public final class AcknowledgeUserDataCollectionRequest
      * @return This builder for chaining.
      */
     public Builder clearProperty() {
-
       property_ = getDefaultInstance().getProperty();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +676,8 @@ public final class AcknowledgeUserDataCollectionRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,8 +761,8 @@ public final class AcknowledgeUserDataCollectionRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       acknowledgement_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -765,8 +784,8 @@ public final class AcknowledgeUserDataCollectionRequest
      * @return This builder for chaining.
      */
     public Builder clearAcknowledgement() {
-
       acknowledgement_ = getDefaultInstance().getAcknowledgement();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -793,8 +812,8 @@ public final class AcknowledgeUserDataCollectionRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       acknowledgement_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

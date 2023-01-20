@@ -68,7 +68,9 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder getFirebaseLinkOrBuilder() {
-    return getFirebaseLink();
+    return firebaseLink_ == null
+        ? com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()
+        : firebaseLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLink_ = null;
-      } else {
-        firebaseLink_ = null;
+      firebaseLink_ = null;
+      if (firebaseLinkBuilder_ != null) {
+        firebaseLinkBuilder_.dispose();
         firebaseLinkBuilder_ = null;
       }
       return this;
@@ -424,14 +427,23 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
     public com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest buildPartial() {
       com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest result =
           new com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest(this);
-      result.parent_ = parent_;
-      if (firebaseLinkBuilder_ == null) {
-        result.firebaseLink_ = firebaseLink_;
-      } else {
-        result.firebaseLink_ = firebaseLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firebaseLink_ =
+            firebaseLinkBuilder_ == null ? firebaseLink_ : firebaseLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +495,7 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFirebaseLink()) {
@@ -517,13 +530,13 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFirebaseLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +555,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -613,8 +628,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +648,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +673,8 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +699,7 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      * @return Whether the firebaseLink field is set.
      */
     public boolean hasFirebaseLink() {
-      return firebaseLinkBuilder_ != null || firebaseLink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +740,11 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         firebaseLink_ = value;
-        onChanged();
       } else {
         firebaseLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,11 +762,11 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
         com.google.analytics.admin.v1alpha.FirebaseLink.Builder builderForValue) {
       if (firebaseLinkBuilder_ == null) {
         firebaseLink_ = builderForValue.build();
-        onChanged();
       } else {
         firebaseLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +782,19 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      */
     public Builder mergeFirebaseLink(com.google.analytics.admin.v1alpha.FirebaseLink value) {
       if (firebaseLinkBuilder_ == null) {
-        if (firebaseLink_ != null) {
-          firebaseLink_ =
-              com.google.analytics.admin.v1alpha.FirebaseLink.newBuilder(firebaseLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && firebaseLink_ != null
+            && firebaseLink_
+                != com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance()) {
+          getFirebaseLinkBuilder().mergeFrom(value);
         } else {
           firebaseLink_ = value;
         }
-        onChanged();
       } else {
         firebaseLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -794,14 +809,13 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearFirebaseLink() {
-      if (firebaseLinkBuilder_ == null) {
-        firebaseLink_ = null;
-        onChanged();
-      } else {
-        firebaseLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      firebaseLink_ = null;
+      if (firebaseLinkBuilder_ != null) {
+        firebaseLinkBuilder_.dispose();
         firebaseLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +830,7 @@ public final class CreateFirebaseLinkRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.analytics.admin.v1alpha.FirebaseLink.Builder getFirebaseLinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFirebaseLinkFieldBuilder().getBuilder();
     }

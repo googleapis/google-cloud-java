@@ -69,7 +69,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPU_FIELD_NUMBER = 1;
-  private double cpu_;
+  private double cpu_ = 0D;
   /**
    *
    *
@@ -87,7 +87,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_GB_FIELD_NUMBER = 2;
-  private double diskGb_;
+  private double diskGb_ = 0D;
   /**
    *
    *
@@ -105,7 +105,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMORY_GB_FIELD_NUMBER = 3;
-  private double memoryGb_;
+  private double memoryGb_ = 0D;
   /**
    *
    *
@@ -123,6 +123,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.Volume> volumes_;
   /**
    *
@@ -192,7 +194,9 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_REFERENCE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object kmsKeyReference_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyReference_ = "";
   /**
    *
    *
@@ -485,21 +489,18 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpu_ = 0D;
-
       diskGb_ = 0D;
-
       memoryGb_ = 0D;
-
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       kmsKeyReference_ = "";
-
       return this;
     }
 
@@ -526,22 +527,40 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Resources buildPartial() {
       com.google.appengine.v1.Resources result = new com.google.appengine.v1.Resources(this);
-      int from_bitField0_ = bitField0_;
-      result.cpu_ = cpu_;
-      result.diskGb_ = diskGb_;
-      result.memoryGb_ = memoryGb_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.appengine.v1.Resources result) {
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      result.kmsKeyReference_ = kmsKeyReference_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Resources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpu_ = cpu_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.diskGb_ = diskGb_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.memoryGb_ = memoryGb_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kmsKeyReference_ = kmsKeyReference_;
+      }
     }
 
     @java.lang.Override
@@ -602,7 +621,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -615,7 +634,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVolumesFieldBuilder()
@@ -627,6 +646,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKmsKeyReference().isEmpty()) {
         kmsKeyReference_ = other.kmsKeyReference_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -658,19 +678,19 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 cpu_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 diskGb_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 memoryGb_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             case 34:
@@ -688,7 +708,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 kmsKeyReference_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -741,6 +761,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public Builder setCpu(double value) {
 
       cpu_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,7 +777,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpu() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cpu_ = 0D;
       onChanged();
       return this;
@@ -793,6 +814,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskGb(double value) {
 
       diskGb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -808,7 +830,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       diskGb_ = 0D;
       onChanged();
       return this;
@@ -845,6 +867,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public Builder setMemoryGb(double value) {
 
       memoryGb_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -860,7 +883,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       memoryGb_ = 0D;
       onChanged();
       return this;
@@ -870,9 +893,9 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.appengine.v1.Volume>(volumes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1085,7 +1108,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -1206,7 +1229,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
                 com.google.appengine.v1.Volume,
                 com.google.appengine.v1.Volume.Builder,
                 com.google.appengine.v1.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -1276,8 +1299,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyReference_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1294,8 +1317,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyReference() {
-
       kmsKeyReference_ = getDefaultInstance().getKmsKeyReference();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1317,8 +1340,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyReference_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -150,7 +150,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int PUBSUB_SUBSCRIPTION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object pubsubSubscription_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pubsubSubscription_ = "";
     /**
      *
      *
@@ -429,8 +431,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pubsubSubscription_ = "";
-
         return this;
       }
 
@@ -470,9 +472,21 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             result =
                 new com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig
                     .CloudPubSubNotificationConfig(this);
-        result.pubsubSubscription_ = pubsubSubscription_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig
+                  .CloudPubSubNotificationConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pubsubSubscription_ = pubsubSubscription_;
+        }
       }
 
       @java.lang.Override
@@ -535,6 +549,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
                 .CloudPubSubNotificationConfig.getDefaultInstance()) return this;
         if (!other.getPubsubSubscription().isEmpty()) {
           pubsubSubscription_ = other.pubsubSubscription_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -566,7 +581,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   pubsubSubscription_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -585,6 +600,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object pubsubSubscription_ = "";
       /**
@@ -647,8 +664,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         pubsubSubscription_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -664,8 +681,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearPubsubSubscription() {
-
         pubsubSubscription_ = getDefaultInstance().getPubsubSubscription();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -686,8 +703,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pubsubSubscription_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1095,6 +1112,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pubsubNotificationBuilder_ != null) {
         pubsubNotificationBuilder_.clear();
       }
@@ -1128,16 +1146,26 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig buildPartial() {
       com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig result =
           new com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig(this);
-      if (configCase_ == 1) {
-        if (pubsubNotificationBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = pubsubNotificationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.configCase_ = configCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig result) {
+      result.configCase_ = configCase_;
+      result.config_ = this.config_;
+      if (configCase_ == 1 && pubsubNotificationBuilder_ != null) {
+        result.config_ = pubsubNotificationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1262,6 +1290,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig
@@ -1526,7 +1556,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       configCase_ = 1;
       onChanged();
-      ;
       return pubsubNotificationBuilder_;
     }
 

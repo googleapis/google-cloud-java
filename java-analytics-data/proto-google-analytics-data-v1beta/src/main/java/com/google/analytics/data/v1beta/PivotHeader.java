@@ -68,6 +68,8 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PIVOT_DIMENSION_HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.PivotDimensionHeader>
       pivotDimensionHeaders_;
   /**
@@ -150,7 +152,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
-  private int rowCount_;
+  private int rowCount_ = 0;
   /**
    *
    *
@@ -379,6 +381,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pivotDimensionHeadersBuilder_ == null) {
         pivotDimensionHeaders_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,6 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       rowCount_ = 0;
-
       return this;
     }
 
@@ -415,7 +417,15 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.PivotHeader buildPartial() {
       com.google.analytics.data.v1beta.PivotHeader result =
           new com.google.analytics.data.v1beta.PivotHeader(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.data.v1beta.PivotHeader result) {
       if (pivotDimensionHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pivotDimensionHeaders_ = java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
@@ -425,9 +435,13 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.pivotDimensionHeaders_ = pivotDimensionHeadersBuilder_.build();
       }
-      result.rowCount_ = rowCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.PivotHeader result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
     }
 
     @java.lang.Override
@@ -548,7 +562,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 rowCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -1025,6 +1039,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     public Builder setRowCount(int value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1042,7 +1057,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rowCount_ = 0;
       onChanged();
       return this;

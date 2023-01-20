@@ -76,7 +76,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -129,7 +131,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROPERTY_TYPE_FIELD_NUMBER = 14;
-  private int propertyType_;
+  private int propertyType_ = 0;
   /**
    *
    *
@@ -168,9 +170,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.PropertyType getPropertyType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.PropertyType result =
-        com.google.analytics.admin.v1beta.PropertyType.valueOf(propertyType_);
+        com.google.analytics.admin.v1beta.PropertyType.forNumber(propertyType_);
     return result == null ? com.google.analytics.admin.v1beta.PropertyType.UNRECOGNIZED : result;
   }
 
@@ -220,7 +221,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -269,11 +270,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -328,7 +331,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -379,7 +384,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDUSTRY_CATEGORY_FIELD_NUMBER = 6;
-  private int industryCategory_;
+  private int industryCategory_ = 0;
   /**
    *
    *
@@ -410,16 +415,17 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.IndustryCategory getIndustryCategory() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.IndustryCategory result =
-        com.google.analytics.admin.v1beta.IndustryCategory.valueOf(industryCategory_);
+        com.google.analytics.admin.v1beta.IndustryCategory.forNumber(industryCategory_);
     return result == null
         ? com.google.analytics.admin.v1beta.IndustryCategory.UNRECOGNIZED
         : result;
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -480,7 +486,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -533,7 +541,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_LEVEL_FIELD_NUMBER = 10;
-  private int serviceLevel_;
+  private int serviceLevel_ = 0;
   /**
    *
    *
@@ -566,9 +574,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.ServiceLevel getServiceLevel() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.ServiceLevel result =
-        com.google.analytics.admin.v1beta.ServiceLevel.valueOf(serviceLevel_);
+        com.google.analytics.admin.v1beta.ServiceLevel.forNumber(serviceLevel_);
     return result == null ? com.google.analytics.admin.v1beta.ServiceLevel.UNRECOGNIZED : result;
   }
 
@@ -621,7 +628,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 12;
@@ -676,11 +683,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int ACCOUNT_FIELD_NUMBER = 13;
-  private volatile java.lang.Object account_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object account_ = "";
   /**
    *
    *
@@ -1069,48 +1078,36 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       propertyType_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       parent_ = "";
-
       displayName_ = "";
-
       industryCategory_ = 0;
-
       timeZone_ = "";
-
       currencyCode_ = "";
-
       serviceLevel_ = 0;
-
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       account_ = "";
-
       return this;
     }
 
@@ -1138,37 +1135,54 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1beta.Property buildPartial() {
       com.google.analytics.admin.v1beta.Property result =
           new com.google.analytics.admin.v1beta.Property(this);
-      result.name_ = name_;
-      result.propertyType_ = propertyType_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.parent_ = parent_;
-      result.displayName_ = displayName_;
-      result.industryCategory_ = industryCategory_;
-      result.timeZone_ = timeZone_;
-      result.currencyCode_ = currencyCode_;
-      result.serviceLevel_ = serviceLevel_;
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.account_ = account_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.Property result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.propertyType_ = propertyType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.industryCategory_ = industryCategory_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.currencyCode_ = currencyCode_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.serviceLevel_ = serviceLevel_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.account_ = account_;
+      }
     }
 
     @java.lang.Override
@@ -1218,6 +1232,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.admin.v1beta.Property.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.propertyType_ != 0) {
@@ -1231,10 +1246,12 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.industryCategory_ != 0) {
@@ -1242,10 +1259,12 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCurrencyCode().isEmpty()) {
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.serviceLevel_ != 0) {
@@ -1259,6 +1278,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAccount().isEmpty()) {
         account_ = other.account_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1290,79 +1310,79 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 industryCategory_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 timeZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 80:
               {
                 serviceLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 account_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 propertyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 112
             default:
@@ -1381,6 +1401,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1449,8 +1471,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1468,8 +1490,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1492,8 +1514,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1537,8 +1559,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPropertyTypeValue(int value) {
-
       propertyType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1560,9 +1582,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.PropertyType getPropertyType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.PropertyType result =
-          com.google.analytics.admin.v1beta.PropertyType.valueOf(propertyType_);
+          com.google.analytics.admin.v1beta.PropertyType.forNumber(propertyType_);
       return result == null ? com.google.analytics.admin.v1beta.PropertyType.UNRECOGNIZED : result;
     }
     /**
@@ -1586,7 +1607,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       propertyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1608,7 +1629,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPropertyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       propertyType_ = 0;
       onChanged();
       return this;
@@ -1634,7 +1655,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1675,11 +1696,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1696,11 +1717,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1716,17 +1737,18 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1741,14 +1763,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1763,7 +1784,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1835,7 +1856,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1876,11 +1897,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1897,11 +1918,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1917,17 +1938,18 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1942,14 +1964,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1964,7 +1985,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2086,8 +2107,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2106,8 +2127,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2131,8 +2152,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2201,8 +2222,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2219,8 +2240,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2242,8 +2263,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2279,8 +2300,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIndustryCategoryValue(int value) {
-
       industryCategory_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2298,9 +2319,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.IndustryCategory getIndustryCategory() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.IndustryCategory result =
-          com.google.analytics.admin.v1beta.IndustryCategory.valueOf(industryCategory_);
+          com.google.analytics.admin.v1beta.IndustryCategory.forNumber(industryCategory_);
       return result == null
           ? com.google.analytics.admin.v1beta.IndustryCategory.UNRECOGNIZED
           : result;
@@ -2322,7 +2342,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       industryCategory_ = value.getNumber();
       onChanged();
       return this;
@@ -2340,7 +2360,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndustryCategory() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       industryCategory_ = 0;
       onChanged();
       return this;
@@ -2425,8 +2445,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       timeZone_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2448,8 +2468,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2476,8 +2496,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       timeZone_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2549,8 +2569,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2568,8 +2588,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2592,8 +2612,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currencyCode_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2631,8 +2651,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setServiceLevelValue(int value) {
-
       serviceLevel_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2651,9 +2671,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.ServiceLevel getServiceLevel() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.ServiceLevel result =
-          com.google.analytics.admin.v1beta.ServiceLevel.valueOf(serviceLevel_);
+          com.google.analytics.admin.v1beta.ServiceLevel.forNumber(serviceLevel_);
       return result == null ? com.google.analytics.admin.v1beta.ServiceLevel.UNRECOGNIZED : result;
     }
     /**
@@ -2674,7 +2693,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       serviceLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -2693,7 +2712,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       serviceLevel_ = 0;
       onChanged();
       return this;
@@ -2720,7 +2739,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2763,11 +2782,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -2785,11 +2804,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -2806,17 +2825,18 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -2832,14 +2852,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2855,7 +2874,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -2931,7 +2950,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2976,11 +2995,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -2999,11 +3018,11 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3021,17 +3040,18 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3048,14 +3068,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3072,7 +3091,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3201,8 +3220,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       account_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3222,8 +3241,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-
       account_ = getDefaultInstance().getAccount();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3248,8 +3267,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       account_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

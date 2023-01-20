@@ -71,7 +71,9 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GROUP_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object groupKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupKey_ = "";
   /**
    *
    *
@@ -193,6 +197,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ACCESS_LEVELS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList accessLevels_;
   /**
    *
@@ -497,12 +503,11 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       groupKey_ = "";
-
       accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -531,16 +536,32 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding buildPartial() {
       com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding result =
           new com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.groupKey_ = groupKey_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        accessLevels_ = accessLevels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.accessLevels_ = accessLevels_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        accessLevels_ = accessLevels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.accessLevels_ = accessLevels_;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.groupKey_ = groupKey_;
+      }
     }
 
     @java.lang.Override
@@ -593,16 +614,18 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGroupKey().isEmpty()) {
         groupKey_ = other.groupKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.accessLevels_.isEmpty()) {
         if (accessLevels_.isEmpty()) {
           accessLevels_ = other.accessLevels_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAccessLevelsIsMutable();
           accessLevels_.addAll(other.accessLevels_);
@@ -638,13 +661,13 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 groupKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -746,8 +769,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,8 +790,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -793,8 +816,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -884,8 +907,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       groupKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,8 +932,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearGroupKey() {
-
       groupKey_ = getDefaultInstance().getGroupKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -939,8 +962,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       groupKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -949,9 +972,9 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         accessLevels_ = new com.google.protobuf.LazyStringArrayList(accessLevels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1126,7 +1149,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
      */
     public Builder clearAccessLevels() {
       accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

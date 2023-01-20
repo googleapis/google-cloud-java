@@ -69,7 +69,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IS_DIRECTLY_FOLLOWED_BY_FIELD_NUMBER = 1;
-  private boolean isDirectlyFollowedBy_;
+  private boolean isDirectlyFollowedBy_ = false;
   /**
    *
    *
@@ -91,7 +91,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STEP_SCOPING_FIELD_NUMBER = 2;
-  private int stepScoping_;
+  private int stepScoping_ = 0;
   /**
    *
    *
@@ -134,9 +134,8 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.UserCriteriaScoping getStepScoping() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.data.v1alpha.UserCriteriaScoping result =
-        com.google.analytics.data.v1alpha.UserCriteriaScoping.valueOf(stepScoping_);
+        com.google.analytics.data.v1alpha.UserCriteriaScoping.forNumber(stepScoping_);
     return result == null
         ? com.google.analytics.data.v1alpha.UserCriteriaScoping.UNRECOGNIZED
         : result;
@@ -197,7 +196,9 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.analytics.data.v1alpha.SegmentFilterExpressionOrBuilder
       getSegmentFilterExpressionOrBuilder() {
-    return getSegmentFilterExpression();
+    return segmentFilterExpression_ == null
+        ? com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()
+        : segmentFilterExpression_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -426,14 +427,12 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isDirectlyFollowedBy_ = false;
-
       stepScoping_ = 0;
-
-      if (segmentFilterExpressionBuilder_ == null) {
-        segmentFilterExpression_ = null;
-      } else {
-        segmentFilterExpression_ = null;
+      segmentFilterExpression_ = null;
+      if (segmentFilterExpressionBuilder_ != null) {
+        segmentFilterExpressionBuilder_.dispose();
         segmentFilterExpressionBuilder_ = null;
       }
       return this;
@@ -463,15 +462,27 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1alpha.UserSequenceStep buildPartial() {
       com.google.analytics.data.v1alpha.UserSequenceStep result =
           new com.google.analytics.data.v1alpha.UserSequenceStep(this);
-      result.isDirectlyFollowedBy_ = isDirectlyFollowedBy_;
-      result.stepScoping_ = stepScoping_;
-      if (segmentFilterExpressionBuilder_ == null) {
-        result.segmentFilterExpression_ = segmentFilterExpression_;
-      } else {
-        result.segmentFilterExpression_ = segmentFilterExpressionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.UserSequenceStep result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isDirectlyFollowedBy_ = isDirectlyFollowedBy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stepScoping_ = stepScoping_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.segmentFilterExpression_ =
+            segmentFilterExpressionBuilder_ == null
+                ? segmentFilterExpression_
+                : segmentFilterExpressionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -558,20 +569,20 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 isDirectlyFollowedBy_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 stepScoping_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getSegmentFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -590,6 +601,8 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean isDirectlyFollowedBy_;
     /**
@@ -630,6 +643,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public Builder setIsDirectlyFollowedBy(boolean value) {
 
       isDirectlyFollowedBy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,7 +663,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIsDirectlyFollowedBy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isDirectlyFollowedBy_ = false;
       onChanged();
       return this;
@@ -698,8 +712,8 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStepScopingValue(int value) {
-
       stepScoping_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,9 +737,8 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.analytics.data.v1alpha.UserCriteriaScoping getStepScoping() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1alpha.UserCriteriaScoping result =
-          com.google.analytics.data.v1alpha.UserCriteriaScoping.valueOf(stepScoping_);
+          com.google.analytics.data.v1alpha.UserCriteriaScoping.forNumber(stepScoping_);
       return result == null
           ? com.google.analytics.data.v1alpha.UserCriteriaScoping.UNRECOGNIZED
           : result;
@@ -753,7 +766,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       stepScoping_ = value.getNumber();
       onChanged();
       return this;
@@ -777,7 +790,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStepScoping() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       stepScoping_ = 0;
       onChanged();
       return this;
@@ -804,7 +817,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * @return Whether the segmentFilterExpression field is set.
      */
     public boolean hasSegmentFilterExpression() {
-      return segmentFilterExpressionBuilder_ != null || segmentFilterExpression_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -848,11 +861,11 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         segmentFilterExpression_ = value;
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -871,11 +884,11 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
         com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder builderForValue) {
       if (segmentFilterExpressionBuilder_ == null) {
         segmentFilterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -893,20 +906,19 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     public Builder mergeSegmentFilterExpression(
         com.google.analytics.data.v1alpha.SegmentFilterExpression value) {
       if (segmentFilterExpressionBuilder_ == null) {
-        if (segmentFilterExpression_ != null) {
-          segmentFilterExpression_ =
-              com.google.analytics.data.v1alpha.SegmentFilterExpression.newBuilder(
-                      segmentFilterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && segmentFilterExpression_ != null
+            && segmentFilterExpression_
+                != com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()) {
+          getSegmentFilterExpressionBuilder().mergeFrom(value);
         } else {
           segmentFilterExpression_ = value;
         }
-        onChanged();
       } else {
         segmentFilterExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -922,14 +934,13 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSegmentFilterExpression() {
-      if (segmentFilterExpressionBuilder_ == null) {
-        segmentFilterExpression_ = null;
-        onChanged();
-      } else {
-        segmentFilterExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      segmentFilterExpression_ = null;
+      if (segmentFilterExpressionBuilder_ != null) {
+        segmentFilterExpressionBuilder_.dispose();
         segmentFilterExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -946,7 +957,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      */
     public com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder
         getSegmentFilterExpressionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSegmentFilterExpressionFieldBuilder().getBuilder();
     }

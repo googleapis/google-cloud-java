@@ -236,7 +236,9 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -287,7 +289,9 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object configId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configId_ = "";
   /**
    *
    *
@@ -354,7 +358,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ROLLOUT_STRATEGY_FIELD_NUMBER = 3;
-  private int rolloutStrategy_;
+  private int rolloutStrategy_ = 0;
   /**
    *
    *
@@ -385,16 +389,15 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.appengine.v1.EndpointsApiService.RolloutStrategy getRolloutStrategy() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.EndpointsApiService.RolloutStrategy result =
-        com.google.appengine.v1.EndpointsApiService.RolloutStrategy.valueOf(rolloutStrategy_);
+        com.google.appengine.v1.EndpointsApiService.RolloutStrategy.forNumber(rolloutStrategy_);
     return result == null
         ? com.google.appengine.v1.EndpointsApiService.RolloutStrategy.UNRECOGNIZED
         : result;
   }
 
   public static final int DISABLE_TRACE_SAMPLING_FIELD_NUMBER = 4;
-  private boolean disableTraceSampling_;
+  private boolean disableTraceSampling_ = false;
   /**
    *
    *
@@ -645,14 +648,11 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       configId_ = "";
-
       rolloutStrategy_ = 0;
-
       disableTraceSampling_ = false;
-
       return this;
     }
 
@@ -680,12 +680,27 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     public com.google.appengine.v1.EndpointsApiService buildPartial() {
       com.google.appengine.v1.EndpointsApiService result =
           new com.google.appengine.v1.EndpointsApiService(this);
-      result.name_ = name_;
-      result.configId_ = configId_;
-      result.rolloutStrategy_ = rolloutStrategy_;
-      result.disableTraceSampling_ = disableTraceSampling_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.EndpointsApiService result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configId_ = configId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rolloutStrategy_ = rolloutStrategy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.disableTraceSampling_ = disableTraceSampling_;
+      }
     }
 
     @java.lang.Override
@@ -735,10 +750,12 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       if (other == com.google.appengine.v1.EndpointsApiService.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConfigId().isEmpty()) {
         configId_ = other.configId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.rolloutStrategy_ != 0) {
@@ -776,25 +793,25 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 configId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 rolloutStrategy_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 disableTraceSampling_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -813,6 +830,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -878,8 +897,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -896,8 +915,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -919,8 +938,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1013,8 +1032,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,8 +1058,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-
       configId_ = getDefaultInstance().getConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1070,8 +1089,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1107,8 +1126,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setRolloutStrategyValue(int value) {
-
       rolloutStrategy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1126,9 +1145,8 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.appengine.v1.EndpointsApiService.RolloutStrategy getRolloutStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.EndpointsApiService.RolloutStrategy result =
-          com.google.appengine.v1.EndpointsApiService.RolloutStrategy.valueOf(rolloutStrategy_);
+          com.google.appengine.v1.EndpointsApiService.RolloutStrategy.forNumber(rolloutStrategy_);
       return result == null
           ? com.google.appengine.v1.EndpointsApiService.RolloutStrategy.UNRECOGNIZED
           : result;
@@ -1151,7 +1169,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       rolloutStrategy_ = value.getNumber();
       onChanged();
       return this;
@@ -1169,7 +1187,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRolloutStrategy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       rolloutStrategy_ = 0;
       onChanged();
       return this;
@@ -1208,6 +1226,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
     public Builder setDisableTraceSampling(boolean value) {
 
       disableTraceSampling_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1224,7 +1243,7 @@ public final class EndpointsApiService extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisableTraceSampling() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       disableTraceSampling_ = false;
       onChanged();
       return this;

@@ -211,6 +211,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
               0L);
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long> buckets_;
 
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long> internalGetBuckets() {
@@ -522,6 +523,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableBuckets().clear();
         return this;
       }
@@ -551,11 +553,20 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats buildPartial() {
         com.google.cloud.automl.v1beta1.TimestampStats.GranularStats result =
             new com.google.cloud.automl.v1beta1.TimestampStats.GranularStats(this);
-        int from_bitField0_ = bitField0_;
-        result.buckets_ = internalGetBuckets();
-        result.buckets_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.TimestampStats.GranularStats result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.buckets_ = internalGetBuckets();
+          result.buckets_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -608,6 +619,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
             == com.google.cloud.automl.v1beta1.TimestampStats.GranularStats.getDefaultInstance())
           return this;
         internalGetMutableBuckets().mergeFrom(other.internalGetBuckets());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -643,6 +655,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableBuckets()
                       .getMutableMap()
                       .put(buckets__.getKey(), buckets__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -675,8 +688,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
           internalGetMutableBuckets() {
-        onChanged();
-        ;
         if (buckets_ == null) {
           buckets_ =
               com.google.protobuf.MapField.newMapField(BucketsDefaultEntryHolder.defaultEntry);
@@ -684,6 +695,8 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         if (!buckets_.isMutable()) {
           buckets_ = buckets_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return buckets_;
       }
 
@@ -762,6 +775,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearBuckets() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableBuckets().getMutableMap().clear();
         return this;
       }
@@ -783,6 +797,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Long> getMutableBuckets() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableBuckets().getMutableMap();
       }
       /**
@@ -798,6 +813,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       public Builder putBuckets(int key, long value) {
 
         internalGetMutableBuckets().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -812,6 +828,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putAllBuckets(java.util.Map<java.lang.Integer, java.lang.Long> values) {
         internalGetMutableBuckets().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -900,6 +917,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
       granularStats_;
@@ -984,9 +1002,11 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrDefault(
-      java.lang.String key,
-      com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
+  public /* nullable */ com.google.cloud.automl.v1beta1.TimestampStats.GranularStats
+      getGranularStatsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1251,6 +1271,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableGranularStats().clear();
       return this;
     }
@@ -1279,11 +1300,19 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.TimestampStats buildPartial() {
       com.google.cloud.automl.v1beta1.TimestampStats result =
           new com.google.cloud.automl.v1beta1.TimestampStats(this);
-      int from_bitField0_ = bitField0_;
-      result.granularStats_ = internalGetGranularStats();
-      result.granularStats_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.TimestampStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.granularStats_ = internalGetGranularStats();
+        result.granularStats_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1332,6 +1361,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.TimestampStats other) {
       if (other == com.google.cloud.automl.v1beta1.TimestampStats.getDefaultInstance()) return this;
       internalGetMutableGranularStats().mergeFrom(other.internalGetGranularStats());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1370,6 +1400,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableGranularStats()
                     .getMutableMap()
                     .put(granularStats__.getKey(), granularStats__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1408,8 +1439,6 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
         internalGetMutableGranularStats() {
-      onChanged();
-      ;
       if (granularStats_ == null) {
         granularStats_ =
             com.google.protobuf.MapField.newMapField(GranularStatsDefaultEntryHolder.defaultEntry);
@@ -1417,6 +1446,8 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       if (!granularStats_.isMutable()) {
         granularStats_ = granularStats_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return granularStats_;
     }
 
@@ -1490,9 +1521,11 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrDefault(
-        java.lang.String key,
-        com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
+    public /* nullable */ com.google.cloud.automl.v1beta1.TimestampStats.GranularStats
+        getGranularStatsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1530,6 +1563,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearGranularStats() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableGranularStats().getMutableMap().clear();
       return this;
     }
@@ -1560,6 +1594,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
         getMutableGranularStats() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableGranularStats().getMutableMap();
     }
     /**
@@ -1585,8 +1620,8 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableGranularStats().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1609,6 +1644,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
                 java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
             values) {
       internalGetMutableGranularStats().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

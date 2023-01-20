@@ -112,10 +112,14 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.NetworkOrBuilder getNetworkOrBuilder() {
-    return getNetwork();
+    return network_ == null
+        ? com.google.cloud.baremetalsolution.v2.Network.getDefaultInstance()
+        : network_;
   }
 
   public static final int USED_IPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList usedIps_;
   /**
    *
@@ -394,14 +398,14 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (networkBuilder_ == null) {
-        network_ = null;
-      } else {
-        network_ = null;
+      bitField0_ = 0;
+      network_ = null;
+      if (networkBuilder_ != null) {
+        networkBuilder_.dispose();
         networkBuilder_ = null;
       }
       usedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -429,19 +433,28 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.NetworkUsage buildPartial() {
       com.google.cloud.baremetalsolution.v2.NetworkUsage result =
           new com.google.cloud.baremetalsolution.v2.NetworkUsage(this);
-      int from_bitField0_ = bitField0_;
-      if (networkBuilder_ == null) {
-        result.network_ = network_;
-      } else {
-        result.network_ = networkBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        usedIps_ = usedIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.usedIps_ = usedIps_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.baremetalsolution.v2.NetworkUsage result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        usedIps_ = usedIps_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.usedIps_ = usedIps_;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.NetworkUsage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = networkBuilder_ == null ? network_ : networkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -496,7 +509,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       if (!other.usedIps_.isEmpty()) {
         if (usedIps_.isEmpty()) {
           usedIps_ = other.usedIps_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureUsedIpsIsMutable();
           usedIps_.addAll(other.usedIps_);
@@ -532,7 +545,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getNetworkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -579,7 +592,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return networkBuilder_ != null || network_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -616,11 +629,11 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         network_ = value;
-        onChanged();
       } else {
         networkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +649,11 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.baremetalsolution.v2.Network.Builder builderForValue) {
       if (networkBuilder_ == null) {
         network_ = builderForValue.build();
-        onChanged();
       } else {
         networkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,19 +667,18 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNetwork(com.google.cloud.baremetalsolution.v2.Network value) {
       if (networkBuilder_ == null) {
-        if (network_ != null) {
-          network_ =
-              com.google.cloud.baremetalsolution.v2.Network.newBuilder(network_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && network_ != null
+            && network_ != com.google.cloud.baremetalsolution.v2.Network.getDefaultInstance()) {
+          getNetworkBuilder().mergeFrom(value);
         } else {
           network_ = value;
         }
-        onChanged();
       } else {
         networkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -679,14 +691,13 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.Network network = 1;</code>
      */
     public Builder clearNetwork() {
-      if (networkBuilder_ == null) {
-        network_ = null;
-        onChanged();
-      } else {
-        network_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      network_ = null;
+      if (networkBuilder_ != null) {
+        networkBuilder_.dispose();
         networkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -699,7 +710,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.Network network = 1;</code>
      */
     public com.google.cloud.baremetalsolution.v2.Network.Builder getNetworkBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
@@ -751,9 +762,9 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUsedIpsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         usedIps_ = new com.google.protobuf.LazyStringArrayList(usedIps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -888,7 +899,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUsedIps() {
       usedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

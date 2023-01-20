@@ -303,7 +303,9 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -354,7 +356,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EVENT_DATA_RETENTION_FIELD_NUMBER = 2;
-  private int eventDataRetention_;
+  private int eventDataRetention_ = 0;
   /**
    *
    *
@@ -388,9 +390,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration
       getEventDataRetention() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration result =
-        com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.valueOf(
+        com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.forNumber(
             eventDataRetention_);
     return result == null
         ? com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
@@ -398,7 +399,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESET_USER_DATA_ON_NEW_ACTIVITY_FIELD_NUMBER = 3;
-  private boolean resetUserDataOnNewActivity_;
+  private boolean resetUserDataOnNewActivity_ = false;
   /**
    *
    *
@@ -638,12 +639,10 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       eventDataRetention_ = 0;
-
       resetUserDataOnNewActivity_ = false;
-
       return this;
     }
 
@@ -671,11 +670,24 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.DataRetentionSettings buildPartial() {
       com.google.analytics.admin.v1alpha.DataRetentionSettings result =
           new com.google.analytics.admin.v1alpha.DataRetentionSettings(this);
-      result.name_ = name_;
-      result.eventDataRetention_ = eventDataRetention_;
-      result.resetUserDataOnNewActivity_ = resetUserDataOnNewActivity_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.DataRetentionSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventDataRetention_ = eventDataRetention_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resetUserDataOnNewActivity_ = resetUserDataOnNewActivity_;
+      }
     }
 
     @java.lang.Override
@@ -726,6 +738,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.eventDataRetention_ != 0) {
@@ -763,19 +776,19 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 eventDataRetention_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 resetUserDataOnNewActivity_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -794,6 +807,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -859,8 +874,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,8 +892,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -900,8 +915,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -939,8 +954,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setEventDataRetentionValue(int value) {
-
       eventDataRetention_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -960,9 +975,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration
         getEventDataRetention() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration result =
-          com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.valueOf(
+          com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.forNumber(
               eventDataRetention_);
       return result == null
           ? com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
@@ -987,7 +1001,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       eventDataRetention_ = value.getNumber();
       onChanged();
       return this;
@@ -1006,7 +1020,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEventDataRetention() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       eventDataRetention_ = 0;
       onChanged();
       return this;
@@ -1045,6 +1059,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public Builder setResetUserDataOnNewActivity(boolean value) {
 
       resetUserDataOnNewActivity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1061,7 +1076,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResetUserDataOnNewActivity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       resetUserDataOnNewActivity_ = false;
       onChanged();
       return this;

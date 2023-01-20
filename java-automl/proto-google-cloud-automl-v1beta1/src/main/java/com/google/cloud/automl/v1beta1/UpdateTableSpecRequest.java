@@ -116,7 +116,9 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
-    return getTableSpec();
+    return tableSpec_ == null
+        ? com.google.cloud.automl.v1beta1.TableSpec.getDefaultInstance()
+        : tableSpec_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -162,7 +164,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +384,15 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tableSpecBuilder_ == null) {
-        tableSpec_ = null;
-      } else {
-        tableSpec_ = null;
+      bitField0_ = 0;
+      tableSpec_ = null;
+      if (tableSpecBuilder_ != null) {
+        tableSpecBuilder_.dispose();
         tableSpecBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -421,18 +422,21 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.automl.v1beta1.UpdateTableSpecRequest buildPartial() {
       com.google.cloud.automl.v1beta1.UpdateTableSpecRequest result =
           new com.google.cloud.automl.v1beta1.UpdateTableSpecRequest(this);
-      if (tableSpecBuilder_ == null) {
-        result.tableSpec_ = tableSpec_;
-      } else {
-        result.tableSpec_ = tableSpecBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.UpdateTableSpecRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableSpec_ = tableSpecBuilder_ == null ? tableSpec_ : tableSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -516,13 +520,13 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getTableSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +545,8 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1beta1.TableSpec tableSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -562,7 +568,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * @return Whether the tableSpec field is set.
      */
     public boolean hasTableSpec() {
-      return tableSpecBuilder_ != null || tableSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -603,11 +609,11 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         tableSpec_ = value;
-        onChanged();
       } else {
         tableSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,11 +630,11 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
     public Builder setTableSpec(com.google.cloud.automl.v1beta1.TableSpec.Builder builderForValue) {
       if (tableSpecBuilder_ == null) {
         tableSpec_ = builderForValue.build();
-        onChanged();
       } else {
         tableSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,19 +650,18 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeTableSpec(com.google.cloud.automl.v1beta1.TableSpec value) {
       if (tableSpecBuilder_ == null) {
-        if (tableSpec_ != null) {
-          tableSpec_ =
-              com.google.cloud.automl.v1beta1.TableSpec.newBuilder(tableSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tableSpec_ != null
+            && tableSpec_ != com.google.cloud.automl.v1beta1.TableSpec.getDefaultInstance()) {
+          getTableSpecBuilder().mergeFrom(value);
         } else {
           tableSpec_ = value;
         }
-        onChanged();
       } else {
         tableSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -671,14 +676,13 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearTableSpec() {
-      if (tableSpecBuilder_ == null) {
-        tableSpec_ = null;
-        onChanged();
-      } else {
-        tableSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tableSpec_ = null;
+      if (tableSpecBuilder_ != null) {
+        tableSpecBuilder_.dispose();
         tableSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -693,7 +697,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.automl.v1beta1.TableSpec.Builder getTableSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTableSpecFieldBuilder().getBuilder();
     }
@@ -763,7 +767,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +804,11 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +823,11 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,17 +841,18 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +865,13 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -880,7 +884,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

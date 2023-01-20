@@ -72,7 +72,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEME_FIELD_NUMBER = 1;
-  private int scheme_;
+  private int scheme_ = 0;
   /**
    *
    *
@@ -101,14 +101,15 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.Scheme getScheme() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.apigeeconnect.v1.Scheme result =
-        com.google.cloud.apigeeconnect.v1.Scheme.valueOf(scheme_);
+        com.google.cloud.apigeeconnect.v1.Scheme.forNumber(scheme_);
     return result == null ? com.google.cloud.apigeeconnect.v1.Scheme.UNRECOGNIZED : result;
   }
 
   public static final int HOST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -157,7 +158,9 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -420,12 +423,10 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scheme_ = 0;
-
       host_ = "";
-
       path_ = "";
-
       return this;
     }
 
@@ -453,11 +454,24 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Url buildPartial() {
       com.google.cloud.apigeeconnect.v1.Url result =
           new com.google.cloud.apigeeconnect.v1.Url(this);
-      result.scheme_ = scheme_;
-      result.host_ = host_;
-      result.path_ = path_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.Url result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scheme_ = scheme_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -510,10 +524,12 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -545,19 +561,19 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 scheme_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 host_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -576,6 +592,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int scheme_ = 0;
     /**
@@ -606,8 +624,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSchemeValue(int value) {
-
       scheme_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,9 +642,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.apigeeconnect.v1.Scheme getScheme() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.apigeeconnect.v1.Scheme result =
-          com.google.cloud.apigeeconnect.v1.Scheme.valueOf(scheme_);
+          com.google.cloud.apigeeconnect.v1.Scheme.forNumber(scheme_);
       return result == null ? com.google.cloud.apigeeconnect.v1.Scheme.UNRECOGNIZED : result;
     }
     /**
@@ -645,7 +662,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       scheme_ = value.getNumber();
       onChanged();
       return this;
@@ -662,7 +679,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScheme() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       scheme_ = 0;
       onChanged();
       return this;
@@ -729,8 +746,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -746,8 +763,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -768,8 +785,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,8 +852,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -852,8 +869,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -874,8 +891,8 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

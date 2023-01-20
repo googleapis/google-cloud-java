@@ -68,6 +68,8 @@ public final class FilterExpressionList extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.FilterExpression> expressions_;
   /**
    *
@@ -337,6 +339,7 @@ public final class FilterExpressionList extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (expressionsBuilder_ == null) {
         expressions_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,16 @@ public final class FilterExpressionList extends com.google.protobuf.GeneratedMes
     public com.google.analytics.data.v1beta.FilterExpressionList buildPartial() {
       com.google.analytics.data.v1beta.FilterExpressionList result =
           new com.google.analytics.data.v1beta.FilterExpressionList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.FilterExpressionList result) {
       if (expressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           expressions_ = java.util.Collections.unmodifiableList(expressions_);
@@ -381,8 +393,10 @@ public final class FilterExpressionList extends com.google.protobuf.GeneratedMes
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.FilterExpressionList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

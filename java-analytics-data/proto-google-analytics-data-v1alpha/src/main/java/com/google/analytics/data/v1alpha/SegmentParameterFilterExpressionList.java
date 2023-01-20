@@ -70,6 +70,8 @@ public final class SegmentParameterFilterExpressionList
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.SegmentParameterFilterExpression>
       expressions_;
   /**
@@ -350,6 +352,7 @@ public final class SegmentParameterFilterExpressionList
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (expressionsBuilder_ == null) {
         expressions_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,16 @@ public final class SegmentParameterFilterExpressionList
     public com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionList buildPartial() {
       com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionList result =
           new com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionList result) {
       if (expressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           expressions_ = java.util.Collections.unmodifiableList(expressions_);
@@ -397,8 +409,11 @@ public final class SegmentParameterFilterExpressionList
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

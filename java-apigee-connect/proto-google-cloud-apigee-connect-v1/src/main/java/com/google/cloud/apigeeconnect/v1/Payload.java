@@ -262,9 +262,8 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.apigeeconnect.v1.Action getAction() {
     if (kindCase_ == 3) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.apigeeconnect.v1.Action result =
-          com.google.cloud.apigeeconnect.v1.Action.valueOf((java.lang.Integer) kind_);
+          com.google.cloud.apigeeconnect.v1.Action.forNumber((java.lang.Integer) kind_);
       return result == null ? com.google.cloud.apigeeconnect.v1.Action.UNRECOGNIZED : result;
     }
     return com.google.cloud.apigeeconnect.v1.Action.ACTION_UNSPECIFIED;
@@ -510,6 +509,7 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (httpRequestBuilder_ != null) {
         httpRequestBuilder_.clear();
       }
@@ -545,26 +545,27 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Payload buildPartial() {
       com.google.cloud.apigeeconnect.v1.Payload result =
           new com.google.cloud.apigeeconnect.v1.Payload(this);
-      if (kindCase_ == 1) {
-        if (httpRequestBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = httpRequestBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (kindCase_ == 2) {
-        if (streamInfoBuilder_ == null) {
-          result.kind_ = kind_;
-        } else {
-          result.kind_ = streamInfoBuilder_.build();
-        }
-      }
-      if (kindCase_ == 3) {
-        result.kind_ = kind_;
-      }
-      result.kindCase_ = kindCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.Payload result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.apigeeconnect.v1.Payload result) {
+      result.kindCase_ = kindCase_;
+      result.kind_ = this.kind_;
+      if (kindCase_ == 1 && httpRequestBuilder_ != null) {
+        result.kind_ = httpRequestBuilder_.build();
+      }
+      if (kindCase_ == 2 && streamInfoBuilder_ != null) {
+        result.kind_ = streamInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -708,6 +709,8 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.apigeeconnect.v1.HttpRequest,
@@ -915,7 +918,6 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 1;
       onChanged();
-      ;
       return httpRequestBuilder_;
     }
 
@@ -1125,7 +1127,6 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
       kindCase_ = 2;
       onChanged();
-      ;
       return streamInfoBuilder_;
     }
 
@@ -1194,9 +1195,8 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.apigeeconnect.v1.Action getAction() {
       if (kindCase_ == 3) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.apigeeconnect.v1.Action result =
-            com.google.cloud.apigeeconnect.v1.Action.valueOf((java.lang.Integer) kind_);
+            com.google.cloud.apigeeconnect.v1.Action.forNumber((java.lang.Integer) kind_);
         return result == null ? com.google.cloud.apigeeconnect.v1.Action.UNRECOGNIZED : result;
       }
       return com.google.cloud.apigeeconnect.v1.Action.ACTION_UNSPECIFIED;

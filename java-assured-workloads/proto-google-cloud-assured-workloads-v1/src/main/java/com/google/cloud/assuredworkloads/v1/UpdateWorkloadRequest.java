@@ -125,7 +125,9 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1.WorkloadOrBuilder getWorkloadOrBuilder() {
-    return getWorkload();
+    return workload_ == null
+        ? com.google.cloud.assuredworkloads.v1.Workload.getDefaultInstance()
+        : workload_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -174,7 +176,7 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,16 +396,15 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (workloadBuilder_ == null) {
-        workload_ = null;
-      } else {
-        workload_ = null;
+      bitField0_ = 0;
+      workload_ = null;
+      if (workloadBuilder_ != null) {
+        workloadBuilder_.dispose();
         workloadBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -433,18 +434,21 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest buildPartial() {
       com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest result =
           new com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest(this);
-      if (workloadBuilder_ == null) {
-        result.workload_ = workload_;
-      } else {
-        result.workload_ = workloadBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workload_ = workloadBuilder_ == null ? workload_ : workloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -528,13 +532,13 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getWorkloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -553,6 +557,8 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.assuredworkloads.v1.Workload workload_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -577,7 +583,7 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the workload field is set.
      */
     public boolean hasWorkload() {
-      return workloadBuilder_ != null || workload_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -624,11 +630,11 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         workload_ = value;
-        onChanged();
       } else {
         workloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,11 +655,11 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.assuredworkloads.v1.Workload.Builder builderForValue) {
       if (workloadBuilder_ == null) {
         workload_ = builderForValue.build();
-        onChanged();
       } else {
         workloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -672,19 +678,18 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWorkload(com.google.cloud.assuredworkloads.v1.Workload value) {
       if (workloadBuilder_ == null) {
-        if (workload_ != null) {
-          workload_ =
-              com.google.cloud.assuredworkloads.v1.Workload.newBuilder(workload_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && workload_ != null
+            && workload_ != com.google.cloud.assuredworkloads.v1.Workload.getDefaultInstance()) {
+          getWorkloadBuilder().mergeFrom(value);
         } else {
           workload_ = value;
         }
-        onChanged();
       } else {
         workloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,14 +707,13 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearWorkload() {
-      if (workloadBuilder_ == null) {
-        workload_ = null;
-        onChanged();
-      } else {
-        workload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      workload_ = null;
+      if (workloadBuilder_ != null) {
+        workloadBuilder_.dispose();
         workloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -727,7 +731,7 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.assuredworkloads.v1.Workload.Builder getWorkloadBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWorkloadFieldBuilder().getBuilder();
     }
@@ -804,7 +808,7 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -843,11 +847,11 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,11 +867,11 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,17 +886,18 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -906,14 +911,13 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -927,7 +931,7 @@ public final class UpdateWorkloadRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

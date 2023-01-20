@@ -245,7 +245,9 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NETWORK_FIELD_NUMBER = 1;
-    private volatile java.lang.Object network_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
     /**
      *
      *
@@ -294,7 +296,9 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int IP_ADDRESS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ipAddress_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ipAddress_ = "";
     /**
      *
      *
@@ -343,7 +347,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DEFAULT_GATEWAY_FIELD_NUMBER = 3;
-    private boolean defaultGateway_;
+    private boolean defaultGateway_ = false;
     /**
      *
      *
@@ -362,7 +366,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int NETWORK_TYPE_FIELD_NUMBER = 4;
-    private int networkType_;
+    private int networkType_ = 0;
     /**
      *
      *
@@ -391,16 +395,17 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Network.Type getNetworkType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Network.Type result =
-          com.google.cloud.baremetalsolution.v2.Network.Type.valueOf(networkType_);
+          com.google.cloud.baremetalsolution.v2.Network.Type.forNumber(networkType_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Network.Type.UNRECOGNIZED
           : result;
     }
 
     public static final int ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -698,16 +703,12 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         network_ = "";
-
         ipAddress_ = "";
-
         defaultGateway_ = false;
-
         networkType_ = 0;
-
         id_ = "";
-
         return this;
       }
 
@@ -741,13 +742,31 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface result =
             new com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface(
                 this);
-        result.network_ = network_;
-        result.ipAddress_ = ipAddress_;
-        result.defaultGateway_ = defaultGateway_;
-        result.networkType_ = networkType_;
-        result.id_ = id_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.network_ = network_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ipAddress_ = ipAddress_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.defaultGateway_ = defaultGateway_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.networkType_ = networkType_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -806,10 +825,12 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getNetwork().isEmpty()) {
           network_ = other.network_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getIpAddress().isEmpty()) {
           ipAddress_ = other.ipAddress_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getDefaultGateway() != false) {
@@ -820,6 +841,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -851,31 +873,31 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   network_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   ipAddress_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   defaultGateway_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   networkType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 42:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -894,6 +916,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object network_ = "";
       /**
@@ -956,8 +980,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         network_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -973,8 +997,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearNetwork() {
-
         network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -995,8 +1019,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         network_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1062,8 +1086,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         ipAddress_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1079,8 +1103,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearIpAddress() {
-
         ipAddress_ = getDefaultInstance().getIpAddress();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1101,8 +1125,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         ipAddress_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1140,6 +1164,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       public Builder setDefaultGateway(boolean value) {
 
         defaultGateway_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1156,7 +1181,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearDefaultGateway() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         defaultGateway_ = false;
         onChanged();
         return this;
@@ -1191,8 +1216,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setNetworkTypeValue(int value) {
-
         networkType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1209,9 +1234,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.cloud.baremetalsolution.v2.Network.Type getNetworkType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.baremetalsolution.v2.Network.Type result =
-            com.google.cloud.baremetalsolution.v2.Network.Type.valueOf(networkType_);
+            com.google.cloud.baremetalsolution.v2.Network.Type.forNumber(networkType_);
         return result == null
             ? com.google.cloud.baremetalsolution.v2.Network.Type.UNRECOGNIZED
             : result;
@@ -1232,7 +1256,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         networkType_ = value.getNumber();
         onChanged();
         return this;
@@ -1249,7 +1273,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearNetworkType() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         networkType_ = 0;
         onChanged();
         return this;
@@ -1316,8 +1340,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1333,8 +1357,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1355,8 +1379,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1431,6 +1455,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOGICAL_NETWORK_INTERFACES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.baremetalsolution.v2.LogicalInterface.LogicalNetworkInterface>
       logicalNetworkInterfaces_;
@@ -1519,7 +1545,9 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1570,7 +1598,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INTERFACE_INDEX_FIELD_NUMBER = 3;
-  private int interfaceIndex_;
+  private int interfaceIndex_ = 0;
   /**
    *
    *
@@ -1812,6 +1840,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (logicalNetworkInterfacesBuilder_ == null) {
         logicalNetworkInterfaces_ = java.util.Collections.emptyList();
       } else {
@@ -1820,9 +1849,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
       interfaceIndex_ = 0;
-
       return this;
     }
 
@@ -1850,7 +1877,16 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.baremetalsolution.v2.LogicalInterface buildPartial() {
       com.google.cloud.baremetalsolution.v2.LogicalInterface result =
           new com.google.cloud.baremetalsolution.v2.LogicalInterface(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.baremetalsolution.v2.LogicalInterface result) {
       if (logicalNetworkInterfacesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           logicalNetworkInterfaces_ =
@@ -1861,10 +1897,16 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       } else {
         result.logicalNetworkInterfaces_ = logicalNetworkInterfacesBuilder_.build();
       }
-      result.name_ = name_;
-      result.interfaceIndex_ = interfaceIndex_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.LogicalInterface result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.interfaceIndex_ = interfaceIndex_;
+      }
     }
 
     @java.lang.Override
@@ -1942,6 +1984,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getInterfaceIndex() != 0) {
@@ -1991,13 +2034,13 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 interfaceIndex_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -2507,8 +2550,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2525,8 +2568,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2548,8 +2591,8 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2587,6 +2630,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     public Builder setInterfaceIndex(int value) {
 
       interfaceIndex_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2603,7 +2647,7 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInterfaceIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       interfaceIndex_ = 0;
       onChanged();
       return this;

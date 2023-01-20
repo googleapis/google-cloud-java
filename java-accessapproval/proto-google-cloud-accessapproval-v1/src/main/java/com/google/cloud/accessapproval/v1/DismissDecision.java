@@ -108,11 +108,11 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDismissTimeOrBuilder() {
-    return getDismissTime();
+    return dismissTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dismissTime_;
   }
 
   public static final int IMPLICIT_FIELD_NUMBER = 2;
-  private boolean implicit_;
+  private boolean implicit_ = false;
   /**
    *
    *
@@ -342,14 +342,13 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dismissTimeBuilder_ == null) {
-        dismissTime_ = null;
-      } else {
-        dismissTime_ = null;
+      bitField0_ = 0;
+      dismissTime_ = null;
+      if (dismissTimeBuilder_ != null) {
+        dismissTimeBuilder_.dispose();
         dismissTimeBuilder_ = null;
       }
       implicit_ = false;
-
       return this;
     }
 
@@ -377,14 +376,22 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.DismissDecision buildPartial() {
       com.google.cloud.accessapproval.v1.DismissDecision result =
           new com.google.cloud.accessapproval.v1.DismissDecision(this);
-      if (dismissTimeBuilder_ == null) {
-        result.dismissTime_ = dismissTime_;
-      } else {
-        result.dismissTime_ = dismissTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.implicit_ = implicit_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.DismissDecision result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dismissTime_ =
+            dismissTimeBuilder_ == null ? dismissTime_ : dismissTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.implicit_ = implicit_;
+      }
     }
 
     @java.lang.Override
@@ -468,13 +475,13 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getDismissTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 implicit_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -494,6 +501,8 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp dismissTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -512,7 +521,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
      * @return Whether the dismissTime field is set.
      */
     public boolean hasDismissTime() {
-      return dismissTimeBuilder_ != null || dismissTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -549,11 +558,11 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         dismissTime_ = value;
-        onChanged();
       } else {
         dismissTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -568,11 +577,11 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     public Builder setDismissTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dismissTimeBuilder_ == null) {
         dismissTime_ = builderForValue.build();
-        onChanged();
       } else {
         dismissTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -586,19 +595,18 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeDismissTime(com.google.protobuf.Timestamp value) {
       if (dismissTimeBuilder_ == null) {
-        if (dismissTime_ != null) {
-          dismissTime_ =
-              com.google.protobuf.Timestamp.newBuilder(dismissTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dismissTime_ != null
+            && dismissTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDismissTimeBuilder().mergeFrom(value);
         } else {
           dismissTime_ = value;
         }
-        onChanged();
       } else {
         dismissTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -611,14 +619,13 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp dismiss_time = 1;</code>
      */
     public Builder clearDismissTime() {
-      if (dismissTimeBuilder_ == null) {
-        dismissTime_ = null;
-        onChanged();
-      } else {
-        dismissTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dismissTime_ = null;
+      if (dismissTimeBuilder_ != null) {
+        dismissTimeBuilder_.dispose();
         dismissTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -631,7 +638,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp dismiss_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDismissTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDismissTimeFieldBuilder().getBuilder();
     }
@@ -714,6 +721,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
     public Builder setImplicit(boolean value) {
 
       implicit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -731,7 +739,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearImplicit() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       implicit_ = false;
       onChanged();
       return this;

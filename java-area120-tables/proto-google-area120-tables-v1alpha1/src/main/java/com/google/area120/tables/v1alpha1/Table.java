@@ -70,7 +70,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -170,6 +174,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.ColumnDescription> columns_;
   /**
    *
@@ -460,17 +466,16 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
       } else {
         columns_ = null;
         columnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -498,20 +503,34 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.area120.tables.v1alpha1.Table buildPartial() {
       com.google.area120.tables.v1alpha1.Table result =
           new com.google.area120.tables.v1alpha1.Table(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.area120.tables.v1alpha1.Table result) {
       if (columnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.columns_ = columns_;
       } else {
         result.columns_ = columnsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.Table result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -561,17 +580,19 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.area120.tables.v1alpha1.Table.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (columnsBuilder_ == null) {
         if (!other.columns_.isEmpty()) {
           if (columns_.isEmpty()) {
             columns_ = other.columns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureColumnsIsMutable();
             columns_.addAll(other.columns_);
@@ -584,7 +605,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             columnsBuilder_.dispose();
             columnsBuilder_ = null;
             columns_ = other.columns_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             columnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getColumnsFieldBuilder()
@@ -623,13 +644,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -729,8 +750,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -747,8 +768,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -770,8 +791,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,8 +858,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,8 +875,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -876,8 +897,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,10 +907,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         columns_ =
             new java.util.ArrayList<com.google.area120.tables.v1alpha1.ColumnDescription>(columns_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1118,7 +1139,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public Builder clearColumns() {
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         columnsBuilder_.clear();
@@ -1251,7 +1272,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                 com.google.area120.tables.v1alpha1.ColumnDescription,
                 com.google.area120.tables.v1alpha1.ColumnDescription.Builder,
                 com.google.area120.tables.v1alpha1.ColumnDescriptionOrBuilder>(
-                columns_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                columns_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         columns_ = null;
       }
       return columnsBuilder_;

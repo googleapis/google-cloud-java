@@ -68,6 +68,8 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   }
 
   public static final int ALLOWED_REFERRERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowedReferrers_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowedReferrers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -365,14 +368,25 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public com.google.api.apikeys.v2.BrowserKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.BrowserKeyRestrictions result =
           new com.google.api.apikeys.v2.BrowserKeyRestrictions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.apikeys.v2.BrowserKeyRestrictions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedReferrers_ = allowedReferrers_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowedReferrers_ = allowedReferrers_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.BrowserKeyRestrictions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

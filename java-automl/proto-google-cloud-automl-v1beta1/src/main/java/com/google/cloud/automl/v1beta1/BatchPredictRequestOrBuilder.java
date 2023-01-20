@@ -407,7 +407,6 @@ public interface BatchPredictRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; params = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-
   /* nullable */
   java.lang.String getParamsOrDefault(
       java.lang.String key,

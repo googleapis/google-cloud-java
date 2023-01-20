@@ -283,7 +283,6 @@ public interface ApiVersionOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -363,7 +362,6 @@ public interface ApiVersionOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 8;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

@@ -71,7 +71,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROPERTY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object property_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object property_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -173,7 +177,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROPERTY_TYPE_FIELD_NUMBER = 3;
-  private int propertyType_;
+  private int propertyType_ = 0;
   /**
    *
    *
@@ -202,14 +206,15 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.PropertyType getPropertyType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.PropertyType result =
-        com.google.analytics.admin.v1beta.PropertyType.valueOf(propertyType_);
+        com.google.analytics.admin.v1beta.PropertyType.forNumber(propertyType_);
     return result == null ? com.google.analytics.admin.v1beta.PropertyType.UNRECOGNIZED : result;
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -489,14 +494,11 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       property_ = "";
-
       displayName_ = "";
-
       propertyType_ = 0;
-
       parent_ = "";
-
       return this;
     }
 
@@ -524,12 +526,27 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.admin.v1beta.PropertySummary buildPartial() {
       com.google.analytics.admin.v1beta.PropertySummary result =
           new com.google.analytics.admin.v1beta.PropertySummary(this);
-      result.property_ = property_;
-      result.displayName_ = displayName_;
-      result.propertyType_ = propertyType_;
-      result.parent_ = parent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.PropertySummary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = property_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.propertyType_ = propertyType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -580,10 +597,12 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getProperty().isEmpty()) {
         property_ = other.property_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.propertyType_ != 0) {
@@ -591,6 +610,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -622,25 +642,25 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 property_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 propertyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -659,6 +679,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object property_ = "";
     /**
@@ -727,8 +749,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +768,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProperty() {
-
       property_ = getDefaultInstance().getProperty();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -770,8 +792,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,8 +859,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,8 +876,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -876,8 +898,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -911,8 +933,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPropertyTypeValue(int value) {
-
       propertyType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -929,9 +951,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.PropertyType getPropertyType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.PropertyType result =
-          com.google.analytics.admin.v1beta.PropertyType.valueOf(propertyType_);
+          com.google.analytics.admin.v1beta.PropertyType.forNumber(propertyType_);
       return result == null ? com.google.analytics.admin.v1beta.PropertyType.UNRECOGNIZED : result;
     }
     /**
@@ -950,7 +971,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       propertyType_ = value.getNumber();
       onChanged();
       return this;
@@ -967,7 +988,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPropertyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       propertyType_ = 0;
       onChanged();
       return this;
@@ -1043,8 +1064,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1063,8 +1084,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1088,8 +1109,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

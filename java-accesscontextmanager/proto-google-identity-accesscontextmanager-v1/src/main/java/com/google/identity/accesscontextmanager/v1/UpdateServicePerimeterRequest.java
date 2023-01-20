@@ -121,7 +121,9 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
       getServicePerimeterOrBuilder() {
-    return getServicePerimeter();
+    return servicePerimeter_ == null
+        ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance()
+        : servicePerimeter_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -170,7 +172,7 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,16 +396,15 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (servicePerimeterBuilder_ == null) {
-        servicePerimeter_ = null;
-      } else {
-        servicePerimeter_ = null;
+      bitField0_ = 0;
+      servicePerimeter_ = null;
+      if (servicePerimeterBuilder_ != null) {
+        servicePerimeterBuilder_.dispose();
         servicePerimeterBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -437,18 +438,23 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest result =
           new com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest(this);
-      if (servicePerimeterBuilder_ == null) {
-        result.servicePerimeter_ = servicePerimeter_;
-      } else {
-        result.servicePerimeter_ = servicePerimeterBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.servicePerimeter_ =
+            servicePerimeterBuilder_ == null ? servicePerimeter_ : servicePerimeterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,13 +543,13 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
               {
                 input.readMessage(
                     getServicePerimeterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -562,6 +568,8 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.identity.accesscontextmanager.v1.ServicePerimeter servicePerimeter_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -584,7 +592,7 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      * @return Whether the servicePerimeter field is set.
      */
     public boolean hasServicePerimeter() {
-      return servicePerimeterBuilder_ != null || servicePerimeter_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -628,11 +636,11 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         servicePerimeter_ = value;
-        onChanged();
       } else {
         servicePerimeterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,11 +659,11 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
         com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder builderForValue) {
       if (servicePerimeterBuilder_ == null) {
         servicePerimeter_ = builderForValue.build();
-        onChanged();
       } else {
         servicePerimeterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -673,20 +681,20 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
     public Builder mergeServicePerimeter(
         com.google.identity.accesscontextmanager.v1.ServicePerimeter value) {
       if (servicePerimeterBuilder_ == null) {
-        if (servicePerimeter_ != null) {
-          servicePerimeter_ =
-              com.google.identity.accesscontextmanager.v1.ServicePerimeter.newBuilder(
-                      servicePerimeter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && servicePerimeter_ != null
+            && servicePerimeter_
+                != com.google.identity.accesscontextmanager.v1.ServicePerimeter
+                    .getDefaultInstance()) {
+          getServicePerimeterBuilder().mergeFrom(value);
         } else {
           servicePerimeter_ = value;
         }
-        onChanged();
       } else {
         servicePerimeterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,14 +710,13 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearServicePerimeter() {
-      if (servicePerimeterBuilder_ == null) {
-        servicePerimeter_ = null;
-        onChanged();
-      } else {
-        servicePerimeter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      servicePerimeter_ = null;
+      if (servicePerimeterBuilder_ != null) {
+        servicePerimeterBuilder_.dispose();
         servicePerimeterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -726,7 +733,7 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder
         getServicePerimeterBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getServicePerimeterFieldBuilder().getBuilder();
     }
@@ -800,7 +807,7 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -839,11 +846,11 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -859,11 +866,11 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,17 +885,18 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -902,14 +910,13 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -923,7 +930,7 @@ public final class UpdateServicePerimeterRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
