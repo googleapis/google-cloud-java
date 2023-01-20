@@ -163,7 +163,9 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENTITY_ID_FIELD_FIELD_NUMBER = 5;
-  private volatile java.lang.Object entityIdField_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityIdField_ = "";
   /**
    *
    *
@@ -434,11 +436,11 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (csvSourceBuilder_ != null) {
         csvSourceBuilder_.clear();
       }
       entityIdField_ = "";
-
       entityIdsSourceCase_ = 0;
       entityIdsSource_ = null;
       return this;
@@ -468,17 +470,27 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.EntityIdSelector buildPartial() {
       com.google.cloud.aiplatform.v1beta1.EntityIdSelector result =
           new com.google.cloud.aiplatform.v1beta1.EntityIdSelector(this);
-      if (entityIdsSourceCase_ == 3) {
-        if (csvSourceBuilder_ == null) {
-          result.entityIdsSource_ = entityIdsSource_;
-        } else {
-          result.entityIdsSource_ = csvSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.entityIdField_ = entityIdField_;
-      result.entityIdsSourceCase_ = entityIdsSourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.EntityIdSelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityIdField_ = entityIdField_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.EntityIdSelector result) {
+      result.entityIdsSourceCase_ = entityIdsSourceCase_;
+      result.entityIdsSource_ = this.entityIdsSource_;
+      if (entityIdsSourceCase_ == 3 && csvSourceBuilder_ != null) {
+        result.entityIdsSource_ = csvSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -529,6 +541,7 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getEntityIdField().isEmpty()) {
         entityIdField_ = other.entityIdField_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getEntityIdsSourceCase()) {
@@ -577,7 +590,7 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 entityIdField_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             default:
@@ -610,6 +623,8 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.CsvSource,
@@ -818,7 +833,6 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       }
       entityIdsSourceCase_ = 3;
       onChanged();
-      ;
       return csvSourceBuilder_;
     }
 
@@ -886,8 +900,8 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityIdField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -904,8 +918,8 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEntityIdField() {
-
       entityIdField_ = getDefaultInstance().getEntityIdField();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -927,8 +941,8 @@ public final class EntityIdSelector extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityIdField_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -68,6 +68,8 @@ public final class FeatureValueList extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.FeatureValue> values_;
   /**
    *
@@ -335,6 +337,7 @@ public final class FeatureValueList extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class FeatureValueList extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.FeatureValueList buildPartial() {
       com.google.cloud.aiplatform.v1.FeatureValueList result =
           new com.google.cloud.aiplatform.v1.FeatureValueList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.FeatureValueList result) {
       if (valuesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
@@ -379,8 +391,10 @@ public final class FeatureValueList extends com.google.protobuf.GeneratedMessage
       } else {
         result.values_ = valuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.FeatureValueList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

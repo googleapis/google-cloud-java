@@ -463,7 +463,6 @@ public interface PipelineTaskDetailOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList&gt; inputs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getInputsOrDefault(
       java.lang.String key,
@@ -535,7 +534,6 @@ public interface PipelineTaskDetailOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList&gt; outputs = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getOutputsOrDefault(
       java.lang.String key,

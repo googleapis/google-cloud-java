@@ -70,7 +70,9 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
   }
 
   public static final int CONTEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object context_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object context_ = "";
   /**
    *
    *
@@ -335,8 +337,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       context_ = "";
-
       return this;
     }
 
@@ -365,9 +367,19 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     public com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest buildPartial() {
       com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest result =
           new com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest(this);
-      result.context_ = context_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.context_ = context_;
+      }
     }
 
     @java.lang.Override
@@ -420,6 +432,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
         return this;
       if (!other.getContext().isEmpty()) {
         context_ = other.context_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -451,7 +464,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
             case 10:
               {
                 context_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -470,6 +483,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object context_ = "";
     /**
@@ -556,8 +571,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -581,8 +596,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearContext() {
-
       context_ = getDefaultInstance().getContext();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -611,8 +626,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

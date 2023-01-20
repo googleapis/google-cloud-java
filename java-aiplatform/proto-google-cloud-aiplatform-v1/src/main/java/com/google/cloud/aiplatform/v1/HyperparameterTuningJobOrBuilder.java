@@ -554,7 +554,6 @@ public interface HyperparameterTuningJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

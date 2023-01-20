@@ -283,7 +283,9 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     }
 
     public static final int FEATURE_DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object featureDisplayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object featureDisplayName_ = "";
     /**
      *
      *
@@ -376,7 +378,9 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ThresholdConfigOrBuilder getThresholdOrBuilder() {
-      return getThreshold();
+      return threshold_ == null
+          ? com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()
+          : threshold_;
     }
 
     public static final int TRAINING_STATS_FIELD_NUMBER = 4;
@@ -424,10 +428,14 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.FeatureStatsAnomalyOrBuilder getTrainingStatsOrBuilder() {
-      return getTrainingStats();
+      return trainingStats_ == null
+          ? com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.getDefaultInstance()
+          : trainingStats_;
     }
 
     public static final int PREDICTION_STATS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.FeatureStatsAnomaly> predictionStats_;
     /**
      *
@@ -773,18 +781,16 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         featureDisplayName_ = "";
-
-        if (thresholdBuilder_ == null) {
-          threshold_ = null;
-        } else {
-          threshold_ = null;
+        threshold_ = null;
+        if (thresholdBuilder_ != null) {
+          thresholdBuilder_.dispose();
           thresholdBuilder_ = null;
         }
-        if (trainingStatsBuilder_ == null) {
-          trainingStats_ = null;
-        } else {
-          trainingStats_ = null;
+        trainingStats_ = null;
+        if (trainingStatsBuilder_ != null) {
+          trainingStatsBuilder_.dispose();
           trainingStatsBuilder_ = null;
         }
         if (predictionStatsBuilder_ == null) {
@@ -793,7 +799,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           predictionStats_ = null;
           predictionStatsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -831,29 +837,42 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             result =
                 new com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
                     .FeatureHistoricStatsAnomalies(this);
-        int from_bitField0_ = bitField0_;
-        result.featureDisplayName_ = featureDisplayName_;
-        if (thresholdBuilder_ == null) {
-          result.threshold_ = threshold_;
-        } else {
-          result.threshold_ = thresholdBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (trainingStatsBuilder_ == null) {
-          result.trainingStats_ = trainingStats_;
-        } else {
-          result.trainingStats_ = trainingStatsBuilder_.build();
-        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies
+              result) {
         if (predictionStatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             predictionStats_ = java.util.Collections.unmodifiableList(predictionStats_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.predictionStats_ = predictionStats_;
         } else {
           result.predictionStats_ = predictionStatsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.featureDisplayName_ = featureDisplayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.threshold_ = thresholdBuilder_ == null ? threshold_ : thresholdBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.trainingStats_ =
+              trainingStatsBuilder_ == null ? trainingStats_ : trainingStatsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -915,6 +934,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
                 .FeatureHistoricStatsAnomalies.getDefaultInstance()) return this;
         if (!other.getFeatureDisplayName().isEmpty()) {
           featureDisplayName_ = other.featureDisplayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasThreshold()) {
@@ -927,7 +947,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           if (!other.predictionStats_.isEmpty()) {
             if (predictionStats_.isEmpty()) {
               predictionStats_ = other.predictionStats_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensurePredictionStatsIsMutable();
               predictionStats_.addAll(other.predictionStats_);
@@ -940,7 +960,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               predictionStatsBuilder_.dispose();
               predictionStatsBuilder_ = null;
               predictionStats_ = other.predictionStats_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               predictionStatsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPredictionStatsFieldBuilder()
@@ -979,19 +999,19 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
               case 10:
                 {
                   featureDisplayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   input.readMessage(getThresholdFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getTrainingStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 34
               case 42:
@@ -1088,8 +1108,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         featureDisplayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1105,8 +1125,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearFeatureDisplayName() {
-
         featureDisplayName_ = getDefaultInstance().getFeatureDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1127,8 +1147,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         featureDisplayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1151,7 +1171,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * @return Whether the threshold field is set.
        */
       public boolean hasThreshold() {
-        return thresholdBuilder_ != null || threshold_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1188,11 +1208,11 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             throw new NullPointerException();
           }
           threshold_ = value;
-          onChanged();
         } else {
           thresholdBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1208,11 +1228,11 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           com.google.cloud.aiplatform.v1.ThresholdConfig.Builder builderForValue) {
         if (thresholdBuilder_ == null) {
           threshold_ = builderForValue.build();
-          onChanged();
         } else {
           thresholdBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1226,19 +1246,19 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        */
       public Builder mergeThreshold(com.google.cloud.aiplatform.v1.ThresholdConfig value) {
         if (thresholdBuilder_ == null) {
-          if (threshold_ != null) {
-            threshold_ =
-                com.google.cloud.aiplatform.v1.ThresholdConfig.newBuilder(threshold_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && threshold_ != null
+              && threshold_
+                  != com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()) {
+            getThresholdBuilder().mergeFrom(value);
           } else {
             threshold_ = value;
           }
-          onChanged();
         } else {
           thresholdBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1251,14 +1271,13 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * <code>.google.cloud.aiplatform.v1.ThresholdConfig threshold = 3;</code>
        */
       public Builder clearThreshold() {
-        if (thresholdBuilder_ == null) {
-          threshold_ = null;
-          onChanged();
-        } else {
-          threshold_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        threshold_ = null;
+        if (thresholdBuilder_ != null) {
+          thresholdBuilder_.dispose();
           thresholdBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1271,7 +1290,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * <code>.google.cloud.aiplatform.v1.ThresholdConfig threshold = 3;</code>
        */
       public com.google.cloud.aiplatform.v1.ThresholdConfig.Builder getThresholdBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getThresholdFieldBuilder().getBuilder();
       }
@@ -1337,7 +1356,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * @return Whether the trainingStats field is set.
        */
       public boolean hasTrainingStats() {
-        return trainingStatsBuilder_ != null || trainingStats_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1374,11 +1393,11 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             throw new NullPointerException();
           }
           trainingStats_ = value;
-          onChanged();
         } else {
           trainingStatsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1394,11 +1413,11 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.Builder builderForValue) {
         if (trainingStatsBuilder_ == null) {
           trainingStats_ = builderForValue.build();
-          onChanged();
         } else {
           trainingStatsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1412,19 +1431,19 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        */
       public Builder mergeTrainingStats(com.google.cloud.aiplatform.v1.FeatureStatsAnomaly value) {
         if (trainingStatsBuilder_ == null) {
-          if (trainingStats_ != null) {
-            trainingStats_ =
-                com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.newBuilder(trainingStats_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && trainingStats_ != null
+              && trainingStats_
+                  != com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.getDefaultInstance()) {
+            getTrainingStatsBuilder().mergeFrom(value);
           } else {
             trainingStats_ = value;
           }
-          onChanged();
         } else {
           trainingStatsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1437,14 +1456,13 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * <code>.google.cloud.aiplatform.v1.FeatureStatsAnomaly training_stats = 4;</code>
        */
       public Builder clearTrainingStats() {
-        if (trainingStatsBuilder_ == null) {
-          trainingStats_ = null;
-          onChanged();
-        } else {
-          trainingStats_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        trainingStats_ = null;
+        if (trainingStatsBuilder_ != null) {
+          trainingStatsBuilder_.dispose();
           trainingStatsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1457,7 +1475,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
        * <code>.google.cloud.aiplatform.v1.FeatureStatsAnomaly training_stats = 4;</code>
        */
       public com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.Builder getTrainingStatsBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTrainingStatsFieldBuilder().getBuilder();
       }
@@ -1510,11 +1528,11 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
           java.util.Collections.emptyList();
 
       private void ensurePredictionStatsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           predictionStats_ =
               new java.util.ArrayList<com.google.cloud.aiplatform.v1.FeatureStatsAnomaly>(
                   predictionStats_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1744,7 +1762,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       public Builder clearPredictionStats() {
         if (predictionStatsBuilder_ == null) {
           predictionStats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           predictionStatsBuilder_.clear();
@@ -1879,7 +1897,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
                   com.google.cloud.aiplatform.v1.FeatureStatsAnomaly.Builder,
                   com.google.cloud.aiplatform.v1.FeatureStatsAnomalyOrBuilder>(
                   predictionStats_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           predictionStats_ = null;
@@ -1960,7 +1978,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
   }
 
   public static final int OBJECTIVE_FIELD_NUMBER = 1;
-  private int objective_;
+  private int objective_ = 0;
   /**
    *
    *
@@ -1989,16 +2007,17 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType getObjective() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType result =
-        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.valueOf(objective_);
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.forNumber(objective_);
     return result == null
         ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.UNRECOGNIZED
         : result;
   }
 
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployedModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedModelId_ = "";
   /**
    *
    *
@@ -2047,7 +2066,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
   }
 
   public static final int ANOMALY_COUNT_FIELD_NUMBER = 3;
-  private int anomalyCount_;
+  private int anomalyCount_ = 0;
   /**
    *
    *
@@ -2065,6 +2084,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
   }
 
   public static final int FEATURE_STATS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
               .FeatureHistoricStatsAnomalies>
@@ -2388,19 +2409,17 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       objective_ = 0;
-
       deployedModelId_ = "";
-
       anomalyCount_ = 0;
-
       if (featureStatsBuilder_ == null) {
         featureStats_ = java.util.Collections.emptyList();
       } else {
         featureStats_ = null;
         featureStatsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -2429,21 +2448,39 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies buildPartial() {
       com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies result =
           new com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies(this);
-      int from_bitField0_ = bitField0_;
-      result.objective_ = objective_;
-      result.deployedModelId_ = deployedModelId_;
-      result.anomalyCount_ = anomalyCount_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies result) {
       if (featureStatsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           featureStats_ = java.util.Collections.unmodifiableList(featureStats_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.featureStats_ = featureStats_;
       } else {
         result.featureStats_ = featureStatsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.objective_ = objective_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedModelId_ = deployedModelId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.anomalyCount_ = anomalyCount_;
+      }
     }
 
     @java.lang.Override
@@ -2498,6 +2535,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       }
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getAnomalyCount() != 0) {
@@ -2507,7 +2545,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         if (!other.featureStats_.isEmpty()) {
           if (featureStats_.isEmpty()) {
             featureStats_ = other.featureStats_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFeatureStatsIsMutable();
             featureStats_.addAll(other.featureStats_);
@@ -2520,7 +2558,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             featureStatsBuilder_.dispose();
             featureStatsBuilder_ = null;
             featureStats_ = other.featureStats_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             featureStatsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFeatureStatsFieldBuilder()
@@ -2559,19 +2597,19 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
             case 8:
               {
                 objective_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 anomalyCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -2641,8 +2679,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setObjectiveValue(int value) {
-
       objective_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2660,9 +2698,9 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType getObjective() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType result =
-          com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.valueOf(objective_);
+          com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.forNumber(
+              objective_);
       return result == null
           ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.UNRECOGNIZED
           : result;
@@ -2685,7 +2723,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       objective_ = value.getNumber();
       onChanged();
       return this;
@@ -2703,7 +2741,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearObjective() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       objective_ = 0;
       onChanged();
       return this;
@@ -2770,8 +2808,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2787,8 +2825,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDeployedModelId() {
-
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2809,8 +2847,8 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2846,6 +2884,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public Builder setAnomalyCount(int value) {
 
       anomalyCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2861,7 +2900,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAnomalyCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       anomalyCount_ = 0;
       onChanged();
       return this;
@@ -2873,12 +2912,12 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
         featureStats_ = java.util.Collections.emptyList();
 
     private void ensureFeatureStatsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         featureStats_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
                     .FeatureHistoricStatsAnomalies>(featureStats_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -3144,7 +3183,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     public Builder clearFeatureStats() {
       if (featureStatsBuilder_ == null) {
         featureStats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         featureStatsBuilder_.clear();
@@ -3304,7 +3343,7 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
                     .FeatureHistoricStatsAnomalies.Builder,
                 com.google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies
                     .FeatureHistoricStatsAnomaliesOrBuilder>(
-                featureStats_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                featureStats_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         featureStats_ = null;
       }
       return featureStatsBuilder_;

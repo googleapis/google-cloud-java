@@ -74,7 +74,9 @@ public final class AddContextArtifactsAndExecutionsRequest
   }
 
   public static final int CONTEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object context_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object context_ = "";
   /**
    *
    *
@@ -131,6 +133,8 @@ public final class AddContextArtifactsAndExecutionsRequest
   }
 
   public static final int ARTIFACTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList artifacts_;
   /**
    *
@@ -200,6 +204,8 @@ public final class AddContextArtifactsAndExecutionsRequest
   }
 
   public static final int EXECUTIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList executions_;
   /**
    *
@@ -512,12 +518,12 @@ public final class AddContextArtifactsAndExecutionsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       context_ = "";
-
       artifacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -549,20 +555,34 @@ public final class AddContextArtifactsAndExecutionsRequest
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest result =
           new com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.context_ = context_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        artifacts_ = artifacts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.artifacts_ = artifacts_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        executions_ = executions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.executions_ = executions_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        artifacts_ = artifacts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.artifacts_ = artifacts_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        executions_ = executions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.executions_ = executions_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.context_ = context_;
+      }
     }
 
     @java.lang.Override
@@ -617,12 +637,13 @@ public final class AddContextArtifactsAndExecutionsRequest
               .getDefaultInstance()) return this;
       if (!other.getContext().isEmpty()) {
         context_ = other.context_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.artifacts_.isEmpty()) {
         if (artifacts_.isEmpty()) {
           artifacts_ = other.artifacts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureArtifactsIsMutable();
           artifacts_.addAll(other.artifacts_);
@@ -632,7 +653,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       if (!other.executions_.isEmpty()) {
         if (executions_.isEmpty()) {
           executions_ = other.executions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureExecutionsIsMutable();
           executions_.addAll(other.executions_);
@@ -668,7 +689,7 @@ public final class AddContextArtifactsAndExecutionsRequest
             case 10:
               {
                 context_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -777,8 +798,8 @@ public final class AddContextArtifactsAndExecutionsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +819,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      * @return This builder for chaining.
      */
     public Builder clearContext() {
-
       context_ = getDefaultInstance().getContext();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -824,8 +845,8 @@ public final class AddContextArtifactsAndExecutionsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       context_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,9 +855,9 @@ public final class AddContextArtifactsAndExecutionsRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         artifacts_ = new com.google.protobuf.LazyStringArrayList(artifacts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -987,7 +1008,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      */
     public Builder clearArtifacts() {
       artifacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1020,9 +1041,9 @@ public final class AddContextArtifactsAndExecutionsRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExecutionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         executions_ = new com.google.protobuf.LazyStringArrayList(executions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1181,7 +1202,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      */
     public Builder clearExecutions() {
       executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

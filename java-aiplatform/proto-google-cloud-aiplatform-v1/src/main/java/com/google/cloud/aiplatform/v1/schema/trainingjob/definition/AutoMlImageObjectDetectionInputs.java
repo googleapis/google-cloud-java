@@ -318,7 +318,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -341,12 +341,11 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionInputs.ModelType
       getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs
             .ModelType
         result =
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                .AutoMlImageObjectDetectionInputs.ModelType.valueOf(modelType_);
+                .AutoMlImageObjectDetectionInputs.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionInputs.ModelType.UNRECOGNIZED
@@ -354,7 +353,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   }
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 2;
-  private long budgetMilliNodeHours_;
+  private long budgetMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -386,7 +385,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   }
 
   public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 3;
-  private boolean disableEarlyStopping_;
+  private boolean disableEarlyStopping_ = false;
   /**
    *
    *
@@ -654,12 +653,10 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       budgetMilliNodeHours_ = 0L;
-
       disableEarlyStopping_ = false;
-
       return this;
     }
 
@@ -698,11 +695,27 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlImageObjectDetectionInputs(this);
-      result.modelType_ = modelType_;
-      result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
-      result.disableEarlyStopping_ = disableEarlyStopping_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                .AutoMlImageObjectDetectionInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.disableEarlyStopping_ = disableEarlyStopping_;
+      }
     }
 
     @java.lang.Override
@@ -799,19 +812,19 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 budgetMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 disableEarlyStopping_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -830,6 +843,8 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -852,8 +867,8 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -868,12 +883,11 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionInputs.ModelType
         getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs
               .ModelType
           result =
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlImageObjectDetectionInputs.ModelType.valueOf(modelType_);
+                  .AutoMlImageObjectDetectionInputs.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
               .AutoMlImageObjectDetectionInputs.ModelType.UNRECOGNIZED
@@ -894,7 +908,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -907,7 +921,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;
@@ -972,6 +986,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public Builder setBudgetMilliNodeHours(long value) {
 
       budgetMilliNodeHours_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1001,7 +1016,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearBudgetMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       budgetMilliNodeHours_ = 0L;
       onChanged();
       return this;
@@ -1044,6 +1059,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public Builder setDisableEarlyStopping(boolean value) {
 
       disableEarlyStopping_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1062,7 +1078,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDisableEarlyStopping() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       disableEarlyStopping_ = false;
       onChanged();
       return this;

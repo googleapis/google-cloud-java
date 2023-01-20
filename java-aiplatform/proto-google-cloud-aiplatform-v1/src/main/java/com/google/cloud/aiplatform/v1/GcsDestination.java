@@ -68,7 +68,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OUTPUT_URI_PREFIX_FIELD_NUMBER = 1;
-  private volatile java.lang.Object outputUriPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUriPrefix_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputUriPrefix_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.GcsDestination buildPartial() {
       com.google.cloud.aiplatform.v1.GcsDestination result =
           new com.google.cloud.aiplatform.v1.GcsDestination(this);
-      result.outputUriPrefix_ = outputUriPrefix_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.GcsDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputUriPrefix_ = outputUriPrefix_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()) return this;
       if (!other.getOutputUriPrefix().isEmpty()) {
         outputUriPrefix_ = other.outputUriPrefix_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 outputUriPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object outputUriPrefix_ = "";
     /**
@@ -521,8 +535,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUriPrefix_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,8 +555,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOutputUriPrefix() {
-
       outputUriPrefix_ = getDefaultInstance().getOutputUriPrefix();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -566,8 +580,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUriPrefix_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -117,11 +117,13 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
-    return getMachineSpec();
+    return machineSpec_ == null
+        ? com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()
+        : machineSpec_;
   }
 
   public static final int STARTING_REPLICA_COUNT_FIELD_NUMBER = 2;
-  private int startingReplicaCount_;
+  private int startingReplicaCount_ = 0;
   /**
    *
    *
@@ -141,7 +143,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
   }
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 3;
-  private int maxReplicaCount_;
+  private int maxReplicaCount_ = 0;
   /**
    *
    *
@@ -381,16 +383,14 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-      } else {
-        machineSpec_ = null;
+      bitField0_ = 0;
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
       startingReplicaCount_ = 0;
-
       maxReplicaCount_ = 0;
-
       return this;
     }
 
@@ -418,15 +418,25 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.BatchDedicatedResources buildPartial() {
       com.google.cloud.aiplatform.v1.BatchDedicatedResources result =
           new com.google.cloud.aiplatform.v1.BatchDedicatedResources(this);
-      if (machineSpecBuilder_ == null) {
-        result.machineSpec_ = machineSpec_;
-      } else {
-        result.machineSpec_ = machineSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.startingReplicaCount_ = startingReplicaCount_;
-      result.maxReplicaCount_ = maxReplicaCount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.BatchDedicatedResources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineSpec_ =
+            machineSpecBuilder_ == null ? machineSpec_ : machineSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startingReplicaCount_ = startingReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxReplicaCount_ = maxReplicaCount_;
+      }
     }
 
     @java.lang.Override
@@ -513,19 +523,19 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getMachineSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 startingReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxReplicaCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -544,6 +554,8 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.MachineSpec machineSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +577,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      * @return Whether the machineSpec field is set.
      */
     public boolean hasMachineSpec() {
-      return machineSpecBuilder_ != null || machineSpec_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +618,11 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         machineSpec_ = value;
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +640,11 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1.MachineSpec.Builder builderForValue) {
       if (machineSpecBuilder_ == null) {
         machineSpec_ = builderForValue.build();
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +660,18 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      */
     public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1.MachineSpec value) {
       if (machineSpecBuilder_ == null) {
-        if (machineSpec_ != null) {
-          machineSpec_ =
-              com.google.cloud.aiplatform.v1.MachineSpec.newBuilder(machineSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && machineSpec_ != null
+            && machineSpec_ != com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()) {
+          getMachineSpecBuilder().mergeFrom(value);
         } else {
           machineSpec_ = value;
         }
-        onChanged();
       } else {
         machineSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +686,13 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearMachineSpec() {
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-        onChanged();
-      } else {
-        machineSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +707,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.aiplatform.v1.MachineSpec.Builder getMachineSpecBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
@@ -784,6 +794,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public Builder setStartingReplicaCount(int value) {
 
       startingReplicaCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,7 +812,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearStartingReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startingReplicaCount_ = 0;
       onChanged();
       return this;
@@ -840,6 +851,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public Builder setMaxReplicaCount(int value) {
 
       maxReplicaCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -856,7 +868,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMaxReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxReplicaCount_ = 0;
       onChanged();
       return this;

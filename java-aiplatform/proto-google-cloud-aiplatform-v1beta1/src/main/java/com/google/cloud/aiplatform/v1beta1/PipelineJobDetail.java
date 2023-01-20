@@ -118,7 +118,9 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ContextOrBuilder getPipelineContextOrBuilder() {
-    return getPipelineContext();
+    return pipelineContext_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()
+        : pipelineContext_;
   }
 
   public static final int PIPELINE_RUN_CONTEXT_FIELD_NUMBER = 2;
@@ -172,10 +174,14 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ContextOrBuilder getPipelineRunContextOrBuilder() {
-    return getPipelineRunContext();
+    return pipelineRunContext_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()
+        : pipelineRunContext_;
   }
 
   public static final int TASK_DETAILS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail> taskDetails_;
   /**
    *
@@ -484,16 +490,15 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (pipelineContextBuilder_ == null) {
-        pipelineContext_ = null;
-      } else {
-        pipelineContext_ = null;
+      bitField0_ = 0;
+      pipelineContext_ = null;
+      if (pipelineContextBuilder_ != null) {
+        pipelineContextBuilder_.dispose();
         pipelineContextBuilder_ = null;
       }
-      if (pipelineRunContextBuilder_ == null) {
-        pipelineRunContext_ = null;
-      } else {
-        pipelineRunContext_ = null;
+      pipelineRunContext_ = null;
+      if (pipelineRunContextBuilder_ != null) {
+        pipelineRunContextBuilder_.dispose();
         pipelineRunContextBuilder_ = null;
       }
       if (taskDetailsBuilder_ == null) {
@@ -502,7 +507,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         taskDetails_ = null;
         taskDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -530,28 +535,39 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1beta1.PipelineJobDetail buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PipelineJobDetail result =
           new com.google.cloud.aiplatform.v1beta1.PipelineJobDetail(this);
-      int from_bitField0_ = bitField0_;
-      if (pipelineContextBuilder_ == null) {
-        result.pipelineContext_ = pipelineContext_;
-      } else {
-        result.pipelineContext_ = pipelineContextBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (pipelineRunContextBuilder_ == null) {
-        result.pipelineRunContext_ = pipelineRunContext_;
-      } else {
-        result.pipelineRunContext_ = pipelineRunContextBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.PipelineJobDetail result) {
       if (taskDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           taskDetails_ = java.util.Collections.unmodifiableList(taskDetails_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.taskDetails_ = taskDetails_;
       } else {
         result.taskDetails_ = taskDetailsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.PipelineJobDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pipelineContext_ =
+            pipelineContextBuilder_ == null ? pipelineContext_ : pipelineContextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pipelineRunContext_ =
+            pipelineRunContextBuilder_ == null
+                ? pipelineRunContext_
+                : pipelineRunContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -610,7 +626,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         if (!other.taskDetails_.isEmpty()) {
           if (taskDetails_.isEmpty()) {
             taskDetails_ = other.taskDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTaskDetailsIsMutable();
             taskDetails_.addAll(other.taskDetails_);
@@ -623,7 +639,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             taskDetailsBuilder_.dispose();
             taskDetailsBuilder_ = null;
             taskDetails_ = other.taskDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             taskDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTaskDetailsFieldBuilder()
@@ -662,14 +678,14 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getPipelineContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getPipelineRunContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -725,7 +741,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * @return Whether the pipelineContext field is set.
      */
     public boolean hasPipelineContext() {
-      return pipelineContextBuilder_ != null || pipelineContext_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -766,11 +782,11 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         pipelineContext_ = value;
-        onChanged();
       } else {
         pipelineContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -788,11 +804,11 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         com.google.cloud.aiplatform.v1beta1.Context.Builder builderForValue) {
       if (pipelineContextBuilder_ == null) {
         pipelineContext_ = builderForValue.build();
-        onChanged();
       } else {
         pipelineContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -808,19 +824,19 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePipelineContext(com.google.cloud.aiplatform.v1beta1.Context value) {
       if (pipelineContextBuilder_ == null) {
-        if (pipelineContext_ != null) {
-          pipelineContext_ =
-              com.google.cloud.aiplatform.v1beta1.Context.newBuilder(pipelineContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && pipelineContext_ != null
+            && pipelineContext_
+                != com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()) {
+          getPipelineContextBuilder().mergeFrom(value);
         } else {
           pipelineContext_ = value;
         }
-        onChanged();
       } else {
         pipelineContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -835,14 +851,13 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPipelineContext() {
-      if (pipelineContextBuilder_ == null) {
-        pipelineContext_ = null;
-        onChanged();
-      } else {
-        pipelineContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      pipelineContext_ = null;
+      if (pipelineContextBuilder_ != null) {
+        pipelineContextBuilder_.dispose();
         pipelineContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -857,7 +872,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Context.Builder getPipelineContextBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPipelineContextFieldBuilder().getBuilder();
     }
@@ -929,7 +944,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * @return Whether the pipelineRunContext field is set.
      */
     public boolean hasPipelineRunContext() {
-      return pipelineRunContextBuilder_ != null || pipelineRunContext_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -970,11 +985,11 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         pipelineRunContext_ = value;
-        onChanged();
       } else {
         pipelineRunContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -992,11 +1007,11 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         com.google.cloud.aiplatform.v1beta1.Context.Builder builderForValue) {
       if (pipelineRunContextBuilder_ == null) {
         pipelineRunContext_ = builderForValue.build();
-        onChanged();
       } else {
         pipelineRunContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1012,19 +1027,19 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePipelineRunContext(com.google.cloud.aiplatform.v1beta1.Context value) {
       if (pipelineRunContextBuilder_ == null) {
-        if (pipelineRunContext_ != null) {
-          pipelineRunContext_ =
-              com.google.cloud.aiplatform.v1beta1.Context.newBuilder(pipelineRunContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && pipelineRunContext_ != null
+            && pipelineRunContext_
+                != com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()) {
+          getPipelineRunContextBuilder().mergeFrom(value);
         } else {
           pipelineRunContext_ = value;
         }
-        onChanged();
       } else {
         pipelineRunContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1039,14 +1054,13 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPipelineRunContext() {
-      if (pipelineRunContextBuilder_ == null) {
-        pipelineRunContext_ = null;
-        onChanged();
-      } else {
-        pipelineRunContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      pipelineRunContext_ = null;
+      if (pipelineRunContextBuilder_ != null) {
+        pipelineRunContextBuilder_.dispose();
         pipelineRunContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1061,7 +1075,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Context.Builder getPipelineRunContextBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPipelineRunContextFieldBuilder().getBuilder();
     }
@@ -1117,11 +1131,11 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureTaskDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         taskDetails_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail>(
                 taskDetails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1363,7 +1377,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     public Builder clearTaskDetails() {
       if (taskDetailsBuilder_ == null) {
         taskDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         taskDetailsBuilder_.clear();
@@ -1503,7 +1517,7 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail,
                 com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.Builder,
                 com.google.cloud.aiplatform.v1beta1.PipelineTaskDetailOrBuilder>(
-                taskDetails_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                taskDetails_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         taskDetails_ = null;
       }
       return taskDetailsBuilder_;

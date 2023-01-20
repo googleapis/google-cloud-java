@@ -112,7 +112,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.IndexOrBuilder getIndexOrBuilder() {
-    return getIndex();
+    return index_ == null ? com.google.cloud.aiplatform.v1.Index.getDefaultInstance() : index_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -164,7 +164,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,16 +384,15 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (indexBuilder_ == null) {
-        index_ = null;
-      } else {
-        index_ = null;
+      bitField0_ = 0;
+      index_ = null;
+      if (indexBuilder_ != null) {
+        indexBuilder_.dispose();
         indexBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -423,18 +422,21 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.UpdateIndexRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UpdateIndexRequest result =
           new com.google.cloud.aiplatform.v1.UpdateIndexRequest(this);
-      if (indexBuilder_ == null) {
-        result.index_ = index_;
-      } else {
-        result.index_ = indexBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UpdateIndexRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = indexBuilder_ == null ? index_ : indexBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -518,13 +520,13 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getIndexFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +545,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.Index index_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -563,7 +567,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the index field is set.
      */
     public boolean hasIndex() {
-      return indexBuilder_ != null || index_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,11 +604,11 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         index_ = value;
-        onChanged();
       } else {
         indexBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +624,11 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
     public Builder setIndex(com.google.cloud.aiplatform.v1.Index.Builder builderForValue) {
       if (indexBuilder_ == null) {
         index_ = builderForValue.build();
-        onChanged();
       } else {
         indexBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -639,19 +643,18 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeIndex(com.google.cloud.aiplatform.v1.Index value) {
       if (indexBuilder_ == null) {
-        if (index_ != null) {
-          index_ =
-              com.google.cloud.aiplatform.v1.Index.newBuilder(index_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && index_ != null
+            && index_ != com.google.cloud.aiplatform.v1.Index.getDefaultInstance()) {
+          getIndexBuilder().mergeFrom(value);
         } else {
           index_ = value;
         }
-        onChanged();
       } else {
         indexBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +668,13 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearIndex() {
-      if (indexBuilder_ == null) {
-        index_ = null;
-        onChanged();
-      } else {
-        index_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      index_ = null;
+      if (indexBuilder_ != null) {
+        indexBuilder_.dispose();
         indexBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -686,7 +688,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Index.Builder getIndexBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIndexFieldBuilder().getBuilder();
     }
@@ -754,7 +756,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -795,11 +797,11 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -816,11 +818,11 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,17 +838,18 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,14 +864,13 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +885,7 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -129,7 +129,9 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ArtifactOrBuilder getArtifactOrBuilder() {
-    return getArtifact();
+    return artifact_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance()
+        : artifact_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -181,11 +183,11 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -431,20 +433,18 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-      } else {
-        artifact_ = null;
+      bitField0_ = 0;
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -472,19 +472,24 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest result =
           new com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest(this);
-      if (artifactBuilder_ == null) {
-        result.artifact_ = artifact_;
-      } else {
-        result.artifact_ = artifactBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.artifact_ = artifactBuilder_ == null ? artifact_ : artifactBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -571,19 +576,19 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getArtifactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -602,6 +607,8 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.Artifact artifact_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -627,7 +634,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the artifact field is set.
      */
     public boolean hasArtifact() {
-      return artifactBuilder_ != null || artifact_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -676,11 +683,11 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         artifact_ = value;
-        onChanged();
       } else {
         artifactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,11 +709,11 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.aiplatform.v1beta1.Artifact.Builder builderForValue) {
       if (artifactBuilder_ == null) {
         artifact_ = builderForValue.build();
-        onChanged();
       } else {
         artifactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -726,19 +733,18 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeArtifact(com.google.cloud.aiplatform.v1beta1.Artifact value) {
       if (artifactBuilder_ == null) {
-        if (artifact_ != null) {
-          artifact_ =
-              com.google.cloud.aiplatform.v1beta1.Artifact.newBuilder(artifact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && artifact_ != null
+            && artifact_ != com.google.cloud.aiplatform.v1beta1.Artifact.getDefaultInstance()) {
+          getArtifactBuilder().mergeFrom(value);
         } else {
           artifact_ = value;
         }
-        onChanged();
       } else {
         artifactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -757,14 +763,13 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearArtifact() {
-      if (artifactBuilder_ == null) {
-        artifact_ = null;
-        onChanged();
-      } else {
-        artifact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
         artifactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -783,7 +788,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Artifact.Builder getArtifactBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }
@@ -863,7 +868,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -904,11 +909,11 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,11 +930,11 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -945,17 +950,18 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -970,14 +976,13 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -992,7 +997,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1079,6 +1084,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1096,7 +1102,7 @@ public final class UpdateArtifactRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

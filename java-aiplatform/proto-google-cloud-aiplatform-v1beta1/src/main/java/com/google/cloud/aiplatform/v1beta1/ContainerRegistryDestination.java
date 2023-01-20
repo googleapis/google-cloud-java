@@ -68,7 +68,9 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
   }
 
   public static final int OUTPUT_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object outputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUri_ = "";
   /**
    *
    *
@@ -328,8 +330,8 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputUri_ = "";
-
       return this;
     }
 
@@ -358,9 +360,19 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination result =
           new com.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination(this);
-      result.outputUri_ = outputUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputUri_ = outputUri_;
+      }
     }
 
     @java.lang.Override
@@ -413,6 +425,7 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
         return this;
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -444,7 +457,7 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
             case 10:
               {
                 outputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -463,6 +476,8 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object outputUri_ = "";
     /**
@@ -546,8 +561,8 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -570,8 +585,8 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
-
       outputUri_ = getDefaultInstance().getOutputUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -599,8 +614,8 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

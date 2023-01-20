@@ -71,6 +71,8 @@ public final class BatchImportModelEvaluationSlicesResponse
   }
 
   public static final int IMPORTED_MODEL_EVALUATION_SLICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList importedModelEvaluationSlices_;
   /**
    *
@@ -354,6 +356,7 @@ public final class BatchImportModelEvaluationSlicesResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -386,14 +389,26 @@ public final class BatchImportModelEvaluationSlicesResponse
     public com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse buildPartial() {
       com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse result =
           new com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         importedModelEvaluationSlices_ = importedModelEvaluationSlices_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.importedModelEvaluationSlices_ = importedModelEvaluationSlices_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

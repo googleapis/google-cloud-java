@@ -73,7 +73,7 @@ public final class ImageClassificationPredictionParams
   }
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-  private float confidenceThreshold_;
+  private float confidenceThreshold_ = 0F;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class ImageClassificationPredictionParams
   }
 
   public static final int MAX_PREDICTIONS_FIELD_NUMBER = 2;
-  private int maxPredictions_;
+  private int maxPredictions_ = 0;
   /**
    *
    *
@@ -348,10 +348,9 @@ public final class ImageClassificationPredictionParams
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       confidenceThreshold_ = 0F;
-
       maxPredictions_ = 0;
-
       return this;
     }
 
@@ -387,10 +386,23 @@ public final class ImageClassificationPredictionParams
           result =
               new com.google.cloud.aiplatform.v1.schema.predict.params
                   .ImageClassificationPredictionParams(this);
-      result.confidenceThreshold_ = confidenceThreshold_;
-      result.maxPredictions_ = maxPredictions_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.predict.params.ImageClassificationPredictionParams
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.confidenceThreshold_ = confidenceThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxPredictions_ = maxPredictions_;
+      }
     }
 
     @java.lang.Override
@@ -483,13 +495,13 @@ public final class ImageClassificationPredictionParams
             case 13:
               {
                 confidenceThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 16:
               {
                 maxPredictions_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -508,6 +520,8 @@ public final class ImageClassificationPredictionParams
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float confidenceThreshold_;
     /**
@@ -542,6 +556,7 @@ public final class ImageClassificationPredictionParams
     public Builder setConfidenceThreshold(float value) {
 
       confidenceThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -558,7 +573,7 @@ public final class ImageClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearConfidenceThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       confidenceThreshold_ = 0F;
       onChanged();
       return this;
@@ -599,6 +614,7 @@ public final class ImageClassificationPredictionParams
     public Builder setMaxPredictions(int value) {
 
       maxPredictions_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -616,7 +632,7 @@ public final class ImageClassificationPredictionParams
      * @return This builder for chaining.
      */
     public Builder clearMaxPredictions() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxPredictions_ = 0;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class QueryExecutionInputsAndOutputsRequest
   }
 
   public static final int EXECUTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object execution_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object execution_ = "";
   /**
    *
    *
@@ -331,8 +333,8 @@ public final class QueryExecutionInputsAndOutputsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       execution_ = "";
-
       return this;
     }
 
@@ -364,9 +366,19 @@ public final class QueryExecutionInputsAndOutputsRequest
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest result =
           new com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest(this);
-      result.execution_ = execution_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.execution_ = execution_;
+      }
     }
 
     @java.lang.Override
@@ -421,6 +433,7 @@ public final class QueryExecutionInputsAndOutputsRequest
               .getDefaultInstance()) return this;
       if (!other.getExecution().isEmpty()) {
         execution_ = other.execution_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -452,7 +465,7 @@ public final class QueryExecutionInputsAndOutputsRequest
             case 10:
               {
                 execution_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -471,6 +484,8 @@ public final class QueryExecutionInputsAndOutputsRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object execution_ = "";
     /**
@@ -545,8 +560,8 @@ public final class QueryExecutionInputsAndOutputsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       execution_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,8 +581,8 @@ public final class QueryExecutionInputsAndOutputsRequest
      * @return This builder for chaining.
      */
     public Builder clearExecution() {
-
       execution_ = getDefaultInstance().getExecution();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -592,8 +607,8 @@ public final class QueryExecutionInputsAndOutputsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       execution_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

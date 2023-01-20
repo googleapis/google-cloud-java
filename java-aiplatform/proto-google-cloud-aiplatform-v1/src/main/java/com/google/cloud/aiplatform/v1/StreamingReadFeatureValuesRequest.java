@@ -71,7 +71,9 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   }
 
   public static final int ENTITY_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList entityIds_;
   /**
    *
@@ -256,7 +260,9 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.FeatureSelectorOrBuilder getFeatureSelectorOrBuilder() {
-    return getFeatureSelector();
+    return featureSelector_ == null
+        ? com.google.cloud.aiplatform.v1.FeatureSelector.getDefaultInstance()
+        : featureSelector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -488,14 +494,13 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entityType_ = "";
-
       entityIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-      } else {
-        featureSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
       return this;
@@ -526,20 +531,33 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.entityType_ = entityType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        entityIds_ = entityIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.entityIds_ = entityIds_;
-      if (featureSelectorBuilder_ == null) {
-        result.featureSelector_ = featureSelector_;
-      } else {
-        result.featureSelector_ = featureSelectorBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        entityIds_ = entityIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.entityIds_ = entityIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featureSelector_ =
+            featureSelectorBuilder_ == null ? featureSelector_ : featureSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -592,12 +610,13 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         return this;
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.entityIds_.isEmpty()) {
         if (entityIds_.isEmpty()) {
           entityIds_ = other.entityIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEntityIdsIsMutable();
           entityIds_.addAll(other.entityIds_);
@@ -636,7 +655,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
             case 10:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -649,7 +668,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
             case 26:
               {
                 input.readMessage(getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -753,8 +772,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +796,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -806,8 +825,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,9 +835,9 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntityIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entityIds_ = new com.google.protobuf.LazyStringArrayList(entityIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -969,7 +988,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      */
     public Builder clearEntityIds() {
       entityIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1019,7 +1038,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * @return Whether the featureSelector field is set.
      */
     public boolean hasFeatureSelector() {
-      return featureSelectorBuilder_ != null || featureSelector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1062,11 +1081,11 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         featureSelector_ = value;
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1085,11 +1104,11 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
         com.google.cloud.aiplatform.v1.FeatureSelector.Builder builderForValue) {
       if (featureSelectorBuilder_ == null) {
         featureSelector_ = builderForValue.build();
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1106,19 +1125,19 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      */
     public Builder mergeFeatureSelector(com.google.cloud.aiplatform.v1.FeatureSelector value) {
       if (featureSelectorBuilder_ == null) {
-        if (featureSelector_ != null) {
-          featureSelector_ =
-              com.google.cloud.aiplatform.v1.FeatureSelector.newBuilder(featureSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && featureSelector_ != null
+            && featureSelector_
+                != com.google.cloud.aiplatform.v1.FeatureSelector.getDefaultInstance()) {
+          getFeatureSelectorBuilder().mergeFrom(value);
         } else {
           featureSelector_ = value;
         }
-        onChanged();
       } else {
         featureSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1134,14 +1153,13 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearFeatureSelector() {
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-        onChanged();
-      } else {
-        featureSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1157,7 +1175,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * </code>
      */
     public com.google.cloud.aiplatform.v1.FeatureSelector.Builder getFeatureSelectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFeatureSelectorFieldBuilder().getBuilder();
     }

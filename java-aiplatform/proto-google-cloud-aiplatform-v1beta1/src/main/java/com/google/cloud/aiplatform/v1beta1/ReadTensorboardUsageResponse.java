@@ -172,7 +172,9 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object username_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
     /**
      *
      *
@@ -221,7 +223,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     }
 
     public static final int VIEW_COUNT_FIELD_NUMBER = 2;
-    private long viewCount_;
+    private long viewCount_ = 0L;
     /**
      *
      *
@@ -460,10 +462,9 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         username_ = "";
-
         viewCount_ = 0L;
-
         return this;
       }
 
@@ -497,10 +498,23 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData result =
             new com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData(
                 this);
-        result.username_ = username_;
-        result.viewCount_ = viewCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.viewCount_ = viewCount_;
+        }
       }
 
       @java.lang.Override
@@ -559,6 +573,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 .getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getViewCount() != 0L) {
@@ -593,13 +608,13 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
               case 10:
                 {
                   username_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   viewCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -618,6 +633,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object username_ = "";
       /**
@@ -680,8 +697,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
         username_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -697,8 +714,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearUsername() {
-
         username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -719,8 +736,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         username_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -756,6 +773,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       public Builder setViewCount(long value) {
 
         viewCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -771,7 +789,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearViewCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         viewCount_ = 0L;
         onChanged();
         return this;
@@ -973,6 +991,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     }
 
     public static final int USER_USAGE_DATA_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerUserUsageData>
         userUsageData_;
@@ -1277,6 +1297,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (userUsageDataBuilder_ == null) {
           userUsageData_ = java.util.Collections.emptyList();
         } else {
@@ -1317,7 +1338,17 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData result =
             new com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData(
                 this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
+              result) {
         if (userUsageDataBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             userUsageData_ = java.util.Collections.unmodifiableList(userUsageData_);
@@ -1327,8 +1358,12 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
         } else {
           result.userUsageData_ = userUsageDataBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1998,6 +2033,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                             .PerMonthUsageData.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
@@ -2074,9 +2110,11 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse
+          .PerMonthUsageData
       getMonthlyUsageDataOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
               defaultValue) {
     if (key == null) {
@@ -2346,6 +2384,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableMonthlyUsageData().clear();
       return this;
     }
@@ -2375,11 +2414,20 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse result =
           new com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.monthlyUsageData_ = internalGetMonthlyUsageData();
-      result.monthlyUsageData_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.monthlyUsageData_ = internalGetMonthlyUsageData();
+        result.monthlyUsageData_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -2431,6 +2479,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
           == com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.getDefaultInstance())
         return this;
       internalGetMutableMonthlyUsageData().mergeFrom(other.internalGetMonthlyUsageData());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2470,6 +2519,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 internalGetMutableMonthlyUsageData()
                     .getMutableMap()
                     .put(monthlyUsageData__.getKey(), monthlyUsageData__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -2511,8 +2561,6 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
         internalGetMutableMonthlyUsageData() {
-      onChanged();
-      ;
       if (monthlyUsageData_ == null) {
         monthlyUsageData_ =
             com.google.protobuf.MapField.newMapField(
@@ -2521,6 +2569,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       if (!monthlyUsageData_.isMutable()) {
         monthlyUsageData_ = monthlyUsageData_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return monthlyUsageData_;
     }
 
@@ -2584,9 +2634,11 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse
+            .PerMonthUsageData
         getMonthlyUsageDataOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
                 defaultValue) {
       if (key == null) {
@@ -2626,6 +2678,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
     }
 
     public Builder clearMonthlyUsageData() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableMonthlyUsageData().getMutableMap().clear();
       return this;
     }
@@ -2653,6 +2706,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
         getMutableMonthlyUsageData() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableMonthlyUsageData().getMutableMap();
     }
     /**
@@ -2675,8 +2729,8 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMonthlyUsageData().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -2696,6 +2750,7 @@ public final class ReadTensorboardUsageResponse extends com.google.protobuf.Gene
                 com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
             values) {
       internalGetMutableMonthlyUsageData().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

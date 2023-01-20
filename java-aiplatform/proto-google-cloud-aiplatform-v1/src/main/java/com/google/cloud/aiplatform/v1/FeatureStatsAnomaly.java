@@ -77,7 +77,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private double score_;
+  private double score_ = 0D;
   /**
    *
    *
@@ -100,7 +100,9 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
   }
 
   public static final int STATS_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object statsUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statsUri_ = "";
   /**
    *
    *
@@ -157,7 +159,9 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ANOMALY_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object anomalyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object anomalyUri_ = "";
   /**
    *
    *
@@ -220,7 +224,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISTRIBUTION_DEVIATION_FIELD_NUMBER = 5;
-  private double distributionDeviation_;
+  private double distributionDeviation_ = 0D;
   /**
    *
    *
@@ -242,7 +246,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ANOMALY_DETECTION_THRESHOLD_FIELD_NUMBER = 9;
-  private double anomalyDetectionThreshold_;
+  private double anomalyDetectionThreshold_ = 0D;
   /**
    *
    *
@@ -313,7 +317,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -368,7 +372,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -652,26 +656,20 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       score_ = 0D;
-
       statsUri_ = "";
-
       anomalyUri_ = "";
-
       distributionDeviation_ = 0D;
-
       anomalyDetectionThreshold_ = 0D;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       return this;
@@ -701,23 +699,36 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.FeatureStatsAnomaly buildPartial() {
       com.google.cloud.aiplatform.v1.FeatureStatsAnomaly result =
           new com.google.cloud.aiplatform.v1.FeatureStatsAnomaly(this);
-      result.score_ = score_;
-      result.statsUri_ = statsUri_;
-      result.anomalyUri_ = anomalyUri_;
-      result.distributionDeviation_ = distributionDeviation_;
-      result.anomalyDetectionThreshold_ = anomalyDetectionThreshold_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.FeatureStatsAnomaly result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.statsUri_ = statsUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.anomalyUri_ = anomalyUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.distributionDeviation_ = distributionDeviation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.anomalyDetectionThreshold_ = anomalyDetectionThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -771,10 +782,12 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
       }
       if (!other.getStatsUri().isEmpty()) {
         statsUri_ = other.statsUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAnomalyUri().isEmpty()) {
         anomalyUri_ = other.anomalyUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getDistributionDeviation() != 0D) {
@@ -818,43 +831,43 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
             case 9:
               {
                 score_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 26:
               {
                 statsUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 anomalyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 41:
               {
                 distributionDeviation_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 41
             case 58:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 73:
               {
                 anomalyDetectionThreshold_ = input.readDouble();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 73
             default:
@@ -873,6 +886,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double score_;
     /**
@@ -915,6 +930,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public Builder setScore(double value) {
 
       score_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -935,7 +951,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       score_ = 0D;
       onChanged();
       return this;
@@ -1014,8 +1030,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       statsUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1035,8 +1051,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearStatsUri() {
-
       statsUri_ = getDefaultInstance().getStatsUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1061,8 +1077,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       statsUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1149,8 +1165,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       anomalyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1173,8 +1189,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAnomalyUri() {
-
       anomalyUri_ = getDefaultInstance().getAnomalyUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1202,8 +1218,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       anomalyUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1247,6 +1263,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public Builder setDistributionDeviation(double value) {
 
       distributionDeviation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1266,7 +1283,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDistributionDeviation() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       distributionDeviation_ = 0D;
       onChanged();
       return this;
@@ -1307,6 +1324,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public Builder setAnomalyDetectionThreshold(double value) {
 
       anomalyDetectionThreshold_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1324,7 +1342,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAnomalyDetectionThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       anomalyDetectionThreshold_ = 0D;
       onChanged();
       return this;
@@ -1351,7 +1369,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1392,11 +1410,11 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1414,11 +1432,11 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1435,17 +1453,18 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1461,14 +1480,13 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1484,7 +1502,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1557,7 +1575,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1598,11 +1616,11 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1620,11 +1638,11 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1641,17 +1659,18 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1667,14 +1686,13 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1690,7 +1708,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }

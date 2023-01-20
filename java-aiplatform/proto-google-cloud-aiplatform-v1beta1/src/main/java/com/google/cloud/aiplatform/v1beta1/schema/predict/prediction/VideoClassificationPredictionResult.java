@@ -77,7 +77,9 @@ public final class VideoClassificationPredictionResult
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class VideoClassificationPredictionResult
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class VideoClassificationPredictionResult
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -294,7 +300,9 @@ public final class VideoClassificationPredictionResult
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeSegmentStartOrBuilder() {
-    return getTimeSegmentStart();
+    return timeSegmentStart_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : timeSegmentStart_;
   }
 
   public static final int TIME_SEGMENT_END_FIELD_NUMBER = 5;
@@ -360,7 +368,9 @@ public final class VideoClassificationPredictionResult
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeSegmentEndOrBuilder() {
-    return getTimeSegmentEnd();
+    return timeSegmentEnd_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : timeSegmentEnd_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 6;
@@ -409,7 +419,7 @@ public final class VideoClassificationPredictionResult
    */
   @java.lang.Override
   public com.google.protobuf.FloatValueOrBuilder getConfidenceOrBuilder() {
-    return getConfidence();
+    return confidence_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : confidence_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -704,28 +714,23 @@ public final class VideoClassificationPredictionResult
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       displayName_ = "";
-
       type_ = "";
-
-      if (timeSegmentStartBuilder_ == null) {
-        timeSegmentStart_ = null;
-      } else {
-        timeSegmentStart_ = null;
+      timeSegmentStart_ = null;
+      if (timeSegmentStartBuilder_ != null) {
+        timeSegmentStartBuilder_.dispose();
         timeSegmentStartBuilder_ = null;
       }
-      if (timeSegmentEndBuilder_ == null) {
-        timeSegmentEnd_ = null;
-      } else {
-        timeSegmentEnd_ = null;
+      timeSegmentEnd_ = null;
+      if (timeSegmentEndBuilder_ != null) {
+        timeSegmentEndBuilder_.dispose();
         timeSegmentEndBuilder_ = null;
       }
-      if (confidenceBuilder_ == null) {
-        confidence_ = null;
-      } else {
-        confidence_ = null;
+      confidence_ = null;
+      if (confidenceBuilder_ != null) {
+        confidenceBuilder_.dispose();
         confidenceBuilder_ = null;
       }
       return this;
@@ -768,26 +773,38 @@ public final class VideoClassificationPredictionResult
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .VideoClassificationPredictionResult(this);
-      result.id_ = id_;
-      result.displayName_ = displayName_;
-      result.type_ = type_;
-      if (timeSegmentStartBuilder_ == null) {
-        result.timeSegmentStart_ = timeSegmentStart_;
-      } else {
-        result.timeSegmentStart_ = timeSegmentStartBuilder_.build();
-      }
-      if (timeSegmentEndBuilder_ == null) {
-        result.timeSegmentEnd_ = timeSegmentEnd_;
-      } else {
-        result.timeSegmentEnd_ = timeSegmentEndBuilder_.build();
-      }
-      if (confidenceBuilder_ == null) {
-        result.confidence_ = confidence_;
-      } else {
-        result.confidence_ = confidenceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
+                .VideoClassificationPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeSegmentStart_ =
+            timeSegmentStartBuilder_ == null ? timeSegmentStart_ : timeSegmentStartBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timeSegmentEnd_ =
+            timeSegmentEndBuilder_ == null ? timeSegmentEnd_ : timeSegmentEndBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.confidence_ = confidenceBuilder_ == null ? confidence_ : confidenceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -848,14 +865,17 @@ public final class VideoClassificationPredictionResult
               .VideoClassificationPredictionResult.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTimeSegmentStart()) {
@@ -896,38 +916,38 @@ public final class VideoClassificationPredictionResult
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getTimeSegmentStartFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getTimeSegmentEndFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getConfidenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -946,6 +966,8 @@ public final class VideoClassificationPredictionResult
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1008,8 +1030,8 @@ public final class VideoClassificationPredictionResult
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1025,8 +1047,8 @@ public final class VideoClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1047,8 +1069,8 @@ public final class VideoClassificationPredictionResult
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1114,8 +1136,8 @@ public final class VideoClassificationPredictionResult
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1131,8 +1153,8 @@ public final class VideoClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1153,8 +1175,8 @@ public final class VideoClassificationPredictionResult
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1232,8 +1254,8 @@ public final class VideoClassificationPredictionResult
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,8 +1275,8 @@ public final class VideoClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1279,8 +1301,8 @@ public final class VideoClassificationPredictionResult
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1309,7 +1331,7 @@ public final class VideoClassificationPredictionResult
      * @return Whether the timeSegmentStart field is set.
      */
     public boolean hasTimeSegmentStart() {
-      return timeSegmentStartBuilder_ != null || timeSegmentStart_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1358,11 +1380,11 @@ public final class VideoClassificationPredictionResult
           throw new NullPointerException();
         }
         timeSegmentStart_ = value;
-        onChanged();
       } else {
         timeSegmentStartBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1383,11 +1405,11 @@ public final class VideoClassificationPredictionResult
     public Builder setTimeSegmentStart(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeSegmentStartBuilder_ == null) {
         timeSegmentStart_ = builderForValue.build();
-        onChanged();
       } else {
         timeSegmentStartBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1407,19 +1429,18 @@ public final class VideoClassificationPredictionResult
      */
     public Builder mergeTimeSegmentStart(com.google.protobuf.Duration value) {
       if (timeSegmentStartBuilder_ == null) {
-        if (timeSegmentStart_ != null) {
-          timeSegmentStart_ =
-              com.google.protobuf.Duration.newBuilder(timeSegmentStart_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && timeSegmentStart_ != null
+            && timeSegmentStart_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeSegmentStartBuilder().mergeFrom(value);
         } else {
           timeSegmentStart_ = value;
         }
-        onChanged();
       } else {
         timeSegmentStartBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1438,14 +1459,13 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.Duration time_segment_start = 4;</code>
      */
     public Builder clearTimeSegmentStart() {
-      if (timeSegmentStartBuilder_ == null) {
-        timeSegmentStart_ = null;
-        onChanged();
-      } else {
-        timeSegmentStart_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      timeSegmentStart_ = null;
+      if (timeSegmentStartBuilder_ != null) {
+        timeSegmentStartBuilder_.dispose();
         timeSegmentStartBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1464,7 +1484,7 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.Duration time_segment_start = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeSegmentStartBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTimeSegmentStartFieldBuilder().getBuilder();
     }
@@ -1548,7 +1568,7 @@ public final class VideoClassificationPredictionResult
      * @return Whether the timeSegmentEnd field is set.
      */
     public boolean hasTimeSegmentEnd() {
-      return timeSegmentEndBuilder_ != null || timeSegmentEnd_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1597,11 +1617,11 @@ public final class VideoClassificationPredictionResult
           throw new NullPointerException();
         }
         timeSegmentEnd_ = value;
-        onChanged();
       } else {
         timeSegmentEndBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1622,11 +1642,11 @@ public final class VideoClassificationPredictionResult
     public Builder setTimeSegmentEnd(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeSegmentEndBuilder_ == null) {
         timeSegmentEnd_ = builderForValue.build();
-        onChanged();
       } else {
         timeSegmentEndBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1646,19 +1666,18 @@ public final class VideoClassificationPredictionResult
      */
     public Builder mergeTimeSegmentEnd(com.google.protobuf.Duration value) {
       if (timeSegmentEndBuilder_ == null) {
-        if (timeSegmentEnd_ != null) {
-          timeSegmentEnd_ =
-              com.google.protobuf.Duration.newBuilder(timeSegmentEnd_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && timeSegmentEnd_ != null
+            && timeSegmentEnd_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeSegmentEndBuilder().mergeFrom(value);
         } else {
           timeSegmentEnd_ = value;
         }
-        onChanged();
       } else {
         timeSegmentEndBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1677,14 +1696,13 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.Duration time_segment_end = 5;</code>
      */
     public Builder clearTimeSegmentEnd() {
-      if (timeSegmentEndBuilder_ == null) {
-        timeSegmentEnd_ = null;
-        onChanged();
-      } else {
-        timeSegmentEnd_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      timeSegmentEnd_ = null;
+      if (timeSegmentEndBuilder_ != null) {
+        timeSegmentEndBuilder_.dispose();
         timeSegmentEndBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1703,7 +1721,7 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.Duration time_segment_end = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeSegmentEndBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimeSegmentEndFieldBuilder().getBuilder();
     }
@@ -1782,7 +1800,7 @@ public final class VideoClassificationPredictionResult
      * @return Whether the confidence field is set.
      */
     public boolean hasConfidence() {
-      return confidenceBuilder_ != null || confidence_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1821,11 +1839,11 @@ public final class VideoClassificationPredictionResult
           throw new NullPointerException();
         }
         confidence_ = value;
-        onChanged();
       } else {
         confidenceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1841,11 +1859,11 @@ public final class VideoClassificationPredictionResult
     public Builder setConfidence(com.google.protobuf.FloatValue.Builder builderForValue) {
       if (confidenceBuilder_ == null) {
         confidence_ = builderForValue.build();
-        onChanged();
       } else {
         confidenceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1860,19 +1878,18 @@ public final class VideoClassificationPredictionResult
      */
     public Builder mergeConfidence(com.google.protobuf.FloatValue value) {
       if (confidenceBuilder_ == null) {
-        if (confidence_ != null) {
-          confidence_ =
-              com.google.protobuf.FloatValue.newBuilder(confidence_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && confidence_ != null
+            && confidence_ != com.google.protobuf.FloatValue.getDefaultInstance()) {
+          getConfidenceBuilder().mergeFrom(value);
         } else {
           confidence_ = value;
         }
-        onChanged();
       } else {
         confidenceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1886,14 +1903,13 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.FloatValue confidence = 6;</code>
      */
     public Builder clearConfidence() {
-      if (confidenceBuilder_ == null) {
-        confidence_ = null;
-        onChanged();
-      } else {
-        confidence_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      confidence_ = null;
+      if (confidenceBuilder_ != null) {
+        confidenceBuilder_.dispose();
         confidenceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1907,7 +1923,7 @@ public final class VideoClassificationPredictionResult
      * <code>.google.protobuf.FloatValue confidence = 6;</code>
      */
     public com.google.protobuf.FloatValue.Builder getConfidenceBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConfidenceFieldBuilder().getBuilder();
     }

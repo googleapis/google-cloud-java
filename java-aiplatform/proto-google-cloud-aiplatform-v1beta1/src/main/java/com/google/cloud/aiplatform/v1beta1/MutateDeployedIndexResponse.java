@@ -111,7 +111,9 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DeployedIndexOrBuilder getDeployedIndexOrBuilder() {
-    return getDeployedIndex();
+    return deployedIndex_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DeployedIndex.getDefaultInstance()
+        : deployedIndex_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deployedIndexBuilder_ == null) {
-        deployedIndex_ = null;
-      } else {
-        deployedIndex_ = null;
+      bitField0_ = 0;
+      deployedIndex_ = null;
+      if (deployedIndexBuilder_ != null) {
+        deployedIndexBuilder_.dispose();
         deployedIndexBuilder_ = null;
       }
       return this;
@@ -352,13 +354,20 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexResponse result =
           new com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexResponse(this);
-      if (deployedIndexBuilder_ == null) {
-        result.deployedIndex_ = deployedIndex_;
-      } else {
-        result.deployedIndex_ = deployedIndexBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deployedIndex_ =
+            deployedIndexBuilder_ == null ? deployedIndex_ : deployedIndexBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +450,7 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getDeployedIndexFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +470,8 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1beta1.DeployedIndex deployedIndex_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.DeployedIndex,
@@ -479,7 +490,7 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
      * @return Whether the deployedIndex field is set.
      */
     public boolean hasDeployedIndex() {
-      return deployedIndexBuilder_ != null || deployedIndex_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -516,11 +527,11 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         deployedIndex_ = value;
-        onChanged();
       } else {
         deployedIndexBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -536,11 +547,11 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1beta1.DeployedIndex.Builder builderForValue) {
       if (deployedIndexBuilder_ == null) {
         deployedIndex_ = builderForValue.build();
-        onChanged();
       } else {
         deployedIndexBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -554,19 +565,19 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
      */
     public Builder mergeDeployedIndex(com.google.cloud.aiplatform.v1beta1.DeployedIndex value) {
       if (deployedIndexBuilder_ == null) {
-        if (deployedIndex_ != null) {
-          deployedIndex_ =
-              com.google.cloud.aiplatform.v1beta1.DeployedIndex.newBuilder(deployedIndex_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deployedIndex_ != null
+            && deployedIndex_
+                != com.google.cloud.aiplatform.v1beta1.DeployedIndex.getDefaultInstance()) {
+          getDeployedIndexBuilder().mergeFrom(value);
         } else {
           deployedIndex_ = value;
         }
-        onChanged();
       } else {
         deployedIndexBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -579,14 +590,13 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.aiplatform.v1beta1.DeployedIndex deployed_index = 1;</code>
      */
     public Builder clearDeployedIndex() {
-      if (deployedIndexBuilder_ == null) {
-        deployedIndex_ = null;
-        onChanged();
-      } else {
-        deployedIndex_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deployedIndex_ = null;
+      if (deployedIndexBuilder_ != null) {
+        deployedIndexBuilder_.dispose();
         deployedIndexBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -599,7 +609,7 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.aiplatform.v1beta1.DeployedIndex deployed_index = 1;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedIndex.Builder getDeployedIndexBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeployedIndexFieldBuilder().getBuilder();
     }

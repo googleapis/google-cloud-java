@@ -326,7 +326,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -349,12 +349,11 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlVideoObjectTrackingInputs.ModelType
       getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlVideoObjectTrackingInputs.ModelType
         result =
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
-                .AutoMlVideoObjectTrackingInputs.ModelType.valueOf(modelType_);
+                .AutoMlVideoObjectTrackingInputs.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlVideoObjectTrackingInputs.ModelType.UNRECOGNIZED
@@ -593,8 +592,8 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       return this;
     }
 
@@ -635,9 +634,21 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlVideoObjectTrackingInputs(this);
-      result.modelType_ = modelType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                .AutoMlVideoObjectTrackingInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
     }
 
     @java.lang.Override
@@ -728,7 +739,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -747,6 +758,8 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -769,8 +782,8 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -785,12 +798,11 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlVideoObjectTrackingInputs.ModelType
         getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlVideoObjectTrackingInputs.ModelType
           result =
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
-                  .AutoMlVideoObjectTrackingInputs.ModelType.valueOf(modelType_);
+                  .AutoMlVideoObjectTrackingInputs.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlVideoObjectTrackingInputs.ModelType.UNRECOGNIZED
@@ -811,7 +823,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -824,7 +836,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;

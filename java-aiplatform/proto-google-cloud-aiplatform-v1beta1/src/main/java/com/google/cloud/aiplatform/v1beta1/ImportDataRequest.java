@@ -70,7 +70,9 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IMPORT_CONFIGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ImportDataConfig> importConfigs_;
   /**
    *
@@ -422,15 +426,15 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (importConfigsBuilder_ == null) {
         importConfigs_ = java.util.Collections.emptyList();
       } else {
         importConfigs_ = null;
         importConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -458,19 +462,32 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1beta1.ImportDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ImportDataRequest result =
           new com.google.cloud.aiplatform.v1beta1.ImportDataRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ImportDataRequest result) {
       if (importConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           importConfigs_ = java.util.Collections.unmodifiableList(importConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.importConfigs_ = importConfigs_;
       } else {
         result.importConfigs_ = importConfigsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ImportDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -521,13 +538,14 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (importConfigsBuilder_ == null) {
         if (!other.importConfigs_.isEmpty()) {
           if (importConfigs_.isEmpty()) {
             importConfigs_ = other.importConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureImportConfigsIsMutable();
             importConfigs_.addAll(other.importConfigs_);
@@ -540,7 +558,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
             importConfigsBuilder_.dispose();
             importConfigsBuilder_ = null;
             importConfigs_ = other.importConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             importConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getImportConfigsFieldBuilder()
@@ -579,7 +597,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -688,8 +706,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +727,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -745,11 +763,11 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureImportConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         importConfigs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.ImportDataConfig>(
                 importConfigs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1001,7 +1019,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearImportConfigs() {
       if (importConfigsBuilder_ == null) {
         importConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         importConfigsBuilder_.clear();
@@ -1149,7 +1167,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1beta1.ImportDataConfig.Builder,
                 com.google.cloud.aiplatform.v1beta1.ImportDataConfigOrBuilder>(
                 importConfigs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         importConfigs_ = null;

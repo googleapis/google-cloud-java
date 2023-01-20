@@ -69,7 +69,9 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,7 +177,9 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TrainingPipelineOrBuilder
       getTrainingPipelineOrBuilder() {
-    return getTrainingPipeline();
+    return trainingPipeline_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TrainingPipeline.getDefaultInstance()
+        : trainingPipeline_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,12 +397,11 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (trainingPipelineBuilder_ == null) {
-        trainingPipeline_ = null;
-      } else {
-        trainingPipeline_ = null;
+      trainingPipeline_ = null;
+      if (trainingPipelineBuilder_ != null) {
+        trainingPipelineBuilder_.dispose();
         trainingPipelineBuilder_ = null;
       }
       return this;
@@ -429,14 +432,23 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest(this);
-      result.parent_ = parent_;
-      if (trainingPipelineBuilder_ == null) {
-        result.trainingPipeline_ = trainingPipeline_;
-      } else {
-        result.trainingPipeline_ = trainingPipelineBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trainingPipeline_ =
+            trainingPipelineBuilder_ == null ? trainingPipeline_ : trainingPipelineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -489,6 +501,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTrainingPipeline()) {
@@ -523,14 +536,14 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getTrainingPipelineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -549,6 +562,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -620,8 +635,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -640,8 +655,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +680,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +706,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      * @return Whether the trainingPipeline field is set.
      */
     public boolean hasTrainingPipeline() {
-      return trainingPipelineBuilder_ != null || trainingPipeline_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -732,11 +747,11 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         trainingPipeline_ = value;
-        onChanged();
       } else {
         trainingPipelineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +769,11 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
         com.google.cloud.aiplatform.v1beta1.TrainingPipeline.Builder builderForValue) {
       if (trainingPipelineBuilder_ == null) {
         trainingPipeline_ = builderForValue.build();
-        onChanged();
       } else {
         trainingPipelineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -775,19 +790,19 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
     public Builder mergeTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.TrainingPipeline value) {
       if (trainingPipelineBuilder_ == null) {
-        if (trainingPipeline_ != null) {
-          trainingPipeline_ =
-              com.google.cloud.aiplatform.v1beta1.TrainingPipeline.newBuilder(trainingPipeline_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trainingPipeline_ != null
+            && trainingPipeline_
+                != com.google.cloud.aiplatform.v1beta1.TrainingPipeline.getDefaultInstance()) {
+          getTrainingPipelineBuilder().mergeFrom(value);
         } else {
           trainingPipeline_ = value;
         }
-        onChanged();
       } else {
         trainingPipelineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +817,13 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearTrainingPipeline() {
-      if (trainingPipelineBuilder_ == null) {
-        trainingPipeline_ = null;
-        onChanged();
-      } else {
-        trainingPipeline_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trainingPipeline_ = null;
+      if (trainingPipelineBuilder_ != null) {
+        trainingPipelineBuilder_.dispose();
         trainingPipelineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +839,7 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline.Builder
         getTrainingPipelineBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTrainingPipelineFieldBuilder().getBuilder();
     }

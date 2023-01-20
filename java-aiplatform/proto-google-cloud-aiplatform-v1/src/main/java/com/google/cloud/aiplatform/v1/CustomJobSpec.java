@@ -72,6 +72,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_POOL_SPECS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.WorkerPoolSpec> workerPoolSpecs_;
   /**
    *
@@ -206,11 +208,15 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
-    return getScheduling();
+    return scheduling_ == null
+        ? com.google.cloud.aiplatform.v1.Scheduling.getDefaultInstance()
+        : scheduling_;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -267,7 +273,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 5;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -340,6 +348,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList reservedIpRanges_;
   /**
    *
@@ -510,11 +520,15 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder getBaseOutputDirectoryOrBuilder() {
-    return getBaseOutputDirectory();
+    return baseOutputDirectory_ == null
+        ? com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()
+        : baseOutputDirectory_;
   }
 
   public static final int TENSORBOARD_FIELD_NUMBER = 7;
-  private volatile java.lang.Object tensorboard_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboard_ = "";
   /**
    *
    *
@@ -573,7 +587,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_WEB_ACCESS_FIELD_NUMBER = 10;
-  private boolean enableWebAccess_;
+  private boolean enableWebAccess_ = false;
   /**
    *
    *
@@ -597,6 +611,32 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableWebAccess() {
     return enableWebAccess_;
+  }
+
+  public static final int ENABLE_DASHBOARD_ACCESS_FIELD_NUMBER = 16;
+  private boolean enableDashboardAccess_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether you want Vertex AI to enable access to the customized
+   * dashboard in training chief container.
+   * If set to `true`, you can access the dashboard at the URIs given
+   * by
+   * [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris]
+   * or
+   * [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris]
+   * (within
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+   * </pre>
+   *
+   * <code>bool enable_dashboard_access = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableDashboardAccess.
+   */
+  @java.lang.Override
+  public boolean getEnableDashboardAccess() {
+    return enableDashboardAccess_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -637,6 +677,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, reservedIpRanges_.getRaw(i));
     }
+    if (enableDashboardAccess_ != false) {
+      output.writeBool(16, enableDashboardAccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -675,6 +718,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
     }
+    if (enableDashboardAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableDashboardAccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -705,6 +751,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (getEnableWebAccess() != other.getEnableWebAccess()) return false;
+    if (getEnableDashboardAccess() != other.getEnableDashboardAccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -740,6 +787,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTensorboard().hashCode();
     hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWebAccess());
+    hash = (37 * hash) + ENABLE_DASHBOARD_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDashboardAccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -878,6 +927,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (workerPoolSpecsBuilder_ == null) {
         workerPoolSpecs_ = java.util.Collections.emptyList();
       } else {
@@ -885,28 +935,23 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         workerPoolSpecsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (schedulingBuilder_ == null) {
-        scheduling_ = null;
-      } else {
-        scheduling_ = null;
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
         schedulingBuilder_ = null;
       }
       serviceAccount_ = "";
-
       network_ = "";
-
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (baseOutputDirectoryBuilder_ == null) {
-        baseOutputDirectory_ = null;
-      } else {
-        baseOutputDirectory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      baseOutputDirectory_ = null;
+      if (baseOutputDirectoryBuilder_ != null) {
+        baseOutputDirectoryBuilder_.dispose();
         baseOutputDirectoryBuilder_ = null;
       }
       tensorboard_ = "";
-
       enableWebAccess_ = false;
-
+      enableDashboardAccess_ = false;
       return this;
     }
 
@@ -934,7 +979,15 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.CustomJobSpec buildPartial() {
       com.google.cloud.aiplatform.v1.CustomJobSpec result =
           new com.google.cloud.aiplatform.v1.CustomJobSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.CustomJobSpec result) {
       if (workerPoolSpecsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           workerPoolSpecs_ = java.util.Collections.unmodifiableList(workerPoolSpecs_);
@@ -944,27 +997,39 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.workerPoolSpecs_ = workerPoolSpecsBuilder_.build();
       }
-      if (schedulingBuilder_ == null) {
-        result.scheduling_ = scheduling_;
-      } else {
-        result.scheduling_ = schedulingBuilder_.build();
-      }
-      result.serviceAccount_ = serviceAccount_;
-      result.network_ = network_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.reservedIpRanges_ = reservedIpRanges_;
-      if (baseOutputDirectoryBuilder_ == null) {
-        result.baseOutputDirectory_ = baseOutputDirectory_;
-      } else {
-        result.baseOutputDirectory_ = baseOutputDirectoryBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CustomJobSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
       }
-      result.tensorboard_ = tensorboard_;
-      result.enableWebAccess_ = enableWebAccess_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.baseOutputDirectory_ =
+            baseOutputDirectoryBuilder_ == null
+                ? baseOutputDirectory_
+                : baseOutputDirectoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tensorboard_ = tensorboard_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableWebAccess_ = enableWebAccess_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.enableDashboardAccess_ = enableDashboardAccess_;
+      }
     }
 
     @java.lang.Override
@@ -1044,16 +1109,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -1065,10 +1132,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTensorboard().isEmpty()) {
         tensorboard_ = other.tensorboard_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getEnableWebAccess() != false) {
         setEnableWebAccess(other.getEnableWebAccess());
+      }
+      if (other.getEnableDashboardAccess() != false) {
+        setEnableDashboardAccess(other.getEnableDashboardAccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1112,38 +1183,38 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getBaseOutputDirectoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 tensorboard_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 80:
               {
                 enableWebAccess_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 106:
@@ -1153,6 +1224,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 reservedIpRanges_.add(s);
                 break;
               } // case 106
+            case 128:
+              {
+                enableDashboardAccess_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1622,7 +1699,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return schedulingBuilder_ != null || scheduling_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1659,11 +1736,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         scheduling_ = value;
-        onChanged();
       } else {
         schedulingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1679,11 +1756,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1.Scheduling.Builder builderForValue) {
       if (schedulingBuilder_ == null) {
         scheduling_ = builderForValue.build();
-        onChanged();
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1697,19 +1774,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.aiplatform.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (scheduling_ != null) {
-          scheduling_ =
-              com.google.cloud.aiplatform.v1.Scheduling.newBuilder(scheduling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && scheduling_ != null
+            && scheduling_ != com.google.cloud.aiplatform.v1.Scheduling.getDefaultInstance()) {
+          getSchedulingBuilder().mergeFrom(value);
         } else {
           scheduling_ = value;
         }
-        onChanged();
       } else {
         schedulingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1722,14 +1798,13 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.Scheduling scheduling = 3;</code>
      */
     public Builder clearScheduling() {
-      if (schedulingBuilder_ == null) {
-        scheduling_ = null;
-        onChanged();
-      } else {
-        scheduling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
         schedulingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1742,7 +1817,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.Scheduling scheduling = 3;</code>
      */
     public com.google.cloud.aiplatform.v1.Scheduling.Builder getSchedulingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -1863,8 +1938,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1884,8 +1959,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1910,8 +1985,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2013,8 +2088,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2042,8 +2117,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2076,8 +2151,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2086,9 +2161,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureReservedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2271,7 +2346,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReservedIpRanges() {
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2337,7 +2412,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the baseOutputDirectory field is set.
      */
     public boolean hasBaseOutputDirectory() {
-      return baseOutputDirectoryBuilder_ != null || baseOutputDirectory_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2404,11 +2479,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         baseOutputDirectory_ = value;
-        onChanged();
       } else {
         baseOutputDirectoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2439,11 +2514,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1.GcsDestination.Builder builderForValue) {
       if (baseOutputDirectoryBuilder_ == null) {
         baseOutputDirectory_ = builderForValue.build();
-        onChanged();
       } else {
         baseOutputDirectoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2472,19 +2547,19 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBaseOutputDirectory(com.google.cloud.aiplatform.v1.GcsDestination value) {
       if (baseOutputDirectoryBuilder_ == null) {
-        if (baseOutputDirectory_ != null) {
-          baseOutputDirectory_ =
-              com.google.cloud.aiplatform.v1.GcsDestination.newBuilder(baseOutputDirectory_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && baseOutputDirectory_ != null
+            && baseOutputDirectory_
+                != com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()) {
+          getBaseOutputDirectoryBuilder().mergeFrom(value);
         } else {
           baseOutputDirectory_ = value;
         }
-        onChanged();
       } else {
         baseOutputDirectoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2512,14 +2587,13 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.GcsDestination base_output_directory = 6;</code>
      */
     public Builder clearBaseOutputDirectory() {
-      if (baseOutputDirectoryBuilder_ == null) {
-        baseOutputDirectory_ = null;
-        onChanged();
-      } else {
-        baseOutputDirectory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      baseOutputDirectory_ = null;
+      if (baseOutputDirectoryBuilder_ != null) {
+        baseOutputDirectoryBuilder_.dispose();
         baseOutputDirectoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2547,7 +2621,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.GcsDestination base_output_directory = 6;</code>
      */
     public com.google.cloud.aiplatform.v1.GcsDestination.Builder getBaseOutputDirectoryBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getBaseOutputDirectoryFieldBuilder().getBuilder();
     }
@@ -2702,8 +2776,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboard_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2724,8 +2798,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTensorboard() {
-
       tensorboard_ = getDefaultInstance().getTensorboard();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2751,8 +2825,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboard_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2806,6 +2880,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableWebAccess(boolean value) {
 
       enableWebAccess_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2830,8 +2905,85 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableWebAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       enableWebAccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableDashboardAccess_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable access to the customized
+     * dashboard in training chief container.
+     * If set to `true`, you can access the dashboard at the URIs given
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris]
+     * (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_dashboard_access = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableDashboardAccess.
+     */
+    @java.lang.Override
+    public boolean getEnableDashboardAccess() {
+      return enableDashboardAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable access to the customized
+     * dashboard in training chief container.
+     * If set to `true`, you can access the dashboard at the URIs given
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris]
+     * (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_dashboard_access = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableDashboardAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableDashboardAccess(boolean value) {
+
+      enableDashboardAccess_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable access to the customized
+     * dashboard in training chief container.
+     * If set to `true`, you can access the dashboard at the URIs given
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris]
+     * (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_dashboard_access = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableDashboardAccess() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      enableDashboardAccess_ = false;
       onChanged();
       return this;
     }

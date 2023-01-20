@@ -1163,7 +1163,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int MIN_VALUE_FIELD_NUMBER = 1;
-      private float minValue_;
+      private float minValue_ = 0F;
       /**
        *
        *
@@ -1181,7 +1181,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int MAX_VALUE_FIELD_NUMBER = 2;
-      private float maxValue_;
+      private float maxValue_ = 0F;
       /**
        *
        *
@@ -1199,7 +1199,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int ORIGINAL_MEAN_FIELD_NUMBER = 3;
-      private float originalMean_;
+      private float originalMean_ = 0F;
       /**
        *
        *
@@ -1219,7 +1219,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int ORIGINAL_STDDEV_FIELD_NUMBER = 4;
-      private float originalStddev_;
+      private float originalStddev_ = 0F;
       /**
        *
        *
@@ -1508,14 +1508,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minValue_ = 0F;
-
           maxValue_ = 0F;
-
           originalMean_ = 0F;
-
           originalStddev_ = 0F;
-
           return this;
         }
 
@@ -1553,12 +1550,29 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               result =
                   new com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
                       .FeatureValueDomain(this);
-          result.minValue_ = minValue_;
-          result.maxValue_ = maxValue_;
-          result.originalMean_ = originalMean_;
-          result.originalStddev_ = originalStddev_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.FeatureValueDomain
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minValue_ = minValue_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxValue_ = maxValue_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.originalMean_ = originalMean_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.originalStddev_ = originalStddev_;
+          }
         }
 
         @java.lang.Override
@@ -1659,25 +1673,25 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 case 13:
                   {
                     minValue_ = input.readFloat();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 13
                 case 21:
                   {
                     maxValue_ = input.readFloat();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 21
                 case 29:
                   {
                     originalMean_ = input.readFloat();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 29
                 case 37:
                   {
                     originalStddev_ = input.readFloat();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 37
                 default:
@@ -1696,6 +1710,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private float minValue_;
         /**
@@ -1728,6 +1744,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setMinValue(float value) {
 
           minValue_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1743,7 +1760,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearMinValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minValue_ = 0F;
           onChanged();
           return this;
@@ -1780,6 +1797,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setMaxValue(float value) {
 
           maxValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1795,7 +1813,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearMaxValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxValue_ = 0F;
           onChanged();
           return this;
@@ -1836,6 +1854,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setOriginalMean(float value) {
 
           originalMean_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1853,7 +1872,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearOriginalMean() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           originalMean_ = 0F;
           onChanged();
           return this;
@@ -1894,6 +1913,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setOriginalStddev(float value) {
 
           originalStddev_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1911,7 +1931,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearOriginalStddev() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           originalStddev_ = 0F;
           onChanged();
           return this;
@@ -3055,7 +3075,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int TYPE_FIELD_NUMBER = 1;
-      private int type_;
+      private int type_ = 0;
       /**
        *
        *
@@ -3098,11 +3118,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               .Type
           getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type
             result =
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
-                    .Type.valueOf(type_);
+                    .Type.forNumber(type_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .Type.UNRECOGNIZED
@@ -3110,7 +3129,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int POLARITY_FIELD_NUMBER = 2;
-      private int polarity_;
+      private int polarity_ = 0;
       /**
        *
        *
@@ -3147,11 +3166,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               .Polarity
           getPolarity() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Polarity
             result =
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
-                    .Polarity.valueOf(polarity_);
+                    .Polarity.forNumber(polarity_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .Polarity.UNRECOGNIZED
@@ -3159,7 +3177,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int COLOR_MAP_FIELD_NUMBER = 3;
-      private int colorMap_;
+      private int colorMap_ = 0;
       /**
        *
        *
@@ -3212,11 +3230,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               .ColorMap
           getColorMap() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.ColorMap
             result =
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
-                    .ColorMap.valueOf(colorMap_);
+                    .ColorMap.forNumber(colorMap_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .ColorMap.UNRECOGNIZED
@@ -3224,7 +3241,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int CLIP_PERCENT_UPPERBOUND_FIELD_NUMBER = 4;
-      private float clipPercentUpperbound_;
+      private float clipPercentUpperbound_ = 0F;
       /**
        *
        *
@@ -3246,7 +3263,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int CLIP_PERCENT_LOWERBOUND_FIELD_NUMBER = 5;
-      private float clipPercentLowerbound_;
+      private float clipPercentLowerbound_ = 0F;
       /**
        *
        *
@@ -3265,7 +3282,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
 
       public static final int OVERLAY_TYPE_FIELD_NUMBER = 6;
-      private int overlayType_;
+      private int overlayType_ = 0;
       /**
        *
        *
@@ -3304,12 +3321,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               .OverlayType
           getOverlayType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .OverlayType
             result =
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
-                    .OverlayType.valueOf(overlayType_);
+                    .OverlayType.forNumber(overlayType_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .OverlayType.UNRECOGNIZED
@@ -3616,18 +3632,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           type_ = 0;
-
           polarity_ = 0;
-
           colorMap_ = 0;
-
           clipPercentUpperbound_ = 0F;
-
           clipPercentLowerbound_ = 0F;
-
           overlayType_ = 0;
-
           return this;
         }
 
@@ -3662,14 +3673,35 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               result =
                   new com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
                       .Visualization(this);
-          result.type_ = type_;
-          result.polarity_ = polarity_;
-          result.colorMap_ = colorMap_;
-          result.clipPercentUpperbound_ = clipPercentUpperbound_;
-          result.clipPercentLowerbound_ = clipPercentLowerbound_;
-          result.overlayType_ = overlayType_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.type_ = type_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.polarity_ = polarity_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.colorMap_ = colorMap_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.clipPercentUpperbound_ = clipPercentUpperbound_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.clipPercentLowerbound_ = clipPercentLowerbound_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.overlayType_ = overlayType_;
+          }
         }
 
         @java.lang.Override
@@ -3775,37 +3807,37 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 case 8:
                   {
                     type_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     polarity_ = input.readEnum();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     colorMap_ = input.readEnum();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 37:
                   {
                     clipPercentUpperbound_ = input.readFloat();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 37
                 case 45:
                   {
                     clipPercentLowerbound_ = input.readFloat();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 45
                 case 48:
                   {
                     overlayType_ = input.readEnum();
-
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 48
                 default:
@@ -3824,6 +3856,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int type_ = 0;
         /**
@@ -3866,8 +3900,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder setTypeValue(int value) {
-
           type_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3892,11 +3926,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .Type
             getType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type
               result =
                   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
-                      .Visualization.Type.valueOf(type_);
+                      .Visualization.Type.forNumber(type_);
           return result == null
               ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .Type.UNRECOGNIZED
@@ -3926,7 +3959,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           type_ = value.getNumber();
           onChanged();
           return this;
@@ -3949,7 +3982,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearType() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           type_ = 0;
           onChanged();
           return this;
@@ -3990,8 +4023,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder setPolarityValue(int value) {
-
           polarity_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4013,12 +4046,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .Polarity
             getPolarity() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .Polarity
               result =
                   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
-                      .Visualization.Polarity.valueOf(polarity_);
+                      .Visualization.Polarity.forNumber(polarity_);
           return result == null
               ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .Polarity.UNRECOGNIZED
@@ -4046,7 +4078,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000002;
           polarity_ = value.getNumber();
           onChanged();
           return this;
@@ -4066,7 +4098,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearPolarity() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           polarity_ = 0;
           onChanged();
           return this;
@@ -4123,8 +4155,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder setColorMapValue(int value) {
-
           colorMap_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4154,12 +4186,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .ColorMap
             getColorMap() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .ColorMap
               result =
                   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
-                      .Visualization.ColorMap.valueOf(colorMap_);
+                      .Visualization.ColorMap.forNumber(colorMap_);
           return result == null
               ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .ColorMap.UNRECOGNIZED
@@ -4195,7 +4226,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000004;
           colorMap_ = value.getNumber();
           onChanged();
           return this;
@@ -4223,7 +4254,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearColorMap() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           colorMap_ = 0;
           onChanged();
           return this;
@@ -4268,6 +4299,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setClipPercentUpperbound(float value) {
 
           clipPercentUpperbound_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4287,7 +4319,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearClipPercentUpperbound() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           clipPercentUpperbound_ = 0F;
           onChanged();
           return this;
@@ -4326,6 +4358,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public Builder setClipPercentLowerbound(float value) {
 
           clipPercentLowerbound_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -4342,7 +4375,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearClipPercentLowerbound() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           clipPercentLowerbound_ = 0F;
           onChanged();
           return this;
@@ -4385,8 +4418,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder setOverlayTypeValue(int value) {
-
           overlayType_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -4409,12 +4442,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                 .OverlayType
             getOverlayType() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .OverlayType
               result =
                   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
-                      .Visualization.OverlayType.valueOf(overlayType_);
+                      .Visualization.OverlayType.forNumber(overlayType_);
           return result == null
               ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
                   .OverlayType.UNRECOGNIZED
@@ -4443,7 +4475,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000020;
           overlayType_ = value.getNumber();
           onChanged();
           return this;
@@ -4464,7 +4496,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearOverlayType() {
-
+          bitField0_ = (bitField0_ & ~0x00000020);
           overlayType_ = 0;
           onChanged();
           return this;
@@ -4542,6 +4574,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int INPUT_BASELINES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.protobuf.Value> inputBaselines_;
     /**
      *
@@ -4686,7 +4720,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int INPUT_TENSOR_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object inputTensorName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object inputTensorName_ = "";
     /**
      *
      *
@@ -4737,7 +4773,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ENCODING_FIELD_NUMBER = 3;
-    private int encoding_;
+    private int encoding_ = 0;
     /**
      *
      *
@@ -4773,9 +4809,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding
         getEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding result =
-          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding.valueOf(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding.forNumber(
               encoding_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding
@@ -4784,7 +4819,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int MODALITY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object modality_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modality_ = "";
     /**
      *
      *
@@ -4893,11 +4930,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
             .FeatureValueDomainOrBuilder
         getFeatureValueDomainOrBuilder() {
-      return getFeatureValueDomain();
+      return featureValueDomain_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.FeatureValueDomain
+              .getDefaultInstance()
+          : featureValueDomain_;
     }
 
     public static final int INDICES_TENSOR_NAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object indicesTensorName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object indicesTensorName_ = "";
     /**
      *
      *
@@ -4952,7 +4994,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DENSE_SHAPE_TENSOR_NAME_FIELD_NUMBER = 7;
-    private volatile java.lang.Object denseShapeTensorName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object denseShapeTensorName_ = "";
     /**
      *
      *
@@ -5005,6 +5049,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int INDEX_FEATURE_MAPPING_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList indexFeatureMapping_;
     /**
      *
@@ -5078,7 +5124,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ENCODED_TENSOR_NAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object encodedTensorName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object encodedTensorName_ = "";
     /**
      *
      *
@@ -5143,6 +5191,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ENCODED_BASELINES_FIELD_NUMBER = 10;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.protobuf.Value> encodedBaselines_;
     /**
      *
@@ -5282,11 +5332,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
             .VisualizationOrBuilder
         getVisualizationOrBuilder() {
-      return getVisualization();
+      return visualization_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
+              .getDefaultInstance()
+          : visualization_;
     }
 
     public static final int GROUP_NAME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object groupName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object groupName_ = "";
     /**
      *
      *
@@ -5680,6 +5735,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (inputBaselinesBuilder_ == null) {
           inputBaselines_ = java.util.Collections.emptyList();
         } else {
@@ -5688,40 +5744,31 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         inputTensorName_ = "";
-
         encoding_ = 0;
-
         modality_ = "";
-
-        if (featureValueDomainBuilder_ == null) {
-          featureValueDomain_ = null;
-        } else {
-          featureValueDomain_ = null;
+        featureValueDomain_ = null;
+        if (featureValueDomainBuilder_ != null) {
+          featureValueDomainBuilder_.dispose();
           featureValueDomainBuilder_ = null;
         }
         indicesTensorName_ = "";
-
         denseShapeTensorName_ = "";
-
         indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
         encodedTensorName_ = "";
-
         if (encodedBaselinesBuilder_ == null) {
           encodedBaselines_ = java.util.Collections.emptyList();
         } else {
           encodedBaselines_ = null;
           encodedBaselinesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (visualizationBuilder_ == null) {
-          visualization_ = null;
-        } else {
-          visualization_ = null;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        visualization_ = null;
+        if (visualizationBuilder_ != null) {
+          visualizationBuilder_.dispose();
           visualizationBuilder_ = null;
         }
         groupName_ = "";
-
         return this;
       }
 
@@ -5752,7 +5799,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata buildPartial() {
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata result =
             new com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata result) {
         if (inputBaselinesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             inputBaselines_ = java.util.Collections.unmodifiableList(inputBaselines_);
@@ -5762,39 +5818,56 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         } else {
           result.inputBaselines_ = inputBaselinesBuilder_.build();
         }
-        result.inputTensorName_ = inputTensorName_;
-        result.encoding_ = encoding_;
-        result.modality_ = modality_;
-        if (featureValueDomainBuilder_ == null) {
-          result.featureValueDomain_ = featureValueDomain_;
-        } else {
-          result.featureValueDomain_ = featureValueDomainBuilder_.build();
-        }
-        result.indicesTensorName_ = indicesTensorName_;
-        result.denseShapeTensorName_ = denseShapeTensorName_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           indexFeatureMapping_ = indexFeatureMapping_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.indexFeatureMapping_ = indexFeatureMapping_;
-        result.encodedTensorName_ = encodedTensorName_;
         if (encodedBaselinesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000200) != 0)) {
             encodedBaselines_ = java.util.Collections.unmodifiableList(encodedBaselines_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.encodedBaselines_ = encodedBaselines_;
         } else {
           result.encodedBaselines_ = encodedBaselinesBuilder_.build();
         }
-        if (visualizationBuilder_ == null) {
-          result.visualization_ = visualization_;
-        } else {
-          result.visualization_ = visualizationBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputTensorName_ = inputTensorName_;
         }
-        result.groupName_ = groupName_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.encoding_ = encoding_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.modality_ = modality_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.featureValueDomain_ =
+              featureValueDomainBuilder_ == null
+                  ? featureValueDomain_
+                  : featureValueDomainBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.indicesTensorName_ = indicesTensorName_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.denseShapeTensorName_ = denseShapeTensorName_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.encodedTensorName_ = encodedTensorName_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.visualization_ =
+              visualizationBuilder_ == null ? visualization_ : visualizationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.groupName_ = groupName_;
+        }
       }
 
       @java.lang.Override
@@ -5878,6 +5951,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (!other.getInputTensorName().isEmpty()) {
           inputTensorName_ = other.inputTensorName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.encoding_ != 0) {
@@ -5885,6 +5959,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (!other.getModality().isEmpty()) {
           modality_ = other.modality_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.hasFeatureValueDomain()) {
@@ -5892,16 +5967,18 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (!other.getIndicesTensorName().isEmpty()) {
           indicesTensorName_ = other.indicesTensorName_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getDenseShapeTensorName().isEmpty()) {
           denseShapeTensorName_ = other.denseShapeTensorName_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (!other.indexFeatureMapping_.isEmpty()) {
           if (indexFeatureMapping_.isEmpty()) {
             indexFeatureMapping_ = other.indexFeatureMapping_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureIndexFeatureMappingIsMutable();
             indexFeatureMapping_.addAll(other.indexFeatureMapping_);
@@ -5910,13 +5987,14 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (!other.getEncodedTensorName().isEmpty()) {
           encodedTensorName_ = other.encodedTensorName_;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (encodedBaselinesBuilder_ == null) {
           if (!other.encodedBaselines_.isEmpty()) {
             if (encodedBaselines_.isEmpty()) {
               encodedBaselines_ = other.encodedBaselines_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureEncodedBaselinesIsMutable();
               encodedBaselines_.addAll(other.encodedBaselines_);
@@ -5929,7 +6007,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               encodedBaselinesBuilder_.dispose();
               encodedBaselinesBuilder_ = null;
               encodedBaselines_ = other.encodedBaselines_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000200);
               encodedBaselinesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getEncodedBaselinesFieldBuilder()
@@ -5944,6 +6022,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (!other.getGroupName().isEmpty()) {
           groupName_ = other.groupName_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -5987,38 +6066,38 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               case 18:
                 {
                   inputTensorName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   encoding_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   modality_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       getFeatureValueDomainFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   indicesTensorName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
                 {
                   denseShapeTensorName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               case 66:
@@ -6031,7 +6110,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               case 74:
                 {
                   encodedTensorName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 74
               case 82:
@@ -6049,13 +6128,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               case 90:
                 {
                   input.readMessage(getVisualizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 90
               case 98:
                 {
                   groupName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 98
               default:
@@ -6762,8 +6841,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         inputTensorName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6780,8 +6859,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearInputTensorName() {
-
         inputTensorName_ = getDefaultInstance().getInputTensorName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6803,8 +6882,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         inputTensorName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6844,8 +6923,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder setEncodingValue(int value) {
-
         encoding_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6866,10 +6945,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding
           getEncoding() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding result =
-            com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding.valueOf(
-                encoding_);
+            com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding
+                .forNumber(encoding_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding
                 .UNRECOGNIZED
@@ -6895,7 +6973,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         encoding_ = value.getNumber();
         onChanged();
         return this;
@@ -6915,7 +6993,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         encoding_ = 0;
         onChanged();
         return this;
@@ -6985,8 +7063,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         modality_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7003,8 +7081,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearModality() {
-
         modality_ = getDefaultInstance().getModality();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -7026,8 +7104,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         modality_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7058,7 +7136,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return Whether the featureValueDomain field is set.
        */
       public boolean hasFeatureValueDomain() {
-        return featureValueDomainBuilder_ != null || featureValueDomain_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -7106,11 +7184,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           featureValueDomain_ = value;
-          onChanged();
         } else {
           featureValueDomainBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7131,11 +7209,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               builderForValue) {
         if (featureValueDomainBuilder_ == null) {
           featureValueDomain_ = builderForValue.build();
-          onChanged();
         } else {
           featureValueDomainBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7154,20 +7232,20 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.FeatureValueDomain
               value) {
         if (featureValueDomainBuilder_ == null) {
-          if (featureValueDomain_ != null) {
-            featureValueDomain_ =
-                com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
-                    .FeatureValueDomain.newBuilder(featureValueDomain_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && featureValueDomain_ != null
+              && featureValueDomain_
+                  != com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
+                      .FeatureValueDomain.getDefaultInstance()) {
+            getFeatureValueDomainBuilder().mergeFrom(value);
           } else {
             featureValueDomain_ = value;
           }
-          onChanged();
         } else {
           featureValueDomainBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -7183,14 +7261,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * </code>
        */
       public Builder clearFeatureValueDomain() {
-        if (featureValueDomainBuilder_ == null) {
-          featureValueDomain_ = null;
-          onChanged();
-        } else {
-          featureValueDomain_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        featureValueDomain_ = null;
+        if (featureValueDomainBuilder_ != null) {
+          featureValueDomainBuilder_.dispose();
           featureValueDomainBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7208,7 +7285,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
               .FeatureValueDomain.Builder
           getFeatureValueDomainBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getFeatureValueDomainFieldBuilder().getBuilder();
       }
@@ -7341,8 +7418,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         indicesTensorName_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -7361,8 +7438,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearIndicesTensorName() {
-
         indicesTensorName_ = getDefaultInstance().getIndicesTensorName();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -7386,8 +7463,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         indicesTensorName_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -7459,8 +7536,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         denseShapeTensorName_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -7478,8 +7555,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearDenseShapeTensorName() {
-
         denseShapeTensorName_ = getDefaultInstance().getDenseShapeTensorName();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -7502,8 +7579,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         denseShapeTensorName_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -7512,9 +7589,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureIndexFeatureMappingIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           indexFeatureMapping_ = new com.google.protobuf.LazyStringArrayList(indexFeatureMapping_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000080;
         }
       }
       /**
@@ -7673,7 +7750,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        */
       public Builder clearIndexFeatureMapping() {
         indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -7788,8 +7865,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         encodedTensorName_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -7813,8 +7890,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearEncodedTensorName() {
-
         encodedTensorName_ = getDefaultInstance().getEncodedTensorName();
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -7843,8 +7920,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         encodedTensorName_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -7853,9 +7930,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           java.util.Collections.emptyList();
 
       private void ensureEncodedBaselinesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000200) != 0)) {
           encodedBaselines_ = new java.util.ArrayList<com.google.protobuf.Value>(encodedBaselines_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000200;
         }
       }
 
@@ -8103,7 +8180,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public Builder clearEncodedBaselines() {
         if (encodedBaselinesBuilder_ == null) {
           encodedBaselines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           encodedBaselinesBuilder_.clear();
@@ -8246,7 +8323,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                   com.google.protobuf.Value.Builder,
                   com.google.protobuf.ValueOrBuilder>(
                   encodedBaselines_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000200) != 0),
                   getParentForChildren(),
                   isClean());
           encodedBaselines_ = null;
@@ -8277,7 +8354,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return Whether the visualization field is set.
        */
       public boolean hasVisualization() {
-        return visualizationBuilder_ != null || visualization_ != null;
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -8322,11 +8399,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           visualization_ = value;
-          onChanged();
         } else {
           visualizationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -8346,11 +8423,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               builderForValue) {
         if (visualizationBuilder_ == null) {
           visualization_ = builderForValue.build();
-          onChanged();
         } else {
           visualizationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -8368,20 +8445,20 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               value) {
         if (visualizationBuilder_ == null) {
-          if (visualization_ != null) {
-            visualization_ =
-                com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
-                    .newBuilder(visualization_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000400) != 0)
+              && visualization_ != null
+              && visualization_
+                  != com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
+                      .Visualization.getDefaultInstance()) {
+            getVisualizationBuilder().mergeFrom(value);
           } else {
             visualization_ = value;
           }
-          onChanged();
         } else {
           visualizationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -8396,14 +8473,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * </code>
        */
       public Builder clearVisualization() {
-        if (visualizationBuilder_ == null) {
-          visualization_ = null;
-          onChanged();
-        } else {
-          visualization_ = null;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        visualization_ = null;
+        if (visualizationBuilder_ != null) {
+          visualizationBuilder_.dispose();
           visualizationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -8420,7 +8496,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization
               .Builder
           getVisualizationBuilder() {
-
+        bitField0_ |= 0x00000400;
         onChanged();
         return getVisualizationFieldBuilder().getBuilder();
       }
@@ -8556,8 +8632,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         groupName_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -8578,8 +8654,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearGroupName() {
-
         groupName_ = getDefaultInstance().getGroupName();
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -8605,8 +8681,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         groupName_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -9101,7 +9177,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public static final int OUTPUT_TENSOR_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object outputTensorName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object outputTensorName_ = "";
     /**
      *
      *
@@ -9393,11 +9471,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (indexDisplayNameMappingBuilder_ != null) {
           indexDisplayNameMappingBuilder_.clear();
         }
         outputTensorName_ = "";
-
         displayNameMappingCase_ = 0;
         displayNameMapping_ = null;
         return this;
@@ -9430,20 +9508,29 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata buildPartial() {
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata result =
             new com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata(this);
-        if (displayNameMappingCase_ == 1) {
-          if (indexDisplayNameMappingBuilder_ == null) {
-            result.displayNameMapping_ = displayNameMapping_;
-          } else {
-            result.displayNameMapping_ = indexDisplayNameMappingBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (displayNameMappingCase_ == 2) {
-          result.displayNameMapping_ = displayNameMapping_;
-        }
-        result.outputTensorName_ = outputTensorName_;
-        result.displayNameMappingCase_ = displayNameMappingCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.outputTensorName_ = outputTensorName_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata result) {
+        result.displayNameMappingCase_ = displayNameMappingCase_;
+        result.displayNameMapping_ = this.displayNameMapping_;
+        if (displayNameMappingCase_ == 1 && indexDisplayNameMappingBuilder_ != null) {
+          result.displayNameMapping_ = indexDisplayNameMappingBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -9500,6 +9587,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 .getDefaultInstance()) return this;
         if (!other.getOutputTensorName().isEmpty()) {
           outputTensorName_ = other.outputTensorName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         switch (other.getDisplayNameMappingCase()) {
@@ -9563,7 +9651,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               case 26:
                 {
                   outputTensorName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -9596,6 +9684,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Value,
@@ -9901,7 +9991,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         displayNameMappingCase_ = 1;
         onChanged();
-        ;
         return indexDisplayNameMappingBuilder_;
       }
 
@@ -10133,8 +10222,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         outputTensorName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10151,8 +10240,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearOutputTensorName() {
-
         outputTensorName_ = getDefaultInstance().getOutputTensorName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -10174,8 +10263,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         outputTensorName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10267,6 +10356,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
       inputs_;
@@ -10371,9 +10461,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata getInputsOrDefault(
-      java.lang.String key,
-      com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
+      getInputsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -10439,6 +10531,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata>
       outputs_;
@@ -10525,9 +10618,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata getOutputsOrDefault(
-      java.lang.String key,
-      com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue) {
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata
+      getOutputsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -10570,7 +10665,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FEATURE_ATTRIBUTIONS_SCHEMA_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object featureAttributionsSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object featureAttributionsSchemaUri_ = "";
   /**
    *
    *
@@ -10635,7 +10732,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LATENT_SPACE_SOURCE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object latentSpaceSource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object latentSpaceSource_ = "";
   /**
    *
    *
@@ -10960,12 +11059,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableInputs().clear();
       internalGetMutableOutputs().clear();
       featureAttributionsSchemaUri_ = "";
-
       latentSpaceSource_ = "";
-
       return this;
     }
 
@@ -10993,15 +11091,29 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata result =
           new com.google.cloud.aiplatform.v1beta1.ExplanationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.inputs_ = internalGetInputs();
-      result.inputs_.makeImmutable();
-      result.outputs_ = internalGetOutputs();
-      result.outputs_.makeImmutable();
-      result.featureAttributionsSchemaUri_ = featureAttributionsSchemaUri_;
-      result.latentSpaceSource_ = latentSpaceSource_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExplanationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputs_ = internalGetInputs();
+        result.inputs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputs_ = internalGetOutputs();
+        result.outputs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featureAttributionsSchemaUri_ = featureAttributionsSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.latentSpaceSource_ = latentSpaceSource_;
+      }
     }
 
     @java.lang.Override
@@ -11051,13 +11163,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.getDefaultInstance())
         return this;
       internalGetMutableInputs().mergeFrom(other.internalGetInputs());
+      bitField0_ |= 0x00000001;
       internalGetMutableOutputs().mergeFrom(other.internalGetOutputs());
+      bitField0_ |= 0x00000002;
       if (!other.getFeatureAttributionsSchemaUri().isEmpty()) {
         featureAttributionsSchemaUri_ = other.featureAttributionsSchemaUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLatentSpaceSource().isEmpty()) {
         latentSpaceSource_ = other.latentSpaceSource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -11098,6 +11214,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 internalGetMutableInputs()
                     .getMutableMap()
                     .put(inputs__.getKey(), inputs__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -11112,18 +11229,19 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 internalGetMutableOutputs()
                     .getMutableMap()
                     .put(outputs__.getKey(), outputs__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 featureAttributionsSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 latentSpaceSource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -11161,14 +11279,14 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
         internalGetMutableInputs() {
-      onChanged();
-      ;
       if (inputs_ == null) {
         inputs_ = com.google.protobuf.MapField.newMapField(InputsDefaultEntryHolder.defaultEntry);
       }
       if (!inputs_.isMutable()) {
         inputs_ = inputs_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return inputs_;
     }
 
@@ -11263,9 +11381,11 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata getInputsOrDefault(
-        java.lang.String key,
-        com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata
+        getInputsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -11314,6 +11434,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearInputs() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableInputs().getMutableMap().clear();
       return this;
     }
@@ -11351,6 +11472,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public java.util.Map<
             java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
         getMutableInputs() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableInputs().getMutableMap();
     }
     /**
@@ -11384,8 +11506,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableInputs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -11416,6 +11538,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
             values) {
       internalGetMutableInputs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -11438,14 +11561,14 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata>
         internalGetMutableOutputs() {
-      onChanged();
-      ;
       if (outputs_ == null) {
         outputs_ = com.google.protobuf.MapField.newMapField(OutputsDefaultEntryHolder.defaultEntry);
       }
       if (!outputs_.isMutable()) {
         outputs_ = outputs_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return outputs_;
     }
 
@@ -11524,9 +11647,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata
         getOutputsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -11570,6 +11694,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearOutputs() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableOutputs().getMutableMap().clear();
       return this;
     }
@@ -11602,6 +11727,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata>
         getMutableOutputs() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableOutputs().getMutableMap();
     }
     /**
@@ -11629,8 +11755,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableOutputs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -11655,6 +11781,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata>
             values) {
       internalGetMutableOutputs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -11743,8 +11870,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       featureAttributionsSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -11768,8 +11895,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFeatureAttributionsSchemaUri() {
-
       featureAttributionsSchemaUri_ = getDefaultInstance().getFeatureAttributionsSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -11798,8 +11925,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       featureAttributionsSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -11865,8 +11992,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       latentSpaceSource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11882,8 +12009,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLatentSpaceSource() {
-
       latentSpaceSource_ = getDefaultInstance().getLatentSpaceSource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -11904,8 +12031,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       latentSpaceSource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

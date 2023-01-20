@@ -844,7 +844,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METRIC_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object metricId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metricId_ = "";
     /**
      *
      *
@@ -895,7 +897,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOAL_FIELD_NUMBER = 2;
-    private int goal_;
+    private int goal_ = 0;
     /**
      *
      *
@@ -928,9 +930,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType getGoal() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.valueOf(goal_);
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.forNumber(goal_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.UNRECOGNIZED
           : result;
@@ -1149,10 +1150,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metricId_ = "";
-
         goal_ = 0;
-
         return this;
       }
 
@@ -1180,10 +1180,21 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec(this);
-        result.metricId_ = metricId_;
-        result.goal_ = goal_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metricId_ = metricId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.goal_ = goal_;
+        }
       }
 
       @java.lang.Override
@@ -1236,6 +1247,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMetricId().isEmpty()) {
           metricId_ = other.metricId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.goal_ != 0) {
@@ -1270,13 +1282,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   metricId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   goal_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1295,6 +1307,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object metricId_ = "";
       /**
@@ -1360,8 +1374,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         metricId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1378,8 +1392,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetricId() {
-
         metricId_ = getDefaultInstance().getMetricId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1401,8 +1415,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         metricId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1440,8 +1454,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setGoalValue(int value) {
-
         goal_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1460,9 +1474,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType getGoal() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType result =
-            com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.valueOf(goal_);
+            com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.forNumber(goal_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.UNRECOGNIZED
             : result;
@@ -1486,7 +1499,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         goal_ = value.getNumber();
         onChanged();
         return this;
@@ -1505,7 +1518,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGoal() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         goal_ = 0;
         onChanged();
         return this;
@@ -2249,7 +2262,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
       public static final int MIN_VALUE_FIELD_NUMBER = 1;
-      private double minValue_;
+      private double minValue_ = 0D;
       /**
        *
        *
@@ -2267,7 +2280,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MAX_VALUE_FIELD_NUMBER = 2;
-      private double maxValue_;
+      private double maxValue_ = 0D;
       /**
        *
        *
@@ -2285,7 +2298,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
-      private double defaultValue_;
+      private double defaultValue_ = 0D;
       /**
        *
        *
@@ -2573,12 +2586,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minValue_ = 0D;
-
           maxValue_ = 0D;
-
           defaultValue_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -2610,17 +2621,28 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec result =
               new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec result) {
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          result.minValue_ = minValue_;
-          result.maxValue_ = maxValue_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minValue_ = minValue_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxValue_ = maxValue_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
             result.defaultValue_ = defaultValue_;
             to_bitField0_ |= 0x00000001;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -2715,19 +2737,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 case 9:
                   {
                     minValue_ = input.readDouble();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 9
                 case 17:
                   {
                     maxValue_ = input.readDouble();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 17
                 case 33:
                   {
                     defaultValue_ = input.readDouble();
-                    bitField0_ |= 0x00000001;
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 33
                 default:
@@ -2780,6 +2802,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder setMinValue(double value) {
 
           minValue_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2795,7 +2818,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMinValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minValue_ = 0D;
           onChanged();
           return this;
@@ -2832,6 +2855,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder setMaxValue(double value) {
 
           maxValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2847,7 +2871,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMaxValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxValue_ = 0D;
           onChanged();
           return this;
@@ -2871,7 +2895,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public boolean hasDefaultValue() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -2909,8 +2933,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setDefaultValue(double value) {
-          bitField0_ |= 0x00000001;
+
           defaultValue_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2930,7 +2955,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           defaultValue_ = 0D;
           onChanged();
           return this;
@@ -3120,7 +3145,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
       public static final int MIN_VALUE_FIELD_NUMBER = 1;
-      private long minValue_;
+      private long minValue_ = 0L;
       /**
        *
        *
@@ -3138,7 +3163,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MAX_VALUE_FIELD_NUMBER = 2;
-      private long maxValue_;
+      private long maxValue_ = 0L;
       /**
        *
        *
@@ -3156,7 +3181,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DEFAULT_VALUE_FIELD_NUMBER = 4;
-      private long defaultValue_;
+      private long defaultValue_ = 0L;
       /**
        *
        *
@@ -3433,12 +3458,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           minValue_ = 0L;
-
           maxValue_ = 0L;
-
           defaultValue_ = 0L;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -3472,17 +3495,28 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec result =
               new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec(
                   this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec result) {
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          result.minValue_ = minValue_;
-          result.maxValue_ = maxValue_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.minValue_ = minValue_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.maxValue_ = maxValue_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
             result.defaultValue_ = defaultValue_;
             to_bitField0_ |= 0x00000001;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -3577,19 +3611,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     minValue_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     maxValue_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 32:
                   {
                     defaultValue_ = input.readInt64();
-                    bitField0_ |= 0x00000001;
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 32
                 default:
@@ -3642,6 +3676,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder setMinValue(long value) {
 
           minValue_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3657,7 +3692,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMinValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           minValue_ = 0L;
           onChanged();
           return this;
@@ -3694,6 +3729,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder setMaxValue(long value) {
 
           maxValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3709,7 +3745,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearMaxValue() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           maxValue_ = 0L;
           onChanged();
           return this;
@@ -3733,7 +3769,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public boolean hasDefaultValue() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
          *
@@ -3771,8 +3807,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setDefaultValue(long value) {
-          bitField0_ |= 0x00000001;
+
           defaultValue_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3792,7 +3829,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           defaultValue_ = 0L;
           onChanged();
           return this;
@@ -4027,6 +4064,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
       public static final int VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList values_;
       /**
        *
@@ -4088,7 +4127,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DEFAULT_VALUE_FIELD_NUMBER = 3;
-      private volatile java.lang.Object defaultValue_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object defaultValue_ = "";
       /**
        *
        *
@@ -4400,10 +4441,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           defaultValue_ = "";
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -4437,20 +4478,34 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec result =
               new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec(
                   this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
+                result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             values_ = values_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.values_ = values_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.defaultValue_ = defaultValue_;
             to_bitField0_ |= 0x00000001;
           }
-          result.defaultValue_ = defaultValue_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -4519,8 +4574,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             onChanged();
           }
           if (other.hasDefaultValue()) {
-            bitField0_ |= 0x00000002;
             defaultValue_ = other.defaultValue_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -4840,8 +4895,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000002;
           defaultValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4861,8 +4916,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
-          bitField0_ = (bitField0_ & ~0x00000002);
           defaultValue_ = getDefaultInstance().getDefaultValue();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -4887,8 +4942,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-          bitField0_ |= 0x00000002;
           defaultValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -5102,6 +5157,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
       public static final int VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.Internal.DoubleList values_;
       /**
        *
@@ -5160,7 +5217,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       private int valuesMemoizedSerializedSize = -1;
 
       public static final int DEFAULT_VALUE_FIELD_NUMBER = 3;
-      private double defaultValue_;
+      private double defaultValue_ = 0D;
       /**
        *
        *
@@ -5448,10 +5505,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           values_ = emptyDoubleList();
-          bitField0_ = (bitField0_ & ~0x00000001);
           defaultValue_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -5485,20 +5541,32 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec result =
               new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec(
                   this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             values_.makeImmutable();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.values_ = values_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.defaultValue_ = defaultValue_;
             to_bitField0_ |= 0x00000001;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -5716,6 +5784,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setValues(int index, double value) {
+
           ensureValuesIsMutable();
           values_.setDouble(index, value);
           onChanged();
@@ -5737,6 +5806,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder addValues(double value) {
+
           ensureValuesIsMutable();
           values_.addDouble(value);
           onChanged();
@@ -5843,8 +5913,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setDefaultValue(double value) {
-          bitField0_ |= 0x00000002;
+
           defaultValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -6289,6 +6360,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int VALUES_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.DoubleList values_;
         /**
          *
@@ -6594,8 +6667,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             values_ = emptyDoubleList();
-            bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
 
@@ -6635,14 +6708,30 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                         .ConditionalParameterSpec.DiscreteValueCondition(this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .DiscreteValueCondition
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               values_.makeImmutable();
               bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.values_ = values_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .DiscreteValueCondition
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -6852,6 +6941,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setValues(int index, double value) {
+
             ensureValuesIsMutable();
             values_.setDouble(index, value);
             onChanged();
@@ -6872,6 +6962,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder addValues(double value) {
+
             ensureValuesIsMutable();
             values_.addDouble(value);
             onChanged();
@@ -7088,6 +7179,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int VALUES_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.LongList values_;
         /**
          *
@@ -7393,8 +7486,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             values_ = emptyLongList();
-            bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
 
@@ -7434,14 +7527,30 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                         .ConditionalParameterSpec.IntValueCondition(this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .IntValueCondition
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               values_.makeImmutable();
               bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.values_ = values_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .IntValueCondition
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -7646,6 +7755,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setValues(int index, long value) {
+
             ensureValuesIsMutable();
             values_.setLong(index, value);
             onChanged();
@@ -7665,6 +7775,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder addValues(long value) {
+
             ensureValuesIsMutable();
             values_.addLong(value);
             onChanged();
@@ -7899,6 +8010,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int VALUES_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList values_;
         /**
          *
@@ -8211,6 +8324,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000001);
             return this;
@@ -8252,14 +8366,30 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                         .ConditionalParameterSpec.CategoricalValueCondition(this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .CategoricalValueCondition
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               values_ = values_.getUnmodifiableView();
               bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.values_ = values_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .CategoricalValueCondition
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -8953,7 +9083,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder
           getParameterSpecOrBuilder() {
-        return getParameterSpec();
+        return parameterSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.getDefaultInstance()
+            : parameterSpec_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -9267,6 +9399,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (parentDiscreteValuesBuilder_ != null) {
             parentDiscreteValuesBuilder_.clear();
           }
@@ -9276,10 +9409,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (parentCategoricalValuesBuilder_ != null) {
             parentCategoricalValuesBuilder_.clear();
           }
-          if (parameterSpecBuilder_ == null) {
-            parameterSpec_ = null;
-          } else {
-            parameterSpec_ = null;
+          parameterSpec_ = null;
+          if (parameterSpecBuilder_ != null) {
+            parameterSpecBuilder_.dispose();
             parameterSpecBuilder_ = null;
           }
           parentValueConditionCase_ = 0;
@@ -9318,35 +9450,38 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               result =
                   new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                       .ConditionalParameterSpec(this);
-          if (parentValueConditionCase_ == 2) {
-            if (parentDiscreteValuesBuilder_ == null) {
-              result.parentValueCondition_ = parentValueCondition_;
-            } else {
-              result.parentValueCondition_ = parentDiscreteValuesBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (parentValueConditionCase_ == 3) {
-            if (parentIntValuesBuilder_ == null) {
-              result.parentValueCondition_ = parentValueCondition_;
-            } else {
-              result.parentValueCondition_ = parentIntValuesBuilder_.build();
-            }
-          }
-          if (parentValueConditionCase_ == 4) {
-            if (parentCategoricalValuesBuilder_ == null) {
-              result.parentValueCondition_ = parentValueCondition_;
-            } else {
-              result.parentValueCondition_ = parentCategoricalValuesBuilder_.build();
-            }
-          }
-          if (parameterSpecBuilder_ == null) {
-            result.parameterSpec_ = parameterSpec_;
-          } else {
-            result.parameterSpec_ = parameterSpecBuilder_.build();
-          }
-          result.parentValueConditionCase_ = parentValueConditionCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.parameterSpec_ =
+                parameterSpecBuilder_ == null ? parameterSpec_ : parameterSpecBuilder_.build();
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                result) {
+          result.parentValueConditionCase_ = parentValueConditionCase_;
+          result.parentValueCondition_ = this.parentValueCondition_;
+          if (parentValueConditionCase_ == 2 && parentDiscreteValuesBuilder_ != null) {
+            result.parentValueCondition_ = parentDiscreteValuesBuilder_.build();
+          }
+          if (parentValueConditionCase_ == 3 && parentIntValuesBuilder_ != null) {
+            result.parentValueCondition_ = parentIntValuesBuilder_.build();
+          }
+          if (parentValueConditionCase_ == 4 && parentCategoricalValuesBuilder_ != null) {
+            result.parentValueCondition_ = parentCategoricalValuesBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -9460,7 +9595,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getParameterSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 10
                 case 18:
@@ -9514,6 +9649,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
@@ -9787,7 +9924,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           parentValueConditionCase_ = 2;
           onChanged();
-          ;
           return parentDiscreteValuesBuilder_;
         }
 
@@ -10063,7 +10199,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           parentValueConditionCase_ = 3;
           onChanged();
-          ;
           return parentIntValuesBuilder_;
         }
 
@@ -10339,7 +10474,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           parentValueConditionCase_ = 4;
           onChanged();
-          ;
           return parentCategoricalValuesBuilder_;
         }
 
@@ -10363,7 +10497,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the parameterSpec field is set.
          */
         public boolean hasParameterSpec() {
-          return parameterSpecBuilder_ != null || parameterSpec_ != null;
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
          *
@@ -10405,11 +10539,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             parameterSpec_ = value;
-            onChanged();
           } else {
             parameterSpecBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -10427,11 +10561,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder builderForValue) {
           if (parameterSpecBuilder_ == null) {
             parameterSpec_ = builderForValue.build();
-            onChanged();
           } else {
             parameterSpecBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -10448,20 +10582,20 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeParameterSpec(
             com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec value) {
           if (parameterSpecBuilder_ == null) {
-            if (parameterSpec_ != null) {
-              parameterSpec_ =
-                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.newBuilder(
-                          parameterSpec_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000008) != 0)
+                && parameterSpec_ != null
+                && parameterSpec_
+                    != com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .getDefaultInstance()) {
+              getParameterSpecBuilder().mergeFrom(value);
             } else {
               parameterSpec_ = value;
             }
-            onChanged();
           } else {
             parameterSpecBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -10476,14 +10610,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearParameterSpec() {
-          if (parameterSpecBuilder_ == null) {
-            parameterSpec_ = null;
-            onChanged();
-          } else {
-            parameterSpec_ = null;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          parameterSpec_ = null;
+          if (parameterSpecBuilder_ != null) {
+            parameterSpecBuilder_.dispose();
             parameterSpecBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -10499,7 +10632,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          */
         public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder
             getParameterSpecBuilder() {
-
+          bitField0_ |= 0x00000008;
           onChanged();
           return getParameterSpecFieldBuilder().getBuilder();
         }
@@ -10929,7 +11062,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PARAMETER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object parameterId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object parameterId_ = "";
     /**
      *
      *
@@ -10980,7 +11115,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCALE_TYPE_FIELD_NUMBER = 6;
-    private int scaleType_;
+    private int scaleType_ = 0;
     /**
      *
      *
@@ -11013,15 +11148,17 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType getScaleType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.valueOf(scaleType_);
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.forNumber(
+              scaleType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.UNRECOGNIZED
           : result;
     }
 
     public static final int CONDITIONAL_PARAMETER_SPECS_FIELD_NUMBER = 10;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
         conditionalParameterSpecs_;
@@ -11443,6 +11580,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (doubleValueSpecBuilder_ != null) {
           doubleValueSpecBuilder_.clear();
         }
@@ -11456,16 +11594,14 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           discreteValueSpecBuilder_.clear();
         }
         parameterId_ = "";
-
         scaleType_ = 0;
-
         if (conditionalParameterSpecsBuilder_ == null) {
           conditionalParameterSpecs_ = java.util.Collections.emptyList();
         } else {
           conditionalParameterSpecs_ = null;
           conditionalParameterSpecsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         parameterValueSpecCase_ = 0;
         parameterValueSpec_ = null;
         return this;
@@ -11496,50 +11632,56 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec(this);
-        int from_bitField0_ = bitField0_;
-        if (parameterValueSpecCase_ == 2) {
-          if (doubleValueSpecBuilder_ == null) {
-            result.parameterValueSpec_ = parameterValueSpec_;
-          } else {
-            result.parameterValueSpec_ = doubleValueSpecBuilder_.build();
-          }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (parameterValueSpecCase_ == 3) {
-          if (integerValueSpecBuilder_ == null) {
-            result.parameterValueSpec_ = parameterValueSpec_;
-          } else {
-            result.parameterValueSpec_ = integerValueSpecBuilder_.build();
-          }
-        }
-        if (parameterValueSpecCase_ == 4) {
-          if (categoricalValueSpecBuilder_ == null) {
-            result.parameterValueSpec_ = parameterValueSpec_;
-          } else {
-            result.parameterValueSpec_ = categoricalValueSpecBuilder_.build();
-          }
-        }
-        if (parameterValueSpecCase_ == 5) {
-          if (discreteValueSpecBuilder_ == null) {
-            result.parameterValueSpec_ = parameterValueSpec_;
-          } else {
-            result.parameterValueSpec_ = discreteValueSpecBuilder_.build();
-          }
-        }
-        result.parameterId_ = parameterId_;
-        result.scaleType_ = scaleType_;
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec result) {
         if (conditionalParameterSpecsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             conditionalParameterSpecs_ =
                 java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.conditionalParameterSpecs_ = conditionalParameterSpecs_;
         } else {
           result.conditionalParameterSpecs_ = conditionalParameterSpecsBuilder_.build();
         }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.parameterId_ = parameterId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.scaleType_ = scaleType_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec result) {
         result.parameterValueSpecCase_ = parameterValueSpecCase_;
-        onBuilt();
-        return result;
+        result.parameterValueSpec_ = this.parameterValueSpec_;
+        if (parameterValueSpecCase_ == 2 && doubleValueSpecBuilder_ != null) {
+          result.parameterValueSpec_ = doubleValueSpecBuilder_.build();
+        }
+        if (parameterValueSpecCase_ == 3 && integerValueSpecBuilder_ != null) {
+          result.parameterValueSpec_ = integerValueSpecBuilder_.build();
+        }
+        if (parameterValueSpecCase_ == 4 && categoricalValueSpecBuilder_ != null) {
+          result.parameterValueSpec_ = categoricalValueSpecBuilder_.build();
+        }
+        if (parameterValueSpecCase_ == 5 && discreteValueSpecBuilder_ != null) {
+          result.parameterValueSpec_ = discreteValueSpecBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11593,6 +11735,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getParameterId().isEmpty()) {
           parameterId_ = other.parameterId_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.scaleType_ != 0) {
@@ -11602,7 +11745,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (!other.conditionalParameterSpecs_.isEmpty()) {
             if (conditionalParameterSpecs_.isEmpty()) {
               conditionalParameterSpecs_ = other.conditionalParameterSpecs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureConditionalParameterSpecsIsMutable();
               conditionalParameterSpecs_.addAll(other.conditionalParameterSpecs_);
@@ -11615,7 +11758,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               conditionalParameterSpecsBuilder_.dispose();
               conditionalParameterSpecsBuilder_ = null;
               conditionalParameterSpecs_ = other.conditionalParameterSpecs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
               conditionalParameterSpecsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConditionalParameterSpecsFieldBuilder()
@@ -11680,7 +11823,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   parameterId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 10
               case 18:
@@ -11714,7 +11857,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 48:
                 {
                   scaleType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 82:
@@ -12012,7 +12155,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         parameterValueSpecCase_ = 2;
         onChanged();
-        ;
         return doubleValueSpecBuilder_;
       }
 
@@ -12261,7 +12403,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         parameterValueSpecCase_ = 3;
         onChanged();
-        ;
         return integerValueSpecBuilder_;
       }
 
@@ -12518,7 +12659,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         parameterValueSpecCase_ = 4;
         onChanged();
-        ;
         return categoricalValueSpecBuilder_;
       }
 
@@ -12769,7 +12909,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         parameterValueSpecCase_ = 5;
         onChanged();
-        ;
         return discreteValueSpecBuilder_;
       }
 
@@ -12837,8 +12976,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         parameterId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12855,8 +12994,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearParameterId() {
-
         parameterId_ = getDefaultInstance().getParameterId();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -12878,8 +13017,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         parameterId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -12917,8 +13056,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setScaleTypeValue(int value) {
-
         scaleType_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12937,9 +13076,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType getScaleType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType result =
-            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.valueOf(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.forNumber(
                 scaleType_);
         return result == null
             ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType.UNRECOGNIZED
@@ -12964,7 +13102,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000020;
         scaleType_ = value.getNumber();
         onChanged();
         return this;
@@ -12983,7 +13121,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearScaleType() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         scaleType_ = 0;
         onChanged();
         return this;
@@ -12994,12 +13132,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           conditionalParameterSpecs_ = java.util.Collections.emptyList();
 
       private void ensureConditionalParameterSpecsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           conditionalParameterSpecs_ =
               new java.util.ArrayList<
                   com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                       .ConditionalParameterSpec>(conditionalParameterSpecs_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000040;
         }
       }
 
@@ -13296,7 +13434,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder clearConditionalParameterSpecs() {
         if (conditionalParameterSpecsBuilder_ == null) {
           conditionalParameterSpecs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           conditionalParameterSpecsBuilder_.clear();
@@ -13477,7 +13615,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                       .ConditionalParameterSpecOrBuilder>(
                   conditionalParameterSpecs_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           conditionalParameterSpecs_ = null;
@@ -13627,7 +13765,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 1;
-    private boolean useElapsedDuration_;
+    private boolean useElapsedDuration_ = false;
     /**
      *
      *
@@ -13863,8 +14001,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         useElapsedDuration_ = false;
-
         return this;
       }
 
@@ -13896,9 +14034,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec(this);
-        result.useElapsedDuration_ = useElapsedDuration_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.useElapsedDuration_ = useElapsedDuration_;
+        }
       }
 
       @java.lang.Override
@@ -13987,7 +14135,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   useElapsedDuration_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -14006,6 +14154,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean useElapsedDuration_;
       /**
@@ -14046,6 +14196,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setUseElapsedDuration(boolean value) {
 
         useElapsedDuration_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14065,7 +14216,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUseElapsedDuration() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         useElapsedDuration_ = false;
         onChanged();
         return this;
@@ -14216,7 +14367,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 1;
-    private boolean useElapsedDuration_;
+    private boolean useElapsedDuration_ = false;
     /**
      *
      *
@@ -14450,8 +14601,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         useElapsedDuration_ = false;
-
         return this;
       }
 
@@ -14483,9 +14634,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec(this);
-        result.useElapsedDuration_ = useElapsedDuration_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.useElapsedDuration_ = useElapsedDuration_;
+        }
       }
 
       @java.lang.Override
@@ -14572,7 +14733,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   useElapsedDuration_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -14591,6 +14752,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean useElapsedDuration_;
       /**
@@ -14631,6 +14794,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setUseElapsedDuration(boolean value) {
 
         useElapsedDuration_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14650,7 +14814,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUseElapsedDuration() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         useElapsedDuration_ = false;
         onChanged();
         return this;
@@ -14929,7 +15093,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     public static final int MAX_STEP_COUNT_FIELD_NUMBER = 1;
-    private long maxStepCount_;
+    private long maxStepCount_ = 0L;
     /**
      *
      *
@@ -14950,7 +15114,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MIN_STEP_COUNT_FIELD_NUMBER = 2;
-    private long minStepCount_;
+    private long minStepCount_ = 0L;
     /**
      *
      *
@@ -14974,7 +15138,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MIN_MEASUREMENT_COUNT_FIELD_NUMBER = 3;
-    private long minMeasurementCount_;
+    private long minMeasurementCount_ = 0L;
     /**
      *
      *
@@ -14995,7 +15159,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LEARNING_RATE_PARAMETER_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object learningRateParameterName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object learningRateParameterName_ = "";
     /**
      *
      *
@@ -15050,7 +15216,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 5;
-    private boolean useElapsedDuration_;
+    private boolean useElapsedDuration_ = false;
     /**
      *
      *
@@ -15074,7 +15240,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int UPDATE_ALL_STOPPED_TRIALS_FIELD_NUMBER = 6;
-    private boolean updateAllStoppedTrials_;
+    private boolean updateAllStoppedTrials_ = false;
     /**
      *
      *
@@ -15388,18 +15554,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxStepCount_ = 0L;
-
         minStepCount_ = 0L;
-
         minMeasurementCount_ = 0L;
-
         learningRateParameterName_ = "";
-
         useElapsedDuration_ = false;
-
         updateAllStoppedTrials_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -15431,20 +15592,37 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec result) {
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.maxStepCount_ = maxStepCount_;
-        result.minStepCount_ = minStepCount_;
-        result.minMeasurementCount_ = minMeasurementCount_;
-        result.learningRateParameterName_ = learningRateParameterName_;
-        result.useElapsedDuration_ = useElapsedDuration_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxStepCount_ = maxStepCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minStepCount_ = minStepCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.minMeasurementCount_ = minMeasurementCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.learningRateParameterName_ = learningRateParameterName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.useElapsedDuration_ = useElapsedDuration_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.updateAllStoppedTrials_ = updateAllStoppedTrials_;
           to_bitField0_ |= 0x00000001;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -15510,6 +15688,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getLearningRateParameterName().isEmpty()) {
           learningRateParameterName_ = other.learningRateParameterName_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getUseElapsedDuration() != false) {
@@ -15547,37 +15726,37 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   maxStepCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   minStepCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   minMeasurementCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   learningRateParameterName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   useElapsedDuration_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   updateAllStoppedTrials_ = input.readBool();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               default:
@@ -15636,6 +15815,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setMaxStepCount(long value) {
 
         maxStepCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -15654,7 +15834,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMaxStepCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxStepCount_ = 0L;
         onChanged();
         return this;
@@ -15703,6 +15883,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinStepCount(long value) {
 
         minStepCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -15724,7 +15905,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMinStepCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         minStepCount_ = 0L;
         onChanged();
         return this;
@@ -15767,6 +15948,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinMeasurementCount(long value) {
 
         minMeasurementCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -15785,7 +15967,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMinMeasurementCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         minMeasurementCount_ = 0L;
         onChanged();
         return this;
@@ -15861,8 +16043,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         learningRateParameterName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15881,8 +16063,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLearningRateParameterName() {
-
         learningRateParameterName_ = getDefaultInstance().getLearningRateParameterName();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -15906,8 +16088,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         learningRateParameterName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15955,6 +16137,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setUseElapsedDuration(boolean value) {
 
         useElapsedDuration_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -15976,7 +16159,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUseElapsedDuration() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         useElapsedDuration_ = false;
         onChanged();
         return this;
@@ -16002,7 +16185,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public boolean hasUpdateAllStoppedTrials() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -16044,8 +16227,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setUpdateAllStoppedTrials(boolean value) {
-        bitField0_ |= 0x00000001;
+
         updateAllStoppedTrials_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -16067,7 +16251,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUpdateAllStoppedTrials() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         updateAllStoppedTrials_ = false;
         onChanged();
         return this;
@@ -16297,7 +16481,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MAX_NUM_STEPS_FIELD_NUMBER = 1;
-    private long maxNumSteps_;
+    private long maxNumSteps_ = 0L;
     /**
      *
      *
@@ -16318,7 +16502,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MIN_NUM_STEPS_FIELD_NUMBER = 2;
-    private long minNumSteps_;
+    private long minNumSteps_ = 0L;
     /**
      *
      *
@@ -16342,7 +16526,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AUTOREGRESSIVE_ORDER_FIELD_NUMBER = 3;
-    private long autoregressiveOrder_;
+    private long autoregressiveOrder_ = 0L;
     /**
      *
      *
@@ -16362,7 +16546,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LEARNING_RATE_PARAMETER_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object learningRateParameterName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object learningRateParameterName_ = "";
     /**
      *
      *
@@ -16417,7 +16603,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_SECONDS_FIELD_NUMBER = 5;
-    private boolean useSeconds_;
+    private boolean useSeconds_ = false;
     /**
      *
      *
@@ -16677,16 +16863,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxNumSteps_ = 0L;
-
         minNumSteps_ = 0L;
-
         autoregressiveOrder_ = 0L;
-
         learningRateParameterName_ = "";
-
         useSeconds_ = false;
-
         return this;
       }
 
@@ -16715,13 +16897,31 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig(this);
-        result.maxNumSteps_ = maxNumSteps_;
-        result.minNumSteps_ = minNumSteps_;
-        result.autoregressiveOrder_ = autoregressiveOrder_;
-        result.learningRateParameterName_ = learningRateParameterName_;
-        result.useSeconds_ = useSeconds_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxNumSteps_ = maxNumSteps_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minNumSteps_ = minNumSteps_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.autoregressiveOrder_ = autoregressiveOrder_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.learningRateParameterName_ = learningRateParameterName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.useSeconds_ = useSeconds_;
+        }
       }
 
       @java.lang.Override
@@ -16785,6 +16985,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getLearningRateParameterName().isEmpty()) {
           learningRateParameterName_ = other.learningRateParameterName_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getUseSeconds() != false) {
@@ -16819,31 +17020,31 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   maxNumSteps_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   minNumSteps_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   autoregressiveOrder_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   learningRateParameterName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   useSeconds_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -16862,6 +17063,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long maxNumSteps_;
       /**
@@ -16900,6 +17103,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setMaxNumSteps(long value) {
 
         maxNumSteps_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -16918,7 +17122,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMaxNumSteps() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxNumSteps_ = 0L;
         onChanged();
         return this;
@@ -16967,6 +17171,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setMinNumSteps(long value) {
 
         minNumSteps_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -16988,7 +17193,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMinNumSteps() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         minNumSteps_ = 0L;
         onChanged();
         return this;
@@ -17029,6 +17234,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setAutoregressiveOrder(long value) {
 
         autoregressiveOrder_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -17046,7 +17252,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAutoregressiveOrder() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         autoregressiveOrder_ = 0L;
         onChanged();
         return this;
@@ -17122,8 +17328,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         learningRateParameterName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -17142,8 +17348,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLearningRateParameterName() {
-
         learningRateParameterName_ = getDefaultInstance().getLearningRateParameterName();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -17167,8 +17373,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         learningRateParameterName_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -17214,6 +17420,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setUseSeconds(boolean value) {
 
         useSeconds_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -17234,7 +17441,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUseSeconds() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         useSeconds_ = false;
         onChanged();
         return this;
@@ -17434,7 +17641,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISABLE_TRANSFER_LEARNING_FIELD_NUMBER = 1;
-    private boolean disableTransferLearning_;
+    private boolean disableTransferLearning_ = false;
     /**
      *
      *
@@ -17454,6 +17661,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PRIOR_STUDY_NAMES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList priorStudyNames_;
     /**
      *
@@ -17738,10 +17947,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         disableTransferLearning_ = false;
-
         priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -17772,15 +17981,29 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig(this);
-        int from_bitField0_ = bitField0_;
-        result.disableTransferLearning_ = disableTransferLearning_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.priorStudyNames_ = priorStudyNames_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.priorStudyNames_ = priorStudyNames_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.disableTransferLearning_ = disableTransferLearning_;
+        }
       }
 
       @java.lang.Override
@@ -17840,7 +18063,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.priorStudyNames_.isEmpty()) {
           if (priorStudyNames_.isEmpty()) {
             priorStudyNames_ = other.priorStudyNames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePriorStudyNamesIsMutable();
             priorStudyNames_.addAll(other.priorStudyNames_);
@@ -17876,7 +18099,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   disableTransferLearning_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -17940,6 +18163,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder setDisableTransferLearning(boolean value) {
 
         disableTransferLearning_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -17957,7 +18181,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisableTransferLearning() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         disableTransferLearning_ = false;
         onChanged();
         return this;
@@ -17967,9 +18191,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePriorStudyNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           priorStudyNames_ = new com.google.protobuf.LazyStringArrayList(priorStudyNames_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -18112,7 +18336,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPriorStudyNames() {
         priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -18521,6 +18745,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRICS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec> metrics_;
   /**
    *
@@ -18601,6 +18827,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec> parameters_;
   /**
    *
@@ -18683,7 +18911,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALGORITHM_FIELD_NUMBER = 3;
-  private int algorithm_;
+  private int algorithm_ = 0;
   /**
    *
    *
@@ -18712,16 +18940,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm getAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm result =
-        com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.valueOf(algorithm_);
+        com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.forNumber(algorithm_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.UNRECOGNIZED
         : result;
   }
 
   public static final int OBSERVATION_NOISE_FIELD_NUMBER = 6;
-  private int observationNoise_;
+  private int observationNoise_ = 0;
   /**
    *
    *
@@ -18754,16 +18981,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise getObservationNoise() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise result =
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.valueOf(observationNoise_);
+        com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.forNumber(observationNoise_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.UNRECOGNIZED
         : result;
   }
 
   public static final int MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER = 7;
-  private int measurementSelectionType_;
+  private int measurementSelectionType_ = 0;
   /**
    *
    *
@@ -18797,9 +19023,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
       getMeasurementSelectionType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType result =
-        com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.valueOf(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.forNumber(
             measurementSelectionType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.UNRECOGNIZED
@@ -18863,7 +19088,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
       getTransferLearningConfigOrBuilder() {
-    return getTransferLearningConfig();
+    return transferLearningConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.getDefaultInstance()
+        : transferLearningConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -19224,6 +19451,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (decayCurveStoppingSpecBuilder_ != null) {
         decayCurveStoppingSpecBuilder_.clear();
       }
@@ -19242,24 +19470,20 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
       } else {
         parameters_ = null;
         parametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       algorithm_ = 0;
-
       observationNoise_ = 0;
-
       measurementSelectionType_ = 0;
-
-      if (transferLearningConfigBuilder_ == null) {
-        transferLearningConfig_ = null;
-      } else {
-        transferLearningConfig_ = null;
+      transferLearningConfig_ = null;
+      if (transferLearningConfigBuilder_ != null) {
+        transferLearningConfigBuilder_.dispose();
         transferLearningConfigBuilder_ = null;
       }
       automatedStoppingSpecCase_ = 0;
@@ -19291,64 +19515,70 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.StudySpec buildPartial() {
       com.google.cloud.aiplatform.v1beta1.StudySpec result =
           new com.google.cloud.aiplatform.v1beta1.StudySpec(this);
-      int from_bitField0_ = bitField0_;
-      if (automatedStoppingSpecCase_ == 4) {
-        if (decayCurveStoppingSpecBuilder_ == null) {
-          result.automatedStoppingSpec_ = automatedStoppingSpec_;
-        } else {
-          result.automatedStoppingSpec_ = decayCurveStoppingSpecBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (automatedStoppingSpecCase_ == 5) {
-        if (medianAutomatedStoppingSpecBuilder_ == null) {
-          result.automatedStoppingSpec_ = automatedStoppingSpec_;
-        } else {
-          result.automatedStoppingSpec_ = medianAutomatedStoppingSpecBuilder_.build();
-        }
-      }
-      if (automatedStoppingSpecCase_ == 8) {
-        if (convexStopConfigBuilder_ == null) {
-          result.automatedStoppingSpec_ = automatedStoppingSpec_;
-        } else {
-          result.automatedStoppingSpec_ = convexStopConfigBuilder_.build();
-        }
-      }
-      if (automatedStoppingSpecCase_ == 9) {
-        if (convexAutomatedStoppingSpecBuilder_ == null) {
-          result.automatedStoppingSpec_ = automatedStoppingSpec_;
-        } else {
-          result.automatedStoppingSpec_ = convexAutomatedStoppingSpecBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.StudySpec result) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
-      result.algorithm_ = algorithm_;
-      result.observationNoise_ = observationNoise_;
-      result.measurementSelectionType_ = measurementSelectionType_;
-      if (transferLearningConfigBuilder_ == null) {
-        result.transferLearningConfig_ = transferLearningConfig_;
-      } else {
-        result.transferLearningConfig_ = transferLearningConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.StudySpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.algorithm_ = algorithm_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.observationNoise_ = observationNoise_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.measurementSelectionType_ = measurementSelectionType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.transferLearningConfig_ =
+            transferLearningConfigBuilder_ == null
+                ? transferLearningConfig_
+                : transferLearningConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.StudySpec result) {
       result.automatedStoppingSpecCase_ = automatedStoppingSpecCase_;
-      onBuilt();
-      return result;
+      result.automatedStoppingSpec_ = this.automatedStoppingSpec_;
+      if (automatedStoppingSpecCase_ == 4 && decayCurveStoppingSpecBuilder_ != null) {
+        result.automatedStoppingSpec_ = decayCurveStoppingSpecBuilder_.build();
+      }
+      if (automatedStoppingSpecCase_ == 5 && medianAutomatedStoppingSpecBuilder_ != null) {
+        result.automatedStoppingSpec_ = medianAutomatedStoppingSpecBuilder_.build();
+      }
+      if (automatedStoppingSpecCase_ == 8 && convexStopConfigBuilder_ != null) {
+        result.automatedStoppingSpec_ = convexStopConfigBuilder_.build();
+      }
+      if (automatedStoppingSpecCase_ == 9 && convexAutomatedStoppingSpecBuilder_ != null) {
+        result.automatedStoppingSpec_ = convexAutomatedStoppingSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -19400,7 +19630,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -19413,7 +19643,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -19427,7 +19657,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.parameters_.isEmpty()) {
           if (parameters_.isEmpty()) {
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureParametersIsMutable();
             parameters_.addAll(other.parameters_);
@@ -19440,7 +19670,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             parametersBuilder_.dispose();
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             parametersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParametersFieldBuilder()
@@ -19545,7 +19775,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 algorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 24
             case 34:
@@ -19565,13 +19795,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 observationNoise_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 56:
               {
                 measurementSelectionType_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 66:
@@ -19592,7 +19822,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getTransferLearningConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -19873,7 +20103,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       automatedStoppingSpecCase_ = 4;
       onChanged();
-      ;
       return decayCurveStoppingSpecBuilder_;
     }
 
@@ -20118,7 +20347,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       automatedStoppingSpecCase_ = 5;
       onChanged();
-      ;
       return medianAutomatedStoppingSpecBuilder_;
     }
 
@@ -20378,7 +20606,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       automatedStoppingSpecCase_ = 8;
       onChanged();
-      ;
       return convexStopConfigBuilder_;
     }
 
@@ -20623,7 +20850,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       automatedStoppingSpecCase_ = 9;
       onChanged();
-      ;
       return convexAutomatedStoppingSpecBuilder_;
     }
 
@@ -20631,11 +20857,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         metrics_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec>(
                 metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -20879,7 +21105,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -21021,7 +21247,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec,
                 com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpecOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
@@ -21031,11 +21257,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         parameters_ = java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec>(
                 parameters_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -21280,7 +21506,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         parametersBuilder_.clear();
@@ -21424,7 +21650,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec,
                 com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                parameters_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -21459,8 +21685,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
-
       algorithm_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -21477,9 +21703,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.valueOf(algorithm_);
+          com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.forNumber(algorithm_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm.UNRECOGNIZED
           : result;
@@ -21500,7 +21725,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       algorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -21517,7 +21742,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       algorithm_ = 0;
       onChanged();
       return this;
@@ -21558,8 +21783,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setObservationNoiseValue(int value) {
-
       observationNoise_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -21579,9 +21804,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise getObservationNoise() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.valueOf(observationNoise_);
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.forNumber(
+              observationNoise_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.UNRECOGNIZED
           : result;
@@ -21606,7 +21831,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       observationNoise_ = value.getNumber();
       onChanged();
       return this;
@@ -21626,7 +21851,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObservationNoise() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       observationNoise_ = 0;
       onChanged();
       return this;
@@ -21665,8 +21890,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMeasurementSelectionTypeValue(int value) {
-
       measurementSelectionType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -21686,9 +21911,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
         getMeasurementSelectionType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.valueOf(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.forNumber(
               measurementSelectionType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.UNRECOGNIZED
@@ -21713,7 +21937,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       measurementSelectionType_ = value.getNumber();
       onChanged();
       return this;
@@ -21732,7 +21956,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMeasurementSelectionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       measurementSelectionType_ = 0;
       onChanged();
       return this;
@@ -21760,7 +21984,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transferLearningConfig field is set.
      */
     public boolean hasTransferLearningConfig() {
-      return transferLearningConfigBuilder_ != null || transferLearningConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -21806,11 +22030,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         transferLearningConfig_ = value;
-        onChanged();
       } else {
         transferLearningConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -21830,11 +22054,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (transferLearningConfigBuilder_ == null) {
         transferLearningConfig_ = builderForValue.build();
-        onChanged();
       } else {
         transferLearningConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -21852,20 +22076,20 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTransferLearningConfig(
         com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig value) {
       if (transferLearningConfigBuilder_ == null) {
-        if (transferLearningConfig_ != null) {
-          transferLearningConfig_ =
-              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.newBuilder(
-                      transferLearningConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && transferLearningConfig_ != null
+            && transferLearningConfig_
+                != com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                    .getDefaultInstance()) {
+          getTransferLearningConfigBuilder().mergeFrom(value);
         } else {
           transferLearningConfig_ = value;
         }
-        onChanged();
       } else {
         transferLearningConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -21881,14 +22105,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTransferLearningConfig() {
-      if (transferLearningConfigBuilder_ == null) {
-        transferLearningConfig_ = null;
-        onChanged();
-      } else {
-        transferLearningConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      transferLearningConfig_ = null;
+      if (transferLearningConfigBuilder_ != null) {
+        transferLearningConfigBuilder_.dispose();
         transferLearningConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -21905,7 +22128,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
         getTransferLearningConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getTransferLearningConfigFieldBuilder().getBuilder();
     }

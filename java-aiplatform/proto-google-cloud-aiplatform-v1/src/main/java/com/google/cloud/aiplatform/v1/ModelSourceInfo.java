@@ -249,7 +249,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
-  private int sourceType_;
+  private int sourceType_ = 0;
   /**
    *
    *
@@ -278,9 +278,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType getSourceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType result =
-        com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.valueOf(sourceType_);
+        com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.forNumber(sourceType_);
     return result == null
         ? com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.UNRECOGNIZED
         : result;
@@ -489,8 +488,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceType_ = 0;
-
       return this;
     }
 
@@ -518,9 +517,18 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.ModelSourceInfo buildPartial() {
       com.google.cloud.aiplatform.v1.ModelSourceInfo result =
           new com.google.cloud.aiplatform.v1.ModelSourceInfo(this);
-      result.sourceType_ = sourceType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ModelSourceInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceType_ = sourceType_;
+      }
     }
 
     @java.lang.Override
@@ -600,7 +608,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 sourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -619,6 +627,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sourceType_ = 0;
     /**
@@ -649,8 +659,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setSourceTypeValue(int value) {
-
       sourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,9 +677,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType getSourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType result =
-          com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.valueOf(sourceType_);
+          com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.forNumber(sourceType_);
       return result == null
           ? com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType.UNRECOGNIZED
           : result;
@@ -691,7 +700,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       sourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -708,7 +717,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceType_ = 0;
       onChanged();
       return this;

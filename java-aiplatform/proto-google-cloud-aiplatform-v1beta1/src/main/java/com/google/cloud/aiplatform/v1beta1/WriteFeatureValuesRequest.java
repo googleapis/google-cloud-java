@@ -70,7 +70,9 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -133,6 +135,8 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
   }
 
   public static final int PAYLOADS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload> payloads_;
   /**
    *
@@ -429,15 +433,15 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entityType_ = "";
-
       if (payloadsBuilder_ == null) {
         payloads_ = java.util.Collections.emptyList();
       } else {
         payloads_ = null;
         payloadsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -466,19 +470,33 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.entityType_ = entityType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest result) {
       if (payloadsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           payloads_ = java.util.Collections.unmodifiableList(payloads_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.payloads_ = payloads_;
       } else {
         result.payloads_ = payloadsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityType_ = entityType_;
+      }
     }
 
     @java.lang.Override
@@ -530,13 +548,14 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (payloadsBuilder_ == null) {
         if (!other.payloads_.isEmpty()) {
           if (payloads_.isEmpty()) {
             payloads_ = other.payloads_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePayloadsIsMutable();
             payloads_.addAll(other.payloads_);
@@ -549,7 +568,7 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
             payloadsBuilder_.dispose();
             payloadsBuilder_ = null;
             payloads_ = other.payloads_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             payloadsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPayloadsFieldBuilder()
@@ -588,7 +607,7 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
             case 10:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -706,8 +725,8 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,8 +749,8 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -759,8 +778,8 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,11 +788,11 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
         payloads_ = java.util.Collections.emptyList();
 
     private void ensurePayloadsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         payloads_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload>(
                 payloads_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1029,7 +1048,7 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
     public Builder clearPayloads() {
       if (payloadsBuilder_ == null) {
         payloads_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         payloadsBuilder_.clear();
@@ -1180,7 +1199,7 @@ public final class WriteFeatureValuesRequest extends com.google.protobuf.Generat
                 com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload,
                 com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload.Builder,
                 com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayloadOrBuilder>(
-                payloads_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                payloads_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         payloads_ = null;
       }
       return payloadsBuilder_;

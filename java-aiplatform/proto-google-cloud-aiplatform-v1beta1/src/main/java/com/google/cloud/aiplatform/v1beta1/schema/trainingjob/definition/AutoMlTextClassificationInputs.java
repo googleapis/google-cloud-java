@@ -67,7 +67,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
   }
 
   public static final int MULTI_LABEL_FIELD_NUMBER = 1;
-  private boolean multiLabel_;
+  private boolean multiLabel_ = false;
   /**
    * <code>bool multi_label = 1;</code>
    *
@@ -303,8 +303,8 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       multiLabel_ = false;
-
       return this;
     }
 
@@ -345,9 +345,21 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlTextClassificationInputs(this);
-      result.multiLabel_ = multiLabel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                .AutoMlTextClassificationInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.multiLabel_ = multiLabel_;
+      }
     }
 
     @java.lang.Override
@@ -438,7 +450,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
             case 8:
               {
                 multiLabel_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -457,6 +469,8 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean multiLabel_;
     /**
@@ -477,6 +491,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     public Builder setMultiLabel(boolean value) {
 
       multiLabel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -486,7 +501,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearMultiLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       multiLabel_ = false;
       onChanged();
       return this;

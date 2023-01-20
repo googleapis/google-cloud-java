@@ -69,7 +69,9 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       data_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.TensorboardBlob buildPartial() {
       com.google.cloud.aiplatform.v1beta1.TensorboardBlob result =
           new com.google.cloud.aiplatform.v1beta1.TensorboardBlob(this);
-      result.id_ = id_;
-      result.data_ = data_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.TensorboardBlob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.data_ = data_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
@@ -463,13 +476,13 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -488,6 +501,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -553,8 +568,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -594,8 +609,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +649,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -652,7 +667,7 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;

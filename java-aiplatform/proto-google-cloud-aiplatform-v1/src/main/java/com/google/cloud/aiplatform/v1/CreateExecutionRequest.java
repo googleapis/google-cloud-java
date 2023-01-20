@@ -70,7 +70,9 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,11 +181,15 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionOrBuilder() {
-    return getExecution();
+    return execution_ == null
+        ? com.google.cloud.aiplatform.v1.Execution.getDefaultInstance()
+        : execution_;
   }
 
   public static final int EXECUTION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object executionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object executionId_ = "";
   /**
    *
    *
@@ -467,16 +473,14 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (executionBuilder_ == null) {
-        execution_ = null;
-      } else {
-        execution_ = null;
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
       executionId_ = "";
-
       return this;
     }
 
@@ -504,15 +508,24 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1.CreateExecutionRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateExecutionRequest result =
           new com.google.cloud.aiplatform.v1.CreateExecutionRequest(this);
-      result.parent_ = parent_;
-      if (executionBuilder_ == null) {
-        result.execution_ = execution_;
-      } else {
-        result.execution_ = executionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.executionId_ = executionId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateExecutionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.execution_ = executionBuilder_ == null ? execution_ : executionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.executionId_ = executionId_;
+      }
     }
 
     @java.lang.Override
@@ -563,6 +576,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExecution()) {
@@ -570,6 +584,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getExecutionId().isEmpty()) {
         executionId_ = other.executionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,19 +616,19 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExecutionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 executionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -632,6 +647,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -709,8 +726,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +748,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -758,8 +775,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,7 +801,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the execution field is set.
      */
     public boolean hasExecution() {
-      return executionBuilder_ != null || execution_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -825,11 +842,11 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         execution_ = value;
-        onChanged();
       } else {
         executionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,11 +863,11 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
     public Builder setExecution(com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
       if (executionBuilder_ == null) {
         execution_ = builderForValue.build();
-        onChanged();
       } else {
         executionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,19 +883,18 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExecution(com.google.cloud.aiplatform.v1.Execution value) {
       if (executionBuilder_ == null) {
-        if (execution_ != null) {
-          execution_ =
-              com.google.cloud.aiplatform.v1.Execution.newBuilder(execution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && execution_ != null
+            && execution_ != com.google.cloud.aiplatform.v1.Execution.getDefaultInstance()) {
+          getExecutionBuilder().mergeFrom(value);
         } else {
           execution_ = value;
         }
-        onChanged();
       } else {
         executionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -893,14 +909,13 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearExecution() {
-      if (executionBuilder_ == null) {
-        execution_ = null;
-        onChanged();
-      } else {
-        execution_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -915,7 +930,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder getExecutionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExecutionFieldBuilder().getBuilder();
     }
@@ -1049,8 +1064,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       executionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1073,8 +1088,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearExecutionId() {
-
       executionId_ = getDefaultInstance().getExecutionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1102,8 +1117,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       executionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

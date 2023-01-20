@@ -73,7 +73,9 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -217,7 +221,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
@@ -266,7 +270,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -315,11 +319,13 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ANNOTATION_FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object annotationFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationFilter_ = "";
   /**
    *
    *
@@ -368,7 +374,9 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROBLEM_TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object problemType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object problemType_ = "";
   /**
    *
    *
@@ -439,7 +447,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANNOTATION_SPEC_COUNT_FIELD_NUMBER = 10;
-  private int annotationSpecCount_;
+  private int annotationSpecCount_ = 0;
   /**
    *
    *
@@ -457,7 +465,9 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 8;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -508,7 +518,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUPPORT_AUTOML_TRAINING_FIELD_NUMBER = 9;
-  private boolean supportAutomlTraining_;
+  private boolean supportAutomlTraining_ = false;
   /**
    *
    *
@@ -820,38 +830,29 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       annotationFilter_ = "";
-
       problemType_ = "";
-
       annotationSpecCount_ = 0;
-
       etag_ = "";
-
       supportAutomlTraining_ = false;
-
       return this;
     }
 
@@ -879,30 +880,45 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.SavedQuery buildPartial() {
       com.google.cloud.aiplatform.v1.SavedQuery result =
           new com.google.cloud.aiplatform.v1.SavedQuery(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.annotationFilter_ = annotationFilter_;
-      result.problemType_ = problemType_;
-      result.annotationSpecCount_ = annotationSpecCount_;
-      result.etag_ = etag_;
-      result.supportAutomlTraining_ = supportAutomlTraining_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.SavedQuery result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.annotationFilter_ = annotationFilter_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.problemType_ = problemType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.annotationSpecCount_ = annotationSpecCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.supportAutomlTraining_ = supportAutomlTraining_;
+      }
     }
 
     @java.lang.Override
@@ -952,10 +968,12 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.SavedQuery.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -969,10 +987,12 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAnnotationFilter().isEmpty()) {
         annotationFilter_ = other.annotationFilter_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getProblemType().isEmpty()) {
         problemType_ = other.problemType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getAnnotationSpecCount() != 0) {
@@ -980,6 +1000,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getSupportAutomlTraining() != false) {
@@ -1014,61 +1035,61 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 annotationFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 problemType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 66:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 72:
               {
                 supportAutomlTraining_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 80:
               {
                 annotationSpecCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 98:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 98
             default:
@@ -1087,6 +1108,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1149,8 +1172,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1166,8 +1189,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1188,8 +1211,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1261,8 +1284,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1280,8 +1303,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1304,8 +1327,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1328,7 +1351,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1363,11 +1386,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1382,11 +1405,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setMetadata(com.google.protobuf.Value.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1400,17 +1423,18 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.protobuf.Value value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.protobuf.Value.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1423,14 +1447,13 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value metadata = 12;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1443,7 +1466,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value metadata = 12;</code>
      */
     public com.google.protobuf.Value.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1509,7 +1532,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1550,11 +1573,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1571,11 +1594,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1591,17 +1614,18 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1616,14 +1640,13 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1638,7 +1661,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1710,7 +1733,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1751,11 +1774,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1772,11 +1795,11 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1792,17 +1815,18 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1817,14 +1841,13 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1839,7 +1862,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1952,8 +1975,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationFilter_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1969,8 +1992,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationFilter() {
-
       annotationFilter_ = getDefaultInstance().getAnnotationFilter();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1991,8 +2014,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationFilter_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2091,8 +2114,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       problemType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2119,8 +2142,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProblemType() {
-
       problemType_ = getDefaultInstance().getProblemType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2152,8 +2175,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       problemType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2189,6 +2212,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setAnnotationSpecCount(int value) {
 
       annotationSpecCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2204,7 +2228,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       annotationSpecCount_ = 0;
       onChanged();
       return this;
@@ -2274,8 +2298,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2292,8 +2316,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2315,8 +2339,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2354,6 +2378,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder setSupportAutomlTraining(boolean value) {
 
       supportAutomlTraining_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2370,7 +2395,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportAutomlTraining() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       supportAutomlTraining_ = false;
       onChanged();
       return this;

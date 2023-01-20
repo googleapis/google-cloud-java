@@ -84,7 +84,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -236,11 +240,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.StudySpecOrBuilder getStudySpecOrBuilder() {
-    return getStudySpec();
+    return studySpec_ == null
+        ? com.google.cloud.aiplatform.v1.StudySpec.getDefaultInstance()
+        : studySpec_;
   }
 
   public static final int MAX_TRIAL_COUNT_FIELD_NUMBER = 5;
-  private int maxTrialCount_;
+  private int maxTrialCount_ = 0;
   /**
    *
    *
@@ -258,7 +264,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
   }
 
   public static final int PARALLEL_TRIAL_COUNT_FIELD_NUMBER = 6;
-  private int parallelTrialCount_;
+  private int parallelTrialCount_ = 0;
   /**
    *
    *
@@ -276,7 +282,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
   }
 
   public static final int MAX_FAILED_TRIAL_COUNT_FIELD_NUMBER = 7;
-  private int maxFailedTrialCount_;
+  private int maxFailedTrialCount_ = 0;
   /**
    *
    *
@@ -350,10 +356,14 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.CustomJobSpecOrBuilder getTrialJobSpecOrBuilder() {
-    return getTrialJobSpec();
+    return trialJobSpec_ == null
+        ? com.google.cloud.aiplatform.v1.CustomJobSpec.getDefaultInstance()
+        : trialJobSpec_;
   }
 
   public static final int TRIALS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Trial> trials_;
   /**
    *
@@ -433,7 +443,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
   }
 
   public static final int STATE_FIELD_NUMBER = 10;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -466,9 +476,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.JobState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.JobState result =
-        com.google.cloud.aiplatform.v1.JobState.valueOf(state_);
+        com.google.cloud.aiplatform.v1.JobState.forNumber(state_);
     return result == null ? com.google.cloud.aiplatform.v1.JobState.UNRECOGNIZED : result;
   }
 
@@ -518,7 +527,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 12;
@@ -570,7 +579,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 13;
@@ -625,7 +634,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 14;
@@ -677,7 +686,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 15;
@@ -726,7 +735,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 16;
@@ -742,6 +751,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -811,7 +821,10 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -894,7 +907,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
-    return getEncryptionSpec();
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1302,26 +1317,20 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (studySpecBuilder_ == null) {
-        studySpec_ = null;
-      } else {
-        studySpec_ = null;
+      studySpec_ = null;
+      if (studySpecBuilder_ != null) {
+        studySpecBuilder_.dispose();
         studySpecBuilder_ = null;
       }
       maxTrialCount_ = 0;
-
       parallelTrialCount_ = 0;
-
       maxFailedTrialCount_ = 0;
-
-      if (trialJobSpecBuilder_ == null) {
-        trialJobSpec_ = null;
-      } else {
-        trialJobSpec_ = null;
+      trialJobSpec_ = null;
+      if (trialJobSpecBuilder_ != null) {
+        trialJobSpecBuilder_.dispose();
         trialJobSpecBuilder_ = null;
       }
       if (trialsBuilder_ == null) {
@@ -1330,44 +1339,37 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         trials_ = null;
         trialsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-      } else {
-        encryptionSpec_ = null;
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
       return this;
@@ -1397,66 +1399,77 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.HyperparameterTuningJob buildPartial() {
       com.google.cloud.aiplatform.v1.HyperparameterTuningJob result =
           new com.google.cloud.aiplatform.v1.HyperparameterTuningJob(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (studySpecBuilder_ == null) {
-        result.studySpec_ = studySpec_;
-      } else {
-        result.studySpec_ = studySpecBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.maxTrialCount_ = maxTrialCount_;
-      result.parallelTrialCount_ = parallelTrialCount_;
-      result.maxFailedTrialCount_ = maxFailedTrialCount_;
-      if (trialJobSpecBuilder_ == null) {
-        result.trialJobSpec_ = trialJobSpec_;
-      } else {
-        result.trialJobSpec_ = trialJobSpecBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.HyperparameterTuningJob result) {
       if (trialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           trials_ = java.util.Collections.unmodifiableList(trials_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.trials_ = trials_;
       } else {
         result.trials_ = trialsBuilder_.build();
       }
-      result.state_ = state_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.HyperparameterTuningJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.studySpec_ = studySpecBuilder_ == null ? studySpec_ : studySpecBuilder_.build();
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxTrialCount_ = maxTrialCount_;
       }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parallelTrialCount_ = parallelTrialCount_;
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (encryptionSpecBuilder_ == null) {
-        result.encryptionSpec_ = encryptionSpec_;
-      } else {
-        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.maxFailedTrialCount_ = maxFailedTrialCount_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.trialJobSpec_ =
+            trialJobSpecBuilder_ == null ? trialJobSpec_ : trialJobSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1507,10 +1520,12 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStudySpec()) {
@@ -1532,7 +1547,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         if (!other.trials_.isEmpty()) {
           if (trials_.isEmpty()) {
             trials_ = other.trials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureTrialsIsMutable();
             trials_.addAll(other.trials_);
@@ -1545,7 +1560,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
             trialsBuilder_.dispose();
             trialsBuilder_ = null;
             trials_ = other.trials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             trialsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrialsFieldBuilder()
@@ -1574,6 +1589,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         mergeError(other.getError());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00004000;
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
@@ -1606,43 +1622,43 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getStudySpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 40:
               {
                 maxTrialCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 48:
               {
                 parallelTrialCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 maxFailedTrialCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getTrialJobSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -1661,37 +1677,37 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
             case 80:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
@@ -1703,12 +1719,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
             default:
@@ -1791,8 +1808,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1808,8 +1825,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1830,8 +1847,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1903,8 +1920,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1922,8 +1939,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1946,8 +1963,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1972,7 +1989,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the studySpec field is set.
      */
     public boolean hasStudySpec() {
-      return studySpecBuilder_ != null || studySpec_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2013,11 +2030,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         studySpec_ = value;
-        onChanged();
       } else {
         studySpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2034,11 +2051,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setStudySpec(com.google.cloud.aiplatform.v1.StudySpec.Builder builderForValue) {
       if (studySpecBuilder_ == null) {
         studySpec_ = builderForValue.build();
-        onChanged();
       } else {
         studySpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2054,19 +2071,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeStudySpec(com.google.cloud.aiplatform.v1.StudySpec value) {
       if (studySpecBuilder_ == null) {
-        if (studySpec_ != null) {
-          studySpec_ =
-              com.google.cloud.aiplatform.v1.StudySpec.newBuilder(studySpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && studySpec_ != null
+            && studySpec_ != com.google.cloud.aiplatform.v1.StudySpec.getDefaultInstance()) {
+          getStudySpecBuilder().mergeFrom(value);
         } else {
           studySpec_ = value;
         }
-        onChanged();
       } else {
         studySpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2081,14 +2097,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearStudySpec() {
-      if (studySpecBuilder_ == null) {
-        studySpec_ = null;
-        onChanged();
-      } else {
-        studySpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      studySpec_ = null;
+      if (studySpecBuilder_ != null) {
+        studySpecBuilder_.dispose();
         studySpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2103,7 +2118,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.aiplatform.v1.StudySpec.Builder getStudySpecBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStudySpecFieldBuilder().getBuilder();
     }
@@ -2186,6 +2201,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setMaxTrialCount(int value) {
 
       maxTrialCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2201,7 +2217,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMaxTrialCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxTrialCount_ = 0;
       onChanged();
       return this;
@@ -2238,6 +2254,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setParallelTrialCount(int value) {
 
       parallelTrialCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2253,7 +2270,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParallelTrialCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       parallelTrialCount_ = 0;
       onChanged();
       return this;
@@ -2296,6 +2313,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setMaxFailedTrialCount(int value) {
 
       maxFailedTrialCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2314,7 +2332,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMaxFailedTrialCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxFailedTrialCount_ = 0;
       onChanged();
       return this;
@@ -2341,7 +2359,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the trialJobSpec field is set.
      */
     public boolean hasTrialJobSpec() {
-      return trialJobSpecBuilder_ != null || trialJobSpec_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2384,11 +2402,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         trialJobSpec_ = value;
-        onChanged();
       } else {
         trialJobSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2407,11 +2425,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1.CustomJobSpec.Builder builderForValue) {
       if (trialJobSpecBuilder_ == null) {
         trialJobSpec_ = builderForValue.build();
-        onChanged();
       } else {
         trialJobSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2428,19 +2446,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeTrialJobSpec(com.google.cloud.aiplatform.v1.CustomJobSpec value) {
       if (trialJobSpecBuilder_ == null) {
-        if (trialJobSpec_ != null) {
-          trialJobSpec_ =
-              com.google.cloud.aiplatform.v1.CustomJobSpec.newBuilder(trialJobSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && trialJobSpec_ != null
+            && trialJobSpec_ != com.google.cloud.aiplatform.v1.CustomJobSpec.getDefaultInstance()) {
+          getTrialJobSpecBuilder().mergeFrom(value);
         } else {
           trialJobSpec_ = value;
         }
-        onChanged();
       } else {
         trialJobSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2456,14 +2473,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearTrialJobSpec() {
-      if (trialJobSpecBuilder_ == null) {
-        trialJobSpec_ = null;
-        onChanged();
-      } else {
-        trialJobSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      trialJobSpec_ = null;
+      if (trialJobSpecBuilder_ != null) {
+        trialJobSpecBuilder_.dispose();
         trialJobSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2479,7 +2495,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.aiplatform.v1.CustomJobSpec.Builder getTrialJobSpecBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTrialJobSpecFieldBuilder().getBuilder();
     }
@@ -2537,9 +2553,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureTrialsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         trials_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.Trial>(trials_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2776,7 +2792,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder clearTrials() {
       if (trialsBuilder_ == null) {
         trials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         trialsBuilder_.clear();
@@ -2911,7 +2927,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
                 com.google.cloud.aiplatform.v1.Trial,
                 com.google.cloud.aiplatform.v1.Trial.Builder,
                 com.google.cloud.aiplatform.v1.TrialOrBuilder>(
-                trials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                trials_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         trials_ = null;
       }
       return trialsBuilder_;
@@ -2950,8 +2966,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2970,9 +2986,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.JobState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.JobState result =
-          com.google.cloud.aiplatform.v1.JobState.valueOf(state_);
+          com.google.cloud.aiplatform.v1.JobState.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.JobState.UNRECOGNIZED : result;
     }
     /**
@@ -2993,7 +3008,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3012,7 +3027,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = 0;
       onChanged();
       return this;
@@ -3038,7 +3053,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3079,11 +3094,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3100,11 +3115,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3120,17 +3135,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3145,14 +3161,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3167,7 +3182,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3240,7 +3255,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3281,11 +3296,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3303,11 +3318,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3324,17 +3339,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3350,14 +3366,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3373,7 +3388,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -3446,7 +3461,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3487,11 +3502,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3509,11 +3524,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3530,17 +3545,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3556,14 +3572,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3579,7 +3594,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -3652,7 +3667,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3695,11 +3710,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3717,11 +3732,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3738,17 +3753,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3764,14 +3780,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3787,7 +3802,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3858,7 +3873,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3895,11 +3910,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3915,11 +3930,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3934,16 +3949,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3957,14 +3974,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * <code>.google.rpc.Status error = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3978,7 +3994,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * <code>.google.rpc.Status error = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -4034,14 +4050,14 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00004000;
+      onChanged();
       return labels_;
     }
 
@@ -4105,8 +4121,10 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * <code>map&lt;string, string&gt; labels = 16;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4139,6 +4157,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4165,6 +4184,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4187,8 +4207,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4206,6 +4226,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -4229,7 +4250,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4270,11 +4291,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         encryptionSpec_ = value;
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4292,11 +4313,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
       if (encryptionSpecBuilder_ == null) {
         encryptionSpec_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4312,19 +4333,19 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (encryptionSpec_ != null) {
-          encryptionSpec_ =
-              com.google.cloud.aiplatform.v1.EncryptionSpec.newBuilder(encryptionSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
         } else {
           encryptionSpec_ = value;
         }
-        onChanged();
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4339,14 +4360,13 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17;</code>
      */
     public Builder clearEncryptionSpec() {
-      if (encryptionSpecBuilder_ == null) {
-        encryptionSpec_ = null;
-        onChanged();
-      } else {
-        encryptionSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4361,7 +4381,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }

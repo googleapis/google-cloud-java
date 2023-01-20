@@ -71,7 +71,9 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
   }
 
   public static final int TENSORBOARD_TIME_SERIES_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object tensorboardTimeSeriesId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardTimeSeriesId_ = "";
   /**
    *
    *
@@ -236,7 +240,9 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesOrBuilder
       getTensorboardTimeSeriesOrBuilder() {
-    return getTensorboardTimeSeries();
+    return tensorboardTimeSeries_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.getDefaultInstance()
+        : tensorboardTimeSeries_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -464,14 +470,12 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       tensorboardTimeSeriesId_ = "";
-
-      if (tensorboardTimeSeriesBuilder_ == null) {
-        tensorboardTimeSeries_ = null;
-      } else {
-        tensorboardTimeSeries_ = null;
+      tensorboardTimeSeries_ = null;
+      if (tensorboardTimeSeriesBuilder_ != null) {
+        tensorboardTimeSeriesBuilder_.dispose();
         tensorboardTimeSeriesBuilder_ = null;
       }
       return this;
@@ -504,15 +508,28 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
     public com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest(this);
-      result.parent_ = parent_;
-      result.tensorboardTimeSeriesId_ = tensorboardTimeSeriesId_;
-      if (tensorboardTimeSeriesBuilder_ == null) {
-        result.tensorboardTimeSeries_ = tensorboardTimeSeries_;
-      } else {
-        result.tensorboardTimeSeries_ = tensorboardTimeSeriesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tensorboardTimeSeriesId_ = tensorboardTimeSeriesId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tensorboardTimeSeries_ =
+            tensorboardTimeSeriesBuilder_ == null
+                ? tensorboardTimeSeries_
+                : tensorboardTimeSeriesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -566,10 +583,12 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTensorboardTimeSeriesId().isEmpty()) {
         tensorboardTimeSeriesId_ = other.tensorboardTimeSeriesId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTensorboardTimeSeries()) {
@@ -604,20 +623,20 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getTensorboardTimeSeriesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 tensorboardTimeSeriesId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -636,6 +655,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -713,8 +734,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,8 +756,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -762,8 +783,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,8 +859,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardTimeSeriesId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -858,8 +879,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearTensorboardTimeSeriesId() {
-
       tensorboardTimeSeriesId_ = getDefaultInstance().getTensorboardTimeSeriesId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -883,8 +904,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardTimeSeriesId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,7 +930,7 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      * @return Whether the tensorboardTimeSeries field is set.
      */
     public boolean hasTensorboardTimeSeries() {
-      return tensorboardTimeSeriesBuilder_ != null || tensorboardTimeSeries_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -951,11 +972,11 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
           throw new NullPointerException();
         }
         tensorboardTimeSeries_ = value;
-        onChanged();
       } else {
         tensorboardTimeSeriesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -973,11 +994,11 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
         com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Builder builderForValue) {
       if (tensorboardTimeSeriesBuilder_ == null) {
         tensorboardTimeSeries_ = builderForValue.build();
-        onChanged();
       } else {
         tensorboardTimeSeriesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -994,20 +1015,19 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
     public Builder mergeTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries value) {
       if (tensorboardTimeSeriesBuilder_ == null) {
-        if (tensorboardTimeSeries_ != null) {
-          tensorboardTimeSeries_ =
-              com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.newBuilder(
-                      tensorboardTimeSeries_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && tensorboardTimeSeries_ != null
+            && tensorboardTimeSeries_
+                != com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.getDefaultInstance()) {
+          getTensorboardTimeSeriesBuilder().mergeFrom(value);
         } else {
           tensorboardTimeSeries_ = value;
         }
-        onChanged();
       } else {
         tensorboardTimeSeriesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1022,14 +1042,13 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      * </code>
      */
     public Builder clearTensorboardTimeSeries() {
-      if (tensorboardTimeSeriesBuilder_ == null) {
-        tensorboardTimeSeries_ = null;
-        onChanged();
-      } else {
-        tensorboardTimeSeries_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      tensorboardTimeSeries_ = null;
+      if (tensorboardTimeSeriesBuilder_ != null) {
+        tensorboardTimeSeriesBuilder_.dispose();
         tensorboardTimeSeriesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1045,7 +1064,7 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      */
     public com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries.Builder
         getTensorboardTimeSeriesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTensorboardTimeSeriesFieldBuilder().getBuilder();
     }

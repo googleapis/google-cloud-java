@@ -126,7 +126,9 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionOrBuilder() {
-    return getExecution();
+    return execution_ == null
+        ? com.google.cloud.aiplatform.v1.Execution.getDefaultInstance()
+        : execution_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -178,11 +180,11 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -428,20 +430,18 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (executionBuilder_ == null) {
-        execution_ = null;
-      } else {
-        execution_ = null;
+      bitField0_ = 0;
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -469,19 +469,24 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1.UpdateExecutionRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UpdateExecutionRequest result =
           new com.google.cloud.aiplatform.v1.UpdateExecutionRequest(this);
-      if (executionBuilder_ == null) {
-        result.execution_ = execution_;
-      } else {
-        result.execution_ = executionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UpdateExecutionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.execution_ = executionBuilder_ == null ? execution_ : executionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -568,19 +573,19 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getExecutionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -599,6 +604,8 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.Execution execution_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -623,7 +630,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the execution field is set.
      */
     public boolean hasExecution() {
-      return executionBuilder_ != null || execution_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -670,11 +677,11 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         execution_ = value;
-        onChanged();
       } else {
         executionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,11 +701,11 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
     public Builder setExecution(com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
       if (executionBuilder_ == null) {
         execution_ = builderForValue.build();
-        onChanged();
       } else {
         executionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -717,19 +724,18 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExecution(com.google.cloud.aiplatform.v1.Execution value) {
       if (executionBuilder_ == null) {
-        if (execution_ != null) {
-          execution_ =
-              com.google.cloud.aiplatform.v1.Execution.newBuilder(execution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && execution_ != null
+            && execution_ != com.google.cloud.aiplatform.v1.Execution.getDefaultInstance()) {
+          getExecutionBuilder().mergeFrom(value);
         } else {
           execution_ = value;
         }
-        onChanged();
       } else {
         executionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -747,14 +753,13 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearExecution() {
-      if (executionBuilder_ == null) {
-        execution_ = null;
-        onChanged();
-      } else {
-        execution_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -772,7 +777,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder getExecutionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExecutionFieldBuilder().getBuilder();
     }
@@ -850,7 +855,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -891,11 +896,11 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -912,11 +917,11 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -932,17 +937,18 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -957,14 +963,13 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -979,7 +984,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1066,6 +1071,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1083,7 +1089,7 @@ public final class UpdateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

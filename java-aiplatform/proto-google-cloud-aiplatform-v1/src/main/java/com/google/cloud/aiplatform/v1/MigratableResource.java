@@ -186,7 +186,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int ENDPOINT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object endpoint_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpoint_ = "";
     /**
      *
      *
@@ -247,7 +249,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -510,10 +514,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         endpoint_ = "";
-
         version_ = "";
-
         return this;
       }
 
@@ -544,10 +547,22 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion buildPartial() {
         com.google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion result =
             new com.google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion(this);
-        result.endpoint_ = endpoint_;
-        result.version_ = version_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.endpoint_ = endpoint_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.version_ = version_;
+        }
       }
 
       @java.lang.Override
@@ -604,10 +619,12 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getEndpoint().isEmpty()) {
           endpoint_ = other.endpoint_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -639,13 +656,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   endpoint_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -664,6 +681,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object endpoint_ = "";
       /**
@@ -744,8 +763,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         endpoint_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -767,8 +786,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearEndpoint() {
-
         endpoint_ = getDefaultInstance().getEndpoint();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -795,8 +814,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         endpoint_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -865,8 +884,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -883,8 +902,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -906,8 +925,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1090,7 +1109,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int MODEL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object model_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object model_ = "";
     /**
      *
      *
@@ -1143,7 +1164,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int MODEL_DISPLAY_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object modelDisplayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelDisplayName_ = "";
     /**
      *
      *
@@ -1400,10 +1423,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         model_ = "";
-
         modelDisplayName_ = "";
-
         return this;
       }
 
@@ -1432,10 +1454,22 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.MigratableResource.AutomlModel buildPartial() {
         com.google.cloud.aiplatform.v1.MigratableResource.AutomlModel result =
             new com.google.cloud.aiplatform.v1.MigratableResource.AutomlModel(this);
-        result.model_ = model_;
-        result.modelDisplayName_ = modelDisplayName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.MigratableResource.AutomlModel result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.model_ = model_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.modelDisplayName_ = modelDisplayName_;
+        }
       }
 
       @java.lang.Override
@@ -1490,10 +1524,12 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return this;
         if (!other.getModel().isEmpty()) {
           model_ = other.model_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getModelDisplayName().isEmpty()) {
           modelDisplayName_ = other.modelDisplayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1525,13 +1561,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   model_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   modelDisplayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               default:
@@ -1550,6 +1586,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object model_ = "";
       /**
@@ -1618,8 +1656,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         model_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1637,8 +1675,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearModel() {
-
         model_ = getDefaultInstance().getModel();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1661,8 +1699,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         model_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1728,8 +1766,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         modelDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1745,8 +1783,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearModelDisplayName() {
-
         modelDisplayName_ = getDefaultInstance().getModelDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1767,8 +1805,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         modelDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1950,7 +1988,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
@@ -2003,7 +2043,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DATASET_DISPLAY_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object datasetDisplayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object datasetDisplayName_ = "";
     /**
      *
      *
@@ -2262,10 +2304,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dataset_ = "";
-
         datasetDisplayName_ = "";
-
         return this;
       }
 
@@ -2294,10 +2335,22 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.MigratableResource.AutomlDataset buildPartial() {
         com.google.cloud.aiplatform.v1.MigratableResource.AutomlDataset result =
             new com.google.cloud.aiplatform.v1.MigratableResource.AutomlDataset(this);
-        result.dataset_ = dataset_;
-        result.datasetDisplayName_ = datasetDisplayName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.MigratableResource.AutomlDataset result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.datasetDisplayName_ = datasetDisplayName_;
+        }
       }
 
       @java.lang.Override
@@ -2352,10 +2405,12 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return this;
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDatasetDisplayName().isEmpty()) {
           datasetDisplayName_ = other.datasetDisplayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2387,13 +2442,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 34:
                 {
                   datasetDisplayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -2412,6 +2467,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object dataset_ = "";
       /**
@@ -2480,8 +2537,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2499,8 +2556,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2523,8 +2580,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2590,8 +2647,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         datasetDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2607,8 +2664,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDatasetDisplayName() {
-
         datasetDisplayName_ = getDefaultInstance().getDatasetDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2629,8 +2686,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         datasetDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3004,7 +3061,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int ANNOTATED_DATASET_FIELD_NUMBER = 1;
-      private volatile java.lang.Object annotatedDataset_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object annotatedDataset_ = "";
       /**
        *
        *
@@ -3057,7 +3116,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       public static final int ANNOTATED_DATASET_DISPLAY_NAME_FIELD_NUMBER = 3;
-      private volatile java.lang.Object annotatedDatasetDisplayName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object annotatedDatasetDisplayName_ = "";
       /**
        *
        *
@@ -3352,10 +3413,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           annotatedDataset_ = "";
-
           annotatedDatasetDisplayName_ = "";
-
           return this;
         }
 
@@ -3395,10 +3455,24 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset
                       .DataLabelingAnnotatedDataset(this);
-          result.annotatedDataset_ = annotatedDataset_;
-          result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset
+                    .DataLabelingAnnotatedDataset
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.annotatedDataset_ = annotatedDataset_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
+          }
         }
 
         @java.lang.Override
@@ -3461,10 +3535,12 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                   .DataLabelingAnnotatedDataset.getDefaultInstance()) return this;
           if (!other.getAnnotatedDataset().isEmpty()) {
             annotatedDataset_ = other.annotatedDataset_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getAnnotatedDatasetDisplayName().isEmpty()) {
             annotatedDatasetDisplayName_ = other.annotatedDatasetDisplayName_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -3496,13 +3572,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 case 10:
                   {
                     annotatedDataset_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 26:
                   {
                     annotatedDatasetDisplayName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 26
                 default:
@@ -3521,6 +3597,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object annotatedDataset_ = "";
         /**
@@ -3589,8 +3667,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           annotatedDataset_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3608,8 +3686,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearAnnotatedDataset() {
-
           annotatedDataset_ = getDefaultInstance().getAnnotatedDataset();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -3632,8 +3710,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           annotatedDataset_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3699,8 +3777,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           if (value == null) {
             throw new NullPointerException();
           }
-
           annotatedDatasetDisplayName_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3716,8 +3794,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
          * @return This builder for chaining.
          */
         public Builder clearAnnotatedDatasetDisplayName() {
-
           annotatedDatasetDisplayName_ = getDefaultInstance().getAnnotatedDatasetDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -3738,8 +3816,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           annotatedDatasetDisplayName_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3817,7 +3895,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
@@ -3870,7 +3950,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DATASET_DISPLAY_NAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object datasetDisplayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object datasetDisplayName_ = "";
     /**
      *
      *
@@ -3919,6 +4001,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int DATA_LABELING_ANNOTATED_DATASETS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset
                 .DataLabelingAnnotatedDataset>
@@ -4241,17 +4325,16 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dataset_ = "";
-
         datasetDisplayName_ = "";
-
         if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
           dataLabelingAnnotatedDatasets_ = java.util.Collections.emptyList();
         } else {
           dataLabelingAnnotatedDatasets_ = null;
           dataLabelingAnnotatedDatasetsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4282,21 +4365,37 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset buildPartial() {
         com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset result =
             new com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset(this);
-        int from_bitField0_ = bitField0_;
-        result.dataset_ = dataset_;
-        result.datasetDisplayName_ = datasetDisplayName_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset result) {
         if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             dataLabelingAnnotatedDatasets_ =
                 java.util.Collections.unmodifiableList(dataLabelingAnnotatedDatasets_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.dataLabelingAnnotatedDatasets_ = dataLabelingAnnotatedDatasets_;
         } else {
           result.dataLabelingAnnotatedDatasets_ = dataLabelingAnnotatedDatasetsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.datasetDisplayName_ = datasetDisplayName_;
+        }
       }
 
       @java.lang.Override
@@ -4353,17 +4452,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 .getDefaultInstance()) return this;
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDatasetDisplayName().isEmpty()) {
           datasetDisplayName_ = other.datasetDisplayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
           if (!other.dataLabelingAnnotatedDatasets_.isEmpty()) {
             if (dataLabelingAnnotatedDatasets_.isEmpty()) {
               dataLabelingAnnotatedDatasets_ = other.dataLabelingAnnotatedDatasets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureDataLabelingAnnotatedDatasetsIsMutable();
               dataLabelingAnnotatedDatasets_.addAll(other.dataLabelingAnnotatedDatasets_);
@@ -4376,7 +4477,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               dataLabelingAnnotatedDatasetsBuilder_.dispose();
               dataLabelingAnnotatedDatasetsBuilder_ = null;
               dataLabelingAnnotatedDatasets_ = other.dataLabelingAnnotatedDatasets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               dataLabelingAnnotatedDatasetsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDataLabelingAnnotatedDatasetsFieldBuilder()
@@ -4416,7 +4517,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
@@ -4439,7 +4540,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               case 34:
                 {
                   datasetDisplayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -4528,8 +4629,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4547,8 +4648,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4571,8 +4672,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4638,8 +4739,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         datasetDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4655,8 +4756,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearDatasetDisplayName() {
-
         datasetDisplayName_ = getDefaultInstance().getDatasetDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4677,8 +4778,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         datasetDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4689,12 +4790,12 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           dataLabelingAnnotatedDatasets_ = java.util.Collections.emptyList();
 
       private void ensureDataLabelingAnnotatedDatasetsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           dataLabelingAnnotatedDatasets_ =
               new java.util.ArrayList<
                   com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset
                       .DataLabelingAnnotatedDataset>(dataLabelingAnnotatedDatasets_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -4975,7 +5076,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       public Builder clearDataLabelingAnnotatedDatasets() {
         if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
           dataLabelingAnnotatedDatasets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           dataLabelingAnnotatedDatasetsBuilder_.clear();
@@ -5143,7 +5244,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                   com.google.cloud.aiplatform.v1.MigratableResource.DataLabelingDataset
                       .DataLabelingAnnotatedDatasetOrBuilder>(
                   dataLabelingAnnotatedDatasets_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           dataLabelingAnnotatedDatasets_ = null;
@@ -5567,7 +5668,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastMigrateTimeOrBuilder() {
-    return getLastMigrateTime();
+    return lastMigrateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastMigrateTime_;
   }
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 6;
@@ -5621,7 +5724,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
-    return getLastUpdateTime();
+    return lastUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5915,6 +6020,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (mlEngineModelVersionBuilder_ != null) {
         mlEngineModelVersionBuilder_.clear();
       }
@@ -5927,16 +6033,14 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (dataLabelingDatasetBuilder_ != null) {
         dataLabelingDatasetBuilder_.clear();
       }
-      if (lastMigrateTimeBuilder_ == null) {
-        lastMigrateTime_ = null;
-      } else {
-        lastMigrateTime_ = null;
+      lastMigrateTime_ = null;
+      if (lastMigrateTimeBuilder_ != null) {
+        lastMigrateTimeBuilder_.dispose();
         lastMigrateTimeBuilder_ = null;
       }
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-      } else {
-        lastUpdateTime_ = null;
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
       resourceCase_ = 0;
@@ -5968,47 +6072,41 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.MigratableResource buildPartial() {
       com.google.cloud.aiplatform.v1.MigratableResource result =
           new com.google.cloud.aiplatform.v1.MigratableResource(this);
-      if (resourceCase_ == 1) {
-        if (mlEngineModelVersionBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = mlEngineModelVersionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resourceCase_ == 2) {
-        if (automlModelBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = automlModelBuilder_.build();
-        }
-      }
-      if (resourceCase_ == 3) {
-        if (automlDatasetBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = automlDatasetBuilder_.build();
-        }
-      }
-      if (resourceCase_ == 4) {
-        if (dataLabelingDatasetBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = dataLabelingDatasetBuilder_.build();
-        }
-      }
-      if (lastMigrateTimeBuilder_ == null) {
-        result.lastMigrateTime_ = lastMigrateTime_;
-      } else {
-        result.lastMigrateTime_ = lastMigrateTimeBuilder_.build();
-      }
-      if (lastUpdateTimeBuilder_ == null) {
-        result.lastUpdateTime_ = lastUpdateTime_;
-      } else {
-        result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
-      }
-      result.resourceCase_ = resourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.MigratableResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lastMigrateTime_ =
+            lastMigrateTimeBuilder_ == null ? lastMigrateTime_ : lastMigrateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.lastUpdateTime_ =
+            lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.MigratableResource result) {
+      result.resourceCase_ = resourceCase_;
+      result.resource_ = this.resource_;
+      if (resourceCase_ == 1 && mlEngineModelVersionBuilder_ != null) {
+        result.resource_ = mlEngineModelVersionBuilder_.build();
+      }
+      if (resourceCase_ == 2 && automlModelBuilder_ != null) {
+        result.resource_ = automlModelBuilder_.build();
+      }
+      if (resourceCase_ == 3 && automlDatasetBuilder_ != null) {
+        result.resource_ = automlDatasetBuilder_.build();
+      }
+      if (resourceCase_ == 4 && dataLabelingDatasetBuilder_ != null) {
+        result.resource_ = dataLabelingDatasetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6144,13 +6242,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             case 42:
               {
                 input.readMessage(getLastMigrateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -6183,6 +6281,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion,
@@ -6422,7 +6522,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       resourceCase_ = 1;
       onChanged();
-      ;
       return mlEngineModelVersionBuilder_;
     }
 
@@ -6657,7 +6756,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       resourceCase_ = 2;
       onChanged();
-      ;
       return automlModelBuilder_;
     }
 
@@ -6892,7 +6990,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       resourceCase_ = 3;
       onChanged();
-      ;
       return automlDatasetBuilder_;
     }
 
@@ -7134,7 +7231,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       resourceCase_ = 4;
       onChanged();
-      ;
       return dataLabelingDatasetBuilder_;
     }
 
@@ -7160,7 +7256,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return Whether the lastMigrateTime field is set.
      */
     public boolean hasLastMigrateTime() {
-      return lastMigrateTimeBuilder_ != null || lastMigrateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -7205,11 +7301,11 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         lastMigrateTime_ = value;
-        onChanged();
       } else {
         lastMigrateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7228,11 +7324,11 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public Builder setLastMigrateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastMigrateTimeBuilder_ == null) {
         lastMigrateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastMigrateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7250,19 +7346,18 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLastMigrateTime(com.google.protobuf.Timestamp value) {
       if (lastMigrateTimeBuilder_ == null) {
-        if (lastMigrateTime_ != null) {
-          lastMigrateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastMigrateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && lastMigrateTime_ != null
+            && lastMigrateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastMigrateTimeBuilder().mergeFrom(value);
         } else {
           lastMigrateTime_ = value;
         }
-        onChanged();
       } else {
         lastMigrateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7279,14 +7374,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearLastMigrateTime() {
-      if (lastMigrateTimeBuilder_ == null) {
-        lastMigrateTime_ = null;
-        onChanged();
-      } else {
-        lastMigrateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      lastMigrateTime_ = null;
+      if (lastMigrateTimeBuilder_ != null) {
+        lastMigrateTimeBuilder_.dispose();
         lastMigrateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7303,7 +7397,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastMigrateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getLastMigrateTimeFieldBuilder().getBuilder();
     }
@@ -7379,7 +7473,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
-      return lastUpdateTimeBuilder_ != null || lastUpdateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -7420,11 +7514,11 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         lastUpdateTime_ = value;
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7441,11 +7535,11 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
         lastUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7461,19 +7555,18 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
-        if (lastUpdateTime_ != null) {
-          lastUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && lastUpdateTime_ != null
+            && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastUpdateTimeBuilder().mergeFrom(value);
         } else {
           lastUpdateTime_ = value;
         }
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -7488,14 +7581,13 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearLastUpdateTime() {
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-        onChanged();
-      } else {
-        lastUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7510,7 +7602,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }

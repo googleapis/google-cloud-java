@@ -129,7 +129,10 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextExtractionInputsOrBuilder
       getInputsOrBuilder() {
-    return getInputs();
+    return inputs_ == null
+        ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+            .AutoMlTextExtractionInputs.getDefaultInstance()
+        : inputs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -364,10 +367,10 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-      } else {
-        inputs_ = null;
+      bitField0_ = 0;
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
       return this;
@@ -405,13 +408,20 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlTextExtraction(this);
-      if (inputsBuilder_ == null) {
-        result.inputs_ = inputs_;
-      } else {
-        result.inputs_ = inputsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -499,7 +509,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getInputsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -518,6 +528,8 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlTextExtractionInputs
@@ -544,7 +556,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
      * @return Whether the inputs field is set.
      */
     public boolean hasInputs() {
-      return inputsBuilder_ != null || inputs_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -590,11 +602,11 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         inputs_ = value;
-        onChanged();
       } else {
         inputsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,11 +626,11 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (inputsBuilder_ == null) {
         inputs_ = builderForValue.build();
-        onChanged();
       } else {
         inputsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,20 +648,20 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs
             value) {
       if (inputsBuilder_ == null) {
-        if (inputs_ != null) {
-          inputs_ =
-              com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
-                  .AutoMlTextExtractionInputs.newBuilder(inputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputs_ != null
+            && inputs_
+                != com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                    .AutoMlTextExtractionInputs.getDefaultInstance()) {
+          getInputsBuilder().mergeFrom(value);
         } else {
           inputs_ = value;
         }
-        onChanged();
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,14 +676,13 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearInputs() {
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-        onChanged();
-      } else {
-        inputs_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -688,7 +699,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlTextExtractionInputs.Builder
         getInputsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }

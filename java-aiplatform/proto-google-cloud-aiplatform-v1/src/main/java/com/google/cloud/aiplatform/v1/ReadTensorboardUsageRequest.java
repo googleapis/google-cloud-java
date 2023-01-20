@@ -68,7 +68,9 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
   }
 
   public static final int TENSORBOARD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tensorboard_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboard_ = "";
   /**
    *
    *
@@ -322,8 +324,8 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tensorboard_ = "";
-
       return this;
     }
 
@@ -351,9 +353,18 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest result =
           new com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest(this);
-      result.tensorboard_ = tensorboard_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tensorboard_ = tensorboard_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +415,7 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getTensorboard().isEmpty()) {
         tensorboard_ = other.tensorboard_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +447,7 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
             case 10:
               {
                 tensorboard_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +466,8 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object tensorboard_ = "";
     /**
@@ -528,8 +542,8 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboard_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,8 +563,8 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTensorboard() {
-
       tensorboard_ = getDefaultInstance().getTensorboard();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -575,8 +589,8 @@ public final class ReadTensorboardUsageRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboard_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

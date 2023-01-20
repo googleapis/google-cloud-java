@@ -577,7 +577,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     }
 
     public static final int DATA_FORMAT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object dataFormat_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataFormat_ = "";
     /**
      *
      *
@@ -642,7 +644,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     }
 
     public static final int TARGET_FIELD_FIELD_NUMBER = 6;
-    private volatile java.lang.Object targetField_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object targetField_ = "";
     /**
      *
      *
@@ -743,7 +747,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.SamplingStrategyOrBuilder
         getLoggingSamplingStrategyOrBuilder() {
-      return getLoggingSamplingStrategy();
+      return loggingSamplingStrategy_ == null
+          ? com.google.cloud.aiplatform.v1.SamplingStrategy.getDefaultInstance()
+          : loggingSamplingStrategy_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1034,6 +1040,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (gcsSourceBuilder_ != null) {
           gcsSourceBuilder_.clear();
         }
@@ -1041,13 +1048,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           bigquerySourceBuilder_.clear();
         }
         dataFormat_ = "";
-
         targetField_ = "";
-
-        if (loggingSamplingStrategyBuilder_ == null) {
-          loggingSamplingStrategy_ = null;
-        } else {
-          loggingSamplingStrategy_ = null;
+        loggingSamplingStrategy_ = null;
+        if (loggingSamplingStrategyBuilder_ != null) {
+          loggingSamplingStrategyBuilder_.dispose();
           loggingSamplingStrategyBuilder_ = null;
         }
         dataSourceCase_ = 0;
@@ -1083,33 +1087,41 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           buildPartial() {
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset result =
             new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset(this);
-        if (dataSourceCase_ == 3) {
-          result.dataSource_ = dataSource_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (dataSourceCase_ == 4) {
-          if (gcsSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = gcsSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 5) {
-          if (bigquerySourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = bigquerySourceBuilder_.build();
-          }
-        }
-        result.dataFormat_ = dataFormat_;
-        result.targetField_ = targetField_;
-        if (loggingSamplingStrategyBuilder_ == null) {
-          result.loggingSamplingStrategy_ = loggingSamplingStrategy_;
-        } else {
-          result.loggingSamplingStrategy_ = loggingSamplingStrategyBuilder_.build();
-        }
-        result.dataSourceCase_ = dataSourceCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.dataFormat_ = dataFormat_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.targetField_ = targetField_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.loggingSamplingStrategy_ =
+              loggingSamplingStrategyBuilder_ == null
+                  ? loggingSamplingStrategy_
+                  : loggingSamplingStrategyBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset result) {
+        result.dataSourceCase_ = dataSourceCase_;
+        result.dataSource_ = this.dataSource_;
+        if (dataSourceCase_ == 4 && gcsSourceBuilder_ != null) {
+          result.dataSource_ = gcsSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 5 && bigquerySourceBuilder_ != null) {
+          result.dataSource_ = bigquerySourceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1168,10 +1180,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                 .getDefaultInstance()) return this;
         if (!other.getDataFormat().isEmpty()) {
           dataFormat_ = other.dataFormat_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getTargetField().isEmpty()) {
           targetField_ = other.targetField_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasLoggingSamplingStrategy()) {
@@ -1229,7 +1243,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               case 18:
                 {
                   dataFormat_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 18
               case 26:
@@ -1255,14 +1269,14 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               case 50:
                 {
                   targetField_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(
                       getLoggingSamplingStrategyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 58
               default:
@@ -1295,6 +1309,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -1645,7 +1661,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
         dataSourceCase_ = 4;
         onChanged();
-        ;
         return gcsSourceBuilder_;
       }
 
@@ -1865,7 +1880,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
         dataSourceCase_ = 5;
         onChanged();
-        ;
         return bigquerySourceBuilder_;
       }
 
@@ -1954,8 +1968,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataFormat_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1979,8 +1993,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearDataFormat() {
-
         dataFormat_ = getDefaultInstance().getDataFormat();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2009,8 +2023,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataFormat_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2082,8 +2096,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException();
         }
-
         targetField_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2101,8 +2115,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearTargetField() {
-
         targetField_ = getDefaultInstance().getTargetField();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2125,8 +2139,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         targetField_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2150,7 +2164,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return Whether the loggingSamplingStrategy field is set.
        */
       public boolean hasLoggingSamplingStrategy() {
-        return loggingSamplingStrategyBuilder_ != null || loggingSamplingStrategy_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -2190,11 +2204,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             throw new NullPointerException();
           }
           loggingSamplingStrategy_ = value;
-          onChanged();
         } else {
           loggingSamplingStrategyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2211,11 +2225,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           com.google.cloud.aiplatform.v1.SamplingStrategy.Builder builderForValue) {
         if (loggingSamplingStrategyBuilder_ == null) {
           loggingSamplingStrategy_ = builderForValue.build();
-          onChanged();
         } else {
           loggingSamplingStrategyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2231,19 +2245,19 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder mergeLoggingSamplingStrategy(
           com.google.cloud.aiplatform.v1.SamplingStrategy value) {
         if (loggingSamplingStrategyBuilder_ == null) {
-          if (loggingSamplingStrategy_ != null) {
-            loggingSamplingStrategy_ =
-                com.google.cloud.aiplatform.v1.SamplingStrategy.newBuilder(loggingSamplingStrategy_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && loggingSamplingStrategy_ != null
+              && loggingSamplingStrategy_
+                  != com.google.cloud.aiplatform.v1.SamplingStrategy.getDefaultInstance()) {
+            getLoggingSamplingStrategyBuilder().mergeFrom(value);
           } else {
             loggingSamplingStrategy_ = value;
           }
-          onChanged();
         } else {
           loggingSamplingStrategyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2257,14 +2271,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * <code>.google.cloud.aiplatform.v1.SamplingStrategy logging_sampling_strategy = 7;</code>
        */
       public Builder clearLoggingSamplingStrategy() {
-        if (loggingSamplingStrategyBuilder_ == null) {
-          loggingSamplingStrategy_ = null;
-          onChanged();
-        } else {
-          loggingSamplingStrategy_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        loggingSamplingStrategy_ = null;
+        if (loggingSamplingStrategyBuilder_ != null) {
+          loggingSamplingStrategyBuilder_.dispose();
           loggingSamplingStrategyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2279,7 +2292,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public com.google.cloud.aiplatform.v1.SamplingStrategy.Builder
           getLoggingSamplingStrategyBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getLoggingSamplingStrategyFieldBuilder().getBuilder();
       }
@@ -2464,7 +2477,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * <code>map&lt;string, .google.cloud.aiplatform.v1.ThresholdConfig&gt; skew_thresholds = 1;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.aiplatform.v1.ThresholdConfig getSkewThresholdsOrDefault(
         java.lang.String key,
@@ -2545,7 +2557,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.aiplatform.v1.ThresholdConfig getAttributionScoreSkewThresholdsOrDefault(
         java.lang.String key,
@@ -2691,6 +2702,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                           com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
         skewThresholds_;
@@ -2767,8 +2779,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1.ThresholdConfig getSkewThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+    public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig getSkewThresholdsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2820,6 +2834,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                           com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
         attributionScoreSkewThresholds_;
@@ -2896,9 +2911,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1.ThresholdConfig
+    public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
         getAttributionScoreSkewThresholdsOrDefault(
-            java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2985,7 +3002,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ThresholdConfigOrBuilder
         getDefaultSkewThresholdOrBuilder() {
-      return getDefaultSkewThreshold();
+      return defaultSkewThreshold_ == null
+          ? com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()
+          : defaultSkewThreshold_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3295,12 +3314,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableSkewThresholds().clear();
         internalGetMutableAttributionScoreSkewThresholds().clear();
-        if (defaultSkewThresholdBuilder_ == null) {
-          defaultSkewThreshold_ = null;
-        } else {
-          defaultSkewThreshold_ = null;
+        defaultSkewThreshold_ = null;
+        if (defaultSkewThresholdBuilder_ != null) {
+          defaultSkewThresholdBuilder_.dispose();
           defaultSkewThresholdBuilder_ = null;
         }
         return this;
@@ -3342,18 +3361,32 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             result =
                 new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
                     .TrainingPredictionSkewDetectionConfig(this);
-        int from_bitField0_ = bitField0_;
-        result.skewThresholds_ = internalGetSkewThresholds();
-        result.skewThresholds_.makeImmutable();
-        result.attributionScoreSkewThresholds_ = internalGetAttributionScoreSkewThresholds();
-        result.attributionScoreSkewThresholds_.makeImmutable();
-        if (defaultSkewThresholdBuilder_ == null) {
-          result.defaultSkewThreshold_ = defaultSkewThreshold_;
-        } else {
-          result.defaultSkewThreshold_ = defaultSkewThresholdBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+                  .TrainingPredictionSkewDetectionConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.skewThresholds_ = internalGetSkewThresholds();
+          result.skewThresholds_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attributionScoreSkewThresholds_ = internalGetAttributionScoreSkewThresholds();
+          result.attributionScoreSkewThresholds_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.defaultSkewThreshold_ =
+              defaultSkewThresholdBuilder_ == null
+                  ? defaultSkewThreshold_
+                  : defaultSkewThresholdBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3415,8 +3448,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             == com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
                 .TrainingPredictionSkewDetectionConfig.getDefaultInstance()) return this;
         internalGetMutableSkewThresholds().mergeFrom(other.internalGetSkewThresholds());
+        bitField0_ |= 0x00000001;
         internalGetMutableAttributionScoreSkewThresholds()
             .mergeFrom(other.internalGetAttributionScoreSkewThresholds());
+        bitField0_ |= 0x00000002;
         if (other.hasDefaultSkewThreshold()) {
           mergeDefaultSkewThreshold(other.getDefaultSkewThreshold());
         }
@@ -3457,6 +3492,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                   internalGetMutableSkewThresholds()
                       .getMutableMap()
                       .put(skewThresholds__.getKey(), skewThresholds__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3473,13 +3509,14 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                       .put(
                           attributionScoreSkewThresholds__.getKey(),
                           attributionScoreSkewThresholds__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 50:
                 {
                   input.readMessage(
                       getDefaultSkewThresholdFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 50
               default:
@@ -3518,8 +3555,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           internalGetMutableSkewThresholds() {
-        onChanged();
-        ;
         if (skewThresholds_ == null) {
           skewThresholds_ =
               com.google.protobuf.MapField.newMapField(
@@ -3528,6 +3563,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (!skewThresholds_.isMutable()) {
           skewThresholds_ = skewThresholds_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return skewThresholds_;
       }
 
@@ -3593,8 +3630,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.aiplatform.v1.ThresholdConfig getSkewThresholdsOrDefault(
-          java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+      public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
+          getSkewThresholdsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -3630,6 +3670,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       public Builder clearSkewThresholds() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableSkewThresholds().getMutableMap().clear();
         return this;
       }
@@ -3657,6 +3698,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           getMutableSkewThresholds() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableSkewThresholds().getMutableMap();
       }
       /**
@@ -3680,8 +3722,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableSkewThresholds().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -3700,6 +3742,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAllSkewThresholds(
           java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig> values) {
         internalGetMutableSkewThresholds().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -3720,8 +3763,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           internalGetMutableAttributionScoreSkewThresholds() {
-        onChanged();
-        ;
         if (attributionScoreSkewThresholds_ == null) {
           attributionScoreSkewThresholds_ =
               com.google.protobuf.MapField.newMapField(
@@ -3730,6 +3771,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (!attributionScoreSkewThresholds_.isMutable()) {
           attributionScoreSkewThresholds_ = attributionScoreSkewThresholds_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return attributionScoreSkewThresholds_;
       }
 
@@ -3795,9 +3838,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.aiplatform.v1.ThresholdConfig
+      public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
           getAttributionScoreSkewThresholdsOrDefault(
-              java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -3833,6 +3878,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       public Builder clearAttributionScoreSkewThresholds() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAttributionScoreSkewThresholds().getMutableMap().clear();
         return this;
       }
@@ -3860,6 +3906,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           getMutableAttributionScoreSkewThresholds() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAttributionScoreSkewThresholds().getMutableMap();
       }
       /**
@@ -3883,8 +3930,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableAttributionScoreSkewThresholds().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -3903,6 +3950,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAllAttributionScoreSkewThresholds(
           java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig> values) {
         internalGetMutableAttributionScoreSkewThresholds().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -3926,7 +3974,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return Whether the defaultSkewThreshold field is set.
        */
       public boolean hasDefaultSkewThreshold() {
-        return defaultSkewThresholdBuilder_ != null || defaultSkewThreshold_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -3967,11 +4015,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             throw new NullPointerException();
           }
           defaultSkewThreshold_ = value;
-          onChanged();
         } else {
           defaultSkewThresholdBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3989,11 +4037,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           com.google.cloud.aiplatform.v1.ThresholdConfig.Builder builderForValue) {
         if (defaultSkewThresholdBuilder_ == null) {
           defaultSkewThreshold_ = builderForValue.build();
-          onChanged();
         } else {
           defaultSkewThresholdBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -4010,19 +4058,19 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder mergeDefaultSkewThreshold(
           com.google.cloud.aiplatform.v1.ThresholdConfig value) {
         if (defaultSkewThresholdBuilder_ == null) {
-          if (defaultSkewThreshold_ != null) {
-            defaultSkewThreshold_ =
-                com.google.cloud.aiplatform.v1.ThresholdConfig.newBuilder(defaultSkewThreshold_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && defaultSkewThreshold_ != null
+              && defaultSkewThreshold_
+                  != com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()) {
+            getDefaultSkewThresholdBuilder().mergeFrom(value);
           } else {
             defaultSkewThreshold_ = value;
           }
-          onChanged();
         } else {
           defaultSkewThresholdBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -4037,14 +4085,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * <code>.google.cloud.aiplatform.v1.ThresholdConfig default_skew_threshold = 6;</code>
        */
       public Builder clearDefaultSkewThreshold() {
-        if (defaultSkewThresholdBuilder_ == null) {
-          defaultSkewThreshold_ = null;
-          onChanged();
-        } else {
-          defaultSkewThreshold_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        defaultSkewThreshold_ = null;
+        if (defaultSkewThresholdBuilder_ != null) {
+          defaultSkewThresholdBuilder_.dispose();
           defaultSkewThresholdBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4060,7 +4107,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public com.google.cloud.aiplatform.v1.ThresholdConfig.Builder
           getDefaultSkewThresholdBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getDefaultSkewThresholdFieldBuilder().getBuilder();
       }
@@ -4250,7 +4297,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * <code>map&lt;string, .google.cloud.aiplatform.v1.ThresholdConfig&gt; drift_thresholds = 1;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.aiplatform.v1.ThresholdConfig getDriftThresholdsOrDefault(
         java.lang.String key,
@@ -4327,7 +4373,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.aiplatform.v1.ThresholdConfig getAttributionScoreDriftThresholdsOrDefault(
         java.lang.String key,
@@ -4471,6 +4516,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                           com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
         driftThresholds_;
@@ -4547,8 +4593,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1.ThresholdConfig getDriftThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+    public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
+        getDriftThresholdsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4600,6 +4649,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                           com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
         attributionScoreDriftThresholds_;
@@ -4673,9 +4723,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1.ThresholdConfig
+    public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
         getAttributionScoreDriftThresholdsOrDefault(
-            java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4761,7 +4813,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.ThresholdConfigOrBuilder
         getDefaultDriftThresholdOrBuilder() {
-      return getDefaultDriftThreshold();
+      return defaultDriftThreshold_ == null
+          ? com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()
+          : defaultDriftThreshold_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5068,12 +5122,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableDriftThresholds().clear();
         internalGetMutableAttributionScoreDriftThresholds().clear();
-        if (defaultDriftThresholdBuilder_ == null) {
-          defaultDriftThreshold_ = null;
-        } else {
-          defaultDriftThreshold_ = null;
+        defaultDriftThreshold_ = null;
+        if (defaultDriftThresholdBuilder_ != null) {
+          defaultDriftThresholdBuilder_.dispose();
           defaultDriftThresholdBuilder_ = null;
         }
         return this;
@@ -5113,18 +5167,32 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             result =
                 new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
                     .PredictionDriftDetectionConfig(this);
-        int from_bitField0_ = bitField0_;
-        result.driftThresholds_ = internalGetDriftThresholds();
-        result.driftThresholds_.makeImmutable();
-        result.attributionScoreDriftThresholds_ = internalGetAttributionScoreDriftThresholds();
-        result.attributionScoreDriftThresholds_.makeImmutable();
-        if (defaultDriftThresholdBuilder_ == null) {
-          result.defaultDriftThreshold_ = defaultDriftThreshold_;
-        } else {
-          result.defaultDriftThreshold_ = defaultDriftThresholdBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+                  .PredictionDriftDetectionConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.driftThresholds_ = internalGetDriftThresholds();
+          result.driftThresholds_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attributionScoreDriftThresholds_ = internalGetAttributionScoreDriftThresholds();
+          result.attributionScoreDriftThresholds_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.defaultDriftThreshold_ =
+              defaultDriftThresholdBuilder_ == null
+                  ? defaultDriftThreshold_
+                  : defaultDriftThresholdBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5186,8 +5254,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             == com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
                 .PredictionDriftDetectionConfig.getDefaultInstance()) return this;
         internalGetMutableDriftThresholds().mergeFrom(other.internalGetDriftThresholds());
+        bitField0_ |= 0x00000001;
         internalGetMutableAttributionScoreDriftThresholds()
             .mergeFrom(other.internalGetAttributionScoreDriftThresholds());
+        bitField0_ |= 0x00000002;
         if (other.hasDefaultDriftThreshold()) {
           mergeDefaultDriftThreshold(other.getDefaultDriftThreshold());
         }
@@ -5228,6 +5298,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                   internalGetMutableDriftThresholds()
                       .getMutableMap()
                       .put(driftThresholds__.getKey(), driftThresholds__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -5244,13 +5315,14 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                       .put(
                           attributionScoreDriftThresholds__.getKey(),
                           attributionScoreDriftThresholds__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 42:
                 {
                   input.readMessage(
                       getDefaultDriftThresholdFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 42
               default:
@@ -5289,8 +5361,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           internalGetMutableDriftThresholds() {
-        onChanged();
-        ;
         if (driftThresholds_ == null) {
           driftThresholds_ =
               com.google.protobuf.MapField.newMapField(
@@ -5299,6 +5369,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (!driftThresholds_.isMutable()) {
           driftThresholds_ = driftThresholds_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return driftThresholds_;
       }
 
@@ -5364,8 +5436,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.aiplatform.v1.ThresholdConfig getDriftThresholdsOrDefault(
-          java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+      public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
+          getDriftThresholdsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -5401,6 +5476,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       public Builder clearDriftThresholds() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableDriftThresholds().getMutableMap().clear();
         return this;
       }
@@ -5428,6 +5504,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           getMutableDriftThresholds() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableDriftThresholds().getMutableMap();
       }
       /**
@@ -5451,8 +5528,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableDriftThresholds().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -5471,6 +5548,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAllDriftThresholds(
           java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig> values) {
         internalGetMutableDriftThresholds().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -5491,8 +5569,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           internalGetMutableAttributionScoreDriftThresholds() {
-        onChanged();
-        ;
         if (attributionScoreDriftThresholds_ == null) {
           attributionScoreDriftThresholds_ =
               com.google.protobuf.MapField.newMapField(
@@ -5501,6 +5577,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (!attributionScoreDriftThresholds_.isMutable()) {
           attributionScoreDriftThresholds_ = attributionScoreDriftThresholds_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return attributionScoreDriftThresholds_;
       }
 
@@ -5563,9 +5641,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.aiplatform.v1.ThresholdConfig
+      public /* nullable */ com.google.cloud.aiplatform.v1.ThresholdConfig
           getAttributionScoreDriftThresholdsOrDefault(
-              java.lang.String key, com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.aiplatform.v1.ThresholdConfig defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -5600,6 +5680,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       public Builder clearAttributionScoreDriftThresholds() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().clear();
         return this;
       }
@@ -5626,6 +5707,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig>
           getMutableAttributionScoreDriftThresholds() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAttributionScoreDriftThresholds().getMutableMap();
       }
       /**
@@ -5648,8 +5730,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -5667,6 +5749,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAllAttributionScoreDriftThresholds(
           java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.ThresholdConfig> values) {
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -5690,7 +5773,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return Whether the defaultDriftThreshold field is set.
        */
       public boolean hasDefaultDriftThreshold() {
-        return defaultDriftThresholdBuilder_ != null || defaultDriftThreshold_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -5732,11 +5815,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             throw new NullPointerException();
           }
           defaultDriftThreshold_ = value;
-          onChanged();
         } else {
           defaultDriftThresholdBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5754,11 +5837,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           com.google.cloud.aiplatform.v1.ThresholdConfig.Builder builderForValue) {
         if (defaultDriftThresholdBuilder_ == null) {
           defaultDriftThreshold_ = builderForValue.build();
-          onChanged();
         } else {
           defaultDriftThresholdBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5775,19 +5858,19 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder mergeDefaultDriftThreshold(
           com.google.cloud.aiplatform.v1.ThresholdConfig value) {
         if (defaultDriftThresholdBuilder_ == null) {
-          if (defaultDriftThreshold_ != null) {
-            defaultDriftThreshold_ =
-                com.google.cloud.aiplatform.v1.ThresholdConfig.newBuilder(defaultDriftThreshold_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && defaultDriftThreshold_ != null
+              && defaultDriftThreshold_
+                  != com.google.cloud.aiplatform.v1.ThresholdConfig.getDefaultInstance()) {
+            getDefaultDriftThresholdBuilder().mergeFrom(value);
           } else {
             defaultDriftThreshold_ = value;
           }
-          onChanged();
         } else {
           defaultDriftThresholdBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5802,14 +5885,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * <code>.google.cloud.aiplatform.v1.ThresholdConfig default_drift_threshold = 5;</code>
        */
       public Builder clearDefaultDriftThreshold() {
-        if (defaultDriftThresholdBuilder_ == null) {
-          defaultDriftThreshold_ = null;
-          onChanged();
-        } else {
-          defaultDriftThreshold_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        defaultDriftThreshold_ = null;
+        if (defaultDriftThresholdBuilder_ != null) {
+          defaultDriftThresholdBuilder_.dispose();
           defaultDriftThresholdBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5825,7 +5907,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public com.google.cloud.aiplatform.v1.ThresholdConfig.Builder
           getDefaultDriftThresholdBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getDefaultDriftThresholdFieldBuilder().getBuilder();
       }
@@ -6545,7 +6627,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       public static final int PREDICTION_FORMAT_FIELD_NUMBER = 1;
-      private int predictionFormat_;
+      private int predictionFormat_ = 0;
       /**
        *
        *
@@ -6580,12 +6662,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
               .ExplanationBaseline.PredictionFormat
           getPredictionFormat() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
                 .ExplanationBaseline.PredictionFormat
             result =
                 com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
-                    .ExplanationBaseline.PredictionFormat.valueOf(predictionFormat_);
+                    .ExplanationBaseline.PredictionFormat.forNumber(predictionFormat_);
         return result == null
             ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
                 .ExplanationBaseline.PredictionFormat.UNRECOGNIZED
@@ -6874,6 +6955,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (gcsBuilder_ != null) {
             gcsBuilder_.clear();
           }
@@ -6881,7 +6963,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             bigqueryBuilder_.clear();
           }
           predictionFormat_ = 0;
-
           destinationCase_ = 0;
           destination_ = null;
           return this;
@@ -6923,24 +7004,36 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               result =
                   new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
                       .ExplanationConfig.ExplanationBaseline(this);
-          if (destinationCase_ == 2) {
-            if (gcsBuilder_ == null) {
-              result.destination_ = destination_;
-            } else {
-              result.destination_ = gcsBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (destinationCase_ == 3) {
-            if (bigqueryBuilder_ == null) {
-              result.destination_ = destination_;
-            } else {
-              result.destination_ = bigqueryBuilder_.build();
-            }
-          }
-          result.predictionFormat_ = predictionFormat_;
-          result.destinationCase_ = destinationCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+                    .ExplanationBaseline
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.predictionFormat_ = predictionFormat_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+                    .ExplanationBaseline
+                result) {
+          result.destinationCase_ = destinationCase_;
+          result.destination_ = this.destination_;
+          if (destinationCase_ == 2 && gcsBuilder_ != null) {
+            result.destination_ = gcsBuilder_.build();
+          }
+          if (destinationCase_ == 3 && bigqueryBuilder_ != null) {
+            result.destination_ = bigqueryBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -7049,7 +7142,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                 case 8:
                   {
                     predictionFormat_ = input.readEnum();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 8
                 case 18:
@@ -7094,6 +7187,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.aiplatform.v1.GcsDestination,
@@ -7302,7 +7397,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           }
           destinationCase_ = 2;
           onChanged();
-          ;
           return gcsBuilder_;
         }
 
@@ -7514,7 +7608,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           }
           destinationCase_ = 3;
           onChanged();
-          ;
           return bigqueryBuilder_;
         }
 
@@ -7551,8 +7644,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
          * @return This builder for chaining.
          */
         public Builder setPredictionFormatValue(int value) {
-
           predictionFormat_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -7573,12 +7666,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
                 .ExplanationBaseline.PredictionFormat
             getPredictionFormat() {
-          @SuppressWarnings("deprecation")
           com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
                   .ExplanationBaseline.PredictionFormat
               result =
                   com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
-                      .ExplanationBaseline.PredictionFormat.valueOf(predictionFormat_);
+                      .ExplanationBaseline.PredictionFormat.forNumber(predictionFormat_);
           return result == null
               ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
                   .ExplanationBaseline.PredictionFormat.UNRECOGNIZED
@@ -7605,7 +7697,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000004;
           predictionFormat_ = value.getNumber();
           onChanged();
           return this;
@@ -7624,7 +7716,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
          * @return This builder for chaining.
          */
         public Builder clearPredictionFormat() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           predictionFormat_ = 0;
           onChanged();
           return this;
@@ -7703,7 +7795,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     }
 
     public static final int ENABLE_FEATURE_ATTRIBUTES_FIELD_NUMBER = 1;
-    private boolean enableFeatureAttributes_;
+    private boolean enableFeatureAttributes_ = false;
     /**
      *
      *
@@ -7780,7 +7872,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
             .ExplanationBaselineOrBuilder
         getExplanationBaselineOrBuilder() {
-      return getExplanationBaseline();
+      return explanationBaseline_ == null
+          ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+              .ExplanationBaseline.getDefaultInstance()
+          : explanationBaseline_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8011,12 +8106,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enableFeatureAttributes_ = false;
-
-        if (explanationBaselineBuilder_ == null) {
-          explanationBaseline_ = null;
-        } else {
-          explanationBaseline_ = null;
+        explanationBaseline_ = null;
+        if (explanationBaselineBuilder_ != null) {
+          explanationBaselineBuilder_.dispose();
           explanationBaselineBuilder_ = null;
         }
         return this;
@@ -8052,14 +8146,25 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig result =
             new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig(
                 this);
-        result.enableFeatureAttributes_ = enableFeatureAttributes_;
-        if (explanationBaselineBuilder_ == null) {
-          result.explanationBaseline_ = explanationBaseline_;
-        } else {
-          result.explanationBaseline_ = explanationBaselineBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableFeatureAttributes_ = enableFeatureAttributes_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.explanationBaseline_ =
+              explanationBaselineBuilder_ == null
+                  ? explanationBaseline_
+                  : explanationBaselineBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -8151,14 +8256,14 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               case 8:
                 {
                   enableFeatureAttributes_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   input.readMessage(
                       getExplanationBaselineFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -8177,6 +8282,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enableFeatureAttributes_;
       /**
@@ -8213,6 +8320,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder setEnableFeatureAttributes(boolean value) {
 
         enableFeatureAttributes_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8230,7 +8338,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearEnableFeatureAttributes() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enableFeatureAttributes_ = false;
         onChanged();
         return this;
@@ -8261,7 +8369,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * @return Whether the explanationBaseline field is set.
        */
       public boolean hasExplanationBaseline() {
-        return explanationBaselineBuilder_ != null || explanationBaseline_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -8308,11 +8416,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             throw new NullPointerException();
           }
           explanationBaseline_ = value;
-          onChanged();
         } else {
           explanationBaselineBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8332,11 +8440,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               builderForValue) {
         if (explanationBaselineBuilder_ == null) {
           explanationBaseline_ = builderForValue.build();
-          onChanged();
         } else {
           explanationBaselineBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8355,20 +8463,20 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                   .ExplanationBaseline
               value) {
         if (explanationBaselineBuilder_ == null) {
-          if (explanationBaseline_ != null) {
-            explanationBaseline_ =
-                com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
-                    .ExplanationBaseline.newBuilder(explanationBaseline_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && explanationBaseline_ != null
+              && explanationBaseline_
+                  != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+                      .ExplanationBaseline.getDefaultInstance()) {
+            getExplanationBaselineBuilder().mergeFrom(value);
           } else {
             explanationBaseline_ = value;
           }
-          onChanged();
         } else {
           explanationBaselineBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8383,14 +8491,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * </code>
        */
       public Builder clearExplanationBaseline() {
-        if (explanationBaselineBuilder_ == null) {
-          explanationBaseline_ = null;
-          onChanged();
-        } else {
-          explanationBaseline_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        explanationBaseline_ = null;
+        if (explanationBaselineBuilder_ != null) {
+          explanationBaselineBuilder_.dispose();
           explanationBaselineBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -8407,7 +8514,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
               .ExplanationBaseline.Builder
           getExplanationBaselineBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getExplanationBaselineFieldBuilder().getBuilder();
       }
@@ -8595,7 +8702,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDatasetOrBuilder
       getTrainingDatasetOrBuilder() {
-    return getTrainingDataset();
+    return trainingDataset_ == null
+        ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset
+            .getDefaultInstance()
+        : trainingDataset_;
   }
 
   public static final int TRAINING_PREDICTION_SKEW_DETECTION_CONFIG_FIELD_NUMBER = 2;
@@ -8656,7 +8766,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
   public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
           .TrainingPredictionSkewDetectionConfigOrBuilder
       getTrainingPredictionSkewDetectionConfigOrBuilder() {
-    return getTrainingPredictionSkewDetectionConfig();
+    return trainingPredictionSkewDetectionConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+            .TrainingPredictionSkewDetectionConfig.getDefaultInstance()
+        : trainingPredictionSkewDetectionConfig_;
   }
 
   public static final int PREDICTION_DRIFT_DETECTION_CONFIG_FIELD_NUMBER = 3;
@@ -8717,7 +8830,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
   public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
           .PredictionDriftDetectionConfigOrBuilder
       getPredictionDriftDetectionConfigOrBuilder() {
-    return getPredictionDriftDetectionConfig();
+    return predictionDriftDetectionConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+            .PredictionDriftDetectionConfig.getDefaultInstance()
+        : predictionDriftDetectionConfig_;
   }
 
   public static final int EXPLANATION_CONFIG_FIELD_NUMBER = 5;
@@ -8775,7 +8891,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder
       getExplanationConfigOrBuilder() {
-    return getExplanationConfig();
+    return explanationConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+            .getDefaultInstance()
+        : explanationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -9032,28 +9151,25 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (trainingDatasetBuilder_ == null) {
-        trainingDataset_ = null;
-      } else {
-        trainingDataset_ = null;
+      bitField0_ = 0;
+      trainingDataset_ = null;
+      if (trainingDatasetBuilder_ != null) {
+        trainingDatasetBuilder_.dispose();
         trainingDatasetBuilder_ = null;
       }
-      if (trainingPredictionSkewDetectionConfigBuilder_ == null) {
-        trainingPredictionSkewDetectionConfig_ = null;
-      } else {
-        trainingPredictionSkewDetectionConfig_ = null;
+      trainingPredictionSkewDetectionConfig_ = null;
+      if (trainingPredictionSkewDetectionConfigBuilder_ != null) {
+        trainingPredictionSkewDetectionConfigBuilder_.dispose();
         trainingPredictionSkewDetectionConfigBuilder_ = null;
       }
-      if (predictionDriftDetectionConfigBuilder_ == null) {
-        predictionDriftDetectionConfig_ = null;
-      } else {
-        predictionDriftDetectionConfig_ = null;
+      predictionDriftDetectionConfig_ = null;
+      if (predictionDriftDetectionConfigBuilder_ != null) {
+        predictionDriftDetectionConfigBuilder_.dispose();
         predictionDriftDetectionConfigBuilder_ = null;
       }
-      if (explanationConfigBuilder_ == null) {
-        explanationConfig_ = null;
-      } else {
-        explanationConfig_ = null;
+      explanationConfig_ = null;
+      if (explanationConfigBuilder_ != null) {
+        explanationConfigBuilder_.dispose();
         explanationConfigBuilder_ = null;
       }
       return this;
@@ -9084,29 +9200,38 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig buildPartial() {
       com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig result =
           new com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig(this);
-      if (trainingDatasetBuilder_ == null) {
-        result.trainingDataset_ = trainingDataset_;
-      } else {
-        result.trainingDataset_ = trainingDatasetBuilder_.build();
-      }
-      if (trainingPredictionSkewDetectionConfigBuilder_ == null) {
-        result.trainingPredictionSkewDetectionConfig_ = trainingPredictionSkewDetectionConfig_;
-      } else {
-        result.trainingPredictionSkewDetectionConfig_ =
-            trainingPredictionSkewDetectionConfigBuilder_.build();
-      }
-      if (predictionDriftDetectionConfigBuilder_ == null) {
-        result.predictionDriftDetectionConfig_ = predictionDriftDetectionConfig_;
-      } else {
-        result.predictionDriftDetectionConfig_ = predictionDriftDetectionConfigBuilder_.build();
-      }
-      if (explanationConfigBuilder_ == null) {
-        result.explanationConfig_ = explanationConfig_;
-      } else {
-        result.explanationConfig_ = explanationConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trainingDataset_ =
+            trainingDatasetBuilder_ == null ? trainingDataset_ : trainingDatasetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trainingPredictionSkewDetectionConfig_ =
+            trainingPredictionSkewDetectionConfigBuilder_ == null
+                ? trainingPredictionSkewDetectionConfig_
+                : trainingPredictionSkewDetectionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.predictionDriftDetectionConfig_ =
+            predictionDriftDetectionConfigBuilder_ == null
+                ? predictionDriftDetectionConfig_
+                : predictionDriftDetectionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.explanationConfig_ =
+            explanationConfigBuilder_ == null
+                ? explanationConfig_
+                : explanationConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -9198,7 +9323,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getTrainingDatasetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -9206,7 +9331,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                 input.readMessage(
                     getTrainingPredictionSkewDetectionConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -9214,14 +9339,14 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                 input.readMessage(
                     getPredictionDriftDetectionConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(
                     getExplanationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -9240,6 +9365,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset
         trainingDataset_;
@@ -9263,7 +9390,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * @return Whether the trainingDataset field is set.
      */
     public boolean hasTrainingDataset() {
-      return trainingDatasetBuilder_ != null || trainingDataset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -9309,11 +9436,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         trainingDataset_ = value;
-        onChanged();
       } else {
         trainingDatasetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9333,11 +9460,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             builderForValue) {
       if (trainingDatasetBuilder_ == null) {
         trainingDataset_ = builderForValue.build();
-        onChanged();
       } else {
         trainingDatasetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9355,20 +9482,20 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public Builder mergeTrainingDataset(
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset value) {
       if (trainingDatasetBuilder_ == null) {
-        if (trainingDataset_ != null) {
-          trainingDataset_ =
-              com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset
-                  .newBuilder(trainingDataset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && trainingDataset_ != null
+            && trainingDataset_
+                != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset
+                    .getDefaultInstance()) {
+          getTrainingDatasetBuilder().mergeFrom(value);
         } else {
           trainingDataset_ = value;
         }
-        onChanged();
       } else {
         trainingDatasetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -9384,14 +9511,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearTrainingDataset() {
-      if (trainingDatasetBuilder_ == null) {
-        trainingDataset_ = null;
-        onChanged();
-      } else {
-        trainingDataset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      trainingDataset_ = null;
+      if (trainingDatasetBuilder_ != null) {
+        trainingDatasetBuilder_.dispose();
         trainingDatasetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9408,7 +9534,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      */
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset.Builder
         getTrainingDatasetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTrainingDatasetFieldBuilder().getBuilder();
     }
@@ -9491,8 +9617,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * @return Whether the trainingPredictionSkewDetectionConfig field is set.
      */
     public boolean hasTrainingPredictionSkewDetectionConfig() {
-      return trainingPredictionSkewDetectionConfigBuilder_ != null
-          || trainingPredictionSkewDetectionConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -9539,11 +9664,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         trainingPredictionSkewDetectionConfig_ = value;
-        onChanged();
       } else {
         trainingPredictionSkewDetectionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9563,11 +9688,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             builderForValue) {
       if (trainingPredictionSkewDetectionConfigBuilder_ == null) {
         trainingPredictionSkewDetectionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         trainingPredictionSkewDetectionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9586,21 +9711,20 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                 .TrainingPredictionSkewDetectionConfig
             value) {
       if (trainingPredictionSkewDetectionConfigBuilder_ == null) {
-        if (trainingPredictionSkewDetectionConfig_ != null) {
-          trainingPredictionSkewDetectionConfig_ =
-              com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
-                  .TrainingPredictionSkewDetectionConfig.newBuilder(
-                      trainingPredictionSkewDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trainingPredictionSkewDetectionConfig_ != null
+            && trainingPredictionSkewDetectionConfig_
+                != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+                    .TrainingPredictionSkewDetectionConfig.getDefaultInstance()) {
+          getTrainingPredictionSkewDetectionConfigBuilder().mergeFrom(value);
         } else {
           trainingPredictionSkewDetectionConfig_ = value;
         }
-        onChanged();
       } else {
         trainingPredictionSkewDetectionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -9615,14 +9739,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearTrainingPredictionSkewDetectionConfig() {
-      if (trainingPredictionSkewDetectionConfigBuilder_ == null) {
-        trainingPredictionSkewDetectionConfig_ = null;
-        onChanged();
-      } else {
-        trainingPredictionSkewDetectionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trainingPredictionSkewDetectionConfig_ = null;
+      if (trainingPredictionSkewDetectionConfigBuilder_ != null) {
+        trainingPredictionSkewDetectionConfigBuilder_.dispose();
         trainingPredictionSkewDetectionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9639,7 +9762,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
             .TrainingPredictionSkewDetectionConfig.Builder
         getTrainingPredictionSkewDetectionConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTrainingPredictionSkewDetectionConfigFieldBuilder().getBuilder();
     }
@@ -9725,8 +9848,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * @return Whether the predictionDriftDetectionConfig field is set.
      */
     public boolean hasPredictionDriftDetectionConfig() {
-      return predictionDriftDetectionConfigBuilder_ != null
-          || predictionDriftDetectionConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -9772,11 +9894,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         predictionDriftDetectionConfig_ = value;
-        onChanged();
       } else {
         predictionDriftDetectionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9796,11 +9918,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             builderForValue) {
       if (predictionDriftDetectionConfigBuilder_ == null) {
         predictionDriftDetectionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         predictionDriftDetectionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9818,20 +9940,20 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig
             value) {
       if (predictionDriftDetectionConfigBuilder_ == null) {
-        if (predictionDriftDetectionConfig_ != null) {
-          predictionDriftDetectionConfig_ =
-              com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
-                  .PredictionDriftDetectionConfig.newBuilder(predictionDriftDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && predictionDriftDetectionConfig_ != null
+            && predictionDriftDetectionConfig_
+                != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
+                    .PredictionDriftDetectionConfig.getDefaultInstance()) {
+          getPredictionDriftDetectionConfigBuilder().mergeFrom(value);
         } else {
           predictionDriftDetectionConfig_ = value;
         }
-        onChanged();
       } else {
         predictionDriftDetectionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -9846,14 +9968,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearPredictionDriftDetectionConfig() {
-      if (predictionDriftDetectionConfigBuilder_ == null) {
-        predictionDriftDetectionConfig_ = null;
-        onChanged();
-      } else {
-        predictionDriftDetectionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      predictionDriftDetectionConfig_ = null;
+      if (predictionDriftDetectionConfigBuilder_ != null) {
+        predictionDriftDetectionConfigBuilder_.dispose();
         predictionDriftDetectionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9870,7 +9991,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig
             .PredictionDriftDetectionConfig.Builder
         getPredictionDriftDetectionConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPredictionDriftDetectionConfigFieldBuilder().getBuilder();
     }
@@ -9953,7 +10074,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * @return Whether the explanationConfig field is set.
      */
     public boolean hasExplanationConfig() {
-      return explanationConfigBuilder_ != null || explanationConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -9997,11 +10118,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         explanationConfig_ = value;
-        onChanged();
       } else {
         explanationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10020,11 +10141,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             builderForValue) {
       if (explanationConfigBuilder_ == null) {
         explanationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         explanationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10041,20 +10162,20 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public Builder mergeExplanationConfig(
         com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig value) {
       if (explanationConfigBuilder_ == null) {
-        if (explanationConfig_ != null) {
-          explanationConfig_ =
-              com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
-                  .newBuilder(explanationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && explanationConfig_ != null
+            && explanationConfig_
+                != com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+                    .getDefaultInstance()) {
+          getExplanationConfigBuilder().mergeFrom(value);
         } else {
           explanationConfig_ = value;
         }
-        onChanged();
       } else {
         explanationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -10069,14 +10190,13 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearExplanationConfig() {
-      if (explanationConfigBuilder_ == null) {
-        explanationConfig_ = null;
-        onChanged();
-      } else {
-        explanationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      explanationConfig_ = null;
+      if (explanationConfigBuilder_ != null) {
+        explanationConfigBuilder_.dispose();
         explanationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10092,7 +10212,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      */
     public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder
         getExplanationConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExplanationConfigFieldBuilder().getBuilder();
     }

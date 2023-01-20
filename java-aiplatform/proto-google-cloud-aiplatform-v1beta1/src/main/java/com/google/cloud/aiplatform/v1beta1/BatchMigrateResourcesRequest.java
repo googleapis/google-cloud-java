@@ -70,7 +70,9 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,6 +127,8 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
   }
 
   public static final int MIGRATE_RESOURCE_REQUESTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest>
       migrateResourceRequests_;
   /**
@@ -431,15 +435,15 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (migrateResourceRequestsBuilder_ == null) {
         migrateResourceRequests_ = java.util.Collections.emptyList();
       } else {
         migrateResourceRequests_ = null;
         migrateResourceRequestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -468,20 +472,34 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     public com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest result =
           new com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest result) {
       if (migrateResourceRequestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           migrateResourceRequests_ =
               java.util.Collections.unmodifiableList(migrateResourceRequests_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.migrateResourceRequests_ = migrateResourceRequests_;
       } else {
         result.migrateResourceRequests_ = migrateResourceRequestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -534,13 +552,14 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (migrateResourceRequestsBuilder_ == null) {
         if (!other.migrateResourceRequests_.isEmpty()) {
           if (migrateResourceRequests_.isEmpty()) {
             migrateResourceRequests_ = other.migrateResourceRequests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMigrateResourceRequestsIsMutable();
             migrateResourceRequests_.addAll(other.migrateResourceRequests_);
@@ -553,7 +572,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
             migrateResourceRequestsBuilder_.dispose();
             migrateResourceRequestsBuilder_ = null;
             migrateResourceRequests_ = other.migrateResourceRequests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             migrateResourceRequestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMigrateResourceRequestsFieldBuilder()
@@ -592,7 +611,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -698,8 +717,8 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +737,8 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,11 +772,11 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         migrateResourceRequests_ = java.util.Collections.emptyList();
 
     private void ensureMigrateResourceRequestsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         migrateResourceRequests_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest>(
                 migrateResourceRequests_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1025,7 +1044,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     public Builder clearMigrateResourceRequests() {
       if (migrateResourceRequestsBuilder_ == null) {
         migrateResourceRequests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         migrateResourceRequestsBuilder_.clear();
@@ -1184,7 +1203,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
                 com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.Builder,
                 com.google.cloud.aiplatform.v1beta1.MigrateResourceRequestOrBuilder>(
                 migrateResourceRequests_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         migrateResourceRequests_ = null;

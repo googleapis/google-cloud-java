@@ -70,6 +70,8 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DATA_ITEMS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DataItem> dataItems_;
   /**
    *
@@ -139,7 +141,9 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -397,6 +401,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dataItemsBuilder_ == null) {
         dataItems_ = java.util.Collections.emptyList();
       } else {
@@ -405,7 +410,6 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -433,7 +437,16 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse result =
           new com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse result) {
       if (dataItemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dataItems_ = java.util.Collections.unmodifiableList(dataItems_);
@@ -443,9 +456,13 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.dataItems_ = dataItemsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -523,6 +540,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -567,7 +585,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1001,8 +1019,8 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,8 +1036,8 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1040,8 +1058,8 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

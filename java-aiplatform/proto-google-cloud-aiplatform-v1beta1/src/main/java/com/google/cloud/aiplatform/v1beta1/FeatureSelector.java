@@ -116,7 +116,9 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.IdMatcherOrBuilder getIdMatcherOrBuilder() {
-    return getIdMatcher();
+    return idMatcher_ == null
+        ? com.google.cloud.aiplatform.v1beta1.IdMatcher.getDefaultInstance()
+        : idMatcher_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,10 +323,10 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idMatcherBuilder_ == null) {
-        idMatcher_ = null;
-      } else {
-        idMatcher_ = null;
+      bitField0_ = 0;
+      idMatcher_ = null;
+      if (idMatcherBuilder_ != null) {
+        idMatcherBuilder_.dispose();
         idMatcherBuilder_ = null;
       }
       return this;
@@ -354,13 +356,18 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.FeatureSelector buildPartial() {
       com.google.cloud.aiplatform.v1beta1.FeatureSelector result =
           new com.google.cloud.aiplatform.v1beta1.FeatureSelector(this);
-      if (idMatcherBuilder_ == null) {
-        result.idMatcher_ = idMatcher_;
-      } else {
-        result.idMatcher_ = idMatcherBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FeatureSelector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.idMatcher_ = idMatcherBuilder_ == null ? idMatcher_ : idMatcherBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +448,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getIdMatcherFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +467,8 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.IdMatcher idMatcher_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -481,7 +490,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
      * @return Whether the idMatcher field is set.
      */
     public boolean hasIdMatcher() {
-      return idMatcherBuilder_ != null || idMatcher_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -522,11 +531,11 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         idMatcher_ = value;
-        onChanged();
       } else {
         idMatcherBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -544,11 +553,11 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.aiplatform.v1beta1.IdMatcher.Builder builderForValue) {
       if (idMatcherBuilder_ == null) {
         idMatcher_ = builderForValue.build();
-        onChanged();
       } else {
         idMatcherBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -564,19 +573,18 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeIdMatcher(com.google.cloud.aiplatform.v1beta1.IdMatcher value) {
       if (idMatcherBuilder_ == null) {
-        if (idMatcher_ != null) {
-          idMatcher_ =
-              com.google.cloud.aiplatform.v1beta1.IdMatcher.newBuilder(idMatcher_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && idMatcher_ != null
+            && idMatcher_ != com.google.cloud.aiplatform.v1beta1.IdMatcher.getDefaultInstance()) {
+          getIdMatcherBuilder().mergeFrom(value);
         } else {
           idMatcher_ = value;
         }
-        onChanged();
       } else {
         idMatcherBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -591,14 +599,13 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearIdMatcher() {
-      if (idMatcherBuilder_ == null) {
-        idMatcher_ = null;
-        onChanged();
-      } else {
-        idMatcher_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      idMatcher_ = null;
+      if (idMatcherBuilder_ != null) {
+        idMatcherBuilder_.dispose();
         idMatcherBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -613,7 +620,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.IdMatcher.Builder getIdMatcherBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdMatcherFieldBuilder().getBuilder();
     }

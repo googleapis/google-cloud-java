@@ -70,7 +70,9 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -183,11 +185,13 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.MeasurementOrBuilder getFinalMeasurementOrBuilder() {
-    return getFinalMeasurement();
+    return finalMeasurement_ == null
+        ? com.google.cloud.aiplatform.v1.Measurement.getDefaultInstance()
+        : finalMeasurement_;
   }
 
   public static final int TRIAL_INFEASIBLE_FIELD_NUMBER = 3;
-  private boolean trialInfeasible_;
+  private boolean trialInfeasible_ = false;
   /**
    *
    *
@@ -206,7 +210,9 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INFEASIBLE_REASON_FIELD_NUMBER = 4;
-  private volatile java.lang.Object infeasibleReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object infeasibleReason_ = "";
   /**
    *
    *
@@ -486,18 +492,15 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (finalMeasurementBuilder_ == null) {
-        finalMeasurement_ = null;
-      } else {
-        finalMeasurement_ = null;
+      finalMeasurement_ = null;
+      if (finalMeasurementBuilder_ != null) {
+        finalMeasurementBuilder_.dispose();
         finalMeasurementBuilder_ = null;
       }
       trialInfeasible_ = false;
-
       infeasibleReason_ = "";
-
       return this;
     }
 
@@ -525,16 +528,28 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.CompleteTrialRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CompleteTrialRequest result =
           new com.google.cloud.aiplatform.v1.CompleteTrialRequest(this);
-      result.name_ = name_;
-      if (finalMeasurementBuilder_ == null) {
-        result.finalMeasurement_ = finalMeasurement_;
-      } else {
-        result.finalMeasurement_ = finalMeasurementBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.trialInfeasible_ = trialInfeasible_;
-      result.infeasibleReason_ = infeasibleReason_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CompleteTrialRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.finalMeasurement_ =
+            finalMeasurementBuilder_ == null ? finalMeasurement_ : finalMeasurementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trialInfeasible_ = trialInfeasible_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.infeasibleReason_ = infeasibleReason_;
+      }
     }
 
     @java.lang.Override
@@ -585,6 +600,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFinalMeasurement()) {
@@ -595,6 +611,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getInfeasibleReason().isEmpty()) {
         infeasibleReason_ = other.infeasibleReason_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -626,26 +643,26 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getFinalMeasurementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 trialInfeasible_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 infeasibleReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -664,6 +681,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -738,8 +757,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +778,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -785,8 +804,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,7 +832,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the finalMeasurement field is set.
      */
     public boolean hasFinalMeasurement() {
-      return finalMeasurementBuilder_ != null || finalMeasurement_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -858,11 +877,11 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         finalMeasurement_ = value;
-        onChanged();
       } else {
         finalMeasurementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,11 +901,11 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.aiplatform.v1.Measurement.Builder builderForValue) {
       if (finalMeasurementBuilder_ == null) {
         finalMeasurement_ = builderForValue.build();
-        onChanged();
       } else {
         finalMeasurementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -904,19 +923,19 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeFinalMeasurement(com.google.cloud.aiplatform.v1.Measurement value) {
       if (finalMeasurementBuilder_ == null) {
-        if (finalMeasurement_ != null) {
-          finalMeasurement_ =
-              com.google.cloud.aiplatform.v1.Measurement.newBuilder(finalMeasurement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && finalMeasurement_ != null
+            && finalMeasurement_
+                != com.google.cloud.aiplatform.v1.Measurement.getDefaultInstance()) {
+          getFinalMeasurementBuilder().mergeFrom(value);
         } else {
           finalMeasurement_ = value;
         }
-        onChanged();
       } else {
         finalMeasurementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -933,14 +952,13 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearFinalMeasurement() {
-      if (finalMeasurementBuilder_ == null) {
-        finalMeasurement_ = null;
-        onChanged();
-      } else {
-        finalMeasurement_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      finalMeasurement_ = null;
+      if (finalMeasurementBuilder_ != null) {
+        finalMeasurementBuilder_.dispose();
         finalMeasurementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -957,7 +975,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Measurement.Builder getFinalMeasurementBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFinalMeasurementFieldBuilder().getBuilder();
     }
@@ -1046,6 +1064,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
     public Builder setTrialInfeasible(boolean value) {
 
       trialInfeasible_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1062,7 +1081,7 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTrialInfeasible() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       trialInfeasible_ = false;
       onChanged();
       return this;
@@ -1132,8 +1151,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       infeasibleReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1150,8 +1169,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInfeasibleReason() {
-
       infeasibleReason_ = getDefaultInstance().getInfeasibleReason();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1173,8 +1192,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       infeasibleReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

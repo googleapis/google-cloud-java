@@ -112,7 +112,9 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       return this;
@@ -352,13 +354,20 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
     public com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata result =
           new com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata(this);
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +450,7 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +470,8 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.GenericOperationMetadata,
@@ -479,7 +490,7 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -517,11 +528,11 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -537,11 +548,11 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
         com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -556,19 +567,19 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1.GenericOperationMetadata.newBuilder(genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,14 +592,13 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
      * <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +612,7 @@ public final class CreateEntityTypeOperationMetadata extends com.google.protobuf
      */
     public com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }

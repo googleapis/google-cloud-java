@@ -497,6 +497,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       valueCase_ = 0;
       value_ = null;
       return this;
@@ -525,18 +526,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.Value buildPartial() {
       com.google.cloud.aiplatform.v1.Value result = new com.google.cloud.aiplatform.v1.Value(this);
-      if (valueCase_ == 1) {
-        result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 3) {
-        result.value_ = value_;
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.Value result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.Value result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
     }
 
     @java.lang.Override
@@ -683,6 +687,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -727,6 +733,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntValue(long value) {
+
       valueCase_ = 1;
       value_ = value;
       onChanged();
@@ -796,6 +803,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       valueCase_ = 2;
       value_ = value;
       onChanged();

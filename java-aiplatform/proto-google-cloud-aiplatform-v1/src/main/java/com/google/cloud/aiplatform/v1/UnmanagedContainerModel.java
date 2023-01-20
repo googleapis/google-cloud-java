@@ -69,7 +69,9 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
   }
 
   public static final int ARTIFACT_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object artifactUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactUri_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.PredictSchemataOrBuilder getPredictSchemataOrBuilder() {
-    return getPredictSchemata();
+    return predictSchemata_ == null
+        ? com.google.cloud.aiplatform.v1.PredictSchemata.getDefaultInstance()
+        : predictSchemata_;
   }
 
   public static final int CONTAINER_SPEC_FIELD_NUMBER = 3;
@@ -221,7 +225,9 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelContainerSpecOrBuilder getContainerSpecOrBuilder() {
-    return getContainerSpec();
+    return containerSpec_ == null
+        ? com.google.cloud.aiplatform.v1.ModelContainerSpec.getDefaultInstance()
+        : containerSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -451,18 +457,16 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       artifactUri_ = "";
-
-      if (predictSchemataBuilder_ == null) {
-        predictSchemata_ = null;
-      } else {
-        predictSchemata_ = null;
+      predictSchemata_ = null;
+      if (predictSchemataBuilder_ != null) {
+        predictSchemataBuilder_.dispose();
         predictSchemataBuilder_ = null;
       }
-      if (containerSpecBuilder_ == null) {
-        containerSpec_ = null;
-      } else {
-        containerSpec_ = null;
+      containerSpec_ = null;
+      if (containerSpecBuilder_ != null) {
+        containerSpecBuilder_.dispose();
         containerSpecBuilder_ = null;
       }
       return this;
@@ -492,19 +496,26 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.UnmanagedContainerModel buildPartial() {
       com.google.cloud.aiplatform.v1.UnmanagedContainerModel result =
           new com.google.cloud.aiplatform.v1.UnmanagedContainerModel(this);
-      result.artifactUri_ = artifactUri_;
-      if (predictSchemataBuilder_ == null) {
-        result.predictSchemata_ = predictSchemata_;
-      } else {
-        result.predictSchemata_ = predictSchemataBuilder_.build();
-      }
-      if (containerSpecBuilder_ == null) {
-        result.containerSpec_ = containerSpec_;
-      } else {
-        result.containerSpec_ = containerSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UnmanagedContainerModel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.artifactUri_ = artifactUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.predictSchemata_ =
+            predictSchemataBuilder_ == null ? predictSchemata_ : predictSchemataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.containerSpec_ =
+            containerSpecBuilder_ == null ? containerSpec_ : containerSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -555,6 +566,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         return this;
       if (!other.getArtifactUri().isEmpty()) {
         artifactUri_ = other.artifactUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPredictSchemata()) {
@@ -592,19 +604,19 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
             case 10:
               {
                 artifactUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPredictSchemataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -623,6 +635,8 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object artifactUri_ = "";
     /**
@@ -688,8 +702,8 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +720,8 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearArtifactUri() {
-
       artifactUri_ = getDefaultInstance().getArtifactUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -729,8 +743,8 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,7 +767,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * @return Whether the predictSchemata field is set.
      */
     public boolean hasPredictSchemata() {
-      return predictSchemataBuilder_ != null || predictSchemata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +804,11 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         predictSchemata_ = value;
-        onChanged();
       } else {
         predictSchemataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,11 +824,11 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1.PredictSchemata.Builder builderForValue) {
       if (predictSchemataBuilder_ == null) {
         predictSchemata_ = builderForValue.build();
-        onChanged();
       } else {
         predictSchemataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,19 +842,19 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      */
     public Builder mergePredictSchemata(com.google.cloud.aiplatform.v1.PredictSchemata value) {
       if (predictSchemataBuilder_ == null) {
-        if (predictSchemata_ != null) {
-          predictSchemata_ =
-              com.google.cloud.aiplatform.v1.PredictSchemata.newBuilder(predictSchemata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && predictSchemata_ != null
+            && predictSchemata_
+                != com.google.cloud.aiplatform.v1.PredictSchemata.getDefaultInstance()) {
+          getPredictSchemataBuilder().mergeFrom(value);
         } else {
           predictSchemata_ = value;
         }
-        onChanged();
       } else {
         predictSchemataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,14 +867,13 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 2;</code>
      */
     public Builder clearPredictSchemata() {
-      if (predictSchemataBuilder_ == null) {
-        predictSchemata_ = null;
-        onChanged();
-      } else {
-        predictSchemata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      predictSchemata_ = null;
+      if (predictSchemataBuilder_ != null) {
+        predictSchemataBuilder_.dispose();
         predictSchemataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -873,7 +886,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.PredictSchemata.Builder getPredictSchemataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPredictSchemataFieldBuilder().getBuilder();
     }
@@ -942,7 +955,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * @return Whether the containerSpec field is set.
      */
     public boolean hasContainerSpec() {
-      return containerSpecBuilder_ != null || containerSpec_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -985,11 +998,11 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         containerSpec_ = value;
-        onChanged();
       } else {
         containerSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,11 +1021,11 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1.ModelContainerSpec.Builder builderForValue) {
       if (containerSpecBuilder_ == null) {
         containerSpec_ = builderForValue.build();
-        onChanged();
       } else {
         containerSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1029,19 +1042,19 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      */
     public Builder mergeContainerSpec(com.google.cloud.aiplatform.v1.ModelContainerSpec value) {
       if (containerSpecBuilder_ == null) {
-        if (containerSpec_ != null) {
-          containerSpec_ =
-              com.google.cloud.aiplatform.v1.ModelContainerSpec.newBuilder(containerSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && containerSpec_ != null
+            && containerSpec_
+                != com.google.cloud.aiplatform.v1.ModelContainerSpec.getDefaultInstance()) {
+          getContainerSpecBuilder().mergeFrom(value);
         } else {
           containerSpec_ = value;
         }
-        onChanged();
       } else {
         containerSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1057,14 +1070,13 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearContainerSpec() {
-      if (containerSpecBuilder_ == null) {
-        containerSpec_ = null;
-        onChanged();
-      } else {
-        containerSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      containerSpec_ = null;
+      if (containerSpecBuilder_ != null) {
+        containerSpecBuilder_.dispose();
         containerSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1080,7 +1092,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ModelContainerSpec.Builder getContainerSpecBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getContainerSpecFieldBuilder().getBuilder();
     }

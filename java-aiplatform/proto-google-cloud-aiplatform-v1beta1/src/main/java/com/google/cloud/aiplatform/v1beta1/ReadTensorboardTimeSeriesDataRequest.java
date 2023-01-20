@@ -72,7 +72,9 @@ public final class ReadTensorboardTimeSeriesDataRequest
   }
 
   public static final int TENSORBOARD_TIME_SERIES_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tensorboardTimeSeries_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardTimeSeries_ = "";
   /**
    *
    *
@@ -129,7 +131,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
   }
 
   public static final int MAX_DATA_POINTS_FIELD_NUMBER = 2;
-  private int maxDataPoints_;
+  private int maxDataPoints_ = 0;
   /**
    *
    *
@@ -149,7 +151,9 @@ public final class ReadTensorboardTimeSeriesDataRequest
   }
 
   public static final int FILTER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -418,12 +422,10 @@ public final class ReadTensorboardTimeSeriesDataRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tensorboardTimeSeries_ = "";
-
       maxDataPoints_ = 0;
-
       filter_ = "";
-
       return this;
     }
 
@@ -454,11 +456,25 @@ public final class ReadTensorboardTimeSeriesDataRequest
     public com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest result =
           new com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest(this);
-      result.tensorboardTimeSeries_ = tensorboardTimeSeries_;
-      result.maxDataPoints_ = maxDataPoints_;
-      result.filter_ = filter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tensorboardTimeSeries_ = tensorboardTimeSeries_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxDataPoints_ = maxDataPoints_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -513,6 +529,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
               .getDefaultInstance()) return this;
       if (!other.getTensorboardTimeSeries().isEmpty()) {
         tensorboardTimeSeries_ = other.tensorboardTimeSeries_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMaxDataPoints() != 0) {
@@ -520,6 +537,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -551,19 +569,19 @@ public final class ReadTensorboardTimeSeriesDataRequest
             case 10:
               {
                 tensorboardTimeSeries_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxDataPoints_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -582,6 +600,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object tensorboardTimeSeries_ = "";
     /**
@@ -656,8 +676,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardTimeSeries_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +697,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
      * @return This builder for chaining.
      */
     public Builder clearTensorboardTimeSeries() {
-
       tensorboardTimeSeries_ = getDefaultInstance().getTensorboardTimeSeries();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -703,8 +723,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardTimeSeries_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,6 +764,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
     public Builder setMaxDataPoints(int value) {
 
       maxDataPoints_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -761,7 +782,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      * @return This builder for chaining.
      */
     public Builder clearMaxDataPoints() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxDataPoints_ = 0;
       onChanged();
       return this;
@@ -828,8 +849,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -845,8 +866,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -867,8 +888,8 @@ public final class ReadTensorboardTimeSeriesDataRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

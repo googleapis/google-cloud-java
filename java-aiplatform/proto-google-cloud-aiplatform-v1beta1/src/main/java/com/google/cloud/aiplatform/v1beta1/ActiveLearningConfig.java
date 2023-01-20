@@ -232,7 +232,9 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SampleConfigOrBuilder getSampleConfigOrBuilder() {
-    return getSampleConfig();
+    return sampleConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SampleConfig.getDefaultInstance()
+        : sampleConfig_;
   }
 
   public static final int TRAINING_CONFIG_FIELD_NUMBER = 4;
@@ -286,7 +288,9 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.TrainingConfigOrBuilder getTrainingConfigOrBuilder() {
-    return getTrainingConfig();
+    return trainingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.TrainingConfig.getDefaultInstance()
+        : trainingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -547,16 +551,15 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sampleConfigBuilder_ == null) {
-        sampleConfig_ = null;
-      } else {
-        sampleConfig_ = null;
+      bitField0_ = 0;
+      sampleConfig_ = null;
+      if (sampleConfigBuilder_ != null) {
+        sampleConfigBuilder_.dispose();
         sampleConfigBuilder_ = null;
       }
-      if (trainingConfigBuilder_ == null) {
-        trainingConfig_ = null;
-      } else {
-        trainingConfig_ = null;
+      trainingConfig_ = null;
+      if (trainingConfigBuilder_ != null) {
+        trainingConfigBuilder_.dispose();
         trainingConfigBuilder_ = null;
       }
       humanLabelingBudgetCase_ = 0;
@@ -588,25 +591,30 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig result =
           new com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig(this);
-      if (humanLabelingBudgetCase_ == 1) {
-        result.humanLabelingBudget_ = humanLabelingBudget_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (humanLabelingBudgetCase_ == 2) {
-        result.humanLabelingBudget_ = humanLabelingBudget_;
-      }
-      if (sampleConfigBuilder_ == null) {
-        result.sampleConfig_ = sampleConfig_;
-      } else {
-        result.sampleConfig_ = sampleConfigBuilder_.build();
-      }
-      if (trainingConfigBuilder_ == null) {
-        result.trainingConfig_ = trainingConfig_;
-      } else {
-        result.trainingConfig_ = trainingConfigBuilder_.build();
-      }
-      result.humanLabelingBudgetCase_ = humanLabelingBudgetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sampleConfig_ =
+            sampleConfigBuilder_ == null ? sampleConfig_ : sampleConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.trainingConfig_ =
+            trainingConfigBuilder_ == null ? trainingConfig_ : trainingConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig result) {
+      result.humanLabelingBudgetCase_ = humanLabelingBudgetCase_;
+      result.humanLabelingBudget_ = this.humanLabelingBudget_;
     }
 
     @java.lang.Override
@@ -718,13 +726,13 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 input.readMessage(getSampleConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTrainingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -757,6 +765,8 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -802,6 +812,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setMaxDataItemCount(long value) {
+
       humanLabelingBudgetCase_ = 1;
       humanLabelingBudget_ = value;
       onChanged();
@@ -871,6 +882,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setMaxDataItemPercentage(int value) {
+
       humanLabelingBudgetCase_ = 2;
       humanLabelingBudget_ = value;
       onChanged();
@@ -915,7 +927,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the sampleConfig field is set.
      */
     public boolean hasSampleConfig() {
-      return sampleConfigBuilder_ != null || sampleConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -954,11 +966,11 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         sampleConfig_ = value;
-        onChanged();
       } else {
         sampleConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -975,11 +987,11 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.aiplatform.v1beta1.SampleConfig.Builder builderForValue) {
       if (sampleConfigBuilder_ == null) {
         sampleConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sampleConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -994,19 +1006,19 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeSampleConfig(com.google.cloud.aiplatform.v1beta1.SampleConfig value) {
       if (sampleConfigBuilder_ == null) {
-        if (sampleConfig_ != null) {
-          sampleConfig_ =
-              com.google.cloud.aiplatform.v1beta1.SampleConfig.newBuilder(sampleConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sampleConfig_ != null
+            && sampleConfig_
+                != com.google.cloud.aiplatform.v1beta1.SampleConfig.getDefaultInstance()) {
+          getSampleConfigBuilder().mergeFrom(value);
         } else {
           sampleConfig_ = value;
         }
-        onChanged();
       } else {
         sampleConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1020,14 +1032,13 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.aiplatform.v1beta1.SampleConfig sample_config = 3;</code>
      */
     public Builder clearSampleConfig() {
-      if (sampleConfigBuilder_ == null) {
-        sampleConfig_ = null;
-        onChanged();
-      } else {
-        sampleConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sampleConfig_ = null;
+      if (sampleConfigBuilder_ != null) {
+        sampleConfigBuilder_.dispose();
         sampleConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1041,7 +1052,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.aiplatform.v1beta1.SampleConfig sample_config = 3;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.SampleConfig.Builder getSampleConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSampleConfigFieldBuilder().getBuilder();
     }
@@ -1111,7 +1122,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the trainingConfig field is set.
      */
     public boolean hasTrainingConfig() {
-      return trainingConfigBuilder_ != null || trainingConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1152,11 +1163,11 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         trainingConfig_ = value;
-        onChanged();
       } else {
         trainingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1174,11 +1185,11 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.aiplatform.v1beta1.TrainingConfig.Builder builderForValue) {
       if (trainingConfigBuilder_ == null) {
         trainingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         trainingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1194,19 +1205,19 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTrainingConfig(com.google.cloud.aiplatform.v1beta1.TrainingConfig value) {
       if (trainingConfigBuilder_ == null) {
-        if (trainingConfig_ != null) {
-          trainingConfig_ =
-              com.google.cloud.aiplatform.v1beta1.TrainingConfig.newBuilder(trainingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && trainingConfig_ != null
+            && trainingConfig_
+                != com.google.cloud.aiplatform.v1beta1.TrainingConfig.getDefaultInstance()) {
+          getTrainingConfigBuilder().mergeFrom(value);
         } else {
           trainingConfig_ = value;
         }
-        onChanged();
       } else {
         trainingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1221,14 +1232,13 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.aiplatform.v1beta1.TrainingConfig training_config = 4;</code>
      */
     public Builder clearTrainingConfig() {
-      if (trainingConfigBuilder_ == null) {
-        trainingConfig_ = null;
-        onChanged();
-      } else {
-        trainingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      trainingConfig_ = null;
+      if (trainingConfigBuilder_ != null) {
+        trainingConfigBuilder_.dispose();
         trainingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1243,7 +1253,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.aiplatform.v1beta1.TrainingConfig training_config = 4;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingConfig.Builder getTrainingConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTrainingConfigFieldBuilder().getBuilder();
     }

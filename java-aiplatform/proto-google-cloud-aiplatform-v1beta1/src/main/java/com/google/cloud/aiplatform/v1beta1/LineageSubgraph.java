@@ -71,6 +71,8 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ARTIFACTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Artifact> artifacts_;
   /**
    *
@@ -140,6 +142,8 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int EXECUTIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Execution> executions_;
   /**
    *
@@ -209,6 +213,8 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int EVENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Event> events_;
   /**
    *
@@ -499,6 +505,7 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (artifactsBuilder_ == null) {
         artifacts_ = java.util.Collections.emptyList();
       } else {
@@ -547,7 +554,16 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.LineageSubgraph buildPartial() {
       com.google.cloud.aiplatform.v1beta1.LineageSubgraph result =
           new com.google.cloud.aiplatform.v1beta1.LineageSubgraph(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.LineageSubgraph result) {
       if (artifactsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           artifacts_ = java.util.Collections.unmodifiableList(artifacts_);
@@ -575,8 +591,10 @@ public final class LineageSubgraph extends com.google.protobuf.GeneratedMessageV
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.LineageSubgraph result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -396,7 +396,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
   }
 
   public static final int LOG_SOURCE_FIELD_NUMBER = 1;
-  private int logSource_;
+  private int logSource_ = 0;
   /**
    *
    *
@@ -430,10 +430,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
       getLogSource() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource result =
         com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
-            .valueOf(logSource_);
+            .forNumber(logSource_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
             .UNRECOGNIZED
@@ -441,7 +440,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
   }
 
   public static final int LOG_TYPE_FIELD_NUMBER = 2;
-  private int logType_;
+  private int logType_ = 0;
   /**
    *
    *
@@ -475,10 +474,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
       getLogType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType result =
-        com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType.valueOf(
-            logType_);
+        com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
+            .forNumber(logType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
             .UNRECOGNIZED
@@ -486,7 +484,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
   }
 
   public static final int BIGQUERY_TABLE_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object bigqueryTablePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bigqueryTablePath_ = "";
   /**
    *
    *
@@ -776,12 +776,10 @@ public final class ModelDeploymentMonitoringBigQueryTable
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       logSource_ = 0;
-
       logType_ = 0;
-
       bigqueryTablePath_ = "";
-
       return this;
     }
 
@@ -813,11 +811,25 @@ public final class ModelDeploymentMonitoringBigQueryTable
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable result =
           new com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable(this);
-      result.logSource_ = logSource_;
-      result.logType_ = logType_;
-      result.bigqueryTablePath_ = bigqueryTablePath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logSource_ = logSource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.logType_ = logType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bigqueryTablePath_ = bigqueryTablePath_;
+      }
     }
 
     @java.lang.Override
@@ -878,6 +890,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
       }
       if (!other.getBigqueryTablePath().isEmpty()) {
         bigqueryTablePath_ = other.bigqueryTablePath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -909,19 +922,19 @@ public final class ModelDeploymentMonitoringBigQueryTable
             case 8:
               {
                 logSource_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 logType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 bigqueryTablePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -940,6 +953,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int logSource_ = 0;
     /**
@@ -974,8 +989,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * @return This builder for chaining.
      */
     public Builder setLogSourceValue(int value) {
-
       logSource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -995,10 +1010,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
         getLogSource() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource result =
           com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
-              .valueOf(logSource_);
+              .forNumber(logSource_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogSource
               .UNRECOGNIZED
@@ -1024,7 +1038,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       logSource_ = value.getNumber();
       onChanged();
       return this;
@@ -1043,7 +1057,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * @return This builder for chaining.
      */
     public Builder clearLogSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       logSource_ = 0;
       onChanged();
       return this;
@@ -1082,8 +1096,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * @return This builder for chaining.
      */
     public Builder setLogTypeValue(int value) {
-
       logType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1103,10 +1117,9 @@ public final class ModelDeploymentMonitoringBigQueryTable
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
         getLogType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType result =
           com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
-              .valueOf(logType_);
+              .forNumber(logType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable.LogType
               .UNRECOGNIZED
@@ -1131,7 +1144,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       logType_ = value.getNumber();
       onChanged();
       return this;
@@ -1150,7 +1163,7 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * @return This builder for chaining.
      */
     public Builder clearLogType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       logType_ = 0;
       onChanged();
       return this;
@@ -1223,8 +1236,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
       if (value == null) {
         throw new NullPointerException();
       }
-
       bigqueryTablePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1242,8 +1255,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
      * @return This builder for chaining.
      */
     public Builder clearBigqueryTablePath() {
-
       bigqueryTablePath_ = getDefaultInstance().getBigqueryTablePath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1266,8 +1279,8 @@ public final class ModelDeploymentMonitoringBigQueryTable
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bigqueryTablePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

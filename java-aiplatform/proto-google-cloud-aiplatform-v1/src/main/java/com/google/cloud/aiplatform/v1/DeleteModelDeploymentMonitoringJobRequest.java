@@ -71,7 +71,9 @@ public final class DeleteModelDeploymentMonitoringJobRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class DeleteModelDeploymentMonitoringJobRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       return this;
     }
 
@@ -362,9 +364,19 @@ public final class DeleteModelDeploymentMonitoringJobRequest
     public com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest buildPartial() {
       com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest result =
           new com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest(this);
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -419,6 +431,7 @@ public final class DeleteModelDeploymentMonitoringJobRequest
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -450,7 +463,7 @@ public final class DeleteModelDeploymentMonitoringJobRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -469,6 +482,8 @@ public final class DeleteModelDeploymentMonitoringJobRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -543,8 +558,8 @@ public final class DeleteModelDeploymentMonitoringJobRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -564,8 +579,8 @@ public final class DeleteModelDeploymentMonitoringJobRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -590,8 +605,8 @@ public final class DeleteModelDeploymentMonitoringJobRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

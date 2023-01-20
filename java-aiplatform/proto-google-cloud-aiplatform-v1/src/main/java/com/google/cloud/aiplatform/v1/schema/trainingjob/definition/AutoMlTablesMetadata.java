@@ -68,7 +68,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
-  private long trainCostMilliNodeHours_;
+  private long trainCostMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -297,8 +297,8 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trainCostMilliNodeHours_ = 0L;
-
       return this;
     }
 
@@ -332,9 +332,19 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesMetadata result =
           new com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesMetadata(
               this);
-      result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
+      }
     }
 
     @java.lang.Override
@@ -421,7 +431,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 trainCostMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -440,6 +450,8 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long trainCostMilliNodeHours_;
     /**
@@ -476,6 +488,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
     public Builder setTrainCostMilliNodeHours(long value) {
 
       trainCostMilliNodeHours_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -493,7 +506,7 @@ public final class AutoMlTablesMetadata extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTrainCostMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       trainCostMilliNodeHours_ = 0L;
       onChanged();
       return this;

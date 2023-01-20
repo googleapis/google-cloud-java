@@ -72,7 +72,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private float value_;
+  private float value_ = 0F;
   /**
    *
    *
@@ -90,7 +90,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
   }
 
   public static final int LOWER_BOUND_FIELD_NUMBER = 2;
-  private float lowerBound_;
+  private float lowerBound_ = 0F;
   /**
    *
    *
@@ -108,7 +108,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
   }
 
   public static final int UPPER_BOUND_FIELD_NUMBER = 3;
-  private float upperBound_;
+  private float upperBound_ = 0F;
   /**
    *
    *
@@ -376,12 +376,10 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = 0F;
-
       lowerBound_ = 0F;
-
       upperBound_ = 0F;
-
       return this;
     }
 
@@ -420,11 +418,26 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
           result =
               new com.google.cloud.aiplatform.v1.schema.predict.prediction
                   .TabularRegressionPredictionResult(this);
-      result.value_ = value_;
-      result.lowerBound_ = lowerBound_;
-      result.upperBound_ = upperBound_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction.TabularRegressionPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lowerBound_ = lowerBound_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.upperBound_ = upperBound_;
+      }
     }
 
     @java.lang.Override
@@ -520,19 +533,19 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
             case 13:
               {
                 value_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 lowerBound_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 upperBound_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -551,6 +564,8 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float value_;
     /**
@@ -583,6 +598,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public Builder setValue(float value) {
 
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,7 +614,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0F;
       onChanged();
       return this;
@@ -635,6 +651,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public Builder setLowerBound(float value) {
 
       lowerBound_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -650,7 +667,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearLowerBound() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       lowerBound_ = 0F;
       onChanged();
       return this;
@@ -687,6 +704,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     public Builder setUpperBound(float value) {
 
       upperBound_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -702,7 +720,7 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearUpperBound() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       upperBound_ = 0F;
       onChanged();
       return this;

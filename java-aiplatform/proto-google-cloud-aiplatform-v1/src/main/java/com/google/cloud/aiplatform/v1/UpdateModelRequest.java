@@ -163,7 +163,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelOrBuilder getModelOrBuilder() {
-    return getModel();
+    return model_ == null ? com.google.cloud.aiplatform.v1.Model.getDefaultInstance() : model_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -218,7 +218,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -438,16 +438,15 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
+      bitField0_ = 0;
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -477,18 +476,21 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.UpdateModelRequest buildPartial() {
       com.google.cloud.aiplatform.v1.UpdateModelRequest result =
           new com.google.cloud.aiplatform.v1.UpdateModelRequest(this);
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.UpdateModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = modelBuilder_ == null ? model_ : modelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -572,13 +574,13 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -597,6 +599,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.Model model_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -634,7 +638,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -705,11 +709,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         model_ = value;
-        onChanged();
       } else {
         modelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +746,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder setModel(com.google.cloud.aiplatform.v1.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
-        onChanged();
       } else {
         modelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -778,19 +782,18 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeModel(com.google.cloud.aiplatform.v1.Model value) {
       if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-              com.google.cloud.aiplatform.v1.Model.newBuilder(model_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && model_ != null
+            && model_ != com.google.cloud.aiplatform.v1.Model.getDefaultInstance()) {
+          getModelBuilder().mergeFrom(value);
         } else {
           model_ = value;
         }
-        onChanged();
       } else {
         modelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -821,14 +824,13 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -859,7 +861,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Model.Builder getModelBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
@@ -962,7 +964,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1005,11 +1007,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1027,11 +1029,11 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1048,17 +1050,18 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1074,14 +1077,13 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1097,7 +1099,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

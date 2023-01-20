@@ -78,6 +78,8 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
   }
 
   public static final int IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ids_;
   /**
    *
@@ -130,6 +132,8 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
   private int idsMemoizedSerializedSize = -1;
 
   public static final int DISPLAY_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList displayNames_;
   /**
    *
@@ -195,6 +199,8 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
   }
 
   public static final int TEXT_SEGMENT_START_OFFSETS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList textSegmentStartOffsets_;
   /**
    *
@@ -250,6 +256,8 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
   private int textSegmentStartOffsetsMemoizedSerializedSize = -1;
 
   public static final int TEXT_SEGMENT_END_OFFSETS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList textSegmentEndOffsets_;
   /**
    *
@@ -305,6 +313,8 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
   private int textSegmentEndOffsetsMemoizedSerializedSize = -1;
 
   public static final int CONFIDENCES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidences_;
   /**
    *
@@ -690,16 +700,13 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ids_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       textSegmentStartOffsets_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000004);
       textSegmentEndOffsets_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000008);
       confidences_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -735,7 +742,17 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
           result =
               new com.google.cloud.aiplatform.v1.schema.predict.prediction
                   .TextExtractionPredictionResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction.TextExtractionPredictionResult
+            result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ids_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -761,8 +778,12 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.confidences_ = confidences_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction.TextExtractionPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -1062,6 +1083,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setIds(int index, long value) {
+
       ensureIdsIsMutable();
       ids_.setLong(index, value);
       onChanged();
@@ -1081,6 +1103,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addIds(long value) {
+
       ensureIdsIsMutable();
       ids_.addLong(value);
       onChanged();
@@ -1376,6 +1399,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setTextSegmentStartOffsets(int index, long value) {
+
       ensureTextSegmentStartOffsetsIsMutable();
       textSegmentStartOffsets_.setLong(index, value);
       onChanged();
@@ -1396,6 +1420,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addTextSegmentStartOffsets(long value) {
+
       ensureTextSegmentStartOffsetsIsMutable();
       textSegmentStartOffsets_.addLong(value);
       onChanged();
@@ -1517,6 +1542,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setTextSegmentEndOffsets(int index, long value) {
+
       ensureTextSegmentEndOffsetsIsMutable();
       textSegmentEndOffsets_.setLong(index, value);
       onChanged();
@@ -1537,6 +1563,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addTextSegmentEndOffsets(long value) {
+
       ensureTextSegmentEndOffsetsIsMutable();
       textSegmentEndOffsets_.addLong(value);
       onChanged();
@@ -1654,6 +1681,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setConfidences(int index, float value) {
+
       ensureConfidencesIsMutable();
       confidences_.setFloat(index, value);
       onChanged();
@@ -1673,6 +1701,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder addConfidences(float value) {
+
       ensureConfidencesIsMutable();
       confidences_.addFloat(value);
       onChanged();

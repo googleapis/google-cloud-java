@@ -70,7 +70,9 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object server_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object server_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_POINT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mountPoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mountPoint_ = "";
   /**
    *
    *
@@ -437,12 +443,10 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       server_ = "";
-
       path_ = "";
-
       mountPoint_ = "";
-
       return this;
     }
 
@@ -470,11 +474,24 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.NfsMount buildPartial() {
       com.google.cloud.aiplatform.v1beta1.NfsMount result =
           new com.google.cloud.aiplatform.v1beta1.NfsMount(this);
-      result.server_ = server_;
-      result.path_ = path_;
-      result.mountPoint_ = mountPoint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.NfsMount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.server_ = server_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mountPoint_ = mountPoint_;
+      }
     }
 
     @java.lang.Override
@@ -524,14 +541,17 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.NfsMount.getDefaultInstance()) return this;
       if (!other.getServer().isEmpty()) {
         server_ = other.server_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMountPoint().isEmpty()) {
         mountPoint_ = other.mountPoint_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -563,19 +583,19 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 server_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mountPoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -594,6 +614,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object server_ = "";
     /**
@@ -656,8 +678,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       server_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -673,8 +695,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServer() {
-
       server_ = getDefaultInstance().getServer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -695,8 +717,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       server_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +790,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -787,8 +809,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -811,8 +833,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,8 +903,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mountPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -899,8 +921,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountPoint() {
-
       mountPoint_ = getDefaultInstance().getMountPoint();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -922,8 +944,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mountPoint_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

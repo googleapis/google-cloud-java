@@ -70,7 +70,9 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.EndpointOrBuilder getEndpointOrBuilder() {
-    return getEndpoint();
+    return endpoint_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Endpoint.getDefaultInstance()
+        : endpoint_;
   }
 
   public static final int ENDPOINT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object endpointId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpointId_ = "";
   /**
    *
    *
@@ -461,16 +467,14 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (endpointBuilder_ == null) {
-        endpoint_ = null;
-      } else {
-        endpoint_ = null;
+      endpoint_ = null;
+      if (endpointBuilder_ != null) {
+        endpointBuilder_.dispose();
         endpointBuilder_ = null;
       }
       endpointId_ = "";
-
       return this;
     }
 
@@ -498,15 +502,24 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest result =
           new com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest(this);
-      result.parent_ = parent_;
-      if (endpointBuilder_ == null) {
-        result.endpoint_ = endpoint_;
-      } else {
-        result.endpoint_ = endpointBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.endpointId_ = endpointId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endpoint_ = endpointBuilder_ == null ? endpoint_ : endpointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endpointId_ = endpointId_;
+      }
     }
 
     @java.lang.Override
@@ -557,6 +570,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEndpoint()) {
@@ -564,6 +578,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getEndpointId().isEmpty()) {
         endpointId_ = other.endpointId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -595,19 +610,19 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndpointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 endpointId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -626,6 +641,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -697,8 +714,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +734,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +759,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,7 +785,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the endpoint field is set.
      */
     public boolean hasEndpoint() {
-      return endpointBuilder_ != null || endpoint_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +826,11 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         endpoint_ = value;
-        onChanged();
       } else {
         endpointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +848,11 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.aiplatform.v1beta1.Endpoint.Builder builderForValue) {
       if (endpointBuilder_ == null) {
         endpoint_ = builderForValue.build();
-        onChanged();
       } else {
         endpointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,19 +868,18 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeEndpoint(com.google.cloud.aiplatform.v1beta1.Endpoint value) {
       if (endpointBuilder_ == null) {
-        if (endpoint_ != null) {
-          endpoint_ =
-              com.google.cloud.aiplatform.v1beta1.Endpoint.newBuilder(endpoint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endpoint_ != null
+            && endpoint_ != com.google.cloud.aiplatform.v1beta1.Endpoint.getDefaultInstance()) {
+          getEndpointBuilder().mergeFrom(value);
         } else {
           endpoint_ = value;
         }
-        onChanged();
       } else {
         endpointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,14 +894,13 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearEndpoint() {
-      if (endpointBuilder_ == null) {
-        endpoint_ = null;
-        onChanged();
-      } else {
-        endpoint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endpoint_ = null;
+      if (endpointBuilder_ != null) {
+        endpointBuilder_.dispose();
         endpointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -900,7 +915,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Endpoint.Builder getEndpointBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndpointFieldBuilder().getBuilder();
     }
@@ -1031,8 +1046,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpointId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,8 +1069,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEndpointId() {
-
       endpointId_ = getDefaultInstance().getEndpointId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1097,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpointId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

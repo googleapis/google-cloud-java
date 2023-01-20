@@ -75,7 +75,9 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
   }
 
   public static final int CATEGORY_MASK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object categoryMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object categoryMask_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
   }
 
   public static final int CONFIDENCE_MASK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object confidenceMask_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object confidenceMask_ = "";
   /**
    *
    *
@@ -429,10 +433,9 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       categoryMask_ = "";
-
       confidenceMask_ = "";
-
       return this;
     }
 
@@ -471,10 +474,23 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
           result =
               new com.google.cloud.aiplatform.v1.schema.predict.prediction
                   .ImageSegmentationPredictionResult(this);
-      result.categoryMask_ = categoryMask_;
-      result.confidenceMask_ = confidenceMask_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.predict.prediction.ImageSegmentationPredictionResult
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.categoryMask_ = categoryMask_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidenceMask_ = confidenceMask_;
+      }
     }
 
     @java.lang.Override
@@ -534,10 +550,12 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
               .ImageSegmentationPredictionResult.getDefaultInstance()) return this;
       if (!other.getCategoryMask().isEmpty()) {
         categoryMask_ = other.categoryMask_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConfidenceMask().isEmpty()) {
         confidenceMask_ = other.confidenceMask_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -569,13 +587,13 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
             case 10:
               {
                 categoryMask_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 confidenceMask_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -594,6 +612,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object categoryMask_ = "";
     /**
@@ -671,8 +691,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       categoryMask_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +713,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearCategoryMask() {
-
       categoryMask_ = getDefaultInstance().getCategoryMask();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -720,8 +740,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       categoryMask_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +819,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       confidenceMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -820,8 +840,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearConfidenceMask() {
-
       confidenceMask_ = getDefaultInstance().getConfidenceMask();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -846,8 +866,8 @@ public final class ImageSegmentationPredictionResult extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       confidenceMask_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

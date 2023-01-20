@@ -71,7 +71,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRAINING_FRACTION_FIELD_NUMBER = 1;
-  private double trainingFraction_;
+  private double trainingFraction_ = 0D;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALIDATION_FRACTION_FIELD_NUMBER = 2;
-  private double validationFraction_;
+  private double validationFraction_ = 0D;
   /**
    *
    *
@@ -107,7 +107,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEST_FRACTION_FIELD_NUMBER = 3;
-  private double testFraction_;
+  private double testFraction_ = 0D;
   /**
    *
    *
@@ -125,7 +125,9 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -420,14 +422,11 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trainingFraction_ = 0D;
-
       validationFraction_ = 0D;
-
       testFraction_ = 0D;
-
       key_ = "";
-
       return this;
     }
 
@@ -455,12 +454,27 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.TimestampSplit buildPartial() {
       com.google.cloud.aiplatform.v1.TimestampSplit result =
           new com.google.cloud.aiplatform.v1.TimestampSplit(this);
-      result.trainingFraction_ = trainingFraction_;
-      result.validationFraction_ = validationFraction_;
-      result.testFraction_ = testFraction_;
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.TimestampSplit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trainingFraction_ = trainingFraction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validationFraction_ = validationFraction_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testFraction_ = testFraction_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -519,6 +533,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -550,25 +565,25 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 trainingFraction_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 validationFraction_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 testFraction_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             case 34:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -587,6 +602,8 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double trainingFraction_;
     /**
@@ -619,6 +636,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public Builder setTrainingFraction(double value) {
 
       trainingFraction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,7 +652,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrainingFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       trainingFraction_ = 0D;
       onChanged();
       return this;
@@ -671,6 +689,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public Builder setValidationFraction(double value) {
 
       validationFraction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -686,7 +705,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidationFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validationFraction_ = 0D;
       onChanged();
       return this;
@@ -723,6 +742,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
     public Builder setTestFraction(double value) {
 
       testFraction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -738,7 +758,7 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTestFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       testFraction_ = 0D;
       onChanged();
       return this;
@@ -817,8 +837,8 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -838,8 +858,8 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -864,8 +884,8 @@ public final class TimestampSplit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

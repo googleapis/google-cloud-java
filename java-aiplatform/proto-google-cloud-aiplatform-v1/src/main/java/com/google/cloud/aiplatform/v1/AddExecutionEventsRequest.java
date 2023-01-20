@@ -70,7 +70,9 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
   }
 
   public static final int EXECUTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object execution_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object execution_ = "";
   /**
    *
    *
@@ -129,6 +131,8 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
   }
 
   public static final int EVENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Event> events_;
   /**
    *
@@ -407,15 +411,15 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       execution_ = "";
-
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
       } else {
         events_ = null;
         eventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -443,19 +447,32 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1.AddExecutionEventsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.AddExecutionEventsRequest result =
           new com.google.cloud.aiplatform.v1.AddExecutionEventsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.execution_ = execution_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.AddExecutionEventsRequest result) {
       if (eventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.events_ = events_;
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.AddExecutionEventsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.execution_ = execution_;
+      }
     }
 
     @java.lang.Override
@@ -506,13 +523,14 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getExecution().isEmpty()) {
         execution_ = other.execution_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (eventsBuilder_ == null) {
         if (!other.events_.isEmpty()) {
           if (events_.isEmpty()) {
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEventsIsMutable();
             events_.addAll(other.events_);
@@ -525,7 +543,7 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
             eventsBuilder_.dispose();
             eventsBuilder_ = null;
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             eventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventsFieldBuilder()
@@ -564,7 +582,7 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
             case 10:
               {
                 execution_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -675,8 +693,8 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       execution_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,8 +715,8 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearExecution() {
-
       execution_ = getDefaultInstance().getExecution();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       execution_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,9 +752,9 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         events_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.Event>(events_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -951,7 +969,7 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
     public Builder clearEvents() {
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         eventsBuilder_.clear();
@@ -1072,7 +1090,7 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
                 com.google.cloud.aiplatform.v1.Event,
                 com.google.cloud.aiplatform.v1.Event.Builder,
                 com.google.cloud.aiplatform.v1.EventOrBuilder>(
-                events_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                events_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         events_ = null;
       }
       return eventsBuilder_;

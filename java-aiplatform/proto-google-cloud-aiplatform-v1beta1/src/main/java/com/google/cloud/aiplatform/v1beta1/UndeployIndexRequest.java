@@ -70,7 +70,9 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INDEX_ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object indexEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object indexEndpoint_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DEPLOYED_INDEX_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployedIndexId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedIndexId_ = "";
   /**
    *
    *
@@ -385,10 +389,9 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       indexEndpoint_ = "";
-
       deployedIndexId_ = "";
-
       return this;
     }
 
@@ -416,10 +419,21 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest result =
           new com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest(this);
-      result.indexEndpoint_ = indexEndpoint_;
-      result.deployedIndexId_ = deployedIndexId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.indexEndpoint_ = indexEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedIndexId_ = deployedIndexId_;
+      }
     }
 
     @java.lang.Override
@@ -470,10 +484,12 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getIndexEndpoint().isEmpty()) {
         indexEndpoint_ = other.indexEndpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDeployedIndexId().isEmpty()) {
         deployedIndexId_ = other.deployedIndexId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +521,13 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 indexEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deployedIndexId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +546,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object indexEndpoint_ = "";
     /**
@@ -604,8 +622,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       indexEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +643,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearIndexEndpoint() {
-
       indexEndpoint_ = getDefaultInstance().getIndexEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +669,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       indexEndpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +739,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedIndexId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDeployedIndexId() {
-
       deployedIndexId_ = getDefaultInstance().getDeployedIndexId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -762,8 +780,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedIndexId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

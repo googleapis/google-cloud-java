@@ -70,7 +70,9 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -327,8 +329,8 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       return this;
     }
 
@@ -356,9 +358,18 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.PredefinedSplit buildPartial() {
       com.google.cloud.aiplatform.v1.PredefinedSplit result =
           new com.google.cloud.aiplatform.v1.PredefinedSplit(this);
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.PredefinedSplit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -408,6 +419,7 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.aiplatform.v1.PredefinedSplit.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -439,7 +451,7 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -458,6 +470,8 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -535,8 +549,8 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -557,8 +571,8 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -584,8 +598,8 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

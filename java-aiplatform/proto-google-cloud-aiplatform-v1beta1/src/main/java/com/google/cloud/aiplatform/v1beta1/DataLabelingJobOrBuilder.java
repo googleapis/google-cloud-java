@@ -212,7 +212,6 @@ public interface DataLabelingJobOrBuilder
    *
    * <code>map&lt;string, string&gt; annotation_labels = 12;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationLabelsOrDefault(
       java.lang.String key,
@@ -621,7 +620,6 @@ public interface DataLabelingJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

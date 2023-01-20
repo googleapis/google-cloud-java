@@ -69,6 +69,8 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
   }
 
   public static final int OPTIMAL_TRIALS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Trial> optimalTrials_;
   /**
    *
@@ -353,6 +355,7 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (optimalTrialsBuilder_ == null) {
         optimalTrials_ = java.util.Collections.emptyList();
       } else {
@@ -388,7 +391,16 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse result =
           new com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse result) {
       if (optimalTrialsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           optimalTrials_ = java.util.Collections.unmodifiableList(optimalTrials_);
@@ -398,8 +410,11 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
       } else {
         result.optimalTrials_ = optimalTrialsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

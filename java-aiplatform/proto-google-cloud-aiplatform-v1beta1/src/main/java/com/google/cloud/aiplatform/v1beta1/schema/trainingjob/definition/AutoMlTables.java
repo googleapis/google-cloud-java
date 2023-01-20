@@ -122,7 +122,10 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTablesInputsOrBuilder
       getInputsOrBuilder() {
-    return getInputs();
+    return inputs_ == null
+        ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs
+            .getDefaultInstance()
+        : inputs_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -181,7 +184,10 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTablesMetadataOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata
+            .getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -412,16 +418,15 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-      } else {
-        inputs_ = null;
+      bitField0_ = 0;
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -455,18 +460,22 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTables result =
           new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTables(this);
-      if (inputsBuilder_ == null) {
-        result.inputs_ = inputs_;
-      } else {
-        result.inputs_ = inputsBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTables result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -555,13 +564,13 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getInputsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -580,6 +589,8 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs
         inputs_;
@@ -604,7 +615,7 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputs field is set.
      */
     public boolean hasInputs() {
-      return inputsBuilder_ != null || inputs_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -649,11 +660,11 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         inputs_ = value;
-        onChanged();
       } else {
         inputsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -672,11 +683,11 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (inputsBuilder_ == null) {
         inputs_ = builderForValue.build();
-        onChanged();
       } else {
         inputsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,20 +705,20 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs
             value) {
       if (inputsBuilder_ == null) {
-        if (inputs_ != null) {
-          inputs_ =
-              com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .newBuilder(inputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputs_ != null
+            && inputs_
+                != com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                    .AutoMlTablesInputs.getDefaultInstance()) {
+          getInputsBuilder().mergeFrom(value);
         } else {
           inputs_ = value;
         }
-        onChanged();
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -722,14 +733,13 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInputs() {
-      if (inputsBuilder_ == null) {
-        inputs_ = null;
-        onChanged();
-      } else {
-        inputs_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputs_ = null;
+      if (inputsBuilder_ != null) {
+        inputsBuilder_.dispose();
         inputsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -746,7 +756,7 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs
             .Builder
         getInputsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
@@ -828,7 +838,7 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -873,11 +883,11 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -897,11 +907,11 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,20 +929,20 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata
             value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata
-                  .newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                    .AutoMlTablesMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -947,14 +957,13 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -971,7 +980,7 @@ public final class AutoMlTables extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesMetadata
             .Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

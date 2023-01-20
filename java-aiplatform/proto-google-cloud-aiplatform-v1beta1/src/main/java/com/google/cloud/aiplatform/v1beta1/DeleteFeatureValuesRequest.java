@@ -222,7 +222,9 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.EntityIdSelectorOrBuilder
         getEntityIdSelectorOrBuilder() {
-      return getEntityIdSelector();
+      return entityIdSelector_ == null
+          ? com.google.cloud.aiplatform.v1beta1.EntityIdSelector.getDefaultInstance()
+          : entityIdSelector_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -441,10 +443,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (entityIdSelectorBuilder_ == null) {
-          entityIdSelector_ = null;
-        } else {
-          entityIdSelector_ = null;
+        bitField0_ = 0;
+        entityIdSelector_ = null;
+        if (entityIdSelectorBuilder_ != null) {
+          entityIdSelectorBuilder_.dispose();
           entityIdSelectorBuilder_ = null;
         }
         return this;
@@ -478,13 +480,22 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity result =
             new com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity(this);
-        if (entityIdSelectorBuilder_ == null) {
-          result.entityIdSelector_ = entityIdSelector_;
-        } else {
-          result.entityIdSelector_ = entityIdSelectorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityIdSelector_ =
+              entityIdSelectorBuilder_ == null
+                  ? entityIdSelector_
+                  : entityIdSelectorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -573,7 +584,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
                 {
                   input.readMessage(
                       getEntityIdSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -592,6 +603,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.aiplatform.v1beta1.EntityIdSelector entityIdSelector_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -614,7 +627,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the entityIdSelector field is set.
        */
       public boolean hasEntityIdSelector() {
-        return entityIdSelectorBuilder_ != null || entityIdSelector_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -658,11 +671,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           entityIdSelector_ = value;
-          onChanged();
         } else {
           entityIdSelectorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -681,11 +694,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.cloud.aiplatform.v1beta1.EntityIdSelector.Builder builderForValue) {
         if (entityIdSelectorBuilder_ == null) {
           entityIdSelector_ = builderForValue.build();
-          onChanged();
         } else {
           entityIdSelectorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -703,19 +716,19 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder mergeEntityIdSelector(
           com.google.cloud.aiplatform.v1beta1.EntityIdSelector value) {
         if (entityIdSelectorBuilder_ == null) {
-          if (entityIdSelector_ != null) {
-            entityIdSelector_ =
-                com.google.cloud.aiplatform.v1beta1.EntityIdSelector.newBuilder(entityIdSelector_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && entityIdSelector_ != null
+              && entityIdSelector_
+                  != com.google.cloud.aiplatform.v1beta1.EntityIdSelector.getDefaultInstance()) {
+            getEntityIdSelectorBuilder().mergeFrom(value);
           } else {
             entityIdSelector_ = value;
           }
-          onChanged();
         } else {
           entityIdSelectorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -731,14 +744,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * </code>
        */
       public Builder clearEntityIdSelector() {
-        if (entityIdSelectorBuilder_ == null) {
-          entityIdSelector_ = null;
-          onChanged();
-        } else {
-          entityIdSelector_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        entityIdSelector_ = null;
+        if (entityIdSelectorBuilder_ != null) {
+          entityIdSelectorBuilder_.dispose();
           entityIdSelectorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -755,7 +767,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public com.google.cloud.aiplatform.v1beta1.EntityIdSelector.Builder
           getEntityIdSelectorBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getEntityIdSelectorFieldBuilder().getBuilder();
       }
@@ -1081,7 +1093,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.type.IntervalOrBuilder getTimeRangeOrBuilder() {
-      return getTimeRange();
+      return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
     }
 
     public static final int FEATURE_SELECTOR_FIELD_NUMBER = 2;
@@ -1139,11 +1151,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder
         getFeatureSelectorOrBuilder() {
-      return getFeatureSelector();
+      return featureSelector_ == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
+          : featureSelector_;
     }
 
     public static final int SKIP_ONLINE_STORAGE_DELETE_FIELD_NUMBER = 3;
-    private boolean skipOnlineStorageDelete_;
+    private boolean skipOnlineStorageDelete_ = false;
     /**
      *
      *
@@ -1425,20 +1439,18 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (timeRangeBuilder_ == null) {
-          timeRange_ = null;
-        } else {
-          timeRange_ = null;
+        bitField0_ = 0;
+        timeRange_ = null;
+        if (timeRangeBuilder_ != null) {
+          timeRangeBuilder_.dispose();
           timeRangeBuilder_ = null;
         }
-        if (featureSelectorBuilder_ == null) {
-          featureSelector_ = null;
-        } else {
-          featureSelector_ = null;
+        featureSelector_ = null;
+        if (featureSelectorBuilder_ != null) {
+          featureSelectorBuilder_.dispose();
           featureSelectorBuilder_ = null;
         }
         skipOnlineStorageDelete_ = false;
-
         return this;
       }
 
@@ -1476,19 +1488,27 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             result =
                 new com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
                     .SelectTimeRangeAndFeature(this);
-        if (timeRangeBuilder_ == null) {
-          result.timeRange_ = timeRange_;
-        } else {
-          result.timeRange_ = timeRangeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (featureSelectorBuilder_ == null) {
-          result.featureSelector_ = featureSelector_;
-        } else {
-          result.featureSelector_ = featureSelectorBuilder_.build();
-        }
-        result.skipOnlineStorageDelete_ = skipOnlineStorageDelete_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.timeRange_ = timeRangeBuilder_ == null ? timeRange_ : timeRangeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.featureSelector_ =
+              featureSelectorBuilder_ == null ? featureSelector_ : featureSelectorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.skipOnlineStorageDelete_ = skipOnlineStorageDelete_;
+        }
       }
 
       @java.lang.Override
@@ -1586,20 +1606,20 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
               case 10:
                 {
                   input.readMessage(getTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   skipOnlineStorageDelete_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -1618,6 +1638,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.type.Interval timeRange_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1639,7 +1661,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the timeRange field is set.
        */
       public boolean hasTimeRange() {
-        return timeRangeBuilder_ != null || timeRange_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1678,11 +1700,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           timeRange_ = value;
-          onChanged();
         } else {
           timeRangeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1699,11 +1721,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setTimeRange(com.google.type.Interval.Builder builderForValue) {
         if (timeRangeBuilder_ == null) {
           timeRange_ = builderForValue.build();
-          onChanged();
         } else {
           timeRangeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1719,17 +1741,18 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public Builder mergeTimeRange(com.google.type.Interval value) {
         if (timeRangeBuilder_ == null) {
-          if (timeRange_ != null) {
-            timeRange_ =
-                com.google.type.Interval.newBuilder(timeRange_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && timeRange_ != null
+              && timeRange_ != com.google.type.Interval.getDefaultInstance()) {
+            getTimeRangeBuilder().mergeFrom(value);
           } else {
             timeRange_ = value;
           }
-          onChanged();
         } else {
           timeRangeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1744,14 +1767,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * </code>
        */
       public Builder clearTimeRange() {
-        if (timeRangeBuilder_ == null) {
-          timeRange_ = null;
-          onChanged();
-        } else {
-          timeRange_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        timeRange_ = null;
+        if (timeRangeBuilder_ != null) {
+          timeRangeBuilder_.dispose();
           timeRangeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1766,7 +1788,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * </code>
        */
       public com.google.type.Interval.Builder getTimeRangeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTimeRangeFieldBuilder().getBuilder();
       }
@@ -1837,7 +1859,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * @return Whether the featureSelector field is set.
        */
       public boolean hasFeatureSelector() {
-        return featureSelectorBuilder_ != null || featureSelector_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1880,11 +1902,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             throw new NullPointerException();
           }
           featureSelector_ = value;
-          onChanged();
         } else {
           featureSelectorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1903,11 +1925,11 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder builderForValue) {
         if (featureSelectorBuilder_ == null) {
           featureSelector_ = builderForValue.build();
-          onChanged();
         } else {
           featureSelectorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1925,19 +1947,19 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder mergeFeatureSelector(
           com.google.cloud.aiplatform.v1beta1.FeatureSelector value) {
         if (featureSelectorBuilder_ == null) {
-          if (featureSelector_ != null) {
-            featureSelector_ =
-                com.google.cloud.aiplatform.v1beta1.FeatureSelector.newBuilder(featureSelector_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && featureSelector_ != null
+              && featureSelector_
+                  != com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()) {
+            getFeatureSelectorBuilder().mergeFrom(value);
           } else {
             featureSelector_ = value;
           }
-          onChanged();
         } else {
           featureSelectorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1953,14 +1975,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * </code>
        */
       public Builder clearFeatureSelector() {
-        if (featureSelectorBuilder_ == null) {
-          featureSelector_ = null;
-          onChanged();
-        } else {
-          featureSelector_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        featureSelector_ = null;
+        if (featureSelectorBuilder_ != null) {
+          featureSelectorBuilder_.dispose();
           featureSelectorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1977,7 +1998,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        */
       public com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder
           getFeatureSelectorBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getFeatureSelectorFieldBuilder().getBuilder();
       }
@@ -2067,6 +2088,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       public Builder setSkipOnlineStorageDelete(boolean value) {
 
         skipOnlineStorageDelete_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2084,7 +2106,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearSkipOnlineStorageDelete() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         skipOnlineStorageDelete_ = false;
         onChanged();
         return this;
@@ -2341,7 +2363,9 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -2647,6 +2671,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (selectEntityBuilder_ != null) {
         selectEntityBuilder_.clear();
       }
@@ -2654,7 +2679,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         selectTimeRangeAndFeatureBuilder_.clear();
       }
       entityType_ = "";
-
       deleteOptionCase_ = 0;
       deleteOption_ = null;
       return this;
@@ -2685,24 +2709,32 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest(this);
-      if (deleteOptionCase_ == 2) {
-        if (selectEntityBuilder_ == null) {
-          result.deleteOption_ = deleteOption_;
-        } else {
-          result.deleteOption_ = selectEntityBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (deleteOptionCase_ == 3) {
-        if (selectTimeRangeAndFeatureBuilder_ == null) {
-          result.deleteOption_ = deleteOption_;
-        } else {
-          result.deleteOption_ = selectTimeRangeAndFeatureBuilder_.build();
-        }
-      }
-      result.entityType_ = entityType_;
-      result.deleteOptionCase_ = deleteOptionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entityType_ = entityType_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest result) {
+      result.deleteOptionCase_ = deleteOptionCase_;
+      result.deleteOption_ = this.deleteOption_;
+      if (deleteOptionCase_ == 2 && selectEntityBuilder_ != null) {
+        result.deleteOption_ = selectEntityBuilder_.build();
+      }
+      if (deleteOptionCase_ == 3 && selectTimeRangeAndFeatureBuilder_ != null) {
+        result.deleteOption_ = selectTimeRangeAndFeatureBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2754,6 +2786,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getDeleteOptionCase()) {
@@ -2801,7 +2834,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -2847,6 +2880,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity,
@@ -3091,7 +3126,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       }
       deleteOptionCase_ = 2;
       onChanged();
-      ;
       return selectEntityBuilder_;
     }
 
@@ -3364,7 +3398,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       }
       deleteOptionCase_ = 3;
       onChanged();
-      ;
       return selectTimeRangeAndFeatureBuilder_;
     }
 
@@ -3441,8 +3474,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3462,8 +3495,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3488,8 +3521,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -254,7 +254,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespace_ = "";
     /**
      *
      *
@@ -303,6 +305,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOW_LIST_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList allowList_;
     /**
      *
@@ -364,6 +368,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DENY_LIST_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList denyList_;
     /**
      *
@@ -657,12 +663,12 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         namespace_ = "";
-
         allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -690,20 +696,33 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction buildPartial() {
         com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result =
             new com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction(this);
-        int from_bitField0_ = bitField0_;
-        result.namespace_ = namespace_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          allowList_ = allowList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.allowList_ = allowList_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          denyList_ = denyList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.denyList_ = denyList_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          allowList_ = allowList_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.allowList_ = allowList_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          denyList_ = denyList_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.denyList_ = denyList_;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.namespace_ = namespace_;
+        }
       }
 
       @java.lang.Override
@@ -756,12 +775,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getNamespace().isEmpty()) {
           namespace_ = other.namespace_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.allowList_.isEmpty()) {
           if (allowList_.isEmpty()) {
             allowList_ = other.allowList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAllowListIsMutable();
             allowList_.addAll(other.allowList_);
@@ -771,7 +791,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.denyList_.isEmpty()) {
           if (denyList_.isEmpty()) {
             denyList_ = other.denyList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDenyListIsMutable();
             denyList_.addAll(other.denyList_);
@@ -807,7 +827,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   namespace_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -904,8 +924,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         namespace_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -921,8 +941,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNamespace() {
-
         namespace_ = getDefaultInstance().getNamespace();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -943,8 +963,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         namespace_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -953,9 +973,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAllowListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           allowList_ = new com.google.protobuf.LazyStringArrayList(allowList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -1090,7 +1110,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearAllowList() {
         allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1121,9 +1141,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureDenyListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           denyList_ = new com.google.protobuf.LazyStringArrayList(denyList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1258,7 +1278,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearDenyList() {
         denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1439,7 +1459,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CROWDING_ATTRIBUTE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object crowdingAttribute_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object crowdingAttribute_ = "";
     /**
      *
      *
@@ -1697,8 +1719,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         crowdingAttribute_ = "";
-
         return this;
       }
 
@@ -1726,9 +1748,18 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag buildPartial() {
         com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag result =
             new com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag(this);
-        result.crowdingAttribute_ = crowdingAttribute_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.crowdingAttribute_ = crowdingAttribute_;
+        }
       }
 
       @java.lang.Override
@@ -1781,6 +1812,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getCrowdingAttribute().isEmpty()) {
           crowdingAttribute_ = other.crowdingAttribute_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1812,7 +1844,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   crowdingAttribute_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1831,6 +1863,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object crowdingAttribute_ = "";
       /**
@@ -1905,8 +1939,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         crowdingAttribute_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1926,8 +1960,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCrowdingAttribute() {
-
         crowdingAttribute_ = getDefaultInstance().getCrowdingAttribute();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1952,8 +1986,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         crowdingAttribute_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2023,7 +2057,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATAPOINT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object datapointId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datapointId_ = "";
   /**
    *
    *
@@ -2072,6 +2108,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FEATURE_VECTOR_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList featureVector_;
   /**
    *
@@ -2124,6 +2162,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   private int featureVectorMemoizedSerializedSize = -1;
 
   public static final int RESTRICTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction> restricts_;
   /**
    *
@@ -2275,7 +2315,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTagOrBuilder
       getCrowdingTagOrBuilder() {
-    return getCrowdingTag();
+    return crowdingTag_ == null
+        ? com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.getDefaultInstance()
+        : crowdingTag_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2523,21 +2565,19 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       datapointId_ = "";
-
       featureVector_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (restrictsBuilder_ == null) {
         restricts_ = java.util.Collections.emptyList();
       } else {
         restricts_ = null;
         restrictsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (crowdingTagBuilder_ == null) {
-        crowdingTag_ = null;
-      } else {
-        crowdingTag_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      crowdingTag_ = null;
+      if (crowdingTagBuilder_ != null) {
+        crowdingTagBuilder_.dispose();
         crowdingTagBuilder_ = null;
       }
       return this;
@@ -2567,29 +2607,40 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.IndexDatapoint buildPartial() {
       com.google.cloud.aiplatform.v1.IndexDatapoint result =
           new com.google.cloud.aiplatform.v1.IndexDatapoint(this);
-      int from_bitField0_ = bitField0_;
-      result.datapointId_ = datapointId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.IndexDatapoint result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         featureVector_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.featureVector_ = featureVector_;
       if (restrictsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           restricts_ = java.util.Collections.unmodifiableList(restricts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.restricts_ = restricts_;
       } else {
         result.restricts_ = restrictsBuilder_.build();
       }
-      if (crowdingTagBuilder_ == null) {
-        result.crowdingTag_ = crowdingTag_;
-      } else {
-        result.crowdingTag_ = crowdingTagBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.IndexDatapoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.datapointId_ = datapointId_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.crowdingTag_ =
+            crowdingTagBuilder_ == null ? crowdingTag_ : crowdingTagBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2639,12 +2690,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.IndexDatapoint.getDefaultInstance()) return this;
       if (!other.getDatapointId().isEmpty()) {
         datapointId_ = other.datapointId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.featureVector_.isEmpty()) {
         if (featureVector_.isEmpty()) {
           featureVector_ = other.featureVector_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFeatureVectorIsMutable();
           featureVector_.addAll(other.featureVector_);
@@ -2655,7 +2707,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.restricts_.isEmpty()) {
           if (restricts_.isEmpty()) {
             restricts_ = other.restricts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureRestrictsIsMutable();
             restricts_.addAll(other.restricts_);
@@ -2668,7 +2720,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             restrictsBuilder_.dispose();
             restrictsBuilder_ = null;
             restricts_ = other.restricts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             restrictsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRestrictsFieldBuilder()
@@ -2710,7 +2762,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 datapointId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
@@ -2748,7 +2800,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getCrowdingTagFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -2831,8 +2883,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       datapointId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2848,8 +2900,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatapointId() {
-
       datapointId_ = getDefaultInstance().getDatapointId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2870,8 +2922,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datapointId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2879,9 +2931,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.FloatList featureVector_ = emptyFloatList();
 
     private void ensureFeatureVectorIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         featureVector_ = mutableCopy(featureVector_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2897,7 +2949,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the featureVector.
      */
     public java.util.List<java.lang.Float> getFeatureVectorList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000002) != 0)
           ? java.util.Collections.unmodifiableList(featureVector_)
           : featureVector_;
     }
@@ -2947,6 +2999,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFeatureVector(int index, float value) {
+
       ensureFeatureVectorIsMutable();
       featureVector_.setFloat(index, value);
       onChanged();
@@ -2966,6 +3019,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addFeatureVector(float value) {
+
       ensureFeatureVectorIsMutable();
       featureVector_.addFloat(value);
       onChanged();
@@ -3004,7 +3058,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFeatureVector() {
       featureVector_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3013,11 +3067,11 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRestrictsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         restricts_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction>(
                 restricts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3294,7 +3348,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRestricts() {
       if (restrictsBuilder_ == null) {
         restricts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         restrictsBuilder_.clear();
@@ -3458,7 +3512,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction,
                 com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.Builder,
                 com.google.cloud.aiplatform.v1.IndexDatapoint.RestrictionOrBuilder>(
-                restricts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                restricts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         restricts_ = null;
       }
       return restrictsBuilder_;
@@ -3485,7 +3539,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the crowdingTag field is set.
      */
     public boolean hasCrowdingTag() {
-      return crowdingTagBuilder_ != null || crowdingTag_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3528,11 +3582,11 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         crowdingTag_ = value;
-        onChanged();
       } else {
         crowdingTagBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3551,11 +3605,11 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.Builder builderForValue) {
       if (crowdingTagBuilder_ == null) {
         crowdingTag_ = builderForValue.build();
-        onChanged();
       } else {
         crowdingTagBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3573,19 +3627,19 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCrowdingTag(
         com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag value) {
       if (crowdingTagBuilder_ == null) {
-        if (crowdingTag_ != null) {
-          crowdingTag_ =
-              com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.newBuilder(crowdingTag_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && crowdingTag_ != null
+            && crowdingTag_
+                != com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.getDefaultInstance()) {
+          getCrowdingTagBuilder().mergeFrom(value);
         } else {
           crowdingTag_ = value;
         }
-        onChanged();
       } else {
         crowdingTagBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3601,14 +3655,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCrowdingTag() {
-      if (crowdingTagBuilder_ == null) {
-        crowdingTag_ = null;
-        onChanged();
-      } else {
-        crowdingTag_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      crowdingTag_ = null;
+      if (crowdingTagBuilder_ != null) {
+        crowdingTagBuilder_.dispose();
         crowdingTagBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3625,7 +3678,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.Builder
         getCrowdingTagBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCrowdingTagFieldBuilder().getBuilder();
     }

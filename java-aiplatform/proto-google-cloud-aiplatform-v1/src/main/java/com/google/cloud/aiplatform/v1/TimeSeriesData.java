@@ -70,7 +70,9 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TENSORBOARD_TIME_SERIES_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tensorboardTimeSeriesId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tensorboardTimeSeriesId_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 2;
-  private int valueType_;
+  private int valueType_ = 0;
   /**
    *
    *
@@ -156,15 +158,16 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType getValueType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType result =
-        com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.valueOf(valueType_);
+        com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.forNumber(valueType_);
     return result == null
         ? com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.UNRECOGNIZED
         : result;
   }
 
   public static final int VALUES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesDataPoint> values_;
   /**
    *
@@ -464,17 +467,16 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tensorboardTimeSeriesId_ = "";
-
       valueType_ = 0;
-
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
       } else {
         values_ = null;
         valuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -502,20 +504,34 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.TimeSeriesData buildPartial() {
       com.google.cloud.aiplatform.v1.TimeSeriesData result =
           new com.google.cloud.aiplatform.v1.TimeSeriesData(this);
-      int from_bitField0_ = bitField0_;
-      result.tensorboardTimeSeriesId_ = tensorboardTimeSeriesId_;
-      result.valueType_ = valueType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.TimeSeriesData result) {
       if (valuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.values_ = values_;
       } else {
         result.values_ = valuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.TimeSeriesData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tensorboardTimeSeriesId_ = tensorboardTimeSeriesId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.valueType_ = valueType_;
+      }
     }
 
     @java.lang.Override
@@ -565,6 +581,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.TimeSeriesData.getDefaultInstance()) return this;
       if (!other.getTensorboardTimeSeriesId().isEmpty()) {
         tensorboardTimeSeriesId_ = other.tensorboardTimeSeriesId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.valueType_ != 0) {
@@ -574,7 +591,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureValuesIsMutable();
             values_.addAll(other.values_);
@@ -587,7 +604,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
             valuesBuilder_.dispose();
             valuesBuilder_ = null;
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             valuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getValuesFieldBuilder()
@@ -626,13 +643,13 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 tensorboardTimeSeriesId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 valueType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -732,8 +749,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tensorboardTimeSeriesId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +767,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTensorboardTimeSeriesId() {
-
       tensorboardTimeSeriesId_ = getDefaultInstance().getTensorboardTimeSeriesId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -773,8 +790,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tensorboardTimeSeriesId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,8 +831,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
-
       valueType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,9 +852,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType getValueType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType result =
-          com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.valueOf(valueType_);
+          com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.forNumber(valueType_);
       return result == null
           ? com.google.cloud.aiplatform.v1.TensorboardTimeSeries.ValueType.UNRECOGNIZED
           : result;
@@ -862,7 +878,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       valueType_ = value.getNumber();
       onChanged();
       return this;
@@ -882,7 +898,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValueType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       valueType_ = 0;
       onChanged();
       return this;
@@ -892,10 +908,10 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         values_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.TimeSeriesDataPoint>(values_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1133,7 +1149,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public Builder clearValues() {
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         valuesBuilder_.clear();
@@ -1271,7 +1287,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.TimeSeriesDataPoint,
                 com.google.cloud.aiplatform.v1.TimeSeriesDataPoint.Builder,
                 com.google.cloud.aiplatform.v1.TimeSeriesDataPointOrBuilder>(
-                values_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                values_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         values_ = null;
       }
       return valuesBuilder_;

@@ -379,7 +379,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TOP_K_FIELD_NUMBER = 4;
-  private int topK_;
+  private int topK_ = 0;
   /**
    *
    *
@@ -471,7 +471,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.ListValueOrBuilder getOutputIndicesOrBuilder() {
-    return getOutputIndices();
+    return outputIndices_ == null
+        ? com.google.protobuf.ListValue.getDefaultInstance()
+        : outputIndices_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -759,6 +761,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (sampledShapleyAttributionBuilder_ != null) {
         sampledShapleyAttributionBuilder_.clear();
       }
@@ -772,11 +775,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         examplesBuilder_.clear();
       }
       topK_ = 0;
-
-      if (outputIndicesBuilder_ == null) {
-        outputIndices_ = null;
-      } else {
-        outputIndices_ = null;
+      outputIndices_ = null;
+      if (outputIndicesBuilder_ != null) {
+        outputIndicesBuilder_.dispose();
         outputIndicesBuilder_ = null;
       }
       methodCase_ = 0;
@@ -808,43 +809,41 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.ExplanationParameters buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExplanationParameters result =
           new com.google.cloud.aiplatform.v1beta1.ExplanationParameters(this);
-      if (methodCase_ == 1) {
-        if (sampledShapleyAttributionBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = sampledShapleyAttributionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (methodCase_ == 2) {
-        if (integratedGradientsAttributionBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = integratedGradientsAttributionBuilder_.build();
-        }
-      }
-      if (methodCase_ == 3) {
-        if (xraiAttributionBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = xraiAttributionBuilder_.build();
-        }
-      }
-      if (methodCase_ == 7) {
-        if (examplesBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = examplesBuilder_.build();
-        }
-      }
-      result.topK_ = topK_;
-      if (outputIndicesBuilder_ == null) {
-        result.outputIndices_ = outputIndices_;
-      } else {
-        result.outputIndices_ = outputIndicesBuilder_.build();
-      }
-      result.methodCase_ = methodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExplanationParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.topK_ = topK_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.outputIndices_ =
+            outputIndicesBuilder_ == null ? outputIndices_ : outputIndicesBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.ExplanationParameters result) {
+      result.methodCase_ = methodCase_;
+      result.method_ = this.method_;
+      if (methodCase_ == 1 && sampledShapleyAttributionBuilder_ != null) {
+        result.method_ = sampledShapleyAttributionBuilder_.build();
+      }
+      if (methodCase_ == 2 && integratedGradientsAttributionBuilder_ != null) {
+        result.method_ = integratedGradientsAttributionBuilder_.build();
+      }
+      if (methodCase_ == 3 && xraiAttributionBuilder_ != null) {
+        result.method_ = xraiAttributionBuilder_.build();
+      }
+      if (methodCase_ == 7 && examplesBuilder_ != null) {
+        result.method_ = examplesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -975,13 +974,13 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             case 32:
               {
                 topK_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getOutputIndicesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 58:
@@ -1020,6 +1019,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution,
@@ -1280,7 +1281,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
       methodCase_ = 1;
       onChanged();
-      ;
       return sampledShapleyAttributionBuilder_;
     }
 
@@ -1539,7 +1539,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
       methodCase_ = 2;
       onChanged();
-      ;
       return integratedGradientsAttributionBuilder_;
     }
 
@@ -1814,7 +1813,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
       methodCase_ = 3;
       onChanged();
-      ;
       return xraiAttributionBuilder_;
     }
 
@@ -2033,7 +2031,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
       methodCase_ = 7;
       onChanged();
-      ;
       return examplesBuilder_;
     }
 
@@ -2074,6 +2071,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder setTopK(int value) {
 
       topK_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2092,7 +2090,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTopK() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       topK_ = 0;
       onChanged();
       return this;
@@ -2125,7 +2123,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * @return Whether the outputIndices field is set.
      */
     public boolean hasOutputIndices() {
-      return outputIndicesBuilder_ != null || outputIndices_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2180,11 +2178,11 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         outputIndices_ = value;
-        onChanged();
       } else {
         outputIndicesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2208,11 +2206,11 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder setOutputIndices(com.google.protobuf.ListValue.Builder builderForValue) {
       if (outputIndicesBuilder_ == null) {
         outputIndices_ = builderForValue.build();
-        onChanged();
       } else {
         outputIndicesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2235,19 +2233,18 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeOutputIndices(com.google.protobuf.ListValue value) {
       if (outputIndicesBuilder_ == null) {
-        if (outputIndices_ != null) {
-          outputIndices_ =
-              com.google.protobuf.ListValue.newBuilder(outputIndices_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && outputIndices_ != null
+            && outputIndices_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          getOutputIndicesBuilder().mergeFrom(value);
         } else {
           outputIndices_ = value;
         }
-        onChanged();
       } else {
         outputIndicesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2269,14 +2266,13 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.ListValue output_indices = 5;</code>
      */
     public Builder clearOutputIndices() {
-      if (outputIndicesBuilder_ == null) {
-        outputIndices_ = null;
-        onChanged();
-      } else {
-        outputIndices_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      outputIndices_ = null;
+      if (outputIndicesBuilder_ != null) {
+        outputIndicesBuilder_.dispose();
         outputIndicesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2298,7 +2294,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.ListValue output_indices = 5;</code>
      */
     public com.google.protobuf.ListValue.Builder getOutputIndicesBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getOutputIndicesFieldBuilder().getBuilder();
     }

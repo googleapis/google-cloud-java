@@ -114,11 +114,15 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   public static final int GCS_OUTPUT_DIRECTORY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gcsOutputDirectory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsOutputDirectory_ = "";
   /**
    *
    *
@@ -381,14 +385,13 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       gcsOutputDirectory_ = "";
-
       return this;
     }
 
@@ -416,14 +419,22 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.ExportDataOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1.ExportDataOperationMetadata result =
           new com.google.cloud.aiplatform.v1.ExportDataOperationMetadata(this);
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.gcsOutputDirectory_ = gcsOutputDirectory_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ExportDataOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gcsOutputDirectory_ = gcsOutputDirectory_;
+      }
     }
 
     @java.lang.Override
@@ -477,6 +488,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       }
       if (!other.getGcsOutputDirectory().isEmpty()) {
         gcsOutputDirectory_ = other.gcsOutputDirectory_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -508,13 +520,13 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 gcsOutputDirectory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +546,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.GenericOperationMetadata,
@@ -552,7 +566,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -590,11 +604,11 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,11 +624,11 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,19 +643,19 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1.GenericOperationMetadata.newBuilder(genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,14 +668,13 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -675,7 +688,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      */
     public com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
@@ -788,8 +801,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsOutputDirectory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -806,8 +819,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearGcsOutputDirectory() {
-
       gcsOutputDirectory_ = getDefaultInstance().getGcsOutputDirectory();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -829,8 +842,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsOutputDirectory_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

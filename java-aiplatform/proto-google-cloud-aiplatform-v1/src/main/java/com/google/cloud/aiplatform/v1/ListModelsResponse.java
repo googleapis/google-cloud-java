@@ -70,6 +70,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MODELS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Model> models_;
   /**
    *
@@ -139,7 +141,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -402,6 +406,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (modelsBuilder_ == null) {
         models_ = java.util.Collections.emptyList();
       } else {
@@ -410,7 +415,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -438,7 +442,16 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.ListModelsResponse buildPartial() {
       com.google.cloud.aiplatform.v1.ListModelsResponse result =
           new com.google.cloud.aiplatform.v1.ListModelsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ListModelsResponse result) {
       if (modelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           models_ = java.util.Collections.unmodifiableList(models_);
@@ -448,9 +461,13 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.models_ = modelsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ListModelsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -528,6 +545,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,7 +590,7 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1012,8 +1030,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1050,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1057,8 +1075,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

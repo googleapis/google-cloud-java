@@ -71,6 +71,8 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
   }
 
   public static final int TENSORBOARD_EXPERIMENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.TensorboardExperiment>
       tensorboardExperiments_;
   /**
@@ -155,7 +157,9 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -424,6 +428,7 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tensorboardExperimentsBuilder_ == null) {
         tensorboardExperiments_ = java.util.Collections.emptyList();
       } else {
@@ -432,7 +437,6 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -463,7 +467,16 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
     public com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse result =
           new com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse result) {
       if (tensorboardExperimentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tensorboardExperiments_ = java.util.Collections.unmodifiableList(tensorboardExperiments_);
@@ -473,9 +486,14 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
       } else {
         result.tensorboardExperiments_ = tensorboardExperimentsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -556,6 +574,7 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,7 +620,7 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1100,8 +1119,8 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1120,8 +1139,8 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1145,8 +1164,8 @@ public final class ListTensorboardExperimentsResponse extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

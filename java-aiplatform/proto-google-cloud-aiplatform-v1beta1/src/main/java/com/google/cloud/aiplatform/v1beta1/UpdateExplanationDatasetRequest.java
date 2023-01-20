@@ -70,7 +70,9 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -169,7 +171,9 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder getExamplesOrBuilder() {
-    return getExamples();
+    return examples_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance()
+        : examples_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,12 +391,11 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
-      if (examplesBuilder_ == null) {
-        examples_ = null;
-      } else {
-        examples_ = null;
+      examples_ = null;
+      if (examplesBuilder_ != null) {
+        examplesBuilder_.dispose();
         examplesBuilder_ = null;
       }
       return this;
@@ -424,14 +427,22 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
     public com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest result =
           new com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest(this);
-      result.model_ = model_;
-      if (examplesBuilder_ == null) {
-        result.examples_ = examples_;
-      } else {
-        result.examples_ = examplesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.examples_ = examplesBuilder_ == null ? examples_ : examplesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +496,7 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExamples()) {
@@ -519,13 +531,13 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExamplesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +556,8 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -615,8 +629,8 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,8 +649,8 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -660,8 +674,8 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +698,7 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
      * @return Whether the examples field is set.
      */
     public boolean hasExamples() {
-      return examplesBuilder_ != null || examples_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -721,11 +735,11 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         examples_ = value;
-        onChanged();
       } else {
         examplesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -741,11 +755,11 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
         com.google.cloud.aiplatform.v1beta1.Examples.Builder builderForValue) {
       if (examplesBuilder_ == null) {
         examples_ = builderForValue.build();
-        onChanged();
       } else {
         examplesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,19 +773,18 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
      */
     public Builder mergeExamples(com.google.cloud.aiplatform.v1beta1.Examples value) {
       if (examplesBuilder_ == null) {
-        if (examples_ != null) {
-          examples_ =
-              com.google.cloud.aiplatform.v1beta1.Examples.newBuilder(examples_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && examples_ != null
+            && examples_ != com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance()) {
+          getExamplesBuilder().mergeFrom(value);
         } else {
           examples_ = value;
         }
-        onChanged();
       } else {
         examplesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -784,14 +797,13 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
      * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 2;</code>
      */
     public Builder clearExamples() {
-      if (examplesBuilder_ == null) {
-        examples_ = null;
-        onChanged();
-      } else {
-        examples_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      examples_ = null;
+      if (examplesBuilder_ != null) {
+        examplesBuilder_.dispose();
         examplesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -804,7 +816,7 @@ public final class UpdateExplanationDatasetRequest extends com.google.protobuf.G
      * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 2;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.Examples.Builder getExamplesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExamplesFieldBuilder().getBuilder();
     }

@@ -66,7 +66,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
   }
 
   public static final int BATCH_SIZE_FIELD_NUMBER = 1;
-  private int batchSize_;
+  private int batchSize_ = 0;
   /**
    *
    *
@@ -287,8 +287,8 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       batchSize_ = 0;
-
       return this;
     }
 
@@ -317,9 +317,19 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters result =
           new com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters(this);
-      result.batchSize_ = batchSize_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.batchSize_ = batchSize_;
+      }
     }
 
     @java.lang.Override
@@ -402,7 +412,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
             case 8:
               {
                 batchSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -421,6 +431,8 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int batchSize_;
     /**
@@ -465,6 +477,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
     public Builder setBatchSize(int value) {
 
       batchSize_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -486,7 +499,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearBatchSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       batchSize_ = 0;
       onChanged();
       return this;

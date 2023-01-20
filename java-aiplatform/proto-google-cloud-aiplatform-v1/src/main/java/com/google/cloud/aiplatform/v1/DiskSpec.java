@@ -68,7 +68,9 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOT_DISK_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object bootDiskType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bootDiskType_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 2;
-  private int bootDiskSizeGb_;
+  private int bootDiskSizeGb_ = 0;
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bootDiskType_ = "";
-
       bootDiskSizeGb_ = 0;
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.DiskSpec buildPartial() {
       com.google.cloud.aiplatform.v1.DiskSpec result =
           new com.google.cloud.aiplatform.v1.DiskSpec(this);
-      result.bootDiskType_ = bootDiskType_;
-      result.bootDiskSizeGb_ = bootDiskSizeGb_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.DiskSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bootDiskType_ = bootDiskType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bootDiskSizeGb_ = bootDiskSizeGb_;
+      }
     }
 
     @java.lang.Override
@@ -427,6 +439,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.DiskSpec.getDefaultInstance()) return this;
       if (!other.getBootDiskType().isEmpty()) {
         bootDiskType_ = other.bootDiskType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getBootDiskSizeGb() != 0) {
@@ -461,13 +474,13 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 bootDiskType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 bootDiskSizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -486,6 +499,8 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object bootDiskType_ = "";
     /**
@@ -554,8 +569,8 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       bootDiskType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -573,8 +588,8 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBootDiskType() {
-
       bootDiskType_ = getDefaultInstance().getBootDiskType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -597,8 +612,8 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bootDiskType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,6 +649,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setBootDiskSizeGb(int value) {
 
       bootDiskSizeGb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -649,7 +665,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBootDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       bootDiskSizeGb_ = 0;
       onChanged();
       return this;

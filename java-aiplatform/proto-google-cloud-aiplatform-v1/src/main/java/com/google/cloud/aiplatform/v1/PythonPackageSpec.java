@@ -72,7 +72,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EXECUTOR_IMAGE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object executorImageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object executorImageUri_ = "";
   /**
    *
    *
@@ -131,6 +133,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PACKAGE_URIS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList packageUris_;
   /**
    *
@@ -200,7 +204,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PYTHON_MODULE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pythonModule_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pythonModule_ = "";
   /**
    *
    *
@@ -249,6 +255,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ARGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList args_;
   /**
    *
@@ -310,6 +318,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENV_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.EnvVar> env_;
   /**
    *
@@ -632,21 +642,20 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       executorImageUri_ = "";
-
       packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      pythonModule_ = "";
-
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      pythonModule_ = "";
+      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
         env_ = null;
         envBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -674,30 +683,45 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1.PythonPackageSpec buildPartial() {
       com.google.cloud.aiplatform.v1.PythonPackageSpec result =
           new com.google.cloud.aiplatform.v1.PythonPackageSpec(this);
-      int from_bitField0_ = bitField0_;
-      result.executorImageUri_ = executorImageUri_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.PythonPackageSpec result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         packageUris_ = packageUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.packageUris_ = packageUris_;
-      result.pythonModule_ = pythonModule_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.args_ = args_;
       if (envBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.env_ = env_;
       } else {
         result.env_ = envBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.PythonPackageSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executorImageUri_ = executorImageUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pythonModule_ = pythonModule_;
+      }
     }
 
     @java.lang.Override
@@ -748,12 +772,13 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getExecutorImageUri().isEmpty()) {
         executorImageUri_ = other.executorImageUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.packageUris_.isEmpty()) {
         if (packageUris_.isEmpty()) {
           packageUris_ = other.packageUris_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePackageUrisIsMutable();
           packageUris_.addAll(other.packageUris_);
@@ -762,12 +787,13 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPythonModule().isEmpty()) {
         pythonModule_ = other.pythonModule_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -778,7 +804,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         if (!other.env_.isEmpty()) {
           if (env_.isEmpty()) {
             env_ = other.env_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEnvIsMutable();
             env_.addAll(other.env_);
@@ -791,7 +817,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
             envBuilder_.dispose();
             envBuilder_ = null;
             env_ = other.env_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             envBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEnvFieldBuilder()
@@ -830,7 +856,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 executorImageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -843,7 +869,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 pythonModule_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -961,8 +987,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       executorImageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -983,8 +1009,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearExecutorImageUri() {
-
       executorImageUri_ = getDefaultInstance().getExecutorImageUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1010,8 +1036,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       executorImageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1020,9 +1046,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePackageUrisIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         packageUris_ = new com.google.protobuf.LazyStringArrayList(packageUris_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1173,7 +1199,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPackageUris() {
       packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1263,8 +1289,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       pythonModule_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1280,8 +1306,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPythonModule() {
-
       pythonModule_ = getDefaultInstance().getPythonModule();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1302,8 +1328,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pythonModule_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1312,9 +1338,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1449,7 +1475,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1480,9 +1506,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         env_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.EnvVar>(env_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1708,7 +1734,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public Builder clearEnv() {
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         envBuilder_.clear();
@@ -1836,7 +1862,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.aiplatform.v1.EnvVar,
                 com.google.cloud.aiplatform.v1.EnvVar.Builder,
                 com.google.cloud.aiplatform.v1.EnvVarOrBuilder>(
-                env_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                env_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         env_ = null;
       }
       return envBuilder_;

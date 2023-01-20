@@ -293,7 +293,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType model_type = 1;
@@ -316,12 +316,11 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationInputs.ModelType
       getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs
             .ModelType
         result =
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                .AutoMlImageClassificationInputs.ModelType.valueOf(modelType_);
+                .AutoMlImageClassificationInputs.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageClassificationInputs.ModelType.UNRECOGNIZED
@@ -329,7 +328,9 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   public static final int BASE_MODEL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object baseModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseModelId_ = "";
   /**
    *
    *
@@ -386,7 +387,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 3;
-  private long budgetMilliNodeHours_;
+  private long budgetMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -418,7 +419,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 4;
-  private boolean disableEarlyStopping_;
+  private boolean disableEarlyStopping_ = false;
   /**
    *
    *
@@ -439,7 +440,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   public static final int MULTI_LABEL_FIELD_NUMBER = 5;
-  private boolean multiLabel_;
+  private boolean multiLabel_ = false;
   /**
    *
    *
@@ -725,16 +726,12 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       baseModelId_ = "";
-
       budgetMilliNodeHours_ = 0L;
-
       disableEarlyStopping_ = false;
-
       multiLabel_ = false;
-
       return this;
     }
 
@@ -773,13 +770,32 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlImageClassificationInputs(this);
-      result.modelType_ = modelType_;
-      result.baseModelId_ = baseModelId_;
-      result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
-      result.disableEarlyStopping_ = disableEarlyStopping_;
-      result.multiLabel_ = multiLabel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.baseModelId_ = baseModelId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.disableEarlyStopping_ = disableEarlyStopping_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.multiLabel_ = multiLabel_;
+      }
     }
 
     @java.lang.Override
@@ -842,6 +858,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       }
       if (!other.getBaseModelId().isEmpty()) {
         baseModelId_ = other.baseModelId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getBudgetMilliNodeHours() != 0L) {
@@ -882,31 +899,31 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 baseModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 budgetMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 disableEarlyStopping_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 multiLabel_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -925,6 +942,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -947,8 +966,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -963,12 +982,11 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageClassificationInputs.ModelType
         getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs
               .ModelType
           result =
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlImageClassificationInputs.ModelType.valueOf(modelType_);
+                  .AutoMlImageClassificationInputs.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
               .AutoMlImageClassificationInputs.ModelType.UNRECOGNIZED
@@ -989,7 +1007,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -1002,7 +1020,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;
@@ -1081,8 +1099,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1102,8 +1120,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearBaseModelId() {
-
       baseModelId_ = getDefaultInstance().getBaseModelId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1128,8 +1146,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1193,6 +1211,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public Builder setBudgetMilliNodeHours(long value) {
 
       budgetMilliNodeHours_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1222,7 +1241,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearBudgetMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       budgetMilliNodeHours_ = 0L;
       onChanged();
       return this;
@@ -1265,6 +1284,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public Builder setDisableEarlyStopping(boolean value) {
 
       disableEarlyStopping_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1283,7 +1303,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearDisableEarlyStopping() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       disableEarlyStopping_ = false;
       onChanged();
       return this;
@@ -1326,6 +1346,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     public Builder setMultiLabel(boolean value) {
 
       multiLabel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1344,7 +1365,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearMultiLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       multiLabel_ = false;
       onChanged();
       return this;

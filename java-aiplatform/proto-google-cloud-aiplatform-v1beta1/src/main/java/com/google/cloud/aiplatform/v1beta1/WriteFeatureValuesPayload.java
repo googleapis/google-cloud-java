@@ -79,7 +79,9 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
   }
 
   public static final int ENTITY_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityId_ = "";
   /**
    *
    *
@@ -144,6 +146,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
                         com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.FeatureValue>
       featureValues_;
@@ -223,8 +226,10 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.FeatureValue getFeatureValuesOrDefault(
-      java.lang.String key, com.google.cloud.aiplatform.v1beta1.FeatureValue defaultValue) {
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.FeatureValue getFeatureValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.aiplatform.v1beta1.FeatureValue defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -497,8 +502,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entityId_ = "";
-
       internalGetMutableFeatureValues().clear();
       return this;
     }
@@ -528,12 +533,23 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload buildPartial() {
       com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload result =
           new com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload(this);
-      int from_bitField0_ = bitField0_;
-      result.entityId_ = entityId_;
-      result.featureValues_ = internalGetFeatureValues();
-      result.featureValues_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesPayload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityId_ = entityId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.featureValues_ = internalGetFeatureValues();
+        result.featureValues_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -585,9 +601,11 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
         return this;
       if (!other.getEntityId().isEmpty()) {
         entityId_ = other.entityId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableFeatureValues().mergeFrom(other.internalGetFeatureValues());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -617,7 +635,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
             case 10:
               {
                 entityId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -631,6 +649,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
                 internalGetMutableFeatureValues()
                     .getMutableMap()
                     .put(featureValues__.getKey(), featureValues__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -713,8 +732,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,8 +749,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEntityId() {
-
       entityId_ = getDefaultInstance().getEntityId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -752,8 +771,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +794,6 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.aiplatform.v1beta1.FeatureValue>
         internalGetMutableFeatureValues() {
-      onChanged();
-      ;
       if (featureValues_ == null) {
         featureValues_ =
             com.google.protobuf.MapField.newMapField(FeatureValuesDefaultEntryHolder.defaultEntry);
@@ -784,6 +801,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
       if (!featureValues_.isMutable()) {
         featureValues_ = featureValues_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return featureValues_;
     }
 
@@ -852,8 +871,11 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.FeatureValue getFeatureValuesOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1beta1.FeatureValue defaultValue) {
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.FeatureValue
+        getFeatureValuesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.FeatureValue defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -890,6 +912,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     }
 
     public Builder clearFeatureValues() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableFeatureValues().getMutableMap().clear();
       return this;
     }
@@ -918,6 +941,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.FeatureValue>
         getMutableFeatureValues() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableFeatureValues().getMutableMap();
     }
     /**
@@ -942,8 +966,8 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFeatureValues().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -963,6 +987,7 @@ public final class WriteFeatureValuesPayload extends com.google.protobuf.Generat
     public Builder putAllFeatureValues(
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.FeatureValue> values) {
       internalGetMutableFeatureValues().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

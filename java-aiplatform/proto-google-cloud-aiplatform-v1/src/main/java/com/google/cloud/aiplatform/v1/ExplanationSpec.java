@@ -116,7 +116,9 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExplanationParametersOrBuilder getParametersOrBuilder() {
-    return getParameters();
+    return parameters_ == null
+        ? com.google.cloud.aiplatform.v1.ExplanationParameters.getDefaultInstance()
+        : parameters_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -170,7 +172,9 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1.ExplanationMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,16 +393,15 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-      } else {
-        parameters_ = null;
+      bitField0_ = 0;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -428,18 +431,21 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.ExplanationSpec buildPartial() {
       com.google.cloud.aiplatform.v1.ExplanationSpec result =
           new com.google.cloud.aiplatform.v1.ExplanationSpec(this);
-      if (parametersBuilder_ == null) {
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ExplanationSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +528,13 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +553,8 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.ExplanationParameters parameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +576,7 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
-      return parametersBuilder_ != null || parameters_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -609,11 +617,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         parameters_ = value;
-        onChanged();
       } else {
         parametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,11 +639,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.aiplatform.v1.ExplanationParameters.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         parameters_ = builderForValue.build();
-        onChanged();
       } else {
         parametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,19 +659,19 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeParameters(com.google.cloud.aiplatform.v1.ExplanationParameters value) {
       if (parametersBuilder_ == null) {
-        if (parameters_ != null) {
-          parameters_ =
-              com.google.cloud.aiplatform.v1.ExplanationParameters.newBuilder(parameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && parameters_ != null
+            && parameters_
+                != com.google.cloud.aiplatform.v1.ExplanationParameters.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
         } else {
           parameters_ = value;
         }
-        onChanged();
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,14 +686,13 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-        onChanged();
-      } else {
-        parameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -700,7 +707,7 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationParameters.Builder getParametersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
@@ -772,7 +779,7 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -813,11 +820,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,11 +842,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,19 +862,19 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMetadata(com.google.cloud.aiplatform.v1.ExplanationMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.aiplatform.v1.ExplanationMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1.ExplanationMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,14 +889,13 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -904,7 +910,7 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

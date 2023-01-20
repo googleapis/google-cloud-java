@@ -116,7 +116,9 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
-    return getGcsDestination();
+    return gcsDestination_ == null
+        ? com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()
+        : gcsDestination_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,10 +323,10 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gcsDestinationBuilder_ == null) {
-        gcsDestination_ = null;
-      } else {
-        gcsDestination_ = null;
+      bitField0_ = 0;
+      gcsDestination_ = null;
+      if (gcsDestinationBuilder_ != null) {
+        gcsDestinationBuilder_.dispose();
         gcsDestinationBuilder_ = null;
       }
       return this;
@@ -354,13 +356,19 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1.TFRecordDestination buildPartial() {
       com.google.cloud.aiplatform.v1.TFRecordDestination result =
           new com.google.cloud.aiplatform.v1.TFRecordDestination(this);
-      if (gcsDestinationBuilder_ == null) {
-        result.gcsDestination_ = gcsDestination_;
-      } else {
-        result.gcsDestination_ = gcsDestinationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.TFRecordDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsDestination_ =
+            gcsDestinationBuilder_ == null ? gcsDestination_ : gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +449,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getGcsDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +468,8 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.GcsDestination gcsDestination_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -481,7 +491,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
      * @return Whether the gcsDestination field is set.
      */
     public boolean hasGcsDestination() {
-      return gcsDestinationBuilder_ != null || gcsDestination_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -522,11 +532,11 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         gcsDestination_ = value;
-        onChanged();
       } else {
         gcsDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -544,11 +554,11 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
         com.google.cloud.aiplatform.v1.GcsDestination.Builder builderForValue) {
       if (gcsDestinationBuilder_ == null) {
         gcsDestination_ = builderForValue.build();
-        onChanged();
       } else {
         gcsDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -564,19 +574,19 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeGcsDestination(com.google.cloud.aiplatform.v1.GcsDestination value) {
       if (gcsDestinationBuilder_ == null) {
-        if (gcsDestination_ != null) {
-          gcsDestination_ =
-              com.google.cloud.aiplatform.v1.GcsDestination.newBuilder(gcsDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && gcsDestination_ != null
+            && gcsDestination_
+                != com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()) {
+          getGcsDestinationBuilder().mergeFrom(value);
         } else {
           gcsDestination_ = value;
         }
-        onChanged();
       } else {
         gcsDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -591,14 +601,13 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearGcsDestination() {
-      if (gcsDestinationBuilder_ == null) {
-        gcsDestination_ = null;
-        onChanged();
-      } else {
-        gcsDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      gcsDestination_ = null;
+      if (gcsDestinationBuilder_ != null) {
+        gcsDestinationBuilder_.dispose();
         gcsDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -613,7 +622,7 @@ public final class TFRecordDestination extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.aiplatform.v1.GcsDestination.Builder getGcsDestinationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGcsDestinationFieldBuilder().getBuilder();
     }

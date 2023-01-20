@@ -73,6 +73,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PREDICTIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Value> predictions_;
   /**
    *
@@ -162,7 +164,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployedModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedModelId_ = "";
   /**
    *
    *
@@ -211,7 +215,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MODEL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -266,7 +272,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MODEL_VERSION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object modelVersionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersionId_ = "";
   /**
    *
    *
@@ -317,7 +325,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MODEL_DISPLAY_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object modelDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelDisplayName_ = "";
   /**
    *
    *
@@ -605,6 +615,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (predictionsBuilder_ == null) {
         predictions_ = java.util.Collections.emptyList();
       } else {
@@ -613,13 +624,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       deployedModelId_ = "";
-
       model_ = "";
-
       modelVersionId_ = "";
-
       modelDisplayName_ = "";
-
       return this;
     }
 
@@ -647,7 +654,15 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.PredictResponse buildPartial() {
       com.google.cloud.aiplatform.v1.PredictResponse result =
           new com.google.cloud.aiplatform.v1.PredictResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.PredictResponse result) {
       if (predictionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           predictions_ = java.util.Collections.unmodifiableList(predictions_);
@@ -657,12 +672,22 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.predictions_ = predictionsBuilder_.build();
       }
-      result.deployedModelId_ = deployedModelId_;
-      result.model_ = model_;
-      result.modelVersionId_ = modelVersionId_;
-      result.modelDisplayName_ = modelDisplayName_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.PredictResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedModelId_ = deployedModelId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.modelVersionId_ = modelVersionId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.modelDisplayName_ = modelDisplayName_;
+      }
     }
 
     @java.lang.Override
@@ -739,18 +764,22 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getModelVersionId().isEmpty()) {
         modelVersionId_ = other.modelVersionId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getModelDisplayName().isEmpty()) {
         modelDisplayName_ = other.modelDisplayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -794,25 +823,25 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 modelDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 modelVersionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1313,8 +1342,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1330,8 +1359,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDeployedModelId() {
-
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1352,8 +1381,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedModelId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1428,8 +1457,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1448,8 +1477,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1473,8 +1502,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1543,8 +1572,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelVersionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1561,8 +1590,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearModelVersionId() {
-
       modelVersionId_ = getDefaultInstance().getModelVersionId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1584,8 +1613,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelVersionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1657,8 +1686,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelDisplayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1676,8 +1705,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearModelDisplayName() {
-
       modelDisplayName_ = getDefaultInstance().getModelDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1700,8 +1729,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelDisplayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

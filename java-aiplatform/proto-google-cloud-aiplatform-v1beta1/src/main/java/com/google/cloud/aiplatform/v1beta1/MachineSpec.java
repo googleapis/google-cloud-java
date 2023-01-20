@@ -69,7 +69,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -136,7 +138,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 2;
-  private int acceleratorType_;
+  private int acceleratorType_ = 0;
   /**
    *
    *
@@ -173,16 +175,15 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.AcceleratorType getAcceleratorType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.AcceleratorType result =
-        com.google.cloud.aiplatform.v1beta1.AcceleratorType.valueOf(acceleratorType_);
+        com.google.cloud.aiplatform.v1beta1.AcceleratorType.forNumber(acceleratorType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.AcceleratorType.UNRECOGNIZED
         : result;
   }
 
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 3;
-  private int acceleratorCount_;
+  private int acceleratorCount_ = 0;
   /**
    *
    *
@@ -418,12 +419,10 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       machineType_ = "";
-
       acceleratorType_ = 0;
-
       acceleratorCount_ = 0;
-
       return this;
     }
 
@@ -451,11 +450,24 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.MachineSpec buildPartial() {
       com.google.cloud.aiplatform.v1beta1.MachineSpec result =
           new com.google.cloud.aiplatform.v1beta1.MachineSpec(this);
-      result.machineType_ = machineType_;
-      result.acceleratorType_ = acceleratorType_;
-      result.acceleratorCount_ = acceleratorCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.MachineSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.acceleratorType_ = acceleratorType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.acceleratorCount_ = acceleratorCount_;
+      }
     }
 
     @java.lang.Override
@@ -506,6 +518,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.acceleratorType_ != 0) {
@@ -543,19 +556,19 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 acceleratorType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 acceleratorCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -574,6 +587,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object machineType_ = "";
     /**
@@ -663,8 +678,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +704,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -720,8 +735,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,8 +778,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAcceleratorTypeValue(int value) {
-
       acceleratorType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,9 +800,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.AcceleratorType getAcceleratorType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.AcceleratorType result =
-          com.google.cloud.aiplatform.v1beta1.AcceleratorType.valueOf(acceleratorType_);
+          com.google.cloud.aiplatform.v1beta1.AcceleratorType.forNumber(acceleratorType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.AcceleratorType.UNRECOGNIZED
           : result;
@@ -812,7 +826,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       acceleratorType_ = value.getNumber();
       onChanged();
       return this;
@@ -833,7 +847,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       acceleratorType_ = 0;
       onChanged();
       return this;
@@ -870,6 +884,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setAcceleratorCount(int value) {
 
       acceleratorCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -885,7 +900,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       acceleratorCount_ = 0;
       onChanged();
       return this;

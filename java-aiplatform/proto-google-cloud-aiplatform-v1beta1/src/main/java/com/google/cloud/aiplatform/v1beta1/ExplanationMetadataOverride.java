@@ -210,6 +210,8 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     }
 
     public static final int INPUT_BASELINES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.protobuf.Value> inputBaselines_;
     /**
      *
@@ -529,6 +531,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (inputBaselinesBuilder_ == null) {
           inputBaselines_ = java.util.Collections.emptyList();
         } else {
@@ -570,7 +573,17 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             result =
                 new com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
                     .InputMetadataOverride(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
+              result) {
         if (inputBaselinesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             inputBaselines_ = java.util.Collections.unmodifiableList(inputBaselines_);
@@ -580,8 +593,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         } else {
           result.inputBaselines_ = inputBaselinesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1239,6 +1256,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
                             .InputMetadataOverride.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride>
@@ -1329,9 +1347,11 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
+          .InputMetadataOverride
       getInputsOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
               defaultValue) {
     if (key == null) {
@@ -1609,6 +1629,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableInputs().clear();
       return this;
     }
@@ -1638,11 +1659,20 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride result =
           new com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride(this);
-      int from_bitField0_ = bitField0_;
-      result.inputs_ = internalGetInputs();
-      result.inputs_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputs_ = internalGetInputs();
+        result.inputs_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1694,6 +1724,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
           == com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.getDefaultInstance())
         return this;
       internalGetMutableInputs().mergeFrom(other.internalGetInputs());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1733,6 +1764,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
                 internalGetMutableInputs()
                     .getMutableMap()
                     .put(inputs__.getKey(), inputs__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1773,14 +1805,14 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride>
         internalGetMutableInputs() {
-      onChanged();
-      ;
       if (inputs_ == null) {
         inputs_ = com.google.protobuf.MapField.newMapField(InputsDefaultEntryHolder.defaultEntry);
       }
       if (!inputs_.isMutable()) {
         inputs_ = inputs_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return inputs_;
     }
 
@@ -1859,9 +1891,11 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
+            .InputMetadataOverride
         getInputsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
                 defaultValue) {
       if (key == null) {
@@ -1906,6 +1940,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     }
 
     public Builder clearInputs() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableInputs().getMutableMap().clear();
       return this;
     }
@@ -1938,6 +1973,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             java.lang.String,
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride>
         getMutableInputs() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableInputs().getMutableMap();
     }
     /**
@@ -1966,8 +2002,8 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableInputs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1993,6 +2029,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
                     .InputMetadataOverride>
             values) {
       internalGetMutableInputs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

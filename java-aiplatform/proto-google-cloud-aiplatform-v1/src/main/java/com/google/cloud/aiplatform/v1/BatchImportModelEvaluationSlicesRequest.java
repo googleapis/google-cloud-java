@@ -72,7 +72,9 @@ public final class BatchImportModelEvaluationSlicesRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -129,6 +131,8 @@ public final class BatchImportModelEvaluationSlicesRequest
   }
 
   public static final int MODEL_EVALUATION_SLICES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.ModelEvaluationSlice>
       modelEvaluationSlices_;
   /**
@@ -424,15 +428,15 @@ public final class BatchImportModelEvaluationSlicesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (modelEvaluationSlicesBuilder_ == null) {
         modelEvaluationSlices_ = java.util.Collections.emptyList();
       } else {
         modelEvaluationSlices_ = null;
         modelEvaluationSlicesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -463,19 +467,33 @@ public final class BatchImportModelEvaluationSlicesRequest
     public com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest buildPartial() {
       com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest result =
           new com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest result) {
       if (modelEvaluationSlicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           modelEvaluationSlices_ = java.util.Collections.unmodifiableList(modelEvaluationSlices_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.modelEvaluationSlices_ = modelEvaluationSlices_;
       } else {
         result.modelEvaluationSlices_ = modelEvaluationSlicesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -529,13 +547,14 @@ public final class BatchImportModelEvaluationSlicesRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (modelEvaluationSlicesBuilder_ == null) {
         if (!other.modelEvaluationSlices_.isEmpty()) {
           if (modelEvaluationSlices_.isEmpty()) {
             modelEvaluationSlices_ = other.modelEvaluationSlices_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureModelEvaluationSlicesIsMutable();
             modelEvaluationSlices_.addAll(other.modelEvaluationSlices_);
@@ -548,7 +567,7 @@ public final class BatchImportModelEvaluationSlicesRequest
             modelEvaluationSlicesBuilder_.dispose();
             modelEvaluationSlicesBuilder_ = null;
             modelEvaluationSlices_ = other.modelEvaluationSlices_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             modelEvaluationSlicesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getModelEvaluationSlicesFieldBuilder()
@@ -587,7 +606,7 @@ public final class BatchImportModelEvaluationSlicesRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -696,8 +715,8 @@ public final class BatchImportModelEvaluationSlicesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +736,8 @@ public final class BatchImportModelEvaluationSlicesRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +762,8 @@ public final class BatchImportModelEvaluationSlicesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,11 +772,11 @@ public final class BatchImportModelEvaluationSlicesRequest
         modelEvaluationSlices_ = java.util.Collections.emptyList();
 
     private void ensureModelEvaluationSlicesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         modelEvaluationSlices_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.ModelEvaluationSlice>(
                 modelEvaluationSlices_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -999,7 +1018,7 @@ public final class BatchImportModelEvaluationSlicesRequest
     public Builder clearModelEvaluationSlices() {
       if (modelEvaluationSlicesBuilder_ == null) {
         modelEvaluationSlices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         modelEvaluationSlicesBuilder_.clear();
@@ -1141,7 +1160,7 @@ public final class BatchImportModelEvaluationSlicesRequest
                 com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Builder,
                 com.google.cloud.aiplatform.v1.ModelEvaluationSliceOrBuilder>(
                 modelEvaluationSlices_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         modelEvaluationSlices_ = null;

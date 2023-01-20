@@ -386,7 +386,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int QUERY_FIELD_NUMBER = 1;
-  private int query_;
+  private int query_ = 0;
   /**
    *
    *
@@ -430,14 +430,13 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.Presets.Query getQuery() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.Presets.Query result =
-        com.google.cloud.aiplatform.v1beta1.Presets.Query.valueOf(query_);
+        com.google.cloud.aiplatform.v1beta1.Presets.Query.forNumber(query_);
     return result == null ? com.google.cloud.aiplatform.v1beta1.Presets.Query.UNRECOGNIZED : result;
   }
 
   public static final int MODALITY_FIELD_NUMBER = 2;
-  private int modality_;
+  private int modality_ = 0;
   /**
    *
    *
@@ -466,9 +465,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.Presets.Modality getModality() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.Presets.Modality result =
-        com.google.cloud.aiplatform.v1beta1.Presets.Modality.valueOf(modality_);
+        com.google.cloud.aiplatform.v1beta1.Presets.Modality.forNumber(modality_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.Presets.Modality.UNRECOGNIZED
         : result;
@@ -687,10 +685,9 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       query_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       modality_ = 0;
-
       return this;
     }
 
@@ -718,16 +715,24 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Presets buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Presets result =
           new com.google.cloud.aiplatform.v1beta1.Presets(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Presets result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.query_ = query_;
         to_bitField0_ |= 0x00000001;
       }
-      result.query_ = query_;
-      result.modality_ = modality_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modality_ = modality_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -816,7 +821,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 modality_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -882,8 +887,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setQueryValue(int value) {
-      bitField0_ |= 0x00000001;
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,9 +905,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.Presets.Query getQuery() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.Presets.Query result =
-          com.google.cloud.aiplatform.v1beta1.Presets.Query.valueOf(query_);
+          com.google.cloud.aiplatform.v1beta1.Presets.Query.forNumber(query_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.Presets.Query.UNRECOGNIZED
           : result;
@@ -975,8 +979,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModalityValue(int value) {
-
       modality_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,9 +997,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.Presets.Modality getModality() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.Presets.Modality result =
-          com.google.cloud.aiplatform.v1beta1.Presets.Modality.valueOf(modality_);
+          com.google.cloud.aiplatform.v1beta1.Presets.Modality.forNumber(modality_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.Presets.Modality.UNRECOGNIZED
           : result;
@@ -1016,7 +1019,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       modality_ = value.getNumber();
       onChanged();
       return this;
@@ -1033,7 +1036,7 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModality() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       modality_ = 0;
       onChanged();
       return this;

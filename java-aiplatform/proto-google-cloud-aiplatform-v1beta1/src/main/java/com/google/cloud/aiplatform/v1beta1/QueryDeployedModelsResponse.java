@@ -70,6 +70,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int DEPLOYED_MODELS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DeployedModel> deployedModels_;
   /**
    *
@@ -155,7 +157,9 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -206,6 +210,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int DEPLOYED_MODEL_REFS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DeployedModelRef> deployedModelRefs_;
   /**
    *
@@ -287,7 +293,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int TOTAL_DEPLOYED_MODEL_COUNT_FIELD_NUMBER = 4;
-  private int totalDeployedModelCount_;
+  private int totalDeployedModelCount_ = 0;
   /**
    *
    *
@@ -305,7 +311,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int TOTAL_ENDPOINT_COUNT_FIELD_NUMBER = 5;
-  private int totalEndpointCount_;
+  private int totalEndpointCount_ = 0;
   /**
    *
    *
@@ -562,6 +568,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (deployedModelsBuilder_ == null) {
         deployedModels_ = java.util.Collections.emptyList();
       } else {
@@ -570,18 +577,15 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       if (deployedModelRefsBuilder_ == null) {
         deployedModelRefs_ = java.util.Collections.emptyList();
       } else {
         deployedModelRefs_ = null;
         deployedModelRefsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalDeployedModelCount_ = 0;
-
       totalEndpointCount_ = 0;
-
       return this;
     }
 
@@ -610,7 +614,16 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse result =
           new com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse result) {
       if (deployedModelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           deployedModels_ = java.util.Collections.unmodifiableList(deployedModels_);
@@ -620,20 +633,29 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       } else {
         result.deployedModels_ = deployedModelsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
       if (deployedModelRefsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           deployedModelRefs_ = java.util.Collections.unmodifiableList(deployedModelRefs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.deployedModelRefs_ = deployedModelRefs_;
       } else {
         result.deployedModelRefs_ = deployedModelRefsBuilder_.build();
       }
-      result.totalDeployedModelCount_ = totalDeployedModelCount_;
-      result.totalEndpointCount_ = totalEndpointCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalDeployedModelCount_ = totalDeployedModelCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.totalEndpointCount_ = totalEndpointCount_;
+      }
     }
 
     @java.lang.Override
@@ -713,13 +735,14 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (deployedModelRefsBuilder_ == null) {
         if (!other.deployedModelRefs_.isEmpty()) {
           if (deployedModelRefs_.isEmpty()) {
             deployedModelRefs_ = other.deployedModelRefs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDeployedModelRefsIsMutable();
             deployedModelRefs_.addAll(other.deployedModelRefs_);
@@ -732,7 +755,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
             deployedModelRefsBuilder_.dispose();
             deployedModelRefsBuilder_ = null;
             deployedModelRefs_ = other.deployedModelRefs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             deployedModelRefsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDeployedModelRefsFieldBuilder()
@@ -791,7 +814,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -811,13 +834,13 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
             case 32:
               {
                 totalDeployedModelCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 totalEndpointCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1319,8 +1342,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1337,8 +1360,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1360,8 +1383,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1370,11 +1393,11 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
         deployedModelRefs_ = java.util.Collections.emptyList();
 
     private void ensureDeployedModelRefsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         deployedModelRefs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.DeployedModelRef>(
                 deployedModelRefs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1616,7 +1639,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     public Builder clearDeployedModelRefs() {
       if (deployedModelRefsBuilder_ == null) {
         deployedModelRefs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         deployedModelRefsBuilder_.clear();
@@ -1758,7 +1781,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
                 com.google.cloud.aiplatform.v1beta1.DeployedModelRef.Builder,
                 com.google.cloud.aiplatform.v1beta1.DeployedModelRefOrBuilder>(
                 deployedModelRefs_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         deployedModelRefs_ = null;
@@ -1797,6 +1820,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     public Builder setTotalDeployedModelCount(int value) {
 
       totalDeployedModelCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1812,7 +1836,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTotalDeployedModelCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       totalDeployedModelCount_ = 0;
       onChanged();
       return this;
@@ -1851,6 +1875,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     public Builder setTotalEndpointCount(int value) {
 
       totalEndpointCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1867,7 +1892,7 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTotalEndpointCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       totalEndpointCount_ = 0;
       onChanged();
       return this;

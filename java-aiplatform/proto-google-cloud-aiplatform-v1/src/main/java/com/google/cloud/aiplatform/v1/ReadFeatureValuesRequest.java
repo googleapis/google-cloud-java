@@ -70,7 +70,9 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object entityType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityType_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
   }
 
   public static final int ENTITY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object entityId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entityId_ = "";
   /**
    *
    *
@@ -234,7 +238,9 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.FeatureSelectorOrBuilder getFeatureSelectorOrBuilder() {
-    return getFeatureSelector();
+    return featureSelector_ == null
+        ? com.google.cloud.aiplatform.v1.FeatureSelector.getDefaultInstance()
+        : featureSelector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -459,14 +465,12 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       entityType_ = "";
-
       entityId_ = "";
-
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-      } else {
-        featureSelector_ = null;
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
       return this;
@@ -496,15 +500,25 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
     public com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest(this);
-      result.entityType_ = entityType_;
-      result.entityId_ = entityId_;
-      if (featureSelectorBuilder_ == null) {
-        result.featureSelector_ = featureSelector_;
-      } else {
-        result.featureSelector_ = featureSelectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityId_ = entityId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.featureSelector_ =
+            featureSelectorBuilder_ == null ? featureSelector_ : featureSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -555,10 +569,12 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getEntityType().isEmpty()) {
         entityType_ = other.entityType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEntityId().isEmpty()) {
         entityId_ = other.entityId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFeatureSelector()) {
@@ -593,19 +609,19 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 entityType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 entityId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +640,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object entityType_ = "";
     /**
@@ -704,8 +722,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,8 +745,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
       entityType_ = getDefaultInstance().getEntityType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -755,8 +773,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,8 +846,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       entityId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,8 +865,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEntityId() {
-
       entityId_ = getDefaultInstance().getEntityId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -871,8 +889,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       entityId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,7 +915,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * @return Whether the featureSelector field is set.
      */
     public boolean hasFeatureSelector() {
-      return featureSelectorBuilder_ != null || featureSelector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -938,11 +956,11 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         featureSelector_ = value;
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -960,11 +978,11 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
         com.google.cloud.aiplatform.v1.FeatureSelector.Builder builderForValue) {
       if (featureSelectorBuilder_ == null) {
         featureSelector_ = builderForValue.build();
-        onChanged();
       } else {
         featureSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -980,19 +998,19 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      */
     public Builder mergeFeatureSelector(com.google.cloud.aiplatform.v1.FeatureSelector value) {
       if (featureSelectorBuilder_ == null) {
-        if (featureSelector_ != null) {
-          featureSelector_ =
-              com.google.cloud.aiplatform.v1.FeatureSelector.newBuilder(featureSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && featureSelector_ != null
+            && featureSelector_
+                != com.google.cloud.aiplatform.v1.FeatureSelector.getDefaultInstance()) {
+          getFeatureSelectorBuilder().mergeFrom(value);
         } else {
           featureSelector_ = value;
         }
-        onChanged();
       } else {
         featureSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,14 +1025,13 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearFeatureSelector() {
-      if (featureSelectorBuilder_ == null) {
-        featureSelector_ = null;
-        onChanged();
-      } else {
-        featureSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      featureSelector_ = null;
+      if (featureSelectorBuilder_ != null) {
+        featureSelectorBuilder_.dispose();
         featureSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1029,7 +1046,7 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.aiplatform.v1.FeatureSelector.Builder getFeatureSelectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFeatureSelectorFieldBuilder().getBuilder();
     }

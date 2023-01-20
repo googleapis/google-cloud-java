@@ -72,7 +72,7 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
   }
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-  private float confidenceThreshold_;
+  private float confidenceThreshold_ = 0F;
   /**
    *
    *
@@ -323,8 +323,8 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       confidenceThreshold_ = 0F;
-
       return this;
     }
 
@@ -363,9 +363,20 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.params
                   .ImageSegmentationPredictionParams(this);
-      result.confidenceThreshold_ = confidenceThreshold_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.predict.params.ImageSegmentationPredictionParams
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.confidenceThreshold_ = confidenceThreshold_;
+      }
     }
 
     @java.lang.Override
@@ -455,7 +466,7 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
             case 13:
               {
                 confidenceThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             default:
@@ -474,6 +485,8 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float confidenceThreshold_;
     /**
@@ -512,6 +525,7 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     public Builder setConfidenceThreshold(float value) {
 
       confidenceThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,7 +544,7 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearConfidenceThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       confidenceThreshold_ = 0F;
       onChanged();
       return this;

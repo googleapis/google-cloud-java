@@ -69,6 +69,8 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OBJECTIVE_CONFIGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig>
       objectiveConfigs_;
   /**
@@ -198,11 +200,15 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfigOrBuilder
       getAlertConfigOrBuilder() {
-    return getAlertConfig();
+    return alertConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.getDefaultInstance()
+        : alertConfig_;
   }
 
   public static final int ANALYSIS_INSTANCE_SCHEMA_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object analysisInstanceSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object analysisInstanceSchemaUri_ = "";
   /**
    *
    *
@@ -318,7 +324,9 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
       getStatsAnomaliesBaseDirectoryOrBuilder() {
-    return getStatsAnomaliesBaseDirectory();
+    return statsAnomaliesBaseDirectory_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
+        : statsAnomaliesBaseDirectory_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -562,6 +570,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (objectiveConfigsBuilder_ == null) {
         objectiveConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -569,18 +578,15 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         objectiveConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (alertConfigBuilder_ == null) {
-        alertConfig_ = null;
-      } else {
-        alertConfig_ = null;
+      alertConfig_ = null;
+      if (alertConfigBuilder_ != null) {
+        alertConfigBuilder_.dispose();
         alertConfigBuilder_ = null;
       }
       analysisInstanceSchemaUri_ = "";
-
-      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
-        statsAnomaliesBaseDirectory_ = null;
-      } else {
-        statsAnomaliesBaseDirectory_ = null;
+      statsAnomaliesBaseDirectory_ = null;
+      if (statsAnomaliesBaseDirectoryBuilder_ != null) {
+        statsAnomaliesBaseDirectoryBuilder_.dispose();
         statsAnomaliesBaseDirectoryBuilder_ = null;
       }
       return this;
@@ -610,7 +616,16 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig result =
           new com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig result) {
       if (objectiveConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           objectiveConfigs_ = java.util.Collections.unmodifiableList(objectiveConfigs_);
@@ -620,19 +635,23 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       } else {
         result.objectiveConfigs_ = objectiveConfigsBuilder_.build();
       }
-      if (alertConfigBuilder_ == null) {
-        result.alertConfig_ = alertConfig_;
-      } else {
-        result.alertConfig_ = alertConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.alertConfig_ =
+            alertConfigBuilder_ == null ? alertConfig_ : alertConfigBuilder_.build();
       }
-      result.analysisInstanceSchemaUri_ = analysisInstanceSchemaUri_;
-      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
-        result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectory_;
-      } else {
-        result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectoryBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.analysisInstanceSchemaUri_ = analysisInstanceSchemaUri_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.statsAnomaliesBaseDirectory_ =
+            statsAnomaliesBaseDirectoryBuilder_ == null
+                ? statsAnomaliesBaseDirectory_
+                : statsAnomaliesBaseDirectoryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -713,6 +732,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       if (!other.getAnalysisInstanceSchemaUri().isEmpty()) {
         analysisInstanceSchemaUri_ = other.analysisInstanceSchemaUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasStatsAnomaliesBaseDirectory()) {
@@ -747,7 +767,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 input.readMessage(getAlertConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -767,14 +787,14 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             case 34:
               {
                 analysisInstanceSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getStatsAnomaliesBaseDirectoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1229,7 +1249,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the alertConfig field is set.
      */
     public boolean hasAlertConfig() {
-      return alertConfigBuilder_ != null || alertConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1267,11 +1287,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         alertConfig_ = value;
-        onChanged();
       } else {
         alertConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1287,11 +1307,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.Builder builderForValue) {
       if (alertConfigBuilder_ == null) {
         alertConfig_ = builderForValue.build();
-        onChanged();
       } else {
         alertConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1306,20 +1326,20 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     public Builder mergeAlertConfig(
         com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig value) {
       if (alertConfigBuilder_ == null) {
-        if (alertConfig_ != null) {
-          alertConfig_ =
-              com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.newBuilder(
-                      alertConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && alertConfig_ != null
+            && alertConfig_
+                != com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig
+                    .getDefaultInstance()) {
+          getAlertConfigBuilder().mergeFrom(value);
         } else {
           alertConfig_ = value;
         }
-        onChanged();
       } else {
         alertConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1332,14 +1352,13 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig alert_config = 2;</code>
      */
     public Builder clearAlertConfig() {
-      if (alertConfigBuilder_ == null) {
-        alertConfig_ = null;
-        onChanged();
-      } else {
-        alertConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      alertConfig_ = null;
+      if (alertConfigBuilder_ != null) {
+        alertConfigBuilder_.dispose();
         alertConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1353,7 +1372,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.Builder
         getAlertConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAlertConfigFieldBuilder().getBuilder();
     }
@@ -1478,8 +1497,8 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       analysisInstanceSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1500,8 +1519,8 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAnalysisInstanceSchemaUri() {
-
       analysisInstanceSchemaUri_ = getDefaultInstance().getAnalysisInstanceSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1527,8 +1546,8 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       analysisInstanceSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1555,7 +1574,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the statsAnomaliesBaseDirectory field is set.
      */
     public boolean hasStatsAnomaliesBaseDirectory() {
-      return statsAnomaliesBaseDirectoryBuilder_ != null || statsAnomaliesBaseDirectory_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1601,11 +1620,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         statsAnomaliesBaseDirectory_ = value;
-        onChanged();
       } else {
         statsAnomaliesBaseDirectoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1625,11 +1644,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
       if (statsAnomaliesBaseDirectoryBuilder_ == null) {
         statsAnomaliesBaseDirectory_ = builderForValue.build();
-        onChanged();
       } else {
         statsAnomaliesBaseDirectoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1648,20 +1667,19 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     public Builder mergeStatsAnomaliesBaseDirectory(
         com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
       if (statsAnomaliesBaseDirectoryBuilder_ == null) {
-        if (statsAnomaliesBaseDirectory_ != null) {
-          statsAnomaliesBaseDirectory_ =
-              com.google.cloud.aiplatform.v1beta1.GcsDestination.newBuilder(
-                      statsAnomaliesBaseDirectory_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && statsAnomaliesBaseDirectory_ != null
+            && statsAnomaliesBaseDirectory_
+                != com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()) {
+          getStatsAnomaliesBaseDirectoryBuilder().mergeFrom(value);
         } else {
           statsAnomaliesBaseDirectory_ = value;
         }
-        onChanged();
       } else {
         statsAnomaliesBaseDirectoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1678,14 +1696,13 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearStatsAnomaliesBaseDirectory() {
-      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
-        statsAnomaliesBaseDirectory_ = null;
-        onChanged();
-      } else {
-        statsAnomaliesBaseDirectory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      statsAnomaliesBaseDirectory_ = null;
+      if (statsAnomaliesBaseDirectoryBuilder_ != null) {
+        statsAnomaliesBaseDirectoryBuilder_.dispose();
         statsAnomaliesBaseDirectoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1703,7 +1720,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
         getStatsAnomaliesBaseDirectoryBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStatsAnomaliesBaseDirectoryFieldBuilder().getBuilder();
     }

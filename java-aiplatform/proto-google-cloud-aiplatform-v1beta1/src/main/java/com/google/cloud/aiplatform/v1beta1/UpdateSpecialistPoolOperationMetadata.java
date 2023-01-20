@@ -72,7 +72,9 @@ public final class UpdateSpecialistPoolOperationMetadata
   }
 
   public static final int SPECIALIST_POOL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object specialistPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object specialistPool_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class UpdateSpecialistPoolOperationMetadata
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,12 +398,11 @@ public final class UpdateSpecialistPoolOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       specialistPool_ = "";
-
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       return this;
@@ -433,14 +436,23 @@ public final class UpdateSpecialistPoolOperationMetadata
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolOperationMetadata result =
           new com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolOperationMetadata(this);
-      result.specialistPool_ = specialistPool_;
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.specialistPool_ = specialistPool_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -495,6 +507,7 @@ public final class UpdateSpecialistPoolOperationMetadata
               .getDefaultInstance()) return this;
       if (!other.getSpecialistPool().isEmpty()) {
         specialistPool_ = other.specialistPool_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGenericMetadata()) {
@@ -529,13 +542,13 @@ public final class UpdateSpecialistPoolOperationMetadata
             case 10:
               {
                 specialistPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -554,6 +567,8 @@ public final class UpdateSpecialistPoolOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object specialistPool_ = "";
     /**
@@ -628,8 +643,8 @@ public final class UpdateSpecialistPoolOperationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       specialistPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,8 +664,8 @@ public final class UpdateSpecialistPoolOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearSpecialistPool() {
-
       specialistPool_ = getDefaultInstance().getSpecialistPool();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -675,8 +690,8 @@ public final class UpdateSpecialistPoolOperationMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       specialistPool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,7 +714,7 @@ public final class UpdateSpecialistPoolOperationMetadata
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -737,11 +752,11 @@ public final class UpdateSpecialistPoolOperationMetadata
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -757,11 +772,11 @@ public final class UpdateSpecialistPoolOperationMetadata
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -776,20 +791,20 @@ public final class UpdateSpecialistPoolOperationMetadata
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.newBuilder(
-                      genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata
+                    .getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,14 +817,13 @@ public final class UpdateSpecialistPoolOperationMetadata
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 2;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -823,7 +837,7 @@ public final class UpdateSpecialistPoolOperationMetadata
      */
     public com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }

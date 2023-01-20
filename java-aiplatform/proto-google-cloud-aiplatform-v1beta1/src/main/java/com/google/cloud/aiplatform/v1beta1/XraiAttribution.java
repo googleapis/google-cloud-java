@@ -70,7 +70,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STEP_COUNT_FIELD_NUMBER = 1;
-  private int stepCount_;
+  private int stepCount_ = 0;
   /**
    *
    *
@@ -148,7 +148,9 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SmoothGradConfigOrBuilder
       getSmoothGradConfigOrBuilder() {
-    return getSmoothGradConfig();
+    return smoothGradConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SmoothGradConfig.getDefaultInstance()
+        : smoothGradConfig_;
   }
 
   public static final int BLUR_BASELINE_CONFIG_FIELD_NUMBER = 3;
@@ -209,7 +211,9 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.BlurBaselineConfigOrBuilder
       getBlurBaselineConfigOrBuilder() {
-    return getBlurBaselineConfig();
+    return blurBaselineConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig.getDefaultInstance()
+        : blurBaselineConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,18 +445,16 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stepCount_ = 0;
-
-      if (smoothGradConfigBuilder_ == null) {
-        smoothGradConfig_ = null;
-      } else {
-        smoothGradConfig_ = null;
+      smoothGradConfig_ = null;
+      if (smoothGradConfigBuilder_ != null) {
+        smoothGradConfigBuilder_.dispose();
         smoothGradConfigBuilder_ = null;
       }
-      if (blurBaselineConfigBuilder_ == null) {
-        blurBaselineConfig_ = null;
-      } else {
-        blurBaselineConfig_ = null;
+      blurBaselineConfig_ = null;
+      if (blurBaselineConfigBuilder_ != null) {
+        blurBaselineConfigBuilder_.dispose();
         blurBaselineConfigBuilder_ = null;
       }
       return this;
@@ -482,19 +484,28 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.XraiAttribution buildPartial() {
       com.google.cloud.aiplatform.v1beta1.XraiAttribution result =
           new com.google.cloud.aiplatform.v1beta1.XraiAttribution(this);
-      result.stepCount_ = stepCount_;
-      if (smoothGradConfigBuilder_ == null) {
-        result.smoothGradConfig_ = smoothGradConfig_;
-      } else {
-        result.smoothGradConfig_ = smoothGradConfigBuilder_.build();
-      }
-      if (blurBaselineConfigBuilder_ == null) {
-        result.blurBaselineConfig_ = blurBaselineConfig_;
-      } else {
-        result.blurBaselineConfig_ = blurBaselineConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.XraiAttribution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stepCount_ = stepCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.smoothGradConfig_ =
+            smoothGradConfigBuilder_ == null ? smoothGradConfig_ : smoothGradConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.blurBaselineConfig_ =
+            blurBaselineConfigBuilder_ == null
+                ? blurBaselineConfig_
+                : blurBaselineConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -581,21 +592,21 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 stepCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getSmoothGradConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getBlurBaselineConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +625,8 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int stepCount_;
     /**
@@ -652,6 +665,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     public Builder setStepCount(int value) {
 
       stepCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,7 +684,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearStepCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       stepCount_ = 0;
       onChanged();
       return this;
@@ -698,7 +712,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      * @return Whether the smoothGradConfig field is set.
      */
     public boolean hasSmoothGradConfig() {
-      return smoothGradConfigBuilder_ != null || smoothGradConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -743,11 +757,11 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         smoothGradConfig_ = value;
-        onChanged();
       } else {
         smoothGradConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -767,11 +781,11 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.aiplatform.v1beta1.SmoothGradConfig.Builder builderForValue) {
       if (smoothGradConfigBuilder_ == null) {
         smoothGradConfig_ = builderForValue.build();
-        onChanged();
       } else {
         smoothGradConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,19 +804,19 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     public Builder mergeSmoothGradConfig(
         com.google.cloud.aiplatform.v1beta1.SmoothGradConfig value) {
       if (smoothGradConfigBuilder_ == null) {
-        if (smoothGradConfig_ != null) {
-          smoothGradConfig_ =
-              com.google.cloud.aiplatform.v1beta1.SmoothGradConfig.newBuilder(smoothGradConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && smoothGradConfig_ != null
+            && smoothGradConfig_
+                != com.google.cloud.aiplatform.v1beta1.SmoothGradConfig.getDefaultInstance()) {
+          getSmoothGradConfigBuilder().mergeFrom(value);
         } else {
           smoothGradConfig_ = value;
         }
-        onChanged();
       } else {
         smoothGradConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,14 +833,13 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.aiplatform.v1beta1.SmoothGradConfig smooth_grad_config = 2;</code>
      */
     public Builder clearSmoothGradConfig() {
-      if (smoothGradConfigBuilder_ == null) {
-        smoothGradConfig_ = null;
-        onChanged();
-      } else {
-        smoothGradConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      smoothGradConfig_ = null;
+      if (smoothGradConfigBuilder_ != null) {
+        smoothGradConfigBuilder_.dispose();
         smoothGradConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -844,7 +857,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.aiplatform.v1beta1.SmoothGradConfig.Builder
         getSmoothGradConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSmoothGradConfigFieldBuilder().getBuilder();
     }
@@ -923,7 +936,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      * @return Whether the blurBaselineConfig field is set.
      */
     public boolean hasBlurBaselineConfig() {
-      return blurBaselineConfigBuilder_ != null || blurBaselineConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -969,11 +982,11 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         blurBaselineConfig_ = value;
-        onChanged();
       } else {
         blurBaselineConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -993,11 +1006,11 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig.Builder builderForValue) {
       if (blurBaselineConfigBuilder_ == null) {
         blurBaselineConfig_ = builderForValue.build();
-        onChanged();
       } else {
         blurBaselineConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1016,19 +1029,19 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
     public Builder mergeBlurBaselineConfig(
         com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig value) {
       if (blurBaselineConfigBuilder_ == null) {
-        if (blurBaselineConfig_ != null) {
-          blurBaselineConfig_ =
-              com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig.newBuilder(blurBaselineConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && blurBaselineConfig_ != null
+            && blurBaselineConfig_
+                != com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig.getDefaultInstance()) {
+          getBlurBaselineConfigBuilder().mergeFrom(value);
         } else {
           blurBaselineConfig_ = value;
         }
-        onChanged();
       } else {
         blurBaselineConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1045,14 +1058,13 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.aiplatform.v1beta1.BlurBaselineConfig blur_baseline_config = 3;</code>
      */
     public Builder clearBlurBaselineConfig() {
-      if (blurBaselineConfigBuilder_ == null) {
-        blurBaselineConfig_ = null;
-        onChanged();
-      } else {
-        blurBaselineConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      blurBaselineConfig_ = null;
+      if (blurBaselineConfigBuilder_ != null) {
+        blurBaselineConfigBuilder_.dispose();
         blurBaselineConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1070,7 +1082,7 @@ public final class XraiAttribution extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.aiplatform.v1beta1.BlurBaselineConfig.Builder
         getBlurBaselineConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBlurBaselineConfigFieldBuilder().getBuilder();
     }

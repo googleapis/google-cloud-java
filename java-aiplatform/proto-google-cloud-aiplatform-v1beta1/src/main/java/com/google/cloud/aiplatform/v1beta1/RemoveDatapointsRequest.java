@@ -70,7 +70,9 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private volatile java.lang.Object index_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object index_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   }
 
   public static final int DATAPOINT_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList datapointIds_;
   /**
    *
@@ -402,10 +406,10 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = "";
-
       datapointIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -433,15 +437,28 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest result =
           new com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.index_ = index_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        datapointIds_ = datapointIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.datapointIds_ = datapointIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        datapointIds_ = datapointIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.datapointIds_ = datapointIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
     }
 
     @java.lang.Override
@@ -492,12 +509,13 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getIndex().isEmpty()) {
         index_ = other.index_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.datapointIds_.isEmpty()) {
         if (datapointIds_.isEmpty()) {
           datapointIds_ = other.datapointIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDatapointIdsIsMutable();
           datapointIds_.addAll(other.datapointIds_);
@@ -533,7 +551,7 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 index_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -635,8 +653,8 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -656,8 +674,8 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
       index_ = getDefaultInstance().getIndex();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -682,8 +700,8 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,9 +710,9 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDatapointIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         datapointIds_ = new com.google.protobuf.LazyStringArrayList(datapointIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -829,7 +847,7 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
      */
     public Builder clearDatapointIds() {
       datapointIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

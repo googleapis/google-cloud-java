@@ -71,7 +71,9 @@ public final class CheckTrialEarlyStoppingStateRequest
   }
 
   public static final int TRIAL_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object trialName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trialName_ = "";
   /**
    *
    *
@@ -328,8 +330,8 @@ public final class CheckTrialEarlyStoppingStateRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trialName_ = "";
-
       return this;
     }
 
@@ -359,9 +361,19 @@ public final class CheckTrialEarlyStoppingStateRequest
     public com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest result =
           new com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest(this);
-      result.trialName_ = trialName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trialName_ = trialName_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class CheckTrialEarlyStoppingStateRequest
               .getDefaultInstance()) return this;
       if (!other.getTrialName().isEmpty()) {
         trialName_ = other.trialName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class CheckTrialEarlyStoppingStateRequest
             case 10:
               {
                 trialName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class CheckTrialEarlyStoppingStateRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object trialName_ = "";
     /**
@@ -539,8 +554,8 @@ public final class CheckTrialEarlyStoppingStateRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       trialName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -560,8 +575,8 @@ public final class CheckTrialEarlyStoppingStateRequest
      * @return This builder for chaining.
      */
     public Builder clearTrialName() {
-
       trialName_ = getDefaultInstance().getTrialName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -586,8 +601,8 @@ public final class CheckTrialEarlyStoppingStateRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trialName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,7 +171,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.IndexOrBuilder getIndexOrBuilder() {
-    return getIndex();
+    return index_ == null ? com.google.cloud.aiplatform.v1.Index.getDefaultInstance() : index_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +386,11 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (indexBuilder_ == null) {
-        index_ = null;
-      } else {
-        index_ = null;
+      index_ = null;
+      if (indexBuilder_ != null) {
+        indexBuilder_.dispose();
         indexBuilder_ = null;
       }
       return this;
@@ -419,14 +420,21 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.CreateIndexRequest buildPartial() {
       com.google.cloud.aiplatform.v1.CreateIndexRequest result =
           new com.google.cloud.aiplatform.v1.CreateIndexRequest(this);
-      result.parent_ = parent_;
-      if (indexBuilder_ == null) {
-        result.index_ = index_;
-      } else {
-        result.index_ = indexBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.CreateIndexRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.index_ = indexBuilder_ == null ? index_ : indexBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasIndex()) {
@@ -511,13 +520,13 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getIndexFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -607,8 +618,8 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +638,8 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +663,8 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +688,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the index field is set.
      */
     public boolean hasIndex() {
-      return indexBuilder_ != null || index_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -714,11 +725,11 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         index_ = value;
-        onChanged();
       } else {
         indexBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -734,11 +745,11 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
     public Builder setIndex(com.google.cloud.aiplatform.v1.Index.Builder builderForValue) {
       if (indexBuilder_ == null) {
         index_ = builderForValue.build();
-        onChanged();
       } else {
         indexBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -753,19 +764,18 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeIndex(com.google.cloud.aiplatform.v1.Index value) {
       if (indexBuilder_ == null) {
-        if (index_ != null) {
-          index_ =
-              com.google.cloud.aiplatform.v1.Index.newBuilder(index_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && index_ != null
+            && index_ != com.google.cloud.aiplatform.v1.Index.getDefaultInstance()) {
+          getIndexBuilder().mergeFrom(value);
         } else {
           index_ = value;
         }
-        onChanged();
       } else {
         indexBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -779,14 +789,13 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearIndex() {
-      if (indexBuilder_ == null) {
-        index_ = null;
-        onChanged();
-      } else {
-        index_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      index_ = null;
+      if (indexBuilder_ != null) {
+        indexBuilder_.dispose();
         indexBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -800,7 +809,7 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Index.Builder getIndexBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIndexFieldBuilder().getBuilder();
     }

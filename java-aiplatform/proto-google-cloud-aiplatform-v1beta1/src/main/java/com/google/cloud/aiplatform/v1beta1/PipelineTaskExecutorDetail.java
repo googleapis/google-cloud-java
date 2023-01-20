@@ -342,7 +342,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
 
     public static final int MAIN_JOB_FIELD_NUMBER = 1;
-    private volatile java.lang.Object mainJob_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mainJob_ = "";
     /**
      *
      *
@@ -399,7 +401,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
 
     public static final int PRE_CACHING_CHECK_JOB_FIELD_NUMBER = 2;
-    private volatile java.lang.Object preCachingCheckJob_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object preCachingCheckJob_ = "";
     /**
      *
      *
@@ -460,6 +464,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
 
     public static final int FAILED_MAIN_JOBS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList failedMainJobs_;
     /**
      *
@@ -537,6 +543,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
 
     public static final int FAILED_PRE_CACHING_CHECK_JOBS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList failedPreCachingCheckJobs_;
     /**
      *
@@ -881,14 +889,13 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         mainJob_ = "";
-
         preCachingCheckJob_ = "";
-
         failedMainJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         failedPreCachingCheckJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -922,21 +929,37 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.ContainerDetail result =
             new com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.ContainerDetail(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.mainJob_ = mainJob_;
-        result.preCachingCheckJob_ = preCachingCheckJob_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          failedMainJobs_ = failedMainJobs_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.failedMainJobs_ = failedMainJobs_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.ContainerDetail result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          failedMainJobs_ = failedMainJobs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.failedMainJobs_ = failedMainJobs_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.ContainerDetail result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mainJob_ = mainJob_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.preCachingCheckJob_ = preCachingCheckJob_;
+        }
       }
 
       @java.lang.Override
@@ -995,16 +1018,18 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (!other.getMainJob().isEmpty()) {
           mainJob_ = other.mainJob_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPreCachingCheckJob().isEmpty()) {
           preCachingCheckJob_ = other.preCachingCheckJob_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.failedMainJobs_.isEmpty()) {
           if (failedMainJobs_.isEmpty()) {
             failedMainJobs_ = other.failedMainJobs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFailedMainJobsIsMutable();
             failedMainJobs_.addAll(other.failedMainJobs_);
@@ -1014,7 +1039,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         if (!other.failedPreCachingCheckJobs_.isEmpty()) {
           if (failedPreCachingCheckJobs_.isEmpty()) {
             failedPreCachingCheckJobs_ = other.failedPreCachingCheckJobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFailedPreCachingCheckJobsIsMutable();
             failedPreCachingCheckJobs_.addAll(other.failedPreCachingCheckJobs_);
@@ -1050,13 +1075,13 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
               case 10:
                 {
                   mainJob_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   preCachingCheckJob_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -1165,8 +1190,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         mainJob_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1186,8 +1211,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearMainJob() {
-
         mainJob_ = getDefaultInstance().getMainJob();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1212,8 +1237,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         mainJob_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1297,8 +1322,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         preCachingCheckJob_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1320,8 +1345,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearPreCachingCheckJob() {
-
         preCachingCheckJob_ = getDefaultInstance().getPreCachingCheckJob();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1348,8 +1373,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         preCachingCheckJob_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1358,9 +1383,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureFailedMainJobsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           failedMainJobs_ = new com.google.protobuf.LazyStringArrayList(failedMainJobs_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1527,7 +1552,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
        */
       public Builder clearFailedMainJobs() {
         failedMainJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1562,10 +1587,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureFailedPreCachingCheckJobsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           failedPreCachingCheckJobs_ =
               new com.google.protobuf.LazyStringArrayList(failedPreCachingCheckJobs_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -1756,7 +1781,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
        */
       public Builder clearFailedPreCachingCheckJobs() {
         failedPreCachingCheckJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1949,7 +1974,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
 
     public static final int JOB_FIELD_NUMBER = 1;
-    private volatile java.lang.Object job_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object job_ = "";
     /**
      *
      *
@@ -2215,8 +2242,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         job_ = "";
-
         return this;
       }
 
@@ -2250,9 +2277,19 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.CustomJobDetail result =
             new com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.CustomJobDetail(
                 this);
-        result.job_ = job_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.CustomJobDetail result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.job_ = job_;
+        }
       }
 
       @java.lang.Override
@@ -2311,6 +2348,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
                 .getDefaultInstance()) return this;
         if (!other.getJob().isEmpty()) {
           job_ = other.job_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2342,7 +2380,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
               case 10:
                 {
                   job_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2361,6 +2399,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object job_ = "";
       /**
@@ -2432,8 +2472,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
         job_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2452,8 +2492,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearJob() {
-
         job_ = getDefaultInstance().getJob();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2477,8 +2517,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         job_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2971,6 +3011,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (containerDetailBuilder_ != null) {
         containerDetailBuilder_.clear();
       }
@@ -3007,23 +3048,29 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail result =
           new com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail(this);
-      if (detailsCase_ == 1) {
-        if (containerDetailBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = containerDetailBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailsCase_ == 2) {
-        if (customJobDetailBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = customJobDetailBuilder_.build();
-        }
-      }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 1 && containerDetailBuilder_ != null) {
+        result.details_ = containerDetailBuilder_.build();
+      }
+      if (detailsCase_ == 2 && customJobDetailBuilder_ != null) {
+        result.details_ = customJobDetailBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3157,6 +3204,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.ContainerDetail,
@@ -3403,7 +3452,6 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
       detailsCase_ = 1;
       onChanged();
-      ;
       return containerDetailBuilder_;
     }
 
@@ -3664,7 +3712,6 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
       detailsCase_ = 2;
       onChanged();
-      ;
       return customJobDetailBuilder_;
     }
 

@@ -365,7 +365,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SAMPLE_STRATEGY_FIELD_NUMBER = 5;
-  private int sampleStrategy_;
+  private int sampleStrategy_ = 0;
   /**
    *
    *
@@ -396,9 +396,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy getSampleStrategy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy result =
-        com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.valueOf(sampleStrategy_);
+        com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.forNumber(sampleStrategy_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.UNRECOGNIZED
         : result;
@@ -660,8 +659,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sampleStrategy_ = 0;
-
       initialBatchSampleSizeCase_ = 0;
       initialBatchSampleSize_ = null;
       followingBatchSampleSizeCase_ = 0;
@@ -693,17 +692,26 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.SampleConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.SampleConfig result =
           new com.google.cloud.aiplatform.v1beta1.SampleConfig(this);
-      if (initialBatchSampleSizeCase_ == 1) {
-        result.initialBatchSampleSize_ = initialBatchSampleSize_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (followingBatchSampleSizeCase_ == 3) {
-        result.followingBatchSampleSize_ = followingBatchSampleSize_;
-      }
-      result.sampleStrategy_ = sampleStrategy_;
-      result.initialBatchSampleSizeCase_ = initialBatchSampleSizeCase_;
-      result.followingBatchSampleSizeCase_ = followingBatchSampleSizeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.SampleConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sampleStrategy_ = sampleStrategy_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.SampleConfig result) {
+      result.initialBatchSampleSizeCase_ = initialBatchSampleSizeCase_;
+      result.initialBatchSampleSize_ = this.initialBatchSampleSize_;
+      result.followingBatchSampleSizeCase_ = followingBatchSampleSizeCase_;
+      result.followingBatchSampleSize_ = this.followingBatchSampleSize_;
     }
 
     @java.lang.Override
@@ -818,7 +826,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 sampleStrategy_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             default:
@@ -866,6 +874,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -910,6 +920,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInitialBatchSamplePercentage(int value) {
+
       initialBatchSampleSizeCase_ = 1;
       initialBatchSampleSize_ = value;
       onChanged();
@@ -982,6 +993,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFollowingBatchSamplePercentage(int value) {
+
       followingBatchSampleSizeCase_ = 3;
       followingBatchSampleSize_ = value;
       onChanged();
@@ -1041,8 +1053,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSampleStrategyValue(int value) {
-
       sampleStrategy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1061,9 +1073,9 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy getSampleStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy result =
-          com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.valueOf(sampleStrategy_);
+          com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.forNumber(
+              sampleStrategy_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.SampleConfig.SampleStrategy.UNRECOGNIZED
           : result;
@@ -1087,7 +1099,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       sampleStrategy_ = value.getNumber();
       onChanged();
       return this;
@@ -1106,7 +1118,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSampleStrategy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       sampleStrategy_ = 0;
       onChanged();
       return this;

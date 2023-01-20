@@ -80,7 +80,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -199,7 +201,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DeployedModelOrBuilder getDeployedModelOrBuilder() {
-    return getDeployedModel();
+    return deployedModel_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DeployedModel.getDefaultInstance()
+        : deployedModel_;
   }
 
   public static final int TRAFFIC_SPLIT_FIELD_NUMBER = 3;
@@ -215,6 +219,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             0);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> trafficSplit_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -592,12 +597,11 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       endpoint_ = "";
-
-      if (deployedModelBuilder_ == null) {
-        deployedModel_ = null;
-      } else {
-        deployedModel_ = null;
+      deployedModel_ = null;
+      if (deployedModelBuilder_ != null) {
+        deployedModelBuilder_.dispose();
         deployedModelBuilder_ = null;
       }
       internalGetMutableTrafficSplit().clear();
@@ -628,17 +632,26 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1beta1.DeployModelRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.DeployModelRequest result =
           new com.google.cloud.aiplatform.v1beta1.DeployModelRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.endpoint_ = endpoint_;
-      if (deployedModelBuilder_ == null) {
-        result.deployedModel_ = deployedModel_;
-      } else {
-        result.deployedModel_ = deployedModelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.trafficSplit_ = internalGetTrafficSplit();
-      result.trafficSplit_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedModel_ =
+            deployedModelBuilder_ == null ? deployedModel_ : deployedModelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trafficSplit_ = internalGetTrafficSplit();
+        result.trafficSplit_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -689,12 +702,14 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getEndpoint().isEmpty()) {
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeployedModel()) {
         mergeDeployedModel(other.getDeployedModel());
       }
       internalGetMutableTrafficSplit().mergeFrom(other.internalGetTrafficSplit());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -724,13 +739,13 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 endpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDeployedModelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -742,6 +757,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
                 internalGetMutableTrafficSplit()
                     .getMutableMap()
                     .put(trafficSplit__.getKey(), trafficSplit__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -836,8 +852,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -857,8 +873,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -883,8 +899,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,7 +929,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the deployedModel field is set.
      */
     public boolean hasDeployedModel() {
-      return deployedModelBuilder_ != null || deployedModel_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -962,11 +978,11 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         deployedModel_ = value;
-        onChanged();
       } else {
         deployedModelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -988,11 +1004,11 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.aiplatform.v1beta1.DeployedModel.Builder builderForValue) {
       if (deployedModelBuilder_ == null) {
         deployedModel_ = builderForValue.build();
-        onChanged();
       } else {
         deployedModelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1012,19 +1028,19 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDeployedModel(com.google.cloud.aiplatform.v1beta1.DeployedModel value) {
       if (deployedModelBuilder_ == null) {
-        if (deployedModel_ != null) {
-          deployedModel_ =
-              com.google.cloud.aiplatform.v1beta1.DeployedModel.newBuilder(deployedModel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deployedModel_ != null
+            && deployedModel_
+                != com.google.cloud.aiplatform.v1beta1.DeployedModel.getDefaultInstance()) {
+          getDeployedModelBuilder().mergeFrom(value);
         } else {
           deployedModel_ = value;
         }
-        onChanged();
       } else {
         deployedModelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1043,14 +1059,13 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDeployedModel() {
-      if (deployedModelBuilder_ == null) {
-        deployedModel_ = null;
-        onChanged();
-      } else {
-        deployedModel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deployedModel_ = null;
+      if (deployedModelBuilder_ != null) {
+        deployedModelBuilder_.dispose();
         deployedModelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1069,7 +1084,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedModel.Builder getDeployedModelBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeployedModelFieldBuilder().getBuilder();
     }
@@ -1142,8 +1157,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableTrafficSplit() {
-      onChanged();
-      ;
       if (trafficSplit_ == null) {
         trafficSplit_ =
             com.google.protobuf.MapField.newMapField(TrafficSplitDefaultEntryHolder.defaultEntry);
@@ -1151,6 +1164,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       if (!trafficSplit_.isMutable()) {
         trafficSplit_ = trafficSplit_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return trafficSplit_;
     }
 
@@ -1271,6 +1286,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearTrafficSplit() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableTrafficSplit().getMutableMap().clear();
       return this;
     }
@@ -1303,6 +1319,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableTrafficSplit() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableTrafficSplit().getMutableMap();
     }
     /**
@@ -1330,6 +1347,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
 
       internalGetMutableTrafficSplit().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1353,6 +1371,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllTrafficSplit(java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableTrafficSplit().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

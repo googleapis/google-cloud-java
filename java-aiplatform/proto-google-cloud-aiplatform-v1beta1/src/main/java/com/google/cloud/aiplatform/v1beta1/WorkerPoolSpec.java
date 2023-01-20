@@ -268,11 +268,13 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
-    return getMachineSpec();
+    return machineSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
+        : machineSpec_;
   }
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 2;
-  private long replicaCount_;
+  private long replicaCount_ = 0L;
   /**
    *
    *
@@ -290,6 +292,8 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NFS_MOUNTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> nfsMounts_;
   /**
    *
@@ -413,7 +417,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder() {
-    return getDiskSpec();
+    return diskSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()
+        : diskSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -691,31 +697,29 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (containerSpecBuilder_ != null) {
         containerSpecBuilder_.clear();
       }
       if (pythonPackageSpecBuilder_ != null) {
         pythonPackageSpecBuilder_.clear();
       }
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-      } else {
-        machineSpec_ = null;
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
       replicaCount_ = 0L;
-
       if (nfsMountsBuilder_ == null) {
         nfsMounts_ = java.util.Collections.emptyList();
       } else {
         nfsMounts_ = null;
         nfsMountsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (diskSpecBuilder_ == null) {
-        diskSpec_ = null;
-      } else {
-        diskSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      diskSpec_ = null;
+      if (diskSpecBuilder_ != null) {
+        diskSpecBuilder_.dispose();
         diskSpecBuilder_ = null;
       }
       taskCase_ = 0;
@@ -747,44 +751,51 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec buildPartial() {
       com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec result =
           new com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec(this);
-      int from_bitField0_ = bitField0_;
-      if (taskCase_ == 6) {
-        if (containerSpecBuilder_ == null) {
-          result.task_ = task_;
-        } else {
-          result.task_ = containerSpecBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (taskCase_ == 7) {
-        if (pythonPackageSpecBuilder_ == null) {
-          result.task_ = task_;
-        } else {
-          result.task_ = pythonPackageSpecBuilder_.build();
-        }
-      }
-      if (machineSpecBuilder_ == null) {
-        result.machineSpec_ = machineSpec_;
-      } else {
-        result.machineSpec_ = machineSpecBuilder_.build();
-      }
-      result.replicaCount_ = replicaCount_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec result) {
       if (nfsMountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           nfsMounts_ = java.util.Collections.unmodifiableList(nfsMounts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.nfsMounts_ = nfsMounts_;
       } else {
         result.nfsMounts_ = nfsMountsBuilder_.build();
       }
-      if (diskSpecBuilder_ == null) {
-        result.diskSpec_ = diskSpec_;
-      } else {
-        result.diskSpec_ = diskSpecBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.machineSpec_ =
+            machineSpecBuilder_ == null ? machineSpec_ : machineSpecBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.replicaCount_ = replicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.diskSpec_ = diskSpecBuilder_ == null ? diskSpec_ : diskSpecBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec result) {
       result.taskCase_ = taskCase_;
-      onBuilt();
-      return result;
+      result.task_ = this.task_;
+      if (taskCase_ == 6 && containerSpecBuilder_ != null) {
+        result.task_ = containerSpecBuilder_.build();
+      }
+      if (taskCase_ == 7 && pythonPackageSpecBuilder_ != null) {
+        result.task_ = pythonPackageSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -843,7 +854,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.nfsMounts_.isEmpty()) {
           if (nfsMounts_.isEmpty()) {
             nfsMounts_ = other.nfsMounts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureNfsMountsIsMutable();
             nfsMounts_.addAll(other.nfsMounts_);
@@ -856,7 +867,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             nfsMountsBuilder_.dispose();
             nfsMountsBuilder_ = null;
             nfsMounts_ = other.nfsMounts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             nfsMountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNfsMountsFieldBuilder()
@@ -914,13 +925,13 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getMachineSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 16:
               {
                 replicaCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 34:
@@ -939,7 +950,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getDiskSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1194,7 +1205,6 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       taskCase_ = 6;
       onChanged();
-      ;
       return containerSpecBuilder_;
     }
 
@@ -1409,7 +1419,6 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       taskCase_ = 7;
       onChanged();
-      ;
       return pythonPackageSpecBuilder_;
     }
 
@@ -1433,7 +1442,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the machineSpec field is set.
      */
     public boolean hasMachineSpec() {
-      return machineSpecBuilder_ != null || machineSpec_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1474,11 +1483,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         machineSpec_ = value;
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1496,11 +1505,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder builderForValue) {
       if (machineSpecBuilder_ == null) {
         machineSpec_ = builderForValue.build();
-        onChanged();
       } else {
         machineSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1516,19 +1525,19 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
       if (machineSpecBuilder_ == null) {
-        if (machineSpec_ != null) {
-          machineSpec_ =
-              com.google.cloud.aiplatform.v1beta1.MachineSpec.newBuilder(machineSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && machineSpec_ != null
+            && machineSpec_
+                != com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()) {
+          getMachineSpecBuilder().mergeFrom(value);
         } else {
           machineSpec_ = value;
         }
-        onChanged();
       } else {
         machineSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1543,14 +1552,13 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMachineSpec() {
-      if (machineSpecBuilder_ == null) {
-        machineSpec_ = null;
-        onChanged();
-      } else {
-        machineSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      machineSpec_ = null;
+      if (machineSpecBuilder_ != null) {
+        machineSpecBuilder_.dispose();
         machineSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1565,7 +1573,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder getMachineSpecBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
@@ -1648,6 +1656,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setReplicaCount(long value) {
 
       replicaCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1663,7 +1672,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       replicaCount_ = 0L;
       onChanged();
       return this;
@@ -1673,10 +1682,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNfsMountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         nfsMounts_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.NfsMount>(nfsMounts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1914,7 +1923,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNfsMounts() {
       if (nfsMountsBuilder_ == null) {
         nfsMounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         nfsMountsBuilder_.clear();
@@ -2050,7 +2059,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.NfsMount,
                 com.google.cloud.aiplatform.v1beta1.NfsMount.Builder,
                 com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>(
-                nfsMounts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                nfsMounts_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         nfsMounts_ = null;
       }
       return nfsMountsBuilder_;
@@ -2074,7 +2083,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the diskSpec field is set.
      */
     public boolean hasDiskSpec() {
-      return diskSpecBuilder_ != null || diskSpec_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2111,11 +2120,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         diskSpec_ = value;
-        onChanged();
       } else {
         diskSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2131,11 +2140,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder builderForValue) {
       if (diskSpecBuilder_ == null) {
         diskSpec_ = builderForValue.build();
-        onChanged();
       } else {
         diskSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2149,19 +2158,18 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDiskSpec(com.google.cloud.aiplatform.v1beta1.DiskSpec value) {
       if (diskSpecBuilder_ == null) {
-        if (diskSpec_ != null) {
-          diskSpec_ =
-              com.google.cloud.aiplatform.v1beta1.DiskSpec.newBuilder(diskSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && diskSpec_ != null
+            && diskSpec_ != com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()) {
+          getDiskSpecBuilder().mergeFrom(value);
         } else {
           diskSpec_ = value;
         }
-        onChanged();
       } else {
         diskSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2174,14 +2182,13 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
      */
     public Builder clearDiskSpec() {
-      if (diskSpecBuilder_ == null) {
-        diskSpec_ = null;
-        onChanged();
-      } else {
-        diskSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      diskSpec_ = null;
+      if (diskSpecBuilder_ != null) {
+        diskSpecBuilder_.dispose();
         diskSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2194,7 +2201,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder getDiskSpecBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDiskSpecFieldBuilder().getBuilder();
     }

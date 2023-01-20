@@ -147,7 +147,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -404,8 +406,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         return this;
       }
 
@@ -437,9 +439,19 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           buildPartial() {
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.FeatureDescriptor result =
             new com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.FeatureDescriptor(this);
-        result.id_ = id_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.FeatureDescriptor result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -496,6 +508,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
                 .getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -527,7 +540,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -546,6 +559,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -608,8 +623,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,8 +640,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -647,8 +662,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -882,7 +897,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     }
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object entityType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entityType_ = "";
     /**
      *
      *
@@ -937,6 +954,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     }
 
     public static final int FEATURE_DESCRIPTORS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.FeatureDescriptor>
         featureDescriptors_;
@@ -1244,15 +1263,15 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityType_ = "";
-
         if (featureDescriptorsBuilder_ == null) {
           featureDescriptors_ = java.util.Collections.emptyList();
         } else {
           featureDescriptors_ = null;
           featureDescriptorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1281,19 +1300,33 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header buildPartial() {
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header result =
             new com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header(this);
-        int from_bitField0_ = bitField0_;
-        result.entityType_ = entityType_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header result) {
         if (featureDescriptorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             featureDescriptors_ = java.util.Collections.unmodifiableList(featureDescriptors_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.featureDescriptors_ = featureDescriptors_;
         } else {
           result.featureDescriptors_ = featureDescriptorsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityType_ = entityType_;
+        }
       }
 
       @java.lang.Override
@@ -1348,13 +1381,14 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           return this;
         if (!other.getEntityType().isEmpty()) {
           entityType_ = other.entityType_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (featureDescriptorsBuilder_ == null) {
           if (!other.featureDescriptors_.isEmpty()) {
             if (featureDescriptors_.isEmpty()) {
               featureDescriptors_ = other.featureDescriptors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureFeatureDescriptorsIsMutable();
               featureDescriptors_.addAll(other.featureDescriptors_);
@@ -1367,7 +1401,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
               featureDescriptorsBuilder_.dispose();
               featureDescriptorsBuilder_ = null;
               featureDescriptors_ = other.featureDescriptors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               featureDescriptorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getFeatureDescriptorsFieldBuilder()
@@ -1406,7 +1440,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
               case 10:
                 {
                   entityType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1513,8 +1547,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         entityType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1533,8 +1567,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearEntityType() {
-
         entityType_ = getDefaultInstance().getEntityType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1558,8 +1592,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entityType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1569,12 +1603,12 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           featureDescriptors_ = java.util.Collections.emptyList();
 
       private void ensureFeatureDescriptorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           featureDescriptors_ =
               new java.util.ArrayList<
                   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.FeatureDescriptor>(
                   featureDescriptors_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -1839,7 +1873,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       public Builder clearFeatureDescriptors() {
         if (featureDescriptorsBuilder_ == null) {
           featureDescriptors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           featureDescriptorsBuilder_.clear();
@@ -1998,7 +2032,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
                   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse
                       .FeatureDescriptorOrBuilder>(
                   featureDescriptors_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           featureDescriptors_ = null;
@@ -2780,6 +2814,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (valueBuilder_ != null) {
             valueBuilder_.clear();
           }
@@ -2819,23 +2854,29 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
             buildPartial() {
           com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data result =
               new com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data(this);
-          if (dataCase_ == 1) {
-            if (valueBuilder_ == null) {
-              result.data_ = data_;
-            } else {
-              result.data_ = valueBuilder_.build();
-            }
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          if (dataCase_ == 2) {
-            if (valuesBuilder_ == null) {
-              result.data_ = data_;
-            } else {
-              result.data_ = valuesBuilder_.build();
-            }
-          }
-          result.dataCase_ = dataCase_;
+          buildPartialOneofs(result);
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data result) {
+          result.dataCase_ = dataCase_;
+          result.data_ = this.data_;
+          if (dataCase_ == 1 && valueBuilder_ != null) {
+            result.data_ = valueBuilder_.build();
+          }
+          if (dataCase_ == 2 && valuesBuilder_ != null) {
+            result.data_ = valuesBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -2974,6 +3015,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.aiplatform.v1.FeatureValue,
@@ -3181,7 +3224,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           }
           dataCase_ = 1;
           onChanged();
-          ;
           return valueBuilder_;
         }
 
@@ -3418,7 +3460,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           }
           dataCase_ = 2;
           onChanged();
-          ;
           return valuesBuilder_;
         }
 
@@ -3491,7 +3532,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object entityId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entityId_ = "";
     /**
      *
      *
@@ -3540,6 +3583,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     }
 
     public static final int DATA_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data>
         data_;
     /**
@@ -3862,15 +3907,15 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = "";
-
         if (dataBuilder_ == null) {
           data_ = java.util.Collections.emptyList();
         } else {
           data_ = null;
           dataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3900,19 +3945,33 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView buildPartial() {
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView result =
             new com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView(this);
-        int from_bitField0_ = bitField0_;
-        result.entityId_ = entityId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView result) {
         if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             data_ = java.util.Collections.unmodifiableList(data_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.data_ = data_;
         } else {
           result.data_ = dataBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -3968,13 +4027,14 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
                 .getDefaultInstance()) return this;
         if (!other.getEntityId().isEmpty()) {
           entityId_ = other.entityId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (dataBuilder_ == null) {
           if (!other.data_.isEmpty()) {
             if (data_.isEmpty()) {
               data_ = other.data_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDataIsMutable();
               data_.addAll(other.data_);
@@ -3987,7 +4047,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
               dataBuilder_.dispose();
               dataBuilder_ = null;
               data_ = other.data_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               dataBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDataFieldBuilder()
@@ -4026,7 +4086,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
               case 10:
                 {
                   entityId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -4124,8 +4184,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4141,8 +4201,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-
         entityId_ = getDefaultInstance().getEntityId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4163,8 +4223,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4174,11 +4234,11 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           data_ = java.util.Collections.emptyList();
 
       private void ensureDataIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           data_ =
               new java.util.ArrayList<
                   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data>(data_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -4487,7 +4547,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       public Builder clearData() {
         if (dataBuilder_ == null) {
           data_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           dataBuilder_.clear();
@@ -4671,7 +4731,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
                   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data.Builder,
                   com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView
                       .DataOrBuilder>(
-                  data_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  data_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           data_ = null;
         }
         return dataBuilder_;
@@ -4790,7 +4850,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.HeaderOrBuilder
       getHeaderOrBuilder() {
-    return getHeader();
+    return header_ == null
+        ? com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header.getDefaultInstance()
+        : header_;
   }
 
   public static final int ENTITY_VIEW_FIELD_NUMBER = 2;
@@ -4848,7 +4910,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityViewOrBuilder
       getEntityViewOrBuilder() {
-    return getEntityView();
+    return entityView_ == null
+        ? com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.getDefaultInstance()
+        : entityView_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5069,16 +5133,15 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (headerBuilder_ == null) {
-        header_ = null;
-      } else {
-        header_ = null;
+      bitField0_ = 0;
+      header_ = null;
+      if (headerBuilder_ != null) {
+        headerBuilder_.dispose();
         headerBuilder_ = null;
       }
-      if (entityViewBuilder_ == null) {
-        entityView_ = null;
-      } else {
-        entityView_ = null;
+      entityView_ = null;
+      if (entityViewBuilder_ != null) {
+        entityViewBuilder_.dispose();
         entityViewBuilder_ = null;
       }
       return this;
@@ -5108,18 +5171,21 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse buildPartial() {
       com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse result =
           new com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse(this);
-      if (headerBuilder_ == null) {
-        result.header_ = header_;
-      } else {
-        result.header_ = headerBuilder_.build();
-      }
-      if (entityViewBuilder_ == null) {
-        result.entityView_ = entityView_;
-      } else {
-        result.entityView_ = entityViewBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.header_ = headerBuilder_ == null ? header_ : headerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityView_ = entityViewBuilder_ == null ? entityView_ : entityViewBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5203,13 +5269,13 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getHeaderFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEntityViewFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -5229,6 +5295,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header header_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header,
@@ -5247,7 +5315,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * @return Whether the header field is set.
      */
     public boolean hasHeader() {
-      return headerBuilder_ != null || header_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -5285,11 +5353,11 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         header_ = value;
-        onChanged();
       } else {
         headerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5305,11 +5373,11 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header.Builder builderForValue) {
       if (headerBuilder_ == null) {
         header_ = builderForValue.build();
-        onChanged();
       } else {
         headerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5324,19 +5392,20 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     public Builder mergeHeader(
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header value) {
       if (headerBuilder_ == null) {
-        if (header_ != null) {
-          header_ =
-              com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header.newBuilder(header_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && header_ != null
+            && header_
+                != com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header
+                    .getDefaultInstance()) {
+          getHeaderBuilder().mergeFrom(value);
         } else {
           header_ = value;
         }
-        onChanged();
       } else {
         headerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -5349,14 +5418,13 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * <code>.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header header = 1;</code>
      */
     public Builder clearHeader() {
-      if (headerBuilder_ == null) {
-        header_ = null;
-        onChanged();
-      } else {
-        header_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      header_ = null;
+      if (headerBuilder_ != null) {
+        headerBuilder_.dispose();
         headerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5370,7 +5438,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      */
     public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.Header.Builder
         getHeaderBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
@@ -5441,7 +5509,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * @return Whether the entityView field is set.
      */
     public boolean hasEntityView() {
-      return entityViewBuilder_ != null || entityView_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -5488,11 +5556,11 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         entityView_ = value;
-        onChanged();
       } else {
         entityViewBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5513,11 +5581,11 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
             builderForValue) {
       if (entityViewBuilder_ == null) {
         entityView_ = builderForValue.build();
-        onChanged();
       } else {
         entityViewBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5536,20 +5604,20 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     public Builder mergeEntityView(
         com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView value) {
       if (entityViewBuilder_ == null) {
-        if (entityView_ != null) {
-          entityView_ =
-              com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.newBuilder(
-                      entityView_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && entityView_ != null
+            && entityView_
+                != com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView
+                    .getDefaultInstance()) {
+          getEntityViewBuilder().mergeFrom(value);
         } else {
           entityView_ = value;
         }
-        onChanged();
       } else {
         entityViewBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5566,14 +5634,13 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearEntityView() {
-      if (entityViewBuilder_ == null) {
-        entityView_ = null;
-        onChanged();
-      } else {
-        entityView_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entityView_ = null;
+      if (entityViewBuilder_ != null) {
+        entityViewBuilder_.dispose();
         entityViewBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5591,7 +5658,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
      */
     public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Builder
         getEntityViewBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEntityViewFieldBuilder().getBuilder();
     }

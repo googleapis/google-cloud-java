@@ -115,11 +115,13 @@ public final class ImportFeatureValuesOperationMetadata
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder() {
-    return getGenericMetadata();
+    return genericMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
+        : genericMetadata_;
   }
 
   public static final int IMPORTED_ENTITY_COUNT_FIELD_NUMBER = 2;
-  private long importedEntityCount_;
+  private long importedEntityCount_ = 0L;
   /**
    *
    *
@@ -137,7 +139,7 @@ public final class ImportFeatureValuesOperationMetadata
   }
 
   public static final int IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER = 3;
-  private long importedFeatureValueCount_;
+  private long importedFeatureValueCount_ = 0L;
   /**
    *
    *
@@ -155,6 +157,8 @@ public final class ImportFeatureValuesOperationMetadata
   }
 
   public static final int SOURCE_URIS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList sourceUris_;
   /**
    *
@@ -216,7 +220,7 @@ public final class ImportFeatureValuesOperationMetadata
   }
 
   public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
-  private long invalidRowCount_;
+  private long invalidRowCount_ = 0L;
   /**
    *
    *
@@ -238,7 +242,7 @@ public final class ImportFeatureValuesOperationMetadata
   }
 
   public static final int TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER = 7;
-  private long timestampOutsideRetentionRowsCount_;
+  private long timestampOutsideRetentionRowsCount_ = 0L;
   /**
    *
    *
@@ -518,22 +522,18 @@ public final class ImportFeatureValuesOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = 0;
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
       importedEntityCount_ = 0L;
-
       importedFeatureValueCount_ = 0L;
-
       sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       invalidRowCount_ = 0L;
-
       timestampOutsideRetentionRowsCount_ = 0L;
-
       return this;
     }
 
@@ -563,23 +563,42 @@ public final class ImportFeatureValuesOperationMetadata
     public com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata result =
           new com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      if (genericMetadataBuilder_ == null) {
-        result.genericMetadata_ = genericMetadata_;
-      } else {
-        result.genericMetadata_ = genericMetadataBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.importedEntityCount_ = importedEntityCount_;
-      result.importedFeatureValueCount_ = importedFeatureValueCount_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        sourceUris_ = sourceUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.sourceUris_ = sourceUris_;
-      result.invalidRowCount_ = invalidRowCount_;
-      result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        sourceUris_ = sourceUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.sourceUris_ = sourceUris_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.genericMetadata_ =
+            genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importedEntityCount_ = importedEntityCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.invalidRowCount_ = invalidRowCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
+      }
     }
 
     @java.lang.Override
@@ -643,7 +662,7 @@ public final class ImportFeatureValuesOperationMetadata
       if (!other.sourceUris_.isEmpty()) {
         if (sourceUris_.isEmpty()) {
           sourceUris_ = other.sourceUris_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSourceUrisIsMutable();
           sourceUris_.addAll(other.sourceUris_);
@@ -685,19 +704,19 @@ public final class ImportFeatureValuesOperationMetadata
             case 10:
               {
                 input.readMessage(getGenericMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 importedEntityCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 importedFeatureValueCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -710,13 +729,13 @@ public final class ImportFeatureValuesOperationMetadata
             case 48:
               {
                 invalidRowCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 timestampOutsideRetentionRowsCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -756,7 +775,7 @@ public final class ImportFeatureValuesOperationMetadata
      * @return Whether the genericMetadata field is set.
      */
     public boolean hasGenericMetadata() {
-      return genericMetadataBuilder_ != null || genericMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -794,11 +813,11 @@ public final class ImportFeatureValuesOperationMetadata
           throw new NullPointerException();
         }
         genericMetadata_ = value;
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -814,11 +833,11 @@ public final class ImportFeatureValuesOperationMetadata
         com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder builderForValue) {
       if (genericMetadataBuilder_ == null) {
         genericMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         genericMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -833,19 +852,19 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder mergeGenericMetadata(
         com.google.cloud.aiplatform.v1.GenericOperationMetadata value) {
       if (genericMetadataBuilder_ == null) {
-        if (genericMetadata_ != null) {
-          genericMetadata_ =
-              com.google.cloud.aiplatform.v1.GenericOperationMetadata.newBuilder(genericMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && genericMetadata_ != null
+            && genericMetadata_
+                != com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()) {
+          getGenericMetadataBuilder().mergeFrom(value);
         } else {
           genericMetadata_ = value;
         }
-        onChanged();
       } else {
         genericMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -858,14 +877,13 @@ public final class ImportFeatureValuesOperationMetadata
      * <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     public Builder clearGenericMetadata() {
-      if (genericMetadataBuilder_ == null) {
-        genericMetadata_ = null;
-        onChanged();
-      } else {
-        genericMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      genericMetadata_ = null;
+      if (genericMetadataBuilder_ != null) {
+        genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -879,7 +897,7 @@ public final class ImportFeatureValuesOperationMetadata
      */
     public com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder
         getGenericMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
@@ -959,6 +977,7 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder setImportedEntityCount(long value) {
 
       importedEntityCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,7 +993,7 @@ public final class ImportFeatureValuesOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearImportedEntityCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       importedEntityCount_ = 0L;
       onChanged();
       return this;
@@ -1011,6 +1030,7 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder setImportedFeatureValueCount(long value) {
 
       importedFeatureValueCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1026,7 +1046,7 @@ public final class ImportFeatureValuesOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearImportedFeatureValueCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       importedFeatureValueCount_ = 0L;
       onChanged();
       return this;
@@ -1036,9 +1056,9 @@ public final class ImportFeatureValuesOperationMetadata
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSourceUrisIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         sourceUris_ = new com.google.protobuf.LazyStringArrayList(sourceUris_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1173,7 +1193,7 @@ public final class ImportFeatureValuesOperationMetadata
      */
     public Builder clearSourceUris() {
       sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1239,6 +1259,7 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder setInvalidRowCount(long value) {
 
       invalidRowCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1258,7 +1279,7 @@ public final class ImportFeatureValuesOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearInvalidRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       invalidRowCount_ = 0L;
       onChanged();
       return this;
@@ -1297,6 +1318,7 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder setTimestampOutsideRetentionRowsCount(long value) {
 
       timestampOutsideRetentionRowsCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1313,7 +1335,7 @@ public final class ImportFeatureValuesOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearTimestampOutsideRetentionRowsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       timestampOutsideRetentionRowsCount_ = 0L;
       onChanged();
       return this;

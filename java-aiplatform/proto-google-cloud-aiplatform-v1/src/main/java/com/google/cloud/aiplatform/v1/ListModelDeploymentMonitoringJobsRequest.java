@@ -73,7 +73,9 @@ public final class ListModelDeploymentMonitoringJobsRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class ListModelDeploymentMonitoringJobsRequest
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -207,7 +211,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -225,7 +229,9 @@ public final class ListModelDeploymentMonitoringJobsRequest
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -316,7 +322,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
-    return getReadMask();
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -562,18 +568,14 @@ public final class ListModelDeploymentMonitoringJobsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       filter_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
-      if (readMaskBuilder_ == null) {
-        readMask_ = null;
-      } else {
-        readMask_ = null;
+      readMask_ = null;
+      if (readMaskBuilder_ != null) {
+        readMaskBuilder_.dispose();
         readMaskBuilder_ = null;
       }
       return this;
@@ -606,17 +608,31 @@ public final class ListModelDeploymentMonitoringJobsRequest
     public com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest result =
           new com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest(this);
-      result.parent_ = parent_;
-      result.filter_ = filter_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      if (readMaskBuilder_ == null) {
-        result.readMask_ = readMask_;
-      } else {
-        result.readMask_ = readMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.readMask_ = readMaskBuilder_ == null ? readMask_ : readMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -671,10 +687,12 @@ public final class ListModelDeploymentMonitoringJobsRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -682,6 +700,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasReadMask()) {
@@ -716,31 +735,31 @@ public final class ListModelDeploymentMonitoringJobsRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getReadMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -759,6 +778,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -830,8 +851,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +871,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +896,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -987,8 +1008,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1019,8 +1040,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1056,8 +1077,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1093,6 +1114,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1108,7 +1130,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1175,8 +1197,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1192,8 +1214,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1214,8 +1236,8 @@ public final class ListModelDeploymentMonitoringJobsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1238,7 +1260,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * @return Whether the readMask field is set.
      */
     public boolean hasReadMask() {
-      return readMaskBuilder_ != null || readMask_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1273,11 +1295,11 @@ public final class ListModelDeploymentMonitoringJobsRequest
           throw new NullPointerException();
         }
         readMask_ = value;
-        onChanged();
       } else {
         readMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1292,11 +1314,11 @@ public final class ListModelDeploymentMonitoringJobsRequest
     public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (readMaskBuilder_ == null) {
         readMask_ = builderForValue.build();
-        onChanged();
       } else {
         readMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1310,17 +1332,18 @@ public final class ListModelDeploymentMonitoringJobsRequest
      */
     public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
       if (readMaskBuilder_ == null) {
-        if (readMask_ != null) {
-          readMask_ =
-              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && readMask_ != null
+            && readMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getReadMaskBuilder().mergeFrom(value);
         } else {
           readMask_ = value;
         }
-        onChanged();
       } else {
         readMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1333,14 +1356,13 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * <code>.google.protobuf.FieldMask read_mask = 5;</code>
      */
     public Builder clearReadMask() {
-      if (readMaskBuilder_ == null) {
-        readMask_ = null;
-        onChanged();
-      } else {
-        readMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      readMask_ = null;
+      if (readMaskBuilder_ != null) {
+        readMaskBuilder_.dispose();
         readMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1353,7 +1375,7 @@ public final class ListModelDeploymentMonitoringJobsRequest
      * <code>.google.protobuf.FieldMask read_mask = 5;</code>
      */
     public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }

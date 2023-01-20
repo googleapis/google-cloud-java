@@ -229,7 +229,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
   }
 
   public static final int COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
-  private long costMilliNodeHours_;
+  private long costMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -249,7 +249,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
   }
 
   public static final int SUCCESSFUL_STOP_REASON_FIELD_NUMBER = 2;
-  private int successfulStopReason_;
+  private int successfulStopReason_ = 0;
   /**
    *
    *
@@ -286,12 +286,11 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
   public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationMetadata.SuccessfulStopReason
       getSuccessfulStopReason() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationMetadata
             .SuccessfulStopReason
         result =
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                .AutoMlImageClassificationMetadata.SuccessfulStopReason.valueOf(
+                .AutoMlImageClassificationMetadata.SuccessfulStopReason.forNumber(
                 successfulStopReason_);
     return result == null
         ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -540,10 +539,9 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       costMilliNodeHours_ = 0L;
-
       successfulStopReason_ = 0;
-
       return this;
     }
 
@@ -582,10 +580,24 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
           result =
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlImageClassificationMetadata(this);
-      result.costMilliNodeHours_ = costMilliNodeHours_;
-      result.successfulStopReason_ = successfulStopReason_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                .AutoMlImageClassificationMetadata
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.costMilliNodeHours_ = costMilliNodeHours_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.successfulStopReason_ = successfulStopReason_;
+      }
     }
 
     @java.lang.Override
@@ -679,13 +691,13 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
             case 8:
               {
                 costMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 successfulStopReason_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -704,6 +716,8 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long costMilliNodeHours_;
     /**
@@ -740,6 +754,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     public Builder setCostMilliNodeHours(long value) {
 
       costMilliNodeHours_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,7 +772,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearCostMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       costMilliNodeHours_ = 0L;
       onChanged();
       return this;
@@ -798,8 +813,8 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setSuccessfulStopReasonValue(int value) {
-
       successfulStopReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -821,12 +836,11 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     public com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageClassificationMetadata.SuccessfulStopReason
         getSuccessfulStopReason() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationMetadata
               .SuccessfulStopReason
           result =
               com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                  .AutoMlImageClassificationMetadata.SuccessfulStopReason.valueOf(
+                  .AutoMlImageClassificationMetadata.SuccessfulStopReason.forNumber(
                   successfulStopReason_);
       return result == null
           ? com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -855,7 +869,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       successfulStopReason_ = value.getNumber();
       onChanged();
       return this;
@@ -875,7 +889,7 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearSuccessfulStopReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       successfulStopReason_ = 0;
       onChanged();
       return this;

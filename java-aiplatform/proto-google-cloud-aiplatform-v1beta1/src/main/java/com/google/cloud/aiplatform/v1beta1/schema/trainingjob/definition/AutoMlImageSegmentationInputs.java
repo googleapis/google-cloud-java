@@ -260,7 +260,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
   }
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
-  private int modelType_;
+  private int modelType_ = 0;
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs.ModelType model_type = 1;
@@ -283,12 +283,11 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
   public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentationInputs.ModelType
       getModelType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs
             .ModelType
         result =
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
-                .AutoMlImageSegmentationInputs.ModelType.valueOf(modelType_);
+                .AutoMlImageSegmentationInputs.ModelType.forNumber(modelType_);
     return result == null
         ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlImageSegmentationInputs.ModelType.UNRECOGNIZED
@@ -296,7 +295,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
   }
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 2;
-  private long budgetMilliNodeHours_;
+  private long budgetMilliNodeHours_ = 0L;
   /**
    *
    *
@@ -326,7 +325,9 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
   }
 
   public static final int BASE_MODEL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object baseModelId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseModelId_ = "";
   /**
    *
    *
@@ -631,12 +632,10 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       modelType_ = 0;
-
       budgetMilliNodeHours_ = 0L;
-
       baseModelId_ = "";
-
       return this;
     }
 
@@ -677,11 +676,27 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlImageSegmentationInputs(this);
-      result.modelType_ = modelType_;
-      result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
-      result.baseModelId_ = baseModelId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+                .AutoMlImageSegmentationInputs
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.baseModelId_ = baseModelId_;
+      }
     }
 
     @java.lang.Override
@@ -748,6 +763,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       }
       if (!other.getBaseModelId().isEmpty()) {
         baseModelId_ = other.baseModelId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -779,19 +795,19 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
             case 8:
               {
                 modelType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 budgetMilliNodeHours_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 baseModelId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -810,6 +826,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int modelType_ = 0;
     /**
@@ -832,8 +850,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setModelTypeValue(int value) {
-
       modelType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,12 +866,11 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlImageSegmentationInputs.ModelType
         getModelType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlImageSegmentationInputs.ModelType
           result =
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
-                  .AutoMlImageSegmentationInputs.ModelType.valueOf(modelType_);
+                  .AutoMlImageSegmentationInputs.ModelType.forNumber(modelType_);
       return result == null
           ? com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlImageSegmentationInputs.ModelType.UNRECOGNIZED
@@ -874,7 +891,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
       return this;
@@ -887,7 +904,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearModelType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       modelType_ = 0;
       onChanged();
       return this;
@@ -948,6 +965,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
     public Builder setBudgetMilliNodeHours(long value) {
 
       budgetMilliNodeHours_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -975,7 +993,7 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearBudgetMilliNodeHours() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       budgetMilliNodeHours_ = 0L;
       onChanged();
       return this;
@@ -1054,8 +1072,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1075,8 +1093,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearBaseModelId() {
-
       baseModelId_ = getDefaultInstance().getBaseModelId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1101,8 +1119,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseModelId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

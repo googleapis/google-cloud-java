@@ -68,7 +68,7 @@ public final class PredictRequestResponseLoggingConfig
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class PredictRequestResponseLoggingConfig
   }
 
   public static final int SAMPLING_RATE_FIELD_NUMBER = 2;
-  private double samplingRate_;
+  private double samplingRate_ = 0D;
   /**
    *
    *
@@ -165,7 +165,9 @@ public final class PredictRequestResponseLoggingConfig
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder() {
-    return getBigqueryDestination();
+    return bigqueryDestination_ == null
+        ? com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()
+        : bigqueryDestination_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -396,14 +398,12 @@ public final class PredictRequestResponseLoggingConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       samplingRate_ = 0D;
-
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-      } else {
-        bigqueryDestination_ = null;
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
       return this;
@@ -436,15 +436,28 @@ public final class PredictRequestResponseLoggingConfig
     public com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig result =
           new com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig(this);
-      result.enabled_ = enabled_;
-      result.samplingRate_ = samplingRate_;
-      if (bigqueryDestinationBuilder_ == null) {
-        result.bigqueryDestination_ = bigqueryDestination_;
-      } else {
-        result.bigqueryDestination_ = bigqueryDestinationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.samplingRate_ = samplingRate_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bigqueryDestination_ =
+            bigqueryDestinationBuilder_ == null
+                ? bigqueryDestination_
+                : bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,20 +548,20 @@ public final class PredictRequestResponseLoggingConfig
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 17:
               {
                 samplingRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 26:
               {
                 input.readMessage(
                     getBigqueryDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -567,6 +580,8 @@ public final class PredictRequestResponseLoggingConfig
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -599,6 +614,7 @@ public final class PredictRequestResponseLoggingConfig
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -614,7 +630,7 @@ public final class PredictRequestResponseLoggingConfig
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -653,6 +669,7 @@ public final class PredictRequestResponseLoggingConfig
     public Builder setSamplingRate(double value) {
 
       samplingRate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -669,7 +686,7 @@ public final class PredictRequestResponseLoggingConfig
      * @return This builder for chaining.
      */
     public Builder clearSamplingRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       samplingRate_ = 0D;
       onChanged();
       return this;
@@ -698,7 +715,7 @@ public final class PredictRequestResponseLoggingConfig
      * @return Whether the bigqueryDestination field is set.
      */
     public boolean hasBigqueryDestination() {
-      return bigqueryDestinationBuilder_ != null || bigqueryDestination_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -746,11 +763,11 @@ public final class PredictRequestResponseLoggingConfig
           throw new NullPointerException();
         }
         bigqueryDestination_ = value;
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -771,11 +788,11 @@ public final class PredictRequestResponseLoggingConfig
         com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder builderForValue) {
       if (bigqueryDestinationBuilder_ == null) {
         bigqueryDestination_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -795,20 +812,19 @@ public final class PredictRequestResponseLoggingConfig
     public Builder mergeBigqueryDestination(
         com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
       if (bigqueryDestinationBuilder_ == null) {
-        if (bigqueryDestination_ != null) {
-          bigqueryDestination_ =
-              com.google.cloud.aiplatform.v1beta1.BigQueryDestination.newBuilder(
-                      bigqueryDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && bigqueryDestination_ != null
+            && bigqueryDestination_
+                != com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()) {
+          getBigqueryDestinationBuilder().mergeFrom(value);
         } else {
           bigqueryDestination_ = value;
         }
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -826,14 +842,13 @@ public final class PredictRequestResponseLoggingConfig
      * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 3;</code>
      */
     public Builder clearBigqueryDestination() {
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-        onChanged();
-      } else {
-        bigqueryDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -852,7 +867,7 @@ public final class PredictRequestResponseLoggingConfig
      */
     public com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder
         getBigqueryDestinationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }

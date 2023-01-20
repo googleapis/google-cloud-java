@@ -119,7 +119,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExplanationParametersOrBuilder
       getParametersOrBuilder() {
-    return getParameters();
+    return parameters_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ExplanationParameters.getDefaultInstance()
+        : parameters_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -168,7 +170,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverrideOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int EXAMPLES_OVERRIDE_FIELD_NUMBER = 3;
@@ -217,7 +221,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder
       getExamplesOverrideOrBuilder() {
-    return getExamplesOverride();
+    return examplesOverride_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.getDefaultInstance()
+        : examplesOverride_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,22 +459,20 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-      } else {
-        parameters_ = null;
+      bitField0_ = 0;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      if (examplesOverrideBuilder_ == null) {
-        examplesOverride_ = null;
-      } else {
-        examplesOverride_ = null;
+      examplesOverride_ = null;
+      if (examplesOverrideBuilder_ != null) {
+        examplesOverrideBuilder_.dispose();
         examplesOverrideBuilder_ = null;
       }
       return this;
@@ -498,23 +502,25 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride result =
           new com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride(this);
-      if (parametersBuilder_ == null) {
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
-      if (examplesOverrideBuilder_ == null) {
-        result.examplesOverride_ = examplesOverride_;
-      } else {
-        result.examplesOverride_ = examplesOverrideBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.examplesOverride_ =
+            examplesOverrideBuilder_ == null ? examplesOverride_ : examplesOverrideBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -601,20 +607,20 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getExamplesOverrideFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -633,6 +639,8 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1beta1.ExplanationParameters parameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -654,7 +662,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * @return Whether the parameters field is set.
      */
     public boolean hasParameters() {
-      return parametersBuilder_ != null || parameters_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -695,11 +703,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         parameters_ = value;
-        onChanged();
       } else {
         parametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -717,11 +725,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.ExplanationParameters.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         parameters_ = builderForValue.build();
-        onChanged();
       } else {
         parametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -738,19 +746,19 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     public Builder mergeParameters(
         com.google.cloud.aiplatform.v1beta1.ExplanationParameters value) {
       if (parametersBuilder_ == null) {
-        if (parameters_ != null) {
-          parameters_ =
-              com.google.cloud.aiplatform.v1beta1.ExplanationParameters.newBuilder(parameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && parameters_ != null
+            && parameters_
+                != com.google.cloud.aiplatform.v1beta1.ExplanationParameters.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
         } else {
           parameters_ = value;
         }
-        onChanged();
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -765,14 +773,13 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationParameters parameters = 1;</code>
      */
     public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = null;
-        onChanged();
-      } else {
-        parameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -788,7 +795,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationParameters.Builder
         getParametersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
@@ -859,7 +866,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -897,11 +904,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -917,11 +924,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -936,19 +943,20 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     public Builder mergeMetadata(
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
+                    .getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -961,14 +969,13 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride metadata = 2;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -982,7 +989,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1049,7 +1056,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * @return Whether the examplesOverride field is set.
      */
     public boolean hasExamplesOverride() {
-      return examplesOverrideBuilder_ != null || examplesOverride_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1086,11 +1093,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         examplesOverride_ = value;
-        onChanged();
       } else {
         examplesOverrideBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1106,11 +1113,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder builderForValue) {
       if (examplesOverrideBuilder_ == null) {
         examplesOverride_ = builderForValue.build();
-        onChanged();
       } else {
         examplesOverrideBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1125,19 +1132,19 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     public Builder mergeExamplesOverride(
         com.google.cloud.aiplatform.v1beta1.ExamplesOverride value) {
       if (examplesOverrideBuilder_ == null) {
-        if (examplesOverride_ != null) {
-          examplesOverride_ =
-              com.google.cloud.aiplatform.v1beta1.ExamplesOverride.newBuilder(examplesOverride_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && examplesOverride_ != null
+            && examplesOverride_
+                != com.google.cloud.aiplatform.v1beta1.ExamplesOverride.getDefaultInstance()) {
+          getExamplesOverrideBuilder().mergeFrom(value);
         } else {
           examplesOverride_ = value;
         }
-        onChanged();
       } else {
         examplesOverrideBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1150,14 +1157,13 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
      */
     public Builder clearExamplesOverride() {
-      if (examplesOverrideBuilder_ == null) {
-        examplesOverride_ = null;
-        onChanged();
-      } else {
-        examplesOverride_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      examplesOverride_ = null;
+      if (examplesOverrideBuilder_ != null) {
+        examplesOverrideBuilder_.dispose();
         examplesOverrideBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1171,7 +1177,7 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder
         getExamplesOverrideBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getExamplesOverrideFieldBuilder().getBuilder();
     }

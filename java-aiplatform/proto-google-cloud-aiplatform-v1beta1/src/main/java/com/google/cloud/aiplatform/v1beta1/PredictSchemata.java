@@ -73,7 +73,9 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INSTANCE_SCHEMA_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceSchemaUri_ = "";
   /**
    *
    *
@@ -144,7 +146,9 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PARAMETERS_SCHEMA_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parametersSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parametersSchemaUri_ = "";
   /**
    *
    *
@@ -217,7 +221,9 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PREDICTION_SCHEMA_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object predictionSchemaUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object predictionSchemaUri_ = "";
   /**
    *
    *
@@ -507,12 +513,10 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceSchemaUri_ = "";
-
       parametersSchemaUri_ = "";
-
       predictionSchemaUri_ = "";
-
       return this;
     }
 
@@ -540,11 +544,24 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.PredictSchemata buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PredictSchemata result =
           new com.google.cloud.aiplatform.v1beta1.PredictSchemata(this);
-      result.instanceSchemaUri_ = instanceSchemaUri_;
-      result.parametersSchemaUri_ = parametersSchemaUri_;
-      result.predictionSchemaUri_ = predictionSchemaUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.PredictSchemata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceSchemaUri_ = instanceSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parametersSchemaUri_ = parametersSchemaUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.predictionSchemaUri_ = predictionSchemaUri_;
+      }
     }
 
     @java.lang.Override
@@ -595,14 +612,17 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getInstanceSchemaUri().isEmpty()) {
         instanceSchemaUri_ = other.instanceSchemaUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParametersSchemaUri().isEmpty()) {
         parametersSchemaUri_ = other.parametersSchemaUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPredictionSchemaUri().isEmpty()) {
         predictionSchemaUri_ = other.predictionSchemaUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -634,19 +654,19 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 instanceSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parametersSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 predictionSchemaUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -665,6 +685,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceSchemaUri_ = "";
     /**
@@ -760,8 +782,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceSchemaUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,8 +810,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstanceSchemaUri() {
-
       instanceSchemaUri_ = getDefaultInstance().getInstanceSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -821,8 +843,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceSchemaUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,8 +946,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       parametersSchemaUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -953,8 +975,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearParametersSchemaUri() {
-
       parametersSchemaUri_ = getDefaultInstance().getParametersSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -987,8 +1009,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parametersSchemaUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1090,8 +1112,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       predictionSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,8 +1141,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPredictionSchemaUri() {
-
       predictionSchemaUri_ = getDefaultInstance().getPredictionSchemaUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1153,8 +1175,8 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       predictionSchemaUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

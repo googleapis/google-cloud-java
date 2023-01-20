@@ -311,11 +311,11 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getWallTimeOrBuilder() {
-    return getWallTime();
+    return wallTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : wallTime_;
   }
 
   public static final int STEP_FIELD_NUMBER = 2;
-  private long step_;
+  private long step_ = 0L;
   /**
    *
    *
@@ -598,6 +598,7 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (scalarBuilder_ != null) {
         scalarBuilder_.clear();
       }
@@ -607,14 +608,12 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       if (blobsBuilder_ != null) {
         blobsBuilder_.clear();
       }
-      if (wallTimeBuilder_ == null) {
-        wallTime_ = null;
-      } else {
-        wallTime_ = null;
+      wallTime_ = null;
+      if (wallTimeBuilder_ != null) {
+        wallTimeBuilder_.dispose();
         wallTimeBuilder_ = null;
       }
       step_ = 0L;
-
       valueCase_ = 0;
       value_ = null;
       return this;
@@ -644,36 +643,37 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint buildPartial() {
       com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint result =
           new com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint(this);
-      if (valueCase_ == 3) {
-        if (scalarBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = scalarBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 4) {
-        if (tensorBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = tensorBuilder_.build();
-        }
-      }
-      if (valueCase_ == 5) {
-        if (blobsBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = blobsBuilder_.build();
-        }
-      }
-      if (wallTimeBuilder_ == null) {
-        result.wallTime_ = wallTime_;
-      } else {
-        result.wallTime_ = wallTimeBuilder_.build();
-      }
-      result.step_ = step_;
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.wallTime_ = wallTimeBuilder_ == null ? wallTime_ : wallTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.step_ = step_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 3 && scalarBuilder_ != null) {
+        result.value_ = scalarBuilder_.build();
+      }
+      if (valueCase_ == 4 && tensorBuilder_ != null) {
+        result.value_ = tensorBuilder_.build();
+      }
+      if (valueCase_ == 5 && blobsBuilder_ != null) {
+        result.value_ = blobsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -778,13 +778,13 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getWallTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 16:
               {
                 step_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 26:
@@ -835,6 +835,8 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.Scalar,
@@ -1041,7 +1043,6 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       }
       valueCase_ = 3;
       onChanged();
-      ;
       return scalarBuilder_;
     }
 
@@ -1252,7 +1253,6 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       }
       valueCase_ = 4;
       onChanged();
-      ;
       return tensorBuilder_;
     }
 
@@ -1465,7 +1465,6 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       }
       valueCase_ = 5;
       onChanged();
-      ;
       return blobsBuilder_;
     }
 
@@ -1487,7 +1486,7 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
      * @return Whether the wallTime field is set.
      */
     public boolean hasWallTime() {
-      return wallTimeBuilder_ != null || wallTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1522,11 +1521,11 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         wallTime_ = value;
-        onChanged();
       } else {
         wallTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1541,11 +1540,11 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
     public Builder setWallTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (wallTimeBuilder_ == null) {
         wallTime_ = builderForValue.build();
-        onChanged();
       } else {
         wallTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1559,17 +1558,18 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeWallTime(com.google.protobuf.Timestamp value) {
       if (wallTimeBuilder_ == null) {
-        if (wallTime_ != null) {
-          wallTime_ =
-              com.google.protobuf.Timestamp.newBuilder(wallTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && wallTime_ != null
+            && wallTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getWallTimeBuilder().mergeFrom(value);
         } else {
           wallTime_ = value;
         }
-        onChanged();
       } else {
         wallTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1582,14 +1582,13 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp wall_time = 1;</code>
      */
     public Builder clearWallTime() {
-      if (wallTimeBuilder_ == null) {
-        wallTime_ = null;
-        onChanged();
-      } else {
-        wallTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      wallTime_ = null;
+      if (wallTimeBuilder_ != null) {
+        wallTimeBuilder_.dispose();
         wallTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1602,7 +1601,7 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp wall_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getWallTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getWallTimeFieldBuilder().getBuilder();
     }
@@ -1679,6 +1678,7 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
     public Builder setStep(long value) {
 
       step_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1694,7 +1694,7 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearStep() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       step_ = 0L;
       onChanged();
       return this;
