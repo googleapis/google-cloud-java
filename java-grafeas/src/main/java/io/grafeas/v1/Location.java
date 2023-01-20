@@ -68,7 +68,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cpeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpeUri_ = "";
   /**
    *
    *
@@ -164,11 +166,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
 
   public static final int PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -432,16 +436,14 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpeUri_ = "";
-
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       path_ = "";
-
       return this;
     }
 
@@ -467,15 +469,24 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Location buildPartial() {
       io.grafeas.v1.Location result = new io.grafeas.v1.Location(this);
-      result.cpeUri_ = cpeUri_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.path_ = path_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Location result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpeUri_ = cpeUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -525,6 +536,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Location.getDefaultInstance()) return this;
       if (!other.getCpeUri().isEmpty()) {
         cpeUri_ = other.cpeUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasVersion()) {
@@ -532,6 +544,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -563,19 +576,19 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 cpeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -594,6 +607,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cpeUri_ = "";
     /**
@@ -659,8 +674,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +692,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-
       cpeUri_ = getDefaultInstance().getCpeUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -700,8 +715,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,7 +738,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -760,11 +775,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -780,11 +795,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,16 +814,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVersion(io.grafeas.v1.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && version_ != null
+            && version_ != io.grafeas.v1.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,14 +839,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -843,7 +859,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     public io.grafeas.v1.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -949,8 +965,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -966,8 +982,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -988,8 +1004,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

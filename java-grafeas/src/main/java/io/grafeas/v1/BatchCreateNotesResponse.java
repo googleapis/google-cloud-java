@@ -69,6 +69,8 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
   }
 
   public static final int NOTES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Note> notes_;
   /**
    *
@@ -334,6 +336,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (notesBuilder_ == null) {
         notes_ = java.util.Collections.emptyList();
       } else {
@@ -368,7 +371,15 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
     public io.grafeas.v1.BatchCreateNotesResponse buildPartial() {
       io.grafeas.v1.BatchCreateNotesResponse result =
           new io.grafeas.v1.BatchCreateNotesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.BatchCreateNotesResponse result) {
       if (notesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           notes_ = java.util.Collections.unmodifiableList(notes_);
@@ -378,8 +389,10 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
       } else {
         result.notes_ = notesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.BatchCreateNotesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -138,7 +138,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
      *
@@ -374,8 +376,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
         return this;
       }
 
@@ -403,9 +405,18 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder(this);
-        result.id_ = id_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -458,6 +469,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -489,7 +501,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -508,6 +520,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -552,8 +566,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,8 +577,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -579,8 +593,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -677,7 +691,6 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     java.util.Map<java.lang.String, java.lang.String> getDigestMap();
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
-
     /* nullable */
     java.lang.String getDigestOrDefault(
         java.lang.String key,
@@ -748,7 +761,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      * <code>string uri = 1;</code>
      *
@@ -797,6 +812,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
@@ -830,8 +846,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-    public java.lang.String getDigestOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDigestOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1088,8 +1106,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         internalGetMutableDigest().clear();
         return this;
       }
@@ -1118,12 +1136,22 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial(this);
-        int from_bitField0_ = bitField0_;
-        result.uri_ = uri_;
-        result.digest_ = internalGetDigest();
-        result.digest_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.digest_ = internalGetDigest();
+          result.digest_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1176,9 +1204,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableDigest().mergeFrom(other.internalGetDigest());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1208,7 +1238,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1220,6 +1250,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
                   internalGetMutableDigest()
                       .getMutableMap()
                       .put(digest__.getKey(), digest__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1284,8 +1315,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1295,8 +1326,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1311,8 +1342,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1328,14 +1359,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableDigest() {
-        onChanged();
-        ;
         if (digest_ == null) {
           digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
         }
         if (!digest_.isMutable()) {
           digest_ = digest_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return digest_;
       }
 
@@ -1363,8 +1394,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-      public java.lang.String getDigestOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getDigestOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1385,6 +1418,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       }
 
       public Builder clearDigest() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableDigest().getMutableMap().clear();
         return this;
       }
@@ -1399,6 +1433,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableDigest().getMutableMap();
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
@@ -1409,13 +1444,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableDigest().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableDigest().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1606,7 +1642,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSourceOrBuilder
         getConfigSourceOrBuilder() {
-      return getConfigSource();
+      return configSource_ == null
+          ? io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource.getDefaultInstance()
+          : configSource_;
     }
 
     public static final int PARAMETERS_FIELD_NUMBER = 2;
@@ -1632,7 +1670,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>.google.protobuf.Struct parameters = 2;</code> */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
-      return getParameters();
+      return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
     }
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 3;
@@ -1658,7 +1696,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>.google.protobuf.Struct environment = 3;</code> */
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getEnvironmentOrBuilder() {
-      return getEnvironment();
+      return environment_ == null ? com.google.protobuf.Struct.getDefaultInstance() : environment_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1893,22 +1931,20 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (configSourceBuilder_ == null) {
-          configSource_ = null;
-        } else {
-          configSource_ = null;
+        bitField0_ = 0;
+        configSource_ = null;
+        if (configSourceBuilder_ != null) {
+          configSourceBuilder_.dispose();
           configSourceBuilder_ = null;
         }
-        if (parametersBuilder_ == null) {
-          parameters_ = null;
-        } else {
-          parameters_ = null;
+        parameters_ = null;
+        if (parametersBuilder_ != null) {
+          parametersBuilder_.dispose();
           parametersBuilder_ = null;
         }
-        if (environmentBuilder_ == null) {
-          environment_ = null;
-        } else {
-          environment_ = null;
+        environment_ = null;
+        if (environmentBuilder_ != null) {
+          environmentBuilder_.dispose();
           environmentBuilder_ = null;
         }
         return this;
@@ -1938,23 +1974,27 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation(this);
-        if (configSourceBuilder_ == null) {
-          result.configSource_ = configSource_;
-        } else {
-          result.configSource_ = configSourceBuilder_.build();
-        }
-        if (parametersBuilder_ == null) {
-          result.parameters_ = parameters_;
-        } else {
-          result.parameters_ = parametersBuilder_.build();
-        }
-        if (environmentBuilder_ == null) {
-          result.environment_ = environment_;
-        } else {
-          result.environment_ = environmentBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.configSource_ =
+              configSourceBuilder_ == null ? configSource_ : configSourceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.parameters_ =
+              parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.environment_ =
+              environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2043,19 +2083,19 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   input.readMessage(getConfigSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -2075,6 +2115,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         return this;
       }
 
+      private int bitField0_;
+
       private io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource configSource_;
       private com.google.protobuf.SingleFieldBuilderV3<
               io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource,
@@ -2087,7 +2129,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the configSource field is set.
        */
       public boolean hasConfigSource() {
-        return configSourceBuilder_ != null || configSource_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource config_source = 1;</code>
@@ -2110,11 +2152,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           configSource_ = value;
-          onChanged();
         } else {
           configSourceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource config_source = 1;</code> */
@@ -2122,46 +2164,45 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource.Builder builderForValue) {
         if (configSourceBuilder_ == null) {
           configSource_ = builderForValue.build();
-          onChanged();
         } else {
           configSourceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource config_source = 1;</code> */
       public Builder mergeConfigSource(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource value) {
         if (configSourceBuilder_ == null) {
-          if (configSource_ != null) {
-            configSource_ =
-                io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource.newBuilder(configSource_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && configSource_ != null
+              && configSource_
+                  != io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource.getDefaultInstance()) {
+            getConfigSourceBuilder().mergeFrom(value);
           } else {
             configSource_ = value;
           }
-          onChanged();
         } else {
           configSourceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource config_source = 1;</code> */
       public Builder clearConfigSource() {
-        if (configSourceBuilder_ == null) {
-          configSource_ = null;
-          onChanged();
-        } else {
-          configSource_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        configSource_ = null;
+        if (configSourceBuilder_ != null) {
+          configSourceBuilder_.dispose();
           configSourceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource config_source = 1;</code> */
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource.Builder getConfigSourceBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getConfigSourceFieldBuilder().getBuilder();
       }
@@ -2206,7 +2247,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the parameters field is set.
        */
       public boolean hasParameters() {
-        return parametersBuilder_ != null || parameters_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -2229,55 +2270,55 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           parameters_ = value;
-          onChanged();
         } else {
           parametersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct parameters = 2;</code> */
       public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
         if (parametersBuilder_ == null) {
           parameters_ = builderForValue.build();
-          onChanged();
         } else {
           parametersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct parameters = 2;</code> */
       public Builder mergeParameters(com.google.protobuf.Struct value) {
         if (parametersBuilder_ == null) {
-          if (parameters_ != null) {
-            parameters_ =
-                com.google.protobuf.Struct.newBuilder(parameters_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && parameters_ != null
+              && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getParametersBuilder().mergeFrom(value);
           } else {
             parameters_ = value;
           }
-          onChanged();
         } else {
           parametersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct parameters = 2;</code> */
       public Builder clearParameters() {
-        if (parametersBuilder_ == null) {
-          parameters_ = null;
-          onChanged();
-        } else {
-          parameters_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        parameters_ = null;
+        if (parametersBuilder_ != null) {
+          parametersBuilder_.dispose();
           parametersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct parameters = 2;</code> */
       public com.google.protobuf.Struct.Builder getParametersBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getParametersFieldBuilder().getBuilder();
       }
@@ -2321,7 +2362,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the environment field is set.
        */
       public boolean hasEnvironment() {
-        return environmentBuilder_ != null || environment_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.google.protobuf.Struct environment = 3;</code>
@@ -2344,55 +2385,55 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           environment_ = value;
-          onChanged();
         } else {
           environmentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct environment = 3;</code> */
       public Builder setEnvironment(com.google.protobuf.Struct.Builder builderForValue) {
         if (environmentBuilder_ == null) {
           environment_ = builderForValue.build();
-          onChanged();
         } else {
           environmentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct environment = 3;</code> */
       public Builder mergeEnvironment(com.google.protobuf.Struct value) {
         if (environmentBuilder_ == null) {
-          if (environment_ != null) {
-            environment_ =
-                com.google.protobuf.Struct.newBuilder(environment_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && environment_ != null
+              && environment_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getEnvironmentBuilder().mergeFrom(value);
           } else {
             environment_ = value;
           }
-          onChanged();
         } else {
           environmentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct environment = 3;</code> */
       public Builder clearEnvironment() {
-        if (environmentBuilder_ == null) {
-          environment_ = null;
-          onChanged();
-        } else {
-          environment_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        environment_ = null;
+        if (environmentBuilder_ != null) {
+          environmentBuilder_.dispose();
           environmentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Struct environment = 3;</code> */
       public com.google.protobuf.Struct.Builder getEnvironmentBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getEnvironmentFieldBuilder().getBuilder();
       }
@@ -2516,7 +2557,6 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     java.util.Map<java.lang.String, java.lang.String> getDigestMap();
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
-
     /* nullable */
     java.lang.String getDigestOrDefault(
         java.lang.String key,
@@ -2601,7 +2641,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      * <code>string uri = 1;</code>
      *
@@ -2650,6 +2692,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
@@ -2683,8 +2726,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
     /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-    public java.lang.String getDigestOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDigestOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2705,7 +2750,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ENTRY_POINT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object entryPoint_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entryPoint_ = "";
     /**
      * <code>string entry_point = 3;</code>
      *
@@ -2988,11 +3035,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         internalGetMutableDigest().clear();
         entryPoint_ = "";
-
         return this;
       }
 
@@ -3020,13 +3066,25 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource(this);
-        int from_bitField0_ = bitField0_;
-        result.uri_ = uri_;
-        result.digest_ = internalGetDigest();
-        result.digest_.makeImmutable();
-        result.entryPoint_ = entryPoint_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaConfigSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.digest_ = internalGetDigest();
+          result.digest_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entryPoint_ = entryPoint_;
+        }
       }
 
       @java.lang.Override
@@ -3079,11 +3137,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableDigest().mergeFrom(other.internalGetDigest());
+        bitField0_ |= 0x00000002;
         if (!other.getEntryPoint().isEmpty()) {
           entryPoint_ = other.entryPoint_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3115,7 +3176,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3127,12 +3188,13 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
                   internalGetMutableDigest()
                       .getMutableMap()
                       .put(digest__.getKey(), digest__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   entryPoint_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -3197,8 +3259,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3208,8 +3270,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3224,8 +3286,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3241,14 +3303,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableDigest() {
-        onChanged();
-        ;
         if (digest_ == null) {
           digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
         }
         if (!digest_.isMutable()) {
           digest_ = digest_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return digest_;
       }
 
@@ -3276,8 +3338,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-      public java.lang.String getDigestOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getDigestOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -3298,6 +3362,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       }
 
       public Builder clearDigest() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableDigest().getMutableMap().clear();
         return this;
       }
@@ -3312,6 +3377,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableDigest().getMutableMap();
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
@@ -3322,13 +3388,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableDigest().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /** <code>map&lt;string, string&gt; digest = 2;</code> */
       public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableDigest().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -3375,8 +3442,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         entryPoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3386,8 +3453,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearEntryPoint() {
-
         entryPoint_ = getDefaultInstance().getEntryPoint();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3402,8 +3469,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entryPoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3592,7 +3659,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int BUILD_INVOCATION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object buildInvocationId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object buildInvocationId_ = "";
     /**
      * <code>string build_invocation_id = 1;</code>
      *
@@ -3653,7 +3722,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>.google.protobuf.Timestamp build_started_on = 2;</code> */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getBuildStartedOnOrBuilder() {
-      return getBuildStartedOn();
+      return buildStartedOn_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : buildStartedOn_;
     }
 
     public static final int BUILD_FINISHED_ON_FIELD_NUMBER = 3;
@@ -3681,7 +3752,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     /** <code>.google.protobuf.Timestamp build_finished_on = 3;</code> */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getBuildFinishedOnOrBuilder() {
-      return getBuildFinishedOn();
+      return buildFinishedOn_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : buildFinishedOn_;
     }
 
     public static final int COMPLETENESS_FIELD_NUMBER = 4;
@@ -3710,11 +3783,13 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompletenessOrBuilder
         getCompletenessOrBuilder() {
-      return getCompleteness();
+      return completeness_ == null
+          ? io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness.getDefaultInstance()
+          : completeness_;
     }
 
     public static final int REPRODUCIBLE_FIELD_NUMBER = 5;
-    private boolean reproducible_;
+    private boolean reproducible_ = false;
     /**
      * <code>bool reproducible = 5;</code>
      *
@@ -3975,28 +4050,24 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         buildInvocationId_ = "";
-
-        if (buildStartedOnBuilder_ == null) {
-          buildStartedOn_ = null;
-        } else {
-          buildStartedOn_ = null;
+        buildStartedOn_ = null;
+        if (buildStartedOnBuilder_ != null) {
+          buildStartedOnBuilder_.dispose();
           buildStartedOnBuilder_ = null;
         }
-        if (buildFinishedOnBuilder_ == null) {
-          buildFinishedOn_ = null;
-        } else {
-          buildFinishedOn_ = null;
+        buildFinishedOn_ = null;
+        if (buildFinishedOnBuilder_ != null) {
+          buildFinishedOnBuilder_.dispose();
           buildFinishedOnBuilder_ = null;
         }
-        if (completenessBuilder_ == null) {
-          completeness_ = null;
-        } else {
-          completeness_ = null;
+        completeness_ = null;
+        if (completenessBuilder_ != null) {
+          completenessBuilder_.dispose();
           completenessBuilder_ = null;
         }
         reproducible_ = false;
-
         return this;
       }
 
@@ -4024,25 +4095,33 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata(this);
-        result.buildInvocationId_ = buildInvocationId_;
-        if (buildStartedOnBuilder_ == null) {
-          result.buildStartedOn_ = buildStartedOn_;
-        } else {
-          result.buildStartedOn_ = buildStartedOnBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (buildFinishedOnBuilder_ == null) {
-          result.buildFinishedOn_ = buildFinishedOn_;
-        } else {
-          result.buildFinishedOn_ = buildFinishedOnBuilder_.build();
-        }
-        if (completenessBuilder_ == null) {
-          result.completeness_ = completeness_;
-        } else {
-          result.completeness_ = completenessBuilder_.build();
-        }
-        result.reproducible_ = reproducible_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.buildInvocationId_ = buildInvocationId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.buildStartedOn_ =
+              buildStartedOnBuilder_ == null ? buildStartedOn_ : buildStartedOnBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.buildFinishedOn_ =
+              buildFinishedOnBuilder_ == null ? buildFinishedOn_ : buildFinishedOnBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.completeness_ =
+              completenessBuilder_ == null ? completeness_ : completenessBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.reproducible_ = reproducible_;
+        }
       }
 
       @java.lang.Override
@@ -4095,6 +4174,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           return this;
         if (!other.getBuildInvocationId().isEmpty()) {
           buildInvocationId_ = other.buildInvocationId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasBuildStartedOn()) {
@@ -4138,33 +4218,33 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   buildInvocationId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getBuildStartedOnFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getBuildFinishedOnFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getCompletenessFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   reproducible_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -4183,6 +4263,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object buildInvocationId_ = "";
       /**
@@ -4227,8 +4309,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         buildInvocationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4238,8 +4320,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearBuildInvocationId() {
-
         buildInvocationId_ = getDefaultInstance().getBuildInvocationId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4254,8 +4336,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         buildInvocationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4272,7 +4354,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the buildStartedOn field is set.
        */
       public boolean hasBuildStartedOn() {
-        return buildStartedOnBuilder_ != null || buildStartedOn_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
@@ -4295,57 +4377,55 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           buildStartedOn_ = value;
-          onChanged();
         } else {
           buildStartedOnBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_started_on = 2;</code> */
       public Builder setBuildStartedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (buildStartedOnBuilder_ == null) {
           buildStartedOn_ = builderForValue.build();
-          onChanged();
         } else {
           buildStartedOnBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_started_on = 2;</code> */
       public Builder mergeBuildStartedOn(com.google.protobuf.Timestamp value) {
         if (buildStartedOnBuilder_ == null) {
-          if (buildStartedOn_ != null) {
-            buildStartedOn_ =
-                com.google.protobuf.Timestamp.newBuilder(buildStartedOn_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && buildStartedOn_ != null
+              && buildStartedOn_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBuildStartedOnBuilder().mergeFrom(value);
           } else {
             buildStartedOn_ = value;
           }
-          onChanged();
         } else {
           buildStartedOnBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_started_on = 2;</code> */
       public Builder clearBuildStartedOn() {
-        if (buildStartedOnBuilder_ == null) {
-          buildStartedOn_ = null;
-          onChanged();
-        } else {
-          buildStartedOn_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        buildStartedOn_ = null;
+        if (buildStartedOnBuilder_ != null) {
+          buildStartedOnBuilder_.dispose();
           buildStartedOnBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_started_on = 2;</code> */
       public com.google.protobuf.Timestamp.Builder getBuildStartedOnBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getBuildStartedOnFieldBuilder().getBuilder();
       }
@@ -4389,7 +4469,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the buildFinishedOn field is set.
        */
       public boolean hasBuildFinishedOn() {
-        return buildFinishedOnBuilder_ != null || buildFinishedOn_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
@@ -4412,57 +4492,55 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           buildFinishedOn_ = value;
-          onChanged();
         } else {
           buildFinishedOnBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_finished_on = 3;</code> */
       public Builder setBuildFinishedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (buildFinishedOnBuilder_ == null) {
           buildFinishedOn_ = builderForValue.build();
-          onChanged();
         } else {
           buildFinishedOnBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_finished_on = 3;</code> */
       public Builder mergeBuildFinishedOn(com.google.protobuf.Timestamp value) {
         if (buildFinishedOnBuilder_ == null) {
-          if (buildFinishedOn_ != null) {
-            buildFinishedOn_ =
-                com.google.protobuf.Timestamp.newBuilder(buildFinishedOn_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && buildFinishedOn_ != null
+              && buildFinishedOn_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBuildFinishedOnBuilder().mergeFrom(value);
           } else {
             buildFinishedOn_ = value;
           }
-          onChanged();
         } else {
           buildFinishedOnBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_finished_on = 3;</code> */
       public Builder clearBuildFinishedOn() {
-        if (buildFinishedOnBuilder_ == null) {
-          buildFinishedOn_ = null;
-          onChanged();
-        } else {
-          buildFinishedOn_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        buildFinishedOn_ = null;
+        if (buildFinishedOnBuilder_ != null) {
+          buildFinishedOnBuilder_.dispose();
           buildFinishedOnBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.google.protobuf.Timestamp build_finished_on = 3;</code> */
       public com.google.protobuf.Timestamp.Builder getBuildFinishedOnBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getBuildFinishedOnFieldBuilder().getBuilder();
       }
@@ -4506,7 +4584,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return Whether the completeness field is set.
        */
       public boolean hasCompleteness() {
-        return completenessBuilder_ != null || completeness_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness completeness = 4;</code>
@@ -4529,11 +4607,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           completeness_ = value;
-          onChanged();
         } else {
           completenessBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness completeness = 4;</code> */
@@ -4541,46 +4619,45 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness.Builder builderForValue) {
         if (completenessBuilder_ == null) {
           completeness_ = builderForValue.build();
-          onChanged();
         } else {
           completenessBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness completeness = 4;</code> */
       public Builder mergeCompleteness(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness value) {
         if (completenessBuilder_ == null) {
-          if (completeness_ != null) {
-            completeness_ =
-                io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness.newBuilder(completeness_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && completeness_ != null
+              && completeness_
+                  != io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness.getDefaultInstance()) {
+            getCompletenessBuilder().mergeFrom(value);
           } else {
             completeness_ = value;
           }
-          onChanged();
         } else {
           completenessBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness completeness = 4;</code> */
       public Builder clearCompleteness() {
-        if (completenessBuilder_ == null) {
-          completeness_ = null;
-          onChanged();
-        } else {
-          completeness_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        completeness_ = null;
+        if (completenessBuilder_ != null) {
+          completenessBuilder_.dispose();
           completenessBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness completeness = 4;</code> */
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness.Builder getCompletenessBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCompletenessFieldBuilder().getBuilder();
       }
@@ -4632,6 +4709,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public Builder setReproducible(boolean value) {
 
         reproducible_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4641,7 +4719,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearReproducible() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         reproducible_ = false;
         onChanged();
         return this;
@@ -4786,7 +4864,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int PARAMETERS_FIELD_NUMBER = 1;
-    private boolean parameters_;
+    private boolean parameters_ = false;
     /**
      * <code>bool parameters = 1;</code>
      *
@@ -4798,7 +4876,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 2;
-    private boolean environment_;
+    private boolean environment_ = false;
     /**
      * <code>bool environment = 2;</code>
      *
@@ -4810,7 +4888,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     }
 
     public static final int MATERIALS_FIELD_NUMBER = 3;
-    private boolean materials_;
+    private boolean materials_ = false;
     /**
      * <code>bool materials = 3;</code>
      *
@@ -5040,12 +5118,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parameters_ = false;
-
         environment_ = false;
-
         materials_ = false;
-
         return this;
       }
 
@@ -5073,11 +5149,24 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness buildPartial() {
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness result =
             new io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness(this);
-        result.parameters_ = parameters_;
-        result.environment_ = environment_;
-        result.materials_ = materials_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaCompleteness result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parameters_ = parameters_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.environment_ = environment_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.materials_ = materials_;
+        }
       }
 
       @java.lang.Override
@@ -5166,19 +5255,19 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
               case 8:
                 {
                   parameters_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   environment_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   materials_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -5197,6 +5286,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean parameters_;
       /**
@@ -5217,6 +5308,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public Builder setParameters(boolean value) {
 
         parameters_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5226,7 +5318,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearParameters() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         parameters_ = false;
         onChanged();
         return this;
@@ -5251,6 +5343,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public Builder setEnvironment(boolean value) {
 
         environment_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5260,7 +5353,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearEnvironment() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         environment_ = false;
         onChanged();
         return this;
@@ -5285,6 +5378,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       public Builder setMaterials(boolean value) {
 
         materials_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5294,7 +5388,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearMaterials() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         materials_ = false;
         onChanged();
         return this;
@@ -5389,11 +5483,15 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilderOrBuilder getBuilderOrBuilder() {
-    return getBuilder();
+    return builder_ == null
+        ? io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder.getDefaultInstance()
+        : builder_;
   }
 
   public static final int BUILD_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object buildType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildType_ = "";
   /**
    * <code>string build_type = 2;</code>
    *
@@ -5454,7 +5552,9 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocationOrBuilder getInvocationOrBuilder() {
-    return getInvocation();
+    return invocation_ == null
+        ? io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation.getDefaultInstance()
+        : invocation_;
   }
 
   public static final int BUILD_CONFIG_FIELD_NUMBER = 4;
@@ -5480,7 +5580,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
   /** <code>.google.protobuf.Struct build_config = 4;</code> */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getBuildConfigOrBuilder() {
-    return getBuildConfig();
+    return buildConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : buildConfig_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 5;
@@ -5508,10 +5608,14 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int MATERIALS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial> materials_;
   /** <code>repeated .grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial materials = 6;</code> */
   @java.lang.Override
@@ -5803,30 +5907,26 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (builderBuilder_ == null) {
-        builder_ = null;
-      } else {
-        builder_ = null;
+      bitField0_ = 0;
+      builder_ = null;
+      if (builderBuilder_ != null) {
+        builderBuilder_.dispose();
         builderBuilder_ = null;
       }
       buildType_ = "";
-
-      if (invocationBuilder_ == null) {
-        invocation_ = null;
-      } else {
-        invocation_ = null;
+      invocation_ = null;
+      if (invocationBuilder_ != null) {
+        invocationBuilder_.dispose();
         invocationBuilder_ = null;
       }
-      if (buildConfigBuilder_ == null) {
-        buildConfig_ = null;
-      } else {
-        buildConfig_ = null;
+      buildConfig_ = null;
+      if (buildConfigBuilder_ != null) {
+        buildConfigBuilder_.dispose();
         buildConfigBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       if (materialsBuilder_ == null) {
@@ -5835,7 +5935,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         materials_ = null;
         materialsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -5862,39 +5962,44 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceZeroTwo buildPartial() {
       io.grafeas.v1.SlsaProvenanceZeroTwo result = new io.grafeas.v1.SlsaProvenanceZeroTwo(this);
-      int from_bitField0_ = bitField0_;
-      if (builderBuilder_ == null) {
-        result.builder_ = builder_;
-      } else {
-        result.builder_ = builderBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.buildType_ = buildType_;
-      if (invocationBuilder_ == null) {
-        result.invocation_ = invocation_;
-      } else {
-        result.invocation_ = invocationBuilder_.build();
-      }
-      if (buildConfigBuilder_ == null) {
-        result.buildConfig_ = buildConfig_;
-      } else {
-        result.buildConfig_ = buildConfigBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.SlsaProvenanceZeroTwo result) {
       if (materialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           materials_ = java.util.Collections.unmodifiableList(materials_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.materials_ = materials_;
       } else {
         result.materials_ = materialsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.SlsaProvenanceZeroTwo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.builder_ = builderBuilder_ == null ? builder_ : builderBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.buildType_ = buildType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invocation_ = invocationBuilder_ == null ? invocation_ : invocationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.buildConfig_ =
+            buildConfigBuilder_ == null ? buildConfig_ : buildConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5947,6 +6052,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       }
       if (!other.getBuildType().isEmpty()) {
         buildType_ = other.buildType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInvocation()) {
@@ -5962,7 +6068,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         if (!other.materials_.isEmpty()) {
           if (materials_.isEmpty()) {
             materials_ = other.materials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureMaterialsIsMutable();
             materials_.addAll(other.materials_);
@@ -5975,7 +6081,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             materialsBuilder_.dispose();
             materialsBuilder_ = null;
             materials_ = other.materials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             materialsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMaterialsFieldBuilder()
@@ -6014,31 +6120,31 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getBuilderFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 buildType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getInvocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getBuildConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -6086,7 +6192,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
      * @return Whether the builder field is set.
      */
     public boolean hasBuilder() {
-      return builderBuilder_ != null || builder_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code>
@@ -6109,11 +6215,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         builder_ = value;
-        onChanged();
       } else {
         builderBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code> */
@@ -6121,46 +6227,44 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder.Builder builderForValue) {
       if (builderBuilder_ == null) {
         builder_ = builderForValue.build();
-        onChanged();
       } else {
         builderBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code> */
     public Builder mergeBuilder(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder value) {
       if (builderBuilder_ == null) {
-        if (builder_ != null) {
-          builder_ =
-              io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder.newBuilder(builder_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && builder_ != null
+            && builder_ != io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder.getDefaultInstance()) {
+          getBuilderBuilder().mergeFrom(value);
         } else {
           builder_ = value;
         }
-        onChanged();
       } else {
         builderBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code> */
     public Builder clearBuilder() {
-      if (builderBuilder_ == null) {
-        builder_ = null;
-        onChanged();
-      } else {
-        builder_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      builder_ = null;
+      if (builderBuilder_ != null) {
+        builderBuilder_.dispose();
         builderBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder builder = 1;</code> */
     public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaBuilder.Builder getBuilderBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBuilderFieldBuilder().getBuilder();
     }
@@ -6235,8 +6339,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       buildType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6246,8 +6350,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearBuildType() {
-
       buildType_ = getDefaultInstance().getBuildType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -6262,8 +6366,8 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       buildType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6280,7 +6384,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
      * @return Whether the invocation field is set.
      */
     public boolean hasInvocation() {
-      return invocationBuilder_ != null || invocation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code>
@@ -6303,11 +6407,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         invocation_ = value;
-        onChanged();
       } else {
         invocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code> */
@@ -6315,46 +6419,45 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation.Builder builderForValue) {
       if (invocationBuilder_ == null) {
         invocation_ = builderForValue.build();
-        onChanged();
       } else {
         invocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code> */
     public Builder mergeInvocation(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation value) {
       if (invocationBuilder_ == null) {
-        if (invocation_ != null) {
-          invocation_ =
-              io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation.newBuilder(invocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && invocation_ != null
+            && invocation_
+                != io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation.getDefaultInstance()) {
+          getInvocationBuilder().mergeFrom(value);
         } else {
           invocation_ = value;
         }
-        onChanged();
       } else {
         invocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code> */
     public Builder clearInvocation() {
-      if (invocationBuilder_ == null) {
-        invocation_ = null;
-        onChanged();
-      } else {
-        invocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      invocation_ = null;
+      if (invocationBuilder_ != null) {
+        invocationBuilder_.dispose();
         invocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation invocation = 3;</code> */
     public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaInvocation.Builder getInvocationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getInvocationFieldBuilder().getBuilder();
     }
@@ -6398,7 +6501,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
      * @return Whether the buildConfig field is set.
      */
     public boolean hasBuildConfig() {
-      return buildConfigBuilder_ != null || buildConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>.google.protobuf.Struct build_config = 4;</code>
@@ -6421,55 +6524,55 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         buildConfig_ = value;
-        onChanged();
       } else {
         buildConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>.google.protobuf.Struct build_config = 4;</code> */
     public Builder setBuildConfig(com.google.protobuf.Struct.Builder builderForValue) {
       if (buildConfigBuilder_ == null) {
         buildConfig_ = builderForValue.build();
-        onChanged();
       } else {
         buildConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>.google.protobuf.Struct build_config = 4;</code> */
     public Builder mergeBuildConfig(com.google.protobuf.Struct value) {
       if (buildConfigBuilder_ == null) {
-        if (buildConfig_ != null) {
-          buildConfig_ =
-              com.google.protobuf.Struct.newBuilder(buildConfig_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && buildConfig_ != null
+            && buildConfig_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getBuildConfigBuilder().mergeFrom(value);
         } else {
           buildConfig_ = value;
         }
-        onChanged();
       } else {
         buildConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /** <code>.google.protobuf.Struct build_config = 4;</code> */
     public Builder clearBuildConfig() {
-      if (buildConfigBuilder_ == null) {
-        buildConfig_ = null;
-        onChanged();
-      } else {
-        buildConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      buildConfig_ = null;
+      if (buildConfigBuilder_ != null) {
+        buildConfigBuilder_.dispose();
         buildConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.google.protobuf.Struct build_config = 4;</code> */
     public com.google.protobuf.Struct.Builder getBuildConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getBuildConfigFieldBuilder().getBuilder();
     }
@@ -6513,7 +6616,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code>
@@ -6536,11 +6639,11 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code> */
@@ -6548,46 +6651,44 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code> */
     public Builder mergeMetadata(io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && metadata_ != null
+            && metadata_ != io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code> */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata metadata = 5;</code> */
     public io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -6623,10 +6724,10 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureMaterialsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         materials_ =
             new java.util.ArrayList<io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial>(materials_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -6754,7 +6855,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
     public Builder clearMaterials() {
       if (materialsBuilder_ == null) {
         materials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         materialsBuilder_.clear();
@@ -6821,7 +6922,7 @@ public final class SlsaProvenanceZeroTwo extends com.google.protobuf.GeneratedMe
                 io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial,
                 io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterial.Builder,
                 io.grafeas.v1.SlsaProvenanceZeroTwo.SlsaMaterialOrBuilder>(
-                materials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                materials_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         materials_ = null;
       }
       return materialsBuilder_;

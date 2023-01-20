@@ -67,7 +67,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_INVOCATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object buildInvocationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildInvocationId_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getBuildStartedOnOrBuilder() {
-    return getBuildStartedOn();
+    return buildStartedOn_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : buildStartedOn_;
   }
 
   public static final int BUILD_FINISHED_ON_FIELD_NUMBER = 3;
@@ -212,7 +216,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getBuildFinishedOnOrBuilder() {
-    return getBuildFinishedOn();
+    return buildFinishedOn_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : buildFinishedOn_;
   }
 
   public static final int COMPLETENESS_FIELD_NUMBER = 4;
@@ -261,11 +267,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.CompletenessOrBuilder getCompletenessOrBuilder() {
-    return getCompleteness();
+    return completeness_ == null ? io.grafeas.v1.Completeness.getDefaultInstance() : completeness_;
   }
 
   public static final int REPRODUCIBLE_FIELD_NUMBER = 5;
-  private boolean reproducible_;
+  private boolean reproducible_ = false;
   /**
    *
    *
@@ -527,28 +533,24 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       buildInvocationId_ = "";
-
-      if (buildStartedOnBuilder_ == null) {
-        buildStartedOn_ = null;
-      } else {
-        buildStartedOn_ = null;
+      buildStartedOn_ = null;
+      if (buildStartedOnBuilder_ != null) {
+        buildStartedOnBuilder_.dispose();
         buildStartedOnBuilder_ = null;
       }
-      if (buildFinishedOnBuilder_ == null) {
-        buildFinishedOn_ = null;
-      } else {
-        buildFinishedOn_ = null;
+      buildFinishedOn_ = null;
+      if (buildFinishedOnBuilder_ != null) {
+        buildFinishedOnBuilder_.dispose();
         buildFinishedOnBuilder_ = null;
       }
-      if (completenessBuilder_ == null) {
-        completeness_ = null;
-      } else {
-        completeness_ = null;
+      completeness_ = null;
+      if (completenessBuilder_ != null) {
+        completenessBuilder_.dispose();
         completenessBuilder_ = null;
       }
       reproducible_ = false;
-
       return this;
     }
 
@@ -574,25 +576,33 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Metadata buildPartial() {
       io.grafeas.v1.Metadata result = new io.grafeas.v1.Metadata(this);
-      result.buildInvocationId_ = buildInvocationId_;
-      if (buildStartedOnBuilder_ == null) {
-        result.buildStartedOn_ = buildStartedOn_;
-      } else {
-        result.buildStartedOn_ = buildStartedOnBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (buildFinishedOnBuilder_ == null) {
-        result.buildFinishedOn_ = buildFinishedOn_;
-      } else {
-        result.buildFinishedOn_ = buildFinishedOnBuilder_.build();
-      }
-      if (completenessBuilder_ == null) {
-        result.completeness_ = completeness_;
-      } else {
-        result.completeness_ = completenessBuilder_.build();
-      }
-      result.reproducible_ = reproducible_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Metadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.buildInvocationId_ = buildInvocationId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.buildStartedOn_ =
+            buildStartedOnBuilder_ == null ? buildStartedOn_ : buildStartedOnBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.buildFinishedOn_ =
+            buildFinishedOnBuilder_ == null ? buildFinishedOn_ : buildFinishedOnBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.completeness_ =
+            completenessBuilder_ == null ? completeness_ : completenessBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reproducible_ = reproducible_;
+      }
     }
 
     @java.lang.Override
@@ -642,6 +652,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Metadata.getDefaultInstance()) return this;
       if (!other.getBuildInvocationId().isEmpty()) {
         buildInvocationId_ = other.buildInvocationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBuildStartedOn()) {
@@ -685,31 +696,31 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 buildInvocationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBuildStartedOnFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBuildFinishedOnFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCompletenessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 reproducible_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -728,6 +739,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object buildInvocationId_ = "";
     /**
@@ -796,8 +809,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       buildInvocationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +828,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuildInvocationId() {
-
       buildInvocationId_ = getDefaultInstance().getBuildInvocationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -839,8 +852,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       buildInvocationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,7 +876,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildStartedOn field is set.
      */
     public boolean hasBuildStartedOn() {
-      return buildStartedOnBuilder_ != null || buildStartedOn_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -900,11 +913,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         buildStartedOn_ = value;
-        onChanged();
       } else {
         buildStartedOnBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,11 +932,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public Builder setBuildStartedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (buildStartedOnBuilder_ == null) {
         buildStartedOn_ = builderForValue.build();
-        onChanged();
       } else {
         buildStartedOnBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -937,19 +950,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildStartedOn(com.google.protobuf.Timestamp value) {
       if (buildStartedOnBuilder_ == null) {
-        if (buildStartedOn_ != null) {
-          buildStartedOn_ =
-              com.google.protobuf.Timestamp.newBuilder(buildStartedOn_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && buildStartedOn_ != null
+            && buildStartedOn_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBuildStartedOnBuilder().mergeFrom(value);
         } else {
           buildStartedOn_ = value;
         }
-        onChanged();
       } else {
         buildStartedOnBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -962,14 +974,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
      */
     public Builder clearBuildStartedOn() {
-      if (buildStartedOnBuilder_ == null) {
-        buildStartedOn_ = null;
-        onChanged();
-      } else {
-        buildStartedOn_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      buildStartedOn_ = null;
+      if (buildStartedOnBuilder_ != null) {
+        buildStartedOnBuilder_.dispose();
         buildStartedOnBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -982,7 +993,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getBuildStartedOnBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBuildStartedOnFieldBuilder().getBuilder();
     }
@@ -1048,7 +1059,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildFinishedOn field is set.
      */
     public boolean hasBuildFinishedOn() {
-      return buildFinishedOnBuilder_ != null || buildFinishedOn_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1085,11 +1096,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         buildFinishedOn_ = value;
-        onChanged();
       } else {
         buildFinishedOnBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1104,11 +1115,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public Builder setBuildFinishedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (buildFinishedOnBuilder_ == null) {
         buildFinishedOn_ = builderForValue.build();
-        onChanged();
       } else {
         buildFinishedOnBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1122,19 +1133,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildFinishedOn(com.google.protobuf.Timestamp value) {
       if (buildFinishedOnBuilder_ == null) {
-        if (buildFinishedOn_ != null) {
-          buildFinishedOn_ =
-              com.google.protobuf.Timestamp.newBuilder(buildFinishedOn_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && buildFinishedOn_ != null
+            && buildFinishedOn_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBuildFinishedOnBuilder().mergeFrom(value);
         } else {
           buildFinishedOn_ = value;
         }
-        onChanged();
       } else {
         buildFinishedOnBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1147,14 +1157,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
      */
     public Builder clearBuildFinishedOn() {
-      if (buildFinishedOnBuilder_ == null) {
-        buildFinishedOn_ = null;
-        onChanged();
-      } else {
-        buildFinishedOn_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      buildFinishedOn_ = null;
+      if (buildFinishedOnBuilder_ != null) {
+        buildFinishedOnBuilder_.dispose();
         buildFinishedOnBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1167,7 +1176,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getBuildFinishedOnBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBuildFinishedOnFieldBuilder().getBuilder();
     }
@@ -1234,7 +1243,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the completeness field is set.
      */
     public boolean hasCompleteness() {
-      return completenessBuilder_ != null || completeness_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1273,11 +1282,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         completeness_ = value;
-        onChanged();
       } else {
         completenessBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1293,11 +1302,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public Builder setCompleteness(io.grafeas.v1.Completeness.Builder builderForValue) {
       if (completenessBuilder_ == null) {
         completeness_ = builderForValue.build();
-        onChanged();
       } else {
         completenessBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1312,17 +1321,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompleteness(io.grafeas.v1.Completeness value) {
       if (completenessBuilder_ == null) {
-        if (completeness_ != null) {
-          completeness_ =
-              io.grafeas.v1.Completeness.newBuilder(completeness_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && completeness_ != null
+            && completeness_ != io.grafeas.v1.Completeness.getDefaultInstance()) {
+          getCompletenessBuilder().mergeFrom(value);
         } else {
           completeness_ = value;
         }
-        onChanged();
       } else {
         completenessBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1336,14 +1346,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Completeness completeness = 4;</code>
      */
     public Builder clearCompleteness() {
-      if (completenessBuilder_ == null) {
-        completeness_ = null;
-        onChanged();
-      } else {
-        completeness_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      completeness_ = null;
+      if (completenessBuilder_ != null) {
+        completenessBuilder_.dispose();
         completenessBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1357,7 +1366,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Completeness completeness = 4;</code>
      */
     public io.grafeas.v1.Completeness.Builder getCompletenessBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCompletenessFieldBuilder().getBuilder();
     }
@@ -1440,6 +1449,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     public Builder setReproducible(boolean value) {
 
       reproducible_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1456,7 +1466,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReproducible() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       reproducible_ = false;
       onChanged();
       return this;

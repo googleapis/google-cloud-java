@@ -78,7 +78,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARTIFACT_STORAGE_SOURCE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object artifactStorageSourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactStorageSourceUri_ = "";
   /**
    *
    *
@@ -143,6 +145,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                     io.grafeas.v1.FileHashes.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.FileHashes> fileHashes_;
 
   private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.FileHashes>
@@ -216,8 +219,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.FileHashes getFileHashesOrDefault(
-      java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
+  public /* nullable */ io.grafeas.v1.FileHashes getFileHashesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      io.grafeas.v1.FileHashes defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -295,10 +300,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.SourceContextOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null ? io.grafeas.v1.SourceContext.getDefaultInstance() : context_;
   }
 
   public static final int ADDITIONAL_CONTEXTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.SourceContext> additionalContexts_;
   /**
    *
@@ -638,13 +645,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       artifactStorageSourceUri_ = "";
-
       internalGetMutableFileHashes().clear();
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
       if (additionalContextsBuilder_ == null) {
@@ -653,7 +659,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         additionalContexts_ = null;
         additionalContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -679,26 +685,38 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Source buildPartial() {
       io.grafeas.v1.Source result = new io.grafeas.v1.Source(this);
-      int from_bitField0_ = bitField0_;
-      result.artifactStorageSourceUri_ = artifactStorageSourceUri_;
-      result.fileHashes_ = internalGetFileHashes();
-      result.fileHashes_.makeImmutable();
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.Source result) {
       if (additionalContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           additionalContexts_ = java.util.Collections.unmodifiableList(additionalContexts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.additionalContexts_ = additionalContexts_;
       } else {
         result.additionalContexts_ = additionalContextsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Source result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.artifactStorageSourceUri_ = artifactStorageSourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileHashes_ = internalGetFileHashes();
+        result.fileHashes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -748,9 +766,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Source.getDefaultInstance()) return this;
       if (!other.getArtifactStorageSourceUri().isEmpty()) {
         artifactStorageSourceUri_ = other.artifactStorageSourceUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
+      bitField0_ |= 0x00000002;
       if (other.hasContext()) {
         mergeContext(other.getContext());
       }
@@ -758,7 +778,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         if (!other.additionalContexts_.isEmpty()) {
           if (additionalContexts_.isEmpty()) {
             additionalContexts_ = other.additionalContexts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAdditionalContextsIsMutable();
             additionalContexts_.addAll(other.additionalContexts_);
@@ -771,7 +791,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             additionalContextsBuilder_.dispose();
             additionalContextsBuilder_ = null;
             additionalContexts_ = other.additionalContexts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             additionalContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalContextsFieldBuilder()
@@ -810,7 +830,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 artifactStorageSourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -823,12 +843,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableFileHashes()
                     .getMutableMap()
                     .put(fileHashes__.getKey(), fileHashes__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -926,8 +947,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactStorageSourceUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -944,8 +965,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArtifactStorageSourceUri() {
-
       artifactStorageSourceUri_ = getDefaultInstance().getArtifactStorageSourceUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -967,8 +988,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactStorageSourceUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -986,8 +1007,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.FileHashes>
         internalGetMutableFileHashes() {
-      onChanged();
-      ;
       if (fileHashes_ == null) {
         fileHashes_ =
             com.google.protobuf.MapField.newMapField(FileHashesDefaultEntryHolder.defaultEntry);
@@ -995,6 +1014,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (!fileHashes_.isMutable()) {
         fileHashes_ = fileHashes_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return fileHashes_;
     }
 
@@ -1061,8 +1082,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
      */
     @java.lang.Override
-    public io.grafeas.v1.FileHashes getFileHashesOrDefault(
-        java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
+    public /* nullable */ io.grafeas.v1.FileHashes getFileHashesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        io.grafeas.v1.FileHashes defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1098,6 +1121,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFileHashes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableFileHashes().getMutableMap().clear();
       return this;
     }
@@ -1125,6 +1149,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getMutableFileHashes() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableFileHashes().getMutableMap();
     }
     /**
@@ -1148,8 +1173,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFileHashes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1169,6 +1194,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFileHashes(
         java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> values) {
       internalGetMutableFileHashes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1190,7 +1216,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1225,11 +1251,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1244,11 +1270,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public Builder setContext(io.grafeas.v1.SourceContext.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1262,17 +1288,18 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContext(io.grafeas.v1.SourceContext value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-              io.grafeas.v1.SourceContext.newBuilder(context_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && context_ != null
+            && context_ != io.grafeas.v1.SourceContext.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1285,14 +1312,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.SourceContext context = 3;</code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1305,7 +1331,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.SourceContext context = 3;</code>
      */
     public io.grafeas.v1.SourceContext.Builder getContextBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
@@ -1355,10 +1381,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAdditionalContextsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         additionalContexts_ =
             new java.util.ArrayList<io.grafeas.v1.SourceContext>(additionalContexts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1606,7 +1632,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalContexts() {
       if (additionalContextsBuilder_ == null) {
         additionalContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         additionalContextsBuilder_.clear();
@@ -1749,7 +1775,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.SourceContext.Builder,
                 io.grafeas.v1.SourceContextOrBuilder>(
                 additionalContexts_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         additionalContexts_ = null;

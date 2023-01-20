@@ -70,7 +70,9 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PACKAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object package_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object package_ = "";
   /**
    *
    *
@@ -164,7 +166,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getParsedVersionOrBuilder() {
-    return getParsedVersion();
+    return parsedVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : parsedVersion_;
   }
 
   public static final int DISTRIBUTION_FIELD_NUMBER = 4;
@@ -218,7 +220,9 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionOrBuilder() {
-    return getDistribution();
+    return distribution_ == null
+        ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance()
+        : distribution_;
   }
 
   public static final int WINDOWS_UPDATE_FIELD_NUMBER = 5;
@@ -266,7 +270,9 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdateOrBuilder getWindowsUpdateOrBuilder() {
-    return getWindowsUpdate();
+    return windowsUpdate_ == null
+        ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
+        : windowsUpdate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -507,24 +513,21 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       package_ = "";
-
-      if (parsedVersionBuilder_ == null) {
-        parsedVersion_ = null;
-      } else {
-        parsedVersion_ = null;
+      parsedVersion_ = null;
+      if (parsedVersionBuilder_ != null) {
+        parsedVersionBuilder_.dispose();
         parsedVersionBuilder_ = null;
       }
-      if (distributionBuilder_ == null) {
-        distribution_ = null;
-      } else {
-        distribution_ = null;
+      distribution_ = null;
+      if (distributionBuilder_ != null) {
+        distributionBuilder_.dispose();
         distributionBuilder_ = null;
       }
-      if (windowsUpdateBuilder_ == null) {
-        windowsUpdate_ = null;
-      } else {
-        windowsUpdate_ = null;
+      windowsUpdate_ = null;
+      if (windowsUpdateBuilder_ != null) {
+        windowsUpdateBuilder_.dispose();
         windowsUpdateBuilder_ = null;
       }
       return this;
@@ -552,24 +555,30 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public io.grafeas.v1.UpgradeOccurrence buildPartial() {
       io.grafeas.v1.UpgradeOccurrence result = new io.grafeas.v1.UpgradeOccurrence(this);
-      result.package_ = package_;
-      if (parsedVersionBuilder_ == null) {
-        result.parsedVersion_ = parsedVersion_;
-      } else {
-        result.parsedVersion_ = parsedVersionBuilder_.build();
-      }
-      if (distributionBuilder_ == null) {
-        result.distribution_ = distribution_;
-      } else {
-        result.distribution_ = distributionBuilder_.build();
-      }
-      if (windowsUpdateBuilder_ == null) {
-        result.windowsUpdate_ = windowsUpdate_;
-      } else {
-        result.windowsUpdate_ = windowsUpdateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.UpgradeOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.package_ = package_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parsedVersion_ =
+            parsedVersionBuilder_ == null ? parsedVersion_ : parsedVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.distribution_ =
+            distributionBuilder_ == null ? distribution_ : distributionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.windowsUpdate_ =
+            windowsUpdateBuilder_ == null ? windowsUpdate_ : windowsUpdateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -619,6 +628,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (other == io.grafeas.v1.UpgradeOccurrence.getDefaultInstance()) return this;
       if (!other.getPackage().isEmpty()) {
         package_ = other.package_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasParsedVersion()) {
@@ -659,25 +669,25 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 package_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getParsedVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDistributionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getWindowsUpdateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -696,6 +706,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object package_ = "";
     /**
@@ -758,8 +770,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       package_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +787,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPackage() {
-
       package_ = getDefaultInstance().getPackage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -797,8 +809,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       package_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,7 +832,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * @return Whether the parsedVersion field is set.
      */
     public boolean hasParsedVersion() {
-      return parsedVersionBuilder_ != null || parsedVersion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -857,11 +869,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         parsedVersion_ = value;
-        onChanged();
       } else {
         parsedVersionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,11 +889,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder setParsedVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (parsedVersionBuilder_ == null) {
         parsedVersion_ = builderForValue.build();
-        onChanged();
       } else {
         parsedVersionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -896,17 +908,18 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeParsedVersion(io.grafeas.v1.Version value) {
       if (parsedVersionBuilder_ == null) {
-        if (parsedVersion_ != null) {
-          parsedVersion_ =
-              io.grafeas.v1.Version.newBuilder(parsedVersion_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && parsedVersion_ != null
+            && parsedVersion_ != io.grafeas.v1.Version.getDefaultInstance()) {
+          getParsedVersionBuilder().mergeFrom(value);
         } else {
           parsedVersion_ = value;
         }
-        onChanged();
       } else {
         parsedVersionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -920,14 +933,13 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
      */
     public Builder clearParsedVersion() {
-      if (parsedVersionBuilder_ == null) {
-        parsedVersion_ = null;
-        onChanged();
-      } else {
-        parsedVersion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      parsedVersion_ = null;
+      if (parsedVersionBuilder_ != null) {
+        parsedVersionBuilder_.dispose();
         parsedVersionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -941,7 +953,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
      */
     public io.grafeas.v1.Version.Builder getParsedVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getParsedVersionFieldBuilder().getBuilder();
     }
@@ -1007,7 +1019,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * @return Whether the distribution field is set.
      */
     public boolean hasDistribution() {
-      return distributionBuilder_ != null || distribution_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1048,11 +1060,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         distribution_ = value;
-        onChanged();
       } else {
         distributionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1069,11 +1081,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder setDistribution(io.grafeas.v1.UpgradeDistribution.Builder builderForValue) {
       if (distributionBuilder_ == null) {
         distribution_ = builderForValue.build();
-        onChanged();
       } else {
         distributionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1089,19 +1101,18 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeDistribution(io.grafeas.v1.UpgradeDistribution value) {
       if (distributionBuilder_ == null) {
-        if (distribution_ != null) {
-          distribution_ =
-              io.grafeas.v1.UpgradeDistribution.newBuilder(distribution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && distribution_ != null
+            && distribution_ != io.grafeas.v1.UpgradeDistribution.getDefaultInstance()) {
+          getDistributionBuilder().mergeFrom(value);
         } else {
           distribution_ = value;
         }
-        onChanged();
       } else {
         distributionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1116,14 +1127,13 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
      */
     public Builder clearDistribution() {
-      if (distributionBuilder_ == null) {
-        distribution_ = null;
-        onChanged();
-      } else {
-        distribution_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      distribution_ = null;
+      if (distributionBuilder_ != null) {
+        distributionBuilder_.dispose();
         distributionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1138,7 +1148,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
      */
     public io.grafeas.v1.UpgradeDistribution.Builder getDistributionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDistributionFieldBuilder().getBuilder();
     }
@@ -1208,7 +1218,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * @return Whether the windowsUpdate field is set.
      */
     public boolean hasWindowsUpdate() {
-      return windowsUpdateBuilder_ != null || windowsUpdate_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1245,11 +1255,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         windowsUpdate_ = value;
-        onChanged();
       } else {
         windowsUpdateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1264,11 +1274,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder setWindowsUpdate(io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
       if (windowsUpdateBuilder_ == null) {
         windowsUpdate_ = builderForValue.build();
-        onChanged();
       } else {
         windowsUpdateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1282,19 +1292,18 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeWindowsUpdate(io.grafeas.v1.WindowsUpdate value) {
       if (windowsUpdateBuilder_ == null) {
-        if (windowsUpdate_ != null) {
-          windowsUpdate_ =
-              io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && windowsUpdate_ != null
+            && windowsUpdate_ != io.grafeas.v1.WindowsUpdate.getDefaultInstance()) {
+          getWindowsUpdateBuilder().mergeFrom(value);
         } else {
           windowsUpdate_ = value;
         }
-        onChanged();
       } else {
         windowsUpdateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1307,14 +1316,13 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
      */
     public Builder clearWindowsUpdate() {
-      if (windowsUpdateBuilder_ == null) {
-        windowsUpdate_ = null;
-        onChanged();
-      } else {
-        windowsUpdate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      windowsUpdate_ = null;
+      if (windowsUpdateBuilder_ != null) {
+        windowsUpdateBuilder_.dispose();
         windowsUpdateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1327,7 +1335,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Builder getWindowsUpdateBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getWindowsUpdateFieldBuilder().getBuilder();
     }

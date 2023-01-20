@@ -74,7 +74,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISTRIBUTION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Distribution> distribution_;
   /**
    *
@@ -201,7 +205,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_TYPE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object packageType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packageType_ = "";
   /**
    *
    *
@@ -252,7 +258,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPE_URI_FIELD_NUMBER = 12;
-  private volatile java.lang.Object cpeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpeUri_ = "";
   /**
    *
    *
@@ -305,7 +313,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 13;
-  private int architecture_;
+  private int architecture_ = 0;
   /**
    *
    *
@@ -336,8 +344,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.Architecture getArchitecture() {
-    @SuppressWarnings("deprecation")
-    io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+    io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.forNumber(architecture_);
     return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
   }
 
@@ -384,11 +391,13 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
 
   public static final int MAINTAINER_FIELD_NUMBER = 15;
-  private volatile java.lang.Object maintainer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object maintainer_ = "";
   /**
    *
    *
@@ -437,7 +446,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 16;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -486,7 +497,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 17;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -577,10 +590,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.LicenseOrBuilder getLicenseOrBuilder() {
-    return getLicense();
+    return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
   }
 
   public static final int DIGEST_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Digest> digest_;
   /**
    *
@@ -949,37 +964,29 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (distributionBuilder_ == null) {
         distribution_ = java.util.Collections.emptyList();
       } else {
         distribution_ = null;
         distributionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       packageType_ = "";
-
       cpeUri_ = "";
-
       architecture_ = 0;
-
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       maintainer_ = "";
-
       url_ = "";
-
       description_ = "";
-
-      if (licenseBuilder_ == null) {
-        license_ = null;
-      } else {
-        license_ = null;
+      license_ = null;
+      if (licenseBuilder_ != null) {
+        licenseBuilder_.dispose();
         licenseBuilder_ = null;
       }
       if (digestBuilder_ == null) {
@@ -988,7 +995,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         digest_ = null;
         digestBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1014,44 +1021,64 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.PackageNote buildPartial() {
       io.grafeas.v1.PackageNote result = new io.grafeas.v1.PackageNote(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.PackageNote result) {
       if (distributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           distribution_ = java.util.Collections.unmodifiableList(distribution_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.distribution_ = distribution_;
       } else {
         result.distribution_ = distributionBuilder_.build();
       }
-      result.packageType_ = packageType_;
-      result.cpeUri_ = cpeUri_;
-      result.architecture_ = architecture_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
-      }
-      result.maintainer_ = maintainer_;
-      result.url_ = url_;
-      result.description_ = description_;
-      if (licenseBuilder_ == null) {
-        result.license_ = license_;
-      } else {
-        result.license_ = licenseBuilder_.build();
-      }
       if (digestBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           digest_ = java.util.Collections.unmodifiableList(digest_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.digest_ = digest_;
       } else {
         result.digest_ = digestBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.PackageNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.packageType_ = packageType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cpeUri_ = cpeUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.architecture_ = architecture_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.maintainer_ = maintainer_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.license_ = licenseBuilder_ == null ? license_ : licenseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1101,13 +1128,14 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.PackageNote.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (distributionBuilder_ == null) {
         if (!other.distribution_.isEmpty()) {
           if (distribution_.isEmpty()) {
             distribution_ = other.distribution_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDistributionIsMutable();
             distribution_.addAll(other.distribution_);
@@ -1120,7 +1148,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
             distributionBuilder_.dispose();
             distributionBuilder_ = null;
             distribution_ = other.distribution_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             distributionBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDistributionFieldBuilder()
@@ -1132,10 +1160,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPackageType().isEmpty()) {
         packageType_ = other.packageType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCpeUri().isEmpty()) {
         cpeUri_ = other.cpeUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.architecture_ != 0) {
@@ -1146,14 +1176,17 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMaintainer().isEmpty()) {
         maintainer_ = other.maintainer_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasLicense()) {
@@ -1163,7 +1196,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         if (!other.digest_.isEmpty()) {
           if (digest_.isEmpty()) {
             digest_ = other.digest_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureDigestIsMutable();
             digest_.addAll(other.digest_);
@@ -1176,7 +1209,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
             digestBuilder_.dispose();
             digestBuilder_ = null;
             digest_ = other.digest_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000400);
             digestBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDigestFieldBuilder()
@@ -1215,7 +1248,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 82:
@@ -1233,49 +1266,49 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 packageType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 90
             case 98:
               {
                 cpeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 98
             case 104:
               {
                 architecture_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 114
             case 122:
               {
                 maintainer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 122
             case 130:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 130
             case 138:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getLicenseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 146
             case 154:
@@ -1376,8 +1409,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1395,8 +1428,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1419,8 +1452,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1429,9 +1462,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDistributionIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         distribution_ = new java.util.ArrayList<io.grafeas.v1.Distribution>(distribution_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1655,7 +1688,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDistribution() {
       if (distributionBuilder_ == null) {
         distribution_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         distributionBuilder_.clear();
@@ -1783,7 +1816,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.Distribution,
                 io.grafeas.v1.Distribution.Builder,
                 io.grafeas.v1.DistributionOrBuilder>(
-                distribution_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                distribution_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         distribution_ = null;
       }
       return distributionBuilder_;
@@ -1853,8 +1886,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       packageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1871,8 +1904,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPackageType() {
-
       packageType_ = getDefaultInstance().getPackageType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1894,8 +1927,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       packageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1967,8 +2000,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1986,8 +2019,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-
       cpeUri_ = getDefaultInstance().getCpeUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2010,8 +2043,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2047,8 +2080,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
-
       architecture_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2066,8 +2099,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public io.grafeas.v1.Architecture getArchitecture() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+      io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.forNumber(architecture_);
       return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
     }
     /**
@@ -2087,7 +2119,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       architecture_ = value.getNumber();
       onChanged();
       return this;
@@ -2105,7 +2137,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       architecture_ = 0;
       onChanged();
       return this;
@@ -2127,7 +2159,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2162,11 +2194,11 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2181,11 +2213,11 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2199,16 +2231,18 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVersion(io.grafeas.v1.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && version_ != null
+            && version_ != io.grafeas.v1.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2221,14 +2255,13 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 14;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2241,7 +2274,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 14;</code>
      */
     public io.grafeas.v1.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -2345,8 +2378,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       maintainer_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2362,8 +2395,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaintainer() {
-
       maintainer_ = getDefaultInstance().getMaintainer();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2384,8 +2417,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       maintainer_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2451,8 +2484,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2468,8 +2501,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2490,8 +2523,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2557,8 +2590,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2574,8 +2607,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2596,8 +2629,8 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2618,7 +2651,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the license field is set.
      */
     public boolean hasLicense() {
-      return licenseBuilder_ != null || license_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2653,11 +2686,11 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         license_ = value;
-        onChanged();
       } else {
         licenseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2672,11 +2705,11 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     public Builder setLicense(io.grafeas.v1.License.Builder builderForValue) {
       if (licenseBuilder_ == null) {
         license_ = builderForValue.build();
-        onChanged();
       } else {
         licenseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2690,16 +2723,18 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLicense(io.grafeas.v1.License value) {
       if (licenseBuilder_ == null) {
-        if (license_ != null) {
-          license_ = io.grafeas.v1.License.newBuilder(license_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && license_ != null
+            && license_ != io.grafeas.v1.License.getDefaultInstance()) {
+          getLicenseBuilder().mergeFrom(value);
         } else {
           license_ = value;
         }
-        onChanged();
       } else {
         licenseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2712,14 +2747,13 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.License license = 18;</code>
      */
     public Builder clearLicense() {
-      if (licenseBuilder_ == null) {
-        license_ = null;
-        onChanged();
-      } else {
-        license_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      license_ = null;
+      if (licenseBuilder_ != null) {
+        licenseBuilder_.dispose();
         licenseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2732,7 +2766,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.License license = 18;</code>
      */
     public io.grafeas.v1.License.Builder getLicenseBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLicenseFieldBuilder().getBuilder();
     }
@@ -2778,9 +2812,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<io.grafeas.v1.Digest> digest_ = java.util.Collections.emptyList();
 
     private void ensureDigestIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         digest_ = new java.util.ArrayList<io.grafeas.v1.Digest>(digest_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3001,7 +3035,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDigest() {
       if (digestBuilder_ == null) {
         digest_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         digestBuilder_.clear();
@@ -3122,7 +3156,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         digestBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
                 io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>(
-                digest_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                digest_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         digest_ = null;
       }
       return digestBuilder_;

@@ -69,7 +69,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    * <code>string name = 1;</code>
    *
@@ -118,6 +120,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
@@ -184,7 +187,10 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getDigestOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDigestOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -437,8 +443,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableDigest().clear();
       return this;
     }
@@ -465,12 +471,22 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Subject buildPartial() {
       io.grafeas.v1.Subject result = new io.grafeas.v1.Subject(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.digest_ = internalGetDigest();
-      result.digest_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Subject result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.digest_ = internalGetDigest();
+        result.digest_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -520,9 +536,11 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Subject.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableDigest().mergeFrom(other.internalGetDigest());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -552,7 +570,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -564,6 +582,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDigest()
                     .getMutableMap()
                     .put(digest__.getKey(), digest__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -628,8 +647,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +658,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -655,8 +674,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,14 +691,14 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDigest() {
-      onChanged();
-      ;
       if (digest_ == null) {
         digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
       }
       if (!digest_.isMutable()) {
         digest_ = digest_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return digest_;
     }
 
@@ -740,8 +759,10 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getDigestOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDigestOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -773,6 +794,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDigest() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableDigest().getMutableMap().clear();
       return this;
     }
@@ -798,6 +820,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableDigest().getMutableMap();
     }
     /**
@@ -819,8 +842,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDigest().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -837,6 +860,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDigest().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

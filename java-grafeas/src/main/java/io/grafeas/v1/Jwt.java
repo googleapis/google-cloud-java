@@ -57,7 +57,9 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPACT_JWT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object compactJwt_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object compactJwt_ = "";
   /**
    *
    *
@@ -292,8 +294,8 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       compactJwt_ = "";
-
       return this;
     }
 
@@ -319,9 +321,18 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Jwt buildPartial() {
       io.grafeas.v1.Jwt result = new io.grafeas.v1.Jwt(this);
-      result.compactJwt_ = compactJwt_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Jwt result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.compactJwt_ = compactJwt_;
+      }
     }
 
     @java.lang.Override
@@ -371,6 +382,7 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Jwt.getDefaultInstance()) return this;
       if (!other.getCompactJwt().isEmpty()) {
         compactJwt_ = other.compactJwt_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -402,7 +414,7 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 compactJwt_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -421,6 +433,8 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object compactJwt_ = "";
     /**
@@ -489,8 +503,8 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       compactJwt_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -508,8 +522,8 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompactJwt() {
-
       compactJwt_ = getDefaultInstance().getCompactJwt();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -532,8 +546,8 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       compactJwt_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object package_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object package_ = "";
   /**
    *
    *
@@ -164,10 +166,12 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
 
   public static final int DISTRIBUTIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.UpgradeDistribution> distributions_;
   /**
    *
@@ -281,7 +285,9 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdateOrBuilder getWindowsUpdateOrBuilder() {
-    return getWindowsUpdate();
+    return windowsUpdate_ == null
+        ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
+        : windowsUpdate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -518,12 +524,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       package_ = "";
-
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       if (distributionsBuilder_ == null) {
@@ -532,11 +537,10 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         distributions_ = null;
         distributionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (windowsUpdateBuilder_ == null) {
-        windowsUpdate_ = null;
-      } else {
-        windowsUpdate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      windowsUpdate_ = null;
+      if (windowsUpdateBuilder_ != null) {
+        windowsUpdateBuilder_.dispose();
         windowsUpdateBuilder_ = null;
       }
       return this;
@@ -564,29 +568,38 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.UpgradeNote buildPartial() {
       io.grafeas.v1.UpgradeNote result = new io.grafeas.v1.UpgradeNote(this);
-      int from_bitField0_ = bitField0_;
-      result.package_ = package_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.UpgradeNote result) {
       if (distributionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           distributions_ = java.util.Collections.unmodifiableList(distributions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.distributions_ = distributions_;
       } else {
         result.distributions_ = distributionsBuilder_.build();
       }
-      if (windowsUpdateBuilder_ == null) {
-        result.windowsUpdate_ = windowsUpdate_;
-      } else {
-        result.windowsUpdate_ = windowsUpdateBuilder_.build();
+    }
+
+    private void buildPartial0(io.grafeas.v1.UpgradeNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.package_ = package_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.windowsUpdate_ =
+            windowsUpdateBuilder_ == null ? windowsUpdate_ : windowsUpdateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -636,6 +649,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.UpgradeNote.getDefaultInstance()) return this;
       if (!other.getPackage().isEmpty()) {
         package_ = other.package_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasVersion()) {
@@ -645,7 +659,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         if (!other.distributions_.isEmpty()) {
           if (distributions_.isEmpty()) {
             distributions_ = other.distributions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDistributionsIsMutable();
             distributions_.addAll(other.distributions_);
@@ -658,7 +672,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             distributionsBuilder_.dispose();
             distributionsBuilder_ = null;
             distributions_ = other.distributions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             distributionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDistributionsFieldBuilder()
@@ -700,13 +714,13 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 package_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -725,7 +739,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getWindowsUpdateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -808,8 +822,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       package_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,8 +839,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPackage() {
-
       package_ = getDefaultInstance().getPackage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -847,8 +861,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       package_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -870,7 +884,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -907,11 +921,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,11 +941,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -946,16 +960,18 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVersion(io.grafeas.v1.Version value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && version_ != null
+            && version_ != io.grafeas.v1.Version.getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -969,14 +985,13 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -990,7 +1005,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     public io.grafeas.v1.Version.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -1039,9 +1054,9 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDistributionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         distributions_ = new java.util.ArrayList<io.grafeas.v1.UpgradeDistribution>(distributions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1256,7 +1271,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDistributions() {
       if (distributionsBuilder_ == null) {
         distributions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         distributionsBuilder_.clear();
@@ -1378,7 +1393,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1.UpgradeDistribution.Builder,
                 io.grafeas.v1.UpgradeDistributionOrBuilder>(
                 distributions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         distributions_ = null;
@@ -1404,7 +1419,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the windowsUpdate field is set.
      */
     public boolean hasWindowsUpdate() {
-      return windowsUpdateBuilder_ != null || windowsUpdate_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1441,11 +1456,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         windowsUpdate_ = value;
-        onChanged();
       } else {
         windowsUpdateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1460,11 +1475,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public Builder setWindowsUpdate(io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
       if (windowsUpdateBuilder_ == null) {
         windowsUpdate_ = builderForValue.build();
-        onChanged();
       } else {
         windowsUpdateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1478,19 +1493,18 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWindowsUpdate(io.grafeas.v1.WindowsUpdate value) {
       if (windowsUpdateBuilder_ == null) {
-        if (windowsUpdate_ != null) {
-          windowsUpdate_ =
-              io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && windowsUpdate_ != null
+            && windowsUpdate_ != io.grafeas.v1.WindowsUpdate.getDefaultInstance()) {
+          getWindowsUpdateBuilder().mergeFrom(value);
         } else {
           windowsUpdate_ = value;
         }
-        onChanged();
       } else {
         windowsUpdateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1503,14 +1517,13 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
      */
     public Builder clearWindowsUpdate() {
-      if (windowsUpdateBuilder_ == null) {
-        windowsUpdate_ = null;
-        onChanged();
-      } else {
-        windowsUpdate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      windowsUpdate_ = null;
+      if (windowsUpdateBuilder_ != null) {
+        windowsUpdateBuilder_.dispose();
         windowsUpdateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1523,7 +1536,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Builder getWindowsUpdateBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getWindowsUpdateFieldBuilder().getBuilder();
     }

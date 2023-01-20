@@ -157,7 +157,9 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int HUMAN_READABLE_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object humanReadableName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object humanReadableName_ = "";
     /**
      *
      *
@@ -409,8 +411,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         humanReadableName_ = "";
-
         return this;
       }
 
@@ -436,9 +438,18 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public io.grafeas.v1.AttestationNote.Hint buildPartial() {
         io.grafeas.v1.AttestationNote.Hint result = new io.grafeas.v1.AttestationNote.Hint(this);
-        result.humanReadableName_ = humanReadableName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.AttestationNote.Hint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.humanReadableName_ = humanReadableName_;
+        }
       }
 
       @java.lang.Override
@@ -490,6 +501,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         if (other == io.grafeas.v1.AttestationNote.Hint.getDefaultInstance()) return this;
         if (!other.getHumanReadableName().isEmpty()) {
           humanReadableName_ = other.humanReadableName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -521,7 +533,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   humanReadableName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -540,6 +552,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object humanReadableName_ = "";
       /**
@@ -605,8 +619,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         humanReadableName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -623,8 +637,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearHumanReadableName() {
-
         humanReadableName_ = getDefaultInstance().getHumanReadableName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -646,8 +660,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         humanReadableName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -759,7 +773,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public io.grafeas.v1.AttestationNote.HintOrBuilder getHintOrBuilder() {
-    return getHint();
+    return hint_ == null ? io.grafeas.v1.AttestationNote.Hint.getDefaultInstance() : hint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -966,10 +980,10 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (hintBuilder_ == null) {
-        hint_ = null;
-      } else {
-        hint_ = null;
+      bitField0_ = 0;
+      hint_ = null;
+      if (hintBuilder_ != null) {
+        hintBuilder_.dispose();
         hintBuilder_ = null;
       }
       return this;
@@ -997,13 +1011,18 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public io.grafeas.v1.AttestationNote buildPartial() {
       io.grafeas.v1.AttestationNote result = new io.grafeas.v1.AttestationNote(this);
-      if (hintBuilder_ == null) {
-        result.hint_ = hint_;
-      } else {
-        result.hint_ = hintBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.AttestationNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hint_ = hintBuilder_ == null ? hint_ : hintBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1083,7 +1102,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getHintFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1103,6 +1122,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private io.grafeas.v1.AttestationNote.Hint hint_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.AttestationNote.Hint,
@@ -1121,7 +1142,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      * @return Whether the hint field is set.
      */
     public boolean hasHint() {
-      return hintBuilder_ != null || hint_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1156,11 +1177,11 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         hint_ = value;
-        onChanged();
       } else {
         hintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1175,11 +1196,11 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     public Builder setHint(io.grafeas.v1.AttestationNote.Hint.Builder builderForValue) {
       if (hintBuilder_ == null) {
         hint_ = builderForValue.build();
-        onChanged();
       } else {
         hintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1193,17 +1214,18 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeHint(io.grafeas.v1.AttestationNote.Hint value) {
       if (hintBuilder_ == null) {
-        if (hint_ != null) {
-          hint_ =
-              io.grafeas.v1.AttestationNote.Hint.newBuilder(hint_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && hint_ != null
+            && hint_ != io.grafeas.v1.AttestationNote.Hint.getDefaultInstance()) {
+          getHintBuilder().mergeFrom(value);
         } else {
           hint_ = value;
         }
-        onChanged();
       } else {
         hintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1216,14 +1238,13 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
      */
     public Builder clearHint() {
-      if (hintBuilder_ == null) {
-        hint_ = null;
-        onChanged();
-      } else {
-        hint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      hint_ = null;
+      if (hintBuilder_ != null) {
+        hintBuilder_.dispose();
         hintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1236,7 +1257,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
      */
     public io.grafeas.v1.AttestationNote.Hint.Builder getHintBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHintFieldBuilder().getBuilder();
     }
