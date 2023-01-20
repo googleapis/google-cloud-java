@@ -70,7 +70,7 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MANEUVER_FIELD_NUMBER = 1;
-  private int maneuver_;
+  private int maneuver_ = 0;
   /**
    *
    *
@@ -101,14 +101,15 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.maps.routing.v2.Maneuver getManeuver() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.Maneuver result =
-        com.google.maps.routing.v2.Maneuver.valueOf(maneuver_);
+        com.google.maps.routing.v2.Maneuver.forNumber(maneuver_);
     return result == null ? com.google.maps.routing.v2.Maneuver.UNRECOGNIZED : result;
   }
 
   public static final int INSTRUCTIONS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instructions_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instructions_ = "";
   /**
    *
    *
@@ -363,10 +364,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maneuver_ = 0;
-
       instructions_ = "";
-
       return this;
     }
 
@@ -394,10 +394,21 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
     public com.google.maps.routing.v2.NavigationInstruction buildPartial() {
       com.google.maps.routing.v2.NavigationInstruction result =
           new com.google.maps.routing.v2.NavigationInstruction(this);
-      result.maneuver_ = maneuver_;
-      result.instructions_ = instructions_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.NavigationInstruction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.maneuver_ = maneuver_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instructions_ = instructions_;
+      }
     }
 
     @java.lang.Override
@@ -451,6 +462,7 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       }
       if (!other.getInstructions().isEmpty()) {
         instructions_ = other.instructions_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -482,13 +494,13 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 maneuver_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 instructions_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -507,6 +519,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int maneuver_ = 0;
     /**
@@ -539,8 +553,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setManeuverValue(int value) {
-
       maneuver_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -558,9 +572,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.maps.routing.v2.Maneuver getManeuver() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.Maneuver result =
-          com.google.maps.routing.v2.Maneuver.valueOf(maneuver_);
+          com.google.maps.routing.v2.Maneuver.forNumber(maneuver_);
       return result == null ? com.google.maps.routing.v2.Maneuver.UNRECOGNIZED : result;
     }
     /**
@@ -580,7 +593,7 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       maneuver_ = value.getNumber();
       onChanged();
       return this;
@@ -598,7 +611,7 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearManeuver() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maneuver_ = 0;
       onChanged();
       return this;
@@ -665,8 +678,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       instructions_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -682,8 +695,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInstructions() {
-
       instructions_ = getDefaultInstance().getInstructions();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -704,8 +717,8 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instructions_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

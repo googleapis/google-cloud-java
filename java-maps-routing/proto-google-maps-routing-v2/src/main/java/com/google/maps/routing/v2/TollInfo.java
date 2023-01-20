@@ -68,6 +68,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ESTIMATED_PRICE_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.type.Money> estimatedPrice_;
   /**
    *
@@ -357,6 +359,7 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (estimatedPriceBuilder_ == null) {
         estimatedPrice_ = java.util.Collections.emptyList();
       } else {
@@ -390,7 +393,15 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.maps.routing.v2.TollInfo buildPartial() {
       com.google.maps.routing.v2.TollInfo result = new com.google.maps.routing.v2.TollInfo(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.routing.v2.TollInfo result) {
       if (estimatedPriceBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           estimatedPrice_ = java.util.Collections.unmodifiableList(estimatedPrice_);
@@ -400,8 +411,10 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.estimatedPrice_ = estimatedPriceBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.TollInfo result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

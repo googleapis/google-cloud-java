@@ -123,10 +123,12 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.maps.routing.v2.TollInfoOrBuilder getTollInfoOrBuilder() {
-    return getTollInfo();
+    return tollInfo_ == null ? com.google.maps.routing.v2.TollInfo.getDefaultInstance() : tollInfo_;
   }
 
   public static final int SPEED_READING_INTERVALS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> speedReadingIntervals_;
   /**
    *
@@ -233,7 +235,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FUEL_CONSUMPTION_MICROLITERS_FIELD_NUMBER = 5;
-  private long fuelConsumptionMicroliters_;
+  private long fuelConsumptionMicroliters_ = 0L;
   /**
    *
    *
@@ -476,10 +478,10 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tollInfoBuilder_ == null) {
-        tollInfo_ = null;
-      } else {
-        tollInfo_ = null;
+      bitField0_ = 0;
+      tollInfo_ = null;
+      if (tollInfoBuilder_ != null) {
+        tollInfoBuilder_.dispose();
         tollInfoBuilder_ = null;
       }
       if (speedReadingIntervalsBuilder_ == null) {
@@ -488,9 +490,8 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
         speedReadingIntervals_ = null;
         speedReadingIntervalsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       fuelConsumptionMicroliters_ = 0L;
-
       return this;
     }
 
@@ -518,24 +519,34 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     public com.google.maps.routing.v2.RouteTravelAdvisory buildPartial() {
       com.google.maps.routing.v2.RouteTravelAdvisory result =
           new com.google.maps.routing.v2.RouteTravelAdvisory(this);
-      int from_bitField0_ = bitField0_;
-      if (tollInfoBuilder_ == null) {
-        result.tollInfo_ = tollInfo_;
-      } else {
-        result.tollInfo_ = tollInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.routing.v2.RouteTravelAdvisory result) {
       if (speedReadingIntervalsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           speedReadingIntervals_ = java.util.Collections.unmodifiableList(speedReadingIntervals_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.speedReadingIntervals_ = speedReadingIntervals_;
       } else {
         result.speedReadingIntervals_ = speedReadingIntervalsBuilder_.build();
       }
-      result.fuelConsumptionMicroliters_ = fuelConsumptionMicroliters_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.RouteTravelAdvisory result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tollInfo_ = tollInfoBuilder_ == null ? tollInfo_ : tollInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fuelConsumptionMicroliters_ = fuelConsumptionMicroliters_;
+      }
     }
 
     @java.lang.Override
@@ -590,7 +601,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
         if (!other.speedReadingIntervals_.isEmpty()) {
           if (speedReadingIntervals_.isEmpty()) {
             speedReadingIntervals_ = other.speedReadingIntervals_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSpeedReadingIntervalsIsMutable();
             speedReadingIntervals_.addAll(other.speedReadingIntervals_);
@@ -603,7 +614,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
             speedReadingIntervalsBuilder_.dispose();
             speedReadingIntervalsBuilder_ = null;
             speedReadingIntervals_ = other.speedReadingIntervals_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             speedReadingIntervalsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeedReadingIntervalsFieldBuilder()
@@ -645,7 +656,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 input.readMessage(getTollInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
@@ -665,7 +676,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
             case 40:
               {
                 fuelConsumptionMicroliters_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             default:
@@ -709,7 +720,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * @return Whether the tollInfo field is set.
      */
     public boolean hasTollInfo() {
-      return tollInfoBuilder_ != null || tollInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -754,11 +765,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         tollInfo_ = value;
-        onChanged();
       } else {
         tollInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -777,11 +788,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     public Builder setTollInfo(com.google.maps.routing.v2.TollInfo.Builder builderForValue) {
       if (tollInfoBuilder_ == null) {
         tollInfo_ = builderForValue.build();
-        onChanged();
       } else {
         tollInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -799,19 +810,18 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTollInfo(com.google.maps.routing.v2.TollInfo value) {
       if (tollInfoBuilder_ == null) {
-        if (tollInfo_ != null) {
-          tollInfo_ =
-              com.google.maps.routing.v2.TollInfo.newBuilder(tollInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tollInfo_ != null
+            && tollInfo_ != com.google.maps.routing.v2.TollInfo.getDefaultInstance()) {
+          getTollInfoBuilder().mergeFrom(value);
         } else {
           tollInfo_ = value;
         }
-        onChanged();
       } else {
         tollInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -828,14 +838,13 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
      */
     public Builder clearTollInfo() {
-      if (tollInfoBuilder_ == null) {
-        tollInfo_ = null;
-        onChanged();
-      } else {
-        tollInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tollInfo_ = null;
+      if (tollInfoBuilder_ != null) {
+        tollInfoBuilder_.dispose();
         tollInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -852,7 +861,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
      */
     public com.google.maps.routing.v2.TollInfo.Builder getTollInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTollInfoFieldBuilder().getBuilder();
     }
@@ -912,11 +921,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureSpeedReadingIntervalsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         speedReadingIntervals_ =
             new java.util.ArrayList<com.google.maps.routing.v2.SpeedReadingInterval>(
                 speedReadingIntervals_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1223,7 +1232,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     public Builder clearSpeedReadingIntervals() {
       if (speedReadingIntervalsBuilder_ == null) {
         speedReadingIntervals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         speedReadingIntervalsBuilder_.clear();
@@ -1406,7 +1415,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
                 com.google.maps.routing.v2.SpeedReadingInterval.Builder,
                 com.google.maps.routing.v2.SpeedReadingIntervalOrBuilder>(
                 speedReadingIntervals_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         speedReadingIntervals_ = null;
@@ -1445,6 +1454,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     public Builder setFuelConsumptionMicroliters(long value) {
 
       fuelConsumptionMicroliters_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1460,7 +1470,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFuelConsumptionMicroliters() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       fuelConsumptionMicroliters_ = 0L;
       onChanged();
       return this;

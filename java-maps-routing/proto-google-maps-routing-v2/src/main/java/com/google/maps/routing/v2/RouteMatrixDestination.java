@@ -111,7 +111,7 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.maps.routing.v2.WaypointOrBuilder getWaypointOrBuilder() {
-    return getWaypoint();
+    return waypoint_ == null ? com.google.maps.routing.v2.Waypoint.getDefaultInstance() : waypoint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +316,10 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (waypointBuilder_ == null) {
-        waypoint_ = null;
-      } else {
-        waypoint_ = null;
+      bitField0_ = 0;
+      waypoint_ = null;
+      if (waypointBuilder_ != null) {
+        waypointBuilder_.dispose();
         waypointBuilder_ = null;
       }
       return this;
@@ -349,13 +349,18 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
     public com.google.maps.routing.v2.RouteMatrixDestination buildPartial() {
       com.google.maps.routing.v2.RouteMatrixDestination result =
           new com.google.maps.routing.v2.RouteMatrixDestination(this);
-      if (waypointBuilder_ == null) {
-        result.waypoint_ = waypoint_;
-      } else {
-        result.waypoint_ = waypointBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.RouteMatrixDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.waypoint_ = waypointBuilder_ == null ? waypoint_ : waypointBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +441,7 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getWaypointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +460,8 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.maps.routing.v2.Waypoint waypoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -476,7 +483,7 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
      * @return Whether the waypoint field is set.
      */
     public boolean hasWaypoint() {
-      return waypointBuilder_ != null || waypoint_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -517,11 +524,11 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         waypoint_ = value;
-        onChanged();
       } else {
         waypointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -538,11 +545,11 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
     public Builder setWaypoint(com.google.maps.routing.v2.Waypoint.Builder builderForValue) {
       if (waypointBuilder_ == null) {
         waypoint_ = builderForValue.build();
-        onChanged();
       } else {
         waypointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -558,19 +565,18 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
      */
     public Builder mergeWaypoint(com.google.maps.routing.v2.Waypoint value) {
       if (waypointBuilder_ == null) {
-        if (waypoint_ != null) {
-          waypoint_ =
-              com.google.maps.routing.v2.Waypoint.newBuilder(waypoint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && waypoint_ != null
+            && waypoint_ != com.google.maps.routing.v2.Waypoint.getDefaultInstance()) {
+          getWaypointBuilder().mergeFrom(value);
         } else {
           waypoint_ = value;
         }
-        onChanged();
       } else {
         waypointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -585,14 +591,13 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearWaypoint() {
-      if (waypointBuilder_ == null) {
-        waypoint_ = null;
-        onChanged();
-      } else {
-        waypoint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      waypoint_ = null;
+      if (waypointBuilder_ != null) {
+        waypointBuilder_.dispose();
         waypointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -607,7 +612,7 @@ public final class RouteMatrixDestination extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.maps.routing.v2.Waypoint.Builder getWaypointBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWaypointFieldBuilder().getBuilder();
     }

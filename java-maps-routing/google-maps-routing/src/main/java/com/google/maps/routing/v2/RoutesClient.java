@@ -54,6 +54,7 @@ import javax.annotation.Generated;
  *           .setLanguageCode("languageCode-2092349083")
  *           .setUnits(Units.forNumber(0))
  *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+ *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
  *           .build();
  *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
  * }
@@ -234,6 +235,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUnits(Units.forNumber(0))
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+   *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
    *           .build();
    *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
    * }
@@ -305,6 +307,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUnits(Units.forNumber(0))
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+   *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
    *           .build();
    *   ApiFuture<ComputeRoutesResponse> future =
    *       routesClient.computeRoutesCallable().futureCall(request);
@@ -371,6 +374,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setTravelMode(RouteTravelMode.forNumber(0))
    *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
    *           .build();
    *   ServerStream<RouteMatrixElement> stream =
    *       routesClient.computeRouteMatrixCallable().call(request);

@@ -108,7 +108,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
-    return getLatLng();
+    return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
 
   public static final int HEADING_FIELD_NUMBER = 2;
@@ -166,7 +166,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getHeadingOrBuilder() {
-    return getHeading();
+    return heading_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : heading_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +383,15 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-      } else {
-        latLng_ = null;
+      bitField0_ = 0;
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
-      if (headingBuilder_ == null) {
-        heading_ = null;
-      } else {
-        heading_ = null;
+      heading_ = null;
+      if (headingBuilder_ != null) {
+        headingBuilder_.dispose();
         headingBuilder_ = null;
       }
       return this;
@@ -421,18 +420,21 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.maps.routing.v2.Location buildPartial() {
       com.google.maps.routing.v2.Location result = new com.google.maps.routing.v2.Location(this);
-      if (latLngBuilder_ == null) {
-        result.latLng_ = latLng_;
-      } else {
-        result.latLng_ = latLngBuilder_.build();
-      }
-      if (headingBuilder_ == null) {
-        result.heading_ = heading_;
-      } else {
-        result.heading_ = headingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.Location result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.latLng_ = latLngBuilder_ == null ? latLng_ : latLngBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.heading_ = headingBuilder_ == null ? heading_ : headingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,13 +517,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLatLngFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getHeadingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +543,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.LatLng latLng_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
@@ -557,7 +561,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLng field is set.
      */
     public boolean hasLatLng() {
-      return latLngBuilder_ != null || latLng_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -592,11 +596,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latLng_ = value;
-        onChanged();
       } else {
         latLngBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -611,11 +615,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setLatLng(com.google.type.LatLng.Builder builderForValue) {
       if (latLngBuilder_ == null) {
         latLng_ = builderForValue.build();
-        onChanged();
       } else {
         latLngBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,16 +633,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatLng(com.google.type.LatLng value) {
       if (latLngBuilder_ == null) {
-        if (latLng_ != null) {
-          latLng_ = com.google.type.LatLng.newBuilder(latLng_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && latLng_ != null
+            && latLng_ != com.google.type.LatLng.getDefaultInstance()) {
+          getLatLngBuilder().mergeFrom(value);
         } else {
           latLng_ = value;
         }
-        onChanged();
       } else {
         latLngBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,14 +657,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 1;</code>
      */
     public Builder clearLatLng() {
-      if (latLngBuilder_ == null) {
-        latLng_ = null;
-        onChanged();
-      } else {
-        latLng_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      latLng_ = null;
+      if (latLngBuilder_ != null) {
+        latLngBuilder_.dispose();
         latLngBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -671,7 +676,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng lat_lng = 1;</code>
      */
     public com.google.type.LatLng.Builder getLatLngBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
@@ -736,7 +741,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the heading field is set.
      */
     public boolean hasHeading() {
-      return headingBuilder_ != null || heading_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -779,11 +784,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         heading_ = value;
-        onChanged();
       } else {
         headingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,11 +807,11 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setHeading(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (headingBuilder_ == null) {
         heading_ = builderForValue.build();
-        onChanged();
       } else {
         headingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,17 +829,18 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHeading(com.google.protobuf.Int32Value value) {
       if (headingBuilder_ == null) {
-        if (heading_ != null) {
-          heading_ =
-              com.google.protobuf.Int32Value.newBuilder(heading_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && heading_ != null
+            && heading_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          getHeadingBuilder().mergeFrom(value);
         } else {
           heading_ = value;
         }
-        onChanged();
       } else {
         headingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,14 +857,13 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int32Value heading = 2;</code>
      */
     public Builder clearHeading() {
-      if (headingBuilder_ == null) {
-        heading_ = null;
-        onChanged();
-      } else {
-        heading_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      heading_ = null;
+      if (headingBuilder_ != null) {
+        headingBuilder_.dispose();
         headingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -875,7 +880,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int32Value heading = 2;</code>
      */
     public com.google.protobuf.Int32Value.Builder getHeadingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHeadingFieldBuilder().getBuilder();
     }

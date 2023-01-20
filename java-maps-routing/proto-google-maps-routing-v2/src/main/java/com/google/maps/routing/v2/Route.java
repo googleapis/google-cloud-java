@@ -72,16 +72,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTE_LABELS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> routeLabels_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.maps.routing.v2.RouteLabel>
       routeLabels_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.maps.routing.v2.RouteLabel>() {
             public com.google.maps.routing.v2.RouteLabel convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.maps.routing.v2.RouteLabel result =
-                  com.google.maps.routing.v2.RouteLabel.valueOf(from);
+                  com.google.maps.routing.v2.RouteLabel.forNumber(from);
               return result == null ? com.google.maps.routing.v2.RouteLabel.UNRECOGNIZED : result;
             }
           };
@@ -173,6 +175,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   private int routeLabelsMemoizedSerializedSize;
 
   public static final int LEGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.RouteLeg> legs_;
   /**
    *
@@ -272,7 +276,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISTANCE_METERS_FIELD_NUMBER = 2;
-  private int distanceMeters_;
+  private int distanceMeters_ = 0;
   /**
    *
    *
@@ -344,7 +348,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   public static final int STATIC_DURATION_FIELD_NUMBER = 4;
@@ -395,7 +399,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStaticDurationOrBuilder() {
-    return getStaticDuration();
+    return staticDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : staticDuration_;
   }
 
   public static final int POLYLINE_FIELD_NUMBER = 5;
@@ -444,11 +450,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.PolylineOrBuilder getPolylineOrBuilder() {
-    return getPolyline();
+    return polyline_ == null ? com.google.maps.routing.v2.Polyline.getDefaultInstance() : polyline_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -497,6 +505,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WARNINGS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList warnings_;
   /**
    *
@@ -600,7 +610,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.geo.type.ViewportOrBuilder getViewportOrBuilder() {
-    return getViewport();
+    return viewport_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : viewport_;
   }
 
   public static final int TRAVEL_ADVISORY_FIELD_NUMBER = 9;
@@ -648,11 +658,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.RouteTravelAdvisoryOrBuilder getTravelAdvisoryOrBuilder() {
-    return getTravelAdvisory();
+    return travelAdvisory_ == null
+        ? com.google.maps.routing.v2.RouteTravelAdvisory.getDefaultInstance()
+        : travelAdvisory_;
   }
 
   public static final int ROUTE_TOKEN_FIELD_NUMBER = 12;
-  private volatile java.lang.Object routeToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object routeToken_ = "";
   /**
    *
    *
@@ -1052,6 +1066,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       routeLabels_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       if (legsBuilder_ == null) {
@@ -1062,43 +1077,35 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       distanceMeters_ = 0;
-
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-      if (staticDurationBuilder_ == null) {
-        staticDuration_ = null;
-      } else {
-        staticDuration_ = null;
+      staticDuration_ = null;
+      if (staticDurationBuilder_ != null) {
+        staticDurationBuilder_.dispose();
         staticDurationBuilder_ = null;
       }
-      if (polylineBuilder_ == null) {
-        polyline_ = null;
-      } else {
-        polyline_ = null;
+      polyline_ = null;
+      if (polylineBuilder_ != null) {
+        polylineBuilder_.dispose();
         polylineBuilder_ = null;
       }
       description_ = "";
-
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (viewportBuilder_ == null) {
-        viewport_ = null;
-      } else {
-        viewport_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      viewport_ = null;
+      if (viewportBuilder_ != null) {
+        viewportBuilder_.dispose();
         viewportBuilder_ = null;
       }
-      if (travelAdvisoryBuilder_ == null) {
-        travelAdvisory_ = null;
-      } else {
-        travelAdvisory_ = null;
+      travelAdvisory_ = null;
+      if (travelAdvisoryBuilder_ != null) {
+        travelAdvisoryBuilder_.dispose();
         travelAdvisoryBuilder_ = null;
       }
       routeToken_ = "";
-
       return this;
     }
 
@@ -1125,7 +1132,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.maps.routing.v2.Route buildPartial() {
       com.google.maps.routing.v2.Route result = new com.google.maps.routing.v2.Route(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.routing.v2.Route result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         routeLabels_ = java.util.Collections.unmodifiableList(routeLabels_);
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1140,41 +1155,41 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.legs_ = legsBuilder_.build();
       }
-      result.distanceMeters_ = distanceMeters_;
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
-      }
-      if (staticDurationBuilder_ == null) {
-        result.staticDuration_ = staticDuration_;
-      } else {
-        result.staticDuration_ = staticDurationBuilder_.build();
-      }
-      if (polylineBuilder_ == null) {
-        result.polyline_ = polyline_;
-      } else {
-        result.polyline_ = polylineBuilder_.build();
-      }
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.warnings_ = warnings_;
-      if (viewportBuilder_ == null) {
-        result.viewport_ = viewport_;
-      } else {
-        result.viewport_ = viewportBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.Route result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.distanceMeters_ = distanceMeters_;
       }
-      if (travelAdvisoryBuilder_ == null) {
-        result.travelAdvisory_ = travelAdvisory_;
-      } else {
-        result.travelAdvisory_ = travelAdvisoryBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
       }
-      result.routeToken_ = routeToken_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.staticDuration_ =
+            staticDurationBuilder_ == null ? staticDuration_ : staticDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.polyline_ = polylineBuilder_ == null ? polyline_ : polylineBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.viewport_ = viewportBuilder_ == null ? viewport_ : viewportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.travelAdvisory_ =
+            travelAdvisoryBuilder_ == null ? travelAdvisory_ : travelAdvisoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.routeToken_ = routeToken_;
+      }
     }
 
     @java.lang.Override
@@ -1273,12 +1288,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1293,6 +1309,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRouteToken().isEmpty()) {
         routeToken_ = other.routeToken_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1337,31 +1354,31 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 distanceMeters_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getStaticDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getPolylineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1374,19 +1391,19 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getViewportFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getTravelAdvisoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 98:
               {
                 routeToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 104:
@@ -2145,6 +2162,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setDistanceMeters(int value) {
 
       distanceMeters_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2160,7 +2178,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDistanceMeters() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       distanceMeters_ = 0;
       onChanged();
       return this;
@@ -2188,7 +2206,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2231,11 +2249,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2254,11 +2272,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2276,17 +2294,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2303,14 +2322,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 3;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2327,7 +2345,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -2400,7 +2418,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the staticDuration field is set.
      */
     public boolean hasStaticDuration() {
-      return staticDurationBuilder_ != null || staticDuration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2439,11 +2457,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         staticDuration_ = value;
-        onChanged();
       } else {
         staticDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2459,11 +2477,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setStaticDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (staticDurationBuilder_ == null) {
         staticDuration_ = builderForValue.build();
-        onChanged();
       } else {
         staticDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2478,19 +2496,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStaticDuration(com.google.protobuf.Duration value) {
       if (staticDurationBuilder_ == null) {
-        if (staticDuration_ != null) {
-          staticDuration_ =
-              com.google.protobuf.Duration.newBuilder(staticDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && staticDuration_ != null
+            && staticDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getStaticDurationBuilder().mergeFrom(value);
         } else {
           staticDuration_ = value;
         }
-        onChanged();
       } else {
         staticDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2504,14 +2521,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration static_duration = 4;</code>
      */
     public Builder clearStaticDuration() {
-      if (staticDurationBuilder_ == null) {
-        staticDuration_ = null;
-        onChanged();
-      } else {
-        staticDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      staticDuration_ = null;
+      if (staticDurationBuilder_ != null) {
+        staticDurationBuilder_.dispose();
         staticDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2525,7 +2541,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration static_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getStaticDurationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getStaticDurationFieldBuilder().getBuilder();
     }
@@ -2594,7 +2610,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the polyline field is set.
      */
     public boolean hasPolyline() {
-      return polylineBuilder_ != null || polyline_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2633,11 +2649,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         polyline_ = value;
-        onChanged();
       } else {
         polylineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2653,11 +2669,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setPolyline(com.google.maps.routing.v2.Polyline.Builder builderForValue) {
       if (polylineBuilder_ == null) {
         polyline_ = builderForValue.build();
-        onChanged();
       } else {
         polylineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2672,19 +2688,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePolyline(com.google.maps.routing.v2.Polyline value) {
       if (polylineBuilder_ == null) {
-        if (polyline_ != null) {
-          polyline_ =
-              com.google.maps.routing.v2.Polyline.newBuilder(polyline_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && polyline_ != null
+            && polyline_ != com.google.maps.routing.v2.Polyline.getDefaultInstance()) {
+          getPolylineBuilder().mergeFrom(value);
         } else {
           polyline_ = value;
         }
-        onChanged();
       } else {
         polylineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2698,14 +2713,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.Polyline polyline = 5;</code>
      */
     public Builder clearPolyline() {
-      if (polylineBuilder_ == null) {
-        polyline_ = null;
-        onChanged();
-      } else {
-        polyline_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      polyline_ = null;
+      if (polylineBuilder_ != null) {
+        polylineBuilder_.dispose();
         polylineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2719,7 +2733,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.Polyline polyline = 5;</code>
      */
     public com.google.maps.routing.v2.Polyline.Builder getPolylineBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPolylineFieldBuilder().getBuilder();
     }
@@ -2830,8 +2844,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2847,8 +2861,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2869,8 +2883,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2879,9 +2893,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -3016,7 +3030,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearWarnings() {
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3061,7 +3075,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the viewport field is set.
      */
     public boolean hasViewport() {
-      return viewportBuilder_ != null || viewport_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3096,11 +3110,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         viewport_ = value;
-        onChanged();
       } else {
         viewportBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3115,11 +3129,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setViewport(com.google.geo.type.Viewport.Builder builderForValue) {
       if (viewportBuilder_ == null) {
         viewport_ = builderForValue.build();
-        onChanged();
       } else {
         viewportBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3133,17 +3147,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeViewport(com.google.geo.type.Viewport value) {
       if (viewportBuilder_ == null) {
-        if (viewport_ != null) {
-          viewport_ =
-              com.google.geo.type.Viewport.newBuilder(viewport_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && viewport_ != null
+            && viewport_ != com.google.geo.type.Viewport.getDefaultInstance()) {
+          getViewportBuilder().mergeFrom(value);
         } else {
           viewport_ = value;
         }
-        onChanged();
       } else {
         viewportBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3156,14 +3171,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.geo.type.Viewport viewport = 8;</code>
      */
     public Builder clearViewport() {
-      if (viewportBuilder_ == null) {
-        viewport_ = null;
-        onChanged();
-      } else {
-        viewport_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      viewport_ = null;
+      if (viewportBuilder_ != null) {
+        viewportBuilder_.dispose();
         viewportBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3176,7 +3190,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.geo.type.Viewport viewport = 8;</code>
      */
     public com.google.geo.type.Viewport.Builder getViewportBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getViewportFieldBuilder().getBuilder();
     }
@@ -3240,7 +3254,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the travelAdvisory field is set.
      */
     public boolean hasTravelAdvisory() {
-      return travelAdvisoryBuilder_ != null || travelAdvisory_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3277,11 +3291,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         travelAdvisory_ = value;
-        onChanged();
       } else {
         travelAdvisoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3297,11 +3311,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         com.google.maps.routing.v2.RouteTravelAdvisory.Builder builderForValue) {
       if (travelAdvisoryBuilder_ == null) {
         travelAdvisory_ = builderForValue.build();
-        onChanged();
       } else {
         travelAdvisoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3315,19 +3329,19 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTravelAdvisory(com.google.maps.routing.v2.RouteTravelAdvisory value) {
       if (travelAdvisoryBuilder_ == null) {
-        if (travelAdvisory_ != null) {
-          travelAdvisory_ =
-              com.google.maps.routing.v2.RouteTravelAdvisory.newBuilder(travelAdvisory_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && travelAdvisory_ != null
+            && travelAdvisory_
+                != com.google.maps.routing.v2.RouteTravelAdvisory.getDefaultInstance()) {
+          getTravelAdvisoryBuilder().mergeFrom(value);
         } else {
           travelAdvisory_ = value;
         }
-        onChanged();
       } else {
         travelAdvisoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3340,14 +3354,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.RouteTravelAdvisory travel_advisory = 9;</code>
      */
     public Builder clearTravelAdvisory() {
-      if (travelAdvisoryBuilder_ == null) {
-        travelAdvisory_ = null;
-        onChanged();
-      } else {
-        travelAdvisory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      travelAdvisory_ = null;
+      if (travelAdvisoryBuilder_ != null) {
+        travelAdvisoryBuilder_.dispose();
         travelAdvisoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3360,7 +3373,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.routing.v2.RouteTravelAdvisory travel_advisory = 9;</code>
      */
     public com.google.maps.routing.v2.RouteTravelAdvisory.Builder getTravelAdvisoryBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getTravelAdvisoryFieldBuilder().getBuilder();
     }
@@ -3493,8 +3506,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       routeToken_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3518,8 +3531,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRouteToken() {
-
       routeToken_ = getDefaultInstance().getRouteToken();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3548,8 +3561,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       routeToken_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

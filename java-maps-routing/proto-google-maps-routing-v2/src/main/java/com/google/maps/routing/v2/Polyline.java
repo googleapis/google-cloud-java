@@ -462,6 +462,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (geoJsonLinestringBuilder_ != null) {
         geoJsonLinestringBuilder_.clear();
       }
@@ -493,19 +494,24 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.maps.routing.v2.Polyline buildPartial() {
       com.google.maps.routing.v2.Polyline result = new com.google.maps.routing.v2.Polyline(this);
-      if (polylineTypeCase_ == 1) {
-        result.polylineType_ = polylineType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (polylineTypeCase_ == 2) {
-        if (geoJsonLinestringBuilder_ == null) {
-          result.polylineType_ = polylineType_;
-        } else {
-          result.polylineType_ = geoJsonLinestringBuilder_.build();
-        }
-      }
-      result.polylineTypeCase_ = polylineTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.Polyline result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.maps.routing.v2.Polyline result) {
+      result.polylineTypeCase_ = polylineTypeCase_;
+      result.polylineType_ = this.polylineType_;
+      if (polylineTypeCase_ == 2 && geoJsonLinestringBuilder_ != null) {
+        result.polylineType_ = geoJsonLinestringBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -641,6 +647,8 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -993,7 +1001,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
       }
       polylineTypeCase_ = 2;
       onChanged();
-      ;
       return geoJsonLinestringBuilder_;
     }
 

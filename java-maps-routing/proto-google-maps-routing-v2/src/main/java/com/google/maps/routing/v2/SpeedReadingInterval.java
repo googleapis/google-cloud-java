@@ -251,7 +251,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   public static final int START_POLYLINE_POINT_INDEX_FIELD_NUMBER = 1;
-  private int startPolylinePointIndex_;
+  private int startPolylinePointIndex_ = 0;
   /**
    *
    *
@@ -284,7 +284,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
   }
 
   public static final int END_POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
-  private int endPolylinePointIndex_;
+  private int endPolylinePointIndex_ = 0;
   /**
    *
    *
@@ -317,7 +317,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SPEED_FIELD_NUMBER = 3;
-  private int speed_;
+  private int speed_ = 0;
   /**
    *
    *
@@ -346,9 +346,8 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.maps.routing.v2.SpeedReadingInterval.Speed getSpeed() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.SpeedReadingInterval.Speed result =
-        com.google.maps.routing.v2.SpeedReadingInterval.Speed.valueOf(speed_);
+        com.google.maps.routing.v2.SpeedReadingInterval.Speed.forNumber(speed_);
     return result == null
         ? com.google.maps.routing.v2.SpeedReadingInterval.Speed.UNRECOGNIZED
         : result;
@@ -584,12 +583,10 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startPolylinePointIndex_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       endPolylinePointIndex_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
       speed_ = 0;
-
       return this;
     }
 
@@ -617,6 +614,14 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     public com.google.maps.routing.v2.SpeedReadingInterval buildPartial() {
       com.google.maps.routing.v2.SpeedReadingInterval result =
           new com.google.maps.routing.v2.SpeedReadingInterval(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.SpeedReadingInterval result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -627,10 +632,10 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
         result.endPolylinePointIndex_ = endPolylinePointIndex_;
         to_bitField0_ |= 0x00000002;
       }
-      result.speed_ = speed_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.speed_ = speed_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -729,7 +734,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
             case 24:
               {
                 speed_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -795,8 +800,9 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setStartPolylinePointIndex(int value) {
-      bitField0_ |= 0x00000001;
+
       startPolylinePointIndex_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,8 +868,9 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setEndPolylinePointIndex(int value) {
-      bitField0_ |= 0x00000002;
+
       endPolylinePointIndex_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -914,8 +921,8 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSpeedValue(int value) {
-
       speed_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -932,9 +939,8 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.maps.routing.v2.SpeedReadingInterval.Speed getSpeed() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.SpeedReadingInterval.Speed result =
-          com.google.maps.routing.v2.SpeedReadingInterval.Speed.valueOf(speed_);
+          com.google.maps.routing.v2.SpeedReadingInterval.Speed.forNumber(speed_);
       return result == null
           ? com.google.maps.routing.v2.SpeedReadingInterval.Speed.UNRECOGNIZED
           : result;
@@ -955,7 +961,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       speed_ = value.getNumber();
       onChanged();
       return this;
@@ -972,7 +978,7 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSpeed() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       speed_ = 0;
       onChanged();
       return this;

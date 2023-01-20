@@ -71,7 +71,7 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTING_MODE_FIELD_NUMBER = 1;
-  private int routingMode_;
+  private int routingMode_ = 0;
   /**
    *
    *
@@ -104,14 +104,13 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.FallbackRoutingMode getRoutingMode() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.FallbackRoutingMode result =
-        com.google.maps.routing.v2.FallbackRoutingMode.valueOf(routingMode_);
+        com.google.maps.routing.v2.FallbackRoutingMode.forNumber(routingMode_);
     return result == null ? com.google.maps.routing.v2.FallbackRoutingMode.UNRECOGNIZED : result;
   }
 
   public static final int REASON_FIELD_NUMBER = 2;
-  private int reason_;
+  private int reason_ = 0;
   /**
    *
    *
@@ -144,9 +143,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.routing.v2.FallbackReason getReason() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.FallbackReason result =
-        com.google.maps.routing.v2.FallbackReason.valueOf(reason_);
+        com.google.maps.routing.v2.FallbackReason.forNumber(reason_);
     return result == null ? com.google.maps.routing.v2.FallbackReason.UNRECOGNIZED : result;
   }
 
@@ -363,10 +361,9 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       routingMode_ = 0;
-
       reason_ = 0;
-
       return this;
     }
 
@@ -394,10 +391,21 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.FallbackInfo buildPartial() {
       com.google.maps.routing.v2.FallbackInfo result =
           new com.google.maps.routing.v2.FallbackInfo(this);
-      result.routingMode_ = routingMode_;
-      result.reason_ = reason_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.FallbackInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.routingMode_ = routingMode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reason_ = reason_;
+      }
     }
 
     @java.lang.Override
@@ -480,13 +488,13 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 routingMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 reason_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -505,6 +513,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int routingMode_ = 0;
     /**
@@ -539,8 +549,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoutingModeValue(int value) {
-
       routingMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -559,9 +569,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.routing.v2.FallbackRoutingMode getRoutingMode() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.FallbackRoutingMode result =
-          com.google.maps.routing.v2.FallbackRoutingMode.valueOf(routingMode_);
+          com.google.maps.routing.v2.FallbackRoutingMode.forNumber(routingMode_);
       return result == null ? com.google.maps.routing.v2.FallbackRoutingMode.UNRECOGNIZED : result;
     }
     /**
@@ -582,7 +591,7 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       routingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -601,7 +610,7 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRoutingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       routingMode_ = 0;
       onChanged();
       return this;
@@ -640,8 +649,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setReasonValue(int value) {
-
       reason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -660,9 +669,8 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.routing.v2.FallbackReason getReason() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.FallbackReason result =
-          com.google.maps.routing.v2.FallbackReason.valueOf(reason_);
+          com.google.maps.routing.v2.FallbackReason.forNumber(reason_);
       return result == null ? com.google.maps.routing.v2.FallbackReason.UNRECOGNIZED : result;
     }
     /**
@@ -683,7 +691,7 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       reason_ = value.getNumber();
       onChanged();
       return this;
@@ -702,7 +710,7 @@ public final class FallbackInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reason_ = 0;
       onChanged();
       return this;

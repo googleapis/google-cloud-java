@@ -107,6 +107,7 @@ public class RoutesClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setUnits(Units.forNumber(0))
             .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+            .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
             .build();
 
     ComputeRoutesResponse actualResponse = client.computeRoutes(request);
@@ -131,6 +132,8 @@ public class RoutesClientTest {
     Assert.assertEquals(request.getUnits(), actualRequest.getUnits());
     Assert.assertEquals(
         request.getRequestedReferenceRoutesList(), actualRequest.getRequestedReferenceRoutesList());
+    Assert.assertEquals(
+        request.getExtraComputationsList(), actualRequest.getExtraComputationsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -158,6 +161,7 @@ public class RoutesClientTest {
               .setLanguageCode("languageCode-2092349083")
               .setUnits(Units.forNumber(0))
               .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+              .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
               .build();
       client.computeRoutes(request);
       Assert.fail("No exception raised");
@@ -188,6 +192,7 @@ public class RoutesClientTest {
             .setTravelMode(RouteTravelMode.forNumber(0))
             .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
+            .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
             .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();
@@ -212,6 +217,7 @@ public class RoutesClientTest {
             .setTravelMode(RouteTravelMode.forNumber(0))
             .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
+            .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
             .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();

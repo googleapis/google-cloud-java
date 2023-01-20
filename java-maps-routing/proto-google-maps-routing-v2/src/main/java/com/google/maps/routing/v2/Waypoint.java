@@ -238,7 +238,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIA_FIELD_NUMBER = 3;
-  private boolean via_;
+  private boolean via_ = false;
   /**
    *
    *
@@ -266,7 +266,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VEHICLE_STOPOVER_FIELD_NUMBER = 4;
-  private boolean vehicleStopover_;
+  private boolean vehicleStopover_ = false;
   /**
    *
    *
@@ -288,7 +288,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIDE_OF_ROAD_FIELD_NUMBER = 5;
-  private boolean sideOfRoad_;
+  private boolean sideOfRoad_ = false;
   /**
    *
    *
@@ -561,15 +561,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (locationBuilder_ != null) {
         locationBuilder_.clear();
       }
       via_ = false;
-
       vehicleStopover_ = false;
-
       sideOfRoad_ = false;
-
       locationTypeCase_ = 0;
       locationType_ = null;
       return this;
@@ -598,22 +596,33 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.maps.routing.v2.Waypoint buildPartial() {
       com.google.maps.routing.v2.Waypoint result = new com.google.maps.routing.v2.Waypoint(this);
-      if (locationTypeCase_ == 1) {
-        if (locationBuilder_ == null) {
-          result.locationType_ = locationType_;
-        } else {
-          result.locationType_ = locationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (locationTypeCase_ == 2) {
-        result.locationType_ = locationType_;
-      }
-      result.via_ = via_;
-      result.vehicleStopover_ = vehicleStopover_;
-      result.sideOfRoad_ = sideOfRoad_;
-      result.locationTypeCase_ = locationTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.Waypoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.via_ = via_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vehicleStopover_ = vehicleStopover_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sideOfRoad_ = sideOfRoad_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.maps.routing.v2.Waypoint result) {
+      result.locationTypeCase_ = locationTypeCase_;
+      result.locationType_ = this.locationType_;
+      if (locationTypeCase_ == 1 && locationBuilder_ != null) {
+        result.locationType_ = locationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -730,19 +739,19 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 via_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 vehicleStopover_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 sideOfRoad_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -775,6 +784,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.routing.v2.Location,
@@ -990,7 +1001,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
       locationTypeCase_ = 1;
       onChanged();
-      ;
       return locationBuilder_;
     }
 
@@ -1179,6 +1189,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setVia(boolean value) {
 
       via_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1204,7 +1215,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVia() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       via_ = false;
       onChanged();
       return this;
@@ -1249,6 +1260,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setVehicleStopover(boolean value) {
 
       vehicleStopover_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1268,7 +1280,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVehicleStopover() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       vehicleStopover_ = false;
       onChanged();
       return this;
@@ -1315,6 +1327,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setSideOfRoad(boolean value) {
 
       sideOfRoad_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1335,7 +1348,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSideOfRoad() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sideOfRoad_ = false;
       onChanged();
       return this;

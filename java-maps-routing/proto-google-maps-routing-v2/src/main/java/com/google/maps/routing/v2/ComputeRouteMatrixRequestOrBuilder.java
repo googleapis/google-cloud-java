@@ -301,4 +301,94 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDepartureTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the extraComputations.
+   */
+  java.util.List<com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
+      getExtraComputationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of extraComputations.
+   */
+  int getExtraComputationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The extraComputations at the given index.
+   */
+  com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation getExtraComputations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for extraComputations.
+   */
+  java.util.List<java.lang.Integer> getExtraComputationsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of extraComputations at the given index.
+   */
+  int getExtraComputationsValue(int index);
 }

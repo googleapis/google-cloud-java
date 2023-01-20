@@ -47,6 +47,7 @@
  *           .setLanguageCode("languageCode-2092349083")
  *           .setUnits(Units.forNumber(0))
  *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
+ *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
  *           .build();
  *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
  * }

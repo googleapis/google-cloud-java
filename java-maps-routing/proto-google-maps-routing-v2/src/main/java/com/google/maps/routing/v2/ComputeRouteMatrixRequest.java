@@ -42,6 +42,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     destinations_ = java.util.Collections.emptyList();
     travelMode_ = 0;
     routingPreference_ = 0;
+    extraComputations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -70,7 +71,148 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
             com.google.maps.routing.v2.ComputeRouteMatrixRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Extra computations to perform while completing the request.
+   * </pre>
+   *
+   * Protobuf enum {@code google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation}
+   */
+  public enum ExtraComputation implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not used. Requests containing this value will fail.
+     * </pre>
+     *
+     * <code>EXTRA_COMPUTATION_UNSPECIFIED = 0;</code>
+     */
+    EXTRA_COMPUTATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Toll information for the matrix element(s).
+     * </pre>
+     *
+     * <code>TOLLS = 1;</code>
+     */
+    TOLLS(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not used. Requests containing this value will fail.
+     * </pre>
+     *
+     * <code>EXTRA_COMPUTATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXTRA_COMPUTATION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Toll information for the matrix element(s).
+     * </pre>
+     *
+     * <code>TOLLS = 1;</code>
+     */
+    public static final int TOLLS_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExtraComputation valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExtraComputation forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXTRA_COMPUTATION_UNSPECIFIED;
+        case 1:
+          return TOLLS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExtraComputation> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExtraComputation>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExtraComputation>() {
+              public ExtraComputation findValueByNumber(int number) {
+                return ExtraComputation.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.maps.routing.v2.ComputeRouteMatrixRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ExtraComputation[] VALUES = values();
+
+    public static ExtraComputation valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExtraComputation(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation)
+  }
+
   public static final int ORIGINS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.RouteMatrixOrigin> origins_;
   /**
    *
@@ -190,6 +332,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.RouteMatrixDestination> destinations_;
   /**
    *
@@ -275,7 +419,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
   }
 
   public static final int TRAVEL_MODE_FIELD_NUMBER = 3;
-  private int travelMode_;
+  private int travelMode_ = 0;
   /**
    *
    *
@@ -308,14 +452,13 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.RouteTravelMode result =
-        com.google.maps.routing.v2.RouteTravelMode.valueOf(travelMode_);
+        com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
     return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
   }
 
   public static final int ROUTING_PREFERENCE_FIELD_NUMBER = 4;
-  private int routingPreference_;
+  private int routingPreference_ = 0;
   /**
    *
    *
@@ -356,9 +499,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.maps.routing.v2.RoutingPreference getRoutingPreference() {
-    @SuppressWarnings("deprecation")
     com.google.maps.routing.v2.RoutingPreference result =
-        com.google.maps.routing.v2.RoutingPreference.valueOf(routingPreference_);
+        com.google.maps.routing.v2.RoutingPreference.forNumber(routingPreference_);
     return result == null ? com.google.maps.routing.v2.RoutingPreference.UNRECOGNIZED : result;
   }
 
@@ -416,8 +558,141 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDepartureTimeOrBuilder() {
-    return getDepartureTime();
+    return departureTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : departureTime_;
   }
+
+  public static final int EXTRA_COMPUTATIONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> extraComputations_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
+      extraComputations_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>() {
+            public com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation convert(
+                java.lang.Integer from) {
+              com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation result =
+                  com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation.forNumber(
+                      from);
+              return result == null
+                  ? com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the extraComputations.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
+      getExtraComputationsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>(
+        extraComputations_, extraComputations_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of extraComputations.
+   */
+  @java.lang.Override
+  public int getExtraComputationsCount() {
+    return extraComputations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The extraComputations at the given index.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation getExtraComputations(
+      int index) {
+    return extraComputations_converter_.convert(extraComputations_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for extraComputations.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getExtraComputationsValueList() {
+    return extraComputations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of extra computations which may be used to complete the
+   * request. Note: These extra computations may return extra fields on the
+   * response. These extra fields must also be specified in the field mask to be
+   * returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of extraComputations at the given index.
+   */
+  @java.lang.Override
+  public int getExtraComputationsValue(int index) {
+    return extraComputations_.get(index);
+  }
+
+  private int extraComputationsMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
 
@@ -433,6 +708,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     for (int i = 0; i < origins_.size(); i++) {
       output.writeMessage(1, origins_.get(i));
     }
@@ -450,6 +726,13 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     }
     if (departureTime_ != null) {
       output.writeMessage(5, getDepartureTime());
+    }
+    if (getExtraComputationsList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(extraComputationsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < extraComputations_.size(); i++) {
+      output.writeEnumNoTag(extraComputations_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -478,6 +761,19 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     if (departureTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDepartureTime());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < extraComputations_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(extraComputations_.get(i));
+      }
+      size += dataSize;
+      if (!getExtraComputationsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      extraComputationsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -502,6 +798,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     if (hasDepartureTime()) {
       if (!getDepartureTime().equals(other.getDepartureTime())) return false;
     }
+    if (!extraComputations_.equals(other.extraComputations_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -528,6 +825,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     if (hasDepartureTime()) {
       hash = (37 * hash) + DEPARTURE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDepartureTime().hashCode();
+    }
+    if (getExtraComputationsCount() > 0) {
+      hash = (37 * hash) + EXTRA_COMPUTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + extraComputations_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -667,6 +968,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (originsBuilder_ == null) {
         origins_ = java.util.Collections.emptyList();
       } else {
@@ -682,15 +984,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       travelMode_ = 0;
-
       routingPreference_ = 0;
-
-      if (departureTimeBuilder_ == null) {
-        departureTime_ = null;
-      } else {
-        departureTime_ = null;
+      departureTime_ = null;
+      if (departureTimeBuilder_ != null) {
+        departureTimeBuilder_.dispose();
         departureTimeBuilder_ = null;
       }
+      extraComputations_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -718,7 +1019,16 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     public com.google.maps.routing.v2.ComputeRouteMatrixRequest buildPartial() {
       com.google.maps.routing.v2.ComputeRouteMatrixRequest result =
           new com.google.maps.routing.v2.ComputeRouteMatrixRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.maps.routing.v2.ComputeRouteMatrixRequest result) {
       if (originsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           origins_ = java.util.Collections.unmodifiableList(origins_);
@@ -737,15 +1047,25 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       } else {
         result.destinations_ = destinationsBuilder_.build();
       }
-      result.travelMode_ = travelMode_;
-      result.routingPreference_ = routingPreference_;
-      if (departureTimeBuilder_ == null) {
-        result.departureTime_ = departureTime_;
-      } else {
-        result.departureTime_ = departureTimeBuilder_.build();
+      if (((bitField0_ & 0x00000020) != 0)) {
+        extraComputations_ = java.util.Collections.unmodifiableList(extraComputations_);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
-      onBuilt();
-      return result;
+      result.extraComputations_ = extraComputations_;
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.ComputeRouteMatrixRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.travelMode_ = travelMode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.routingPreference_ = routingPreference_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.departureTime_ =
+            departureTimeBuilder_ == null ? departureTime_ : departureTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -857,6 +1177,16 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       if (other.hasDepartureTime()) {
         mergeDepartureTime(other.getDepartureTime());
       }
+      if (!other.extraComputations_.isEmpty()) {
+        if (extraComputations_.isEmpty()) {
+          extraComputations_ = other.extraComputations_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureExtraComputationsIsMutable();
+          extraComputations_.addAll(other.extraComputations_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -913,21 +1243,40 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
             case 24:
               {
                 travelMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 routingPreference_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getDepartureTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 64:
+              {
+                int tmpRaw = input.readEnum();
+                ensureExtraComputationsIsMutable();
+                extraComputations_.add(tmpRaw);
+                break;
+              } // case 64
+            case 66:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureExtraComputationsIsMutable();
+                  extraComputations_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1922,8 +2271,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setTravelModeValue(int value) {
-
       travelMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1942,9 +2291,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.RouteTravelMode result =
-          com.google.maps.routing.v2.RouteTravelMode.valueOf(travelMode_);
+          com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
       return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
     }
     /**
@@ -1965,7 +2313,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       travelMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1984,7 +2332,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTravelMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       travelMode_ = 0;
       onChanged();
       return this;
@@ -2031,8 +2379,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setRoutingPreferenceValue(int value) {
-
       routingPreference_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2055,9 +2403,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.maps.routing.v2.RoutingPreference getRoutingPreference() {
-      @SuppressWarnings("deprecation")
       com.google.maps.routing.v2.RoutingPreference result =
-          com.google.maps.routing.v2.RoutingPreference.valueOf(routingPreference_);
+          com.google.maps.routing.v2.RoutingPreference.forNumber(routingPreference_);
       return result == null ? com.google.maps.routing.v2.RoutingPreference.UNRECOGNIZED : result;
     }
     /**
@@ -2082,7 +2429,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       routingPreference_ = value.getNumber();
       onChanged();
       return this;
@@ -2105,7 +2452,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRoutingPreference() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       routingPreference_ = 0;
       onChanged();
       return this;
@@ -2133,7 +2480,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return Whether the departureTime field is set.
      */
     public boolean hasDepartureTime() {
-      return departureTimeBuilder_ != null || departureTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2178,11 +2525,11 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         departureTime_ = value;
-        onChanged();
       } else {
         departureTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2201,11 +2548,11 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     public Builder setDepartureTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (departureTimeBuilder_ == null) {
         departureTime_ = builderForValue.build();
-        onChanged();
       } else {
         departureTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2223,19 +2570,18 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     public Builder mergeDepartureTime(com.google.protobuf.Timestamp value) {
       if (departureTimeBuilder_ == null) {
-        if (departureTime_ != null) {
-          departureTime_ =
-              com.google.protobuf.Timestamp.newBuilder(departureTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && departureTime_ != null
+            && departureTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDepartureTimeBuilder().mergeFrom(value);
         } else {
           departureTime_ = value;
         }
-        onChanged();
       } else {
         departureTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2252,14 +2598,13 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearDepartureTime() {
-      if (departureTimeBuilder_ == null) {
-        departureTime_ = null;
-        onChanged();
-      } else {
-        departureTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      departureTime_ = null;
+      if (departureTimeBuilder_ != null) {
+        departureTimeBuilder_.dispose();
         departureTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2276,7 +2621,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDepartureTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDepartureTimeFieldBuilder().getBuilder();
     }
@@ -2330,6 +2675,294 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
         departureTime_ = null;
       }
       return departureTimeBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> extraComputations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureExtraComputationsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        extraComputations_ = new java.util.ArrayList<java.lang.Integer>(extraComputations_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the extraComputations.
+     */
+    public java.util.List<com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
+        getExtraComputationsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>(
+          extraComputations_, extraComputations_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of extraComputations.
+     */
+    public int getExtraComputationsCount() {
+      return extraComputations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The extraComputations at the given index.
+     */
+    public com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation
+        getExtraComputations(int index) {
+      return extraComputations_converter_.convert(extraComputations_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The extraComputations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtraComputations(
+        int index, com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExtraComputationsIsMutable();
+      extraComputations_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The extraComputations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExtraComputations(
+        com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExtraComputationsIsMutable();
+      extraComputations_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The extraComputations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExtraComputations(
+        java.lang.Iterable<
+                ? extends com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
+            values) {
+      ensureExtraComputationsIsMutable();
+      for (com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation value : values) {
+        extraComputations_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExtraComputations() {
+      extraComputations_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for extraComputations.
+     */
+    public java.util.List<java.lang.Integer> getExtraComputationsValueList() {
+      return java.util.Collections.unmodifiableList(extraComputations_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of extraComputations at the given index.
+     */
+    public int getExtraComputationsValue(int index) {
+      return extraComputations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for extraComputations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtraComputationsValue(int index, int value) {
+      ensureExtraComputationsIsMutable();
+      extraComputations_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for extraComputations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExtraComputationsValue(int value) {
+      ensureExtraComputationsIsMutable();
+      extraComputations_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of extra computations which may be used to complete the
+     * request. Note: These extra computations may return extra fields on the
+     * response. These extra fields must also be specified in the field mask to be
+     * returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation extra_computations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for extraComputations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExtraComputationsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureExtraComputationsIsMutable();
+      for (int value : values) {
+        extraComputations_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -68,6 +68,8 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ROUTES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.Route> routes_;
   /**
    *
@@ -210,7 +212,9 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.maps.routing.v2.FallbackInfoOrBuilder getFallbackInfoOrBuilder() {
-    return getFallbackInfo();
+    return fallbackInfo_ == null
+        ? com.google.maps.routing.v2.FallbackInfo.getDefaultInstance()
+        : fallbackInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -426,6 +430,7 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (routesBuilder_ == null) {
         routes_ = java.util.Collections.emptyList();
       } else {
@@ -433,10 +438,9 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
         routesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (fallbackInfoBuilder_ == null) {
-        fallbackInfo_ = null;
-      } else {
-        fallbackInfo_ = null;
+      fallbackInfo_ = null;
+      if (fallbackInfoBuilder_ != null) {
+        fallbackInfoBuilder_.dispose();
         fallbackInfoBuilder_ = null;
       }
       return this;
@@ -466,7 +470,16 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     public com.google.maps.routing.v2.ComputeRoutesResponse buildPartial() {
       com.google.maps.routing.v2.ComputeRoutesResponse result =
           new com.google.maps.routing.v2.ComputeRoutesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.maps.routing.v2.ComputeRoutesResponse result) {
       if (routesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
@@ -476,13 +489,14 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.routes_ = routesBuilder_.build();
       }
-      if (fallbackInfoBuilder_ == null) {
-        result.fallbackInfo_ = fallbackInfo_;
-      } else {
-        result.fallbackInfo_ = fallbackInfoBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.maps.routing.v2.ComputeRoutesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fallbackInfo_ =
+            fallbackInfoBuilder_ == null ? fallbackInfo_ : fallbackInfoBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -602,7 +616,7 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 input.readMessage(getFallbackInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1063,7 +1077,7 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the fallbackInfo field is set.
      */
     public boolean hasFallbackInfo() {
-      return fallbackInfoBuilder_ != null || fallbackInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1106,11 +1120,11 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         fallbackInfo_ = value;
-        onChanged();
       } else {
         fallbackInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1129,11 +1143,11 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
         com.google.maps.routing.v2.FallbackInfo.Builder builderForValue) {
       if (fallbackInfoBuilder_ == null) {
         fallbackInfo_ = builderForValue.build();
-        onChanged();
       } else {
         fallbackInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1150,19 +1164,18 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeFallbackInfo(com.google.maps.routing.v2.FallbackInfo value) {
       if (fallbackInfoBuilder_ == null) {
-        if (fallbackInfo_ != null) {
-          fallbackInfo_ =
-              com.google.maps.routing.v2.FallbackInfo.newBuilder(fallbackInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && fallbackInfo_ != null
+            && fallbackInfo_ != com.google.maps.routing.v2.FallbackInfo.getDefaultInstance()) {
+          getFallbackInfoBuilder().mergeFrom(value);
         } else {
           fallbackInfo_ = value;
         }
-        onChanged();
       } else {
         fallbackInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1178,14 +1191,13 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.maps.routing.v2.FallbackInfo fallback_info = 2;</code>
      */
     public Builder clearFallbackInfo() {
-      if (fallbackInfoBuilder_ == null) {
-        fallbackInfo_ = null;
-        onChanged();
-      } else {
-        fallbackInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fallbackInfo_ = null;
+      if (fallbackInfoBuilder_ != null) {
+        fallbackInfoBuilder_.dispose();
         fallbackInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1201,7 +1213,7 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.maps.routing.v2.FallbackInfo fallback_info = 2;</code>
      */
     public com.google.maps.routing.v2.FallbackInfo.Builder getFallbackInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFallbackInfoFieldBuilder().getBuilder();
     }
