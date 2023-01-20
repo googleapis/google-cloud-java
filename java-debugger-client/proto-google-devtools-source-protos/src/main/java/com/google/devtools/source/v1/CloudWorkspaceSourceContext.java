@@ -112,11 +112,15 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.devtools.source.v1.CloudWorkspaceIdOrBuilder getWorkspaceIdOrBuilder() {
-    return getWorkspaceId();
+    return workspaceId_ == null
+        ? com.google.devtools.source.v1.CloudWorkspaceId.getDefaultInstance()
+        : workspaceId_;
   }
 
   public static final int SNAPSHOT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object snapshotId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotId_ = "";
   /**
    *
    *
@@ -378,14 +382,13 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (workspaceIdBuilder_ == null) {
-        workspaceId_ = null;
-      } else {
-        workspaceId_ = null;
+      bitField0_ = 0;
+      workspaceId_ = null;
+      if (workspaceIdBuilder_ != null) {
+        workspaceIdBuilder_.dispose();
         workspaceIdBuilder_ = null;
       }
       snapshotId_ = "";
-
       return this;
     }
 
@@ -413,14 +416,22 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     public com.google.devtools.source.v1.CloudWorkspaceSourceContext buildPartial() {
       com.google.devtools.source.v1.CloudWorkspaceSourceContext result =
           new com.google.devtools.source.v1.CloudWorkspaceSourceContext(this);
-      if (workspaceIdBuilder_ == null) {
-        result.workspaceId_ = workspaceId_;
-      } else {
-        result.workspaceId_ = workspaceIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.snapshotId_ = snapshotId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.source.v1.CloudWorkspaceSourceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workspaceId_ =
+            workspaceIdBuilder_ == null ? workspaceId_ : workspaceIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshotId_ = snapshotId_;
+      }
     }
 
     @java.lang.Override
@@ -474,6 +485,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       }
       if (!other.getSnapshotId().isEmpty()) {
         snapshotId_ = other.snapshotId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +517,13 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getWorkspaceIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 snapshotId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +543,8 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.devtools.source.v1.CloudWorkspaceId workspaceId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.source.v1.CloudWorkspaceId,
@@ -549,7 +563,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
      * @return Whether the workspaceId field is set.
      */
     public boolean hasWorkspaceId() {
-      return workspaceIdBuilder_ != null || workspaceId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -586,11 +600,11 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         workspaceId_ = value;
-        onChanged();
       } else {
         workspaceIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -606,11 +620,11 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         com.google.devtools.source.v1.CloudWorkspaceId.Builder builderForValue) {
       if (workspaceIdBuilder_ == null) {
         workspaceId_ = builderForValue.build();
-        onChanged();
       } else {
         workspaceIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,19 +638,19 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
      */
     public Builder mergeWorkspaceId(com.google.devtools.source.v1.CloudWorkspaceId value) {
       if (workspaceIdBuilder_ == null) {
-        if (workspaceId_ != null) {
-          workspaceId_ =
-              com.google.devtools.source.v1.CloudWorkspaceId.newBuilder(workspaceId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && workspaceId_ != null
+            && workspaceId_
+                != com.google.devtools.source.v1.CloudWorkspaceId.getDefaultInstance()) {
+          getWorkspaceIdBuilder().mergeFrom(value);
         } else {
           workspaceId_ = value;
         }
-        onChanged();
       } else {
         workspaceIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,14 +663,13 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
      * <code>.google.devtools.source.v1.CloudWorkspaceId workspace_id = 1;</code>
      */
     public Builder clearWorkspaceId() {
-      if (workspaceIdBuilder_ == null) {
-        workspaceId_ = null;
-        onChanged();
-      } else {
-        workspaceId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      workspaceId_ = null;
+      if (workspaceIdBuilder_ != null) {
+        workspaceIdBuilder_.dispose();
         workspaceIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -669,7 +682,7 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
      * <code>.google.devtools.source.v1.CloudWorkspaceId workspace_id = 1;</code>
      */
     public com.google.devtools.source.v1.CloudWorkspaceId.Builder getWorkspaceIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWorkspaceIdFieldBuilder().getBuilder();
     }
@@ -781,8 +794,8 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,8 +812,8 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearSnapshotId() {
-
       snapshotId_ = getDefaultInstance().getSnapshotId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -822,8 +835,8 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

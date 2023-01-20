@@ -582,6 +582,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (cloudRepoBuilder_ != null) {
         cloudRepoBuilder_.clear();
       }
@@ -623,37 +624,33 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.SourceContext buildPartial() {
       com.google.devtools.source.v1.SourceContext result =
           new com.google.devtools.source.v1.SourceContext(this);
-      if (contextCase_ == 1) {
-        if (cloudRepoBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = cloudRepoBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contextCase_ == 2) {
-        if (cloudWorkspaceBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = cloudWorkspaceBuilder_.build();
-        }
-      }
-      if (contextCase_ == 3) {
-        if (gerritBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = gerritBuilder_.build();
-        }
-      }
-      if (contextCase_ == 6) {
-        if (gitBuilder_ == null) {
-          result.context_ = context_;
-        } else {
-          result.context_ = gitBuilder_.build();
-        }
-      }
-      result.contextCase_ = contextCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.source.v1.SourceContext result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.devtools.source.v1.SourceContext result) {
+      result.contextCase_ = contextCase_;
+      result.context_ = this.context_;
+      if (contextCase_ == 1 && cloudRepoBuilder_ != null) {
+        result.context_ = cloudRepoBuilder_.build();
+      }
+      if (contextCase_ == 2 && cloudWorkspaceBuilder_ != null) {
+        result.context_ = cloudWorkspaceBuilder_.build();
+      }
+      if (contextCase_ == 3 && gerritBuilder_ != null) {
+        result.context_ = gerritBuilder_.build();
+      }
+      if (contextCase_ == 6 && gitBuilder_ != null) {
+        result.context_ = gitBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -807,6 +804,8 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.source.v1.CloudRepoSourceContext,
@@ -1015,7 +1014,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 1;
       onChanged();
-      ;
       return cloudRepoBuilder_;
     }
 
@@ -1230,7 +1228,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 2;
       onChanged();
-      ;
       return cloudWorkspaceBuilder_;
     }
 
@@ -1440,7 +1437,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 3;
       onChanged();
-      ;
       return gerritBuilder_;
     }
 
@@ -1649,7 +1645,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 6;
       onChanged();
-      ;
       return gitBuilder_;
     }
 
