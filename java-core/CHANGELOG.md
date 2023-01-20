@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.4](https://github.com/googleapis/java-core/compare/v2.9.3...v2.9.4) (2023-01-20)
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-core/issues/1744)) ([#1080](https://github.com/googleapis/java-core/issues/1080)) ([db2cc2f](https://github.com/googleapis/java-core/commit/db2cc2fcd03342948c6c4e753d012d08000e7733))
+
 ## [2.9.3](https://github.com/googleapis/java-core/compare/v2.9.2...v2.9.3) (2023-01-19)
 
 
