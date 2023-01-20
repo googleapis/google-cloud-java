@@ -108,7 +108,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.bigtable.v2.RowOrBuilder getRowOrBuilder() {
-    return getRow();
+    return row_ == null ? com.google.bigtable.v2.Row.getDefaultInstance() : row_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,10 +313,10 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (rowBuilder_ == null) {
-        row_ = null;
-      } else {
-        row_ = null;
+      bitField0_ = 0;
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
       return this;
@@ -346,13 +346,18 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     public com.google.bigtable.v2.ReadModifyWriteRowResponse buildPartial() {
       com.google.bigtable.v2.ReadModifyWriteRowResponse result =
           new com.google.bigtable.v2.ReadModifyWriteRowResponse(this);
-      if (rowBuilder_ == null) {
-        result.row_ = row_;
-      } else {
-        result.row_ = rowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.ReadModifyWriteRowResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.row_ = rowBuilder_ == null ? row_ : rowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -433,7 +438,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getRowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +458,8 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.bigtable.v2.Row row_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.Row,
@@ -471,7 +478,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      * @return Whether the row field is set.
      */
     public boolean hasRow() {
-      return rowBuilder_ != null || row_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -506,11 +513,11 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         row_ = value;
-        onChanged();
       } else {
         rowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -525,11 +532,11 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     public Builder setRow(com.google.bigtable.v2.Row.Builder builderForValue) {
       if (rowBuilder_ == null) {
         row_ = builderForValue.build();
-        onChanged();
       } else {
         rowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -543,16 +550,18 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      */
     public Builder mergeRow(com.google.bigtable.v2.Row value) {
       if (rowBuilder_ == null) {
-        if (row_ != null) {
-          row_ = com.google.bigtable.v2.Row.newBuilder(row_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && row_ != null
+            && row_ != com.google.bigtable.v2.Row.getDefaultInstance()) {
+          getRowBuilder().mergeFrom(value);
         } else {
           row_ = value;
         }
-        onChanged();
       } else {
         rowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,14 +574,13 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      * <code>.google.bigtable.v2.Row row = 1;</code>
      */
     public Builder clearRow() {
-      if (rowBuilder_ == null) {
-        row_ = null;
-        onChanged();
-      } else {
-        row_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -585,7 +593,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
      * <code>.google.bigtable.v2.Row row = 1;</code>
      */
     public com.google.bigtable.v2.Row.Builder getRowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRowFieldBuilder().getBuilder();
     }

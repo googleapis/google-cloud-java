@@ -66,7 +66,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MIN_SERVE_NODES_FIELD_NUMBER = 1;
-  private int minServeNodes_;
+  private int minServeNodes_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MAX_SERVE_NODES_FIELD_NUMBER = 2;
-  private int maxServeNodes_;
+  private int maxServeNodes_ = 0;
   /**
    *
    *
@@ -307,10 +307,9 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minServeNodes_ = 0;
-
       maxServeNodes_ = 0;
-
       return this;
     }
 
@@ -338,10 +337,21 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     public com.google.bigtable.admin.v2.AutoscalingLimits buildPartial() {
       com.google.bigtable.admin.v2.AutoscalingLimits result =
           new com.google.bigtable.admin.v2.AutoscalingLimits(this);
-      result.minServeNodes_ = minServeNodes_;
-      result.maxServeNodes_ = maxServeNodes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.AutoscalingLimits result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minServeNodes_ = minServeNodes_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxServeNodes_ = maxServeNodes_;
+      }
     }
 
     @java.lang.Override
@@ -424,13 +434,13 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 minServeNodes_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxServeNodes_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -449,6 +459,8 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minServeNodes_;
     /**
@@ -481,6 +493,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     public Builder setMinServeNodes(int value) {
 
       minServeNodes_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -496,7 +509,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinServeNodes() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minServeNodes_ = 0;
       onChanged();
       return this;
@@ -533,6 +546,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     public Builder setMaxServeNodes(int value) {
 
       maxServeNodes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -548,7 +562,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxServeNodes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxServeNodes_ = 0;
       onChanged();
       return this;

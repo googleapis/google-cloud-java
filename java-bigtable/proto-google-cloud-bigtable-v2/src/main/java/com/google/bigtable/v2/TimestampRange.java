@@ -66,7 +66,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_TIMESTAMP_MICROS_FIELD_NUMBER = 1;
-  private long startTimestampMicros_;
+  private long startTimestampMicros_ = 0L;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_TIMESTAMP_MICROS_FIELD_NUMBER = 2;
-  private long endTimestampMicros_;
+  private long endTimestampMicros_ = 0L;
   /**
    *
    *
@@ -305,10 +305,9 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startTimestampMicros_ = 0L;
-
       endTimestampMicros_ = 0L;
-
       return this;
     }
 
@@ -336,10 +335,21 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.TimestampRange buildPartial() {
       com.google.bigtable.v2.TimestampRange result =
           new com.google.bigtable.v2.TimestampRange(this);
-      result.startTimestampMicros_ = startTimestampMicros_;
-      result.endTimestampMicros_ = endTimestampMicros_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.TimestampRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTimestampMicros_ = startTimestampMicros_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTimestampMicros_ = endTimestampMicros_;
+      }
     }
 
     @java.lang.Override
@@ -422,13 +432,13 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 startTimestampMicros_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 endTimestampMicros_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -447,6 +457,8 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long startTimestampMicros_;
     /**
@@ -479,6 +491,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTimestampMicros(long value) {
 
       startTimestampMicros_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -494,7 +507,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartTimestampMicros() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       startTimestampMicros_ = 0L;
       onChanged();
       return this;
@@ -531,6 +544,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTimestampMicros(long value) {
 
       endTimestampMicros_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -546,7 +560,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndTimestampMicros() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       endTimestampMicros_ = 0L;
       onChanged();
       return this;

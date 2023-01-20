@@ -184,6 +184,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList clusterIds_;
     /**
      *
@@ -461,6 +463,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -492,14 +495,26 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result =
             new com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterIds_ = clusterIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.clusterIds_ = clusterIds_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -956,7 +971,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CLUSTER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object clusterId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterId_ = "";
     /**
      *
      *
@@ -1005,7 +1022,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOW_TRANSACTIONAL_WRITES_FIELD_NUMBER = 2;
-    private boolean allowTransactionalWrites_;
+    private boolean allowTransactionalWrites_ = false;
     /**
      *
      *
@@ -1235,10 +1252,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clusterId_ = "";
-
         allowTransactionalWrites_ = false;
-
         return this;
       }
 
@@ -1267,10 +1283,22 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting result =
             new com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting(this);
-        result.clusterId_ = clusterId_;
-        result.allowTransactionalWrites_ = allowTransactionalWrites_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clusterId_ = clusterId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.allowTransactionalWrites_ = allowTransactionalWrites_;
+        }
       }
 
       @java.lang.Override
@@ -1324,6 +1352,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getClusterId().isEmpty()) {
           clusterId_ = other.clusterId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getAllowTransactionalWrites() != false) {
@@ -1358,13 +1387,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   clusterId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   allowTransactionalWrites_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1383,6 +1412,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object clusterId_ = "";
       /**
@@ -1445,8 +1476,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         clusterId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1462,8 +1493,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearClusterId() {
-
         clusterId_ = getDefaultInstance().getClusterId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1484,8 +1515,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         clusterId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1525,6 +1556,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       public Builder setAllowTransactionalWrites(boolean value) {
 
         allowTransactionalWrites_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1542,7 +1574,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowTransactionalWrites() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         allowTransactionalWrites_ = false;
         onChanged();
         return this;
@@ -1663,7 +1695,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1714,7 +1748,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1777,7 +1813,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -2197,12 +2235,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       etag_ = "";
-
       description_ = "";
-
       if (multiClusterRoutingUseAnyBuilder_ != null) {
         multiClusterRoutingUseAnyBuilder_.clear();
       }
@@ -2238,26 +2274,36 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.AppProfile buildPartial() {
       com.google.bigtable.admin.v2.AppProfile result =
           new com.google.bigtable.admin.v2.AppProfile(this);
-      result.name_ = name_;
-      result.etag_ = etag_;
-      result.description_ = description_;
-      if (routingPolicyCase_ == 5) {
-        if (multiClusterRoutingUseAnyBuilder_ == null) {
-          result.routingPolicy_ = routingPolicy_;
-        } else {
-          result.routingPolicy_ = multiClusterRoutingUseAnyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (routingPolicyCase_ == 6) {
-        if (singleClusterRoutingBuilder_ == null) {
-          result.routingPolicy_ = routingPolicy_;
-        } else {
-          result.routingPolicy_ = singleClusterRoutingBuilder_.build();
-        }
-      }
-      result.routingPolicyCase_ = routingPolicyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.AppProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.AppProfile result) {
+      result.routingPolicyCase_ = routingPolicyCase_;
+      result.routingPolicy_ = this.routingPolicy_;
+      if (routingPolicyCase_ == 5 && multiClusterRoutingUseAnyBuilder_ != null) {
+        result.routingPolicy_ = multiClusterRoutingUseAnyBuilder_.build();
+      }
+      if (routingPolicyCase_ == 6 && singleClusterRoutingBuilder_ != null) {
+        result.routingPolicy_ = singleClusterRoutingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2307,14 +2353,17 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getRoutingPolicyCase()) {
@@ -2362,19 +2411,19 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
@@ -2421,6 +2470,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2486,8 +2537,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2504,8 +2555,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2527,8 +2578,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2615,8 +2666,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2639,8 +2690,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2668,8 +2719,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2735,8 +2786,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2752,8 +2803,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2774,8 +2825,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3017,7 +3068,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       }
       routingPolicyCase_ = 5;
       onChanged();
-      ;
       return multiClusterRoutingUseAnyBuilder_;
     }
 
@@ -3243,7 +3293,6 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       }
       routingPolicyCase_ = 6;
       onChanged();
-      ;
       return singleClusterRoutingBuilder_;
     }
 

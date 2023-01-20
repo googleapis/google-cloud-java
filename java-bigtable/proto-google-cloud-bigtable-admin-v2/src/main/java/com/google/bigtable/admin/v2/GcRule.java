@@ -171,6 +171,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RULES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.admin.v2.GcRule> rules_;
     /**
      *
@@ -440,6 +442,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (rulesBuilder_ == null) {
           rules_ = java.util.Collections.emptyList();
         } else {
@@ -474,7 +477,16 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.GcRule.Intersection buildPartial() {
         com.google.bigtable.admin.v2.GcRule.Intersection result =
             new com.google.bigtable.admin.v2.GcRule.Intersection(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.bigtable.admin.v2.GcRule.Intersection result) {
         if (rulesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             rules_ = java.util.Collections.unmodifiableList(rules_);
@@ -484,8 +496,10 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.rules_ = rulesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.GcRule.Intersection result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1139,6 +1153,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RULES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.admin.v2.GcRule> rules_;
     /**
      *
@@ -1408,6 +1424,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (rulesBuilder_ == null) {
           rules_ = java.util.Collections.emptyList();
         } else {
@@ -1442,7 +1459,15 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.GcRule.Union buildPartial() {
         com.google.bigtable.admin.v2.GcRule.Union result =
             new com.google.bigtable.admin.v2.GcRule.Union(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.bigtable.admin.v2.GcRule.Union result) {
         if (rulesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             rules_ = java.util.Collections.unmodifiableList(rules_);
@@ -1452,8 +1477,10 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.rules_ = rulesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.GcRule.Union result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2502,6 +2529,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (maxAgeBuilder_ != null) {
         maxAgeBuilder_.clear();
       }
@@ -2539,33 +2567,30 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule buildPartial() {
       com.google.bigtable.admin.v2.GcRule result = new com.google.bigtable.admin.v2.GcRule(this);
-      if (ruleCase_ == 1) {
-        result.rule_ = rule_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (ruleCase_ == 2) {
-        if (maxAgeBuilder_ == null) {
-          result.rule_ = rule_;
-        } else {
-          result.rule_ = maxAgeBuilder_.build();
-        }
-      }
-      if (ruleCase_ == 3) {
-        if (intersectionBuilder_ == null) {
-          result.rule_ = rule_;
-        } else {
-          result.rule_ = intersectionBuilder_.build();
-        }
-      }
-      if (ruleCase_ == 4) {
-        if (unionBuilder_ == null) {
-          result.rule_ = rule_;
-        } else {
-          result.rule_ = unionBuilder_.build();
-        }
-      }
-      result.ruleCase_ = ruleCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.GcRule result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.GcRule result) {
+      result.ruleCase_ = ruleCase_;
+      result.rule_ = this.rule_;
+      if (ruleCase_ == 2 && maxAgeBuilder_ != null) {
+        result.rule_ = maxAgeBuilder_.build();
+      }
+      if (ruleCase_ == 3 && intersectionBuilder_ != null) {
+        result.rule_ = intersectionBuilder_.build();
+      }
+      if (ruleCase_ == 4 && unionBuilder_ != null) {
+        result.rule_ = unionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2720,6 +2745,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -2764,6 +2791,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxNumVersions(int value) {
+
       ruleCase_ = 1;
       rule_ = value;
       onChanged();
@@ -3008,7 +3036,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       }
       ruleCase_ = 2;
       onChanged();
-      ;
       return maxAgeBuilder_;
     }
 
@@ -3218,7 +3245,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       }
       ruleCase_ = 3;
       onChanged();
-      ;
       return intersectionBuilder_;
     }
 
@@ -3427,7 +3453,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       }
       ruleCase_ = 4;
       onChanged();
-      ;
       return unionBuilder_;
     }
 

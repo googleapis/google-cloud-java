@@ -69,7 +69,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
   }
 
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appProfileId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appProfileId_ = "";
   /**
    *
    *
@@ -232,11 +236,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
-    return getAppProfile();
+    return appProfile_ == null
+        ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()
+        : appProfile_;
   }
 
   public static final int IGNORE_WARNINGS_FIELD_NUMBER = 4;
-  private boolean ignoreWarnings_;
+  private boolean ignoreWarnings_ = false;
   /**
    *
    *
@@ -482,18 +488,15 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       appProfileId_ = "";
-
-      if (appProfileBuilder_ == null) {
-        appProfile_ = null;
-      } else {
-        appProfile_ = null;
+      appProfile_ = null;
+      if (appProfileBuilder_ != null) {
+        appProfileBuilder_.dispose();
         appProfileBuilder_ = null;
       }
       ignoreWarnings_ = false;
-
       return this;
     }
 
@@ -521,16 +524,27 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     public com.google.bigtable.admin.v2.CreateAppProfileRequest buildPartial() {
       com.google.bigtable.admin.v2.CreateAppProfileRequest result =
           new com.google.bigtable.admin.v2.CreateAppProfileRequest(this);
-      result.parent_ = parent_;
-      result.appProfileId_ = appProfileId_;
-      if (appProfileBuilder_ == null) {
-        result.appProfile_ = appProfile_;
-      } else {
-        result.appProfile_ = appProfileBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ignoreWarnings_ = ignoreWarnings_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.CreateAppProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appProfileId_ = appProfileId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appProfile_ = appProfileBuilder_ == null ? appProfile_ : appProfileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ignoreWarnings_ = ignoreWarnings_;
+      }
     }
 
     @java.lang.Override
@@ -581,10 +595,12 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAppProfile()) {
@@ -622,25 +638,25 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAppProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 ignoreWarnings_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -659,6 +675,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -733,8 +751,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +772,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -780,8 +798,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -853,8 +871,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -872,8 +890,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
-
       appProfileId_ = getDefaultInstance().getAppProfileId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -896,8 +914,8 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -923,7 +941,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * @return Whether the appProfile field is set.
      */
     public boolean hasAppProfile() {
-      return appProfileBuilder_ != null || appProfile_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -966,11 +984,11 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         appProfile_ = value;
-        onChanged();
       } else {
         appProfileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -988,11 +1006,11 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile.Builder builderForValue) {
       if (appProfileBuilder_ == null) {
         appProfile_ = builderForValue.build();
-        onChanged();
       } else {
         appProfileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1009,19 +1027,18 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAppProfile(com.google.bigtable.admin.v2.AppProfile value) {
       if (appProfileBuilder_ == null) {
-        if (appProfile_ != null) {
-          appProfile_ =
-              com.google.bigtable.admin.v2.AppProfile.newBuilder(appProfile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && appProfile_ != null
+            && appProfile_ != com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()) {
+          getAppProfileBuilder().mergeFrom(value);
         } else {
           appProfile_ = value;
         }
-        onChanged();
       } else {
         appProfileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1037,14 +1054,13 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAppProfile() {
-      if (appProfileBuilder_ == null) {
-        appProfile_ = null;
-        onChanged();
-      } else {
-        appProfile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      appProfile_ = null;
+      if (appProfileBuilder_ != null) {
+        appProfileBuilder_.dispose();
         appProfileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1060,7 +1076,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.bigtable.admin.v2.AppProfile.Builder getAppProfileBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAppProfileFieldBuilder().getBuilder();
     }
@@ -1145,6 +1161,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
     public Builder setIgnoreWarnings(boolean value) {
 
       ignoreWarnings_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1160,7 +1177,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIgnoreWarnings() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       ignoreWarnings_ = false;
       onChanged();
       return this;

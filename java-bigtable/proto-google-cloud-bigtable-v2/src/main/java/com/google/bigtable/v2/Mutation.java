@@ -191,7 +191,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FAMILY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object familyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object familyName_ = "";
     /**
      *
      *
@@ -242,7 +244,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COLUMN_QUALIFIER_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString columnQualifier_;
+    private com.google.protobuf.ByteString columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -261,7 +263,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TIMESTAMP_MICROS_FIELD_NUMBER = 3;
-    private long timestampMicros_;
+    private long timestampMicros_ = 0L;
     /**
      *
      *
@@ -283,7 +285,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString value_;
+    private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -525,14 +527,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         familyName_ = "";
-
         columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
-
         timestampMicros_ = 0L;
-
         value_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -560,12 +559,27 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.v2.Mutation.SetCell buildPartial() {
         com.google.bigtable.v2.Mutation.SetCell result =
             new com.google.bigtable.v2.Mutation.SetCell(this);
-        result.familyName_ = familyName_;
-        result.columnQualifier_ = columnQualifier_;
-        result.timestampMicros_ = timestampMicros_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.Mutation.SetCell result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.familyName_ = familyName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.columnQualifier_ = columnQualifier_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timestampMicros_ = timestampMicros_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -617,6 +631,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.bigtable.v2.Mutation.SetCell.getDefaultInstance()) return this;
         if (!other.getFamilyName().isEmpty()) {
           familyName_ = other.familyName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getColumnQualifier() != com.google.protobuf.ByteString.EMPTY) {
@@ -657,25 +672,25 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   familyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   columnQualifier_ = input.readBytes();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   timestampMicros_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   value_ = input.readBytes();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -694,6 +709,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object familyName_ = "";
       /**
@@ -759,8 +776,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -777,8 +794,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
-
         familyName_ = getDefaultInstance().getFamilyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -800,8 +817,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -841,8 +858,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         columnQualifier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -859,7 +876,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearColumnQualifier() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         columnQualifier_ = getDefaultInstance().getColumnQualifier();
         onChanged();
         return this;
@@ -904,6 +921,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       public Builder setTimestampMicros(long value) {
 
         timestampMicros_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -923,7 +941,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTimestampMicros() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         timestampMicros_ = 0L;
         onChanged();
         return this;
@@ -961,8 +979,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -978,7 +996,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -1181,7 +1199,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FAMILY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object familyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object familyName_ = "";
     /**
      *
      *
@@ -1232,7 +1252,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COLUMN_QUALIFIER_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString columnQualifier_;
+    private com.google.protobuf.ByteString columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -1295,7 +1315,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.v2.TimestampRangeOrBuilder getTimeRangeOrBuilder() {
-      return getTimeRange();
+      return timeRange_ == null
+          ? com.google.bigtable.v2.TimestampRange.getDefaultInstance()
+          : timeRange_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1521,14 +1543,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         familyName_ = "";
-
         columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
-
-        if (timeRangeBuilder_ == null) {
-          timeRange_ = null;
-        } else {
-          timeRange_ = null;
+        timeRange_ = null;
+        if (timeRangeBuilder_ != null) {
+          timeRangeBuilder_.dispose();
           timeRangeBuilder_ = null;
         }
         return this;
@@ -1558,15 +1578,24 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.v2.Mutation.DeleteFromColumn buildPartial() {
         com.google.bigtable.v2.Mutation.DeleteFromColumn result =
             new com.google.bigtable.v2.Mutation.DeleteFromColumn(this);
-        result.familyName_ = familyName_;
-        result.columnQualifier_ = columnQualifier_;
-        if (timeRangeBuilder_ == null) {
-          result.timeRange_ = timeRange_;
-        } else {
-          result.timeRange_ = timeRangeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.Mutation.DeleteFromColumn result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.familyName_ = familyName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.columnQualifier_ = columnQualifier_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timeRange_ = timeRangeBuilder_ == null ? timeRange_ : timeRangeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1619,6 +1648,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getFamilyName().isEmpty()) {
           familyName_ = other.familyName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getColumnQualifier() != com.google.protobuf.ByteString.EMPTY) {
@@ -1656,19 +1686,19 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   familyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   columnQualifier_ = input.readBytes();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1687,6 +1717,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object familyName_ = "";
       /**
@@ -1752,8 +1784,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1770,8 +1802,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
-
         familyName_ = getDefaultInstance().getFamilyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1793,8 +1825,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1834,8 +1866,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         columnQualifier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1852,7 +1884,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearColumnQualifier() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         columnQualifier_ = getDefaultInstance().getColumnQualifier();
         onChanged();
         return this;
@@ -1876,7 +1908,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the timeRange field is set.
        */
       public boolean hasTimeRange() {
-        return timeRangeBuilder_ != null || timeRange_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1913,11 +1945,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           timeRange_ = value;
-          onChanged();
         } else {
           timeRangeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1932,11 +1964,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       public Builder setTimeRange(com.google.bigtable.v2.TimestampRange.Builder builderForValue) {
         if (timeRangeBuilder_ == null) {
           timeRange_ = builderForValue.build();
-          onChanged();
         } else {
           timeRangeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1950,19 +1982,18 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTimeRange(com.google.bigtable.v2.TimestampRange value) {
         if (timeRangeBuilder_ == null) {
-          if (timeRange_ != null) {
-            timeRange_ =
-                com.google.bigtable.v2.TimestampRange.newBuilder(timeRange_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && timeRange_ != null
+              && timeRange_ != com.google.bigtable.v2.TimestampRange.getDefaultInstance()) {
+            getTimeRangeBuilder().mergeFrom(value);
           } else {
             timeRange_ = value;
           }
-          onChanged();
         } else {
           timeRangeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1975,14 +2006,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
        */
       public Builder clearTimeRange() {
-        if (timeRangeBuilder_ == null) {
-          timeRange_ = null;
-          onChanged();
-        } else {
-          timeRange_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timeRange_ = null;
+        if (timeRangeBuilder_ != null) {
+          timeRangeBuilder_.dispose();
           timeRangeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1995,7 +2025,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
        */
       public com.google.bigtable.v2.TimestampRange.Builder getTimeRangeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTimeRangeFieldBuilder().getBuilder();
       }
@@ -2189,7 +2219,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FAMILY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object familyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object familyName_ = "";
     /**
      *
      *
@@ -2438,8 +2470,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         familyName_ = "";
-
         return this;
       }
 
@@ -2467,9 +2499,18 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.v2.Mutation.DeleteFromFamily buildPartial() {
         com.google.bigtable.v2.Mutation.DeleteFromFamily result =
             new com.google.bigtable.v2.Mutation.DeleteFromFamily(this);
-        result.familyName_ = familyName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.Mutation.DeleteFromFamily result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.familyName_ = familyName_;
+        }
       }
 
       @java.lang.Override
@@ -2522,6 +2563,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getFamilyName().isEmpty()) {
           familyName_ = other.familyName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2553,7 +2595,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   familyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2572,6 +2614,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object familyName_ = "";
       /**
@@ -2637,8 +2681,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2655,8 +2699,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFamilyName() {
-
         familyName_ = getDefaultInstance().getFamilyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2678,8 +2722,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         familyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3686,6 +3730,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (setCellBuilder_ != null) {
         setCellBuilder_.clear();
       }
@@ -3726,37 +3771,33 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.Mutation buildPartial() {
       com.google.bigtable.v2.Mutation result = new com.google.bigtable.v2.Mutation(this);
-      if (mutationCase_ == 1) {
-        if (setCellBuilder_ == null) {
-          result.mutation_ = mutation_;
-        } else {
-          result.mutation_ = setCellBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (mutationCase_ == 2) {
-        if (deleteFromColumnBuilder_ == null) {
-          result.mutation_ = mutation_;
-        } else {
-          result.mutation_ = deleteFromColumnBuilder_.build();
-        }
-      }
-      if (mutationCase_ == 3) {
-        if (deleteFromFamilyBuilder_ == null) {
-          result.mutation_ = mutation_;
-        } else {
-          result.mutation_ = deleteFromFamilyBuilder_.build();
-        }
-      }
-      if (mutationCase_ == 4) {
-        if (deleteFromRowBuilder_ == null) {
-          result.mutation_ = mutation_;
-        } else {
-          result.mutation_ = deleteFromRowBuilder_.build();
-        }
-      }
-      result.mutationCase_ = mutationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.Mutation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.v2.Mutation result) {
+      result.mutationCase_ = mutationCase_;
+      result.mutation_ = this.mutation_;
+      if (mutationCase_ == 1 && setCellBuilder_ != null) {
+        result.mutation_ = setCellBuilder_.build();
+      }
+      if (mutationCase_ == 2 && deleteFromColumnBuilder_ != null) {
+        result.mutation_ = deleteFromColumnBuilder_.build();
+      }
+      if (mutationCase_ == 3 && deleteFromFamilyBuilder_ != null) {
+        result.mutation_ = deleteFromFamilyBuilder_.build();
+      }
+      if (mutationCase_ == 4 && deleteFromRowBuilder_ != null) {
+        result.mutation_ = deleteFromRowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3912,6 +3953,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.Mutation.SetCell,
@@ -4118,7 +4161,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       mutationCase_ = 1;
       onChanged();
-      ;
       return setCellBuilder_;
     }
 
@@ -4329,7 +4371,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       mutationCase_ = 2;
       onChanged();
-      ;
       return deleteFromColumnBuilder_;
     }
 
@@ -4540,7 +4581,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       mutationCase_ = 3;
       onChanged();
-      ;
       return deleteFromFamilyBuilder_;
     }
 
@@ -4750,7 +4790,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       mutationCase_ = 4;
       onChanged();
-      ;
       return deleteFromRowBuilder_;
     }
 

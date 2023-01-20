@@ -114,7 +114,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TABLE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tableId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableId_ = "";
   /**
    *
    *
@@ -527,10 +531,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       tableId_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -560,14 +563,27 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
     public com.google.bigtable.admin.v2.RestoreTableRequest buildPartial() {
       com.google.bigtable.admin.v2.RestoreTableRequest result =
           new com.google.bigtable.admin.v2.RestoreTableRequest(this);
-      result.parent_ = parent_;
-      result.tableId_ = tableId_;
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.RestoreTableRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tableId_ = tableId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.RestoreTableRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -618,10 +634,12 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTableId().isEmpty()) {
         tableId_ = other.tableId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -666,13 +684,13 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tableId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -712,6 +730,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -786,8 +806,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +827,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -833,8 +853,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -909,8 +929,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,8 +949,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTableId() {
-
       tableId_ = getDefaultInstance().getTableId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -954,8 +974,8 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

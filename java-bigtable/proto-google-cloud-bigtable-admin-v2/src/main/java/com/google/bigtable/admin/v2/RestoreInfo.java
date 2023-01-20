@@ -112,7 +112,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
-  private int sourceType_;
+  private int sourceType_ = 0;
   /**
    *
    *
@@ -141,9 +141,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.RestoreSourceType getSourceType() {
-    @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.RestoreSourceType result =
-        com.google.bigtable.admin.v2.RestoreSourceType.valueOf(sourceType_);
+        com.google.bigtable.admin.v2.RestoreSourceType.forNumber(sourceType_);
     return result == null ? com.google.bigtable.admin.v2.RestoreSourceType.UNRECOGNIZED : result;
   }
 
@@ -425,8 +424,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceType_ = 0;
-
       if (backupInfoBuilder_ != null) {
         backupInfoBuilder_.clear();
       }
@@ -459,17 +458,27 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.RestoreInfo buildPartial() {
       com.google.bigtable.admin.v2.RestoreInfo result =
           new com.google.bigtable.admin.v2.RestoreInfo(this);
-      result.sourceType_ = sourceType_;
-      if (sourceInfoCase_ == 2) {
-        if (backupInfoBuilder_ == null) {
-          result.sourceInfo_ = sourceInfo_;
-        } else {
-          result.sourceInfo_ = backupInfoBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceInfoCase_ = sourceInfoCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.RestoreInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceType_ = sourceType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.RestoreInfo result) {
+      result.sourceInfoCase_ = sourceInfoCase_;
+      result.sourceInfo_ = this.sourceInfo_;
+      if (sourceInfoCase_ == 2 && backupInfoBuilder_ != null) {
+        result.sourceInfo_ = backupInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,7 +569,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 sourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -600,6 +609,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int sourceType_ = 0;
     /**
      *
@@ -629,8 +640,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSourceTypeValue(int value) {
-
       sourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,9 +658,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.admin.v2.RestoreSourceType getSourceType() {
-      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.RestoreSourceType result =
-          com.google.bigtable.admin.v2.RestoreSourceType.valueOf(sourceType_);
+          com.google.bigtable.admin.v2.RestoreSourceType.forNumber(sourceType_);
       return result == null ? com.google.bigtable.admin.v2.RestoreSourceType.UNRECOGNIZED : result;
     }
     /**
@@ -668,7 +678,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       sourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -685,7 +695,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceType_ = 0;
       onChanged();
       return this;
@@ -905,7 +915,6 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       }
       sourceInfoCase_ = 2;
       onChanged();
-      ;
       return backupInfoBuilder_;
     }
 

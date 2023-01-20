@@ -72,7 +72,9 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
   }
 
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tableName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableName_ = "";
   /**
    *
    *
@@ -131,7 +133,9 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
   }
 
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object appProfileId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appProfileId_ = "";
   /**
    *
    *
@@ -182,7 +186,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
   }
 
   public static final int ROW_KEY_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString rowKey_;
+  private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -253,10 +257,14 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.bigtable.v2.RowFilterOrBuilder getPredicateFilterOrBuilder() {
-    return getPredicateFilter();
+    return predicateFilter_ == null
+        ? com.google.bigtable.v2.RowFilter.getDefaultInstance()
+        : predicateFilter_;
   }
 
   public static final int TRUE_MUTATIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.Mutation> trueMutations_;
   /**
    *
@@ -346,6 +354,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
   }
 
   public static final int FALSE_MUTATIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.Mutation> falseMutations_;
   /**
    *
@@ -685,16 +695,13 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tableName_ = "";
-
       appProfileId_ = "";
-
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (predicateFilterBuilder_ == null) {
-        predicateFilter_ = null;
-      } else {
-        predicateFilter_ = null;
+      predicateFilter_ = null;
+      if (predicateFilterBuilder_ != null) {
+        predicateFilterBuilder_.dispose();
         predicateFilterBuilder_ = null;
       }
       if (trueMutationsBuilder_ == null) {
@@ -703,14 +710,14 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         trueMutations_ = null;
         trueMutationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (falseMutationsBuilder_ == null) {
         falseMutations_ = java.util.Collections.emptyList();
       } else {
         falseMutations_ = null;
         falseMutationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -738,35 +745,51 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     public com.google.bigtable.v2.CheckAndMutateRowRequest buildPartial() {
       com.google.bigtable.v2.CheckAndMutateRowRequest result =
           new com.google.bigtable.v2.CheckAndMutateRowRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.tableName_ = tableName_;
-      result.appProfileId_ = appProfileId_;
-      result.rowKey_ = rowKey_;
-      if (predicateFilterBuilder_ == null) {
-        result.predicateFilter_ = predicateFilter_;
-      } else {
-        result.predicateFilter_ = predicateFilterBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.bigtable.v2.CheckAndMutateRowRequest result) {
       if (trueMutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           trueMutations_ = java.util.Collections.unmodifiableList(trueMutations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.trueMutations_ = trueMutations_;
       } else {
         result.trueMutations_ = trueMutationsBuilder_.build();
       }
       if (falseMutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           falseMutations_ = java.util.Collections.unmodifiableList(falseMutations_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.falseMutations_ = falseMutations_;
       } else {
         result.falseMutations_ = falseMutationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.CheckAndMutateRowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableName_ = tableName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appProfileId_ = appProfileId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.rowKey_ = rowKey_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.predicateFilter_ =
+            predicateFilterBuilder_ == null ? predicateFilter_ : predicateFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -817,10 +840,12 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getTableName().isEmpty()) {
         tableName_ = other.tableName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
@@ -833,7 +858,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         if (!other.trueMutations_.isEmpty()) {
           if (trueMutations_.isEmpty()) {
             trueMutations_ = other.trueMutations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTrueMutationsIsMutable();
             trueMutations_.addAll(other.trueMutations_);
@@ -846,7 +871,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             trueMutationsBuilder_.dispose();
             trueMutationsBuilder_ = null;
             trueMutations_ = other.trueMutations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             trueMutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrueMutationsFieldBuilder()
@@ -860,7 +885,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         if (!other.falseMutations_.isEmpty()) {
           if (falseMutations_.isEmpty()) {
             falseMutations_ = other.falseMutations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureFalseMutationsIsMutable();
             falseMutations_.addAll(other.falseMutations_);
@@ -873,7 +898,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             falseMutationsBuilder_.dispose();
             falseMutationsBuilder_ = null;
             falseMutations_ = other.falseMutations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             falseMutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFalseMutationsFieldBuilder()
@@ -912,13 +937,13 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             case 10:
               {
                 tableName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 rowKey_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 34:
@@ -948,13 +973,13 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             case 50:
               {
                 input.readMessage(getPredicateFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 58
             default:
@@ -1052,8 +1077,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1074,8 +1099,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTableName() {
-
       tableName_ = getDefaultInstance().getTableName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1101,8 +1126,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1171,8 +1196,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1189,8 +1214,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
-
       appProfileId_ = getDefaultInstance().getAppProfileId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1212,8 +1237,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1250,8 +1275,8 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       rowKey_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1267,7 +1292,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRowKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       rowKey_ = getDefaultInstance().getRowKey();
       onChanged();
       return this;
@@ -1294,7 +1319,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * @return Whether the predicateFilter field is set.
      */
     public boolean hasPredicateFilter() {
-      return predicateFilterBuilder_ != null || predicateFilter_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1337,11 +1362,11 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         predicateFilter_ = value;
-        onChanged();
       } else {
         predicateFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1359,11 +1384,11 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     public Builder setPredicateFilter(com.google.bigtable.v2.RowFilter.Builder builderForValue) {
       if (predicateFilterBuilder_ == null) {
         predicateFilter_ = builderForValue.build();
-        onChanged();
       } else {
         predicateFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1380,19 +1405,18 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      */
     public Builder mergePredicateFilter(com.google.bigtable.v2.RowFilter value) {
       if (predicateFilterBuilder_ == null) {
-        if (predicateFilter_ != null) {
-          predicateFilter_ =
-              com.google.bigtable.v2.RowFilter.newBuilder(predicateFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && predicateFilter_ != null
+            && predicateFilter_ != com.google.bigtable.v2.RowFilter.getDefaultInstance()) {
+          getPredicateFilterBuilder().mergeFrom(value);
         } else {
           predicateFilter_ = value;
         }
-        onChanged();
       } else {
         predicateFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1408,14 +1432,13 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * <code>.google.bigtable.v2.RowFilter predicate_filter = 6;</code>
      */
     public Builder clearPredicateFilter() {
-      if (predicateFilterBuilder_ == null) {
-        predicateFilter_ = null;
-        onChanged();
-      } else {
-        predicateFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      predicateFilter_ = null;
+      if (predicateFilterBuilder_ != null) {
+        predicateFilterBuilder_.dispose();
         predicateFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1431,7 +1454,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
      * <code>.google.bigtable.v2.RowFilter predicate_filter = 6;</code>
      */
     public com.google.bigtable.v2.RowFilter.Builder getPredicateFilterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPredicateFilterFieldBuilder().getBuilder();
     }
@@ -1489,9 +1512,9 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureTrueMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         trueMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(trueMutations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1750,7 +1773,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     public Builder clearTrueMutations() {
       if (trueMutationsBuilder_ == null) {
         trueMutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         trueMutationsBuilder_.clear();
@@ -1900,7 +1923,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
                 com.google.bigtable.v2.Mutation.Builder,
                 com.google.bigtable.v2.MutationOrBuilder>(
                 trueMutations_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         trueMutations_ = null;
@@ -1912,9 +1935,9 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureFalseMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         falseMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(falseMutations_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2173,7 +2196,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     public Builder clearFalseMutations() {
       if (falseMutationsBuilder_ == null) {
         falseMutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         falseMutationsBuilder_.clear();
@@ -2323,7 +2346,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
                 com.google.bigtable.v2.Mutation.Builder,
                 com.google.bigtable.v2.MutationOrBuilder>(
                 falseMutations_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         falseMutations_ = null;

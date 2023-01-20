@@ -204,7 +204,6 @@ public interface CreateClusterMetadataOrBuilder
    * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
    * </code>
    */
-
   /* nullable */
   com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress getTablesOrDefault(
       java.lang.String key,

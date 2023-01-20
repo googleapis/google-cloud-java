@@ -68,7 +68,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ROW_KEY_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString rowKey_;
+  private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OFFSET_BYTES_FIELD_NUMBER = 2;
-  private long offsetBytes_;
+  private long offsetBytes_ = 0L;
   /**
    *
    *
@@ -318,10 +318,9 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
-
       offsetBytes_ = 0L;
-
       return this;
     }
 
@@ -349,10 +348,21 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     public com.google.bigtable.v2.SampleRowKeysResponse buildPartial() {
       com.google.bigtable.v2.SampleRowKeysResponse result =
           new com.google.bigtable.v2.SampleRowKeysResponse(this);
-      result.rowKey_ = rowKey_;
-      result.offsetBytes_ = offsetBytes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.SampleRowKeysResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rowKey_ = rowKey_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.offsetBytes_ = offsetBytes_;
+      }
     }
 
     @java.lang.Override
@@ -435,13 +445,13 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 rowKey_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 offsetBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -460,6 +470,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -505,8 +517,8 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       rowKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -528,7 +540,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRowKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rowKey_ = getDefaultInstance().getRowKey();
       onChanged();
       return this;
@@ -571,6 +583,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     public Builder setOffsetBytes(long value) {
 
       offsetBytes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -589,7 +602,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOffsetBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       offsetBytes_ = 0L;
       onChanged();
       return this;

@@ -165,7 +165,9 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAMILY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object familyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object familyName_ = "";
   /**
    *
    *
@@ -629,8 +631,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       familyName_ = "";
-
       startQualifierCase_ = 0;
       startQualifier_ = null;
       endQualifierCase_ = 0;
@@ -661,23 +663,26 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.ColumnRange buildPartial() {
       com.google.bigtable.v2.ColumnRange result = new com.google.bigtable.v2.ColumnRange(this);
-      result.familyName_ = familyName_;
-      if (startQualifierCase_ == 2) {
-        result.startQualifier_ = startQualifier_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (startQualifierCase_ == 3) {
-        result.startQualifier_ = startQualifier_;
-      }
-      if (endQualifierCase_ == 4) {
-        result.endQualifier_ = endQualifier_;
-      }
-      if (endQualifierCase_ == 5) {
-        result.endQualifier_ = endQualifier_;
-      }
-      result.startQualifierCase_ = startQualifierCase_;
-      result.endQualifierCase_ = endQualifierCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.ColumnRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.familyName_ = familyName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.v2.ColumnRange result) {
+      result.startQualifierCase_ = startQualifierCase_;
+      result.startQualifier_ = this.startQualifier_;
+      result.endQualifierCase_ = endQualifierCase_;
+      result.endQualifier_ = this.endQualifier_;
     }
 
     @java.lang.Override
@@ -727,6 +732,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.bigtable.v2.ColumnRange.getDefaultInstance()) return this;
       if (!other.getFamilyName().isEmpty()) {
         familyName_ = other.familyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getStartQualifierCase()) {
@@ -790,7 +796,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 familyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -862,6 +868,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object familyName_ = "";
     /**
      *
@@ -923,8 +931,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       familyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -940,8 +948,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFamilyName() {
-
       familyName_ = getDefaultInstance().getFamilyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -962,8 +970,8 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       familyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

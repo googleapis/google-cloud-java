@@ -108,7 +108,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
-    return getRequestTime();
+    return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
 
   public static final int FINISH_TIME_FIELD_NUMBER = 2;
@@ -154,7 +154,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
-    return getFinishTime();
+    return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
 
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 3;
@@ -203,7 +203,9 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.bigtable.admin.v2.PartialUpdateClusterRequestOrBuilder
       getOriginalRequestOrBuilder() {
-    return getOriginalRequest();
+    return originalRequest_ == null
+        ? com.google.bigtable.admin.v2.PartialUpdateClusterRequest.getDefaultInstance()
+        : originalRequest_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -437,22 +439,20 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-      } else {
-        requestTime_ = null;
+      bitField0_ = 0;
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-      if (finishTimeBuilder_ == null) {
-        finishTime_ = null;
-      } else {
-        finishTime_ = null;
+      finishTime_ = null;
+      if (finishTimeBuilder_ != null) {
+        finishTimeBuilder_.dispose();
         finishTimeBuilder_ = null;
       }
-      if (originalRequestBuilder_ == null) {
-        originalRequest_ = null;
-      } else {
-        originalRequest_ = null;
+      originalRequest_ = null;
+      if (originalRequestBuilder_ != null) {
+        originalRequestBuilder_.dispose();
         originalRequestBuilder_ = null;
       }
       return this;
@@ -482,23 +482,26 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public com.google.bigtable.admin.v2.PartialUpdateClusterMetadata buildPartial() {
       com.google.bigtable.admin.v2.PartialUpdateClusterMetadata result =
           new com.google.bigtable.admin.v2.PartialUpdateClusterMetadata(this);
-      if (requestTimeBuilder_ == null) {
-        result.requestTime_ = requestTime_;
-      } else {
-        result.requestTime_ = requestTimeBuilder_.build();
-      }
-      if (finishTimeBuilder_ == null) {
-        result.finishTime_ = finishTime_;
-      } else {
-        result.finishTime_ = finishTimeBuilder_.build();
-      }
-      if (originalRequestBuilder_ == null) {
-        result.originalRequest_ = originalRequest_;
-      } else {
-        result.originalRequest_ = originalRequestBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.PartialUpdateClusterMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requestTime_ =
+            requestTimeBuilder_ == null ? requestTime_ : requestTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.finishTime_ = finishTimeBuilder_ == null ? finishTime_ : finishTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.originalRequest_ =
+            originalRequestBuilder_ == null ? originalRequest_ : originalRequestBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -585,19 +588,19 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getRequestTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFinishTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getOriginalRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -617,6 +620,8 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp requestTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -635,7 +640,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * @return Whether the requestTime field is set.
      */
     public boolean hasRequestTime() {
-      return requestTimeBuilder_ != null || requestTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -672,11 +677,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         requestTime_ = value;
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -691,11 +696,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public Builder setRequestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (requestTimeBuilder_ == null) {
         requestTime_ = builderForValue.build();
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -709,19 +714,18 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      */
     public Builder mergeRequestTime(com.google.protobuf.Timestamp value) {
       if (requestTimeBuilder_ == null) {
-        if (requestTime_ != null) {
-          requestTime_ =
-              com.google.protobuf.Timestamp.newBuilder(requestTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && requestTime_ != null
+            && requestTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRequestTimeBuilder().mergeFrom(value);
         } else {
           requestTime_ = value;
         }
-        onChanged();
       } else {
         requestTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -734,14 +738,13 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp request_time = 1;</code>
      */
     public Builder clearRequestTime() {
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-        onChanged();
-      } else {
-        requestTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -754,7 +757,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp request_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRequestTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
@@ -820,7 +823,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * @return Whether the finishTime field is set.
      */
     public boolean hasFinishTime() {
-      return finishTimeBuilder_ != null || finishTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -857,11 +860,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         finishTime_ = value;
-        onChanged();
       } else {
         finishTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,11 +879,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public Builder setFinishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (finishTimeBuilder_ == null) {
         finishTime_ = builderForValue.build();
-        onChanged();
       } else {
         finishTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -894,17 +897,18 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      */
     public Builder mergeFinishTime(com.google.protobuf.Timestamp value) {
       if (finishTimeBuilder_ == null) {
-        if (finishTime_ != null) {
-          finishTime_ =
-              com.google.protobuf.Timestamp.newBuilder(finishTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && finishTime_ != null
+            && finishTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getFinishTimeBuilder().mergeFrom(value);
         } else {
           finishTime_ = value;
         }
-        onChanged();
       } else {
         finishTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -917,14 +921,13 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp finish_time = 2;</code>
      */
     public Builder clearFinishTime() {
-      if (finishTimeBuilder_ == null) {
-        finishTime_ = null;
-        onChanged();
-      } else {
-        finishTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      finishTime_ = null;
+      if (finishTimeBuilder_ != null) {
+        finishTimeBuilder_.dispose();
         finishTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -937,7 +940,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp finish_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getFinishTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
@@ -1003,7 +1006,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * @return Whether the originalRequest field is set.
      */
     public boolean hasOriginalRequest() {
-      return originalRequestBuilder_ != null || originalRequest_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1041,11 +1044,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         originalRequest_ = value;
-        onChanged();
       } else {
         originalRequestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1061,11 +1064,11 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
         com.google.bigtable.admin.v2.PartialUpdateClusterRequest.Builder builderForValue) {
       if (originalRequestBuilder_ == null) {
         originalRequest_ = builderForValue.build();
-        onChanged();
       } else {
         originalRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1080,19 +1083,19 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public Builder mergeOriginalRequest(
         com.google.bigtable.admin.v2.PartialUpdateClusterRequest value) {
       if (originalRequestBuilder_ == null) {
-        if (originalRequest_ != null) {
-          originalRequest_ =
-              com.google.bigtable.admin.v2.PartialUpdateClusterRequest.newBuilder(originalRequest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && originalRequest_ != null
+            && originalRequest_
+                != com.google.bigtable.admin.v2.PartialUpdateClusterRequest.getDefaultInstance()) {
+          getOriginalRequestBuilder().mergeFrom(value);
         } else {
           originalRequest_ = value;
         }
-        onChanged();
       } else {
         originalRequestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1105,14 +1108,13 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      * <code>.google.bigtable.admin.v2.PartialUpdateClusterRequest original_request = 3;</code>
      */
     public Builder clearOriginalRequest() {
-      if (originalRequestBuilder_ == null) {
-        originalRequest_ = null;
-        onChanged();
-      } else {
-        originalRequest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      originalRequest_ = null;
+      if (originalRequestBuilder_ != null) {
+        originalRequestBuilder_.dispose();
         originalRequestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1126,7 +1128,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
      */
     public com.google.bigtable.admin.v2.PartialUpdateClusterRequest.Builder
         getOriginalRequestBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }

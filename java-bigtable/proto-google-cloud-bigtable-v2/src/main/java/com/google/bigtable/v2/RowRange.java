@@ -560,6 +560,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startKeyCase_ = 0;
       startKey_ = null;
       endKeyCase_ = 0;
@@ -590,22 +591,23 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.RowRange buildPartial() {
       com.google.bigtable.v2.RowRange result = new com.google.bigtable.v2.RowRange(this);
-      if (startKeyCase_ == 1) {
-        result.startKey_ = startKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (startKeyCase_ == 2) {
-        result.startKey_ = startKey_;
-      }
-      if (endKeyCase_ == 3) {
-        result.endKey_ = endKey_;
-      }
-      if (endKeyCase_ == 4) {
-        result.endKey_ = endKey_;
-      }
-      result.startKeyCase_ = startKeyCase_;
-      result.endKeyCase_ = endKeyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.RowRange result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.v2.RowRange result) {
+      result.startKeyCase_ = startKeyCase_;
+      result.startKey_ = this.startKey_;
+      result.endKeyCase_ = endKeyCase_;
+      result.endKey_ = this.endKey_;
     }
 
     @java.lang.Override
@@ -779,6 +781,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

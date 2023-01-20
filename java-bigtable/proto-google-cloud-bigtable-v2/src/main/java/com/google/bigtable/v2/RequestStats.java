@@ -379,6 +379,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (fullReadStatsViewBuilder_ != null) {
         fullReadStatsViewBuilder_.clear();
       }
@@ -410,16 +411,24 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.RequestStats buildPartial() {
       com.google.bigtable.v2.RequestStats result = new com.google.bigtable.v2.RequestStats(this);
-      if (statsViewCase_ == 1) {
-        if (fullReadStatsViewBuilder_ == null) {
-          result.statsView_ = statsView_;
-        } else {
-          result.statsView_ = fullReadStatsViewBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.statsViewCase_ = statsViewCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.RequestStats result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.v2.RequestStats result) {
+      result.statsViewCase_ = statsViewCase_;
+      result.statsView_ = this.statsView_;
+      if (statsViewCase_ == 1 && fullReadStatsViewBuilder_ != null) {
+        result.statsView_ = fullReadStatsViewBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,6 +550,8 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.FullReadStatsView,
@@ -757,7 +768,6 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsViewCase_ = 1;
       onChanged();
-      ;
       return fullReadStatsViewBuilder_;
     }
 

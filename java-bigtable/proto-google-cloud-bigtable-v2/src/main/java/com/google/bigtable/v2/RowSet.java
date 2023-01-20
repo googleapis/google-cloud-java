@@ -67,6 +67,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ByteString> rowKeys_;
   /**
    *
@@ -114,6 +116,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_RANGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.RowRange> rowRanges_;
   /**
    *
@@ -393,8 +397,8 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rowKeys_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       if (rowRangesBuilder_ == null) {
         rowRanges_ = java.util.Collections.emptyList();
       } else {
@@ -427,7 +431,15 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.RowSet buildPartial() {
       com.google.bigtable.v2.RowSet result = new com.google.bigtable.v2.RowSet(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.bigtable.v2.RowSet result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_);
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -442,8 +454,10 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.rowRanges_ = rowRangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.RowSet result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

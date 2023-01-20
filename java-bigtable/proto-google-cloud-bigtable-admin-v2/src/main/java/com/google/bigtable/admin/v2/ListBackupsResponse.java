@@ -69,6 +69,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BACKUPS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.admin.v2.Backup> backups_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -398,6 +402,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (backupsBuilder_ == null) {
         backups_ = java.util.Collections.emptyList();
       } else {
@@ -406,7 +411,6 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -434,7 +438,16 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     public com.google.bigtable.admin.v2.ListBackupsResponse buildPartial() {
       com.google.bigtable.admin.v2.ListBackupsResponse result =
           new com.google.bigtable.admin.v2.ListBackupsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.bigtable.admin.v2.ListBackupsResponse result) {
       if (backupsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           backups_ = java.util.Collections.unmodifiableList(backups_);
@@ -444,9 +457,13 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.backups_ = backupsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.ListBackupsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +541,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -568,7 +586,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1005,8 +1023,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1042,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1048,8 +1066,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -214,7 +214,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int ROW_KEY_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString rowKey_;
+    private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -232,6 +232,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MUTATIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.v2.Mutation> mutations_;
     /**
      *
@@ -535,15 +537,15 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rowKey_ = com.google.protobuf.ByteString.EMPTY;
-
         if (mutationsBuilder_ == null) {
           mutations_ = java.util.Collections.emptyList();
         } else {
           mutations_ = null;
           mutationsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -571,19 +573,32 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       public com.google.bigtable.v2.MutateRowsRequest.Entry buildPartial() {
         com.google.bigtable.v2.MutateRowsRequest.Entry result =
             new com.google.bigtable.v2.MutateRowsRequest.Entry(this);
-        int from_bitField0_ = bitField0_;
-        result.rowKey_ = rowKey_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.bigtable.v2.MutateRowsRequest.Entry result) {
         if (mutationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             mutations_ = java.util.Collections.unmodifiableList(mutations_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.mutations_ = mutations_;
         } else {
           result.mutations_ = mutationsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.MutateRowsRequest.Entry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rowKey_ = rowKey_;
+        }
       }
 
       @java.lang.Override
@@ -641,7 +656,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           if (!other.mutations_.isEmpty()) {
             if (mutations_.isEmpty()) {
               mutations_ = other.mutations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureMutationsIsMutable();
               mutations_.addAll(other.mutations_);
@@ -654,7 +669,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               mutationsBuilder_.dispose();
               mutationsBuilder_ = null;
               mutations_ = other.mutations_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               mutationsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getMutationsFieldBuilder()
@@ -693,7 +708,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   rowKey_ = input.readBytes();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -760,8 +775,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         rowKey_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -777,7 +792,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearRowKey() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         rowKey_ = getDefaultInstance().getRowKey();
         onChanged();
         return this;
@@ -787,9 +802,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
           java.util.Collections.emptyList();
 
       private void ensureMutationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           mutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(mutations_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -1059,7 +1074,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       public Builder clearMutations() {
         if (mutationsBuilder_ == null) {
           mutations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           mutationsBuilder_.clear();
@@ -1215,7 +1230,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
                   com.google.bigtable.v2.Mutation,
                   com.google.bigtable.v2.Mutation.Builder,
                   com.google.bigtable.v2.MutationOrBuilder>(
-                  mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  mutations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           mutations_ = null;
         }
         return mutationsBuilder_;
@@ -1286,7 +1301,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tableName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableName_ = "";
   /**
    *
    *
@@ -1339,7 +1356,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object appProfileId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appProfileId_ = "";
   /**
    *
    *
@@ -1390,6 +1409,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> entries_;
   /**
    *
@@ -1704,17 +1725,16 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tableName_ = "";
-
       appProfileId_ = "";
-
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
         entries_ = null;
         entriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1742,20 +1762,34 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.bigtable.v2.MutateRowsRequest buildPartial() {
       com.google.bigtable.v2.MutateRowsRequest result =
           new com.google.bigtable.v2.MutateRowsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.tableName_ = tableName_;
-      result.appProfileId_ = appProfileId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.bigtable.v2.MutateRowsRequest result) {
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.entries_ = entries_;
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.MutateRowsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableName_ = tableName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appProfileId_ = appProfileId_;
+      }
     }
 
     @java.lang.Override
@@ -1805,17 +1839,19 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.bigtable.v2.MutateRowsRequest.getDefaultInstance()) return this;
       if (!other.getTableName().isEmpty()) {
         tableName_ = other.tableName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (entriesBuilder_ == null) {
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -1828,7 +1864,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             entriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntriesFieldBuilder()
@@ -1867,7 +1903,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 tableName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1886,7 +1922,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -1975,8 +2011,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1994,8 +2030,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTableName() {
-
       tableName_ = getDefaultInstance().getTableName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2018,8 +2054,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2088,8 +2124,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2106,8 +2142,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
-
       appProfileId_ = getDefaultInstance().getAppProfileId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2129,8 +2165,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2139,10 +2175,10 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         entries_ =
             new java.util.ArrayList<com.google.bigtable.v2.MutateRowsRequest.Entry>(entries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2424,7 +2460,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -2588,7 +2624,7 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.bigtable.v2.MutateRowsRequest.Entry,
                 com.google.bigtable.v2.MutateRowsRequest.Entry.Builder,
                 com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>(
-                entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                entries_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;

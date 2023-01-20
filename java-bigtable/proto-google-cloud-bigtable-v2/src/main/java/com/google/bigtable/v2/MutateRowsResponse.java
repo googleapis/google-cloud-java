@@ -178,7 +178,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int INDEX_FIELD_NUMBER = 1;
-    private long index_;
+    private long index_ = 0L;
     /**
      *
      *
@@ -248,7 +248,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -464,12 +464,11 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         index_ = 0L;
-
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -499,14 +498,21 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       public com.google.bigtable.v2.MutateRowsResponse.Entry buildPartial() {
         com.google.bigtable.v2.MutateRowsResponse.Entry result =
             new com.google.bigtable.v2.MutateRowsResponse.Entry(this);
-        result.index_ = index_;
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.MutateRowsResponse.Entry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -592,13 +598,13 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
               case 8:
                 {
                   index_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -617,6 +623,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long index_;
       /**
@@ -651,6 +659,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       public Builder setIndex(long value) {
 
         index_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -667,7 +676,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         index_ = 0L;
         onChanged();
         return this;
@@ -692,7 +701,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -733,11 +742,11 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -755,11 +764,11 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -776,16 +785,18 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeStatus(com.google.rpc.Status value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && status_ != null
+              && status_ != com.google.rpc.Status.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -801,14 +812,13 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.rpc.Status status = 2;</code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -824,7 +834,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.rpc.Status status = 2;</code>
        */
       public com.google.rpc.Status.Builder getStatusBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -938,6 +948,8 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.MutateRowsResponse.Entry> entries_;
   /**
    *
@@ -1205,6 +1217,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
@@ -1239,7 +1252,15 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.bigtable.v2.MutateRowsResponse buildPartial() {
       com.google.bigtable.v2.MutateRowsResponse result =
           new com.google.bigtable.v2.MutateRowsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.bigtable.v2.MutateRowsResponse result) {
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -1249,8 +1270,10 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.MutateRowsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

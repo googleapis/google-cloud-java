@@ -114,7 +114,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.ClusterOrBuilder getClusterOrBuilder() {
-    return getCluster();
+    return cluster_ == null ? com.google.bigtable.admin.v2.Cluster.getDefaultInstance() : cluster_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -163,7 +163,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +383,15 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-      } else {
-        cluster_ = null;
+      bitField0_ = 0;
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -422,18 +421,21 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
     public com.google.bigtable.admin.v2.PartialUpdateClusterRequest buildPartial() {
       com.google.bigtable.admin.v2.PartialUpdateClusterRequest result =
           new com.google.bigtable.admin.v2.PartialUpdateClusterRequest(this);
-      if (clusterBuilder_ == null) {
-        result.cluster_ = cluster_;
-      } else {
-        result.cluster_ = clusterBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.PartialUpdateClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cluster_ = clusterBuilder_ == null ? cluster_ : clusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -517,13 +519,13 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +544,8 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.bigtable.admin.v2.Cluster cluster_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -564,7 +568,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return clusterBuilder_ != null || cluster_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -607,11 +611,11 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         cluster_ = value;
-        onChanged();
       } else {
         clusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,11 +633,11 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
     public Builder setCluster(com.google.bigtable.admin.v2.Cluster.Builder builderForValue) {
       if (clusterBuilder_ == null) {
         cluster_ = builderForValue.build();
-        onChanged();
       } else {
         clusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,19 +654,18 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      */
     public Builder mergeCluster(com.google.bigtable.admin.v2.Cluster value) {
       if (clusterBuilder_ == null) {
-        if (cluster_ != null) {
-          cluster_ =
-              com.google.bigtable.admin.v2.Cluster.newBuilder(cluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cluster_ != null
+            && cluster_ != com.google.bigtable.admin.v2.Cluster.getDefaultInstance()) {
+          getClusterBuilder().mergeFrom(value);
         } else {
           cluster_ = value;
         }
-        onChanged();
       } else {
         clusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,14 +681,13 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearCluster() {
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-        onChanged();
-      } else {
-        cluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -701,7 +703,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.bigtable.admin.v2.Cluster.Builder getClusterBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
@@ -774,7 +776,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -813,11 +815,11 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,11 +835,11 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,17 +854,18 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +879,13 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -897,7 +899,7 @@ public final class PartialUpdateClusterRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

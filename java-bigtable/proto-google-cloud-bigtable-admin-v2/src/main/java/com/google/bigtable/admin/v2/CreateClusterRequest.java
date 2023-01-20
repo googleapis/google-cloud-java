@@ -69,7 +69,9 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -227,7 +231,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.ClusterOrBuilder getClusterOrBuilder() {
-    return getCluster();
+    return cluster_ == null ? com.google.bigtable.admin.v2.Cluster.getDefaultInstance() : cluster_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +454,12 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       clusterId_ = "";
-
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-      } else {
-        cluster_ = null;
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
       return this;
@@ -487,15 +489,24 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     public com.google.bigtable.admin.v2.CreateClusterRequest buildPartial() {
       com.google.bigtable.admin.v2.CreateClusterRequest result =
           new com.google.bigtable.admin.v2.CreateClusterRequest(this);
-      result.parent_ = parent_;
-      result.clusterId_ = clusterId_;
-      if (clusterBuilder_ == null) {
-        result.cluster_ = cluster_;
-      } else {
-        result.cluster_ = clusterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.CreateClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cluster_ = clusterBuilder_ == null ? cluster_ : clusterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,10 +557,12 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCluster()) {
@@ -584,19 +597,19 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +628,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +704,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +725,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +751,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -809,8 +824,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -828,8 +843,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -852,8 +867,8 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,7 +894,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return clusterBuilder_ != null || cluster_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -922,11 +937,11 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         cluster_ = value;
-        onChanged();
       } else {
         clusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -944,11 +959,11 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
     public Builder setCluster(com.google.bigtable.admin.v2.Cluster.Builder builderForValue) {
       if (clusterBuilder_ == null) {
         cluster_ = builderForValue.build();
-        onChanged();
       } else {
         clusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -965,19 +980,18 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCluster(com.google.bigtable.admin.v2.Cluster value) {
       if (clusterBuilder_ == null) {
-        if (cluster_ != null) {
-          cluster_ =
-              com.google.bigtable.admin.v2.Cluster.newBuilder(cluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cluster_ != null
+            && cluster_ != com.google.bigtable.admin.v2.Cluster.getDefaultInstance()) {
+          getClusterBuilder().mergeFrom(value);
         } else {
           cluster_ = value;
         }
-        onChanged();
       } else {
         clusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -993,14 +1007,13 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCluster() {
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-        onChanged();
-      } else {
-        cluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1016,7 +1029,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.bigtable.admin.v2.Cluster.Builder getClusterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }

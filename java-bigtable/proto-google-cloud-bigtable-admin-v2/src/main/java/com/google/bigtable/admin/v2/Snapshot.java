@@ -236,7 +236,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -333,11 +335,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder() {
-    return getSourceTable();
+    return sourceTable_ == null
+        ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
+        : sourceTable_;
   }
 
   public static final int DATA_SIZE_BYTES_FIELD_NUMBER = 3;
-  private long dataSizeBytes_;
+  private long dataSizeBytes_ = 0L;
   /**
    *
    *
@@ -400,7 +404,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 5;
@@ -452,11 +456,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -485,14 +489,15 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.Snapshot.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Snapshot.State result =
-        com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
+        com.google.bigtable.admin.v2.Snapshot.State.forNumber(state_);
     return result == null ? com.google.bigtable.admin.v2.Snapshot.State.UNRECOGNIZED : result;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -809,32 +814,26 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (sourceTableBuilder_ == null) {
-        sourceTable_ = null;
-      } else {
-        sourceTable_ = null;
+      sourceTable_ = null;
+      if (sourceTableBuilder_ != null) {
+        sourceTableBuilder_.dispose();
         sourceTableBuilder_ = null;
       }
       dataSizeBytes_ = 0L;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
       state_ = 0;
-
       description_ = "";
-
       return this;
     }
 
@@ -862,27 +861,37 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Snapshot buildPartial() {
       com.google.bigtable.admin.v2.Snapshot result =
           new com.google.bigtable.admin.v2.Snapshot(this);
-      result.name_ = name_;
-      if (sourceTableBuilder_ == null) {
-        result.sourceTable_ = sourceTable_;
-      } else {
-        result.sourceTable_ = sourceTableBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataSizeBytes_ = dataSizeBytes_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.description_ = description_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.Snapshot result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceTable_ =
+            sourceTableBuilder_ == null ? sourceTable_ : sourceTableBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataSizeBytes_ = dataSizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -932,6 +941,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.bigtable.admin.v2.Snapshot.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSourceTable()) {
@@ -951,6 +961,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -982,43 +993,43 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSourceTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 dataSizeBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1037,6 +1048,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1105,8 +1118,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,8 +1137,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1148,8 +1161,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1172,7 +1185,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceTable field is set.
      */
     public boolean hasSourceTable() {
-      return sourceTableBuilder_ != null || sourceTable_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1209,11 +1222,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourceTable_ = value;
-        onChanged();
       } else {
         sourceTableBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1228,11 +1241,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder setSourceTable(com.google.bigtable.admin.v2.Table.Builder builderForValue) {
       if (sourceTableBuilder_ == null) {
         sourceTable_ = builderForValue.build();
-        onChanged();
       } else {
         sourceTableBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1246,19 +1259,18 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceTable(com.google.bigtable.admin.v2.Table value) {
       if (sourceTableBuilder_ == null) {
-        if (sourceTable_ != null) {
-          sourceTable_ =
-              com.google.bigtable.admin.v2.Table.newBuilder(sourceTable_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sourceTable_ != null
+            && sourceTable_ != com.google.bigtable.admin.v2.Table.getDefaultInstance()) {
+          getSourceTableBuilder().mergeFrom(value);
         } else {
           sourceTable_ = value;
         }
-        onChanged();
       } else {
         sourceTableBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1271,14 +1283,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
      */
     public Builder clearSourceTable() {
-      if (sourceTableBuilder_ == null) {
-        sourceTable_ = null;
-        onChanged();
-      } else {
-        sourceTable_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sourceTable_ = null;
+      if (sourceTableBuilder_ != null) {
+        sourceTableBuilder_.dispose();
         sourceTableBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1291,7 +1302,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
      */
     public com.google.bigtable.admin.v2.Table.Builder getSourceTableBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSourceTableFieldBuilder().getBuilder();
     }
@@ -1376,6 +1387,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder setDataSizeBytes(long value) {
 
       dataSizeBytes_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1394,7 +1406,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataSizeBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       dataSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -1418,7 +1430,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1455,11 +1467,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1474,11 +1486,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1492,17 +1504,18 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1515,14 +1528,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1535,7 +1547,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1603,7 +1615,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1644,11 +1656,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1665,11 +1677,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1685,17 +1697,18 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1710,14 +1723,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1732,7 +1744,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -1813,8 +1825,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1831,9 +1843,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.admin.v2.Snapshot.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Snapshot.State result =
-          com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
+          com.google.bigtable.admin.v2.Snapshot.State.forNumber(state_);
       return result == null ? com.google.bigtable.admin.v2.Snapshot.State.UNRECOGNIZED : result;
     }
     /**
@@ -1852,7 +1863,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1869,7 +1880,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -1936,8 +1947,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1953,8 +1964,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1975,8 +1986,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

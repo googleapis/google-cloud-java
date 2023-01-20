@@ -69,7 +69,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tableName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableName_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appProfileId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appProfileId_ = "";
   /**
    *
    *
@@ -382,10 +386,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tableName_ = "";
-
       appProfileId_ = "";
-
       return this;
     }
 
@@ -413,10 +416,21 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     public com.google.bigtable.v2.SampleRowKeysRequest buildPartial() {
       com.google.bigtable.v2.SampleRowKeysRequest result =
           new com.google.bigtable.v2.SampleRowKeysRequest(this);
-      result.tableName_ = tableName_;
-      result.appProfileId_ = appProfileId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.SampleRowKeysRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableName_ = tableName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appProfileId_ = appProfileId_;
+      }
     }
 
     @java.lang.Override
@@ -466,10 +480,12 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       if (other == com.google.bigtable.v2.SampleRowKeysRequest.getDefaultInstance()) return this;
       if (!other.getTableName().isEmpty()) {
         tableName_ = other.tableName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -501,13 +517,13 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 tableName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -526,6 +542,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object tableName_ = "";
     /**
@@ -600,8 +618,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTableName() {
-
       tableName_ = getDefaultInstance().getTableName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -647,8 +665,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAppProfileId() {
-
       appProfileId_ = getDefaultInstance().getAppProfileId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -758,8 +776,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

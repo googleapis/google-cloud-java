@@ -119,7 +119,9 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.bigtable.v2.ReadIterationStatsOrBuilder getReadIterationStatsOrBuilder() {
-    return getReadIterationStats();
+    return readIterationStats_ == null
+        ? com.google.bigtable.v2.ReadIterationStats.getDefaultInstance()
+        : readIterationStats_;
   }
 
   public static final int REQUEST_LATENCY_STATS_FIELD_NUMBER = 2;
@@ -170,7 +172,9 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.bigtable.v2.RequestLatencyStatsOrBuilder getRequestLatencyStatsOrBuilder() {
-    return getRequestLatencyStats();
+    return requestLatencyStats_ == null
+        ? com.google.bigtable.v2.RequestLatencyStats.getDefaultInstance()
+        : requestLatencyStats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,16 +392,15 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (readIterationStatsBuilder_ == null) {
-        readIterationStats_ = null;
-      } else {
-        readIterationStats_ = null;
+      bitField0_ = 0;
+      readIterationStats_ = null;
+      if (readIterationStatsBuilder_ != null) {
+        readIterationStatsBuilder_.dispose();
         readIterationStatsBuilder_ = null;
       }
-      if (requestLatencyStatsBuilder_ == null) {
-        requestLatencyStats_ = null;
-      } else {
-        requestLatencyStats_ = null;
+      requestLatencyStats_ = null;
+      if (requestLatencyStatsBuilder_ != null) {
+        requestLatencyStatsBuilder_.dispose();
         requestLatencyStatsBuilder_ = null;
       }
       return this;
@@ -427,18 +430,27 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     public com.google.bigtable.v2.FullReadStatsView buildPartial() {
       com.google.bigtable.v2.FullReadStatsView result =
           new com.google.bigtable.v2.FullReadStatsView(this);
-      if (readIterationStatsBuilder_ == null) {
-        result.readIterationStats_ = readIterationStats_;
-      } else {
-        result.readIterationStats_ = readIterationStatsBuilder_.build();
-      }
-      if (requestLatencyStatsBuilder_ == null) {
-        result.requestLatencyStats_ = requestLatencyStats_;
-      } else {
-        result.requestLatencyStats_ = requestLatencyStatsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.v2.FullReadStatsView result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.readIterationStats_ =
+            readIterationStatsBuilder_ == null
+                ? readIterationStats_
+                : readIterationStatsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestLatencyStats_ =
+            requestLatencyStatsBuilder_ == null
+                ? requestLatencyStats_
+                : requestLatencyStatsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,14 +534,14 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getReadIterationStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getRequestLatencyStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +560,8 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.bigtable.v2.ReadIterationStats readIterationStats_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -570,7 +584,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * @return Whether the readIterationStats field is set.
      */
     public boolean hasReadIterationStats() {
-      return readIterationStatsBuilder_ != null || readIterationStats_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -613,11 +627,11 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         readIterationStats_ = value;
-        onChanged();
       } else {
         readIterationStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +650,11 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         com.google.bigtable.v2.ReadIterationStats.Builder builderForValue) {
       if (readIterationStatsBuilder_ == null) {
         readIterationStats_ = builderForValue.build();
-        onChanged();
       } else {
         readIterationStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,19 +671,19 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeReadIterationStats(com.google.bigtable.v2.ReadIterationStats value) {
       if (readIterationStatsBuilder_ == null) {
-        if (readIterationStats_ != null) {
-          readIterationStats_ =
-              com.google.bigtable.v2.ReadIterationStats.newBuilder(readIterationStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && readIterationStats_ != null
+            && readIterationStats_
+                != com.google.bigtable.v2.ReadIterationStats.getDefaultInstance()) {
+          getReadIterationStatsBuilder().mergeFrom(value);
         } else {
           readIterationStats_ = value;
         }
-        onChanged();
       } else {
         readIterationStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,14 +699,13 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * <code>.google.bigtable.v2.ReadIterationStats read_iteration_stats = 1;</code>
      */
     public Builder clearReadIterationStats() {
-      if (readIterationStatsBuilder_ == null) {
-        readIterationStats_ = null;
-        onChanged();
-      } else {
-        readIterationStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      readIterationStats_ = null;
+      if (readIterationStatsBuilder_ != null) {
+        readIterationStatsBuilder_.dispose();
         readIterationStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -708,7 +721,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * <code>.google.bigtable.v2.ReadIterationStats read_iteration_stats = 1;</code>
      */
     public com.google.bigtable.v2.ReadIterationStats.Builder getReadIterationStatsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReadIterationStatsFieldBuilder().getBuilder();
     }
@@ -781,7 +794,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * @return Whether the requestLatencyStats field is set.
      */
     public boolean hasRequestLatencyStats() {
-      return requestLatencyStatsBuilder_ != null || requestLatencyStats_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -820,11 +833,11 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         requestLatencyStats_ = value;
-        onChanged();
       } else {
         requestLatencyStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,11 +854,11 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         com.google.bigtable.v2.RequestLatencyStats.Builder builderForValue) {
       if (requestLatencyStatsBuilder_ == null) {
         requestLatencyStats_ = builderForValue.build();
-        onChanged();
       } else {
         requestLatencyStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,19 +873,19 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeRequestLatencyStats(com.google.bigtable.v2.RequestLatencyStats value) {
       if (requestLatencyStatsBuilder_ == null) {
-        if (requestLatencyStats_ != null) {
-          requestLatencyStats_ =
-              com.google.bigtable.v2.RequestLatencyStats.newBuilder(requestLatencyStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && requestLatencyStats_ != null
+            && requestLatencyStats_
+                != com.google.bigtable.v2.RequestLatencyStats.getDefaultInstance()) {
+          getRequestLatencyStatsBuilder().mergeFrom(value);
         } else {
           requestLatencyStats_ = value;
         }
-        onChanged();
       } else {
         requestLatencyStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,14 +899,13 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * <code>.google.bigtable.v2.RequestLatencyStats request_latency_stats = 2;</code>
      */
     public Builder clearRequestLatencyStats() {
-      if (requestLatencyStatsBuilder_ == null) {
-        requestLatencyStats_ = null;
-        onChanged();
-      } else {
-        requestLatencyStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      requestLatencyStats_ = null;
+      if (requestLatencyStatsBuilder_ != null) {
+        requestLatencyStatsBuilder_.dispose();
         requestLatencyStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -907,7 +919,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
      * <code>.google.bigtable.v2.RequestLatencyStats request_latency_stats = 2;</code>
      */
     public com.google.bigtable.v2.RequestLatencyStats.Builder getRequestLatencyStatsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRequestLatencyStatsFieldBuilder().getBuilder();
     }

@@ -71,7 +71,9 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.OperationProgressOrBuilder getProgressOrBuilder() {
-    return getProgress();
+    return progress_ == null
+        ? com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()
+        : progress_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +386,11 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (progressBuilder_ == null) {
-        progress_ = null;
-      } else {
-        progress_ = null;
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
       return this;
@@ -417,14 +420,21 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     public com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata buildPartial() {
       com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata result =
           new com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata(this);
-      result.name_ = name_;
-      if (progressBuilder_ == null) {
-        result.progress_ = progress_;
-      } else {
-        result.progress_ = progressBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -475,6 +485,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProgress()) {
@@ -509,13 +520,13 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProgressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +545,8 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -596,8 +609,8 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +626,8 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +648,8 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,7 +672,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
      * @return Whether the progress field is set.
      */
     public boolean hasProgress() {
-      return progressBuilder_ != null || progress_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -696,11 +709,11 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         progress_ = value;
-        onChanged();
       } else {
         progressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -716,11 +729,11 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         com.google.bigtable.admin.v2.OperationProgress.Builder builderForValue) {
       if (progressBuilder_ == null) {
         progress_ = builderForValue.build();
-        onChanged();
       } else {
         progressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -734,19 +747,18 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
      */
     public Builder mergeProgress(com.google.bigtable.admin.v2.OperationProgress value) {
       if (progressBuilder_ == null) {
-        if (progress_ != null) {
-          progress_ =
-              com.google.bigtable.admin.v2.OperationProgress.newBuilder(progress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && progress_ != null
+            && progress_ != com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()) {
+          getProgressBuilder().mergeFrom(value);
         } else {
           progress_ = value;
         }
-        onChanged();
       } else {
         progressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -759,14 +771,13 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
      * <code>.google.bigtable.admin.v2.OperationProgress progress = 2;</code>
      */
     public Builder clearProgress() {
-      if (progressBuilder_ == null) {
-        progress_ = null;
-        onChanged();
-      } else {
-        progress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
         progressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -779,7 +790,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
      * <code>.google.bigtable.admin.v2.OperationProgress progress = 2;</code>
      */
     public com.google.bigtable.admin.v2.OperationProgress.Builder getProgressBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }

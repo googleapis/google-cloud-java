@@ -472,7 +472,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder getAutoscalingLimitsOrBuilder() {
-      return getAutoscalingLimits();
+      return autoscalingLimits_ == null
+          ? com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()
+          : autoscalingLimits_;
     }
 
     public static final int AUTOSCALING_TARGETS_FIELD_NUMBER = 2;
@@ -527,7 +529,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder
         getAutoscalingTargetsOrBuilder() {
-      return getAutoscalingTargets();
+      return autoscalingTargets_ == null
+          ? com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()
+          : autoscalingTargets_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -750,16 +754,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (autoscalingLimitsBuilder_ == null) {
-          autoscalingLimits_ = null;
-        } else {
-          autoscalingLimits_ = null;
+        bitField0_ = 0;
+        autoscalingLimits_ = null;
+        if (autoscalingLimitsBuilder_ != null) {
+          autoscalingLimitsBuilder_.dispose();
           autoscalingLimitsBuilder_ = null;
         }
-        if (autoscalingTargetsBuilder_ == null) {
-          autoscalingTargets_ = null;
-        } else {
-          autoscalingTargets_ = null;
+        autoscalingTargets_ = null;
+        if (autoscalingTargetsBuilder_ != null) {
+          autoscalingTargetsBuilder_.dispose();
           autoscalingTargetsBuilder_ = null;
         }
         return this;
@@ -790,18 +793,28 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig buildPartial() {
         com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig result =
             new com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig(this);
-        if (autoscalingLimitsBuilder_ == null) {
-          result.autoscalingLimits_ = autoscalingLimits_;
-        } else {
-          result.autoscalingLimits_ = autoscalingLimitsBuilder_.build();
-        }
-        if (autoscalingTargetsBuilder_ == null) {
-          result.autoscalingTargets_ = autoscalingTargets_;
-        } else {
-          result.autoscalingTargets_ = autoscalingTargetsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.autoscalingLimits_ =
+              autoscalingLimitsBuilder_ == null
+                  ? autoscalingLimits_
+                  : autoscalingLimitsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.autoscalingTargets_ =
+              autoscalingTargetsBuilder_ == null
+                  ? autoscalingTargets_
+                  : autoscalingTargetsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -890,14 +903,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getAutoscalingLimitsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getAutoscalingTargetsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -916,6 +929,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.bigtable.admin.v2.AutoscalingLimits autoscalingLimits_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -937,7 +952,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the autoscalingLimits field is set.
        */
       public boolean hasAutoscalingLimits() {
-        return autoscalingLimitsBuilder_ != null || autoscalingLimits_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -978,11 +993,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           autoscalingLimits_ = value;
-          onChanged();
         } else {
           autoscalingLimitsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1000,11 +1015,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.AutoscalingLimits.Builder builderForValue) {
         if (autoscalingLimitsBuilder_ == null) {
           autoscalingLimits_ = builderForValue.build();
-          onChanged();
         } else {
           autoscalingLimitsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1020,19 +1035,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeAutoscalingLimits(com.google.bigtable.admin.v2.AutoscalingLimits value) {
         if (autoscalingLimitsBuilder_ == null) {
-          if (autoscalingLimits_ != null) {
-            autoscalingLimits_ =
-                com.google.bigtable.admin.v2.AutoscalingLimits.newBuilder(autoscalingLimits_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && autoscalingLimits_ != null
+              && autoscalingLimits_
+                  != com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()) {
+            getAutoscalingLimitsBuilder().mergeFrom(value);
           } else {
             autoscalingLimits_ = value;
           }
-          onChanged();
         } else {
           autoscalingLimitsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1047,14 +1062,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearAutoscalingLimits() {
-        if (autoscalingLimitsBuilder_ == null) {
-          autoscalingLimits_ = null;
-          onChanged();
-        } else {
-          autoscalingLimits_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        autoscalingLimits_ = null;
+        if (autoscalingLimitsBuilder_ != null) {
+          autoscalingLimitsBuilder_.dispose();
           autoscalingLimitsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1069,7 +1083,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.bigtable.admin.v2.AutoscalingLimits.Builder getAutoscalingLimitsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAutoscalingLimitsFieldBuilder().getBuilder();
       }
@@ -1142,7 +1156,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the autoscalingTargets field is set.
        */
       public boolean hasAutoscalingTargets() {
-        return autoscalingTargetsBuilder_ != null || autoscalingTargets_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1183,11 +1197,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           autoscalingTargets_ = value;
-          onChanged();
         } else {
           autoscalingTargetsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1205,11 +1219,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.AutoscalingTargets.Builder builderForValue) {
         if (autoscalingTargetsBuilder_ == null) {
           autoscalingTargets_ = builderForValue.build();
-          onChanged();
         } else {
           autoscalingTargetsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1226,19 +1240,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeAutoscalingTargets(
           com.google.bigtable.admin.v2.AutoscalingTargets value) {
         if (autoscalingTargetsBuilder_ == null) {
-          if (autoscalingTargets_ != null) {
-            autoscalingTargets_ =
-                com.google.bigtable.admin.v2.AutoscalingTargets.newBuilder(autoscalingTargets_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && autoscalingTargets_ != null
+              && autoscalingTargets_
+                  != com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()) {
+            getAutoscalingTargetsBuilder().mergeFrom(value);
           } else {
             autoscalingTargets_ = value;
           }
-          onChanged();
         } else {
           autoscalingTargetsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1253,14 +1267,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearAutoscalingTargets() {
-        if (autoscalingTargetsBuilder_ == null) {
-          autoscalingTargets_ = null;
-          onChanged();
-        } else {
-          autoscalingTargets_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        autoscalingTargets_ = null;
+        if (autoscalingTargetsBuilder_ != null) {
+          autoscalingTargetsBuilder_.dispose();
           autoscalingTargetsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1276,7 +1289,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.bigtable.admin.v2.AutoscalingTargets.Builder
           getAutoscalingTargetsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAutoscalingTargetsFieldBuilder().getBuilder();
       }
@@ -1543,7 +1556,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder
         getClusterAutoscalingConfigOrBuilder() {
-      return getClusterAutoscalingConfig();
+      return clusterAutoscalingConfig_ == null
+          ? com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance()
+          : clusterAutoscalingConfig_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1753,10 +1768,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (clusterAutoscalingConfigBuilder_ == null) {
-          clusterAutoscalingConfig_ = null;
-        } else {
-          clusterAutoscalingConfig_ = null;
+        bitField0_ = 0;
+        clusterAutoscalingConfig_ = null;
+        if (clusterAutoscalingConfigBuilder_ != null) {
+          clusterAutoscalingConfigBuilder_.dispose();
           clusterAutoscalingConfigBuilder_ = null;
         }
         return this;
@@ -1786,13 +1801,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Cluster.ClusterConfig buildPartial() {
         com.google.bigtable.admin.v2.Cluster.ClusterConfig result =
             new com.google.bigtable.admin.v2.Cluster.ClusterConfig(this);
-        if (clusterAutoscalingConfigBuilder_ == null) {
-          result.clusterAutoscalingConfig_ = clusterAutoscalingConfig_;
-        } else {
-          result.clusterAutoscalingConfig_ = clusterAutoscalingConfigBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Cluster.ClusterConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clusterAutoscalingConfig_ =
+              clusterAutoscalingConfigBuilder_ == null
+                  ? clusterAutoscalingConfig_
+                  : clusterAutoscalingConfigBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1876,7 +1899,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getClusterAutoscalingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1895,6 +1918,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
           clusterAutoscalingConfig_;
@@ -1917,7 +1942,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the clusterAutoscalingConfig field is set.
        */
       public boolean hasClusterAutoscalingConfig() {
-        return clusterAutoscalingConfigBuilder_ != null || clusterAutoscalingConfig_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1960,11 +1985,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           clusterAutoscalingConfig_ = value;
-          onChanged();
         } else {
           clusterAutoscalingConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1982,11 +2007,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder builderForValue) {
         if (clusterAutoscalingConfigBuilder_ == null) {
           clusterAutoscalingConfig_ = builderForValue.build();
-          onChanged();
         } else {
           clusterAutoscalingConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2003,20 +2028,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeClusterAutoscalingConfig(
           com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig value) {
         if (clusterAutoscalingConfigBuilder_ == null) {
-          if (clusterAutoscalingConfig_ != null) {
-            clusterAutoscalingConfig_ =
-                com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.newBuilder(
-                        clusterAutoscalingConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && clusterAutoscalingConfig_ != null
+              && clusterAutoscalingConfig_
+                  != com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig
+                      .getDefaultInstance()) {
+            getClusterAutoscalingConfigBuilder().mergeFrom(value);
           } else {
             clusterAutoscalingConfig_ = value;
           }
-          onChanged();
         } else {
           clusterAutoscalingConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2031,14 +2056,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearClusterAutoscalingConfig() {
-        if (clusterAutoscalingConfigBuilder_ == null) {
-          clusterAutoscalingConfig_ = null;
-          onChanged();
-        } else {
-          clusterAutoscalingConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clusterAutoscalingConfig_ = null;
+        if (clusterAutoscalingConfigBuilder_ != null) {
+          clusterAutoscalingConfigBuilder_.dispose();
           clusterAutoscalingConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2054,7 +2078,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder
           getClusterAutoscalingConfigBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getClusterAutoscalingConfigFieldBuilder().getBuilder();
       }
@@ -2270,7 +2294,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kmsKeyName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kmsKeyName_ = "";
     /**
      *
      *
@@ -2537,8 +2563,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         kmsKeyName_ = "";
-
         return this;
       }
 
@@ -2566,9 +2592,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Cluster.EncryptionConfig buildPartial() {
         com.google.bigtable.admin.v2.Cluster.EncryptionConfig result =
             new com.google.bigtable.admin.v2.Cluster.EncryptionConfig(this);
-        result.kmsKeyName_ = kmsKeyName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.Cluster.EncryptionConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsKeyName_ = kmsKeyName_;
+        }
       }
 
       @java.lang.Override
@@ -2621,6 +2656,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getKmsKeyName().isEmpty()) {
           kmsKeyName_ = other.kmsKeyName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2652,7 +2688,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   kmsKeyName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2671,6 +2707,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object kmsKeyName_ = "";
       /**
@@ -2760,8 +2798,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kmsKeyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2786,8 +2824,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKmsKeyName() {
-
         kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2817,8 +2855,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kmsKeyName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2932,7 +2970,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2983,7 +3023,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -3042,7 +3084,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -3075,14 +3117,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.Cluster.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Cluster.State result =
-        com.google.bigtable.admin.v2.Cluster.State.valueOf(state_);
+        com.google.bigtable.admin.v2.Cluster.State.forNumber(state_);
     return result == null ? com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED : result;
   }
 
   public static final int SERVE_NODES_FIELD_NUMBER = 4;
-  private int serveNodes_;
+  private int serveNodes_ = 0;
   /**
    *
    *
@@ -3152,7 +3193,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_STORAGE_TYPE_FIELD_NUMBER = 5;
-  private int defaultStorageType_;
+  private int defaultStorageType_ = 0;
   /**
    *
    *
@@ -3187,9 +3228,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.StorageType getDefaultStorageType() {
-    @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.StorageType result =
-        com.google.bigtable.admin.v2.StorageType.valueOf(defaultStorageType_);
+        com.google.bigtable.admin.v2.StorageType.forNumber(defaultStorageType_);
     return result == null ? com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED : result;
   }
 
@@ -3245,7 +3285,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder
       getEncryptionConfigOrBuilder() {
-    return getEncryptionConfig();
+    return encryptionConfig_ == null
+        ? com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3521,23 +3563,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       location_ = "";
-
       state_ = 0;
-
       serveNodes_ = 0;
-
       if (clusterConfigBuilder_ != null) {
         clusterConfigBuilder_.clear();
       }
       defaultStorageType_ = 0;
-
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-      } else {
-        encryptionConfig_ = null;
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
       configCase_ = 0;
@@ -3568,26 +3605,43 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.admin.v2.Cluster buildPartial() {
       com.google.bigtable.admin.v2.Cluster result = new com.google.bigtable.admin.v2.Cluster(this);
-      result.name_ = name_;
-      result.location_ = location_;
-      result.state_ = state_;
-      result.serveNodes_ = serveNodes_;
-      if (configCase_ == 7) {
-        if (clusterConfigBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = clusterConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.defaultStorageType_ = defaultStorageType_;
-      if (encryptionConfigBuilder_ == null) {
-        result.encryptionConfig_ = encryptionConfig_;
-      } else {
-        result.encryptionConfig_ = encryptionConfigBuilder_.build();
-      }
-      result.configCase_ = configCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.bigtable.admin.v2.Cluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serveNodes_ = serveNodes_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.defaultStorageType_ = defaultStorageType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.encryptionConfig_ =
+            encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.Cluster result) {
+      result.configCase_ = configCase_;
+      result.config_ = this.config_;
+      if (configCase_ == 7 && clusterConfigBuilder_ != null) {
+        result.config_ = clusterConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3637,10 +3691,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.bigtable.admin.v2.Cluster.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -3695,38 +3751,38 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 serveNodes_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 defaultStorageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -3765,6 +3821,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -3830,8 +3888,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3848,8 +3906,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3871,8 +3929,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3953,8 +4011,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3975,8 +4033,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4002,8 +4060,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4041,8 +4099,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4061,9 +4119,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.admin.v2.Cluster.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Cluster.State result =
-          com.google.bigtable.admin.v2.Cluster.State.valueOf(state_);
+          com.google.bigtable.admin.v2.Cluster.State.forNumber(state_);
       return result == null ? com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED : result;
     }
     /**
@@ -4084,7 +4141,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4103,7 +4160,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -4142,6 +4199,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setServeNodes(int value) {
 
       serveNodes_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4158,7 +4216,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServeNodes() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       serveNodes_ = 0;
       onChanged();
       return this;
@@ -4370,7 +4428,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       configCase_ = 7;
       onChanged();
-      ;
       return clusterConfigBuilder_;
     }
 
@@ -4409,8 +4466,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDefaultStorageTypeValue(int value) {
-
       defaultStorageType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4430,9 +4487,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.bigtable.admin.v2.StorageType getDefaultStorageType() {
-      @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.StorageType result =
-          com.google.bigtable.admin.v2.StorageType.valueOf(defaultStorageType_);
+          com.google.bigtable.admin.v2.StorageType.forNumber(defaultStorageType_);
       return result == null ? com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED : result;
     }
     /**
@@ -4454,7 +4510,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       defaultStorageType_ = value.getNumber();
       onChanged();
       return this;
@@ -4474,7 +4530,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultStorageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       defaultStorageType_ = 0;
       onChanged();
       return this;
@@ -4500,7 +4556,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4542,11 +4598,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         encryptionConfig_ = value;
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4564,11 +4620,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder builderForValue) {
       if (encryptionConfigBuilder_ == null) {
         encryptionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4585,19 +4641,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEncryptionConfig(
         com.google.bigtable.admin.v2.Cluster.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (encryptionConfig_ != null) {
-          encryptionConfig_ =
-              com.google.bigtable.admin.v2.Cluster.EncryptionConfig.newBuilder(encryptionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && encryptionConfig_ != null
+            && encryptionConfig_
+                != com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()) {
+          getEncryptionConfigBuilder().mergeFrom(value);
         } else {
           encryptionConfig_ = value;
         }
-        onChanged();
       } else {
         encryptionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4612,14 +4668,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      if (encryptionConfigBuilder_ == null) {
-        encryptionConfig_ = null;
-        onChanged();
-      } else {
-        encryptionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
         encryptionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4635,7 +4690,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder
         getEncryptionConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
