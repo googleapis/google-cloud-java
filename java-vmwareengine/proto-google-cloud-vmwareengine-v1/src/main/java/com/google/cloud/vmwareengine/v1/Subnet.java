@@ -274,7 +274,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -331,7 +333,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -380,7 +384,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GATEWAY_IP_FIELD_NUMBER = 8;
-  private volatile java.lang.Object gatewayIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gatewayIp_ = "";
   /**
    *
    *
@@ -431,7 +437,9 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -482,7 +490,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 13;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -515,9 +523,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.Subnet.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmwareengine.v1.Subnet.State result =
-        com.google.cloud.vmwareengine.v1.Subnet.State.valueOf(state_);
+        com.google.cloud.vmwareengine.v1.Subnet.State.forNumber(state_);
     return result == null ? com.google.cloud.vmwareengine.v1.Subnet.State.UNRECOGNIZED : result;
   }
 
@@ -754,16 +761,12 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       ipCidrRange_ = "";
-
       gatewayIp_ = "";
-
       type_ = "";
-
       state_ = 0;
-
       return this;
     }
 
@@ -791,13 +794,30 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.Subnet buildPartial() {
       com.google.cloud.vmwareengine.v1.Subnet result =
           new com.google.cloud.vmwareengine.v1.Subnet(this);
-      result.name_ = name_;
-      result.ipCidrRange_ = ipCidrRange_;
-      result.gatewayIp_ = gatewayIp_;
-      result.type_ = type_;
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.Subnet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gatewayIp_ = gatewayIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -847,18 +867,22 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.Subnet.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIpCidrRange().isEmpty()) {
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getGatewayIp().isEmpty()) {
         gatewayIp_ = other.gatewayIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -893,31 +917,31 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 58:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 58
             case 66:
               {
                 gatewayIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 66
             case 90:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 90
             case 104:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 104
             default:
@@ -936,6 +960,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1010,8 +1036,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1031,8 +1057,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1057,8 +1083,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,8 +1150,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1141,8 +1167,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1163,8 +1189,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1233,8 +1259,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       gatewayIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1251,8 +1277,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayIp() {
-
       gatewayIp_ = getDefaultInstance().getGatewayIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1274,8 +1300,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gatewayIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1344,8 +1370,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1362,8 +1388,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1385,8 +1411,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1424,8 +1450,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1444,9 +1470,8 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.Subnet.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.Subnet.State result =
-          com.google.cloud.vmwareengine.v1.Subnet.State.valueOf(state_);
+          com.google.cloud.vmwareengine.v1.Subnet.State.forNumber(state_);
       return result == null ? com.google.cloud.vmwareengine.v1.Subnet.State.UNRECOGNIZED : result;
     }
     /**
@@ -1467,7 +1492,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1486,7 +1511,7 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;

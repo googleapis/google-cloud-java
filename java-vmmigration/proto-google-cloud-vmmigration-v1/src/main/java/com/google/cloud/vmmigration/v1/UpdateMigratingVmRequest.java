@@ -122,7 +122,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int MIGRATING_VM_FIELD_NUMBER = 2;
@@ -176,11 +176,15 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.MigratingVmOrBuilder getMigratingVmOrBuilder() {
-    return getMigratingVm();
+    return migratingVm_ == null
+        ? com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance()
+        : migratingVm_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -474,20 +478,18 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (migratingVmBuilder_ == null) {
-        migratingVm_ = null;
-      } else {
-        migratingVm_ = null;
+      migratingVm_ = null;
+      if (migratingVmBuilder_ != null) {
+        migratingVmBuilder_.dispose();
         migratingVmBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -515,19 +517,25 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     public com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest buildPartial() {
       com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest result =
           new com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (migratingVmBuilder_ == null) {
-        result.migratingVm_ = migratingVm_;
-      } else {
-        result.migratingVm_ = migratingVmBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.migratingVm_ =
+            migratingVmBuilder_ == null ? migratingVm_ : migratingVmBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -584,6 +592,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -615,19 +624,19 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMigratingVmFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -646,6 +655,8 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -669,7 +680,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -714,11 +725,11 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -737,11 +748,11 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -759,17 +770,18 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -786,14 +798,13 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -810,7 +821,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -886,7 +897,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * @return Whether the migratingVm field is set.
      */
     public boolean hasMigratingVm() {
-      return migratingVmBuilder_ != null || migratingVm_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -927,11 +938,11 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         migratingVm_ = value;
-        onChanged();
       } else {
         migratingVmBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -949,11 +960,11 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         com.google.cloud.vmmigration.v1.MigratingVm.Builder builderForValue) {
       if (migratingVmBuilder_ == null) {
         migratingVm_ = builderForValue.build();
-        onChanged();
       } else {
         migratingVmBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -969,19 +980,18 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      */
     public Builder mergeMigratingVm(com.google.cloud.vmmigration.v1.MigratingVm value) {
       if (migratingVmBuilder_ == null) {
-        if (migratingVm_ != null) {
-          migratingVm_ =
-              com.google.cloud.vmmigration.v1.MigratingVm.newBuilder(migratingVm_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && migratingVm_ != null
+            && migratingVm_ != com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance()) {
+          getMigratingVmBuilder().mergeFrom(value);
         } else {
           migratingVm_ = value;
         }
-        onChanged();
       } else {
         migratingVmBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -996,14 +1006,13 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearMigratingVm() {
-      if (migratingVmBuilder_ == null) {
-        migratingVm_ = null;
-        onChanged();
-      } else {
-        migratingVm_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      migratingVm_ = null;
+      if (migratingVmBuilder_ != null) {
+        migratingVmBuilder_.dispose();
         migratingVmBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1018,7 +1027,7 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.vmmigration.v1.MigratingVm.Builder getMigratingVmBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMigratingVmFieldBuilder().getBuilder();
     }
@@ -1161,8 +1170,8 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1188,8 +1197,8 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1220,8 +1229,8 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

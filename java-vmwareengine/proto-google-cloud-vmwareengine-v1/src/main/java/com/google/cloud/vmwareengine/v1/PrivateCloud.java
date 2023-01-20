@@ -419,7 +419,6 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.vmwareengine.v1.NodeTypeConfig&gt; node_type_configs = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-
     /* nullable */
     com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrDefault(
         java.lang.String key,
@@ -500,7 +499,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CLUSTER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object clusterId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterId_ = "";
     /**
      *
      *
@@ -579,6 +580,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
                           com.google.cloud.vmwareengine.v1.NodeTypeConfig.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
         nodeTypeConfigs_;
@@ -652,8 +654,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrDefault(
-        java.lang.String key, com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue) {
+    public /* nullable */ com.google.cloud.vmwareengine.v1.NodeTypeConfig
+        getNodeTypeConfigsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -928,8 +933,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clusterId_ = "";
-
         internalGetMutableNodeTypeConfigs().clear();
         return this;
       }
@@ -959,12 +964,23 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster buildPartial() {
         com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster result =
             new com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster(this);
-        int from_bitField0_ = bitField0_;
-        result.clusterId_ = clusterId_;
-        result.nodeTypeConfigs_ = internalGetNodeTypeConfigs();
-        result.nodeTypeConfigs_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clusterId_ = clusterId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nodeTypeConfigs_ = internalGetNodeTypeConfigs();
+          result.nodeTypeConfigs_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1019,9 +1035,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getClusterId().isEmpty()) {
           clusterId_ = other.clusterId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         internalGetMutableNodeTypeConfigs().mergeFrom(other.internalGetNodeTypeConfigs());
+        bitField0_ |= 0x00000002;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1051,7 +1069,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   clusterId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 58:
@@ -1065,6 +1083,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableNodeTypeConfigs()
                       .getMutableMap()
                       .put(nodeTypeConfigs__.getKey(), nodeTypeConfigs__.getValue());
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 58
               default:
@@ -1168,8 +1187,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         clusterId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1192,8 +1211,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearClusterId() {
-
         clusterId_ = getDefaultInstance().getClusterId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1221,8 +1240,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         clusterId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1244,8 +1263,6 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
           internalGetMutableNodeTypeConfigs() {
-        onChanged();
-        ;
         if (nodeTypeConfigs_ == null) {
           nodeTypeConfigs_ =
               com.google.protobuf.MapField.newMapField(
@@ -1254,6 +1271,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         if (!nodeTypeConfigs_.isMutable()) {
           nodeTypeConfigs_ = nodeTypeConfigs_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return nodeTypeConfigs_;
       }
 
@@ -1316,8 +1335,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrDefault(
-          java.lang.String key, com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue) {
+      public /* nullable */ com.google.cloud.vmwareengine.v1.NodeTypeConfig
+          getNodeTypeConfigsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.vmwareengine.v1.NodeTypeConfig defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1352,6 +1374,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearNodeTypeConfigs() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableNodeTypeConfigs().getMutableMap().clear();
         return this;
       }
@@ -1378,6 +1401,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig>
           getMutableNodeTypeConfigs() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableNodeTypeConfigs().getMutableMap();
       }
       /**
@@ -1400,8 +1424,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableNodeTypeConfigs().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1419,6 +1443,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllNodeTypeConfigs(
           java.util.Map<java.lang.String, com.google.cloud.vmwareengine.v1.NodeTypeConfig> values) {
         internalGetMutableNodeTypeConfigs().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1490,7 +1515,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1592,7 +1619,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1641,7 +1668,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 4;
@@ -1690,7 +1717,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
@@ -1739,11 +1766,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 8;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1778,9 +1805,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.PrivateCloud.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmwareengine.v1.PrivateCloud.State result =
-        com.google.cloud.vmwareengine.v1.PrivateCloud.State.valueOf(state_);
+        com.google.cloud.vmwareengine.v1.PrivateCloud.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vmwareengine.v1.PrivateCloud.State.UNRECOGNIZED
         : result;
@@ -1837,7 +1863,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
-    return getNetworkConfig();
+    return networkConfig_ == null
+        ? com.google.cloud.vmwareengine.v1.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
   }
 
   public static final int MANAGEMENT_CLUSTER_FIELD_NUMBER = 10;
@@ -1904,11 +1932,15 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementClusterOrBuilder
       getManagementClusterOrBuilder() {
-    return getManagementCluster();
+    return managementCluster_ == null
+        ? com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.getDefaultInstance()
+        : managementCluster_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -2002,7 +2034,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.HcxOrBuilder getHcxOrBuilder() {
-    return getHcx();
+    return hcx_ == null ? com.google.cloud.vmwareengine.v1.Hcx.getDefaultInstance() : hcx_;
   }
 
   public static final int NSX_FIELD_NUMBER = 18;
@@ -2051,7 +2083,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.NsxOrBuilder getNsxOrBuilder() {
-    return getNsx();
+    return nsx_ == null ? com.google.cloud.vmwareengine.v1.Nsx.getDefaultInstance() : nsx_;
   }
 
   public static final int VCENTER_FIELD_NUMBER = 19;
@@ -2105,11 +2137,15 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.VcenterOrBuilder getVcenterOrBuilder() {
-    return getVcenter();
+    return vcenter_ == null
+        ? com.google.cloud.vmwareengine.v1.Vcenter.getDefaultInstance()
+        : vcenter_;
   }
 
   public static final int UID_FIELD_NUMBER = 20;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -2509,68 +2545,56 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       state_ = 0;
-
-      if (networkConfigBuilder_ == null) {
-        networkConfig_ = null;
-      } else {
-        networkConfig_ = null;
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
-      if (managementClusterBuilder_ == null) {
-        managementCluster_ = null;
-      } else {
-        managementCluster_ = null;
+      managementCluster_ = null;
+      if (managementClusterBuilder_ != null) {
+        managementClusterBuilder_.dispose();
         managementClusterBuilder_ = null;
       }
       description_ = "";
-
-      if (hcxBuilder_ == null) {
-        hcx_ = null;
-      } else {
-        hcx_ = null;
+      hcx_ = null;
+      if (hcxBuilder_ != null) {
+        hcxBuilder_.dispose();
         hcxBuilder_ = null;
       }
-      if (nsxBuilder_ == null) {
-        nsx_ = null;
-      } else {
-        nsx_ = null;
+      nsx_ = null;
+      if (nsxBuilder_ != null) {
+        nsxBuilder_.dispose();
         nsxBuilder_ = null;
       }
-      if (vcenterBuilder_ == null) {
-        vcenter_ = null;
-      } else {
-        vcenter_ = null;
+      vcenter_ = null;
+      if (vcenterBuilder_ != null) {
+        vcenterBuilder_.dispose();
         vcenterBuilder_ = null;
       }
       uid_ = "";
-
       return this;
     }
 
@@ -2598,57 +2622,58 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.PrivateCloud buildPartial() {
       com.google.cloud.vmwareengine.v1.PrivateCloud result =
           new com.google.cloud.vmwareengine.v1.PrivateCloud(this);
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      if (networkConfigBuilder_ == null) {
-        result.networkConfig_ = networkConfig_;
-      } else {
-        result.networkConfig_ = networkConfigBuilder_.build();
-      }
-      if (managementClusterBuilder_ == null) {
-        result.managementCluster_ = managementCluster_;
-      } else {
-        result.managementCluster_ = managementClusterBuilder_.build();
-      }
-      result.description_ = description_;
-      if (hcxBuilder_ == null) {
-        result.hcx_ = hcx_;
-      } else {
-        result.hcx_ = hcxBuilder_.build();
-      }
-      if (nsxBuilder_ == null) {
-        result.nsx_ = nsx_;
-      } else {
-        result.nsx_ = nsxBuilder_.build();
-      }
-      if (vcenterBuilder_ == null) {
-        result.vcenter_ = vcenter_;
-      } else {
-        result.vcenter_ = vcenterBuilder_.build();
-      }
-      result.uid_ = uid_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.PrivateCloud result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.managementCluster_ =
+            managementClusterBuilder_ == null
+                ? managementCluster_
+                : managementClusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.hcx_ = hcxBuilder_ == null ? hcx_ : hcxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.nsx_ = nsxBuilder_ == null ? nsx_ : nsxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.vcenter_ = vcenterBuilder_ == null ? vcenter_ : vcenterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.uid_ = uid_;
+      }
     }
 
     @java.lang.Override
@@ -2698,6 +2723,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2723,6 +2749,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasHcx()) {
@@ -2736,6 +2763,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2767,80 +2795,80 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 64:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getManagementClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 138:
               {
                 input.readMessage(getHcxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getNsxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getVcenterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 154
             case 162:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 162
             default:
@@ -2859,6 +2887,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2933,8 +2963,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2954,8 +2984,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2980,8 +3010,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3006,7 +3036,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3047,11 +3077,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3068,11 +3098,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3088,17 +3118,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3113,14 +3144,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3135,7 +3165,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3207,7 +3237,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3248,11 +3278,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3269,11 +3299,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3289,17 +3319,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3314,14 +3345,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3336,7 +3366,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3408,7 +3438,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3449,11 +3479,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3470,11 +3500,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3490,17 +3520,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3515,14 +3546,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3537,7 +3567,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -3609,7 +3639,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3650,11 +3680,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3671,11 +3701,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3691,17 +3721,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3716,14 +3747,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3738,7 +3768,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3825,8 +3855,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3846,9 +3876,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.PrivateCloud.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.PrivateCloud.State result =
-          com.google.cloud.vmwareengine.v1.PrivateCloud.State.valueOf(state_);
+          com.google.cloud.vmwareengine.v1.PrivateCloud.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmwareengine.v1.PrivateCloud.State.UNRECOGNIZED
           : result;
@@ -3872,7 +3901,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3892,7 +3921,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -3918,7 +3947,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkConfig field is set.
      */
     public boolean hasNetworkConfig() {
-      return networkConfigBuilder_ != null || networkConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3959,11 +3988,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         networkConfig_ = value;
-        onChanged();
       } else {
         networkConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3981,11 +4010,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmwareengine.v1.NetworkConfig.Builder builderForValue) {
       if (networkConfigBuilder_ == null) {
         networkConfig_ = builderForValue.build();
-        onChanged();
       } else {
         networkConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4001,19 +4030,19 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNetworkConfig(com.google.cloud.vmwareengine.v1.NetworkConfig value) {
       if (networkConfigBuilder_ == null) {
-        if (networkConfig_ != null) {
-          networkConfig_ =
-              com.google.cloud.vmwareengine.v1.NetworkConfig.newBuilder(networkConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && networkConfig_ != null
+            && networkConfig_
+                != com.google.cloud.vmwareengine.v1.NetworkConfig.getDefaultInstance()) {
+          getNetworkConfigBuilder().mergeFrom(value);
         } else {
           networkConfig_ = value;
         }
-        onChanged();
       } else {
         networkConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4028,14 +4057,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNetworkConfig() {
-      if (networkConfigBuilder_ == null) {
-        networkConfig_ = null;
-        onChanged();
-      } else {
-        networkConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4050,7 +4078,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.NetworkConfig.Builder getNetworkConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
@@ -4126,7 +4154,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the managementCluster field is set.
      */
     public boolean hasManagementCluster() {
-      return managementClusterBuilder_ != null || managementCluster_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4176,11 +4204,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         managementCluster_ = value;
-        onChanged();
       } else {
         managementClusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4202,11 +4230,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.Builder builderForValue) {
       if (managementClusterBuilder_ == null) {
         managementCluster_ = builderForValue.build();
-        onChanged();
       } else {
         managementClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4227,20 +4255,20 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeManagementCluster(
         com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster value) {
       if (managementClusterBuilder_ == null) {
-        if (managementCluster_ != null) {
-          managementCluster_ =
-              com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.newBuilder(
-                      managementCluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && managementCluster_ != null
+            && managementCluster_
+                != com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster
+                    .getDefaultInstance()) {
+          getManagementClusterBuilder().mergeFrom(value);
         } else {
           managementCluster_ = value;
         }
-        onChanged();
       } else {
         managementClusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4259,14 +4287,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearManagementCluster() {
-      if (managementClusterBuilder_ == null) {
-        managementCluster_ = null;
-        onChanged();
-      } else {
-        managementCluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      managementCluster_ = null;
+      if (managementClusterBuilder_ != null) {
+        managementClusterBuilder_.dispose();
         managementClusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4286,7 +4313,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster.Builder
         getManagementClusterBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getManagementClusterFieldBuilder().getBuilder();
     }
@@ -4408,8 +4435,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4425,8 +4452,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4447,8 +4474,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4473,7 +4500,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the hcx field is set.
      */
     public boolean hasHcx() {
-      return hcxBuilder_ != null || hcx_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4512,11 +4539,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         hcx_ = value;
-        onChanged();
       } else {
         hcxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4533,11 +4560,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setHcx(com.google.cloud.vmwareengine.v1.Hcx.Builder builderForValue) {
       if (hcxBuilder_ == null) {
         hcx_ = builderForValue.build();
-        onChanged();
       } else {
         hcxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4553,17 +4580,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHcx(com.google.cloud.vmwareengine.v1.Hcx value) {
       if (hcxBuilder_ == null) {
-        if (hcx_ != null) {
-          hcx_ =
-              com.google.cloud.vmwareengine.v1.Hcx.newBuilder(hcx_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && hcx_ != null
+            && hcx_ != com.google.cloud.vmwareengine.v1.Hcx.getDefaultInstance()) {
+          getHcxBuilder().mergeFrom(value);
         } else {
           hcx_ = value;
         }
-        onChanged();
       } else {
         hcxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4578,14 +4606,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHcx() {
-      if (hcxBuilder_ == null) {
-        hcx_ = null;
-        onChanged();
-      } else {
-        hcx_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      hcx_ = null;
+      if (hcxBuilder_ != null) {
+        hcxBuilder_.dispose();
         hcxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4600,7 +4627,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.Hcx.Builder getHcxBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getHcxFieldBuilder().getBuilder();
     }
@@ -4670,7 +4697,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nsx field is set.
      */
     public boolean hasNsx() {
-      return nsxBuilder_ != null || nsx_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4709,11 +4736,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nsx_ = value;
-        onChanged();
       } else {
         nsxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4730,11 +4757,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setNsx(com.google.cloud.vmwareengine.v1.Nsx.Builder builderForValue) {
       if (nsxBuilder_ == null) {
         nsx_ = builderForValue.build();
-        onChanged();
       } else {
         nsxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4750,17 +4777,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNsx(com.google.cloud.vmwareengine.v1.Nsx value) {
       if (nsxBuilder_ == null) {
-        if (nsx_ != null) {
-          nsx_ =
-              com.google.cloud.vmwareengine.v1.Nsx.newBuilder(nsx_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && nsx_ != null
+            && nsx_ != com.google.cloud.vmwareengine.v1.Nsx.getDefaultInstance()) {
+          getNsxBuilder().mergeFrom(value);
         } else {
           nsx_ = value;
         }
-        onChanged();
       } else {
         nsxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4775,14 +4803,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNsx() {
-      if (nsxBuilder_ == null) {
-        nsx_ = null;
-        onChanged();
-      } else {
-        nsx_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      nsx_ = null;
+      if (nsxBuilder_ != null) {
+        nsxBuilder_.dispose();
         nsxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4797,7 +4824,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.Nsx.Builder getNsxBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getNsxFieldBuilder().getBuilder();
     }
@@ -4867,7 +4894,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vcenter field is set.
      */
     public boolean hasVcenter() {
-      return vcenterBuilder_ != null || vcenter_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4908,11 +4935,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vcenter_ = value;
-        onChanged();
       } else {
         vcenterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4929,11 +4956,11 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     public Builder setVcenter(com.google.cloud.vmwareengine.v1.Vcenter.Builder builderForValue) {
       if (vcenterBuilder_ == null) {
         vcenter_ = builderForValue.build();
-        onChanged();
       } else {
         vcenterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4949,19 +4976,18 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVcenter(com.google.cloud.vmwareengine.v1.Vcenter value) {
       if (vcenterBuilder_ == null) {
-        if (vcenter_ != null) {
-          vcenter_ =
-              com.google.cloud.vmwareengine.v1.Vcenter.newBuilder(vcenter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && vcenter_ != null
+            && vcenter_ != com.google.cloud.vmwareengine.v1.Vcenter.getDefaultInstance()) {
+          getVcenterBuilder().mergeFrom(value);
         } else {
           vcenter_ = value;
         }
-        onChanged();
       } else {
         vcenterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4976,14 +5002,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVcenter() {
-      if (vcenterBuilder_ == null) {
-        vcenter_ = null;
-        onChanged();
-      } else {
-        vcenter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      vcenter_ = null;
+      if (vcenterBuilder_ != null) {
+        vcenterBuilder_.dispose();
         vcenterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4998,7 +5023,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.Vcenter.Builder getVcenterBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getVcenterFieldBuilder().getBuilder();
     }
@@ -5111,8 +5136,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5128,8 +5153,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5150,8 +5175,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

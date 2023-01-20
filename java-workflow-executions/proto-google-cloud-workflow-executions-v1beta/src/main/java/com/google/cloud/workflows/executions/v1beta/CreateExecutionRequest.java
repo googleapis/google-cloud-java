@@ -70,7 +70,9 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -177,7 +179,9 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.workflows.executions.v1beta.ExecutionOrBuilder getExecutionOrBuilder() {
-    return getExecution();
+    return execution_ == null
+        ? com.google.cloud.workflows.executions.v1beta.Execution.getDefaultInstance()
+        : execution_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -396,12 +400,11 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (executionBuilder_ == null) {
-        execution_ = null;
-      } else {
-        execution_ = null;
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
       return this;
@@ -433,14 +436,22 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest buildPartial() {
       com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest result =
           new com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest(this);
-      result.parent_ = parent_;
-      if (executionBuilder_ == null) {
-        result.execution_ = execution_;
-      } else {
-        result.execution_ = executionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.execution_ = executionBuilder_ == null ? execution_ : executionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -494,6 +505,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExecution()) {
@@ -528,13 +540,13 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExecutionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -553,6 +565,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -627,8 +641,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -648,8 +662,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -674,8 +688,8 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,7 +714,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the execution field is set.
      */
     public boolean hasExecution() {
-      return executionBuilder_ != null || execution_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -741,11 +755,11 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         execution_ = value;
-        onChanged();
       } else {
         executionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -763,11 +777,11 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.workflows.executions.v1beta.Execution.Builder builderForValue) {
       if (executionBuilder_ == null) {
         execution_ = builderForValue.build();
-        onChanged();
       } else {
         executionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,19 +797,19 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExecution(com.google.cloud.workflows.executions.v1beta.Execution value) {
       if (executionBuilder_ == null) {
-        if (execution_ != null) {
-          execution_ =
-              com.google.cloud.workflows.executions.v1beta.Execution.newBuilder(execution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && execution_ != null
+            && execution_
+                != com.google.cloud.workflows.executions.v1beta.Execution.getDefaultInstance()) {
+          getExecutionBuilder().mergeFrom(value);
         } else {
           execution_ = value;
         }
-        onChanged();
       } else {
         executionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,14 +824,13 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearExecution() {
-      if (executionBuilder_ == null) {
-        execution_ = null;
-        onChanged();
-      } else {
-        execution_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      execution_ = null;
+      if (executionBuilder_ != null) {
+        executionBuilder_.dispose();
         executionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -832,7 +845,7 @@ public final class CreateExecutionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.workflows.executions.v1beta.Execution.Builder getExecutionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExecutionFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
   }
 
   public static final int DATACENTER_CONNECTOR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object datacenterConnector_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datacenterConnector_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -397,10 +401,9 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       datacenterConnector_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -428,10 +431,21 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
     public com.google.cloud.vmmigration.v1.UpgradeApplianceRequest buildPartial() {
       com.google.cloud.vmmigration.v1.UpgradeApplianceRequest result =
           new com.google.cloud.vmmigration.v1.UpgradeApplianceRequest(this);
-      result.datacenterConnector_ = datacenterConnector_;
-      result.requestId_ = requestId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.UpgradeApplianceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.datacenterConnector_ = datacenterConnector_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -482,10 +496,12 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getDatacenterConnector().isEmpty()) {
         datacenterConnector_ = other.datacenterConnector_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -517,13 +533,13 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
             case 10:
               {
                 datacenterConnector_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +558,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object datacenterConnector_ = "";
     /**
@@ -610,8 +628,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       datacenterConnector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDatacenterConnector() {
-
       datacenterConnector_ = getDefaultInstance().getDatacenterConnector();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -653,8 +671,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datacenterConnector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,8 +768,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -777,8 +795,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +827,8 @@ public final class UpgradeApplianceRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

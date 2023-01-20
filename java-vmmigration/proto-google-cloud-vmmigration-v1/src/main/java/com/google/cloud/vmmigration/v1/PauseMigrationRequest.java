@@ -68,7 +68,9 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MIGRATING_VM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object migratingVm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object migratingVm_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       migratingVm_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vmmigration.v1.PauseMigrationRequest buildPartial() {
       com.google.cloud.vmmigration.v1.PauseMigrationRequest result =
           new com.google.cloud.vmmigration.v1.PauseMigrationRequest(this);
-      result.migratingVm_ = migratingVm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.PauseMigrationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.migratingVm_ = migratingVm_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getMigratingVm().isEmpty()) {
         migratingVm_ = other.migratingVm_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 migratingVm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object migratingVm_ = "";
     /**
@@ -518,8 +532,8 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       migratingVm_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +551,8 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMigratingVm() {
-
       migratingVm_ = getDefaultInstance().getMigratingVm();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -561,8 +575,8 @@ public final class PauseMigrationRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       migratingVm_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

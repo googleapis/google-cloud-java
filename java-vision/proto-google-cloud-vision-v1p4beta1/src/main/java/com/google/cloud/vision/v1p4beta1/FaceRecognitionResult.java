@@ -113,11 +113,13 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.CelebrityOrBuilder getCelebrityOrBuilder() {
-    return getCelebrity();
+    return celebrity_ == null
+        ? com.google.cloud.vision.v1p4beta1.Celebrity.getDefaultInstance()
+        : celebrity_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -347,14 +349,13 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (celebrityBuilder_ == null) {
-        celebrity_ = null;
-      } else {
-        celebrity_ = null;
+      bitField0_ = 0;
+      celebrity_ = null;
+      if (celebrityBuilder_ != null) {
+        celebrityBuilder_.dispose();
         celebrityBuilder_ = null;
       }
       confidence_ = 0F;
-
       return this;
     }
 
@@ -382,14 +383,21 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult buildPartial() {
       com.google.cloud.vision.v1p4beta1.FaceRecognitionResult result =
           new com.google.cloud.vision.v1p4beta1.FaceRecognitionResult(this);
-      if (celebrityBuilder_ == null) {
-        result.celebrity_ = celebrity_;
-      } else {
-        result.celebrity_ = celebrityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.confidence_ = confidence_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p4beta1.FaceRecognitionResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.celebrity_ = celebrityBuilder_ == null ? celebrity_ : celebrityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -473,13 +481,13 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getCelebrityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -498,6 +506,8 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.vision.v1p4beta1.Celebrity celebrity_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -518,7 +528,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      * @return Whether the celebrity field is set.
      */
     public boolean hasCelebrity() {
-      return celebrityBuilder_ != null || celebrity_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -557,11 +567,11 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         celebrity_ = value;
-        onChanged();
       } else {
         celebrityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,11 +588,11 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
         com.google.cloud.vision.v1p4beta1.Celebrity.Builder builderForValue) {
       if (celebrityBuilder_ == null) {
         celebrity_ = builderForValue.build();
-        onChanged();
       } else {
         celebrityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -597,19 +607,18 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCelebrity(com.google.cloud.vision.v1p4beta1.Celebrity value) {
       if (celebrityBuilder_ == null) {
-        if (celebrity_ != null) {
-          celebrity_ =
-              com.google.cloud.vision.v1p4beta1.Celebrity.newBuilder(celebrity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && celebrity_ != null
+            && celebrity_ != com.google.cloud.vision.v1p4beta1.Celebrity.getDefaultInstance()) {
+          getCelebrityBuilder().mergeFrom(value);
         } else {
           celebrity_ = value;
         }
-        onChanged();
       } else {
         celebrityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,14 +632,13 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
      */
     public Builder clearCelebrity() {
-      if (celebrityBuilder_ == null) {
-        celebrity_ = null;
-        onChanged();
-      } else {
-        celebrity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      celebrity_ = null;
+      if (celebrityBuilder_ != null) {
+        celebrityBuilder_.dispose();
         celebrityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -644,7 +652,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
      */
     public com.google.cloud.vision.v1p4beta1.Celebrity.Builder getCelebrityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCelebrityFieldBuilder().getBuilder();
     }
@@ -725,6 +733,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,7 +749,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;

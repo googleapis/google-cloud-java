@@ -69,7 +69,9 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       name_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.AwsSecurityGroup buildPartial() {
       com.google.cloud.vmmigration.v1.AwsSecurityGroup result =
           new com.google.cloud.vmmigration.v1.AwsSecurityGroup(this);
-      result.id_ = id_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSecurityGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -517,6 +533,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -579,8 +597,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class AwsSecurityGroup extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

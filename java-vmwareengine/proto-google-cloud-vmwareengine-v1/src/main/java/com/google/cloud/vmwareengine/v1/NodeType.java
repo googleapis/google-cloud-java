@@ -71,7 +71,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_TYPE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodeTypeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeTypeId_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -230,7 +236,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIRTUAL_CPU_COUNT_FIELD_NUMBER = 4;
-  private int virtualCpuCount_;
+  private int virtualCpuCount_ = 0;
   /**
    *
    *
@@ -248,7 +254,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_CORE_COUNT_FIELD_NUMBER = 5;
-  private int totalCoreCount_;
+  private int totalCoreCount_ = 0;
   /**
    *
    *
@@ -266,7 +272,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMORY_GB_FIELD_NUMBER = 7;
-  private int memoryGb_;
+  private int memoryGb_ = 0;
   /**
    *
    *
@@ -284,7 +290,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 8;
-  private int diskSizeGb_;
+  private int diskSizeGb_ = 0;
   /**
    *
    *
@@ -302,6 +308,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABLE_CUSTOM_CORE_COUNTS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList availableCustomCoreCounts_;
   /**
    *
@@ -635,22 +643,15 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       nodeTypeId_ = "";
-
       displayName_ = "";
-
       virtualCpuCount_ = 0;
-
       totalCoreCount_ = 0;
-
       memoryGb_ = 0;
-
       diskSizeGb_ = 0;
-
       availableCustomCoreCounts_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -678,21 +679,45 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.NodeType buildPartial() {
       com.google.cloud.vmwareengine.v1.NodeType result =
           new com.google.cloud.vmwareengine.v1.NodeType(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.nodeTypeId_ = nodeTypeId_;
-      result.displayName_ = displayName_;
-      result.virtualCpuCount_ = virtualCpuCount_;
-      result.totalCoreCount_ = totalCoreCount_;
-      result.memoryGb_ = memoryGb_;
-      result.diskSizeGb_ = diskSizeGb_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        availableCustomCoreCounts_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.availableCustomCoreCounts_ = availableCustomCoreCounts_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vmwareengine.v1.NodeType result) {
+      if (((bitField0_ & 0x00000080) != 0)) {
+        availableCustomCoreCounts_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.availableCustomCoreCounts_ = availableCustomCoreCounts_;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.NodeType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodeTypeId_ = nodeTypeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.virtualCpuCount_ = virtualCpuCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.totalCoreCount_ = totalCoreCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.memoryGb_ = memoryGb_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
     }
 
     @java.lang.Override
@@ -742,14 +767,17 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.NodeType.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNodeTypeId().isEmpty()) {
         nodeTypeId_ = other.nodeTypeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getVirtualCpuCount() != 0) {
@@ -767,7 +795,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (!other.availableCustomCoreCounts_.isEmpty()) {
         if (availableCustomCoreCounts_.isEmpty()) {
           availableCustomCoreCounts_ = other.availableCustomCoreCounts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureAvailableCustomCoreCountsIsMutable();
           availableCustomCoreCounts_.addAll(other.availableCustomCoreCounts_);
@@ -803,43 +831,43 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 nodeTypeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 virtualCpuCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 totalCoreCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 56:
               {
                 memoryGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 diskSizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 88:
@@ -952,8 +980,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -973,8 +1001,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -999,8 +1027,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1069,8 +1097,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeTypeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1087,8 +1115,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeTypeId() {
-
       nodeTypeId_ = getDefaultInstance().getNodeTypeId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1110,8 +1138,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeTypeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1180,8 +1208,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1198,8 +1226,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1221,8 +1249,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1258,6 +1286,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder setVirtualCpuCount(int value) {
 
       virtualCpuCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1273,7 +1302,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVirtualCpuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       virtualCpuCount_ = 0;
       onChanged();
       return this;
@@ -1310,6 +1339,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalCoreCount(int value) {
 
       totalCoreCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1325,7 +1355,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalCoreCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       totalCoreCount_ = 0;
       onChanged();
       return this;
@@ -1362,6 +1392,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder setMemoryGb(int value) {
 
       memoryGb_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1377,7 +1408,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       memoryGb_ = 0;
       onChanged();
       return this;
@@ -1414,6 +1445,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskSizeGb(int value) {
 
       diskSizeGb_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1429,7 +1461,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       diskSizeGb_ = 0;
       onChanged();
       return this;
@@ -1438,9 +1470,9 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.IntList availableCustomCoreCounts_ = emptyIntList();
 
     private void ensureAvailableCustomCoreCountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         availableCustomCoreCounts_ = mutableCopy(availableCustomCoreCounts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -1457,7 +1489,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the availableCustomCoreCounts.
      */
     public java.util.List<java.lang.Integer> getAvailableCustomCoreCountsList() {
-      return ((bitField0_ & 0x00000001) != 0)
+      return ((bitField0_ & 0x00000080) != 0)
           ? java.util.Collections.unmodifiableList(availableCustomCoreCounts_)
           : availableCustomCoreCounts_;
     }
@@ -1510,6 +1542,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAvailableCustomCoreCounts(int index, int value) {
+
       ensureAvailableCustomCoreCountsIsMutable();
       availableCustomCoreCounts_.setInt(index, value);
       onChanged();
@@ -1530,6 +1563,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addAvailableCustomCoreCounts(int value) {
+
       ensureAvailableCustomCoreCountsIsMutable();
       availableCustomCoreCounts_.addInt(value);
       onChanged();
@@ -1571,7 +1605,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAvailableCustomCoreCounts() {
       availableCustomCoreCounts_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }

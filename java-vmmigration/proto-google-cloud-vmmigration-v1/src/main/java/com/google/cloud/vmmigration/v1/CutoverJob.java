@@ -493,7 +493,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 16;
@@ -542,11 +542,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -595,7 +597,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -628,9 +630,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.CutoverJob.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.CutoverJob.State result =
-        com.google.cloud.vmmigration.v1.CutoverJob.State.valueOf(state_);
+        com.google.cloud.vmmigration.v1.CutoverJob.State.forNumber(state_);
     return result == null ? com.google.cloud.vmmigration.v1.CutoverJob.State.UNRECOGNIZED : result;
   }
 
@@ -680,11 +681,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateTimeOrBuilder() {
-    return getStateTime();
+    return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 13;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -747,11 +748,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int STATE_MESSAGE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object stateMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateMessage_ = "";
   /**
    *
    *
@@ -802,6 +805,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STEPS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CutoverStep> steps_;
   /**
    *
@@ -1199,48 +1204,41 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (computeEngineTargetDetailsBuilder_ != null) {
         computeEngineTargetDetailsBuilder_.clear();
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       name_ = "";
-
       state_ = 0;
-
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-      } else {
-        stateTime_ = null;
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
       progressPercent_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       stateMessage_ = "";
-
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
       } else {
         steps_ = null;
         stepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000200);
       targetVmDetailsCase_ = 0;
       targetVmDetails_ = null;
       return this;
@@ -1270,50 +1268,61 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.CutoverJob buildPartial() {
       com.google.cloud.vmmigration.v1.CutoverJob result =
           new com.google.cloud.vmmigration.v1.CutoverJob(this);
-      int from_bitField0_ = bitField0_;
-      if (targetVmDetailsCase_ == 14) {
-        if (computeEngineTargetDetailsBuilder_ == null) {
-          result.targetVmDetails_ = targetVmDetails_;
-        } else {
-          result.targetVmDetails_ = computeEngineTargetDetailsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.name_ = name_;
-      result.state_ = state_;
-      if (stateTimeBuilder_ == null) {
-        result.stateTime_ = stateTime_;
-      } else {
-        result.stateTime_ = stateTimeBuilder_.build();
-      }
-      result.progressPercent_ = progressPercent_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      result.stateMessage_ = stateMessage_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vmmigration.v1.CutoverJob result) {
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CutoverJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.stateTime_ = stateTimeBuilder_ == null ? stateTime_ : stateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.progressPercent_ = progressPercent_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.stateMessage_ = stateMessage_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vmmigration.v1.CutoverJob result) {
       result.targetVmDetailsCase_ = targetVmDetailsCase_;
-      onBuilt();
-      return result;
+      result.targetVmDetails_ = this.targetVmDetails_;
+      if (targetVmDetailsCase_ == 14 && computeEngineTargetDetailsBuilder_ != null) {
+        result.targetVmDetails_ = computeEngineTargetDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1369,6 +1378,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1385,13 +1395,14 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStateMessage().isEmpty()) {
         stateMessage_ = other.stateMessage_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (stepsBuilder_ == null) {
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -1404,7 +1415,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -1454,43 +1465,43 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 74:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 stateMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 104:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 104
             case 114:
@@ -1503,7 +1514,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 130
             case 138:
@@ -1784,7 +1795,6 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       }
       targetVmDetailsCase_ = 14;
       onChanged();
-      ;
       return computeEngineTargetDetailsBuilder_;
     }
 
@@ -1809,7 +1819,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1852,11 +1862,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1874,11 +1884,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1895,17 +1905,18 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1921,14 +1932,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1944,7 +1954,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2017,7 +2027,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2054,11 +2064,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2074,11 +2084,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2093,17 +2103,18 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2117,14 +2128,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2138,7 +2148,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2247,8 +2257,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2264,8 +2274,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2286,8 +2296,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2325,8 +2335,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2345,9 +2355,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.CutoverJob.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.CutoverJob.State result =
-          com.google.cloud.vmmigration.v1.CutoverJob.State.valueOf(state_);
+          com.google.cloud.vmmigration.v1.CutoverJob.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmmigration.v1.CutoverJob.State.UNRECOGNIZED
           : result;
@@ -2370,7 +2379,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2389,7 +2398,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -2414,7 +2423,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateTime field is set.
      */
     public boolean hasStateTime() {
-      return stateTimeBuilder_ != null || stateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2451,11 +2460,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stateTime_ = value;
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2471,11 +2480,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateTimeBuilder_ == null) {
         stateTime_ = builderForValue.build();
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2490,17 +2499,18 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateTime(com.google.protobuf.Timestamp value) {
       if (stateTimeBuilder_ == null) {
-        if (stateTime_ != null) {
-          stateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(stateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && stateTime_ != null
+            && stateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStateTimeBuilder().mergeFrom(value);
         } else {
           stateTime_ = value;
         }
-        onChanged();
       } else {
         stateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2514,14 +2524,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateTime() {
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-        onChanged();
-      } else {
-        stateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2535,7 +2544,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
@@ -2614,6 +2623,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2629,7 +2639,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -2652,7 +2662,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2689,11 +2699,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2709,11 +2719,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2728,16 +2738,18 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2751,14 +2763,13 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2772,7 +2783,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -2881,8 +2892,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2899,8 +2910,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateMessage() {
-
       stateMessage_ = getDefaultInstance().getStateMessage();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2922,8 +2933,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2932,9 +2943,9 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         steps_ = new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverStep>(steps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3171,7 +3182,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -3307,7 +3318,7 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.CutoverStep,
                 com.google.cloud.vmmigration.v1.CutoverStep.Builder,
                 com.google.cloud.vmmigration.v1.CutoverStepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;

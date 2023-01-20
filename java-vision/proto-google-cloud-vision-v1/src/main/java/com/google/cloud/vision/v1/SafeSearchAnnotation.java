@@ -74,7 +74,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ADULT_FIELD_NUMBER = 1;
-  private int adult_;
+  private int adult_ = 0;
   /**
    *
    *
@@ -107,14 +107,13 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getAdult() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(adult_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(adult_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int SPOOF_FIELD_NUMBER = 2;
-  private int spoof_;
+  private int spoof_ = 0;
   /**
    *
    *
@@ -147,14 +146,13 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getSpoof() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(spoof_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(spoof_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int MEDICAL_FIELD_NUMBER = 3;
-  private int medical_;
+  private int medical_ = 0;
   /**
    *
    *
@@ -183,14 +181,13 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getMedical() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(medical_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(medical_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int VIOLENCE_FIELD_NUMBER = 4;
-  private int violence_;
+  private int violence_ = 0;
   /**
    *
    *
@@ -219,14 +216,13 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getViolence() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(violence_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(violence_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int RACY_FIELD_NUMBER = 9;
-  private int racy_;
+  private int racy_ = 0;
   /**
    *
    *
@@ -261,9 +257,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getRacy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(racy_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(racy_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
@@ -502,16 +497,12 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       adult_ = 0;
-
       spoof_ = 0;
-
       medical_ = 0;
-
       violence_ = 0;
-
       racy_ = 0;
-
       return this;
     }
 
@@ -539,13 +530,30 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1.SafeSearchAnnotation buildPartial() {
       com.google.cloud.vision.v1.SafeSearchAnnotation result =
           new com.google.cloud.vision.v1.SafeSearchAnnotation(this);
-      result.adult_ = adult_;
-      result.spoof_ = spoof_;
-      result.medical_ = medical_;
-      result.violence_ = violence_;
-      result.racy_ = racy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.SafeSearchAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adult_ = adult_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spoof_ = spoof_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.medical_ = medical_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.violence_ = violence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.racy_ = racy_;
+      }
     }
 
     @java.lang.Override
@@ -638,31 +646,31 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 adult_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 spoof_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 medical_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 violence_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 72:
               {
                 racy_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 72
             default:
@@ -681,6 +689,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int adult_ = 0;
     /**
@@ -715,8 +725,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setAdultValue(int value) {
-
       adult_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,9 +745,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getAdult() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(adult_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(adult_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -758,7 +767,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       adult_ = value.getNumber();
       onChanged();
       return this;
@@ -777,7 +786,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAdult() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       adult_ = 0;
       onChanged();
       return this;
@@ -816,8 +825,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSpoofValue(int value) {
-
       spoof_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -836,9 +845,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getSpoof() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(spoof_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(spoof_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -859,7 +867,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       spoof_ = value.getNumber();
       onChanged();
       return this;
@@ -878,7 +886,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSpoof() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       spoof_ = 0;
       onChanged();
       return this;
@@ -913,8 +921,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setMedicalValue(int value) {
-
       medical_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -931,9 +939,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getMedical() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(medical_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(medical_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -952,7 +959,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       medical_ = value.getNumber();
       onChanged();
       return this;
@@ -969,7 +976,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMedical() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       medical_ = 0;
       onChanged();
       return this;
@@ -1004,8 +1011,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setViolenceValue(int value) {
-
       violence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1022,9 +1029,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getViolence() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(violence_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(violence_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -1043,7 +1049,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       violence_ = value.getNumber();
       onChanged();
       return this;
@@ -1060,7 +1066,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearViolence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       violence_ = 0;
       onChanged();
       return this;
@@ -1101,8 +1107,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setRacyValue(int value) {
-
       racy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1122,9 +1128,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getRacy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(racy_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(racy_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -1146,7 +1151,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       racy_ = value.getNumber();
       onChanged();
       return this;
@@ -1166,7 +1171,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRacy() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       racy_ = 0;
       onChanged();
       return this;

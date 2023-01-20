@@ -70,6 +70,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileRequest> requests_;
   /**
    *
@@ -352,6 +354,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     public com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest buildPartial() {
       com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest result =
           new com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest result) {
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -397,8 +409,11 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

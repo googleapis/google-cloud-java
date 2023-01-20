@@ -112,10 +112,14 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.LatLongRectOrBuilder getLatLongRectOrBuilder() {
-    return getLatLongRect();
+    return latLongRect_ == null
+        ? com.google.cloud.vision.v1p4beta1.LatLongRect.getDefaultInstance()
+        : latLongRect_;
   }
 
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageHints_;
   /**
    *
@@ -249,7 +253,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.CropHintsParamsOrBuilder getCropHintsParamsOrBuilder() {
-    return getCropHintsParams();
+    return cropHintsParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.CropHintsParams.getDefaultInstance()
+        : cropHintsParams_;
   }
 
   public static final int FACE_RECOGNITION_PARAMS_FIELD_NUMBER = 10;
@@ -298,7 +304,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder
       getFaceRecognitionParamsOrBuilder() {
-    return getFaceRecognitionParams();
+    return faceRecognitionParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.getDefaultInstance()
+        : faceRecognitionParams_;
   }
 
   public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
@@ -347,7 +355,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.ProductSearchParamsOrBuilder
       getProductSearchParamsOrBuilder() {
-    return getProductSearchParams();
+    return productSearchParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.ProductSearchParams.getDefaultInstance()
+        : productSearchParams_;
   }
 
   public static final int WEB_DETECTION_PARAMS_FIELD_NUMBER = 6;
@@ -396,7 +406,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.WebDetectionParamsOrBuilder
       getWebDetectionParamsOrBuilder() {
-    return getWebDetectionParams();
+    return webDetectionParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.WebDetectionParams.getDefaultInstance()
+        : webDetectionParams_;
   }
 
   public static final int TEXT_DETECTION_PARAMS_FIELD_NUMBER = 12;
@@ -445,7 +457,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.TextDetectionParamsOrBuilder
       getTextDetectionParamsOrBuilder() {
-    return getTextDetectionParams();
+    return textDetectionParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.TextDetectionParams.getDefaultInstance()
+        : textDetectionParams_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -738,42 +752,37 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (latLongRectBuilder_ == null) {
-        latLongRect_ = null;
-      } else {
-        latLongRect_ = null;
+      bitField0_ = 0;
+      latLongRect_ = null;
+      if (latLongRectBuilder_ != null) {
+        latLongRectBuilder_.dispose();
         latLongRectBuilder_ = null;
       }
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (cropHintsParamsBuilder_ == null) {
-        cropHintsParams_ = null;
-      } else {
-        cropHintsParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cropHintsParams_ = null;
+      if (cropHintsParamsBuilder_ != null) {
+        cropHintsParamsBuilder_.dispose();
         cropHintsParamsBuilder_ = null;
       }
-      if (faceRecognitionParamsBuilder_ == null) {
-        faceRecognitionParams_ = null;
-      } else {
-        faceRecognitionParams_ = null;
+      faceRecognitionParams_ = null;
+      if (faceRecognitionParamsBuilder_ != null) {
+        faceRecognitionParamsBuilder_.dispose();
         faceRecognitionParamsBuilder_ = null;
       }
-      if (productSearchParamsBuilder_ == null) {
-        productSearchParams_ = null;
-      } else {
-        productSearchParams_ = null;
+      productSearchParams_ = null;
+      if (productSearchParamsBuilder_ != null) {
+        productSearchParamsBuilder_.dispose();
         productSearchParamsBuilder_ = null;
       }
-      if (webDetectionParamsBuilder_ == null) {
-        webDetectionParams_ = null;
-      } else {
-        webDetectionParams_ = null;
+      webDetectionParams_ = null;
+      if (webDetectionParamsBuilder_ != null) {
+        webDetectionParamsBuilder_.dispose();
         webDetectionParamsBuilder_ = null;
       }
-      if (textDetectionParamsBuilder_ == null) {
-        textDetectionParams_ = null;
-      } else {
-        textDetectionParams_ = null;
+      textDetectionParams_ = null;
+      if (textDetectionParamsBuilder_ != null) {
+        textDetectionParamsBuilder_.dispose();
         textDetectionParamsBuilder_ = null;
       }
       return this;
@@ -803,44 +812,56 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p4beta1.ImageContext buildPartial() {
       com.google.cloud.vision.v1p4beta1.ImageContext result =
           new com.google.cloud.vision.v1p4beta1.ImageContext(this);
-      int from_bitField0_ = bitField0_;
-      if (latLongRectBuilder_ == null) {
-        result.latLongRect_ = latLongRect_;
-      } else {
-        result.latLongRect_ = latLongRectBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageHints_ = languageHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.languageHints_ = languageHints_;
-      if (cropHintsParamsBuilder_ == null) {
-        result.cropHintsParams_ = cropHintsParams_;
-      } else {
-        result.cropHintsParams_ = cropHintsParamsBuilder_.build();
-      }
-      if (faceRecognitionParamsBuilder_ == null) {
-        result.faceRecognitionParams_ = faceRecognitionParams_;
-      } else {
-        result.faceRecognitionParams_ = faceRecognitionParamsBuilder_.build();
-      }
-      if (productSearchParamsBuilder_ == null) {
-        result.productSearchParams_ = productSearchParams_;
-      } else {
-        result.productSearchParams_ = productSearchParamsBuilder_.build();
-      }
-      if (webDetectionParamsBuilder_ == null) {
-        result.webDetectionParams_ = webDetectionParams_;
-      } else {
-        result.webDetectionParams_ = webDetectionParamsBuilder_.build();
-      }
-      if (textDetectionParamsBuilder_ == null) {
-        result.textDetectionParams_ = textDetectionParams_;
-      } else {
-        result.textDetectionParams_ = textDetectionParamsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1p4beta1.ImageContext result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        languageHints_ = languageHints_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.languageHints_ = languageHints_;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p4beta1.ImageContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.latLongRect_ =
+            latLongRectBuilder_ == null ? latLongRect_ : latLongRectBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cropHintsParams_ =
+            cropHintsParamsBuilder_ == null ? cropHintsParams_ : cropHintsParamsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.faceRecognitionParams_ =
+            faceRecognitionParamsBuilder_ == null
+                ? faceRecognitionParams_
+                : faceRecognitionParamsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.productSearchParams_ =
+            productSearchParamsBuilder_ == null
+                ? productSearchParams_
+                : productSearchParamsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.webDetectionParams_ =
+            webDetectionParamsBuilder_ == null
+                ? webDetectionParams_
+                : webDetectionParamsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.textDetectionParams_ =
+            textDetectionParamsBuilder_ == null
+                ? textDetectionParams_
+                : textDetectionParamsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -894,7 +915,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageHints_.isEmpty()) {
         if (languageHints_.isEmpty()) {
           languageHints_ = other.languageHints_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
@@ -945,7 +966,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLatLongRectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -958,35 +979,35 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCropHintsParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getProductSearchParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getWebDetectionParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 82:
               {
                 input.readMessage(
                     getFaceRecognitionParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 82
             case 98:
               {
                 input.readMessage(
                     getTextDetectionParamsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 98
             default:
@@ -1026,7 +1047,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latLongRect field is set.
      */
     public boolean hasLatLongRect() {
-      return latLongRectBuilder_ != null || latLongRect_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1063,11 +1084,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latLongRect_ = value;
-        onChanged();
       } else {
         latLongRectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1083,11 +1104,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.LatLongRect.Builder builderForValue) {
       if (latLongRectBuilder_ == null) {
         latLongRect_ = builderForValue.build();
-        onChanged();
       } else {
         latLongRectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1101,19 +1122,18 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatLongRect(com.google.cloud.vision.v1p4beta1.LatLongRect value) {
       if (latLongRectBuilder_ == null) {
-        if (latLongRect_ != null) {
-          latLongRect_ =
-              com.google.cloud.vision.v1p4beta1.LatLongRect.newBuilder(latLongRect_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && latLongRect_ != null
+            && latLongRect_ != com.google.cloud.vision.v1p4beta1.LatLongRect.getDefaultInstance()) {
+          getLatLongRectBuilder().mergeFrom(value);
         } else {
           latLongRect_ = value;
         }
-        onChanged();
       } else {
         latLongRectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1126,14 +1146,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.LatLongRect lat_long_rect = 1;</code>
      */
     public Builder clearLatLongRect() {
-      if (latLongRectBuilder_ == null) {
-        latLongRect_ = null;
-        onChanged();
-      } else {
-        latLongRect_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      latLongRect_ = null;
+      if (latLongRectBuilder_ != null) {
+        latLongRectBuilder_.dispose();
         latLongRectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1146,7 +1165,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.LatLongRect lat_long_rect = 1;</code>
      */
     public com.google.cloud.vision.v1p4beta1.LatLongRect.Builder getLatLongRectBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLatLongRectFieldBuilder().getBuilder();
     }
@@ -1198,9 +1217,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1391,7 +1410,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageHints() {
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1443,7 +1462,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cropHintsParams field is set.
      */
     public boolean hasCropHintsParams() {
-      return cropHintsParamsBuilder_ != null || cropHintsParams_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1480,11 +1499,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cropHintsParams_ = value;
-        onChanged();
       } else {
         cropHintsParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1500,11 +1519,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.CropHintsParams.Builder builderForValue) {
       if (cropHintsParamsBuilder_ == null) {
         cropHintsParams_ = builderForValue.build();
-        onChanged();
       } else {
         cropHintsParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1518,19 +1537,19 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCropHintsParams(com.google.cloud.vision.v1p4beta1.CropHintsParams value) {
       if (cropHintsParamsBuilder_ == null) {
-        if (cropHintsParams_ != null) {
-          cropHintsParams_ =
-              com.google.cloud.vision.v1p4beta1.CropHintsParams.newBuilder(cropHintsParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cropHintsParams_ != null
+            && cropHintsParams_
+                != com.google.cloud.vision.v1p4beta1.CropHintsParams.getDefaultInstance()) {
+          getCropHintsParamsBuilder().mergeFrom(value);
         } else {
           cropHintsParams_ = value;
         }
-        onChanged();
       } else {
         cropHintsParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1543,14 +1562,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.CropHintsParams crop_hints_params = 4;</code>
      */
     public Builder clearCropHintsParams() {
-      if (cropHintsParamsBuilder_ == null) {
-        cropHintsParams_ = null;
-        onChanged();
-      } else {
-        cropHintsParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cropHintsParams_ = null;
+      if (cropHintsParamsBuilder_ != null) {
+        cropHintsParamsBuilder_.dispose();
         cropHintsParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1563,7 +1581,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.CropHintsParams crop_hints_params = 4;</code>
      */
     public com.google.cloud.vision.v1p4beta1.CropHintsParams.Builder getCropHintsParamsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCropHintsParamsFieldBuilder().getBuilder();
     }
@@ -1631,7 +1649,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the faceRecognitionParams field is set.
      */
     public boolean hasFaceRecognitionParams() {
-      return faceRecognitionParamsBuilder_ != null || faceRecognitionParams_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1671,11 +1689,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         faceRecognitionParams_ = value;
-        onChanged();
       } else {
         faceRecognitionParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1692,11 +1710,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder builderForValue) {
       if (faceRecognitionParamsBuilder_ == null) {
         faceRecognitionParams_ = builderForValue.build();
-        onChanged();
       } else {
         faceRecognitionParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1712,20 +1730,19 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFaceRecognitionParams(
         com.google.cloud.vision.v1p4beta1.FaceRecognitionParams value) {
       if (faceRecognitionParamsBuilder_ == null) {
-        if (faceRecognitionParams_ != null) {
-          faceRecognitionParams_ =
-              com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.newBuilder(
-                      faceRecognitionParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && faceRecognitionParams_ != null
+            && faceRecognitionParams_
+                != com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.getDefaultInstance()) {
+          getFaceRecognitionParamsBuilder().mergeFrom(value);
         } else {
           faceRecognitionParams_ = value;
         }
-        onChanged();
       } else {
         faceRecognitionParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1739,14 +1756,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFaceRecognitionParams() {
-      if (faceRecognitionParamsBuilder_ == null) {
-        faceRecognitionParams_ = null;
-        onChanged();
-      } else {
-        faceRecognitionParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      faceRecognitionParams_ = null;
+      if (faceRecognitionParamsBuilder_ != null) {
+        faceRecognitionParamsBuilder_.dispose();
         faceRecognitionParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1761,7 +1777,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder
         getFaceRecognitionParamsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getFaceRecognitionParamsFieldBuilder().getBuilder();
     }
@@ -1830,7 +1846,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productSearchParams field is set.
      */
     public boolean hasProductSearchParams() {
-      return productSearchParamsBuilder_ != null || productSearchParams_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1868,11 +1884,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         productSearchParams_ = value;
-        onChanged();
       } else {
         productSearchParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1888,11 +1904,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.ProductSearchParams.Builder builderForValue) {
       if (productSearchParamsBuilder_ == null) {
         productSearchParams_ = builderForValue.build();
-        onChanged();
       } else {
         productSearchParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1907,19 +1923,19 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProductSearchParams(
         com.google.cloud.vision.v1p4beta1.ProductSearchParams value) {
       if (productSearchParamsBuilder_ == null) {
-        if (productSearchParams_ != null) {
-          productSearchParams_ =
-              com.google.cloud.vision.v1p4beta1.ProductSearchParams.newBuilder(productSearchParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && productSearchParams_ != null
+            && productSearchParams_
+                != com.google.cloud.vision.v1p4beta1.ProductSearchParams.getDefaultInstance()) {
+          getProductSearchParamsBuilder().mergeFrom(value);
         } else {
           productSearchParams_ = value;
         }
-        onChanged();
       } else {
         productSearchParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1932,14 +1948,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.ProductSearchParams product_search_params = 5;</code>
      */
     public Builder clearProductSearchParams() {
-      if (productSearchParamsBuilder_ == null) {
-        productSearchParams_ = null;
-        onChanged();
-      } else {
-        productSearchParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      productSearchParams_ = null;
+      if (productSearchParamsBuilder_ != null) {
+        productSearchParamsBuilder_.dispose();
         productSearchParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1953,7 +1968,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vision.v1p4beta1.ProductSearchParams.Builder
         getProductSearchParamsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getProductSearchParamsFieldBuilder().getBuilder();
     }
@@ -2020,7 +2035,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the webDetectionParams field is set.
      */
     public boolean hasWebDetectionParams() {
-      return webDetectionParamsBuilder_ != null || webDetectionParams_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2058,11 +2073,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         webDetectionParams_ = value;
-        onChanged();
       } else {
         webDetectionParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2078,11 +2093,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.WebDetectionParams.Builder builderForValue) {
       if (webDetectionParamsBuilder_ == null) {
         webDetectionParams_ = builderForValue.build();
-        onChanged();
       } else {
         webDetectionParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2097,19 +2112,19 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeWebDetectionParams(
         com.google.cloud.vision.v1p4beta1.WebDetectionParams value) {
       if (webDetectionParamsBuilder_ == null) {
-        if (webDetectionParams_ != null) {
-          webDetectionParams_ =
-              com.google.cloud.vision.v1p4beta1.WebDetectionParams.newBuilder(webDetectionParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && webDetectionParams_ != null
+            && webDetectionParams_
+                != com.google.cloud.vision.v1p4beta1.WebDetectionParams.getDefaultInstance()) {
+          getWebDetectionParamsBuilder().mergeFrom(value);
         } else {
           webDetectionParams_ = value;
         }
-        onChanged();
       } else {
         webDetectionParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2122,14 +2137,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.WebDetectionParams web_detection_params = 6;</code>
      */
     public Builder clearWebDetectionParams() {
-      if (webDetectionParamsBuilder_ == null) {
-        webDetectionParams_ = null;
-        onChanged();
-      } else {
-        webDetectionParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      webDetectionParams_ = null;
+      if (webDetectionParamsBuilder_ != null) {
+        webDetectionParamsBuilder_.dispose();
         webDetectionParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2143,7 +2157,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vision.v1p4beta1.WebDetectionParams.Builder
         getWebDetectionParamsBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getWebDetectionParamsFieldBuilder().getBuilder();
     }
@@ -2210,7 +2224,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textDetectionParams field is set.
      */
     public boolean hasTextDetectionParams() {
-      return textDetectionParamsBuilder_ != null || textDetectionParams_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2248,11 +2262,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         textDetectionParams_ = value;
-        onChanged();
       } else {
         textDetectionParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2268,11 +2282,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.TextDetectionParams.Builder builderForValue) {
       if (textDetectionParamsBuilder_ == null) {
         textDetectionParams_ = builderForValue.build();
-        onChanged();
       } else {
         textDetectionParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2287,19 +2301,19 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTextDetectionParams(
         com.google.cloud.vision.v1p4beta1.TextDetectionParams value) {
       if (textDetectionParamsBuilder_ == null) {
-        if (textDetectionParams_ != null) {
-          textDetectionParams_ =
-              com.google.cloud.vision.v1p4beta1.TextDetectionParams.newBuilder(textDetectionParams_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && textDetectionParams_ != null
+            && textDetectionParams_
+                != com.google.cloud.vision.v1p4beta1.TextDetectionParams.getDefaultInstance()) {
+          getTextDetectionParamsBuilder().mergeFrom(value);
         } else {
           textDetectionParams_ = value;
         }
-        onChanged();
       } else {
         textDetectionParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2312,14 +2326,13 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p4beta1.TextDetectionParams text_detection_params = 12;</code>
      */
     public Builder clearTextDetectionParams() {
-      if (textDetectionParamsBuilder_ == null) {
-        textDetectionParams_ = null;
-        onChanged();
-      } else {
-        textDetectionParams_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      textDetectionParams_ = null;
+      if (textDetectionParamsBuilder_ != null) {
+        textDetectionParamsBuilder_.dispose();
         textDetectionParamsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2333,7 +2346,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vision.v1p4beta1.TextDetectionParams.Builder
         getTextDetectionParamsBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTextDetectionParamsFieldBuilder().getBuilder();
     }

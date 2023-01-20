@@ -113,11 +113,13 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-    return getBoundingPoly();
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORTANCE_FRACTION_FIELD_NUMBER = 3;
-  private float importanceFraction_;
+  private float importanceFraction_ = 0F;
   /**
    *
    *
@@ -375,16 +377,14 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = 0;
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
       confidence_ = 0F;
-
       importanceFraction_ = 0F;
-
       return this;
     }
 
@@ -412,15 +412,25 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p3beta1.CropHint buildPartial() {
       com.google.cloud.vision.v1p3beta1.CropHint result =
           new com.google.cloud.vision.v1p3beta1.CropHint(this);
-      if (boundingPolyBuilder_ == null) {
-        result.boundingPoly_ = boundingPoly_;
-      } else {
-        result.boundingPoly_ = boundingPolyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.confidence_ = confidence_;
-      result.importanceFraction_ = importanceFraction_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.CropHint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.boundingPoly_ =
+            boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importanceFraction_ = importanceFraction_;
+      }
     }
 
     @java.lang.Override
@@ -506,19 +516,19 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 importanceFraction_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -537,6 +547,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.vision.v1p3beta1.BoundingPoly boundingPoly_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -557,7 +569,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
-      return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -596,11 +608,11 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         boundingPoly_ = value;
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -617,11 +629,11 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder builderForValue) {
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,19 +648,19 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBoundingPoly(com.google.cloud.vision.v1p3beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
-        if (boundingPoly_ != null) {
-          boundingPoly_ =
-              com.google.cloud.vision.v1p3beta1.BoundingPoly.newBuilder(boundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && boundingPoly_ != null
+            && boundingPoly_
+                != com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingPolyBuilder().mergeFrom(value);
         } else {
           boundingPoly_ = value;
         }
-        onChanged();
       } else {
         boundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -662,14 +674,13 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
      */
     public Builder clearBoundingPoly() {
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-        onChanged();
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -683,7 +694,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
@@ -764,6 +775,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -779,7 +791,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -818,6 +830,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public Builder setImportanceFraction(float value) {
 
       importanceFraction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -834,7 +847,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportanceFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       importanceFraction_ = 0F;
       onChanged();
       return this;

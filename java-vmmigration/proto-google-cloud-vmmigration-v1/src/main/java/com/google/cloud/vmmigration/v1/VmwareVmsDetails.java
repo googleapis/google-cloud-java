@@ -68,6 +68,8 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DETAILS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.VmwareVmDetails> details_;
   /**
    *
@@ -335,6 +337,7 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (detailsBuilder_ == null) {
         details_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.VmwareVmsDetails buildPartial() {
       com.google.cloud.vmmigration.v1.VmwareVmsDetails result =
           new com.google.cloud.vmmigration.v1.VmwareVmsDetails(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.VmwareVmsDetails result) {
       if (detailsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           details_ = java.util.Collections.unmodifiableList(details_);
@@ -379,8 +391,10 @@ public final class VmwareVmsDetails extends com.google.protobuf.GeneratedMessage
       } else {
         result.details_ = detailsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.VmwareVmsDetails result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

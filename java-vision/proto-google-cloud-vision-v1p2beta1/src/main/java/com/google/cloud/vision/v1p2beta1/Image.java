@@ -68,7 +68,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString content_;
+  private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -138,7 +138,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.ImageSourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null
+        ? com.google.cloud.vision.v1p2beta1.ImageSource.getDefaultInstance()
+        : source_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -351,12 +353,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
       return this;
@@ -386,14 +387,21 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p2beta1.Image buildPartial() {
       com.google.cloud.vision.v1p2beta1.Image result =
           new com.google.cloud.vision.v1p2beta1.Image(this);
-      result.content_ = content_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p2beta1.Image result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -476,13 +484,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 content_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -501,6 +509,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -538,8 +548,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -557,7 +567,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
@@ -583,7 +593,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -624,11 +634,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -646,11 +656,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p2beta1.ImageSource.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -666,19 +676,18 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSource(com.google.cloud.vision.v1p2beta1.ImageSource value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.vision.v1p2beta1.ImageSource.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && source_ != null
+            && source_ != com.google.cloud.vision.v1p2beta1.ImageSource.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -693,14 +702,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p2beta1.ImageSource source = 2;</code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -715,7 +723,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p2beta1.ImageSource source = 2;</code>
      */
     public com.google.cloud.vision.v1p2beta1.ImageSource.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }

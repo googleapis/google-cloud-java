@@ -71,7 +71,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -169,7 +173,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INTERNAL_IP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object internalIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalIp_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXTERNAL_IP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object externalIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalIp_ = "";
   /**
    *
    *
@@ -494,14 +502,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       subnetwork_ = "";
-
       internalIp_ = "";
-
       externalIp_ = "";
-
       return this;
     }
 
@@ -529,12 +534,27 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.NetworkInterface buildPartial() {
       com.google.cloud.vmmigration.v1.NetworkInterface result =
           new com.google.cloud.vmmigration.v1.NetworkInterface(this);
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.internalIp_ = internalIp_;
-      result.externalIp_ = externalIp_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.NetworkInterface result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.internalIp_ = internalIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.externalIp_ = externalIp_;
+      }
     }
 
     @java.lang.Override
@@ -585,18 +605,22 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getInternalIp().isEmpty()) {
         internalIp_ = other.internalIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getExternalIp().isEmpty()) {
         externalIp_ = other.externalIp_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -628,25 +652,25 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 internalIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 externalIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -665,6 +689,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -727,8 +753,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,8 +770,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -766,8 +792,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,8 +859,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -850,8 +876,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -872,8 +898,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +971,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       internalIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -964,8 +990,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInternalIp() {
-
       internalIp_ = getDefaultInstance().getInternalIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -988,8 +1014,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       internalIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1055,8 +1081,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1072,8 +1098,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExternalIp() {
-
       externalIp_ = getDefaultInstance().getExternalIp();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1094,8 +1120,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

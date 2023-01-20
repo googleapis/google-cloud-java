@@ -228,7 +228,9 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERNAL_IP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object internalIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalIp_ = "";
   /**
    *
    *
@@ -277,7 +279,9 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -326,7 +330,7 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -359,14 +363,15 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.Hcx.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmwareengine.v1.Hcx.State result =
-        com.google.cloud.vmwareengine.v1.Hcx.State.valueOf(state_);
+        com.google.cloud.vmwareengine.v1.Hcx.State.forNumber(state_);
     return result == null ? com.google.cloud.vmwareengine.v1.Hcx.State.UNRECOGNIZED : result;
   }
 
   public static final int FQDN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object fqdn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fqdn_ = "";
   /**
    *
    *
@@ -636,14 +641,11 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalIp_ = "";
-
       version_ = "";
-
       state_ = 0;
-
       fqdn_ = "";
-
       return this;
     }
 
@@ -670,12 +672,27 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.Hcx buildPartial() {
       com.google.cloud.vmwareengine.v1.Hcx result = new com.google.cloud.vmwareengine.v1.Hcx(this);
-      result.internalIp_ = internalIp_;
-      result.version_ = version_;
-      result.state_ = state_;
-      result.fqdn_ = fqdn_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.Hcx result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.internalIp_ = internalIp_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.fqdn_ = fqdn_;
+      }
     }
 
     @java.lang.Override
@@ -725,10 +742,12 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.Hcx.getDefaultInstance()) return this;
       if (!other.getInternalIp().isEmpty()) {
         internalIp_ = other.internalIp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -736,6 +755,7 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFqdn().isEmpty()) {
         fqdn_ = other.fqdn_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -767,25 +787,25 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 internalIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 34:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             case 50:
               {
                 fqdn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -804,6 +824,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object internalIp_ = "";
     /**
@@ -866,8 +888,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       internalIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,8 +905,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInternalIp() {
-
       internalIp_ = getDefaultInstance().getInternalIp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -905,8 +927,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       internalIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -972,8 +994,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -989,8 +1011,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1011,8 +1033,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1050,8 +1072,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,9 +1092,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.Hcx.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.Hcx.State result =
-          com.google.cloud.vmwareengine.v1.Hcx.State.valueOf(state_);
+          com.google.cloud.vmwareengine.v1.Hcx.State.forNumber(state_);
       return result == null ? com.google.cloud.vmwareengine.v1.Hcx.State.UNRECOGNIZED : result;
     }
     /**
@@ -1093,7 +1114,7 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1112,7 +1133,7 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -1179,8 +1200,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fqdn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1196,8 +1217,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFqdn() {
-
       fqdn_ = getDefaultInstance().getFqdn();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1218,8 +1239,8 @@ public final class Hcx extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fqdn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

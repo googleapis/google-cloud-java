@@ -69,7 +69,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FIRST_VALUE_FIELD_NUMBER = 1;
-  private long firstValue_;
+  private long firstValue_ = 0L;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RICE_PARAMETER_FIELD_NUMBER = 2;
-  private int riceParameter_;
+  private int riceParameter_ = 0;
   /**
    *
    *
@@ -108,7 +108,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENTRY_COUNT_FIELD_NUMBER = 3;
-  private int entryCount_;
+  private int entryCount_ = 0;
   /**
    *
    *
@@ -128,7 +128,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENCODED_DATA_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString encodedData_;
+  private com.google.protobuf.ByteString encodedData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -369,14 +369,11 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firstValue_ = 0L;
-
       riceParameter_ = 0;
-
       entryCount_ = 0;
-
       encodedData_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -404,12 +401,27 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
     public com.google.webrisk.v1.RiceDeltaEncoding buildPartial() {
       com.google.webrisk.v1.RiceDeltaEncoding result =
           new com.google.webrisk.v1.RiceDeltaEncoding(this);
-      result.firstValue_ = firstValue_;
-      result.riceParameter_ = riceParameter_;
-      result.entryCount_ = entryCount_;
-      result.encodedData_ = encodedData_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.webrisk.v1.RiceDeltaEncoding result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firstValue_ = firstValue_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.riceParameter_ = riceParameter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entryCount_ = entryCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.encodedData_ = encodedData_;
+      }
     }
 
     @java.lang.Override
@@ -498,25 +510,25 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 firstValue_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 riceParameter_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 entryCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 encodedData_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -535,6 +547,8 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long firstValue_;
     /**
@@ -571,6 +585,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
     public Builder setFirstValue(long value) {
 
       firstValue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,7 +603,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFirstValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       firstValue_ = 0L;
       onChanged();
       return this;
@@ -627,6 +642,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
     public Builder setRiceParameter(int value) {
 
       riceParameter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -643,7 +659,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRiceParameter() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       riceParameter_ = 0;
       onChanged();
       return this;
@@ -684,6 +700,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
     public Builder setEntryCount(int value) {
 
       entryCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -701,7 +718,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEntryCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       entryCount_ = 0;
       onChanged();
       return this;
@@ -739,8 +756,8 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       encodedData_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -756,7 +773,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEncodedData() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       encodedData_ = getDefaultInstance().getEncodedData();
       onChanged();
       return this;

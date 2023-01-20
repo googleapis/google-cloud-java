@@ -274,7 +274,9 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 13;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -323,7 +325,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CYCLE_NUMBER_FIELD_NUMBER = 10;
-  private int cycleNumber_;
+  private int cycleNumber_ = 0;
   /**
    *
    *
@@ -383,7 +385,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 6;
@@ -429,7 +431,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int TOTAL_PAUSE_DURATION_FIELD_NUMBER = 7;
@@ -477,11 +479,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTotalPauseDurationOrBuilder() {
-    return getTotalPauseDuration();
+    return totalPauseDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalPauseDuration_;
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 5;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -504,6 +508,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STEPS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CycleStep> steps_;
   /**
    *
@@ -573,7 +579,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STATE_FIELD_NUMBER = 11;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -602,9 +608,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ReplicationCycle.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ReplicationCycle.State result =
-        com.google.cloud.vmmigration.v1.ReplicationCycle.State.valueOf(state_);
+        com.google.cloud.vmmigration.v1.ReplicationCycle.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ReplicationCycle.State.UNRECOGNIZED
         : result;
@@ -653,7 +658,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -950,43 +955,36 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       cycleNumber_ = 0;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (totalPauseDurationBuilder_ == null) {
-        totalPauseDuration_ = null;
-      } else {
-        totalPauseDuration_ = null;
+      totalPauseDuration_ = null;
+      if (totalPauseDurationBuilder_ != null) {
+        totalPauseDurationBuilder_.dispose();
         totalPauseDurationBuilder_ = null;
       }
       progressPercent_ = 0;
-
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
       } else {
         steps_ = null;
         stepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       return this;
@@ -1016,42 +1014,56 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.ReplicationCycle buildPartial() {
       com.google.cloud.vmmigration.v1.ReplicationCycle result =
           new com.google.cloud.vmmigration.v1.ReplicationCycle(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.cycleNumber_ = cycleNumber_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (totalPauseDurationBuilder_ == null) {
-        result.totalPauseDuration_ = totalPauseDuration_;
-      } else {
-        result.totalPauseDuration_ = totalPauseDurationBuilder_.build();
-      }
-      result.progressPercent_ = progressPercent_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.ReplicationCycle result) {
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      result.state_ = state_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.ReplicationCycle result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cycleNumber_ = cycleNumber_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.totalPauseDuration_ =
+            totalPauseDurationBuilder_ == null
+                ? totalPauseDuration_
+                : totalPauseDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.progressPercent_ = progressPercent_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1102,6 +1114,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getCycleNumber() != 0) {
@@ -1123,7 +1136,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -1136,7 +1149,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -1181,26 +1194,26 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 40:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getTotalPauseDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 74:
@@ -1219,25 +1232,25 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
             case 80:
               {
                 cycleNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 80
             case 88:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 106
             default:
@@ -1320,8 +1333,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1337,8 +1350,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1359,8 +1372,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1396,6 +1409,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setCycleNumber(int value) {
 
       cycleNumber_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1411,7 +1425,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCycleNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       cycleNumber_ = 0;
       onChanged();
       return this;
@@ -1435,7 +1449,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1470,11 +1484,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1489,11 +1503,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1507,17 +1521,18 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1530,14 +1545,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1550,7 +1564,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1614,7 +1628,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1649,11 +1663,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1668,11 +1682,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1686,17 +1700,18 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1709,14 +1724,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1729,7 +1743,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1793,7 +1807,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return Whether the totalPauseDuration field is set.
      */
     public boolean hasTotalPauseDuration() {
-      return totalPauseDurationBuilder_ != null || totalPauseDuration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1830,11 +1844,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         totalPauseDuration_ = value;
-        onChanged();
       } else {
         totalPauseDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1849,11 +1863,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setTotalPauseDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (totalPauseDurationBuilder_ == null) {
         totalPauseDuration_ = builderForValue.build();
-        onChanged();
       } else {
         totalPauseDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1867,19 +1881,18 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTotalPauseDuration(com.google.protobuf.Duration value) {
       if (totalPauseDurationBuilder_ == null) {
-        if (totalPauseDuration_ != null) {
-          totalPauseDuration_ =
-              com.google.protobuf.Duration.newBuilder(totalPauseDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && totalPauseDuration_ != null
+            && totalPauseDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTotalPauseDurationBuilder().mergeFrom(value);
         } else {
           totalPauseDuration_ = value;
         }
-        onChanged();
       } else {
         totalPauseDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1892,14 +1905,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration total_pause_duration = 7;</code>
      */
     public Builder clearTotalPauseDuration() {
-      if (totalPauseDurationBuilder_ == null) {
-        totalPauseDuration_ = null;
-        onChanged();
-      } else {
-        totalPauseDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      totalPauseDuration_ = null;
+      if (totalPauseDurationBuilder_ != null) {
+        totalPauseDurationBuilder_.dispose();
         totalPauseDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1912,7 +1924,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration total_pause_duration = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getTotalPauseDurationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTotalPauseDurationFieldBuilder().getBuilder();
     }
@@ -2001,6 +2013,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2021,7 +2034,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Deprecated
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -2031,9 +2044,9 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         steps_ = new java.util.ArrayList<com.google.cloud.vmmigration.v1.CycleStep>(steps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2248,7 +2261,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -2369,7 +2382,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vmmigration.v1.CycleStep,
                 com.google.cloud.vmmigration.v1.CycleStep.Builder,
                 com.google.cloud.vmmigration.v1.CycleStepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;
@@ -2404,8 +2417,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2422,9 +2435,8 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ReplicationCycle.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ReplicationCycle.State result =
-          com.google.cloud.vmmigration.v1.ReplicationCycle.State.valueOf(state_);
+          com.google.cloud.vmmigration.v1.ReplicationCycle.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ReplicationCycle.State.UNRECOGNIZED
           : result;
@@ -2445,7 +2457,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2462,7 +2474,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -2484,7 +2496,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2519,11 +2531,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2538,11 +2550,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2556,16 +2568,18 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2578,14 +2592,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 12;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2598,7 +2611,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 12;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

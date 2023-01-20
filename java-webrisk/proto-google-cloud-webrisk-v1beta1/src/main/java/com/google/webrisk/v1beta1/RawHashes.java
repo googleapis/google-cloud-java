@@ -74,7 +74,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREFIX_SIZE_FIELD_NUMBER = 1;
-  private int prefixSize_;
+  private int prefixSize_ = 0;
   /**
    *
    *
@@ -93,7 +93,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAW_HASHES_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString rawHashes_;
+  private com.google.protobuf.ByteString rawHashes_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -322,10 +322,9 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       prefixSize_ = 0;
-
       rawHashes_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -352,10 +351,21 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.webrisk.v1beta1.RawHashes buildPartial() {
       com.google.webrisk.v1beta1.RawHashes result = new com.google.webrisk.v1beta1.RawHashes(this);
-      result.prefixSize_ = prefixSize_;
-      result.rawHashes_ = rawHashes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.webrisk.v1beta1.RawHashes result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.prefixSize_ = prefixSize_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rawHashes_ = rawHashes_;
+      }
     }
 
     @java.lang.Override
@@ -438,13 +448,13 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 prefixSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 rawHashes_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -463,6 +473,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int prefixSize_;
     /**
@@ -497,6 +509,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrefixSize(int value) {
 
       prefixSize_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -513,7 +526,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrefixSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       prefixSize_ = 0;
       onChanged();
       return this;
@@ -555,8 +568,8 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rawHashes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -574,7 +587,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRawHashes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rawHashes_ = getDefaultInstance().getRawHashes();
       onChanged();
       return this;

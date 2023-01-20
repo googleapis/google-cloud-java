@@ -69,7 +69,9 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
   }
 
   public static final int PRIVATE_CLOUD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object privateCloud_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateCloud_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       privateCloud_ = "";
-
       return this;
     }
 
@@ -360,9 +362,19 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     public com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest result =
           new com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest(this);
-      result.privateCloud_ = privateCloud_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.privateCloud_ = privateCloud_;
+      }
     }
 
     @java.lang.Override
@@ -414,6 +426,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getPrivateCloud().isEmpty()) {
         privateCloud_ = other.privateCloud_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -445,7 +458,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
             case 10:
               {
                 privateCloud_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +477,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object privateCloud_ = "";
     /**
@@ -547,8 +562,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateCloud_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPrivateCloud() {
-
       privateCloud_ = getDefaultInstance().getPrivateCloud();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -600,8 +615,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateCloud_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

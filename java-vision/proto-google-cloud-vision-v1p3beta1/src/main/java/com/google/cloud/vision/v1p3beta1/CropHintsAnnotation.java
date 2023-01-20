@@ -68,6 +68,8 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CROP_HINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.CropHint> cropHints_;
   /**
    *
@@ -336,6 +338,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (cropHintsBuilder_ == null) {
         cropHints_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation buildPartial() {
       com.google.cloud.vision.v1p3beta1.CropHintsAnnotation result =
           new com.google.cloud.vision.v1p3beta1.CropHintsAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p3beta1.CropHintsAnnotation result) {
       if (cropHintsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           cropHints_ = java.util.Collections.unmodifiableList(cropHints_);
@@ -380,8 +392,10 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
       } else {
         result.cropHints_ = cropHintsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.CropHintsAnnotation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

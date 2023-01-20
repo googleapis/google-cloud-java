@@ -72,7 +72,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object httpMethod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object httpMethod_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BODY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object body_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object body_ = "";
   /**
    *
    *
@@ -437,12 +443,10 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       httpMethod_ = "";
-
       url_ = "";
-
       body_ = "";
-
       return this;
     }
 
@@ -470,11 +474,24 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1.CrawledUrl buildPartial() {
       com.google.cloud.websecurityscanner.v1.CrawledUrl result =
           new com.google.cloud.websecurityscanner.v1.CrawledUrl(this);
-      result.httpMethod_ = httpMethod_;
-      result.url_ = url_;
-      result.body_ = body_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.CrawledUrl result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.httpMethod_ = httpMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.body_ = body_;
+      }
     }
 
     @java.lang.Override
@@ -525,14 +542,17 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getHttpMethod().isEmpty()) {
         httpMethod_ = other.httpMethod_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getBody().isEmpty()) {
         body_ = other.body_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -564,19 +584,19 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 httpMethod_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 body_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -595,6 +615,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object httpMethod_ = "";
     /**
@@ -660,8 +682,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,8 +700,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
-
       httpMethod_ = getDefaultInstance().getHttpMethod();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -701,8 +723,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +790,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +807,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -807,8 +829,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -874,8 +896,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       body_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -891,8 +913,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBody() {
-
       body_ = getDefaultInstance().getBody();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -913,8 +935,8 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       body_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

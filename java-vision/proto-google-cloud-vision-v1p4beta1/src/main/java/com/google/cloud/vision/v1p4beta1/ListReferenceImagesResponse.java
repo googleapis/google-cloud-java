@@ -69,6 +69,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   }
 
   public static final int REFERENCE_IMAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.ReferenceImage> referenceImages_;
   /**
    *
@@ -139,7 +141,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -157,7 +159,9 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -423,6 +427,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (referenceImagesBuilder_ == null) {
         referenceImages_ = java.util.Collections.emptyList();
       } else {
@@ -431,9 +436,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
-
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -462,7 +465,16 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     public com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse buildPartial() {
       com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse result =
           new com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse result) {
       if (referenceImagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           referenceImages_ = java.util.Collections.unmodifiableList(referenceImages_);
@@ -472,10 +484,17 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       } else {
         result.referenceImages_ = referenceImagesBuilder_.build();
       }
-      result.pageSize_ = pageSize_;
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -557,6 +576,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -602,13 +622,13 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1022,6 +1042,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1037,7 +1058,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1104,8 +1125,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1121,8 +1142,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1143,8 +1164,8 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

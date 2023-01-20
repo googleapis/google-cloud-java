@@ -69,7 +69,9 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
   }
 
   public static final int GROUP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object group_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object group_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
   }
 
   public static final int MIGRATING_VM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object migratingVm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object migratingVm_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       group_ = "";
-
       migratingVm_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
     public com.google.cloud.vmmigration.v1.AddGroupMigrationRequest buildPartial() {
       com.google.cloud.vmmigration.v1.AddGroupMigrationRequest result =
           new com.google.cloud.vmmigration.v1.AddGroupMigrationRequest(this);
-      result.group_ = group_;
-      result.migratingVm_ = migratingVm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AddGroupMigrationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.group_ = group_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.migratingVm_ = migratingVm_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getGroup().isEmpty()) {
         group_ = other.group_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMigratingVm().isEmpty()) {
         migratingVm_ = other.migratingVm_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
             case 10:
               {
                 group_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 migratingVm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object group_ = "";
     /**
@@ -590,8 +608,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       group_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -609,8 +627,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-
       group_ = getDefaultInstance().getGroup();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -633,8 +651,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       group_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +718,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       migratingVm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +735,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMigratingVm() {
-
       migratingVm_ = getDefaultInstance().getMigratingVm();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class AddGroupMigrationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       migratingVm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

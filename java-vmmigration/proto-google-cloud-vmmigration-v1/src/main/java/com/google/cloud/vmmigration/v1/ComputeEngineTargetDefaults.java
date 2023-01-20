@@ -94,7 +94,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int VM_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vmName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmName_ = "";
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int TARGET_PROJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetProject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetProject_ = "";
   /**
    *
    *
@@ -194,7 +198,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int ZONE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int MACHINE_TYPE_SERIES_FIELD_NUMBER = 4;
-  private volatile java.lang.Object machineTypeSeries_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineTypeSeries_ = "";
   /**
    *
    *
@@ -292,7 +300,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -341,6 +351,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int NETWORK_TAGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList networkTags_;
   /**
    *
@@ -402,6 +414,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int NETWORK_INTERFACES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.NetworkInterface> networkInterfaces_;
   /**
    *
@@ -473,7 +487,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -522,7 +538,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int DISK_TYPE_FIELD_NUMBER = 9;
-  private int diskType_;
+  private int diskType_ = 0;
   /**
    *
    *
@@ -551,9 +567,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeEngineDiskType getDiskType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ComputeEngineDiskType result =
-        com.google.cloud.vmmigration.v1.ComputeEngineDiskType.valueOf(diskType_);
+        com.google.cloud.vmmigration.v1.ComputeEngineDiskType.forNumber(diskType_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ComputeEngineDiskType.UNRECOGNIZED
         : result;
@@ -572,6 +587,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -629,7 +645,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -658,7 +677,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int LICENSE_TYPE_FIELD_NUMBER = 11;
-  private int licenseType_;
+  private int licenseType_ = 0;
   /**
    *
    *
@@ -687,9 +706,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeEngineLicenseType getLicenseType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ComputeEngineLicenseType result =
-        com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.valueOf(licenseType_);
+        com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.forNumber(licenseType_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.UNRECOGNIZED
         : result;
@@ -746,7 +764,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AppliedLicenseOrBuilder getAppliedLicenseOrBuilder() {
-    return getAppliedLicense();
+    return appliedLicense_ == null
+        ? com.google.cloud.vmmigration.v1.AppliedLicense.getDefaultInstance()
+        : appliedLicense_;
   }
 
   public static final int COMPUTE_SCHEDULING_FIELD_NUMBER = 13;
@@ -795,11 +815,13 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeSchedulingOrBuilder
       getComputeSchedulingOrBuilder() {
-    return getComputeScheduling();
+    return computeScheduling_ == null
+        ? com.google.cloud.vmmigration.v1.ComputeScheduling.getDefaultInstance()
+        : computeScheduling_;
   }
 
   public static final int SECURE_BOOT_FIELD_NUMBER = 14;
-  private boolean secureBoot_;
+  private boolean secureBoot_ = false;
   /**
    *
    *
@@ -818,7 +840,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int BOOT_OPTION_FIELD_NUMBER = 15;
-  private int bootOption_;
+  private int bootOption_ = 0;
   /**
    *
    *
@@ -851,9 +873,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeEngineBootOption getBootOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ComputeEngineBootOption result =
-        com.google.cloud.vmmigration.v1.ComputeEngineBootOption.valueOf(bootOption_);
+        com.google.cloud.vmmigration.v1.ComputeEngineBootOption.forNumber(bootOption_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ComputeEngineBootOption.UNRECOGNIZED
         : result;
@@ -872,6 +893,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -929,8 +951,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -959,6 +983,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int ADDITIONAL_LICENSES_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList additionalLicenses_;
   /**
    *
@@ -1020,7 +1046,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 18;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -1505,53 +1533,41 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vmName_ = "";
-
       targetProject_ = "";
-
       zone_ = "";
-
       machineTypeSeries_ = "";
-
       machineType_ = "";
-
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
       } else {
         networkInterfaces_ = null;
         networkInterfacesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       serviceAccount_ = "";
-
       diskType_ = 0;
-
       internalGetMutableLabels().clear();
       licenseType_ = 0;
-
-      if (appliedLicenseBuilder_ == null) {
-        appliedLicense_ = null;
-      } else {
-        appliedLicense_ = null;
+      appliedLicense_ = null;
+      if (appliedLicenseBuilder_ != null) {
+        appliedLicenseBuilder_.dispose();
         appliedLicenseBuilder_ = null;
       }
-      if (computeSchedulingBuilder_ == null) {
-        computeScheduling_ = null;
-      } else {
-        computeScheduling_ = null;
+      computeScheduling_ = null;
+      if (computeSchedulingBuilder_ != null) {
+        computeSchedulingBuilder_.dispose();
         computeSchedulingBuilder_ = null;
       }
       secureBoot_ = false;
-
       bootOption_ = 0;
-
       internalGetMutableMetadata().clear();
       additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00010000);
       hostname_ = "";
-
       return this;
     }
 
@@ -1579,53 +1595,90 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     public com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults buildPartial() {
       com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults result =
           new com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults(this);
-      int from_bitField0_ = bitField0_;
-      result.vmName_ = vmName_;
-      result.targetProject_ = targetProject_;
-      result.zone_ = zone_;
-      result.machineTypeSeries_ = machineTypeSeries_;
-      result.machineType_ = machineType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.networkTags_ = networkTags_;
       if (networkInterfacesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.networkInterfaces_ = networkInterfaces_;
       } else {
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
-      result.serviceAccount_ = serviceAccount_;
-      result.diskType_ = diskType_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.licenseType_ = licenseType_;
-      if (appliedLicenseBuilder_ == null) {
-        result.appliedLicense_ = appliedLicense_;
-      } else {
-        result.appliedLicense_ = appliedLicenseBuilder_.build();
-      }
-      if (computeSchedulingBuilder_ == null) {
-        result.computeScheduling_ = computeScheduling_;
-      } else {
-        result.computeScheduling_ = computeSchedulingBuilder_.build();
-      }
-      result.secureBoot_ = secureBoot_;
-      result.bootOption_ = bootOption_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         additionalLicenses_ = additionalLicenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.additionalLicenses_ = additionalLicenses_;
-      result.hostname_ = hostname_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vmName_ = vmName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetProject_ = targetProject_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.machineTypeSeries_ = machineTypeSeries_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.diskType_ = diskType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.licenseType_ = licenseType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.appliedLicense_ =
+            appliedLicenseBuilder_ == null ? appliedLicense_ : appliedLicenseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.computeScheduling_ =
+            computeSchedulingBuilder_ == null
+                ? computeScheduling_
+                : computeSchedulingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.secureBoot_ = secureBoot_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.bootOption_ = bootOption_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.hostname_ = hostname_;
+      }
     }
 
     @java.lang.Override
@@ -1676,28 +1729,33 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         return this;
       if (!other.getVmName().isEmpty()) {
         vmName_ = other.vmName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetProject().isEmpty()) {
         targetProject_ = other.targetProject_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMachineTypeSeries().isEmpty()) {
         machineTypeSeries_ = other.machineTypeSeries_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -1708,7 +1766,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         if (!other.networkInterfaces_.isEmpty()) {
           if (networkInterfaces_.isEmpty()) {
             networkInterfaces_ = other.networkInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureNetworkInterfacesIsMutable();
             networkInterfaces_.addAll(other.networkInterfaces_);
@@ -1721,7 +1779,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             networkInterfacesBuilder_.dispose();
             networkInterfacesBuilder_ = null;
             networkInterfaces_ = other.networkInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
             networkInterfacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNetworkInterfacesFieldBuilder()
@@ -1733,12 +1791,14 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.diskType_ != 0) {
         setDiskTypeValue(other.getDiskTypeValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000200;
       if (other.licenseType_ != 0) {
         setLicenseTypeValue(other.getLicenseTypeValue());
       }
@@ -1755,10 +1815,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         setBootOptionValue(other.getBootOptionValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00008000;
       if (!other.additionalLicenses_.isEmpty()) {
         if (additionalLicenses_.isEmpty()) {
           additionalLicenses_ = other.additionalLicenses_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureAdditionalLicensesIsMutable();
           additionalLicenses_.addAll(other.additionalLicenses_);
@@ -1767,6 +1828,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1798,31 +1860,31 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             case 10:
               {
                 vmName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetProject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 machineTypeSeries_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1849,13 +1911,13 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             case 66:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 diskType_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
@@ -1867,37 +1929,38 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 licenseType_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getAppliedLicenseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getComputeSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 112:
               {
                 secureBoot_ = input.readBool();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 120:
               {
                 bootOption_ = input.readEnum();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 130:
@@ -1909,6 +1972,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
@@ -1921,7 +1985,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
             case 146:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             default:
@@ -2004,8 +2068,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2021,8 +2085,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearVmName() {
-
       vmName_ = getDefaultInstance().getVmName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2043,8 +2107,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2113,8 +2177,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetProject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2131,8 +2195,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTargetProject() {
-
       targetProject_ = getDefaultInstance().getTargetProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2154,8 +2218,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetProject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2221,8 +2285,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2238,8 +2302,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2260,8 +2324,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2327,8 +2391,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineTypeSeries_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2344,8 +2408,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMachineTypeSeries() {
-
       machineTypeSeries_ = getDefaultInstance().getMachineTypeSeries();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2366,8 +2430,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineTypeSeries_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2433,8 +2497,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2450,8 +2514,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2472,8 +2536,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2482,9 +2546,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2619,7 +2683,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2650,11 +2714,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         java.util.Collections.emptyList();
 
     private void ensureNetworkInterfacesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         networkInterfaces_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.NetworkInterface>(
                 networkInterfaces_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2873,7 +2937,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     public Builder clearNetworkInterfaces() {
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         networkInterfacesBuilder_.clear();
@@ -2999,7 +3063,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
                 com.google.cloud.vmmigration.v1.NetworkInterface.Builder,
                 com.google.cloud.vmmigration.v1.NetworkInterfaceOrBuilder>(
                 networkInterfaces_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         networkInterfaces_ = null;
@@ -3068,8 +3132,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3085,8 +3149,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3107,8 +3171,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3142,8 +3206,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setDiskTypeValue(int value) {
-
       diskType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3160,9 +3224,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ComputeEngineDiskType getDiskType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ComputeEngineDiskType result =
-          com.google.cloud.vmmigration.v1.ComputeEngineDiskType.valueOf(diskType_);
+          com.google.cloud.vmmigration.v1.ComputeEngineDiskType.forNumber(diskType_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ComputeEngineDiskType.UNRECOGNIZED
           : result;
@@ -3183,7 +3246,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       diskType_ = value.getNumber();
       onChanged();
       return this;
@@ -3200,7 +3263,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       diskType_ = 0;
       onChanged();
       return this;
@@ -3217,14 +3280,14 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000200;
+      onChanged();
       return labels_;
     }
 
@@ -3276,8 +3339,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3306,6 +3371,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3328,6 +3394,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3346,8 +3413,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3361,6 +3428,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3393,8 +3461,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setLicenseTypeValue(int value) {
-
       licenseType_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3411,9 +3479,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ComputeEngineLicenseType getLicenseType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ComputeEngineLicenseType result =
-          com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.valueOf(licenseType_);
+          com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.forNumber(licenseType_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ComputeEngineLicenseType.UNRECOGNIZED
           : result;
@@ -3434,7 +3501,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       licenseType_ = value.getNumber();
       onChanged();
       return this;
@@ -3451,7 +3518,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearLicenseType() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       licenseType_ = 0;
       onChanged();
       return this;
@@ -3477,7 +3544,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return Whether the appliedLicense field is set.
      */
     public boolean hasAppliedLicense() {
-      return appliedLicenseBuilder_ != null || appliedLicense_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3518,11 +3585,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         appliedLicense_ = value;
-        onChanged();
       } else {
         appliedLicenseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3540,11 +3607,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         com.google.cloud.vmmigration.v1.AppliedLicense.Builder builderForValue) {
       if (appliedLicenseBuilder_ == null) {
         appliedLicense_ = builderForValue.build();
-        onChanged();
       } else {
         appliedLicenseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3560,19 +3627,19 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder mergeAppliedLicense(com.google.cloud.vmmigration.v1.AppliedLicense value) {
       if (appliedLicenseBuilder_ == null) {
-        if (appliedLicense_ != null) {
-          appliedLicense_ =
-              com.google.cloud.vmmigration.v1.AppliedLicense.newBuilder(appliedLicense_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && appliedLicense_ != null
+            && appliedLicense_
+                != com.google.cloud.vmmigration.v1.AppliedLicense.getDefaultInstance()) {
+          getAppliedLicenseBuilder().mergeFrom(value);
         } else {
           appliedLicense_ = value;
         }
-        onChanged();
       } else {
         appliedLicenseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3587,14 +3654,13 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearAppliedLicense() {
-      if (appliedLicenseBuilder_ == null) {
-        appliedLicense_ = null;
-        onChanged();
-      } else {
-        appliedLicense_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      appliedLicense_ = null;
+      if (appliedLicenseBuilder_ != null) {
+        appliedLicenseBuilder_.dispose();
         appliedLicenseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3609,7 +3675,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.vmmigration.v1.AppliedLicense.Builder getAppliedLicenseBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getAppliedLicenseFieldBuilder().getBuilder();
     }
@@ -3679,7 +3745,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return Whether the computeScheduling field is set.
      */
     public boolean hasComputeScheduling() {
-      return computeSchedulingBuilder_ != null || computeScheduling_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3716,11 +3782,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         computeScheduling_ = value;
-        onChanged();
       } else {
         computeSchedulingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3736,11 +3802,11 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         com.google.cloud.vmmigration.v1.ComputeScheduling.Builder builderForValue) {
       if (computeSchedulingBuilder_ == null) {
         computeScheduling_ = builderForValue.build();
-        onChanged();
       } else {
         computeSchedulingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3754,19 +3820,19 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder mergeComputeScheduling(com.google.cloud.vmmigration.v1.ComputeScheduling value) {
       if (computeSchedulingBuilder_ == null) {
-        if (computeScheduling_ != null) {
-          computeScheduling_ =
-              com.google.cloud.vmmigration.v1.ComputeScheduling.newBuilder(computeScheduling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && computeScheduling_ != null
+            && computeScheduling_
+                != com.google.cloud.vmmigration.v1.ComputeScheduling.getDefaultInstance()) {
+          getComputeSchedulingBuilder().mergeFrom(value);
         } else {
           computeScheduling_ = value;
         }
-        onChanged();
       } else {
         computeSchedulingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3779,14 +3845,13 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * <code>.google.cloud.vmmigration.v1.ComputeScheduling compute_scheduling = 13;</code>
      */
     public Builder clearComputeScheduling() {
-      if (computeSchedulingBuilder_ == null) {
-        computeScheduling_ = null;
-        onChanged();
-      } else {
-        computeScheduling_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      computeScheduling_ = null;
+      if (computeSchedulingBuilder_ != null) {
+        computeSchedulingBuilder_.dispose();
         computeSchedulingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3799,7 +3864,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * <code>.google.cloud.vmmigration.v1.ComputeScheduling compute_scheduling = 13;</code>
      */
     public com.google.cloud.vmmigration.v1.ComputeScheduling.Builder getComputeSchedulingBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getComputeSchedulingFieldBuilder().getBuilder();
     }
@@ -3881,6 +3946,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     public Builder setSecureBoot(boolean value) {
 
       secureBoot_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3897,7 +3963,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearSecureBoot() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       secureBoot_ = false;
       onChanged();
       return this;
@@ -3936,8 +4002,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setBootOptionValue(int value) {
-
       bootOption_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3956,9 +4022,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ComputeEngineBootOption getBootOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ComputeEngineBootOption result =
-          com.google.cloud.vmmigration.v1.ComputeEngineBootOption.valueOf(bootOption_);
+          com.google.cloud.vmmigration.v1.ComputeEngineBootOption.forNumber(bootOption_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ComputeEngineBootOption.UNRECOGNIZED
           : result;
@@ -3981,7 +4046,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       bootOption_ = value.getNumber();
       onChanged();
       return this;
@@ -4000,7 +4065,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearBootOption() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       bootOption_ = 0;
       onChanged();
       return this;
@@ -4017,8 +4082,6 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -4026,6 +4089,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00008000;
+      onChanged();
       return metadata_;
     }
 
@@ -4077,8 +4142,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * <code>map&lt;string, string&gt; metadata = 16;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4107,6 +4174,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -4129,6 +4197,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00008000;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -4147,8 +4216,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -4162,6 +4231,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -4169,9 +4239,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdditionalLicensesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         additionalLicenses_ = new com.google.protobuf.LazyStringArrayList(additionalLicenses_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -4306,7 +4376,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder clearAdditionalLicenses() {
       additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4394,8 +4464,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4411,8 +4481,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4433,8 +4503,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

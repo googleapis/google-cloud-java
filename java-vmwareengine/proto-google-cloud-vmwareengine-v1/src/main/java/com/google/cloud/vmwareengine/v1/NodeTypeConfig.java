@@ -66,7 +66,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 1;
-  private int nodeCount_;
+  private int nodeCount_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_CORE_COUNT_FIELD_NUMBER = 2;
-  private int customCoreCount_;
+  private int customCoreCount_ = 0;
   /**
    *
    *
@@ -310,10 +310,9 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodeCount_ = 0;
-
       customCoreCount_ = 0;
-
       return this;
     }
 
@@ -341,10 +340,21 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.NodeTypeConfig buildPartial() {
       com.google.cloud.vmwareengine.v1.NodeTypeConfig result =
           new com.google.cloud.vmwareengine.v1.NodeTypeConfig(this);
-      result.nodeCount_ = nodeCount_;
-      result.customCoreCount_ = customCoreCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.NodeTypeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customCoreCount_ = customCoreCount_;
+      }
     }
 
     @java.lang.Override
@@ -428,13 +438,13 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 nodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 customCoreCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -453,6 +463,8 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int nodeCount_;
     /**
@@ -485,6 +497,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setNodeCount(int value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -500,7 +513,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       nodeCount_ = 0;
       onChanged();
       return this;
@@ -543,6 +556,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setCustomCoreCount(int value) {
 
       customCoreCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -561,7 +575,7 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomCoreCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       customCoreCount_ = 0;
       onChanged();
       return this;

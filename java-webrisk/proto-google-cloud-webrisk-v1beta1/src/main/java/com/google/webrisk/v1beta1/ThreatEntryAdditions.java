@@ -69,6 +69,8 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RAW_HASHES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.webrisk.v1beta1.RawHashes> rawHashes_;
   /**
    *
@@ -193,7 +195,9 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.webrisk.v1beta1.RiceDeltaEncodingOrBuilder getRiceHashesOrBuilder() {
-    return getRiceHashes();
+    return riceHashes_ == null
+        ? com.google.webrisk.v1beta1.RiceDeltaEncoding.getDefaultInstance()
+        : riceHashes_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -410,6 +414,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rawHashesBuilder_ == null) {
         rawHashes_ = java.util.Collections.emptyList();
       } else {
@@ -417,10 +422,9 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         rawHashesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (riceHashesBuilder_ == null) {
-        riceHashes_ = null;
-      } else {
-        riceHashes_ = null;
+      riceHashes_ = null;
+      if (riceHashesBuilder_ != null) {
+        riceHashesBuilder_.dispose();
         riceHashesBuilder_ = null;
       }
       return this;
@@ -450,7 +454,16 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     public com.google.webrisk.v1beta1.ThreatEntryAdditions buildPartial() {
       com.google.webrisk.v1beta1.ThreatEntryAdditions result =
           new com.google.webrisk.v1beta1.ThreatEntryAdditions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.webrisk.v1beta1.ThreatEntryAdditions result) {
       if (rawHashesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rawHashes_ = java.util.Collections.unmodifiableList(rawHashes_);
@@ -460,13 +473,13 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       } else {
         result.rawHashes_ = rawHashesBuilder_.build();
       }
-      if (riceHashesBuilder_ == null) {
-        result.riceHashes_ = riceHashes_;
-      } else {
-        result.riceHashes_ = riceHashesBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.webrisk.v1beta1.ThreatEntryAdditions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.riceHashes_ = riceHashesBuilder_ == null ? riceHashes_ : riceHashesBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -587,7 +600,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 input.readMessage(getRiceHashesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -995,7 +1008,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
      * @return Whether the riceHashes field is set.
      */
     public boolean hasRiceHashes() {
-      return riceHashesBuilder_ != null || riceHashes_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1036,11 +1049,11 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         riceHashes_ = value;
-        onChanged();
       } else {
         riceHashesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1058,11 +1071,11 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         com.google.webrisk.v1beta1.RiceDeltaEncoding.Builder builderForValue) {
       if (riceHashesBuilder_ == null) {
         riceHashes_ = builderForValue.build();
-        onChanged();
       } else {
         riceHashesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1078,19 +1091,18 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRiceHashes(com.google.webrisk.v1beta1.RiceDeltaEncoding value) {
       if (riceHashesBuilder_ == null) {
-        if (riceHashes_ != null) {
-          riceHashes_ =
-              com.google.webrisk.v1beta1.RiceDeltaEncoding.newBuilder(riceHashes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && riceHashes_ != null
+            && riceHashes_ != com.google.webrisk.v1beta1.RiceDeltaEncoding.getDefaultInstance()) {
+          getRiceHashesBuilder().mergeFrom(value);
         } else {
           riceHashes_ = value;
         }
-        onChanged();
       } else {
         riceHashesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1105,14 +1117,13 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_hashes = 2;</code>
      */
     public Builder clearRiceHashes() {
-      if (riceHashesBuilder_ == null) {
-        riceHashes_ = null;
-        onChanged();
-      } else {
-        riceHashes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      riceHashes_ = null;
+      if (riceHashesBuilder_ != null) {
+        riceHashesBuilder_.dispose();
         riceHashesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1127,7 +1138,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.webrisk.v1beta1.RiceDeltaEncoding rice_hashes = 2;</code>
      */
     public com.google.webrisk.v1beta1.RiceDeltaEncoding.Builder getRiceHashesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRiceHashesFieldBuilder().getBuilder();
     }

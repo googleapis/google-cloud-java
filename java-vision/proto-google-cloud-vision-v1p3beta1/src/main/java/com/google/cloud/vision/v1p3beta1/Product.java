@@ -181,7 +181,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      *
      *
@@ -232,7 +234,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -490,10 +494,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
         value_ = "";
-
         return this;
       }
 
@@ -521,10 +524,21 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vision.v1p3beta1.Product.KeyValue buildPartial() {
         com.google.cloud.vision.v1p3beta1.Product.KeyValue result =
             new com.google.cloud.vision.v1p3beta1.Product.KeyValue(this);
-        result.key_ = key_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vision.v1p3beta1.Product.KeyValue result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -577,10 +591,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -612,13 +628,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   key_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -637,6 +653,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object key_ = "";
       /**
@@ -702,8 +720,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -720,8 +738,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -743,8 +761,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -813,8 +831,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -831,8 +849,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -854,8 +872,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -925,7 +943,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -980,7 +1000,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1031,7 +1053,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1082,7 +1106,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_CATEGORY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object productCategory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productCategory_ = "";
   /**
    *
    *
@@ -1137,6 +1163,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_LABELS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> productLabels_;
   /**
    *
@@ -1471,21 +1499,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       productCategory_ = "";
-
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
       } else {
         productLabels_ = null;
         productLabelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1513,22 +1538,40 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p3beta1.Product buildPartial() {
       com.google.cloud.vision.v1p3beta1.Product result =
           new com.google.cloud.vision.v1p3beta1.Product(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.productCategory_ = productCategory_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1p3beta1.Product result) {
       if (productLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.productLabels_ = productLabels_;
       } else {
         result.productLabels_ = productLabelsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.Product result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.productCategory_ = productCategory_;
+      }
     }
 
     @java.lang.Override
@@ -1578,25 +1621,29 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vision.v1p3beta1.Product.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getProductCategory().isEmpty()) {
         productCategory_ = other.productCategory_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (productLabelsBuilder_ == null) {
         if (!other.productLabels_.isEmpty()) {
           if (productLabels_.isEmpty()) {
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureProductLabelsIsMutable();
             productLabels_.addAll(other.productLabels_);
@@ -1609,7 +1656,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             productLabelsBuilder_.dispose();
             productLabelsBuilder_ = null;
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             productLabelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductLabelsFieldBuilder()
@@ -1648,25 +1695,25 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 productCategory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1772,8 +1819,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1792,8 +1839,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1817,8 +1864,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1887,8 +1934,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1905,8 +1952,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1928,8 +1975,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1998,8 +2045,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2016,8 +2063,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2039,8 +2086,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2115,8 +2162,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       productCategory_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2135,8 +2182,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProductCategory() {
-
       productCategory_ = getDefaultInstance().getProductCategory();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2160,8 +2207,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productCategory_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2170,11 +2217,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureProductLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         productLabels_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>(
                 productLabels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2459,7 +2506,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder clearProductLabels() {
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         productLabelsBuilder_.clear();
@@ -2628,7 +2675,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder,
                 com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>(
                 productLabels_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         productLabels_ = null;

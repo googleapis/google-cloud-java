@@ -110,11 +110,13 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIdleDurationOrBuilder() {
-    return getIdleDuration();
+    return idleDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : idleDuration_;
   }
 
   public static final int SKIP_OS_ADAPTATION_FIELD_NUMBER = 2;
-  private boolean skipOsAdaptation_;
+  private boolean skipOsAdaptation_ = false;
   /**
    *
    *
@@ -344,14 +346,13 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (idleDurationBuilder_ == null) {
-        idleDuration_ = null;
-      } else {
-        idleDuration_ = null;
+      bitField0_ = 0;
+      idleDuration_ = null;
+      if (idleDurationBuilder_ != null) {
+        idleDurationBuilder_.dispose();
         idleDurationBuilder_ = null;
       }
       skipOsAdaptation_ = false;
-
       return this;
     }
 
@@ -379,14 +380,22 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.SchedulePolicy buildPartial() {
       com.google.cloud.vmmigration.v1.SchedulePolicy result =
           new com.google.cloud.vmmigration.v1.SchedulePolicy(this);
-      if (idleDurationBuilder_ == null) {
-        result.idleDuration_ = idleDuration_;
-      } else {
-        result.idleDuration_ = idleDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.skipOsAdaptation_ = skipOsAdaptation_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.SchedulePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.idleDuration_ =
+            idleDurationBuilder_ == null ? idleDuration_ : idleDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skipOsAdaptation_ = skipOsAdaptation_;
+      }
     }
 
     @java.lang.Override
@@ -469,13 +478,13 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getIdleDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 skipOsAdaptation_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -495,6 +504,8 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Duration idleDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -513,7 +524,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the idleDuration field is set.
      */
     public boolean hasIdleDuration() {
-      return idleDurationBuilder_ != null || idleDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -550,11 +561,11 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         idleDuration_ = value;
-        onChanged();
       } else {
         idleDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -569,11 +580,11 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setIdleDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleDurationBuilder_ == null) {
         idleDuration_ = builderForValue.build();
-        onChanged();
       } else {
         idleDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -587,19 +598,18 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIdleDuration(com.google.protobuf.Duration value) {
       if (idleDurationBuilder_ == null) {
-        if (idleDuration_ != null) {
-          idleDuration_ =
-              com.google.protobuf.Duration.newBuilder(idleDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && idleDuration_ != null
+            && idleDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getIdleDurationBuilder().mergeFrom(value);
         } else {
           idleDuration_ = value;
         }
-        onChanged();
       } else {
         idleDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -612,14 +622,13 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration idle_duration = 1;</code>
      */
     public Builder clearIdleDuration() {
-      if (idleDurationBuilder_ == null) {
-        idleDuration_ = null;
-        onChanged();
-      } else {
-        idleDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      idleDuration_ = null;
+      if (idleDurationBuilder_ != null) {
+        idleDurationBuilder_.dispose();
         idleDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -632,7 +641,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration idle_duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getIdleDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdleDurationFieldBuilder().getBuilder();
     }
@@ -715,6 +724,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setSkipOsAdaptation(boolean value) {
 
       skipOsAdaptation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,7 +742,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkipOsAdaptation() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       skipOsAdaptation_ = false;
       onChanged();
       return this;

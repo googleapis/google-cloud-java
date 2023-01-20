@@ -117,11 +117,15 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-    return getBoundingPoly();
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
 
   public static final int PRODUCT_SET_FIELD_NUMBER = 6;
-  private volatile java.lang.Object productSet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productSet_ = "";
   /**
    *
    *
@@ -174,6 +178,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PRODUCT_CATEGORIES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList productCategories_;
   /**
    *
@@ -259,7 +265,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FILTER_FIELD_NUMBER = 8;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -556,18 +564,16 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = 0;
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
       productSet_ = "";
-
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       filter_ = "";
-
       return this;
     }
 
@@ -595,21 +601,35 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1p3beta1.ProductSearchParams buildPartial() {
       com.google.cloud.vision.v1p3beta1.ProductSearchParams result =
           new com.google.cloud.vision.v1p3beta1.ProductSearchParams(this);
-      int from_bitField0_ = bitField0_;
-      if (boundingPolyBuilder_ == null) {
-        result.boundingPoly_ = boundingPoly_;
-      } else {
-        result.boundingPoly_ = boundingPolyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.productSet_ = productSet_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        productCategories_ = productCategories_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.productCategories_ = productCategories_;
-      result.filter_ = filter_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p3beta1.ProductSearchParams result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        productCategories_ = productCategories_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.productCategories_ = productCategories_;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.ProductSearchParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.boundingPoly_ =
+            boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.productSet_ = productSet_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -663,12 +683,13 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       if (!other.getProductSet().isEmpty()) {
         productSet_ = other.productSet_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.productCategories_.isEmpty()) {
         if (productCategories_.isEmpty()) {
           productCategories_ = other.productCategories_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureProductCategoriesIsMutable();
           productCategories_.addAll(other.productCategories_);
@@ -677,6 +698,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -708,7 +730,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             case 50:
               {
                 productSet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 58:
@@ -721,13 +743,13 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             case 66:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 74
             default:
@@ -768,7 +790,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
-      return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -807,11 +829,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         boundingPoly_ = value;
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -828,11 +850,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder builderForValue) {
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -847,19 +869,19 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBoundingPoly(com.google.cloud.vision.v1p3beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
-        if (boundingPoly_ != null) {
-          boundingPoly_ =
-              com.google.cloud.vision.v1p3beta1.BoundingPoly.newBuilder(boundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && boundingPoly_ != null
+            && boundingPoly_
+                != com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingPolyBuilder().mergeFrom(value);
         } else {
           boundingPoly_ = value;
         }
-        onChanged();
       } else {
         boundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -873,14 +895,13 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
      */
     public Builder clearBoundingPoly() {
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-        onChanged();
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +915,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
      */
     public com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
@@ -1011,8 +1032,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       productSet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,8 +1051,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProductSet() {
-
       productSet_ = getDefaultInstance().getProductSet();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1054,8 +1075,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productSet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1064,9 +1085,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureProductCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         productCategories_ = new com.google.protobuf.LazyStringArrayList(productCategories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1249,7 +1270,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      */
     public Builder clearProductCategories() {
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1361,8 +1382,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1384,8 +1405,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1412,8 +1433,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

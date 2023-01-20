@@ -71,7 +71,9 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,11 +187,15 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.HcxActivationKeyOrBuilder getHcxActivationKeyOrBuilder() {
-    return getHcxActivationKey();
+    return hcxActivationKey_ == null
+        ? com.google.cloud.vmwareengine.v1.HcxActivationKey.getDefaultInstance()
+        : hcxActivationKey_;
   }
 
   public static final int HCX_ACTIVATION_KEY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object hcxActivationKeyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hcxActivationKeyId_ = "";
   /**
    *
    *
@@ -256,7 +262,9 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -557,18 +565,15 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (hcxActivationKeyBuilder_ == null) {
-        hcxActivationKey_ = null;
-      } else {
-        hcxActivationKey_ = null;
+      hcxActivationKey_ = null;
+      if (hcxActivationKeyBuilder_ != null) {
+        hcxActivationKeyBuilder_.dispose();
         hcxActivationKeyBuilder_ = null;
       }
       hcxActivationKeyId_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -597,16 +602,29 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
     public com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest result =
           new com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest(this);
-      result.parent_ = parent_;
-      if (hcxActivationKeyBuilder_ == null) {
-        result.hcxActivationKey_ = hcxActivationKey_;
-      } else {
-        result.hcxActivationKey_ = hcxActivationKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.hcxActivationKeyId_ = hcxActivationKeyId_;
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.hcxActivationKey_ =
+            hcxActivationKeyBuilder_ == null ? hcxActivationKey_ : hcxActivationKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hcxActivationKeyId_ = hcxActivationKeyId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -658,6 +676,7 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHcxActivationKey()) {
@@ -665,10 +684,12 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
       }
       if (!other.getHcxActivationKeyId().isEmpty()) {
         hcxActivationKeyId_ = other.hcxActivationKeyId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -700,26 +721,26 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getHcxActivationKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 hcxActivationKeyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -738,6 +759,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -818,8 +841,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -841,8 +864,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -869,8 +892,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -896,7 +919,7 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * @return Whether the hcxActivationKey field is set.
      */
     public boolean hasHcxActivationKey() {
-      return hcxActivationKeyBuilder_ != null || hcxActivationKey_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -939,11 +962,11 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         hcxActivationKey_ = value;
-        onChanged();
       } else {
         hcxActivationKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -962,11 +985,11 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
         com.google.cloud.vmwareengine.v1.HcxActivationKey.Builder builderForValue) {
       if (hcxActivationKeyBuilder_ == null) {
         hcxActivationKey_ = builderForValue.build();
-        onChanged();
       } else {
         hcxActivationKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -983,19 +1006,19 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      */
     public Builder mergeHcxActivationKey(com.google.cloud.vmwareengine.v1.HcxActivationKey value) {
       if (hcxActivationKeyBuilder_ == null) {
-        if (hcxActivationKey_ != null) {
-          hcxActivationKey_ =
-              com.google.cloud.vmwareengine.v1.HcxActivationKey.newBuilder(hcxActivationKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && hcxActivationKey_ != null
+            && hcxActivationKey_
+                != com.google.cloud.vmwareengine.v1.HcxActivationKey.getDefaultInstance()) {
+          getHcxActivationKeyBuilder().mergeFrom(value);
         } else {
           hcxActivationKey_ = value;
         }
-        onChanged();
       } else {
         hcxActivationKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1011,14 +1034,13 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearHcxActivationKey() {
-      if (hcxActivationKeyBuilder_ == null) {
-        hcxActivationKey_ = null;
-        onChanged();
-      } else {
-        hcxActivationKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      hcxActivationKey_ = null;
+      if (hcxActivationKeyBuilder_ != null) {
+        hcxActivationKeyBuilder_.dispose();
         hcxActivationKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1034,7 +1056,7 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.HcxActivationKey.Builder getHcxActivationKeyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHcxActivationKeyFieldBuilder().getBuilder();
     }
@@ -1177,8 +1199,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       hcxActivationKeyId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1203,8 +1225,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearHcxActivationKeyId() {
-
       hcxActivationKeyId_ = getDefaultInstance().getHcxActivationKeyId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1234,8 +1256,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hcxActivationKeyId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1334,8 +1356,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1362,8 +1384,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1395,8 +1417,8 @@ public final class CreateHcxActivationKeyRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

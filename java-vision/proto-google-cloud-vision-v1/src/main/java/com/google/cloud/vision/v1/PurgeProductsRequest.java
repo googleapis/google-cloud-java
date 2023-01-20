@@ -204,7 +204,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -259,7 +261,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FORCE_FIELD_NUMBER = 4;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -522,13 +524,12 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (productSetPurgeConfigBuilder_ != null) {
         productSetPurgeConfigBuilder_.clear();
       }
       parent_ = "";
-
       force_ = false;
-
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -558,21 +559,30 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1.PurgeProductsRequest buildPartial() {
       com.google.cloud.vision.v1.PurgeProductsRequest result =
           new com.google.cloud.vision.v1.PurgeProductsRequest(this);
-      if (targetCase_ == 2) {
-        if (productSetPurgeConfigBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = productSetPurgeConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (targetCase_ == 3) {
-        result.target_ = target_;
-      }
-      result.parent_ = parent_;
-      result.force_ = force_;
-      result.targetCase_ = targetCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.PurgeProductsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.force_ = force_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vision.v1.PurgeProductsRequest result) {
+      result.targetCase_ = targetCase_;
+      result.target_ = this.target_;
+      if (targetCase_ == 2 && productSetPurgeConfigBuilder_ != null) {
+        result.target_ = productSetPurgeConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -623,6 +633,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -673,7 +684,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -692,7 +703,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
             case 32:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -725,6 +736,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1.ProductSetPurgeConfig,
@@ -936,7 +949,6 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       }
       targetCase_ = 2;
       onChanged();
-      ;
       return productSetPurgeConfigBuilder_;
     }
 
@@ -987,6 +999,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setDeleteOrphanProducts(boolean value) {
+
       targetCase_ = 3;
       target_ = value;
       onChanged();
@@ -1083,8 +1096,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,8 +1116,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1128,8 +1141,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1167,6 +1180,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1183,7 +1197,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       force_ = false;
       onChanged();
       return this;

@@ -328,7 +328,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -357,9 +357,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code result =
-        com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.valueOf(code_);
+        com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.forNumber(code_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.UNRECOGNIZED
         : result;
@@ -417,11 +416,13 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigErrorOrBuilder
       getScanConfigErrorOrBuilder() {
-    return getScanConfigError();
+    return scanConfigError_ == null
+        ? com.google.cloud.websecurityscanner.v1beta.ScanConfigError.getDefaultInstance()
+        : scanConfigError_;
   }
 
   public static final int MOST_COMMON_HTTP_ERROR_CODE_FIELD_NUMBER = 3;
-  private int mostCommonHttpErrorCode_;
+  private int mostCommonHttpErrorCode_ = 0;
   /**
    *
    *
@@ -666,16 +667,14 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
-      if (scanConfigErrorBuilder_ == null) {
-        scanConfigError_ = null;
-      } else {
-        scanConfigError_ = null;
+      scanConfigError_ = null;
+      if (scanConfigErrorBuilder_ != null) {
+        scanConfigErrorBuilder_.dispose();
         scanConfigErrorBuilder_ = null;
       }
       mostCommonHttpErrorCode_ = 0;
-
       return this;
     }
 
@@ -704,15 +703,26 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace result =
           new com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace(this);
-      result.code_ = code_;
-      if (scanConfigErrorBuilder_ == null) {
-        result.scanConfigError_ = scanConfigError_;
-      } else {
-        result.scanConfigError_ = scanConfigErrorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.mostCommonHttpErrorCode_ = mostCommonHttpErrorCode_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scanConfigError_ =
+            scanConfigErrorBuilder_ == null ? scanConfigError_ : scanConfigErrorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mostCommonHttpErrorCode_ = mostCommonHttpErrorCode_;
+      }
     }
 
     @java.lang.Override
@@ -800,19 +810,19 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getScanConfigErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 mostCommonHttpErrorCode_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -831,6 +841,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -861,8 +873,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -879,9 +891,8 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code result =
-          com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.valueOf(code_);
+          com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.forNumber(code_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code.UNRECOGNIZED
           : result;
@@ -903,7 +914,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -920,7 +931,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -946,7 +957,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * @return Whether the scanConfigError field is set.
      */
     public boolean hasScanConfigError() {
-      return scanConfigErrorBuilder_ != null || scanConfigError_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -988,11 +999,11 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         scanConfigError_ = value;
-        onChanged();
       } else {
         scanConfigErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1010,11 +1021,11 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
         com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Builder builderForValue) {
       if (scanConfigErrorBuilder_ == null) {
         scanConfigError_ = builderForValue.build();
-        onChanged();
       } else {
         scanConfigErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1031,20 +1042,20 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public Builder mergeScanConfigError(
         com.google.cloud.websecurityscanner.v1beta.ScanConfigError value) {
       if (scanConfigErrorBuilder_ == null) {
-        if (scanConfigError_ != null) {
-          scanConfigError_ =
-              com.google.cloud.websecurityscanner.v1beta.ScanConfigError.newBuilder(
-                      scanConfigError_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && scanConfigError_ != null
+            && scanConfigError_
+                != com.google.cloud.websecurityscanner.v1beta.ScanConfigError
+                    .getDefaultInstance()) {
+          getScanConfigErrorBuilder().mergeFrom(value);
         } else {
           scanConfigError_ = value;
         }
-        onChanged();
       } else {
         scanConfigErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1059,14 +1070,13 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
      */
     public Builder clearScanConfigError() {
-      if (scanConfigErrorBuilder_ == null) {
-        scanConfigError_ = null;
-        onChanged();
-      } else {
-        scanConfigError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scanConfigError_ = null;
+      if (scanConfigErrorBuilder_ != null) {
+        scanConfigErrorBuilder_.dispose();
         scanConfigErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1082,7 +1092,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Builder
         getScanConfigErrorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getScanConfigErrorFieldBuilder().getBuilder();
     }
@@ -1170,6 +1180,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
     public Builder setMostCommonHttpErrorCode(int value) {
 
       mostCommonHttpErrorCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1187,7 +1198,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMostCommonHttpErrorCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       mostCommonHttpErrorCode_ = 0;
       onChanged();
       return this;

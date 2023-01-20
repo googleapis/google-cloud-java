@@ -71,6 +71,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileRequest> requests_;
   /**
    *
@@ -151,7 +153,9 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -423,6 +427,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
@@ -431,7 +436,6 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       parent_ = "";
-
       return this;
     }
 
@@ -459,7 +463,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
     public com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest buildPartial() {
       com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest result =
           new com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest result) {
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -469,9 +482,13 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      result.parent_ = parent_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -549,6 +566,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -594,7 +612,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -1091,8 +1109,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1115,8 +1133,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1144,8 +1162,8 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

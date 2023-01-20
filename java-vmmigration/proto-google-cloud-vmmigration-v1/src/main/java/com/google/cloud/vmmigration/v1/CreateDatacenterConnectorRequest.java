@@ -71,7 +71,9 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
   }
 
   public static final int DATACENTER_CONNECTOR_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object datacenterConnectorId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datacenterConnectorId_ = "";
   /**
    *
    *
@@ -230,11 +234,15 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.DatacenterConnectorOrBuilder
       getDatacenterConnectorOrBuilder() {
-    return getDatacenterConnector();
+    return datacenterConnector_ == null
+        ? com.google.cloud.vmmigration.v1.DatacenterConnector.getDefaultInstance()
+        : datacenterConnector_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -532,18 +540,15 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       datacenterConnectorId_ = "";
-
-      if (datacenterConnectorBuilder_ == null) {
-        datacenterConnector_ = null;
-      } else {
-        datacenterConnector_ = null;
+      datacenterConnector_ = null;
+      if (datacenterConnectorBuilder_ != null) {
+        datacenterConnectorBuilder_.dispose();
         datacenterConnectorBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -572,16 +577,31 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
     public com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest result =
           new com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest(this);
-      result.parent_ = parent_;
-      result.datacenterConnectorId_ = datacenterConnectorId_;
-      if (datacenterConnectorBuilder_ == null) {
-        result.datacenterConnector_ = datacenterConnector_;
-      } else {
-        result.datacenterConnector_ = datacenterConnectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.datacenterConnectorId_ = datacenterConnectorId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.datacenterConnector_ =
+            datacenterConnectorBuilder_ == null
+                ? datacenterConnector_
+                : datacenterConnectorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -634,10 +654,12 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatacenterConnectorId().isEmpty()) {
         datacenterConnectorId_ = other.datacenterConnectorId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDatacenterConnector()) {
@@ -645,6 +667,7 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -676,26 +699,26 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 datacenterConnectorId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getDatacenterConnectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -714,6 +737,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -791,8 +816,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +838,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -840,8 +865,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -907,8 +932,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       datacenterConnectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -924,8 +949,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDatacenterConnectorId() {
-
       datacenterConnectorId_ = getDefaultInstance().getDatacenterConnectorId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -946,8 +971,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       datacenterConnectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -972,7 +997,7 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      * @return Whether the datacenterConnector field is set.
      */
     public boolean hasDatacenterConnector() {
-      return datacenterConnectorBuilder_ != null || datacenterConnector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1014,11 +1039,11 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         datacenterConnector_ = value;
-        onChanged();
       } else {
         datacenterConnectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1036,11 +1061,11 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
         com.google.cloud.vmmigration.v1.DatacenterConnector.Builder builderForValue) {
       if (datacenterConnectorBuilder_ == null) {
         datacenterConnector_ = builderForValue.build();
-        onChanged();
       } else {
         datacenterConnectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1057,19 +1082,19 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
     public Builder mergeDatacenterConnector(
         com.google.cloud.vmmigration.v1.DatacenterConnector value) {
       if (datacenterConnectorBuilder_ == null) {
-        if (datacenterConnector_ != null) {
-          datacenterConnector_ =
-              com.google.cloud.vmmigration.v1.DatacenterConnector.newBuilder(datacenterConnector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && datacenterConnector_ != null
+            && datacenterConnector_
+                != com.google.cloud.vmmigration.v1.DatacenterConnector.getDefaultInstance()) {
+          getDatacenterConnectorBuilder().mergeFrom(value);
         } else {
           datacenterConnector_ = value;
         }
-        onChanged();
       } else {
         datacenterConnectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1084,14 +1109,13 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearDatacenterConnector() {
-      if (datacenterConnectorBuilder_ == null) {
-        datacenterConnector_ = null;
-        onChanged();
-      } else {
-        datacenterConnector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      datacenterConnector_ = null;
+      if (datacenterConnectorBuilder_ != null) {
+        datacenterConnectorBuilder_.dispose();
         datacenterConnectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1107,7 +1131,7 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      */
     public com.google.cloud.vmmigration.v1.DatacenterConnector.Builder
         getDatacenterConnectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDatacenterConnectorFieldBuilder().getBuilder();
     }
@@ -1251,8 +1275,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1278,8 +1302,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1310,8 +1334,8 @@ public final class CreateDatacenterConnectorRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

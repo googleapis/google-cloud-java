@@ -398,7 +398,6 @@ public interface AwsVmDetailsOrBuilder
    *
    * <code>map&lt;string, string&gt; tags = 15;</code>
    */
-
   /* nullable */
   java.lang.String getTagsOrDefault(
       java.lang.String key,

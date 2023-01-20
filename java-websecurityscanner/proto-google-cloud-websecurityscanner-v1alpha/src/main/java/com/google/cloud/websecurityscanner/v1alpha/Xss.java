@@ -69,6 +69,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STACK_TRACES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList stackTraces_;
   /**
    *
@@ -130,7 +132,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -391,10 +395,10 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stackTraces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       errorMessage_ = "";
-
       return this;
     }
 
@@ -422,15 +426,28 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1alpha.Xss buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.Xss result =
           new com.google.cloud.websecurityscanner.v1alpha.Xss(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1alpha.Xss result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         stackTraces_ = stackTraces_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.stackTraces_ = stackTraces_;
-      result.errorMessage_ = errorMessage_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1alpha.Xss result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -491,6 +508,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -529,7 +547,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -780,8 +798,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +815,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +837,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

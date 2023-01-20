@@ -69,7 +69,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_TEXT_DETECTION_CONFIDENCE_SCORE_FIELD_NUMBER = 9;
-  private boolean enableTextDetectionConfidenceScore_;
+  private boolean enableTextDetectionConfidenceScore_ = false;
   /**
    *
    *
@@ -89,6 +89,8 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ADVANCED_OCR_OPTIONS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList advancedOcrOptions_;
   /**
    *
@@ -368,10 +370,10 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableTextDetectionConfidenceScore_ = false;
-
       advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -399,15 +401,27 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1.TextDetectionParams buildPartial() {
       com.google.cloud.vision.v1.TextDetectionParams result =
           new com.google.cloud.vision.v1.TextDetectionParams(this);
-      int from_bitField0_ = bitField0_;
-      result.enableTextDetectionConfidenceScore_ = enableTextDetectionConfidenceScore_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        advancedOcrOptions_ = advancedOcrOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.advancedOcrOptions_ = advancedOcrOptions_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1.TextDetectionParams result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        advancedOcrOptions_ = advancedOcrOptions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.advancedOcrOptions_ = advancedOcrOptions_;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.TextDetectionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableTextDetectionConfidenceScore_ = enableTextDetectionConfidenceScore_;
+      }
     }
 
     @java.lang.Override
@@ -461,7 +475,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       if (!other.advancedOcrOptions_.isEmpty()) {
         if (advancedOcrOptions_.isEmpty()) {
           advancedOcrOptions_ = other.advancedOcrOptions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAdvancedOcrOptionsIsMutable();
           advancedOcrOptions_.addAll(other.advancedOcrOptions_);
@@ -497,7 +511,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
             case 72:
               {
                 enableTextDetectionConfidenceScore_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 72
             case 90:
@@ -561,6 +575,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public Builder setEnableTextDetectionConfidenceScore(boolean value) {
 
       enableTextDetectionConfidenceScore_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -578,7 +593,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableTextDetectionConfidenceScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableTextDetectionConfidenceScore_ = false;
       onChanged();
       return this;
@@ -588,9 +603,9 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdvancedOcrOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         advancedOcrOptions_ = new com.google.protobuf.LazyStringArrayList(advancedOcrOptions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -725,7 +740,7 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAdvancedOcrOptions() {
       advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

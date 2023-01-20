@@ -70,7 +70,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LIBRARY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object libraryName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object libraryName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -168,6 +172,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LEARN_MORE_URLS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList learnMoreUrls_;
   /**
    *
@@ -451,12 +457,11 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       libraryName_ = "";
-
       version_ = "";
-
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -484,16 +489,31 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary result =
           new com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary(this);
-      int from_bitField0_ = bitField0_;
-      result.libraryName_ = libraryName_;
-      result.version_ = version_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.learnMoreUrls_ = learnMoreUrls_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.learnMoreUrls_ = learnMoreUrls_;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.libraryName_ = libraryName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -544,16 +564,18 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getLibraryName().isEmpty()) {
         libraryName_ = other.libraryName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.learnMoreUrls_.isEmpty()) {
         if (learnMoreUrls_.isEmpty()) {
           learnMoreUrls_ = other.learnMoreUrls_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureLearnMoreUrlsIsMutable();
           learnMoreUrls_.addAll(other.learnMoreUrls_);
@@ -589,13 +611,13 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 libraryName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -685,8 +707,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       libraryName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +724,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLibraryName() {
-
       libraryName_ = getDefaultInstance().getLibraryName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -724,8 +746,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       libraryName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +813,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -808,8 +830,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -830,8 +852,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,9 +862,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLearnMoreUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList(learnMoreUrls_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -977,7 +999,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearLearnMoreUrls() {
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

@@ -67,6 +67,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList indices_;
   /**
    *
@@ -326,8 +328,8 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       indices_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -354,14 +356,24 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.webrisk.v1.RawIndices buildPartial() {
       com.google.webrisk.v1.RawIndices result = new com.google.webrisk.v1.RawIndices(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.webrisk.v1.RawIndices result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         indices_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.indices_ = indices_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.webrisk.v1.RawIndices result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -549,6 +561,7 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIndices(int index, int value) {
+
       ensureIndicesIsMutable();
       indices_.setInt(index, value);
       onChanged();
@@ -567,6 +580,7 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addIndices(int value) {
+
       ensureIndicesIsMutable();
       indices_.addInt(value);
       onChanged();

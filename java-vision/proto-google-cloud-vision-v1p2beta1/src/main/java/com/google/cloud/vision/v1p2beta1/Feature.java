@@ -414,7 +414,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -443,14 +443,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.Feature.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p2beta1.Feature.Type result =
-        com.google.cloud.vision.v1p2beta1.Feature.Type.valueOf(type_);
+        com.google.cloud.vision.v1p2beta1.Feature.Type.forNumber(type_);
     return result == null ? com.google.cloud.vision.v1p2beta1.Feature.Type.UNRECOGNIZED : result;
   }
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 2;
-  private int maxResults_;
+  private int maxResults_ = 0;
   /**
    *
    *
@@ -469,7 +468,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODEL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -740,12 +741,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       maxResults_ = 0;
-
       model_ = "";
-
       return this;
     }
 
@@ -773,11 +772,24 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p2beta1.Feature buildPartial() {
       com.google.cloud.vision.v1p2beta1.Feature result =
           new com.google.cloud.vision.v1p2beta1.Feature(this);
-      result.type_ = type_;
-      result.maxResults_ = maxResults_;
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p2beta1.Feature result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxResults_ = maxResults_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -833,6 +845,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -864,19 +877,19 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxResults_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -895,6 +908,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -925,8 +940,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -943,9 +958,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.Feature.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p2beta1.Feature.Type result =
-          com.google.cloud.vision.v1p2beta1.Feature.Type.valueOf(type_);
+          com.google.cloud.vision.v1p2beta1.Feature.Type.forNumber(type_);
       return result == null ? com.google.cloud.vision.v1p2beta1.Feature.Type.UNRECOGNIZED : result;
     }
     /**
@@ -964,7 +978,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -981,7 +995,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1020,6 +1034,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxResults(int value) {
 
       maxResults_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1036,7 +1051,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxResults_ = 0;
       onChanged();
       return this;
@@ -1112,8 +1127,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1132,8 +1147,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1157,8 +1172,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

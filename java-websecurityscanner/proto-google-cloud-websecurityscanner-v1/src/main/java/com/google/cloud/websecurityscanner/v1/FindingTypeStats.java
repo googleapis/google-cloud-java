@@ -69,7 +69,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FINDING_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object findingType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object findingType_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FINDING_COUNT_FIELD_NUMBER = 2;
-  private int findingCount_;
+  private int findingCount_ = 0;
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       findingType_ = "";
-
       findingCount_ = 0;
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.websecurityscanner.v1.FindingTypeStats buildPartial() {
       com.google.cloud.websecurityscanner.v1.FindingTypeStats result =
           new com.google.cloud.websecurityscanner.v1.FindingTypeStats(this);
-      result.findingType_ = findingType_;
-      result.findingCount_ = findingCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.FindingTypeStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.findingType_ = findingType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.findingCount_ = findingCount_;
+      }
     }
 
     @java.lang.Override
@@ -428,6 +440,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getFindingType().isEmpty()) {
         findingType_ = other.findingType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getFindingCount() != 0) {
@@ -462,13 +475,13 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 findingType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 findingCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -487,6 +500,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object findingType_ = "";
     /**
@@ -549,8 +564,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       findingType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,8 +581,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFindingType() {
-
       findingType_ = getDefaultInstance().getFindingType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -588,8 +603,8 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       findingType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,6 +640,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
     public Builder setFindingCount(int value) {
 
       findingCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -640,7 +656,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFindingCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       findingCount_ = 0;
       onChanged();
       return this;

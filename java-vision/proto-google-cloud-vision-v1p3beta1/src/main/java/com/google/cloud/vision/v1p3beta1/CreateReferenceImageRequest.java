@@ -69,7 +69,9 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,11 +181,15 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImageOrBuilder() {
-    return getReferenceImage();
+    return referenceImage_ == null
+        ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()
+        : referenceImage_;
   }
 
   public static final int REFERENCE_IMAGE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object referenceImageId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referenceImageId_ = "";
   /**
    *
    *
@@ -458,16 +464,14 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (referenceImageBuilder_ == null) {
-        referenceImage_ = null;
-      } else {
-        referenceImage_ = null;
+      referenceImage_ = null;
+      if (referenceImageBuilder_ != null) {
+        referenceImageBuilder_.dispose();
         referenceImageBuilder_ = null;
       }
       referenceImageId_ = "";
-
       return this;
     }
 
@@ -496,15 +500,26 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
     public com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest buildPartial() {
       com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest result =
           new com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest(this);
-      result.parent_ = parent_;
-      if (referenceImageBuilder_ == null) {
-        result.referenceImage_ = referenceImage_;
-      } else {
-        result.referenceImage_ = referenceImageBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.referenceImageId_ = referenceImageId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.referenceImage_ =
+            referenceImageBuilder_ == null ? referenceImage_ : referenceImageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.referenceImageId_ = referenceImageId_;
+      }
     }
 
     @java.lang.Override
@@ -556,6 +571,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReferenceImage()) {
@@ -563,6 +579,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
       }
       if (!other.getReferenceImageId().isEmpty()) {
         referenceImageId_ = other.referenceImageId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -594,19 +611,19 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getReferenceImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 referenceImageId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -625,6 +642,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -699,8 +718,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,8 +739,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -746,8 +765,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,7 +792,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      * @return Whether the referenceImage field is set.
      */
     public boolean hasReferenceImage() {
-      return referenceImageBuilder_ != null || referenceImage_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -816,11 +835,11 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         referenceImage_ = value;
-        onChanged();
       } else {
         referenceImageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,11 +858,11 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
         com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder builderForValue) {
       if (referenceImageBuilder_ == null) {
         referenceImage_ = builderForValue.build();
-        onChanged();
       } else {
         referenceImageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,19 +879,19 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      */
     public Builder mergeReferenceImage(com.google.cloud.vision.v1p3beta1.ReferenceImage value) {
       if (referenceImageBuilder_ == null) {
-        if (referenceImage_ != null) {
-          referenceImage_ =
-              com.google.cloud.vision.v1p3beta1.ReferenceImage.newBuilder(referenceImage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && referenceImage_ != null
+            && referenceImage_
+                != com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()) {
+          getReferenceImageBuilder().mergeFrom(value);
         } else {
           referenceImage_ = value;
         }
-        onChanged();
       } else {
         referenceImageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -888,14 +907,13 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearReferenceImage() {
-      if (referenceImageBuilder_ == null) {
-        referenceImage_ = null;
-        onChanged();
-      } else {
-        referenceImage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      referenceImage_ = null;
+      if (referenceImageBuilder_ != null) {
+        referenceImageBuilder_.dispose();
         referenceImageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -911,7 +929,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder getReferenceImageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReferenceImageFieldBuilder().getBuilder();
     }
@@ -1035,8 +1053,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       referenceImageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1055,8 +1073,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearReferenceImageId() {
-
       referenceImageId_ = getDefaultInstance().getReferenceImageId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1080,8 +1098,8 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       referenceImageId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

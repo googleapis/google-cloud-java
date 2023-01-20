@@ -69,6 +69,8 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERTICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p2beta1.Vertex> vertices_;
   /**
    *
@@ -138,6 +140,8 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NORMALIZED_VERTICES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p2beta1.NormalizedVertex> normalizedVertices_;
   /**
    *
@@ -419,6 +423,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (verticesBuilder_ == null) {
         vertices_ = java.util.Collections.emptyList();
       } else {
@@ -460,7 +465,15 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p2beta1.BoundingPoly buildPartial() {
       com.google.cloud.vision.v1p2beta1.BoundingPoly result =
           new com.google.cloud.vision.v1p2beta1.BoundingPoly(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1p2beta1.BoundingPoly result) {
       if (verticesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           vertices_ = java.util.Collections.unmodifiableList(vertices_);
@@ -479,8 +492,10 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.normalizedVertices_ = normalizedVerticesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p2beta1.BoundingPoly result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

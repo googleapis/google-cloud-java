@@ -362,7 +362,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENABLED_FIELD_NUMBER = 1;
-    private boolean enabled_;
+    private boolean enabled_ = false;
     /**
      *
      *
@@ -380,7 +380,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STATE_FIELD_NUMBER = 2;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -415,9 +415,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State result =
-          com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.valueOf(state_);
+          com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.UNRECOGNIZED
           : result;
@@ -640,10 +639,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enabled_ = false;
-
         state_ = 0;
-
         return this;
       }
 
@@ -672,10 +670,22 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService buildPartial() {
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService result =
             new com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService(this);
-        result.enabled_ = enabled_;
-        result.state_ = state_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.state_ = state_;
+        }
       }
 
       @java.lang.Override
@@ -763,13 +773,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   enabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -788,6 +798,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enabled_;
       /**
@@ -820,6 +832,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnabled(boolean value) {
 
         enabled_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -835,7 +848,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enabled_ = false;
         onChanged();
         return this;
@@ -876,8 +889,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -897,9 +910,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State result =
-            com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.valueOf(state_);
+            com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.forNumber(state_);
         return result == null
             ? com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.State.UNRECOGNIZED
             : result;
@@ -924,7 +936,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -944,7 +956,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         state_ = 0;
         onChanged();
         return this;
@@ -1018,7 +1030,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1120,7 +1134,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1169,7 +1183,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int INTERNET_ACCESS_FIELD_NUMBER = 6;
@@ -1218,7 +1232,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkServiceOrBuilder
       getInternetAccessOrBuilder() {
-    return getInternetAccess();
+    return internetAccess_ == null
+        ? com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.getDefaultInstance()
+        : internetAccess_;
   }
 
   public static final int EXTERNAL_IP_FIELD_NUMBER = 7;
@@ -1273,11 +1289,15 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkServiceOrBuilder
       getExternalIpOrBuilder() {
-    return getExternalIp();
+    return externalIp_ == null
+        ? com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.getDefaultInstance()
+        : externalIp_;
   }
 
   public static final int EDGE_SERVICES_CIDR_FIELD_NUMBER = 9;
-  private volatile java.lang.Object edgeServicesCidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object edgeServicesCidr_ = "";
   /**
    *
    *
@@ -1332,7 +1352,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -1381,7 +1403,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VMWARE_ENGINE_NETWORK_FIELD_NUMBER = 12;
-  private volatile java.lang.Object vmwareEngineNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmwareEngineNetwork_ = "";
   /**
    *
    *
@@ -1440,7 +1464,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 13;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1489,7 +1515,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VMWARE_ENGINE_NETWORK_CANONICAL_FIELD_NUMBER = 14;
-  private volatile java.lang.Object vmwareEngineNetworkCanonical_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmwareEngineNetworkCanonical_ = "";
   /**
    *
    *
@@ -1849,42 +1877,33 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (internetAccessBuilder_ == null) {
-        internetAccess_ = null;
-      } else {
-        internetAccess_ = null;
+      internetAccess_ = null;
+      if (internetAccessBuilder_ != null) {
+        internetAccessBuilder_.dispose();
         internetAccessBuilder_ = null;
       }
-      if (externalIpBuilder_ == null) {
-        externalIp_ = null;
-      } else {
-        externalIp_ = null;
+      externalIp_ = null;
+      if (externalIpBuilder_ != null) {
+        externalIpBuilder_.dispose();
         externalIpBuilder_ = null;
       }
       edgeServicesCidr_ = "";
-
       uid_ = "";
-
       vmwareEngineNetwork_ = "";
-
       description_ = "";
-
       vmwareEngineNetworkCanonical_ = "";
-
       return this;
     }
 
@@ -1912,34 +1931,46 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.NetworkPolicy buildPartial() {
       com.google.cloud.vmwareengine.v1.NetworkPolicy result =
           new com.google.cloud.vmwareengine.v1.NetworkPolicy(this);
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (internetAccessBuilder_ == null) {
-        result.internetAccess_ = internetAccess_;
-      } else {
-        result.internetAccess_ = internetAccessBuilder_.build();
-      }
-      if (externalIpBuilder_ == null) {
-        result.externalIp_ = externalIp_;
-      } else {
-        result.externalIp_ = externalIpBuilder_.build();
-      }
-      result.edgeServicesCidr_ = edgeServicesCidr_;
-      result.uid_ = uid_;
-      result.vmwareEngineNetwork_ = vmwareEngineNetwork_;
-      result.description_ = description_;
-      result.vmwareEngineNetworkCanonical_ = vmwareEngineNetworkCanonical_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.NetworkPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.internetAccess_ =
+            internetAccessBuilder_ == null ? internetAccess_ : internetAccessBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.externalIp_ = externalIpBuilder_ == null ? externalIp_ : externalIpBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.edgeServicesCidr_ = edgeServicesCidr_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.vmwareEngineNetwork_ = vmwareEngineNetwork_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.vmwareEngineNetworkCanonical_ = vmwareEngineNetworkCanonical_;
+      }
     }
 
     @java.lang.Override
@@ -1989,6 +2020,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.NetworkPolicy.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2005,22 +2037,27 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEdgeServicesCidr().isEmpty()) {
         edgeServicesCidr_ = other.edgeServicesCidr_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getVmwareEngineNetwork().isEmpty()) {
         vmwareEngineNetwork_ = other.vmwareEngineNetwork_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getVmwareEngineNetworkCanonical().isEmpty()) {
         vmwareEngineNetworkCanonical_ = other.vmwareEngineNetworkCanonical_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2052,61 +2089,61 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 50:
               {
                 input.readMessage(getInternetAccessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getExternalIpFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 74:
               {
                 edgeServicesCidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 82:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 98:
               {
                 vmwareEngineNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 98
             case 106:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 106
             case 114:
               {
                 vmwareEngineNetworkCanonical_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 114
             default:
@@ -2125,6 +2162,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2199,8 +2238,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2220,8 +2259,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2246,8 +2285,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2272,7 +2311,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2313,11 +2352,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2334,11 +2373,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2354,17 +2393,18 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2379,14 +2419,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2401,7 +2440,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2473,7 +2512,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2514,11 +2553,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2535,11 +2574,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2555,17 +2594,18 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2580,14 +2620,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2602,7 +2641,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2672,7 +2711,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the internetAccess field is set.
      */
     public boolean hasInternetAccess() {
-      return internetAccessBuilder_ != null || internetAccess_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2710,11 +2749,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         internetAccess_ = value;
-        onChanged();
       } else {
         internetAccessBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2730,11 +2769,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.Builder builderForValue) {
       if (internetAccessBuilder_ == null) {
         internetAccess_ = builderForValue.build();
-        onChanged();
       } else {
         internetAccessBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2749,20 +2788,20 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInternetAccess(
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService value) {
       if (internetAccessBuilder_ == null) {
-        if (internetAccess_ != null) {
-          internetAccess_ =
-              com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.newBuilder(
-                      internetAccess_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && internetAccess_ != null
+            && internetAccess_
+                != com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService
+                    .getDefaultInstance()) {
+          getInternetAccessBuilder().mergeFrom(value);
         } else {
           internetAccess_ = value;
         }
-        onChanged();
       } else {
         internetAccessBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2775,14 +2814,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService internet_access = 6;</code>
      */
     public Builder clearInternetAccess() {
-      if (internetAccessBuilder_ == null) {
-        internetAccess_ = null;
-        onChanged();
-      } else {
-        internetAccess_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internetAccess_ = null;
+      if (internetAccessBuilder_ != null) {
+        internetAccessBuilder_.dispose();
         internetAccessBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2796,7 +2834,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.Builder
         getInternetAccessBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInternetAccessFieldBuilder().getBuilder();
     }
@@ -2865,7 +2903,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the externalIp field is set.
      */
     public boolean hasExternalIp() {
-      return externalIpBuilder_ != null || externalIp_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2907,11 +2945,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         externalIp_ = value;
-        onChanged();
       } else {
         externalIpBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2929,11 +2967,11 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.Builder builderForValue) {
       if (externalIpBuilder_ == null) {
         externalIp_ = builderForValue.build();
-        onChanged();
       } else {
         externalIpBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2950,19 +2988,20 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeExternalIp(
         com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService value) {
       if (externalIpBuilder_ == null) {
-        if (externalIp_ != null) {
-          externalIp_ =
-              com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.newBuilder(externalIp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && externalIp_ != null
+            && externalIp_
+                != com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService
+                    .getDefaultInstance()) {
+          getExternalIpBuilder().mergeFrom(value);
         } else {
           externalIp_ = value;
         }
-        onChanged();
       } else {
         externalIpBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2977,14 +3016,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService external_ip = 7;</code>
      */
     public Builder clearExternalIp() {
-      if (externalIpBuilder_ == null) {
-        externalIp_ = null;
-        onChanged();
-      } else {
-        externalIp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      externalIp_ = null;
+      if (externalIpBuilder_ != null) {
+        externalIpBuilder_.dispose();
         externalIpBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3000,7 +3038,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService.Builder
         getExternalIpBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getExternalIpFieldBuilder().getBuilder();
     }
@@ -3123,8 +3161,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       edgeServicesCidr_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3143,8 +3181,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEdgeServicesCidr() {
-
       edgeServicesCidr_ = getDefaultInstance().getEdgeServicesCidr();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3168,8 +3206,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       edgeServicesCidr_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3235,8 +3273,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3252,8 +3290,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3274,8 +3312,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3356,8 +3394,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmwareEngineNetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3378,8 +3416,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmwareEngineNetwork() {
-
       vmwareEngineNetwork_ = getDefaultInstance().getVmwareEngineNetwork();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3405,8 +3443,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmwareEngineNetwork_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3472,8 +3510,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3489,8 +3527,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3511,8 +3549,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3587,8 +3625,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmwareEngineNetworkCanonical_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3607,8 +3645,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmwareEngineNetworkCanonical() {
-
       vmwareEngineNetworkCanonical_ = getDefaultInstance().getVmwareEngineNetworkCanonical();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3632,8 +3670,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmwareEngineNetworkCanonical_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

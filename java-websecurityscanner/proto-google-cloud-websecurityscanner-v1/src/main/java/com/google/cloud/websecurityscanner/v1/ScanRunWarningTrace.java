@@ -307,7 +307,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -336,9 +336,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code result =
-        com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.valueOf(code_);
+        com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.forNumber(code_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.UNRECOGNIZED
         : result;
@@ -548,8 +547,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       return this;
     }
 
@@ -577,9 +576,18 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     public com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace buildPartial() {
       com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace result =
           new com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace(this);
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -660,7 +668,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -679,6 +687,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -709,8 +719,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,9 +737,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code result =
-          com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.valueOf(code_);
+          com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.forNumber(code_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.Code.UNRECOGNIZED
           : result;
@@ -750,7 +759,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -767,7 +776,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;

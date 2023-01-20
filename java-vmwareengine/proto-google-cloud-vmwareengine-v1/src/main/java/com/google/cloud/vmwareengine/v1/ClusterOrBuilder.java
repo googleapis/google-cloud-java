@@ -257,7 +257,6 @@ public interface ClusterOrBuilder
    * map&lt;string, .google.cloud.vmwareengine.v1.NodeTypeConfig&gt; node_type_configs = 16 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.vmwareengine.v1.NodeTypeConfig getNodeTypeConfigsOrDefault(
       java.lang.String key,

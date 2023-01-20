@@ -386,7 +386,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -419,9 +419,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.MigrationError.ErrorCode getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.MigrationError.ErrorCode result =
-        com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.valueOf(code_);
+        com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.forNumber(code_);
     return result == null
         ? com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.UNRECOGNIZED
         : result;
@@ -478,7 +477,9 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.LocalizedMessageOrBuilder getErrorMessageOrBuilder() {
-    return getErrorMessage();
+    return errorMessage_ == null
+        ? com.google.rpc.LocalizedMessage.getDefaultInstance()
+        : errorMessage_;
   }
 
   public static final int ACTION_ITEM_FIELD_NUMBER = 3;
@@ -530,10 +531,12 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.LocalizedMessageOrBuilder getActionItemOrBuilder() {
-    return getActionItem();
+    return actionItem_ == null ? com.google.rpc.LocalizedMessage.getDefaultInstance() : actionItem_;
   }
 
   public static final int HELP_LINKS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Help.Link> helpLinks_;
   /**
    *
@@ -662,7 +665,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getErrorTimeOrBuilder() {
-    return getErrorTime();
+    return errorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : errorTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -921,18 +924,16 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
-      if (errorMessageBuilder_ == null) {
-        errorMessage_ = null;
-      } else {
-        errorMessage_ = null;
+      errorMessage_ = null;
+      if (errorMessageBuilder_ != null) {
+        errorMessageBuilder_.dispose();
         errorMessageBuilder_ = null;
       }
-      if (actionItemBuilder_ == null) {
-        actionItem_ = null;
-      } else {
-        actionItem_ = null;
+      actionItem_ = null;
+      if (actionItemBuilder_ != null) {
+        actionItemBuilder_.dispose();
         actionItemBuilder_ = null;
       }
       if (helpLinksBuilder_ == null) {
@@ -941,11 +942,10 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
         helpLinks_ = null;
         helpLinksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (errorTimeBuilder_ == null) {
-        errorTime_ = null;
-      } else {
-        errorTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      errorTime_ = null;
+      if (errorTimeBuilder_ != null) {
+        errorTimeBuilder_.dispose();
         errorTimeBuilder_ = null;
       }
       return this;
@@ -975,34 +975,41 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.MigrationError buildPartial() {
       com.google.cloud.vmmigration.v1.MigrationError result =
           new com.google.cloud.vmmigration.v1.MigrationError(this);
-      int from_bitField0_ = bitField0_;
-      result.code_ = code_;
-      if (errorMessageBuilder_ == null) {
-        result.errorMessage_ = errorMessage_;
-      } else {
-        result.errorMessage_ = errorMessageBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionItemBuilder_ == null) {
-        result.actionItem_ = actionItem_;
-      } else {
-        result.actionItem_ = actionItemBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vmmigration.v1.MigrationError result) {
       if (helpLinksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           helpLinks_ = java.util.Collections.unmodifiableList(helpLinks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.helpLinks_ = helpLinks_;
       } else {
         result.helpLinks_ = helpLinksBuilder_.build();
       }
-      if (errorTimeBuilder_ == null) {
-        result.errorTime_ = errorTime_;
-      } else {
-        result.errorTime_ = errorTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.MigrationError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorMessage_ =
+            errorMessageBuilder_ == null ? errorMessage_ : errorMessageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actionItem_ = actionItemBuilder_ == null ? actionItem_ : actionItemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.errorTime_ = errorTimeBuilder_ == null ? errorTime_ : errorTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1063,7 +1070,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
         if (!other.helpLinks_.isEmpty()) {
           if (helpLinks_.isEmpty()) {
             helpLinks_ = other.helpLinks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureHelpLinksIsMutable();
             helpLinks_.addAll(other.helpLinks_);
@@ -1076,7 +1083,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
             helpLinksBuilder_.dispose();
             helpLinksBuilder_ = null;
             helpLinks_ = other.helpLinks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             helpLinksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHelpLinksFieldBuilder()
@@ -1118,19 +1125,19 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getErrorMessageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getActionItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1148,7 +1155,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getErrorTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1203,8 +1210,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1223,9 +1230,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.MigrationError.ErrorCode getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.MigrationError.ErrorCode result =
-          com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.valueOf(code_);
+          com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.forNumber(code_);
       return result == null
           ? com.google.cloud.vmmigration.v1.MigrationError.ErrorCode.UNRECOGNIZED
           : result;
@@ -1248,7 +1254,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -1267,7 +1273,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -1293,7 +1299,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorMessage field is set.
      */
     public boolean hasErrorMessage() {
-      return errorMessageBuilder_ != null || errorMessage_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1334,11 +1340,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorMessage_ = value;
-        onChanged();
       } else {
         errorMessageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1355,11 +1361,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     public Builder setErrorMessage(com.google.rpc.LocalizedMessage.Builder builderForValue) {
       if (errorMessageBuilder_ == null) {
         errorMessage_ = builderForValue.build();
-        onChanged();
       } else {
         errorMessageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1375,19 +1381,18 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeErrorMessage(com.google.rpc.LocalizedMessage value) {
       if (errorMessageBuilder_ == null) {
-        if (errorMessage_ != null) {
-          errorMessage_ =
-              com.google.rpc.LocalizedMessage.newBuilder(errorMessage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && errorMessage_ != null
+            && errorMessage_ != com.google.rpc.LocalizedMessage.getDefaultInstance()) {
+          getErrorMessageBuilder().mergeFrom(value);
         } else {
           errorMessage_ = value;
         }
-        onChanged();
       } else {
         errorMessageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1402,14 +1407,13 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearErrorMessage() {
-      if (errorMessageBuilder_ == null) {
-        errorMessage_ = null;
-        onChanged();
-      } else {
-        errorMessage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      errorMessage_ = null;
+      if (errorMessageBuilder_ != null) {
+        errorMessageBuilder_.dispose();
         errorMessageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1424,7 +1428,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.rpc.LocalizedMessage.Builder getErrorMessageBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorMessageFieldBuilder().getBuilder();
     }
@@ -1496,7 +1500,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the actionItem field is set.
      */
     public boolean hasActionItem() {
-      return actionItemBuilder_ != null || actionItem_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1537,11 +1541,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         actionItem_ = value;
-        onChanged();
       } else {
         actionItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1558,11 +1562,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     public Builder setActionItem(com.google.rpc.LocalizedMessage.Builder builderForValue) {
       if (actionItemBuilder_ == null) {
         actionItem_ = builderForValue.build();
-        onChanged();
       } else {
         actionItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1578,19 +1582,18 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeActionItem(com.google.rpc.LocalizedMessage value) {
       if (actionItemBuilder_ == null) {
-        if (actionItem_ != null) {
-          actionItem_ =
-              com.google.rpc.LocalizedMessage.newBuilder(actionItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && actionItem_ != null
+            && actionItem_ != com.google.rpc.LocalizedMessage.getDefaultInstance()) {
+          getActionItemBuilder().mergeFrom(value);
         } else {
           actionItem_ = value;
         }
-        onChanged();
       } else {
         actionItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1605,14 +1608,13 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearActionItem() {
-      if (actionItemBuilder_ == null) {
-        actionItem_ = null;
-        onChanged();
-      } else {
-        actionItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      actionItem_ = null;
+      if (actionItemBuilder_ != null) {
+        actionItemBuilder_.dispose();
         actionItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1627,7 +1629,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.rpc.LocalizedMessage.Builder getActionItemBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getActionItemFieldBuilder().getBuilder();
     }
@@ -1682,9 +1684,9 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.rpc.Help.Link> helpLinks_ = java.util.Collections.emptyList();
 
     private void ensureHelpLinksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         helpLinks_ = new java.util.ArrayList<com.google.rpc.Help.Link>(helpLinks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1929,7 +1931,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHelpLinks() {
       if (helpLinksBuilder_ == null) {
         helpLinks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         helpLinksBuilder_.clear();
@@ -2069,7 +2071,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
                 com.google.rpc.Help.Link,
                 com.google.rpc.Help.Link.Builder,
                 com.google.rpc.Help.LinkOrBuilder>(
-                helpLinks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                helpLinks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         helpLinks_ = null;
       }
       return helpLinksBuilder_;
@@ -2094,7 +2096,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorTime field is set.
      */
     public boolean hasErrorTime() {
-      return errorTimeBuilder_ != null || errorTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2131,11 +2133,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorTime_ = value;
-        onChanged();
       } else {
         errorTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2151,11 +2153,11 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
     public Builder setErrorTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (errorTimeBuilder_ == null) {
         errorTime_ = builderForValue.build();
-        onChanged();
       } else {
         errorTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2170,17 +2172,18 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeErrorTime(com.google.protobuf.Timestamp value) {
       if (errorTimeBuilder_ == null) {
-        if (errorTime_ != null) {
-          errorTime_ =
-              com.google.protobuf.Timestamp.newBuilder(errorTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && errorTime_ != null
+            && errorTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getErrorTimeBuilder().mergeFrom(value);
         } else {
           errorTime_ = value;
         }
-        onChanged();
       } else {
         errorTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2194,14 +2197,13 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearErrorTime() {
-      if (errorTimeBuilder_ == null) {
-        errorTime_ = null;
-        onChanged();
-      } else {
-        errorTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      errorTime_ = null;
+      if (errorTimeBuilder_ != null) {
+        errorTimeBuilder_.dispose();
         errorTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2215,7 +2217,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getErrorTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getErrorTimeFieldBuilder().getBuilder();
     }

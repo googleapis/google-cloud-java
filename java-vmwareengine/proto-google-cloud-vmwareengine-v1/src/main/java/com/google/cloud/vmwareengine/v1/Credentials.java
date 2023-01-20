@@ -69,7 +69,9 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       password_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.Credentials buildPartial() {
       com.google.cloud.vmwareengine.v1.Credentials result =
           new com.google.cloud.vmwareengine.v1.Credentials(this);
-      result.username_ = username_;
-      result.password_ = password_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.Credentials result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.password_ = password_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.Credentials.getDefaultInstance()) return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -516,6 +532,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -578,8 +596,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class Credentials extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

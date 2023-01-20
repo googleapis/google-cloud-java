@@ -671,7 +671,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object username_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object username_ = "";
       /**
        *
        *
@@ -720,7 +722,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PASSWORD_FIELD_NUMBER = 2;
-      private volatile java.lang.Object password_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object password_ = "";
       /**
        *
        *
@@ -1012,10 +1016,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           username_ = "";
-
           password_ = "";
-
           return this;
         }
 
@@ -1050,10 +1053,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               result =
                   new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
                       .GoogleAccount(this);
-          result.username_ = username_;
-          result.password_ = password_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.username_ = username_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.password_ = password_;
+          }
         }
 
         @java.lang.Override
@@ -1114,10 +1130,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getPassword().isEmpty()) {
             password_ = other.password_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -1149,13 +1167,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     username_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     password_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -1174,6 +1192,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object username_ = "";
         /**
@@ -1236,8 +1256,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1253,8 +1273,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUsername() {
-
           username_ = getDefaultInstance().getUsername();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1275,8 +1295,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1351,8 +1371,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1371,8 +1391,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPassword() {
-
           password_ = getDefaultInstance().getPassword();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -1396,8 +1416,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1614,7 +1634,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object username_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object username_ = "";
       /**
        *
        *
@@ -1663,7 +1685,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PASSWORD_FIELD_NUMBER = 2;
-      private volatile java.lang.Object password_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object password_ = "";
       /**
        *
        *
@@ -1718,7 +1742,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int LOGIN_URL_FIELD_NUMBER = 3;
-      private volatile java.lang.Object loginUrl_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object loginUrl_ = "";
       /**
        *
        *
@@ -2013,12 +2039,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           username_ = "";
-
           password_ = "";
-
           loginUrl_ = "";
-
           return this;
         }
 
@@ -2053,11 +2077,26 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               result =
                   new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
                       .CustomAccount(this);
-          result.username_ = username_;
-          result.password_ = password_;
-          result.loginUrl_ = loginUrl_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.username_ = username_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.password_ = password_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.loginUrl_ = loginUrl_;
+          }
         }
 
         @java.lang.Override
@@ -2118,14 +2157,17 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getPassword().isEmpty()) {
             password_ = other.password_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           if (!other.getLoginUrl().isEmpty()) {
             loginUrl_ = other.loginUrl_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2157,19 +2199,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     username_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     password_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 case 26:
                   {
                     loginUrl_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 26
                 default:
@@ -2188,6 +2230,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object username_ = "";
         /**
@@ -2250,8 +2294,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2267,8 +2311,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearUsername() {
-
           username_ = getDefaultInstance().getUsername();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2289,8 +2333,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2365,8 +2409,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2385,8 +2429,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPassword() {
-
           password_ = getDefaultInstance().getPassword();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -2410,8 +2454,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2477,8 +2521,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           loginUrl_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2494,8 +2538,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearLoginUrl() {
-
           loginUrl_ = getDefaultInstance().getLoginUrl();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -2516,8 +2560,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           loginUrl_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3013,6 +3057,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (googleAccountBuilder_ != null) {
           googleAccountBuilder_.clear();
         }
@@ -3051,23 +3096,29 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication buildPartial() {
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result =
             new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication(this);
-        if (authenticationCase_ == 1) {
-          if (googleAccountBuilder_ == null) {
-            result.authentication_ = authentication_;
-          } else {
-            result.authentication_ = googleAccountBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (authenticationCase_ == 2) {
-          if (customAccountBuilder_ == null) {
-            result.authentication_ = authentication_;
-          } else {
-            result.authentication_ = customAccountBuilder_.build();
-          }
-        }
-        result.authenticationCase_ = authenticationCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result) {
+        result.authenticationCase_ = authenticationCase_;
+        result.authentication_ = this.authentication_;
+        if (authenticationCase_ == 1 && googleAccountBuilder_ != null) {
+          result.authentication_ = googleAccountBuilder_.build();
+        }
+        if (authenticationCase_ == 2 && customAccountBuilder_ != null) {
+          result.authentication_ = customAccountBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3206,6 +3257,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount,
@@ -3465,7 +3518,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         authenticationCase_ = 1;
         onChanged();
-        ;
         return googleAccountBuilder_;
       }
 
@@ -3727,7 +3779,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         authenticationCase_ = 2;
         onChanged();
-        ;
         return customAccountBuilder_;
       }
 
@@ -3962,11 +4013,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
-      return getScheduleTime();
+      return scheduleTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : scheduleTime_;
     }
 
     public static final int INTERVAL_DURATION_DAYS_FIELD_NUMBER = 2;
-    private int intervalDurationDays_;
+    private int intervalDurationDays_ = 0;
     /**
      *
      *
@@ -4199,14 +4252,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (scheduleTimeBuilder_ == null) {
-          scheduleTime_ = null;
-        } else {
-          scheduleTime_ = null;
+        bitField0_ = 0;
+        scheduleTime_ = null;
+        if (scheduleTimeBuilder_ != null) {
+          scheduleTimeBuilder_.dispose();
           scheduleTimeBuilder_ = null;
         }
         intervalDurationDays_ = 0;
-
         return this;
       }
 
@@ -4235,14 +4287,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule buildPartial() {
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule result =
             new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule(this);
-        if (scheduleTimeBuilder_ == null) {
-          result.scheduleTime_ = scheduleTime_;
-        } else {
-          result.scheduleTime_ = scheduleTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.intervalDurationDays_ = intervalDurationDays_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleTime_ =
+              scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.intervalDurationDays_ = intervalDurationDays_;
+        }
       }
 
       @java.lang.Override
@@ -4330,13 +4391,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   intervalDurationDays_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -4355,6 +4416,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp scheduleTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4377,7 +4440,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the scheduleTime field is set.
        */
       public boolean hasScheduleTime() {
-        return scheduleTimeBuilder_ != null || scheduleTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4420,11 +4483,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           scheduleTime_ = value;
-          onChanged();
         } else {
           scheduleTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4442,11 +4505,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (scheduleTimeBuilder_ == null) {
           scheduleTime_ = builderForValue.build();
-          onChanged();
         } else {
           scheduleTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4463,19 +4526,18 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
         if (scheduleTimeBuilder_ == null) {
-          if (scheduleTime_ != null) {
-            scheduleTime_ =
-                com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && scheduleTime_ != null
+              && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getScheduleTimeBuilder().mergeFrom(value);
           } else {
             scheduleTime_ = value;
           }
-          onChanged();
         } else {
           scheduleTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4491,14 +4553,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
        */
       public Builder clearScheduleTime() {
-        if (scheduleTimeBuilder_ == null) {
-          scheduleTime_ = null;
-          onChanged();
-        } else {
-          scheduleTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scheduleTime_ = null;
+        if (scheduleTimeBuilder_ != null) {
+          scheduleTimeBuilder_.dispose();
           scheduleTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4514,7 +4575,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getScheduleTimeFieldBuilder().getBuilder();
       }
@@ -4599,6 +4660,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setIntervalDurationDays(int value) {
 
         intervalDurationDays_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4614,7 +4676,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIntervalDurationDays() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         intervalDurationDays_ = 0;
         onChanged();
         return this;
@@ -4688,7 +4750,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -4741,7 +4805,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -4790,7 +4856,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_QPS_FIELD_NUMBER = 3;
-  private int maxQps_;
+  private int maxQps_ = 0;
   /**
    *
    *
@@ -4811,6 +4877,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STARTING_URLS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList startingUrls_;
   /**
    *
@@ -4923,11 +4991,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder
       getAuthenticationOrBuilder() {
-    return getAuthentication();
+    return authentication_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance()
+        : authentication_;
   }
 
   public static final int USER_AGENT_FIELD_NUMBER = 6;
-  private int userAgent_;
+  private int userAgent_ = 0;
   /**
    *
    *
@@ -4956,15 +5026,16 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result =
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.forNumber(userAgent_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED
         : result;
   }
 
   public static final int BLACKLIST_PATTERNS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList blacklistPatterns_;
   /**
    *
@@ -5075,11 +5146,16 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder
       getScheduleOrBuilder() {
-    return getSchedule();
+    return schedule_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance()
+        : schedule_;
   }
 
   public static final int TARGET_PLATFORMS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> targetPlatforms_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
       targetPlatforms_converter_ =
@@ -5088,9 +5164,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>() {
             public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform result =
-                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform.valueOf(
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform.forNumber(
                       from);
               return result == null
                   ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform
@@ -5242,7 +5317,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getLatestRunOrBuilder() {
-    return getLatestRun();
+    return latestRun_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()
+        : latestRun_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5575,36 +5652,30 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       maxQps_ = 0;
-
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (authenticationBuilder_ == null) {
-        authentication_ = null;
-      } else {
-        authentication_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      authentication_ = null;
+      if (authenticationBuilder_ != null) {
+        authenticationBuilder_.dispose();
         authenticationBuilder_ = null;
       }
       userAgent_ = 0;
-
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-      } else {
-        schedule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
         scheduleBuilder_ = null;
       }
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (latestRunBuilder_ == null) {
-        latestRun_ = null;
-      } else {
-        latestRun_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      latestRun_ = null;
+      if (latestRunBuilder_ != null) {
+        latestRunBuilder_.dispose();
         latestRunBuilder_ = null;
       }
       return this;
@@ -5634,43 +5705,57 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig result =
           new com.google.cloud.websecurityscanner.v1alpha.ScanConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.maxQps_ = maxQps_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        startingUrls_ = startingUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.startingUrls_ = startingUrls_;
-      if (authenticationBuilder_ == null) {
-        result.authentication_ = authentication_;
-      } else {
-        result.authentication_ = authenticationBuilder_.build();
-      }
-      result.userAgent_ = userAgent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.blacklistPatterns_ = blacklistPatterns_;
-      if (scheduleBuilder_ == null) {
-        result.schedule_ = schedule_;
-      } else {
-        result.schedule_ = scheduleBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.targetPlatforms_ = targetPlatforms_;
-      if (latestRunBuilder_ == null) {
-        result.latestRun_ = latestRun_;
-      } else {
-        result.latestRun_ = latestRunBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        startingUrls_ = startingUrls_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.startingUrls_ = startingUrls_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.blacklistPatterns_ = blacklistPatterns_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.targetPlatforms_ = targetPlatforms_;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1alpha.ScanConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxQps_ = maxQps_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.authentication_ =
+            authenticationBuilder_ == null ? authentication_ : authenticationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.latestRun_ = latestRunBuilder_ == null ? latestRun_ : latestRunBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5721,10 +5806,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getMaxQps() != 0) {
@@ -5733,7 +5820,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.startingUrls_.isEmpty()) {
         if (startingUrls_.isEmpty()) {
           startingUrls_ = other.startingUrls_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureStartingUrlsIsMutable();
           startingUrls_.addAll(other.startingUrls_);
@@ -5749,7 +5836,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.blacklistPatterns_.isEmpty()) {
         if (blacklistPatterns_.isEmpty()) {
           blacklistPatterns_ = other.blacklistPatterns_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureBlacklistPatternsIsMutable();
           blacklistPatterns_.addAll(other.blacklistPatterns_);
@@ -5762,7 +5849,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetPlatforms_.isEmpty()) {
         if (targetPlatforms_.isEmpty()) {
           targetPlatforms_ = other.targetPlatforms_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureTargetPlatformsIsMutable();
           targetPlatforms_.addAll(other.targetPlatforms_);
@@ -5801,19 +5888,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 maxQps_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -5826,13 +5913,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getAuthenticationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 userAgent_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
@@ -5845,7 +5932,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getScheduleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
@@ -5870,7 +5957,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getLatestRunFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             default:
@@ -5959,8 +6046,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5978,8 +6065,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -6002,8 +6089,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -6069,8 +6156,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6086,8 +6173,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -6108,8 +6195,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6151,6 +6238,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxQps(int value) {
 
       maxQps_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6169,7 +6257,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxQps() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxQps_ = 0;
       onChanged();
       return this;
@@ -6179,9 +6267,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStartingUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -6316,7 +6404,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStartingUrls() {
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6363,7 +6451,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the authentication field is set.
      */
     public boolean hasAuthentication() {
-      return authenticationBuilder_ != null || authentication_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -6407,11 +6495,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         authentication_ = value;
-        onChanged();
       } else {
         authenticationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6430,11 +6518,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (authenticationBuilder_ == null) {
         authentication_ = builderForValue.build();
-        onChanged();
       } else {
         authenticationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6451,20 +6539,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAuthentication(
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication value) {
       if (authenticationBuilder_ == null) {
-        if (authentication_ != null) {
-          authentication_ =
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.newBuilder(
-                      authentication_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && authentication_ != null
+            && authentication_
+                != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                    .getDefaultInstance()) {
+          getAuthenticationBuilder().mergeFrom(value);
         } else {
           authentication_ = value;
         }
-        onChanged();
       } else {
         authenticationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6479,14 +6567,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAuthentication() {
-      if (authenticationBuilder_ == null) {
-        authentication_ = null;
-        onChanged();
-      } else {
-        authentication_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      authentication_ = null;
+      if (authenticationBuilder_ != null) {
+        authenticationBuilder_.dispose();
         authenticationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6502,7 +6589,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder
         getAuthenticationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAuthenticationFieldBuilder().getBuilder();
     }
@@ -6585,8 +6672,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUserAgentValue(int value) {
-
       userAgent_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6603,9 +6690,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result =
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.forNumber(userAgent_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED
           : result;
@@ -6627,7 +6713,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       userAgent_ = value.getNumber();
       onChanged();
       return this;
@@ -6644,7 +6730,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserAgent() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       userAgent_ = 0;
       onChanged();
       return this;
@@ -6654,9 +6740,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlacklistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -6799,7 +6885,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBlacklistPatterns() {
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -6845,7 +6931,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
-      return scheduleBuilder_ != null || schedule_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -6883,11 +6969,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         schedule_ = value;
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6903,11 +6989,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder builderForValue) {
       if (scheduleBuilder_ == null) {
         schedule_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6922,19 +7008,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSchedule(
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule value) {
       if (scheduleBuilder_ == null) {
-        if (schedule_ != null) {
-          schedule_ =
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.newBuilder(schedule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && schedule_ != null
+            && schedule_
+                != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+                    .getDefaultInstance()) {
+          getScheduleBuilder().mergeFrom(value);
         } else {
           schedule_ = value;
         }
-        onChanged();
       } else {
         scheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -6947,14 +7034,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
     public Builder clearSchedule() {
-      if (scheduleBuilder_ == null) {
-        schedule_ = null;
-        onChanged();
-      } else {
-        schedule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      schedule_ = null;
+      if (scheduleBuilder_ != null) {
+        scheduleBuilder_.dispose();
         scheduleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6968,7 +7054,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder
         getScheduleBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
@@ -7020,9 +7106,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> targetPlatforms_ = java.util.Collections.emptyList();
 
     private void ensureTargetPlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>(targetPlatforms_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -7174,7 +7260,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetPlatforms() {
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -7298,7 +7384,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the latestRun field is set.
      */
     public boolean hasLatestRun() {
-      return latestRunBuilder_ != null || latestRun_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -7335,11 +7421,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         latestRun_ = value;
-        onChanged();
       } else {
         latestRunBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7355,11 +7441,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder builderForValue) {
       if (latestRunBuilder_ == null) {
         latestRun_ = builderForValue.build();
-        onChanged();
       } else {
         latestRunBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7373,19 +7459,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLatestRun(com.google.cloud.websecurityscanner.v1alpha.ScanRun value) {
       if (latestRunBuilder_ == null) {
-        if (latestRun_ != null) {
-          latestRun_ =
-              com.google.cloud.websecurityscanner.v1alpha.ScanRun.newBuilder(latestRun_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && latestRun_ != null
+            && latestRun_
+                != com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()) {
+          getLatestRunBuilder().mergeFrom(value);
         } else {
           latestRun_ = value;
         }
-        onChanged();
       } else {
         latestRunBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -7398,14 +7484,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
      */
     public Builder clearLatestRun() {
-      if (latestRunBuilder_ == null) {
-        latestRun_ = null;
-        onChanged();
-      } else {
-        latestRun_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      latestRun_ = null;
+      if (latestRunBuilder_ != null) {
+        latestRunBuilder_.dispose();
         latestRunBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7418,7 +7503,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder getLatestRunBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLatestRunFieldBuilder().getBuilder();
     }

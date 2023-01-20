@@ -70,7 +70,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int MID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mid_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -221,7 +227,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int SCORE_FIELD_NUMBER = 4;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -283,7 +289,9 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-    return getBoundingPoly();
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -526,18 +534,14 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mid_ = "";
-
       languageCode_ = "";
-
       name_ = "";
-
       score_ = 0F;
-
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-      } else {
-        boundingPoly_ = null;
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
       return this;
@@ -567,17 +571,31 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation buildPartial() {
       com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation result =
           new com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation(this);
-      result.mid_ = mid_;
-      result.languageCode_ = languageCode_;
-      result.name_ = name_;
-      result.score_ = score_;
-      if (boundingPolyBuilder_ == null) {
-        result.boundingPoly_ = boundingPoly_;
-      } else {
-        result.boundingPoly_ = boundingPolyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mid_ = mid_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.boundingPoly_ =
+            boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -628,14 +646,17 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         return this;
       if (!other.getMid().isEmpty()) {
         mid_ = other.mid_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getScore() != 0F) {
@@ -673,31 +694,31 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
             case 10:
               {
                 mid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
               {
                 input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -716,6 +737,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object mid_ = "";
     /**
@@ -778,8 +801,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       mid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,8 +818,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMid() {
-
       mid_ = getDefaultInstance().getMid();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +840,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -890,8 +913,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,8 +932,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -933,8 +956,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,8 +1023,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1017,8 +1040,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1039,8 +1062,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1076,6 +1099,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1091,7 +1115,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       score_ = 0F;
       onChanged();
       return this;
@@ -1115,7 +1139,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
-      return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1152,11 +1176,11 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         boundingPoly_ = value;
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1172,11 +1196,11 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
         com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder builderForValue) {
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1190,19 +1214,19 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      */
     public Builder mergeBoundingPoly(com.google.cloud.vision.v1p4beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
-        if (boundingPoly_ != null) {
-          boundingPoly_ =
-              com.google.cloud.vision.v1p4beta1.BoundingPoly.newBuilder(boundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && boundingPoly_ != null
+            && boundingPoly_
+                != com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingPolyBuilder().mergeFrom(value);
         } else {
           boundingPoly_ = value;
         }
-        onChanged();
       } else {
         boundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1215,14 +1239,13 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
      */
     public Builder clearBoundingPoly() {
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-        onChanged();
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1235,7 +1258,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 5;</code>
      */
     public com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }

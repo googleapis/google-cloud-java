@@ -70,7 +70,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SOURCE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sourceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceId_ = "";
   /**
    *
    *
@@ -217,11 +221,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.SourceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null ? com.google.cloud.vmmigration.v1.Source.getDefaultInstance() : source_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -518,18 +524,15 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       sourceId_ = "";
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -557,16 +560,27 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vmmigration.v1.CreateSourceRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateSourceRequest result =
           new com.google.cloud.vmmigration.v1.CreateSourceRequest(this);
-      result.parent_ = parent_;
-      result.sourceId_ = sourceId_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CreateSourceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceId_ = sourceId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -617,10 +631,12 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSourceId().isEmpty()) {
         sourceId_ = other.sourceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSource()) {
@@ -628,6 +644,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -659,25 +676,25 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sourceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -696,6 +713,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -764,8 +783,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -783,8 +802,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -807,8 +826,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,8 +893,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,8 +910,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSourceId() {
-
       sourceId_ = getDefaultInstance().getSourceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -913,8 +932,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -939,7 +958,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -980,11 +999,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1001,11 +1020,11 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
     public Builder setSource(com.google.cloud.vmmigration.v1.Source.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1021,19 +1040,18 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSource(com.google.cloud.vmmigration.v1.Source value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.vmmigration.v1.Source.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && source_ != null
+            && source_ != com.google.cloud.vmmigration.v1.Source.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1048,14 +1066,13 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1070,7 +1087,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.vmmigration.v1.Source.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -1213,8 +1230,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1240,8 +1257,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1272,8 +1289,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

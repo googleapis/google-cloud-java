@@ -171,7 +171,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object languageCode_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object languageCode_ = "";
     /**
      *
      *
@@ -224,7 +226,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CONFIDENCE_FIELD_NUMBER = 2;
-    private float confidence_;
+    private float confidence_ = 0F;
     /**
      *
      *
@@ -451,10 +453,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         languageCode_ = "";
-
         confidence_ = 0F;
-
         return this;
       }
 
@@ -483,10 +484,22 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage buildPartial() {
         com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage result =
             new com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage(this);
-        result.languageCode_ = languageCode_;
-        result.confidence_ = confidence_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.languageCode_ = languageCode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.confidence_ = confidence_;
+        }
       }
 
       @java.lang.Override
@@ -540,6 +553,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getLanguageCode().isEmpty()) {
           languageCode_ = other.languageCode_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getConfidence() != 0F) {
@@ -574,13 +588,13 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   languageCode_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 21:
                 {
                   confidence_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -599,6 +613,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object languageCode_ = "";
       /**
@@ -667,8 +683,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         languageCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -686,8 +702,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
-
         languageCode_ = getDefaultInstance().getLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -710,8 +726,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         languageCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -747,6 +763,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public Builder setConfidence(float value) {
 
         confidence_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -762,7 +779,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearConfidence() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         confidence_ = 0F;
         onChanged();
         return this;
@@ -1153,7 +1170,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1182,16 +1199,15 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType result =
-          com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.valueOf(type_);
+          com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.forNumber(type_);
       return result == null
           ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.UNRECOGNIZED
           : result;
     }
 
     public static final int IS_PREFIX_FIELD_NUMBER = 2;
-    private boolean isPrefix_;
+    private boolean isPrefix_ = false;
     /**
      *
      *
@@ -1421,10 +1437,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         isPrefix_ = false;
-
         return this;
       }
 
@@ -1452,10 +1467,21 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak buildPartial() {
         com.google.cloud.vision.v1.TextAnnotation.DetectedBreak result =
             new com.google.cloud.vision.v1.TextAnnotation.DetectedBreak(this);
-        result.type_ = type_;
-        result.isPrefix_ = isPrefix_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vision.v1.TextAnnotation.DetectedBreak result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isPrefix_ = isPrefix_;
+        }
       }
 
       @java.lang.Override
@@ -1541,13 +1567,13 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   isPrefix_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1566,6 +1592,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -1596,8 +1624,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1614,9 +1642,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType result =
-            com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.valueOf(type_);
+            com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.forNumber(type_);
         return result == null
             ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType.UNRECOGNIZED
             : result;
@@ -1638,7 +1665,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1655,7 +1682,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -1692,6 +1719,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public Builder setIsPrefix(boolean value) {
 
         isPrefix_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1707,7 +1735,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIsPrefix() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         isPrefix_ = false;
         onChanged();
         return this;
@@ -1931,6 +1959,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DETECTED_LANGUAGES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         detectedLanguages_;
     /**
@@ -2060,7 +2090,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreakOrBuilder
         getDetectedBreakOrBuilder() {
-      return getDetectedBreak();
+      return detectedBreak_ == null
+          ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.getDefaultInstance()
+          : detectedBreak_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2280,6 +2312,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (detectedLanguagesBuilder_ == null) {
           detectedLanguages_ = java.util.Collections.emptyList();
         } else {
@@ -2287,10 +2320,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           detectedLanguagesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (detectedBreakBuilder_ == null) {
-          detectedBreak_ = null;
-        } else {
-          detectedBreak_ = null;
+        detectedBreak_ = null;
+        if (detectedBreakBuilder_ != null) {
+          detectedBreakBuilder_.dispose();
           detectedBreakBuilder_ = null;
         }
         return this;
@@ -2320,7 +2352,16 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vision.v1.TextAnnotation.TextProperty buildPartial() {
         com.google.cloud.vision.v1.TextAnnotation.TextProperty result =
             new com.google.cloud.vision.v1.TextAnnotation.TextProperty(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.vision.v1.TextAnnotation.TextProperty result) {
         if (detectedLanguagesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
@@ -2330,13 +2371,14 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.detectedLanguages_ = detectedLanguagesBuilder_.build();
         }
-        if (detectedBreakBuilder_ == null) {
-          result.detectedBreak_ = detectedBreak_;
-        } else {
-          result.detectedBreak_ = detectedBreakBuilder_.build();
+      }
+
+      private void buildPartial0(com.google.cloud.vision.v1.TextAnnotation.TextProperty result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.detectedBreak_ =
+              detectedBreakBuilder_ == null ? detectedBreak_ : detectedBreakBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -2460,7 +2502,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   input.readMessage(getDetectedBreakFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2907,7 +2949,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the detectedBreak field is set.
        */
       public boolean hasDetectedBreak() {
-        return detectedBreakBuilder_ != null || detectedBreak_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2945,11 +2987,11 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           detectedBreak_ = value;
-          onChanged();
         } else {
           detectedBreakBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2965,11 +3007,11 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.Builder builderForValue) {
         if (detectedBreakBuilder_ == null) {
           detectedBreak_ = builderForValue.build();
-          onChanged();
         } else {
           detectedBreakBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2984,19 +3026,19 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeDetectedBreak(
           com.google.cloud.vision.v1.TextAnnotation.DetectedBreak value) {
         if (detectedBreakBuilder_ == null) {
-          if (detectedBreak_ != null) {
-            detectedBreak_ =
-                com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.newBuilder(detectedBreak_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && detectedBreak_ != null
+              && detectedBreak_
+                  != com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.getDefaultInstance()) {
+            getDetectedBreakBuilder().mergeFrom(value);
           } else {
             detectedBreak_ = value;
           }
-          onChanged();
         } else {
           detectedBreakBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3009,14 +3051,13 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
        */
       public Builder clearDetectedBreak() {
-        if (detectedBreakBuilder_ == null) {
-          detectedBreak_ = null;
-          onChanged();
-        } else {
-          detectedBreak_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        detectedBreak_ = null;
+        if (detectedBreakBuilder_ != null) {
+          detectedBreakBuilder_.dispose();
           detectedBreakBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3030,7 +3071,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.Builder
           getDetectedBreakBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getDetectedBreakFieldBuilder().getBuilder();
       }
@@ -3144,6 +3185,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Page> pages_;
   /**
    *
@@ -3213,7 +3256,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object text_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
   /**
    *
    *
@@ -3475,6 +3520,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pagesBuilder_ == null) {
         pages_ = java.util.Collections.emptyList();
       } else {
@@ -3483,7 +3529,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       text_ = "";
-
       return this;
     }
 
@@ -3511,7 +3556,15 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.TextAnnotation buildPartial() {
       com.google.cloud.vision.v1.TextAnnotation result =
           new com.google.cloud.vision.v1.TextAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1.TextAnnotation result) {
       if (pagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pages_ = java.util.Collections.unmodifiableList(pages_);
@@ -3521,9 +3574,13 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.pages_ = pagesBuilder_.build();
       }
-      result.text_ = text_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.TextAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.text_ = text_;
+      }
     }
 
     @java.lang.Override
@@ -3600,6 +3657,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3643,7 +3701,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 text_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -4072,8 +4130,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       text_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4089,8 +4147,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearText() {
-
       text_ = getDefaultInstance().getText();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4111,8 +4169,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       text_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

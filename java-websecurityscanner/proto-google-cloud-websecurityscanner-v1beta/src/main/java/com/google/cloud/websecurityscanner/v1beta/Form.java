@@ -69,7 +69,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object actionUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object actionUri_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIELDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList fields_;
   /**
    *
@@ -391,10 +395,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       actionUri_ = "";
-
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -422,15 +426,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1beta.Form buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.Form result =
           new com.google.cloud.websecurityscanner.v1beta.Form(this);
-      int from_bitField0_ = bitField0_;
-      result.actionUri_ = actionUri_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.fields_ = fields_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1beta.Form result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        fields_ = fields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.fields_ = fields_;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1beta.Form result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.actionUri_ = actionUri_;
+      }
     }
 
     @java.lang.Override
@@ -481,12 +498,13 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getActionUri().isEmpty()) {
         actionUri_ = other.actionUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -522,7 +540,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 actionUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -612,8 +630,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       actionUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +647,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearActionUri() {
-
       actionUri_ = getDefaultInstance().getActionUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +669,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       actionUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,9 +679,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -798,7 +816,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

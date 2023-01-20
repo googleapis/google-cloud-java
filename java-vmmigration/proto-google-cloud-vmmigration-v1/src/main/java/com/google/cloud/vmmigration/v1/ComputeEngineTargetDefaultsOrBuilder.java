@@ -346,7 +346,6 @@ public interface ComputeEngineTargetDefaultsOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -549,7 +548,6 @@ public interface ComputeEngineTargetDefaultsOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

@@ -75,7 +75,9 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUMMARY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object summary_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object summary_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -173,7 +177,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 3;
-  private int executionState_;
+  private int executionState_ = 0;
   /**
    *
    *
@@ -202,16 +206,15 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState getExecutionState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState result =
-        com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.valueOf(executionState_);
+        com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.forNumber(executionState_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.UNRECOGNIZED
         : result;
   }
 
   public static final int RESULT_STATE_FIELD_NUMBER = 4;
-  private int resultState_;
+  private int resultState_ = 0;
   /**
    *
    *
@@ -240,16 +243,15 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.ScanRun.ResultState getResultState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1.ScanRun.ResultState result =
-        com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.valueOf(resultState_);
+        com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.forNumber(resultState_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.UNRECOGNIZED
         : result;
   }
 
   public static final int URLS_CRAWLED_COUNT_FIELD_NUMBER = 5;
-  private long urlsCrawledCount_;
+  private long urlsCrawledCount_ = 0L;
   /**
    * <code>int64 urls_crawled_count = 5;</code>
    *
@@ -261,7 +263,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URLS_TESTED_COUNT_FIELD_NUMBER = 6;
-  private long urlsTestedCount_;
+  private long urlsTestedCount_ = 0L;
   /**
    * <code>int64 urls_tested_count = 6;</code>
    *
@@ -273,7 +275,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_FINDINGS_FIELD_NUMBER = 7;
-  private boolean hasFindings_;
+  private boolean hasFindings_ = false;
   /**
    * <code>bool has_findings = 7;</code>
    *
@@ -310,7 +312,9 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.ScanRunErrorTraceOrBuilder
       getErrorTraceOrBuilder() {
-    return getErrorTrace();
+    return errorTrace_ == null
+        ? com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.getDefaultInstance()
+        : errorTrace_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -590,24 +594,17 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       summary_ = "";
-
       name_ = "";
-
       executionState_ = 0;
-
       resultState_ = 0;
-
       urlsCrawledCount_ = 0L;
-
       urlsTestedCount_ = 0L;
-
       hasFindings_ = false;
-
-      if (errorTraceBuilder_ == null) {
-        errorTrace_ = null;
-      } else {
-        errorTrace_ = null;
+      errorTrace_ = null;
+      if (errorTraceBuilder_ != null) {
+        errorTraceBuilder_.dispose();
         errorTraceBuilder_ = null;
       }
       return this;
@@ -637,20 +634,39 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1.ScanRunLog buildPartial() {
       com.google.cloud.websecurityscanner.v1.ScanRunLog result =
           new com.google.cloud.websecurityscanner.v1.ScanRunLog(this);
-      result.summary_ = summary_;
-      result.name_ = name_;
-      result.executionState_ = executionState_;
-      result.resultState_ = resultState_;
-      result.urlsCrawledCount_ = urlsCrawledCount_;
-      result.urlsTestedCount_ = urlsTestedCount_;
-      result.hasFindings_ = hasFindings_;
-      if (errorTraceBuilder_ == null) {
-        result.errorTrace_ = errorTrace_;
-      } else {
-        result.errorTrace_ = errorTraceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.ScanRunLog result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.summary_ = summary_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.executionState_ = executionState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resultState_ = resultState_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.urlsCrawledCount_ = urlsCrawledCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.urlsTestedCount_ = urlsTestedCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.hasFindings_ = hasFindings_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.errorTrace_ = errorTraceBuilder_ == null ? errorTrace_ : errorTraceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -701,10 +717,12 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSummary().isEmpty()) {
         summary_ = other.summary_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.executionState_ != 0) {
@@ -754,49 +772,49 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 summary_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 executionState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 resultState_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 urlsCrawledCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 urlsTestedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 hasFindings_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getErrorTraceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -815,6 +833,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object summary_ = "";
     /**
@@ -877,8 +897,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       summary_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,8 +914,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSummary() {
-
       summary_ = getDefaultInstance().getSummary();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -916,8 +936,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       summary_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -983,8 +1003,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,8 +1020,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1022,8 +1042,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1057,8 +1077,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExecutionStateValue(int value) {
-
       executionState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1075,9 +1095,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState getExecutionState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState result =
-          com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.valueOf(executionState_);
+          com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.forNumber(executionState_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1.ScanRun.ExecutionState.UNRECOGNIZED
           : result;
@@ -1099,7 +1118,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       executionState_ = value.getNumber();
       onChanged();
       return this;
@@ -1116,7 +1135,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecutionState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       executionState_ = 0;
       onChanged();
       return this;
@@ -1151,8 +1170,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResultStateValue(int value) {
-
       resultState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1169,9 +1188,8 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1.ScanRun.ResultState getResultState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1.ScanRun.ResultState result =
-          com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.valueOf(resultState_);
+          com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.forNumber(resultState_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1.ScanRun.ResultState.UNRECOGNIZED
           : result;
@@ -1193,7 +1211,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       resultState_ = value.getNumber();
       onChanged();
       return this;
@@ -1210,7 +1228,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResultState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       resultState_ = 0;
       onChanged();
       return this;
@@ -1235,6 +1253,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public Builder setUrlsCrawledCount(long value) {
 
       urlsCrawledCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1244,7 +1263,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrlsCrawledCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       urlsCrawledCount_ = 0L;
       onChanged();
       return this;
@@ -1269,6 +1288,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public Builder setUrlsTestedCount(long value) {
 
       urlsTestedCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1278,7 +1298,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrlsTestedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       urlsTestedCount_ = 0L;
       onChanged();
       return this;
@@ -1303,6 +1323,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasFindings(boolean value) {
 
       hasFindings_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1312,7 +1333,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasFindings() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       hasFindings_ = false;
       onChanged();
       return this;
@@ -1330,7 +1351,7 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorTrace field is set.
      */
     public boolean hasErrorTrace() {
-      return errorTraceBuilder_ != null || errorTrace_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code>
@@ -1353,11 +1374,11 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         errorTrace_ = value;
-        onChanged();
       } else {
         errorTraceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
@@ -1365,46 +1386,45 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder builderForValue) {
       if (errorTraceBuilder_ == null) {
         errorTrace_ = builderForValue.build();
-        onChanged();
       } else {
         errorTraceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder mergeErrorTrace(com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace value) {
       if (errorTraceBuilder_ == null) {
-        if (errorTrace_ != null) {
-          errorTrace_ =
-              com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.newBuilder(errorTrace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && errorTrace_ != null
+            && errorTrace_
+                != com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.getDefaultInstance()) {
+          getErrorTraceBuilder().mergeFrom(value);
         } else {
           errorTrace_ = value;
         }
-        onChanged();
       } else {
         errorTraceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public Builder clearErrorTrace() {
-      if (errorTraceBuilder_ == null) {
-        errorTrace_ = null;
-        onChanged();
-      } else {
-        errorTrace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      errorTrace_ = null;
+      if (errorTraceBuilder_ != null) {
+        errorTraceBuilder_.dispose();
         errorTraceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.google.cloud.websecurityscanner.v1.ScanRunErrorTrace error_trace = 8;</code> */
     public com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder getErrorTraceBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getErrorTraceFieldBuilder().getBuilder();
     }

@@ -74,6 +74,8 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   }
 
   public static final int REFERENCE_IMAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.ReferenceImage> referenceImages_;
   /**
    *
@@ -144,6 +146,8 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   }
 
   public static final int STATUSES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> statuses_;
   /**
    *
@@ -447,6 +451,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (referenceImagesBuilder_ == null) {
         referenceImages_ = java.util.Collections.emptyList();
       } else {
@@ -488,7 +493,16 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     public com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse buildPartial() {
       com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse result =
           new com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse result) {
       if (referenceImagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           referenceImages_ = java.util.Collections.unmodifiableList(referenceImages_);
@@ -507,8 +521,10 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       } else {
         result.statuses_ = statusesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

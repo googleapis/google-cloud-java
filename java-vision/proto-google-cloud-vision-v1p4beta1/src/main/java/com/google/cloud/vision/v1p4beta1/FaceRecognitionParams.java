@@ -68,6 +68,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CELEBRITY_SET_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList celebritySet_;
   /**
    *
@@ -349,6 +351,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       celebritySet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -378,14 +381,25 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams buildPartial() {
       com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result =
           new com.google.cloud.vision.v1p4beta1.FaceRecognitionParams(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         celebritySet_ = celebritySet_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.celebritySet_ = celebritySet_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

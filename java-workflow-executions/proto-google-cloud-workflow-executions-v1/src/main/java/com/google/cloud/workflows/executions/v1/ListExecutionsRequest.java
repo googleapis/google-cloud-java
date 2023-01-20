@@ -72,7 +72,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -149,7 +151,9 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -204,7 +208,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int VIEW_FIELD_NUMBER = 4;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -239,9 +243,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.workflows.executions.v1.ExecutionView getView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.workflows.executions.v1.ExecutionView result =
-        com.google.cloud.workflows.executions.v1.ExecutionView.valueOf(view_);
+        com.google.cloud.workflows.executions.v1.ExecutionView.forNumber(view_);
     return result == null
         ? com.google.cloud.workflows.executions.v1.ExecutionView.UNRECOGNIZED
         : result;
@@ -478,14 +481,11 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -514,12 +514,28 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.workflows.executions.v1.ListExecutionsRequest buildPartial() {
       com.google.cloud.workflows.executions.v1.ListExecutionsRequest result =
           new com.google.cloud.workflows.executions.v1.ListExecutionsRequest(this);
-      result.parent_ = parent_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.workflows.executions.v1.ListExecutionsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -571,6 +587,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -578,6 +595,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -612,25 +630,25 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -649,6 +667,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -720,8 +740,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,8 +760,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -765,8 +785,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,6 +830,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -829,7 +850,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -905,8 +926,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -925,8 +946,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -950,8 +971,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -991,8 +1012,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1012,9 +1033,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.workflows.executions.v1.ExecutionView getView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.workflows.executions.v1.ExecutionView result =
-          com.google.cloud.workflows.executions.v1.ExecutionView.valueOf(view_);
+          com.google.cloud.workflows.executions.v1.ExecutionView.forNumber(view_);
       return result == null
           ? com.google.cloud.workflows.executions.v1.ExecutionView.UNRECOGNIZED
           : result;
@@ -1038,7 +1058,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1058,7 +1078,7 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       view_ = 0;
       onChanged();
       return this;

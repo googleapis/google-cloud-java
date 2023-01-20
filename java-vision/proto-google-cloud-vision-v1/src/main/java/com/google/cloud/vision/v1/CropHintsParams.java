@@ -68,6 +68,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ASPECT_RATIOS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList aspectRatios_;
   /**
    *
@@ -342,8 +344,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       aspectRatios_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -371,14 +373,24 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.vision.v1.CropHintsParams buildPartial() {
       com.google.cloud.vision.v1.CropHintsParams result =
           new com.google.cloud.vision.v1.CropHintsParams(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1.CropHintsParams result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         aspectRatios_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.aspectRatios_ = aspectRatios_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.CropHintsParams result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -586,6 +598,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAspectRatios(int index, float value) {
+
       ensureAspectRatiosIsMutable();
       aspectRatios_.setFloat(index, value);
       onChanged();
@@ -609,6 +622,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder addAspectRatios(float value) {
+
       ensureAspectRatiosIsMutable();
       aspectRatios_.addFloat(value);
       onChanged();

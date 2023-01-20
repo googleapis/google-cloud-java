@@ -113,10 +113,14 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int RESPONSES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageResponse> responses_;
   /**
    *
@@ -192,7 +196,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TOTAL_PAGES_FIELD_NUMBER = 3;
-  private int totalPages_;
+  private int totalPages_ = 0;
   /**
    *
    *
@@ -255,7 +259,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -495,10 +499,10 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      bitField0_ = 0;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
       if (responsesBuilder_ == null) {
@@ -507,13 +511,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         responses_ = null;
         responsesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       totalPages_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       return this;
@@ -543,29 +545,39 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1.AnnotateFileResponse buildPartial() {
       com.google.cloud.vision.v1.AnnotateFileResponse result =
           new com.google.cloud.vision.v1.AnnotateFileResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1.AnnotateFileResponse result) {
       if (responsesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           responses_ = java.util.Collections.unmodifiableList(responses_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.responses_ = responses_;
       } else {
         result.responses_ = responsesBuilder_.build();
       }
-      result.totalPages_ = totalPages_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.AnnotateFileResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalPages_ = totalPages_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -621,7 +633,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         if (!other.responses_.isEmpty()) {
           if (responses_.isEmpty()) {
             responses_ = other.responses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureResponsesIsMutable();
             responses_.addAll(other.responses_);
@@ -634,7 +646,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             responsesBuilder_.dispose();
             responsesBuilder_ = null;
             responses_ = other.responses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             responsesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResponsesFieldBuilder()
@@ -679,7 +691,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -699,13 +711,13 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             case 24:
               {
                 totalPages_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -745,7 +757,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -782,11 +794,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -801,11 +813,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public Builder setInputConfig(com.google.cloud.vision.v1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -819,19 +831,18 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeInputConfig(com.google.cloud.vision.v1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.vision.v1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputConfig_ != null
+            && inputConfig_ != com.google.cloud.vision.v1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -844,14 +855,13 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -864,7 +874,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
     public com.google.cloud.vision.v1.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -916,10 +926,10 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResponsesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         responses_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.AnnotateImageResponse>(responses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1146,7 +1156,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public Builder clearResponses() {
       if (responsesBuilder_ == null) {
         responses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         responsesBuilder_.clear();
@@ -1276,7 +1286,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.AnnotateImageResponse,
                 com.google.cloud.vision.v1.AnnotateImageResponse.Builder,
                 com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder>(
-                responses_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                responses_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         responses_ = null;
       }
       return responsesBuilder_;
@@ -1313,6 +1323,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public Builder setTotalPages(int value) {
 
       totalPages_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1328,7 +1339,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTotalPages() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalPages_ = 0;
       onChanged();
       return this;
@@ -1351,7 +1362,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1388,11 +1399,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1408,11 +1419,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1427,16 +1438,18 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1450,14 +1463,13 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status error = 4;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1471,7 +1483,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status error = 4;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

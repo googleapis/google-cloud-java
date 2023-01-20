@@ -68,7 +68,9 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PRODUCT_SET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object productSetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productSetId_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       productSetId_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vision.v1.ProductSetPurgeConfig buildPartial() {
       com.google.cloud.vision.v1.ProductSetPurgeConfig result =
           new com.google.cloud.vision.v1.ProductSetPurgeConfig(this);
-      result.productSetId_ = productSetId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.ProductSetPurgeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.productSetId_ = productSetId_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getProductSetId().isEmpty()) {
         productSetId_ = other.productSetId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 productSetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +461,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object productSetId_ = "";
     /**
@@ -517,8 +531,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       productSetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -536,8 +550,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProductSetId() {
-
       productSetId_ = getDefaultInstance().getProductSetId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -560,8 +574,8 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productSetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

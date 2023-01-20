@@ -72,7 +72,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VCENTER_IP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vcenterIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vcenterIp_ = "";
   /**
    *
    *
@@ -221,7 +227,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int THUMBPRINT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object thumbprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object thumbprint_ = "";
   /**
    *
    *
@@ -494,14 +502,11 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       password_ = "";
-
       vcenterIp_ = "";
-
       thumbprint_ = "";
-
       return this;
     }
 
@@ -529,12 +534,27 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vmmigration.v1.VmwareSourceDetails buildPartial() {
       com.google.cloud.vmmigration.v1.VmwareSourceDetails result =
           new com.google.cloud.vmmigration.v1.VmwareSourceDetails(this);
-      result.username_ = username_;
-      result.password_ = password_;
-      result.vcenterIp_ = vcenterIp_;
-      result.thumbprint_ = thumbprint_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.VmwareSourceDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.password_ = password_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vcenterIp_ = vcenterIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.thumbprint_ = thumbprint_;
+      }
     }
 
     @java.lang.Override
@@ -585,18 +605,22 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVcenterIp().isEmpty()) {
         vcenterIp_ = other.vcenterIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getThumbprint().isEmpty()) {
         thumbprint_ = other.thumbprint_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -628,25 +652,25 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 vcenterIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 thumbprint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -665,6 +689,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -727,8 +753,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,8 +770,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -766,8 +792,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -836,8 +862,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,8 +880,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -877,8 +903,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -944,8 +970,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       vcenterIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -961,8 +987,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVcenterIp() {
-
       vcenterIp_ = getDefaultInstance().getVcenterIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -983,8 +1009,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vcenterIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,8 +1076,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       thumbprint_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1067,8 +1093,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearThumbprint() {
-
       thumbprint_ = getDefaultInstance().getThumbprint();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1089,8 +1115,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       thumbprint_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

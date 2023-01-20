@@ -204,7 +204,9 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_VALUE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object payloadValue_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object payloadValue_ = "";
   /**
    *
    *
@@ -255,7 +257,7 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAYLOAD_LOCATION_FIELD_NUMBER = 2;
-  private int payloadLocation_;
+  private int payloadLocation_ = 0;
   /**
    *
    *
@@ -284,9 +286,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1.Xxe.Location getPayloadLocation() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1.Xxe.Location result =
-        com.google.cloud.websecurityscanner.v1.Xxe.Location.valueOf(payloadLocation_);
+        com.google.cloud.websecurityscanner.v1.Xxe.Location.forNumber(payloadLocation_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1.Xxe.Location.UNRECOGNIZED
         : result;
@@ -500,10 +501,9 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       payloadValue_ = "";
-
       payloadLocation_ = 0;
-
       return this;
     }
 
@@ -531,10 +531,21 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1.Xxe buildPartial() {
       com.google.cloud.websecurityscanner.v1.Xxe result =
           new com.google.cloud.websecurityscanner.v1.Xxe(this);
-      result.payloadValue_ = payloadValue_;
-      result.payloadLocation_ = payloadLocation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.Xxe result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.payloadValue_ = payloadValue_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payloadLocation_ = payloadLocation_;
+      }
     }
 
     @java.lang.Override
@@ -584,6 +595,7 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance()) return this;
       if (!other.getPayloadValue().isEmpty()) {
         payloadValue_ = other.payloadValue_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.payloadLocation_ != 0) {
@@ -618,13 +630,13 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 payloadValue_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 payloadLocation_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -643,6 +655,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object payloadValue_ = "";
     /**
@@ -708,8 +722,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       payloadValue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,8 +740,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayloadValue() {
-
       payloadValue_ = getDefaultInstance().getPayloadValue();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +763,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       payloadValue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -784,8 +798,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPayloadLocationValue(int value) {
-
       payloadLocation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -802,9 +816,8 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1.Xxe.Location getPayloadLocation() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1.Xxe.Location result =
-          com.google.cloud.websecurityscanner.v1.Xxe.Location.valueOf(payloadLocation_);
+          com.google.cloud.websecurityscanner.v1.Xxe.Location.forNumber(payloadLocation_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1.Xxe.Location.UNRECOGNIZED
           : result;
@@ -825,7 +838,7 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       payloadLocation_ = value.getNumber();
       onChanged();
       return this;
@@ -842,7 +855,7 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPayloadLocation() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       payloadLocation_ = 0;
       onChanged();
       return this;

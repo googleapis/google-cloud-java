@@ -72,7 +72,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mid_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOCALE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object locale_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locale_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -225,7 +231,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCORE_FIELD_NUMBER = 4;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -243,7 +249,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -264,7 +270,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TOPICALITY_FIELD_NUMBER = 6;
-  private float topicality_;
+  private float topicality_ = 0F;
   /**
    *
    *
@@ -333,10 +339,14 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-    return getBoundingPoly();
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1p1beta1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p1beta1.LocationInfo> locations_;
   /**
    *
@@ -426,6 +436,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROPERTIES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p1beta1.Property> properties_;
   /**
    *
@@ -780,22 +792,16 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mid_ = "";
-
       locale_ = "";
-
       description_ = "";
-
       score_ = 0F;
-
       confidence_ = 0F;
-
       topicality_ = 0F;
-
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-      } else {
-        boundingPoly_ = null;
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
       if (locationsBuilder_ == null) {
@@ -804,14 +810,14 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         locations_ = null;
         locationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (propertiesBuilder_ == null) {
         properties_ = java.util.Collections.emptyList();
       } else {
         properties_ = null;
         propertiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -839,38 +845,60 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vision.v1p1beta1.EntityAnnotation buildPartial() {
       com.google.cloud.vision.v1p1beta1.EntityAnnotation result =
           new com.google.cloud.vision.v1p1beta1.EntityAnnotation(this);
-      int from_bitField0_ = bitField0_;
-      result.mid_ = mid_;
-      result.locale_ = locale_;
-      result.description_ = description_;
-      result.score_ = score_;
-      result.confidence_ = confidence_;
-      result.topicality_ = topicality_;
-      if (boundingPolyBuilder_ == null) {
-        result.boundingPoly_ = boundingPoly_;
-      } else {
-        result.boundingPoly_ = boundingPolyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p1beta1.EntityAnnotation result) {
       if (locationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           locations_ = java.util.Collections.unmodifiableList(locations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.locations_ = locations_;
       } else {
         result.locations_ = locationsBuilder_.build();
       }
       if (propertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           properties_ = java.util.Collections.unmodifiableList(properties_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.properties_ = properties_;
       } else {
         result.properties_ = propertiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p1beta1.EntityAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mid_ = mid_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.locale_ = locale_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.topicality_ = topicality_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.boundingPoly_ =
+            boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -921,14 +949,17 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getMid().isEmpty()) {
         mid_ = other.mid_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLocale().isEmpty()) {
         locale_ = other.locale_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getScore() != 0F) {
@@ -947,7 +978,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         if (!other.locations_.isEmpty()) {
           if (locations_.isEmpty()) {
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureLocationsIsMutable();
             locations_.addAll(other.locations_);
@@ -960,7 +991,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             locationsBuilder_.dispose();
             locationsBuilder_ = null;
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             locationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationsFieldBuilder()
@@ -974,7 +1005,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         if (!other.properties_.isEmpty()) {
           if (properties_.isEmpty()) {
             properties_ = other.properties_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensurePropertiesIsMutable();
             properties_.addAll(other.properties_);
@@ -987,7 +1018,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             propertiesBuilder_.dispose();
             propertiesBuilder_ = null;
             properties_ = other.properties_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
             propertiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPropertiesFieldBuilder()
@@ -1026,43 +1057,43 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 mid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 locale_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 45:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 45
             case 53:
               {
                 topicality_ = input.readFloat();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 53
             case 58:
               {
                 input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1177,8 +1208,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       mid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1196,8 +1227,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMid() {
-
       mid_ = getDefaultInstance().getMid();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1220,8 +1251,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1290,8 +1321,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       locale_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1308,8 +1339,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLocale() {
-
       locale_ = getDefaultInstance().getLocale();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1331,8 +1362,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locale_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1398,8 +1429,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1415,8 +1446,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1437,8 +1468,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1474,6 +1505,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1489,7 +1521,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       score_ = 0F;
       onChanged();
       return this;
@@ -1532,6 +1564,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1550,7 +1583,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1595,6 +1628,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder setTopicality(float value) {
 
       topicality_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1614,7 +1648,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTopicality() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       topicality_ = 0F;
       onChanged();
       return this;
@@ -1639,7 +1673,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
-      return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1678,11 +1712,11 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         boundingPoly_ = value;
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1699,11 +1733,11 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         com.google.cloud.vision.v1p1beta1.BoundingPoly.Builder builderForValue) {
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1718,19 +1752,19 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBoundingPoly(com.google.cloud.vision.v1p1beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
-        if (boundingPoly_ != null) {
-          boundingPoly_ =
-              com.google.cloud.vision.v1p1beta1.BoundingPoly.newBuilder(boundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && boundingPoly_ != null
+            && boundingPoly_
+                != com.google.cloud.vision.v1p1beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingPolyBuilder().mergeFrom(value);
         } else {
           boundingPoly_ = value;
         }
-        onChanged();
       } else {
         boundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1744,14 +1778,13 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_poly = 7;</code>
      */
     public Builder clearBoundingPoly() {
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-        onChanged();
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1765,7 +1798,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_poly = 7;</code>
      */
     public com.google.cloud.vision.v1p1beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
@@ -1819,10 +1852,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         locations_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.LocationInfo>(locations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2082,7 +2115,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder clearLocations() {
       if (locationsBuilder_ == null) {
         locations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         locationsBuilder_.clear();
@@ -2233,7 +2266,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p1beta1.LocationInfo,
                 com.google.cloud.vision.v1p1beta1.LocationInfo.Builder,
                 com.google.cloud.vision.v1p1beta1.LocationInfoOrBuilder>(
-                locations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                locations_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         locations_ = null;
       }
       return locationsBuilder_;
@@ -2243,10 +2276,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePropertiesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         properties_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.Property>(properties_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2473,7 +2506,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     public Builder clearProperties() {
       if (propertiesBuilder_ == null) {
         properties_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         propertiesBuilder_.clear();
@@ -2602,7 +2635,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p1beta1.Property,
                 com.google.cloud.vision.v1p1beta1.Property.Builder,
                 com.google.cloud.vision.v1p1beta1.PropertyOrBuilder>(
-                properties_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                properties_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         properties_ = null;
       }
       return propertiesBuilder_;

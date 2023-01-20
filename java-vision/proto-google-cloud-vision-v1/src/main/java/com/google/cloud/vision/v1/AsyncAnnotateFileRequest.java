@@ -112,10 +112,14 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int FEATURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Feature> features_;
   /**
    *
@@ -229,7 +233,9 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.ImageContextOrBuilder getImageContextOrBuilder() {
-    return getImageContext();
+    return imageContext_ == null
+        ? com.google.cloud.vision.v1.ImageContext.getDefaultInstance()
+        : imageContext_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
@@ -277,7 +283,9 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.vision.v1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -521,10 +529,10 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      bitField0_ = 0;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
       if (featuresBuilder_ == null) {
@@ -533,17 +541,15 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         features_ = null;
         featuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (imageContextBuilder_ == null) {
-        imageContext_ = null;
-      } else {
-        imageContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      imageContext_ = null;
+      if (imageContextBuilder_ != null) {
+        imageContextBuilder_.dispose();
         imageContextBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -573,33 +579,41 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public com.google.cloud.vision.v1.AsyncAnnotateFileRequest buildPartial() {
       com.google.cloud.vision.v1.AsyncAnnotateFileRequest result =
           new com.google.cloud.vision.v1.AsyncAnnotateFileRequest(this);
-      int from_bitField0_ = bitField0_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1.AsyncAnnotateFileRequest result) {
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.features_ = features_;
       } else {
         result.features_ = featuresBuilder_.build();
       }
-      if (imageContextBuilder_ == null) {
-        result.imageContext_ = imageContext_;
-      } else {
-        result.imageContext_ = imageContextBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.AsyncAnnotateFileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
       }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageContext_ =
+            imageContextBuilder_ == null ? imageContext_ : imageContextBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -655,7 +669,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         if (!other.features_.isEmpty()) {
           if (features_.isEmpty()) {
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFeaturesIsMutable();
             features_.addAll(other.features_);
@@ -668,7 +682,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             featuresBuilder_.dispose();
             featuresBuilder_ = null;
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             featuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFeaturesFieldBuilder()
@@ -713,7 +727,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -732,13 +746,13 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             case 26:
               {
                 input.readMessage(getImageContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -778,7 +792,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -815,11 +829,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -834,11 +848,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public Builder setInputConfig(com.google.cloud.vision.v1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -852,19 +866,18 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      */
     public Builder mergeInputConfig(com.google.cloud.vision.v1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.vision.v1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputConfig_ != null
+            && inputConfig_ != com.google.cloud.vision.v1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -877,14 +890,13 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -897,7 +909,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
     public com.google.cloud.vision.v1.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -949,9 +961,9 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         features_ = new java.util.ArrayList<com.google.cloud.vision.v1.Feature>(features_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1166,7 +1178,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         featuresBuilder_.clear();
@@ -1287,7 +1299,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
                 com.google.cloud.vision.v1.Feature,
                 com.google.cloud.vision.v1.Feature.Builder,
                 com.google.cloud.vision.v1.FeatureOrBuilder>(
-                features_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                features_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;
@@ -1311,7 +1323,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * @return Whether the imageContext field is set.
      */
     public boolean hasImageContext() {
-      return imageContextBuilder_ != null || imageContext_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1348,11 +1360,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         imageContext_ = value;
-        onChanged();
       } else {
         imageContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1368,11 +1380,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         com.google.cloud.vision.v1.ImageContext.Builder builderForValue) {
       if (imageContextBuilder_ == null) {
         imageContext_ = builderForValue.build();
-        onChanged();
       } else {
         imageContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1386,19 +1398,18 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      */
     public Builder mergeImageContext(com.google.cloud.vision.v1.ImageContext value) {
       if (imageContextBuilder_ == null) {
-        if (imageContext_ != null) {
-          imageContext_ =
-              com.google.cloud.vision.v1.ImageContext.newBuilder(imageContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && imageContext_ != null
+            && imageContext_ != com.google.cloud.vision.v1.ImageContext.getDefaultInstance()) {
+          getImageContextBuilder().mergeFrom(value);
         } else {
           imageContext_ = value;
         }
-        onChanged();
       } else {
         imageContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1411,14 +1422,13 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
      */
     public Builder clearImageContext() {
-      if (imageContextBuilder_ == null) {
-        imageContext_ = null;
-        onChanged();
-      } else {
-        imageContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      imageContext_ = null;
+      if (imageContextBuilder_ != null) {
+        imageContextBuilder_.dispose();
         imageContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1431,7 +1441,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
      */
     public com.google.cloud.vision.v1.ImageContext.Builder getImageContextBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getImageContextFieldBuilder().getBuilder();
     }
@@ -1497,7 +1507,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1534,11 +1544,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1554,11 +1564,11 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         com.google.cloud.vision.v1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1572,19 +1582,18 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      */
     public Builder mergeOutputConfig(com.google.cloud.vision.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.vision.v1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && outputConfig_ != null
+            && outputConfig_ != com.google.cloud.vision.v1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1597,14 +1606,13 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.OutputConfig output_config = 4;</code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1617,7 +1625,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
      * <code>.google.cloud.vision.v1.OutputConfig output_config = 4;</code>
      */
     public com.google.cloud.vision.v1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

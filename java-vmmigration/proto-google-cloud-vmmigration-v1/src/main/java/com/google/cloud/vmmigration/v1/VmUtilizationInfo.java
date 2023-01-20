@@ -163,7 +163,9 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VM_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -256,7 +258,9 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.VmUtilizationMetricsOrBuilder getUtilizationOrBuilder() {
-    return getUtilization();
+    return utilization_ == null
+        ? com.google.cloud.vmmigration.v1.VmUtilizationMetrics.getDefaultInstance()
+        : utilization_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -494,15 +498,14 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (vmwareVmDetailsBuilder_ != null) {
         vmwareVmDetailsBuilder_.clear();
       }
       vmId_ = "";
-
-      if (utilizationBuilder_ == null) {
-        utilization_ = null;
-      } else {
-        utilization_ = null;
+      utilization_ = null;
+      if (utilizationBuilder_ != null) {
+        utilizationBuilder_.dispose();
         utilizationBuilder_ = null;
       }
       vmDetailsCase_ = 0;
@@ -534,22 +537,31 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.vmmigration.v1.VmUtilizationInfo buildPartial() {
       com.google.cloud.vmmigration.v1.VmUtilizationInfo result =
           new com.google.cloud.vmmigration.v1.VmUtilizationInfo(this);
-      if (vmDetailsCase_ == 1) {
-        if (vmwareVmDetailsBuilder_ == null) {
-          result.vmDetails_ = vmDetails_;
-        } else {
-          result.vmDetails_ = vmwareVmDetailsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.vmId_ = vmId_;
-      if (utilizationBuilder_ == null) {
-        result.utilization_ = utilization_;
-      } else {
-        result.utilization_ = utilizationBuilder_.build();
-      }
-      result.vmDetailsCase_ = vmDetailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.VmUtilizationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmId_ = vmId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.utilization_ =
+            utilizationBuilder_ == null ? utilization_ : utilizationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vmmigration.v1.VmUtilizationInfo result) {
+      result.vmDetailsCase_ = vmDetailsCase_;
+      result.vmDetails_ = this.vmDetails_;
+      if (vmDetailsCase_ == 1 && vmwareVmDetailsBuilder_ != null) {
+        result.vmDetails_ = vmwareVmDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -600,6 +612,7 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUtilization()) {
@@ -651,13 +664,13 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getUtilizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -690,6 +703,8 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vmmigration.v1.VmwareVmDetails,
@@ -897,7 +912,6 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
       }
       vmDetailsCase_ = 1;
       onChanged();
-      ;
       return vmwareVmDetailsBuilder_;
     }
 
@@ -962,8 +976,8 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -979,8 +993,8 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1001,8 +1015,8 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1025,7 +1039,7 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
      * @return Whether the utilization field is set.
      */
     public boolean hasUtilization() {
-      return utilizationBuilder_ != null || utilization_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1062,11 +1076,11 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         utilization_ = value;
-        onChanged();
       } else {
         utilizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1082,11 +1096,11 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
         com.google.cloud.vmmigration.v1.VmUtilizationMetrics.Builder builderForValue) {
       if (utilizationBuilder_ == null) {
         utilization_ = builderForValue.build();
-        onChanged();
       } else {
         utilizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1100,19 +1114,19 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUtilization(com.google.cloud.vmmigration.v1.VmUtilizationMetrics value) {
       if (utilizationBuilder_ == null) {
-        if (utilization_ != null) {
-          utilization_ =
-              com.google.cloud.vmmigration.v1.VmUtilizationMetrics.newBuilder(utilization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && utilization_ != null
+            && utilization_
+                != com.google.cloud.vmmigration.v1.VmUtilizationMetrics.getDefaultInstance()) {
+          getUtilizationBuilder().mergeFrom(value);
         } else {
           utilization_ = value;
         }
-        onChanged();
       } else {
         utilizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1125,14 +1139,13 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.vmmigration.v1.VmUtilizationMetrics utilization = 2;</code>
      */
     public Builder clearUtilization() {
-      if (utilizationBuilder_ == null) {
-        utilization_ = null;
-        onChanged();
-      } else {
-        utilization_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      utilization_ = null;
+      if (utilizationBuilder_ != null) {
+        utilizationBuilder_.dispose();
         utilizationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1145,7 +1158,7 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.vmmigration.v1.VmUtilizationMetrics utilization = 2;</code>
      */
     public com.google.cloud.vmmigration.v1.VmUtilizationMetrics.Builder getUtilizationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUtilizationFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object contentType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object contentType_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESOURCE_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceUrl_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       contentType_ = "";
-
       resourceUrl_ = "";
-
       return this;
     }
 
@@ -407,10 +410,22 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.websecurityscanner.v1beta.ViolatingResource buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.ViolatingResource result =
           new com.google.cloud.websecurityscanner.v1beta.ViolatingResource(this);
-      result.contentType_ = contentType_;
-      result.resourceUrl_ = resourceUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1beta.ViolatingResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.contentType_ = contentType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceUrl_ = resourceUrl_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +477,12 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getContentType().isEmpty()) {
         contentType_ = other.contentType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceUrl().isEmpty()) {
         resourceUrl_ = other.resourceUrl_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +514,13 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 contentType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +539,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object contentType_ = "";
     /**
@@ -584,8 +603,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       contentType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -601,8 +620,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearContentType() {
-
       contentType_ = getDefaultInstance().getContentType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -623,8 +642,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       contentType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -690,8 +709,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,8 +726,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
-
       resourceUrl_ = getDefaultInstance().getResourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -729,8 +748,8 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
   }
 
   public static final int CUTOVER_JOB_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cutoverJobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cutoverJobId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getCutoverJobOrBuilder() {
-    return getCutoverJob();
+    return cutoverJob_ == null
+        ? com.google.cloud.vmmigration.v1.CutoverJob.getDefaultInstance()
+        : cutoverJob_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -524,18 +532,15 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       cutoverJobId_ = "";
-
-      if (cutoverJobBuilder_ == null) {
-        cutoverJob_ = null;
-      } else {
-        cutoverJob_ = null;
+      cutoverJob_ = null;
+      if (cutoverJobBuilder_ != null) {
+        cutoverJobBuilder_.dispose();
         cutoverJobBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -563,16 +568,27 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
     public com.google.cloud.vmmigration.v1.CreateCutoverJobRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateCutoverJobRequest result =
           new com.google.cloud.vmmigration.v1.CreateCutoverJobRequest(this);
-      result.parent_ = parent_;
-      result.cutoverJobId_ = cutoverJobId_;
-      if (cutoverJobBuilder_ == null) {
-        result.cutoverJob_ = cutoverJob_;
-      } else {
-        result.cutoverJob_ = cutoverJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CreateCutoverJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cutoverJobId_ = cutoverJobId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cutoverJob_ = cutoverJobBuilder_ == null ? cutoverJob_ : cutoverJobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -623,10 +639,12 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCutoverJobId().isEmpty()) {
         cutoverJobId_ = other.cutoverJobId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCutoverJob()) {
@@ -634,6 +652,7 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -665,25 +684,25 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cutoverJobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCutoverJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -702,6 +721,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -770,8 +791,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +810,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +834,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +901,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       cutoverJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +918,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCutoverJobId() {
-
       cutoverJobId_ = getDefaultInstance().getCutoverJobId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -919,8 +940,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cutoverJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +966,7 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * @return Whether the cutoverJob field is set.
      */
     public boolean hasCutoverJob() {
-      return cutoverJobBuilder_ != null || cutoverJob_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -986,11 +1007,11 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         cutoverJob_ = value;
-        onChanged();
       } else {
         cutoverJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,11 +1029,11 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
         com.google.cloud.vmmigration.v1.CutoverJob.Builder builderForValue) {
       if (cutoverJobBuilder_ == null) {
         cutoverJob_ = builderForValue.build();
-        onChanged();
       } else {
         cutoverJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,19 +1049,18 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      */
     public Builder mergeCutoverJob(com.google.cloud.vmmigration.v1.CutoverJob value) {
       if (cutoverJobBuilder_ == null) {
-        if (cutoverJob_ != null) {
-          cutoverJob_ =
-              com.google.cloud.vmmigration.v1.CutoverJob.newBuilder(cutoverJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cutoverJob_ != null
+            && cutoverJob_ != com.google.cloud.vmmigration.v1.CutoverJob.getDefaultInstance()) {
+          getCutoverJobBuilder().mergeFrom(value);
         } else {
           cutoverJob_ = value;
         }
-        onChanged();
       } else {
         cutoverJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1055,14 +1075,13 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearCutoverJob() {
-      if (cutoverJobBuilder_ == null) {
-        cutoverJob_ = null;
-        onChanged();
-      } else {
-        cutoverJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cutoverJob_ = null;
+      if (cutoverJobBuilder_ != null) {
+        cutoverJobBuilder_.dispose();
         cutoverJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1077,7 +1096,7 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.vmmigration.v1.CutoverJob.Builder getCutoverJobBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCutoverJobFieldBuilder().getBuilder();
     }
@@ -1220,8 +1239,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1247,8 +1266,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1279,8 +1298,8 @@ public final class CreateCutoverJobRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

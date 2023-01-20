@@ -71,7 +71,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -231,7 +235,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
-    return getIndexTime();
+    return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
   }
 
   public static final int INDEX_ERROR_FIELD_NUMBER = 4;
@@ -283,7 +287,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder() {
-    return getIndexError();
+    return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -522,20 +526,17 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (indexTimeBuilder_ == null) {
-        indexTime_ = null;
-      } else {
-        indexTime_ = null;
+      indexTime_ = null;
+      if (indexTimeBuilder_ != null) {
+        indexTimeBuilder_.dispose();
         indexTimeBuilder_ = null;
       }
-      if (indexErrorBuilder_ == null) {
-        indexError_ = null;
-      } else {
-        indexError_ = null;
+      indexError_ = null;
+      if (indexErrorBuilder_ != null) {
+        indexErrorBuilder_.dispose();
         indexErrorBuilder_ = null;
       }
       return this;
@@ -565,20 +566,27 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p3beta1.ProductSet buildPartial() {
       com.google.cloud.vision.v1p3beta1.ProductSet result =
           new com.google.cloud.vision.v1p3beta1.ProductSet(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (indexTimeBuilder_ == null) {
-        result.indexTime_ = indexTime_;
-      } else {
-        result.indexTime_ = indexTimeBuilder_.build();
-      }
-      if (indexErrorBuilder_ == null) {
-        result.indexError_ = indexError_;
-      } else {
-        result.indexError_ = indexErrorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.ProductSet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.indexError_ = indexErrorBuilder_ == null ? indexError_ : indexErrorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -628,10 +636,12 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vision.v1p3beta1.ProductSet.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasIndexTime()) {
@@ -669,25 +679,25 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getIndexTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getIndexErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -706,6 +716,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -777,8 +789,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,8 +809,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -822,8 +834,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -892,8 +904,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -910,8 +922,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -933,8 +945,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,7 +973,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the indexTime field is set.
      */
     public boolean hasIndexTime() {
-      return indexTimeBuilder_ != null || indexTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1004,11 +1016,11 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         indexTime_ = value;
-        onChanged();
       } else {
         indexTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1027,11 +1039,11 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     public Builder setIndexTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (indexTimeBuilder_ == null) {
         indexTime_ = builderForValue.build();
-        onChanged();
       } else {
         indexTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1049,17 +1061,18 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIndexTime(com.google.protobuf.Timestamp value) {
       if (indexTimeBuilder_ == null) {
-        if (indexTime_ != null) {
-          indexTime_ =
-              com.google.protobuf.Timestamp.newBuilder(indexTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && indexTime_ != null
+            && indexTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getIndexTimeBuilder().mergeFrom(value);
         } else {
           indexTime_ = value;
         }
-        onChanged();
       } else {
         indexTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1076,14 +1089,13 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearIndexTime() {
-      if (indexTimeBuilder_ == null) {
-        indexTime_ = null;
-        onChanged();
-      } else {
-        indexTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      indexTime_ = null;
+      if (indexTimeBuilder_ != null) {
+        indexTimeBuilder_.dispose();
         indexTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1100,7 +1112,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getIndexTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getIndexTimeFieldBuilder().getBuilder();
     }
@@ -1172,7 +1184,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the indexError field is set.
      */
     public boolean hasIndexError() {
-      return indexErrorBuilder_ != null || indexError_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1211,11 +1223,11 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         indexError_ = value;
-        onChanged();
       } else {
         indexErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1232,11 +1244,11 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     public Builder setIndexError(com.google.rpc.Status.Builder builderForValue) {
       if (indexErrorBuilder_ == null) {
         indexError_ = builderForValue.build();
-        onChanged();
       } else {
         indexErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1252,17 +1264,18 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIndexError(com.google.rpc.Status value) {
       if (indexErrorBuilder_ == null) {
-        if (indexError_ != null) {
-          indexError_ =
-              com.google.rpc.Status.newBuilder(indexError_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && indexError_ != null
+            && indexError_ != com.google.rpc.Status.getDefaultInstance()) {
+          getIndexErrorBuilder().mergeFrom(value);
         } else {
           indexError_ = value;
         }
-        onChanged();
       } else {
         indexErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1277,14 +1290,13 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearIndexError() {
-      if (indexErrorBuilder_ == null) {
-        indexError_ = null;
-        onChanged();
-      } else {
-        indexError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      indexError_ = null;
+      if (indexErrorBuilder_ != null) {
+        indexErrorBuilder_.dispose();
         indexErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1299,7 +1311,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getIndexErrorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getIndexErrorFieldBuilder().getBuilder();
     }

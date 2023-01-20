@@ -66,7 +66,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CPU_MAX_PERCENT_FIELD_NUMBER = 9;
-  private int cpuMaxPercent_;
+  private int cpuMaxPercent_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CPU_AVERAGE_PERCENT_FIELD_NUMBER = 10;
-  private int cpuAveragePercent_;
+  private int cpuAveragePercent_ = 0;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MEMORY_MAX_PERCENT_FIELD_NUMBER = 11;
-  private int memoryMaxPercent_;
+  private int memoryMaxPercent_ = 0;
   /**
    *
    *
@@ -120,7 +120,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MEMORY_AVERAGE_PERCENT_FIELD_NUMBER = 12;
-  private int memoryAveragePercent_;
+  private int memoryAveragePercent_ = 0;
   /**
    *
    *
@@ -138,7 +138,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISK_IO_RATE_MAX_KBPS_FIELD_NUMBER = 13;
-  private long diskIoRateMaxKbps_;
+  private long diskIoRateMaxKbps_ = 0L;
   /**
    *
    *
@@ -156,7 +156,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISK_IO_RATE_AVERAGE_KBPS_FIELD_NUMBER = 14;
-  private long diskIoRateAverageKbps_;
+  private long diskIoRateAverageKbps_ = 0L;
   /**
    *
    *
@@ -174,7 +174,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NETWORK_THROUGHPUT_MAX_KBPS_FIELD_NUMBER = 15;
-  private long networkThroughputMaxKbps_;
+  private long networkThroughputMaxKbps_ = 0L;
   /**
    *
    *
@@ -193,7 +193,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NETWORK_THROUGHPUT_AVERAGE_KBPS_FIELD_NUMBER = 16;
-  private long networkThroughputAverageKbps_;
+  private long networkThroughputAverageKbps_ = 0L;
   /**
    *
    *
@@ -472,22 +472,15 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpuMaxPercent_ = 0;
-
       cpuAveragePercent_ = 0;
-
       memoryMaxPercent_ = 0;
-
       memoryAveragePercent_ = 0;
-
       diskIoRateMaxKbps_ = 0L;
-
       diskIoRateAverageKbps_ = 0L;
-
       networkThroughputMaxKbps_ = 0L;
-
       networkThroughputAverageKbps_ = 0L;
-
       return this;
     }
 
@@ -515,16 +508,39 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vmmigration.v1.VmUtilizationMetrics buildPartial() {
       com.google.cloud.vmmigration.v1.VmUtilizationMetrics result =
           new com.google.cloud.vmmigration.v1.VmUtilizationMetrics(this);
-      result.cpuMaxPercent_ = cpuMaxPercent_;
-      result.cpuAveragePercent_ = cpuAveragePercent_;
-      result.memoryMaxPercent_ = memoryMaxPercent_;
-      result.memoryAveragePercent_ = memoryAveragePercent_;
-      result.diskIoRateMaxKbps_ = diskIoRateMaxKbps_;
-      result.diskIoRateAverageKbps_ = diskIoRateAverageKbps_;
-      result.networkThroughputMaxKbps_ = networkThroughputMaxKbps_;
-      result.networkThroughputAverageKbps_ = networkThroughputAverageKbps_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.VmUtilizationMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpuMaxPercent_ = cpuMaxPercent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cpuAveragePercent_ = cpuAveragePercent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.memoryMaxPercent_ = memoryMaxPercent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.memoryAveragePercent_ = memoryAveragePercent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diskIoRateMaxKbps_ = diskIoRateMaxKbps_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.diskIoRateAverageKbps_ = diskIoRateAverageKbps_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.networkThroughputMaxKbps_ = networkThroughputMaxKbps_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.networkThroughputAverageKbps_ = networkThroughputAverageKbps_;
+      }
     }
 
     @java.lang.Override
@@ -626,49 +642,49 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
             case 72:
               {
                 cpuMaxPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 72
             case 80:
               {
                 cpuAveragePercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 80
             case 88:
               {
                 memoryMaxPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 88
             case 96:
               {
                 memoryAveragePercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 96
             case 104:
               {
                 diskIoRateMaxKbps_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 104
             case 112:
               {
                 diskIoRateAverageKbps_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 112
             case 120:
               {
                 networkThroughputMaxKbps_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 120
             case 128:
               {
                 networkThroughputAverageKbps_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 128
             default:
@@ -687,6 +703,8 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int cpuMaxPercent_;
     /**
@@ -719,6 +737,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setCpuMaxPercent(int value) {
 
       cpuMaxPercent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,7 +753,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCpuMaxPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cpuMaxPercent_ = 0;
       onChanged();
       return this;
@@ -771,6 +790,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setCpuAveragePercent(int value) {
 
       cpuAveragePercent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -786,7 +806,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCpuAveragePercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       cpuAveragePercent_ = 0;
       onChanged();
       return this;
@@ -823,6 +843,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setMemoryMaxPercent(int value) {
 
       memoryMaxPercent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -838,7 +859,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMemoryMaxPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       memoryMaxPercent_ = 0;
       onChanged();
       return this;
@@ -875,6 +896,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setMemoryAveragePercent(int value) {
 
       memoryAveragePercent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -890,7 +912,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMemoryAveragePercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       memoryAveragePercent_ = 0;
       onChanged();
       return this;
@@ -927,6 +949,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setDiskIoRateMaxKbps(long value) {
 
       diskIoRateMaxKbps_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -942,7 +965,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDiskIoRateMaxKbps() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       diskIoRateMaxKbps_ = 0L;
       onChanged();
       return this;
@@ -979,6 +1002,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setDiskIoRateAverageKbps(long value) {
 
       diskIoRateAverageKbps_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -994,7 +1018,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDiskIoRateAverageKbps() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       diskIoRateAverageKbps_ = 0L;
       onChanged();
       return this;
@@ -1033,6 +1057,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setNetworkThroughputMaxKbps(long value) {
 
       networkThroughputMaxKbps_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1049,7 +1074,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkThroughputMaxKbps() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       networkThroughputMaxKbps_ = 0L;
       onChanged();
       return this;
@@ -1088,6 +1113,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
     public Builder setNetworkThroughputAverageKbps(long value) {
 
       networkThroughputAverageKbps_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1104,7 +1130,7 @@ public final class VmUtilizationMetrics extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkThroughputAverageKbps() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       networkThroughputAverageKbps_ = 0L;
       onChanged();
       return this;

@@ -235,16 +235,18 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int THREAT_TYPES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> threatTypes_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>
         threatTypes_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>() {
               public com.google.webrisk.v1beta1.ThreatType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.webrisk.v1beta1.ThreatType result =
-                    com.google.webrisk.v1beta1.ThreatType.valueOf(from);
+                    com.google.webrisk.v1beta1.ThreatType.forNumber(from);
                 return result == null ? com.google.webrisk.v1beta1.ThreatType.UNRECOGNIZED : result;
               }
             };
@@ -336,7 +338,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     private int threatTypesMemoizedSerializedSize;
 
     public static final int HASH_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString hash_;
+    private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -400,7 +402,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-      return getExpireTime();
+      return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -643,14 +645,13 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         threatTypes_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         hash_ = com.google.protobuf.ByteString.EMPTY;
-
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-        } else {
-          expireTime_ = null;
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
         return this;
@@ -681,20 +682,33 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash buildPartial() {
         com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash result =
             new com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.threatTypes_ = threatTypes_;
-        result.hash_ = hash_;
-        if (expireTimeBuilder_ == null) {
-          result.expireTime_ = expireTime_;
-        } else {
-          result.expireTime_ = expireTimeBuilder_.build();
+      }
+
+      private void buildPartial0(
+          com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hash_ = hash_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.expireTime_ =
+              expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -810,13 +824,13 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               case 18:
                 {
                   hash_ = input.readBytes();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1105,8 +1119,8 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         hash_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1123,7 +1137,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearHash() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         hash_ = getDefaultInstance().getHash();
         onChanged();
         return this;
@@ -1148,7 +1162,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        * @return Whether the expireTime field is set.
        */
       public boolean hasExpireTime() {
-        return expireTimeBuilder_ != null || expireTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1187,11 +1201,11 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           expireTime_ = value;
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1207,11 +1221,11 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (expireTimeBuilder_ == null) {
           expireTime_ = builderForValue.build();
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1226,19 +1240,18 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
         if (expireTimeBuilder_ == null) {
-          if (expireTime_ != null) {
-            expireTime_ =
-                com.google.protobuf.Timestamp.newBuilder(expireTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && expireTime_ != null
+              && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getExpireTimeBuilder().mergeFrom(value);
           } else {
             expireTime_ = value;
           }
-          onChanged();
         } else {
           expireTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1252,14 +1265,13 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        * <code>.google.protobuf.Timestamp expire_time = 3;</code>
        */
       public Builder clearExpireTime() {
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-          onChanged();
-        } else {
-          expireTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1273,7 +1285,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        * <code>.google.protobuf.Timestamp expire_time = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getExpireTimeFieldBuilder().getBuilder();
       }
@@ -1389,6 +1401,8 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int THREATS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash> threats_;
   /**
    *
@@ -1518,7 +1532,9 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNegativeExpireTimeOrBuilder() {
-    return getNegativeExpireTime();
+    return negativeExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : negativeExpireTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1726,6 +1742,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (threatsBuilder_ == null) {
         threats_ = java.util.Collections.emptyList();
       } else {
@@ -1733,10 +1750,9 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         threatsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (negativeExpireTimeBuilder_ == null) {
-        negativeExpireTime_ = null;
-      } else {
-        negativeExpireTime_ = null;
+      negativeExpireTime_ = null;
+      if (negativeExpireTimeBuilder_ != null) {
+        negativeExpireTimeBuilder_.dispose();
         negativeExpireTimeBuilder_ = null;
       }
       return this;
@@ -1766,7 +1782,16 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public com.google.webrisk.v1beta1.SearchHashesResponse buildPartial() {
       com.google.webrisk.v1beta1.SearchHashesResponse result =
           new com.google.webrisk.v1beta1.SearchHashesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.webrisk.v1beta1.SearchHashesResponse result) {
       if (threatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           threats_ = java.util.Collections.unmodifiableList(threats_);
@@ -1776,13 +1801,16 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.threats_ = threatsBuilder_.build();
       }
-      if (negativeExpireTimeBuilder_ == null) {
-        result.negativeExpireTime_ = negativeExpireTime_;
-      } else {
-        result.negativeExpireTime_ = negativeExpireTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.webrisk.v1beta1.SearchHashesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.negativeExpireTime_ =
+            negativeExpireTimeBuilder_ == null
+                ? negativeExpireTime_
+                : negativeExpireTimeBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -1905,7 +1933,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getNegativeExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2347,7 +2375,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the negativeExpireTime field is set.
      */
     public boolean hasNegativeExpireTime() {
-      return negativeExpireTimeBuilder_ != null || negativeExpireTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2386,11 +2414,11 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         negativeExpireTime_ = value;
-        onChanged();
       } else {
         negativeExpireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2406,11 +2434,11 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public Builder setNegativeExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (negativeExpireTimeBuilder_ == null) {
         negativeExpireTime_ = builderForValue.build();
-        onChanged();
       } else {
         negativeExpireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2425,19 +2453,18 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeNegativeExpireTime(com.google.protobuf.Timestamp value) {
       if (negativeExpireTimeBuilder_ == null) {
-        if (negativeExpireTime_ != null) {
-          negativeExpireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(negativeExpireTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && negativeExpireTime_ != null
+            && negativeExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getNegativeExpireTimeBuilder().mergeFrom(value);
         } else {
           negativeExpireTime_ = value;
         }
-        onChanged();
       } else {
         negativeExpireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2451,14 +2478,13 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp negative_expire_time = 2;</code>
      */
     public Builder clearNegativeExpireTime() {
-      if (negativeExpireTimeBuilder_ == null) {
-        negativeExpireTime_ = null;
-        onChanged();
-      } else {
-        negativeExpireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      negativeExpireTime_ = null;
+      if (negativeExpireTimeBuilder_ != null) {
+        negativeExpireTimeBuilder_.dispose();
         negativeExpireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2472,7 +2498,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp negative_expire_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getNegativeExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNegativeExpireTimeFieldBuilder().getBuilder();
     }

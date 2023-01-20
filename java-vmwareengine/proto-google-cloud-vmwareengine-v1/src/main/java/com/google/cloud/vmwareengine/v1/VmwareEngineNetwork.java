@@ -729,7 +729,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -764,16 +764,17 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type result =
-          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.valueOf(type_);
+          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.UNRECOGNIZED
           : result;
     }
 
     public static final int NETWORK_FIELD_NUMBER = 2;
-    private volatile java.lang.Object network_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
     /**
      *
      *
@@ -1045,10 +1046,9 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         network_ = "";
-
         return this;
       }
 
@@ -1077,10 +1077,22 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork buildPartial() {
         com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork result =
             new com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork(this);
-        result.type_ = type_;
-        result.network_ = network_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.network_ = network_;
+        }
       }
 
       @java.lang.Override
@@ -1138,6 +1150,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         }
         if (!other.getNetwork().isEmpty()) {
           network_ = other.network_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1169,13 +1182,13 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   network_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1194,6 +1207,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -1230,8 +1245,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1251,9 +1266,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        */
       @java.lang.Override
       public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type result =
-            com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.valueOf(type_);
+            com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Type.UNRECOGNIZED
             : result;
@@ -1278,7 +1292,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1298,7 +1312,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -1377,8 +1391,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         network_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1398,8 +1412,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearNetwork() {
-
         network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1424,8 +1438,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         network_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1498,7 +1512,9 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1600,7 +1616,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1649,11 +1665,13 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1702,6 +1720,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VPC_NETWORKS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork>
       vpcNetworks_;
   /**
@@ -1795,7 +1815,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1828,16 +1848,15 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State result =
-        com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.valueOf(state_);
+        com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.UNRECOGNIZED
         : result;
   }
 
   public static final int TYPE_FIELD_NUMBER = 8;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -1870,16 +1889,17 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type result =
-        com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.valueOf(type_);
+        com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int UID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -1928,7 +1948,9 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ETAG_FIELD_NUMBER = 10;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -2270,37 +2292,30 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       description_ = "";
-
       if (vpcNetworksBuilder_ == null) {
         vpcNetworks_ = java.util.Collections.emptyList();
       } else {
         vpcNetworks_ = null;
         vpcNetworksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
-
       type_ = 0;
-
       uid_ = "";
-
       etag_ = "";
-
       return this;
     }
 
@@ -2328,34 +2343,53 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork buildPartial() {
       com.google.cloud.vmwareengine.v1.VmwareEngineNetwork result =
           new com.google.cloud.vmwareengine.v1.VmwareEngineNetwork(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.description_ = description_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmwareengine.v1.VmwareEngineNetwork result) {
       if (vpcNetworksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           vpcNetworks_ = java.util.Collections.unmodifiableList(vpcNetworks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.vpcNetworks_ = vpcNetworks_;
       } else {
         result.vpcNetworks_ = vpcNetworksBuilder_.build();
       }
-      result.state_ = state_;
-      result.type_ = type_;
-      result.uid_ = uid_;
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.VmwareEngineNetwork result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2406,6 +2440,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2416,13 +2451,14 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (vpcNetworksBuilder_ == null) {
         if (!other.vpcNetworks_.isEmpty()) {
           if (vpcNetworks_.isEmpty()) {
             vpcNetworks_ = other.vpcNetworks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureVpcNetworksIsMutable();
             vpcNetworks_.addAll(other.vpcNetworks_);
@@ -2435,7 +2471,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             vpcNetworksBuilder_.dispose();
             vpcNetworksBuilder_ = null;
             vpcNetworks_ = other.vpcNetworks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             vpcNetworksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVpcNetworksFieldBuilder()
@@ -2453,10 +2489,12 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2488,25 +2526,25 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -2526,25 +2564,25 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 74:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -2639,8 +2677,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2660,8 +2698,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2686,8 +2724,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2712,7 +2750,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2753,11 +2791,11 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2774,11 +2812,11 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2794,17 +2832,18 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2819,14 +2858,13 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2841,7 +2879,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2913,7 +2951,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2954,11 +2992,11 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2975,11 +3013,11 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2995,17 +3033,18 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3020,14 +3059,13 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3042,7 +3080,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3155,8 +3193,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3172,8 +3210,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3194,8 +3232,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3204,11 +3242,11 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         vpcNetworks_ = java.util.Collections.emptyList();
 
     private void ensureVpcNetworksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         vpcNetworks_ =
             new java.util.ArrayList<
                 com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork>(vpcNetworks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3477,7 +3515,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     public Builder clearVpcNetworks() {
       if (vpcNetworksBuilder_ == null) {
         vpcNetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         vpcNetworksBuilder_.clear();
@@ -3635,7 +3673,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
                 com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork,
                 com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetwork.Builder,
                 com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.VpcNetworkOrBuilder>(
-                vpcNetworks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                vpcNetworks_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         vpcNetworks_ = null;
       }
       return vpcNetworksBuilder_;
@@ -3674,8 +3712,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3694,9 +3732,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State result =
-          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.valueOf(state_);
+          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.State.UNRECOGNIZED
           : result;
@@ -3719,7 +3756,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3738,7 +3775,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -3777,8 +3814,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3797,9 +3834,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type result =
-          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.valueOf(type_);
+          com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Type.UNRECOGNIZED
           : result;
@@ -3822,7 +3858,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -3841,7 +3877,7 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
       onChanged();
       return this;
@@ -3908,8 +3944,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3925,8 +3961,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3947,8 +3983,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4023,8 +4059,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4043,8 +4079,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4068,8 +4104,8 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

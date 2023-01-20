@@ -68,6 +68,8 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
   }
 
   public static final int FINDING_TYPE_STATS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1beta.FindingTypeStats>
       findingTypeStats_;
   /**
@@ -349,6 +351,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (findingTypeStatsBuilder_ == null) {
         findingTypeStats_ = java.util.Collections.emptyList();
       } else {
@@ -386,7 +389,16 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
     public com.google.cloud.websecurityscanner.v1beta.ListFindingTypeStatsResponse buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.ListFindingTypeStatsResponse result =
           new com.google.cloud.websecurityscanner.v1beta.ListFindingTypeStatsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1beta.ListFindingTypeStatsResponse result) {
       if (findingTypeStatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           findingTypeStats_ = java.util.Collections.unmodifiableList(findingTypeStats_);
@@ -396,8 +408,11 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       } else {
         result.findingTypeStats_ = findingTypeStatsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1beta.ListFindingTypeStatsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

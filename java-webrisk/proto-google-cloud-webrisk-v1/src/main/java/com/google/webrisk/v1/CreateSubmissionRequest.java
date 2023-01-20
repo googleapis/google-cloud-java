@@ -68,7 +68,9 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.webrisk.v1.SubmissionOrBuilder getSubmissionOrBuilder() {
-    return getSubmission();
+    return submission_ == null
+        ? com.google.webrisk.v1.Submission.getDefaultInstance()
+        : submission_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,12 +391,11 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (submissionBuilder_ == null) {
-        submission_ = null;
-      } else {
-        submission_ = null;
+      submission_ = null;
+      if (submissionBuilder_ != null) {
+        submissionBuilder_.dispose();
         submissionBuilder_ = null;
       }
       return this;
@@ -422,14 +425,21 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     public com.google.webrisk.v1.CreateSubmissionRequest buildPartial() {
       com.google.webrisk.v1.CreateSubmissionRequest result =
           new com.google.webrisk.v1.CreateSubmissionRequest(this);
-      result.parent_ = parent_;
-      if (submissionBuilder_ == null) {
-        result.submission_ = submission_;
-      } else {
-        result.submission_ = submissionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.webrisk.v1.CreateSubmissionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.submission_ = submissionBuilder_ == null ? submission_ : submissionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +489,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       if (other == com.google.webrisk.v1.CreateSubmissionRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSubmission()) {
@@ -513,13 +524,13 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSubmissionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +549,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -609,8 +622,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,8 +642,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -654,8 +667,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,7 +693,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      * @return Whether the submission field is set.
      */
     public boolean hasSubmission() {
-      return submissionBuilder_ != null || submission_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -721,11 +734,11 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         submission_ = value;
-        onChanged();
       } else {
         submissionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +755,11 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     public Builder setSubmission(com.google.webrisk.v1.Submission.Builder builderForValue) {
       if (submissionBuilder_ == null) {
         submission_ = builderForValue.build();
-        onChanged();
       } else {
         submissionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -762,19 +775,18 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeSubmission(com.google.webrisk.v1.Submission value) {
       if (submissionBuilder_ == null) {
-        if (submission_ != null) {
-          submission_ =
-              com.google.webrisk.v1.Submission.newBuilder(submission_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && submission_ != null
+            && submission_ != com.google.webrisk.v1.Submission.getDefaultInstance()) {
+          getSubmissionBuilder().mergeFrom(value);
         } else {
           submission_ = value;
         }
-        onChanged();
       } else {
         submissionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -789,14 +801,13 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearSubmission() {
-      if (submissionBuilder_ == null) {
-        submission_ = null;
-        onChanged();
-      } else {
-        submission_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      submission_ = null;
+      if (submissionBuilder_ != null) {
+        submissionBuilder_.dispose();
         submissionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +822,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.webrisk.v1.Submission.Builder getSubmissionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSubmissionFieldBuilder().getBuilder();
     }

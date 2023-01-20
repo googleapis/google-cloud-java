@@ -659,7 +659,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -708,7 +710,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_VM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sourceVmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceVmId_ = "";
   /**
    *
    *
@@ -761,7 +765,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 18;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -810,7 +816,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -903,7 +911,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.SchedulePolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null
+        ? com.google.cloud.vmmigration.v1.SchedulePolicy.getDefaultInstance()
+        : policy_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
@@ -955,7 +965,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
@@ -1004,7 +1014,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LAST_SYNC_FIELD_NUMBER = 11;
@@ -1061,11 +1071,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ReplicationSyncOrBuilder getLastSyncOrBuilder() {
-    return getLastSync();
+    return lastSync_ == null
+        ? com.google.cloud.vmmigration.v1.ReplicationSync.getDefaultInstance()
+        : lastSync_;
   }
 
   public static final int STATE_FIELD_NUMBER = 23;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1098,9 +1110,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.MigratingVm.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.MigratingVm.State result =
-        com.google.cloud.vmmigration.v1.MigratingVm.State.valueOf(state_);
+        com.google.cloud.vmmigration.v1.MigratingVm.State.forNumber(state_);
     return result == null ? com.google.cloud.vmmigration.v1.MigratingVm.State.UNRECOGNIZED : result;
   }
 
@@ -1150,7 +1161,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateTimeOrBuilder() {
-    return getStateTime();
+    return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
   }
 
   public static final int CURRENT_SYNC_INFO_FIELD_NUMBER = 13;
@@ -1207,11 +1218,15 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder getCurrentSyncInfoOrBuilder() {
-    return getCurrentSyncInfo();
+    return currentSyncInfo_ == null
+        ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
+        : currentSyncInfo_;
   }
 
   public static final int GROUP_FIELD_NUMBER = 15;
-  private volatile java.lang.Object group_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object group_ = "";
   /**
    *
    *
@@ -1280,6 +1295,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1337,7 +1353,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1366,6 +1385,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RECENT_CLONE_JOBS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CloneJob> recentCloneJobs_;
   /**
    *
@@ -1510,10 +1531,12 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int RECENT_CUTOVER_JOBS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> recentCutoverJobs_;
   /**
    *
@@ -2065,6 +2088,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (computeEngineTargetDefaultsBuilder_ != null) {
         computeEngineTargetDefaultsBuilder_.clear();
       }
@@ -2072,53 +2096,41 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         awsSourceVmDetailsBuilder_.clear();
       }
       name_ = "";
-
       sourceVmId_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (lastSyncBuilder_ == null) {
-        lastSync_ = null;
-      } else {
-        lastSync_ = null;
+      lastSync_ = null;
+      if (lastSyncBuilder_ != null) {
+        lastSyncBuilder_.dispose();
         lastSyncBuilder_ = null;
       }
       state_ = 0;
-
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-      } else {
-        stateTime_ = null;
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-      if (currentSyncInfoBuilder_ == null) {
-        currentSyncInfo_ = null;
-      } else {
-        currentSyncInfo_ = null;
+      currentSyncInfo_ = null;
+      if (currentSyncInfoBuilder_ != null) {
+        currentSyncInfoBuilder_.dispose();
         currentSyncInfoBuilder_ = null;
       }
       group_ = "";
-
       internalGetMutableLabels().clear();
       if (recentCloneJobsBuilder_ == null) {
         recentCloneJobs_ = java.util.Collections.emptyList();
@@ -2126,11 +2138,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         recentCloneJobs_ = null;
         recentCloneJobsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       if (recentCutoverJobsBuilder_ == null) {
@@ -2139,7 +2150,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         recentCutoverJobs_ = null;
         recentCutoverJobsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00020000);
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
       sourceVmDetailsCase_ = 0;
@@ -2171,86 +2182,95 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.MigratingVm buildPartial() {
       com.google.cloud.vmmigration.v1.MigratingVm result =
           new com.google.cloud.vmmigration.v1.MigratingVm(this);
-      int from_bitField0_ = bitField0_;
-      if (targetVmDefaultsCase_ == 26) {
-        if (computeEngineTargetDefaultsBuilder_ == null) {
-          result.targetVmDefaults_ = targetVmDefaults_;
-        } else {
-          result.targetVmDefaults_ = computeEngineTargetDefaultsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceVmDetailsCase_ == 29) {
-        if (awsSourceVmDetailsBuilder_ == null) {
-          result.sourceVmDetails_ = sourceVmDetails_;
-        } else {
-          result.sourceVmDetails_ = awsSourceVmDetailsBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.sourceVmId_ = sourceVmId_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (lastSyncBuilder_ == null) {
-        result.lastSync_ = lastSync_;
-      } else {
-        result.lastSync_ = lastSyncBuilder_.build();
-      }
-      result.state_ = state_;
-      if (stateTimeBuilder_ == null) {
-        result.stateTime_ = stateTime_;
-      } else {
-        result.stateTime_ = stateTimeBuilder_.build();
-      }
-      if (currentSyncInfoBuilder_ == null) {
-        result.currentSyncInfo_ = currentSyncInfo_;
-      } else {
-        result.currentSyncInfo_ = currentSyncInfoBuilder_.build();
-      }
-      result.group_ = group_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vmmigration.v1.MigratingVm result) {
       if (recentCloneJobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           recentCloneJobs_ = java.util.Collections.unmodifiableList(recentCloneJobs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.recentCloneJobs_ = recentCloneJobs_;
       } else {
         result.recentCloneJobs_ = recentCloneJobsBuilder_.build();
       }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
       if (recentCutoverJobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           recentCutoverJobs_ = java.util.Collections.unmodifiableList(recentCutoverJobs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.recentCutoverJobs_ = recentCutoverJobs_;
       } else {
         result.recentCutoverJobs_ = recentCutoverJobsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.MigratingVm result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourceVmId_ = sourceVmId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.lastSync_ = lastSyncBuilder_ == null ? lastSync_ : lastSyncBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.stateTime_ = stateTimeBuilder_ == null ? stateTime_ : stateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.currentSyncInfo_ =
+            currentSyncInfoBuilder_ == null ? currentSyncInfo_ : currentSyncInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.group_ = group_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vmmigration.v1.MigratingVm result) {
       result.targetVmDefaultsCase_ = targetVmDefaultsCase_;
+      result.targetVmDefaults_ = this.targetVmDefaults_;
+      if (targetVmDefaultsCase_ == 26 && computeEngineTargetDefaultsBuilder_ != null) {
+        result.targetVmDefaults_ = computeEngineTargetDefaultsBuilder_.build();
+      }
       result.sourceVmDetailsCase_ = sourceVmDetailsCase_;
-      onBuilt();
-      return result;
+      result.sourceVmDetails_ = this.sourceVmDetails_;
+      if (sourceVmDetailsCase_ == 29 && awsSourceVmDetailsBuilder_ != null) {
+        result.sourceVmDetails_ = awsSourceVmDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2300,18 +2320,22 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSourceVmId().isEmpty()) {
         sourceVmId_ = other.sourceVmId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -2337,14 +2361,16 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getGroup().isEmpty()) {
         group_ = other.group_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00004000;
       if (recentCloneJobsBuilder_ == null) {
         if (!other.recentCloneJobs_.isEmpty()) {
           if (recentCloneJobs_.isEmpty()) {
             recentCloneJobs_ = other.recentCloneJobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureRecentCloneJobsIsMutable();
             recentCloneJobs_.addAll(other.recentCloneJobs_);
@@ -2357,7 +2383,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             recentCloneJobsBuilder_.dispose();
             recentCloneJobsBuilder_ = null;
             recentCloneJobs_ = other.recentCloneJobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00008000);
             recentCloneJobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRecentCloneJobsFieldBuilder()
@@ -2374,7 +2400,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         if (!other.recentCutoverJobs_.isEmpty()) {
           if (recentCutoverJobs_.isEmpty()) {
             recentCutoverJobs_ = other.recentCutoverJobs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureRecentCutoverJobsIsMutable();
             recentCutoverJobs_.addAll(other.recentCutoverJobs_);
@@ -2387,7 +2413,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             recentCutoverJobsBuilder_.dispose();
             recentCutoverJobsBuilder_ = null;
             recentCutoverJobs_ = other.recentCutoverJobs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00020000);
             recentCutoverJobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRecentCutoverJobsFieldBuilder()
@@ -2448,55 +2474,55 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 sourceVmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 66:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getLastSyncFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(getCurrentSyncInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 122:
               {
                 group_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
@@ -2508,6 +2534,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 138:
@@ -2526,13 +2553,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             case 162:
@@ -2551,13 +2578,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 178
             case 184:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 184
             case 210:
@@ -2854,7 +2881,6 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       targetVmDefaultsCase_ = 26;
       onChanged();
-      ;
       return computeEngineTargetDefaultsBuilder_;
     }
 
@@ -3087,7 +3113,6 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       sourceVmDetailsCase_ = 29;
       onChanged();
-      ;
       return awsSourceVmDetailsBuilder_;
     }
 
@@ -3152,8 +3177,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3169,8 +3194,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3191,8 +3216,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3264,8 +3289,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceVmId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3283,8 +3308,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceVmId() {
-
       sourceVmId_ = getDefaultInstance().getSourceVmId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3307,8 +3332,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceVmId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3374,8 +3399,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3391,8 +3416,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3413,8 +3438,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3480,8 +3505,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3497,8 +3522,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3519,8 +3544,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3543,7 +3568,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3580,11 +3605,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3600,11 +3625,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmmigration.v1.SchedulePolicy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3618,19 +3643,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePolicy(com.google.cloud.vmmigration.v1.SchedulePolicy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.cloud.vmmigration.v1.SchedulePolicy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && policy_ != null
+            && policy_ != com.google.cloud.vmmigration.v1.SchedulePolicy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3643,14 +3667,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmmigration.v1.SchedulePolicy policy = 8;</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3663,7 +3686,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmmigration.v1.SchedulePolicy policy = 8;</code>
      */
     public com.google.cloud.vmmigration.v1.SchedulePolicy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -3732,7 +3755,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3775,11 +3798,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3797,11 +3820,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3818,17 +3841,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3844,14 +3868,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3867,7 +3890,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3941,7 +3964,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3982,11 +4005,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4003,11 +4026,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4023,17 +4046,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4048,14 +4072,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4070,7 +4093,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4143,7 +4166,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastSync field is set.
      */
     public boolean hasLastSync() {
-      return lastSyncBuilder_ != null || lastSync_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4186,11 +4209,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastSync_ = value;
-        onChanged();
       } else {
         lastSyncBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4209,11 +4232,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmmigration.v1.ReplicationSync.Builder builderForValue) {
       if (lastSyncBuilder_ == null) {
         lastSync_ = builderForValue.build();
-        onChanged();
       } else {
         lastSyncBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4230,19 +4253,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastSync(com.google.cloud.vmmigration.v1.ReplicationSync value) {
       if (lastSyncBuilder_ == null) {
-        if (lastSync_ != null) {
-          lastSync_ =
-              com.google.cloud.vmmigration.v1.ReplicationSync.newBuilder(lastSync_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && lastSync_ != null
+            && lastSync_ != com.google.cloud.vmmigration.v1.ReplicationSync.getDefaultInstance()) {
+          getLastSyncBuilder().mergeFrom(value);
         } else {
           lastSync_ = value;
         }
-        onChanged();
       } else {
         lastSyncBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4258,14 +4280,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastSync() {
-      if (lastSyncBuilder_ == null) {
-        lastSync_ = null;
-        onChanged();
-      } else {
-        lastSync_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      lastSync_ = null;
+      if (lastSyncBuilder_ != null) {
+        lastSyncBuilder_.dispose();
         lastSyncBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4281,7 +4302,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmmigration.v1.ReplicationSync.Builder getLastSyncBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLastSyncFieldBuilder().getBuilder();
     }
@@ -4368,8 +4389,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4388,9 +4409,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.MigratingVm.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.MigratingVm.State result =
-          com.google.cloud.vmmigration.v1.MigratingVm.State.valueOf(state_);
+          com.google.cloud.vmmigration.v1.MigratingVm.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmmigration.v1.MigratingVm.State.UNRECOGNIZED
           : result;
@@ -4413,7 +4433,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4432,7 +4452,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;
@@ -4458,7 +4478,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateTime field is set.
      */
     public boolean hasStateTime() {
-      return stateTimeBuilder_ != null || stateTime_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4497,11 +4517,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stateTime_ = value;
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4518,11 +4538,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder setStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateTimeBuilder_ == null) {
         stateTime_ = builderForValue.build();
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4538,17 +4558,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateTime(com.google.protobuf.Timestamp value) {
       if (stateTimeBuilder_ == null) {
-        if (stateTime_ != null) {
-          stateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(stateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && stateTime_ != null
+            && stateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStateTimeBuilder().mergeFrom(value);
         } else {
           stateTime_ = value;
         }
-        onChanged();
       } else {
         stateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4563,14 +4584,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateTime() {
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-        onChanged();
-      } else {
-        stateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4585,7 +4605,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateTimeBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
@@ -4656,7 +4676,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentSyncInfo field is set.
      */
     public boolean hasCurrentSyncInfo() {
-      return currentSyncInfoBuilder_ != null || currentSyncInfo_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4699,11 +4719,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         currentSyncInfo_ = value;
-        onChanged();
       } else {
         currentSyncInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4722,11 +4742,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vmmigration.v1.ReplicationCycle.Builder builderForValue) {
       if (currentSyncInfoBuilder_ == null) {
         currentSyncInfo_ = builderForValue.build();
-        onChanged();
       } else {
         currentSyncInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4743,19 +4763,19 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCurrentSyncInfo(com.google.cloud.vmmigration.v1.ReplicationCycle value) {
       if (currentSyncInfoBuilder_ == null) {
-        if (currentSyncInfo_ != null) {
-          currentSyncInfo_ =
-              com.google.cloud.vmmigration.v1.ReplicationCycle.newBuilder(currentSyncInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && currentSyncInfo_ != null
+            && currentSyncInfo_
+                != com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()) {
+          getCurrentSyncInfoBuilder().mergeFrom(value);
         } else {
           currentSyncInfo_ = value;
         }
-        onChanged();
       } else {
         currentSyncInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4771,14 +4791,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCurrentSyncInfo() {
-      if (currentSyncInfoBuilder_ == null) {
-        currentSyncInfo_ = null;
-        onChanged();
-      } else {
-        currentSyncInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      currentSyncInfo_ = null;
+      if (currentSyncInfoBuilder_ != null) {
+        currentSyncInfoBuilder_.dispose();
         currentSyncInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4794,7 +4813,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmmigration.v1.ReplicationCycle.Builder getCurrentSyncInfoBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getCurrentSyncInfoFieldBuilder().getBuilder();
     }
@@ -4921,8 +4940,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       group_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4942,8 +4961,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-
       group_ = getDefaultInstance().getGroup();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4968,8 +4987,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       group_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4985,14 +5004,14 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00004000;
+      onChanged();
       return labels_;
     }
 
@@ -5044,8 +5063,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 16;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -5074,6 +5095,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5096,6 +5118,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -5114,8 +5137,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -5129,6 +5152,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -5136,10 +5160,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRecentCloneJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         recentCloneJobs_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneJob>(recentCloneJobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -5421,7 +5445,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRecentCloneJobs() {
       if (recentCloneJobsBuilder_ == null) {
         recentCloneJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         recentCloneJobsBuilder_.clear();
@@ -5587,7 +5611,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.CloneJob.Builder,
                 com.google.cloud.vmmigration.v1.CloneJobOrBuilder>(
                 recentCloneJobs_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         recentCloneJobs_ = null;
@@ -5612,7 +5636,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5649,11 +5673,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5669,11 +5693,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5688,16 +5712,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5711,14 +5737,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5732,7 +5757,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -5781,10 +5806,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRecentCutoverJobsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         recentCutoverJobs_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverJob>(recentCutoverJobs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -6068,7 +6093,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRecentCutoverJobs() {
       if (recentCutoverJobsBuilder_ == null) {
         recentCutoverJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         recentCutoverJobsBuilder_.clear();
@@ -6236,7 +6261,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.CutoverJob.Builder,
                 com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>(
                 recentCutoverJobs_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         recentCutoverJobs_ = null;

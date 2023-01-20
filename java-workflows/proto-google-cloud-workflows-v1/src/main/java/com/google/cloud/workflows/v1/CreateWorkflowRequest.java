@@ -71,7 +71,9 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,11 +178,15 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.workflows.v1.WorkflowOrBuilder getWorkflowOrBuilder() {
-    return getWorkflow();
+    return workflow_ == null
+        ? com.google.cloud.workflows.v1.Workflow.getDefaultInstance()
+        : workflow_;
   }
 
   public static final int WORKFLOW_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object workflowId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workflowId_ = "";
   /**
    *
    *
@@ -462,16 +468,14 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (workflowBuilder_ == null) {
-        workflow_ = null;
-      } else {
-        workflow_ = null;
+      workflow_ = null;
+      if (workflowBuilder_ != null) {
+        workflowBuilder_.dispose();
         workflowBuilder_ = null;
       }
       workflowId_ = "";
-
       return this;
     }
 
@@ -499,15 +503,24 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.workflows.v1.CreateWorkflowRequest buildPartial() {
       com.google.cloud.workflows.v1.CreateWorkflowRequest result =
           new com.google.cloud.workflows.v1.CreateWorkflowRequest(this);
-      result.parent_ = parent_;
-      if (workflowBuilder_ == null) {
-        result.workflow_ = workflow_;
-      } else {
-        result.workflow_ = workflowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.workflowId_ = workflowId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.workflows.v1.CreateWorkflowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workflow_ = workflowBuilder_ == null ? workflow_ : workflowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.workflowId_ = workflowId_;
+      }
     }
 
     @java.lang.Override
@@ -558,6 +571,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasWorkflow()) {
@@ -565,6 +579,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getWorkflowId().isEmpty()) {
         workflowId_ = other.workflowId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -596,19 +611,19 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getWorkflowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 workflowId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -627,6 +642,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -698,8 +715,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +735,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +760,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,7 +786,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the workflow field is set.
      */
     public boolean hasWorkflow() {
-      return workflowBuilder_ != null || workflow_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +827,11 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         workflow_ = value;
-        onChanged();
       } else {
         workflowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +848,11 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
     public Builder setWorkflow(com.google.cloud.workflows.v1.Workflow.Builder builderForValue) {
       if (workflowBuilder_ == null) {
         workflow_ = builderForValue.build();
-        onChanged();
       } else {
         workflowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -851,19 +868,18 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWorkflow(com.google.cloud.workflows.v1.Workflow value) {
       if (workflowBuilder_ == null) {
-        if (workflow_ != null) {
-          workflow_ =
-              com.google.cloud.workflows.v1.Workflow.newBuilder(workflow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && workflow_ != null
+            && workflow_ != com.google.cloud.workflows.v1.Workflow.getDefaultInstance()) {
+          getWorkflowBuilder().mergeFrom(value);
         } else {
           workflow_ = value;
         }
-        onChanged();
       } else {
         workflowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,14 +894,13 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearWorkflow() {
-      if (workflowBuilder_ == null) {
-        workflow_ = null;
-        onChanged();
-      } else {
-        workflow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      workflow_ = null;
+      if (workflowBuilder_ != null) {
+        workflowBuilder_.dispose();
         workflowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -900,7 +915,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.workflows.v1.Workflow.Builder getWorkflowBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWorkflowFieldBuilder().getBuilder();
     }
@@ -1031,8 +1046,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       workflowId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,8 +1069,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearWorkflowId() {
-
       workflowId_ = getDefaultInstance().getWorkflowId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1097,8 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workflowId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

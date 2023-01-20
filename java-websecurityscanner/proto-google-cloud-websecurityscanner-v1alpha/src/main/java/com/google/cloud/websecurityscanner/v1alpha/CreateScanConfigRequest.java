@@ -68,7 +68,9 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder() {
-    return getScanConfig();
+    return scanConfig_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()
+        : scanConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (scanConfigBuilder_ == null) {
-        scanConfig_ = null;
-      } else {
-        scanConfig_ = null;
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
         scanConfigBuilder_ = null;
       }
       return this;
@@ -427,14 +430,22 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     public com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest result =
           new com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest(this);
-      result.parent_ = parent_;
-      if (scanConfigBuilder_ == null) {
-        result.scanConfig_ = scanConfig_;
-      } else {
-        result.scanConfig_ = scanConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scanConfig_ = scanConfigBuilder_ == null ? scanConfig_ : scanConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +499,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasScanConfig()) {
@@ -522,13 +534,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getScanConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +559,8 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -618,8 +632,8 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +652,8 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -663,8 +677,8 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,7 +703,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      * @return Whether the scanConfig field is set.
      */
     public boolean hasScanConfig() {
-      return scanConfigBuilder_ != null || scanConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -730,11 +744,11 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         scanConfig_ = value;
-        onChanged();
       } else {
         scanConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -752,11 +766,11 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder builderForValue) {
       if (scanConfigBuilder_ == null) {
         scanConfig_ = builderForValue.build();
-        onChanged();
       } else {
         scanConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -772,19 +786,19 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeScanConfig(com.google.cloud.websecurityscanner.v1alpha.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
-        if (scanConfig_ != null) {
-          scanConfig_ =
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.newBuilder(scanConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && scanConfig_ != null
+            && scanConfig_
+                != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()) {
+          getScanConfigBuilder().mergeFrom(value);
         } else {
           scanConfig_ = value;
         }
-        onChanged();
       } else {
         scanConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,14 +813,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearScanConfig() {
-      if (scanConfigBuilder_ == null) {
-        scanConfig_ = null;
-        onChanged();
-      } else {
-        scanConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
         scanConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -821,7 +834,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder getScanConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getScanConfigFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FORCE_REFRESH_FIELD_NUMBER = 2;
-  private boolean forceRefresh_;
+  private boolean forceRefresh_ = false;
   /**
    *
    *
@@ -348,10 +350,9 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       source_ = "";
-
       forceRefresh_ = false;
-
       return this;
     }
 
@@ -379,10 +380,21 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vmmigration.v1.FetchInventoryRequest buildPartial() {
       com.google.cloud.vmmigration.v1.FetchInventoryRequest result =
           new com.google.cloud.vmmigration.v1.FetchInventoryRequest(this);
-      result.source_ = source_;
-      result.forceRefresh_ = forceRefresh_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.FetchInventoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.forceRefresh_ = forceRefresh_;
+      }
     }
 
     @java.lang.Override
@@ -433,6 +445,7 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getForceRefresh() != false) {
@@ -467,13 +480,13 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 forceRefresh_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -492,6 +505,8 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object source_ = "";
     /**
@@ -560,8 +575,8 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -579,8 +594,8 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -603,8 +618,8 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,6 +657,7 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
     public Builder setForceRefresh(boolean value) {
 
       forceRefresh_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -658,7 +674,7 @@ public final class FetchInventoryRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearForceRefresh() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       forceRefresh_ = false;
       onChanged();
       return this;

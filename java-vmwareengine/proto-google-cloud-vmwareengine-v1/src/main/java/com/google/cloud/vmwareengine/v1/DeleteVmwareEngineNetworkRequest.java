@@ -72,7 +72,9 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -204,7 +208,9 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
   }
 
   public static final int ETAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -477,12 +483,10 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       requestId_ = "";
-
       etag_ = "";
-
       return this;
     }
 
@@ -511,11 +515,25 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
     public com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest result =
           new com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest(this);
-      result.name_ = name_;
-      result.requestId_ = requestId_;
-      result.etag_ = etag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -568,14 +586,17 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -607,19 +628,19 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -638,6 +659,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -718,8 +741,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -741,8 +764,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -769,8 +792,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -869,8 +892,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +920,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -930,8 +953,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1006,8 +1029,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1026,8 +1049,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1051,8 +1074,8 @@ public final class DeleteVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

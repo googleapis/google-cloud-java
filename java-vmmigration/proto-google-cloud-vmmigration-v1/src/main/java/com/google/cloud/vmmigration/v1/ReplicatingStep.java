@@ -66,7 +66,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TOTAL_BYTES_FIELD_NUMBER = 1;
-  private long totalBytes_;
+  private long totalBytes_ = 0L;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REPLICATED_BYTES_FIELD_NUMBER = 2;
-  private long replicatedBytes_;
+  private long replicatedBytes_ = 0L;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LAST_TWO_MINUTES_AVERAGE_BYTES_PER_SECOND_FIELD_NUMBER = 3;
-  private long lastTwoMinutesAverageBytesPerSecond_;
+  private long lastTwoMinutesAverageBytesPerSecond_ = 0L;
   /**
    *
    *
@@ -121,7 +121,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LAST_THIRTY_MINUTES_AVERAGE_BYTES_PER_SECOND_FIELD_NUMBER = 4;
-  private long lastThirtyMinutesAverageBytesPerSecond_;
+  private long lastThirtyMinutesAverageBytesPerSecond_ = 0L;
   /**
    *
    *
@@ -373,14 +373,11 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       totalBytes_ = 0L;
-
       replicatedBytes_ = 0L;
-
       lastTwoMinutesAverageBytesPerSecond_ = 0L;
-
       lastThirtyMinutesAverageBytesPerSecond_ = 0L;
-
       return this;
     }
 
@@ -408,12 +405,27 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.vmmigration.v1.ReplicatingStep buildPartial() {
       com.google.cloud.vmmigration.v1.ReplicatingStep result =
           new com.google.cloud.vmmigration.v1.ReplicatingStep(this);
-      result.totalBytes_ = totalBytes_;
-      result.replicatedBytes_ = replicatedBytes_;
-      result.lastTwoMinutesAverageBytesPerSecond_ = lastTwoMinutesAverageBytesPerSecond_;
-      result.lastThirtyMinutesAverageBytesPerSecond_ = lastThirtyMinutesAverageBytesPerSecond_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.ReplicatingStep result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.totalBytes_ = totalBytes_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.replicatedBytes_ = replicatedBytes_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastTwoMinutesAverageBytesPerSecond_ = lastTwoMinutesAverageBytesPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastThirtyMinutesAverageBytesPerSecond_ = lastThirtyMinutesAverageBytesPerSecond_;
+      }
     }
 
     @java.lang.Override
@@ -504,25 +516,25 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 totalBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 replicatedBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 lastTwoMinutesAverageBytesPerSecond_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 lastThirtyMinutesAverageBytesPerSecond_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -541,6 +553,8 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long totalBytes_;
     /**
@@ -573,6 +587,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public Builder setTotalBytes(long value) {
 
       totalBytes_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,7 +603,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTotalBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       totalBytes_ = 0L;
       onChanged();
       return this;
@@ -625,6 +640,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public Builder setReplicatedBytes(long value) {
 
       replicatedBytes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -640,7 +656,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearReplicatedBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       replicatedBytes_ = 0L;
       onChanged();
       return this;
@@ -679,6 +695,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public Builder setLastTwoMinutesAverageBytesPerSecond(long value) {
 
       lastTwoMinutesAverageBytesPerSecond_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -695,7 +712,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLastTwoMinutesAverageBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       lastTwoMinutesAverageBytesPerSecond_ = 0L;
       onChanged();
       return this;
@@ -734,6 +751,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public Builder setLastThirtyMinutesAverageBytesPerSecond(long value) {
 
       lastThirtyMinutesAverageBytesPerSecond_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -750,7 +768,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLastThirtyMinutesAverageBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       lastThirtyMinutesAverageBytesPerSecond_ = 0L;
       onChanged();
       return this;

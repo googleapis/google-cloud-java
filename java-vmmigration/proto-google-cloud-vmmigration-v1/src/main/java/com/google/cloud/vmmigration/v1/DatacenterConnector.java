@@ -335,7 +335,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
@@ -384,11 +384,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -437,7 +439,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REGISTRATION_ID_FIELD_NUMBER = 12;
-  private volatile java.lang.Object registrationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registrationId_ = "";
   /**
    *
    *
@@ -490,7 +494,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -541,7 +547,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VERSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -592,7 +600,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BUCKET_FIELD_NUMBER = 10;
-  private volatile java.lang.Object bucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucket_ = "";
   /**
    *
    *
@@ -643,7 +653,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -678,9 +688,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.DatacenterConnector.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.DatacenterConnector.State result =
-        com.google.cloud.vmmigration.v1.DatacenterConnector.State.valueOf(state_);
+        com.google.cloud.vmmigration.v1.DatacenterConnector.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vmmigration.v1.DatacenterConnector.State.UNRECOGNIZED
         : result;
@@ -732,7 +741,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateTimeOrBuilder() {
-    return getStateTime();
+    return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 11;
@@ -781,11 +790,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int APPLIANCE_INFRASTRUCTURE_VERSION_FIELD_NUMBER = 13;
-  private volatile java.lang.Object applianceInfrastructureVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applianceInfrastructureVersion_ = "";
   /**
    *
    *
@@ -842,7 +853,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   }
 
   public static final int APPLIANCE_SOFTWARE_VERSION_FIELD_NUMBER = 14;
-  private volatile java.lang.Object applianceSoftwareVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applianceSoftwareVersion_ = "";
   /**
    *
    *
@@ -947,7 +960,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder getAvailableVersionsOrBuilder() {
-    return getAvailableVersions();
+    return availableVersions_ == null
+        ? com.google.cloud.vmmigration.v1.AvailableUpdates.getDefaultInstance()
+        : availableVersions_;
   }
 
   public static final int UPGRADE_STATUS_FIELD_NUMBER = 16;
@@ -1001,7 +1016,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder getUpgradeStatusOrBuilder() {
-    return getUpgradeStatus();
+    return upgradeStatus_ == null
+        ? com.google.cloud.vmmigration.v1.UpgradeStatus.getDefaultInstance()
+        : upgradeStatus_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1360,56 +1377,43 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       name_ = "";
-
       registrationId_ = "";
-
       serviceAccount_ = "";
-
       version_ = "";
-
       bucket_ = "";
-
       state_ = 0;
-
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-      } else {
-        stateTime_ = null;
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       applianceInfrastructureVersion_ = "";
-
       applianceSoftwareVersion_ = "";
-
-      if (availableVersionsBuilder_ == null) {
-        availableVersions_ = null;
-      } else {
-        availableVersions_ = null;
+      availableVersions_ = null;
+      if (availableVersionsBuilder_ != null) {
+        availableVersionsBuilder_.dispose();
         availableVersionsBuilder_ = null;
       }
-      if (upgradeStatusBuilder_ == null) {
-        upgradeStatus_ = null;
-      } else {
-        upgradeStatus_ = null;
+      upgradeStatus_ = null;
+      if (upgradeStatusBuilder_ != null) {
+        upgradeStatusBuilder_.dispose();
         upgradeStatusBuilder_ = null;
       }
       return this;
@@ -1439,46 +1443,61 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vmmigration.v1.DatacenterConnector buildPartial() {
       com.google.cloud.vmmigration.v1.DatacenterConnector result =
           new com.google.cloud.vmmigration.v1.DatacenterConnector(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.name_ = name_;
-      result.registrationId_ = registrationId_;
-      result.serviceAccount_ = serviceAccount_;
-      result.version_ = version_;
-      result.bucket_ = bucket_;
-      result.state_ = state_;
-      if (stateTimeBuilder_ == null) {
-        result.stateTime_ = stateTime_;
-      } else {
-        result.stateTime_ = stateTimeBuilder_.build();
-      }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      result.applianceInfrastructureVersion_ = applianceInfrastructureVersion_;
-      result.applianceSoftwareVersion_ = applianceSoftwareVersion_;
-      if (availableVersionsBuilder_ == null) {
-        result.availableVersions_ = availableVersions_;
-      } else {
-        result.availableVersions_ = availableVersionsBuilder_.build();
-      }
-      if (upgradeStatusBuilder_ == null) {
-        result.upgradeStatus_ = upgradeStatus_;
-      } else {
-        result.upgradeStatus_ = upgradeStatusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.DatacenterConnector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.registrationId_ = registrationId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.bucket_ = bucket_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.stateTime_ = stateTimeBuilder_ == null ? stateTime_ : stateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.applianceInfrastructureVersion_ = applianceInfrastructureVersion_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.applianceSoftwareVersion_ = applianceSoftwareVersion_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.availableVersions_ =
+            availableVersionsBuilder_ == null
+                ? availableVersions_
+                : availableVersionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.upgradeStatus_ =
+            upgradeStatusBuilder_ == null ? upgradeStatus_ : upgradeStatusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1535,22 +1554,27 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRegistrationId().isEmpty()) {
         registrationId_ = other.registrationId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getBucket().isEmpty()) {
         bucket_ = other.bucket_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1564,10 +1588,12 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       }
       if (!other.getApplianceInfrastructureVersion().isEmpty()) {
         applianceInfrastructureVersion_ = other.applianceInfrastructureVersion_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getApplianceSoftwareVersion().isEmpty()) {
         applianceSoftwareVersion_ = other.applianceSoftwareVersion_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasAvailableVersions()) {
@@ -1605,86 +1631,86 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 82:
               {
                 bucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 registrationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 98
             case 106:
               {
                 applianceInfrastructureVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
               {
                 applianceSoftwareVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getAvailableVersionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getUpgradeStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             default:
@@ -1703,6 +1729,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1725,7 +1753,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1768,11 +1796,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1790,11 +1818,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1811,17 +1839,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1837,14 +1866,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1860,7 +1888,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1934,7 +1962,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1975,11 +2003,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1996,11 +2024,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2016,17 +2044,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2041,14 +2070,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2063,7 +2091,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2176,8 +2204,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2193,8 +2221,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2215,8 +2243,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2288,8 +2316,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       registrationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2307,8 +2335,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRegistrationId() {
-
       registrationId_ = getDefaultInstance().getRegistrationId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2331,8 +2359,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       registrationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2401,8 +2429,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2419,8 +2447,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2442,8 +2470,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2512,8 +2540,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2530,8 +2558,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2553,8 +2581,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2623,8 +2651,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       bucket_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2641,8 +2669,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBucket() {
-
       bucket_ = getDefaultInstance().getBucket();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2664,8 +2692,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bucket_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2705,8 +2733,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2726,9 +2754,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.DatacenterConnector.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.DatacenterConnector.State result =
-          com.google.cloud.vmmigration.v1.DatacenterConnector.State.valueOf(state_);
+          com.google.cloud.vmmigration.v1.DatacenterConnector.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmmigration.v1.DatacenterConnector.State.UNRECOGNIZED
           : result;
@@ -2752,7 +2779,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2772,7 +2799,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -2797,7 +2824,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the stateTime field is set.
      */
     public boolean hasStateTime() {
-      return stateTimeBuilder_ != null || stateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2834,11 +2861,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         stateTime_ = value;
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2854,11 +2881,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     public Builder setStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateTimeBuilder_ == null) {
         stateTime_ = builderForValue.build();
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2873,17 +2900,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeStateTime(com.google.protobuf.Timestamp value) {
       if (stateTimeBuilder_ == null) {
-        if (stateTime_ != null) {
-          stateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(stateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && stateTime_ != null
+            && stateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStateTimeBuilder().mergeFrom(value);
         } else {
           stateTime_ = value;
         }
-        onChanged();
       } else {
         stateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2897,14 +2925,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearStateTime() {
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-        onChanged();
-      } else {
-        stateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2918,7 +2945,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
@@ -2983,7 +3010,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3020,11 +3047,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3040,11 +3067,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3059,16 +3086,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3082,14 +3111,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3103,7 +3131,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -3221,8 +3249,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       applianceInfrastructureVersion_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3242,8 +3270,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearApplianceInfrastructureVersion() {
-
       applianceInfrastructureVersion_ = getDefaultInstance().getApplianceInfrastructureVersion();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3268,8 +3296,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       applianceInfrastructureVersion_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3344,8 +3372,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       applianceSoftwareVersion_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3364,8 +3392,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearApplianceSoftwareVersion() {
-
       applianceSoftwareVersion_ = getDefaultInstance().getApplianceSoftwareVersion();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3389,8 +3417,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       applianceSoftwareVersion_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3415,7 +3443,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the availableVersions field is set.
      */
     public boolean hasAvailableVersions() {
-      return availableVersionsBuilder_ != null || availableVersions_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3456,11 +3484,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         availableVersions_ = value;
-        onChanged();
       } else {
         availableVersionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3478,11 +3506,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         com.google.cloud.vmmigration.v1.AvailableUpdates.Builder builderForValue) {
       if (availableVersionsBuilder_ == null) {
         availableVersions_ = builderForValue.build();
-        onChanged();
       } else {
         availableVersionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3498,19 +3526,19 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeAvailableVersions(com.google.cloud.vmmigration.v1.AvailableUpdates value) {
       if (availableVersionsBuilder_ == null) {
-        if (availableVersions_ != null) {
-          availableVersions_ =
-              com.google.cloud.vmmigration.v1.AvailableUpdates.newBuilder(availableVersions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && availableVersions_ != null
+            && availableVersions_
+                != com.google.cloud.vmmigration.v1.AvailableUpdates.getDefaultInstance()) {
+          getAvailableVersionsBuilder().mergeFrom(value);
         } else {
           availableVersions_ = value;
         }
-        onChanged();
       } else {
         availableVersionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3525,14 +3553,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearAvailableVersions() {
-      if (availableVersionsBuilder_ == null) {
-        availableVersions_ = null;
-        onChanged();
-      } else {
-        availableVersions_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      availableVersions_ = null;
+      if (availableVersionsBuilder_ != null) {
+        availableVersionsBuilder_.dispose();
         availableVersionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3547,7 +3574,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.vmmigration.v1.AvailableUpdates.Builder getAvailableVersionsBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getAvailableVersionsFieldBuilder().getBuilder();
     }
@@ -3620,7 +3647,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * @return Whether the upgradeStatus field is set.
      */
     public boolean hasUpgradeStatus() {
-      return upgradeStatusBuilder_ != null || upgradeStatus_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3661,11 +3688,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         upgradeStatus_ = value;
-        onChanged();
       } else {
         upgradeStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3683,11 +3710,11 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         com.google.cloud.vmmigration.v1.UpgradeStatus.Builder builderForValue) {
       if (upgradeStatusBuilder_ == null) {
         upgradeStatus_ = builderForValue.build();
-        onChanged();
       } else {
         upgradeStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3703,19 +3730,19 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpgradeStatus(com.google.cloud.vmmigration.v1.UpgradeStatus value) {
       if (upgradeStatusBuilder_ == null) {
-        if (upgradeStatus_ != null) {
-          upgradeStatus_ =
-              com.google.cloud.vmmigration.v1.UpgradeStatus.newBuilder(upgradeStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && upgradeStatus_ != null
+            && upgradeStatus_
+                != com.google.cloud.vmmigration.v1.UpgradeStatus.getDefaultInstance()) {
+          getUpgradeStatusBuilder().mergeFrom(value);
         } else {
           upgradeStatus_ = value;
         }
-        onChanged();
       } else {
         upgradeStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3730,14 +3757,13 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpgradeStatus() {
-      if (upgradeStatusBuilder_ == null) {
-        upgradeStatus_ = null;
-        onChanged();
-      } else {
-        upgradeStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      upgradeStatus_ = null;
+      if (upgradeStatusBuilder_ != null) {
+        upgradeStatusBuilder_.dispose();
         upgradeStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3752,7 +3778,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.vmmigration.v1.UpgradeStatus.Builder getUpgradeStatusBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getUpgradeStatusFieldBuilder().getBuilder();
     }

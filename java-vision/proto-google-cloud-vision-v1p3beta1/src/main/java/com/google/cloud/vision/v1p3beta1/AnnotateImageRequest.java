@@ -111,10 +111,12 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageOrBuilder getImageOrBuilder() {
-    return getImage();
+    return image_ == null ? com.google.cloud.vision.v1p3beta1.Image.getDefaultInstance() : image_;
   }
 
   public static final int FEATURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.Feature> features_;
   /**
    *
@@ -228,7 +230,9 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageContextOrBuilder getImageContextOrBuilder() {
-    return getImageContext();
+    return imageContext_ == null
+        ? com.google.cloud.vision.v1p3beta1.ImageContext.getDefaultInstance()
+        : imageContext_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -460,10 +464,10 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (imageBuilder_ == null) {
-        image_ = null;
-      } else {
-        image_ = null;
+      bitField0_ = 0;
+      image_ = null;
+      if (imageBuilder_ != null) {
+        imageBuilder_.dispose();
         imageBuilder_ = null;
       }
       if (featuresBuilder_ == null) {
@@ -472,11 +476,10 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         features_ = null;
         featuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (imageContextBuilder_ == null) {
-        imageContext_ = null;
-      } else {
-        imageContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      imageContext_ = null;
+      if (imageContextBuilder_ != null) {
+        imageContextBuilder_.dispose();
         imageContextBuilder_ = null;
       }
       return this;
@@ -506,28 +509,36 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vision.v1p3beta1.AnnotateImageRequest buildPartial() {
       com.google.cloud.vision.v1p3beta1.AnnotateImageRequest result =
           new com.google.cloud.vision.v1p3beta1.AnnotateImageRequest(this);
-      int from_bitField0_ = bitField0_;
-      if (imageBuilder_ == null) {
-        result.image_ = image_;
-      } else {
-        result.image_ = imageBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1p3beta1.AnnotateImageRequest result) {
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.features_ = features_;
       } else {
         result.features_ = featuresBuilder_.build();
       }
-      if (imageContextBuilder_ == null) {
-        result.imageContext_ = imageContext_;
-      } else {
-        result.imageContext_ = imageContextBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.AnnotateImageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageContext_ =
+            imageContextBuilder_ == null ? imageContext_ : imageContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -583,7 +594,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         if (!other.features_.isEmpty()) {
           if (features_.isEmpty()) {
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFeaturesIsMutable();
             features_.addAll(other.features_);
@@ -596,7 +607,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             featuresBuilder_.dispose();
             featuresBuilder_ = null;
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             featuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFeaturesFieldBuilder()
@@ -638,7 +649,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -657,7 +668,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 input.readMessage(getImageContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -697,7 +708,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the image field is set.
      */
     public boolean hasImage() {
-      return imageBuilder_ != null || image_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -734,11 +745,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         image_ = value;
-        onChanged();
       } else {
         imageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -753,11 +764,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public Builder setImage(com.google.cloud.vision.v1p3beta1.Image.Builder builderForValue) {
       if (imageBuilder_ == null) {
         image_ = builderForValue.build();
-        onChanged();
       } else {
         imageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -771,19 +782,18 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeImage(com.google.cloud.vision.v1p3beta1.Image value) {
       if (imageBuilder_ == null) {
-        if (image_ != null) {
-          image_ =
-              com.google.cloud.vision.v1p3beta1.Image.newBuilder(image_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && image_ != null
+            && image_ != com.google.cloud.vision.v1p3beta1.Image.getDefaultInstance()) {
+          getImageBuilder().mergeFrom(value);
         } else {
           image_ = value;
         }
-        onChanged();
       } else {
         imageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -796,14 +806,13 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1p3beta1.Image image = 1;</code>
      */
     public Builder clearImage() {
-      if (imageBuilder_ == null) {
-        image_ = null;
-        onChanged();
-      } else {
-        image_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      image_ = null;
+      if (imageBuilder_ != null) {
+        imageBuilder_.dispose();
         imageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -816,7 +825,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1p3beta1.Image image = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.Image.Builder getImageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getImageFieldBuilder().getBuilder();
     }
@@ -868,9 +877,9 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         features_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Feature>(features_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1085,7 +1094,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         featuresBuilder_.clear();
@@ -1207,7 +1216,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1p3beta1.Feature,
                 com.google.cloud.vision.v1p3beta1.Feature.Builder,
                 com.google.cloud.vision.v1p3beta1.FeatureOrBuilder>(
-                features_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                features_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;
@@ -1231,7 +1240,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the imageContext field is set.
      */
     public boolean hasImageContext() {
-      return imageContextBuilder_ != null || imageContext_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1268,11 +1277,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         imageContext_ = value;
-        onChanged();
       } else {
         imageContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1288,11 +1297,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.vision.v1p3beta1.ImageContext.Builder builderForValue) {
       if (imageContextBuilder_ == null) {
         imageContext_ = builderForValue.build();
-        onChanged();
       } else {
         imageContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1306,19 +1315,19 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeImageContext(com.google.cloud.vision.v1p3beta1.ImageContext value) {
       if (imageContextBuilder_ == null) {
-        if (imageContext_ != null) {
-          imageContext_ =
-              com.google.cloud.vision.v1p3beta1.ImageContext.newBuilder(imageContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && imageContext_ != null
+            && imageContext_
+                != com.google.cloud.vision.v1p3beta1.ImageContext.getDefaultInstance()) {
+          getImageContextBuilder().mergeFrom(value);
         } else {
           imageContext_ = value;
         }
-        onChanged();
       } else {
         imageContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1331,14 +1340,13 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1p3beta1.ImageContext image_context = 3;</code>
      */
     public Builder clearImageContext() {
-      if (imageContextBuilder_ == null) {
-        imageContext_ = null;
-        onChanged();
-      } else {
-        imageContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      imageContext_ = null;
+      if (imageContextBuilder_ != null) {
+        imageContextBuilder_.dispose();
         imageContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1351,7 +1359,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1p3beta1.ImageContext image_context = 3;</code>
      */
     public com.google.cloud.vision.v1p3beta1.ImageContext.Builder getImageContextBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getImageContextFieldBuilder().getBuilder();
     }

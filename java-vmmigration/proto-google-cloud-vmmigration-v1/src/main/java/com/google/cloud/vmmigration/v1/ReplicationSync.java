@@ -113,7 +113,9 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastSyncTimeOrBuilder() {
-    return getLastSyncTime();
+    return lastSyncTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastSyncTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lastSyncTimeBuilder_ == null) {
-        lastSyncTime_ = null;
-      } else {
-        lastSyncTime_ = null;
+      bitField0_ = 0;
+      lastSyncTime_ = null;
+      if (lastSyncTimeBuilder_ != null) {
+        lastSyncTimeBuilder_.dispose();
         lastSyncTimeBuilder_ = null;
       }
       return this;
@@ -351,13 +353,19 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.vmmigration.v1.ReplicationSync buildPartial() {
       com.google.cloud.vmmigration.v1.ReplicationSync result =
           new com.google.cloud.vmmigration.v1.ReplicationSync(this);
-      if (lastSyncTimeBuilder_ == null) {
-        result.lastSyncTime_ = lastSyncTime_;
-      } else {
-        result.lastSyncTime_ = lastSyncTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.ReplicationSync result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastSyncTime_ =
+            lastSyncTimeBuilder_ == null ? lastSyncTime_ : lastSyncTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -438,7 +446,7 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getLastSyncTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -457,6 +465,8 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp lastSyncTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -477,7 +487,7 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
      * @return Whether the lastSyncTime field is set.
      */
     public boolean hasLastSyncTime() {
-      return lastSyncTimeBuilder_ != null || lastSyncTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -516,11 +526,11 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         lastSyncTime_ = value;
-        onChanged();
       } else {
         lastSyncTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -536,11 +546,11 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
     public Builder setLastSyncTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastSyncTimeBuilder_ == null) {
         lastSyncTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastSyncTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -555,19 +565,18 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeLastSyncTime(com.google.protobuf.Timestamp value) {
       if (lastSyncTimeBuilder_ == null) {
-        if (lastSyncTime_ != null) {
-          lastSyncTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastSyncTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && lastSyncTime_ != null
+            && lastSyncTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastSyncTimeBuilder().mergeFrom(value);
         } else {
           lastSyncTime_ = value;
         }
-        onChanged();
       } else {
         lastSyncTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,14 +590,13 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp last_sync_time = 1;</code>
      */
     public Builder clearLastSyncTime() {
-      if (lastSyncTimeBuilder_ == null) {
-        lastSyncTime_ = null;
-        onChanged();
-      } else {
-        lastSyncTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      lastSyncTime_ = null;
+      if (lastSyncTimeBuilder_ != null) {
+        lastSyncTimeBuilder_.dispose();
         lastSyncTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +610,7 @@ public final class ReplicationSync extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp last_sync_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastSyncTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLastSyncTimeFieldBuilder().getBuilder();
     }

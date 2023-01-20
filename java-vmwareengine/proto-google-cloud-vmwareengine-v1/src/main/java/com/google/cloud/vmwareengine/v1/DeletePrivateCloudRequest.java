@@ -71,7 +71,9 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -183,7 +187,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -205,7 +209,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int DELAY_HOURS_FIELD_NUMBER = 4;
-  private int delayHours_;
+  private int delayHours_ = 0;
   /**
    *
    *
@@ -482,14 +486,11 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       requestId_ = "";
-
       force_ = false;
-
       delayHours_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -517,18 +518,30 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
     public com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest result =
           new com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.name_ = name_;
-      result.requestId_ = requestId_;
-      result.force_ = force_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.delayHours_ = delayHours_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -579,10 +592,12 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -620,25 +635,25 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 delayHours_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -739,8 +754,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,8 +777,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -790,8 +805,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,8 +875,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,8 +893,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -901,8 +916,8 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -946,6 +961,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -965,7 +981,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       force_ = false;
       onChanged();
       return this;
@@ -992,7 +1008,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasDelayHours() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1036,8 +1052,9 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setDelayHours(int value) {
-      bitField0_ |= 0x00000001;
+
       delayHours_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1060,7 +1077,7 @@ public final class DeletePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDelayHours() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       delayHours_ = 0;
       onChanged();
       return this;

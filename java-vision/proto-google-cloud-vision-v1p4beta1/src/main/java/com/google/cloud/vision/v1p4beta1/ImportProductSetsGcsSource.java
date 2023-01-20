@@ -69,7 +69,9 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
   }
 
   public static final int CSV_FILE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object csvFileUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object csvFileUri_ = "";
   /**
    *
    *
@@ -412,8 +414,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       csvFileUri_ = "";
-
       return this;
     }
 
@@ -442,9 +444,19 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
     public com.google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource buildPartial() {
       com.google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource result =
           new com.google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource(this);
-      result.csvFileUri_ = csvFileUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.csvFileUri_ = csvFileUri_;
+      }
     }
 
     @java.lang.Override
@@ -496,6 +508,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
         return this;
       if (!other.getCsvFileUri().isEmpty()) {
         csvFileUri_ = other.csvFileUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -527,7 +540,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
             case 10:
               {
                 csvFileUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -546,6 +559,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object csvFileUri_ = "";
     /**
@@ -752,8 +767,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       csvFileUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,8 +832,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearCsvFileUri() {
-
       csvFileUri_ = getDefaultInstance().getCsvFileUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -887,8 +902,8 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       csvFileUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

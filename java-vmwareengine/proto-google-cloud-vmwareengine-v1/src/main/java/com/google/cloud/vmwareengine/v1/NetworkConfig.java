@@ -71,7 +71,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MANAGEMENT_CIDR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object managementCidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object managementCidr_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VMWARE_ENGINE_NETWORK_FIELD_NUMBER = 5;
-  private volatile java.lang.Object vmwareEngineNetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmwareEngineNetwork_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VMWARE_ENGINE_NETWORK_CANONICAL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object vmwareEngineNetworkCanonical_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmwareEngineNetworkCanonical_ = "";
   /**
    *
    *
@@ -234,7 +240,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MANAGEMENT_IP_ADDRESS_LAYOUT_VERSION_FIELD_NUMBER = 8;
-  private int managementIpAddressLayoutVersion_;
+  private int managementIpAddressLayoutVersion_ = 0;
   /**
    *
    *
@@ -491,14 +497,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       managementCidr_ = "";
-
       vmwareEngineNetwork_ = "";
-
       vmwareEngineNetworkCanonical_ = "";
-
       managementIpAddressLayoutVersion_ = 0;
-
       return this;
     }
 
@@ -526,12 +529,27 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmwareengine.v1.NetworkConfig buildPartial() {
       com.google.cloud.vmwareengine.v1.NetworkConfig result =
           new com.google.cloud.vmwareengine.v1.NetworkConfig(this);
-      result.managementCidr_ = managementCidr_;
-      result.vmwareEngineNetwork_ = vmwareEngineNetwork_;
-      result.vmwareEngineNetworkCanonical_ = vmwareEngineNetworkCanonical_;
-      result.managementIpAddressLayoutVersion_ = managementIpAddressLayoutVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.managementCidr_ = managementCidr_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmwareEngineNetwork_ = vmwareEngineNetwork_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vmwareEngineNetworkCanonical_ = vmwareEngineNetworkCanonical_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.managementIpAddressLayoutVersion_ = managementIpAddressLayoutVersion_;
+      }
     }
 
     @java.lang.Override
@@ -581,14 +599,17 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmwareengine.v1.NetworkConfig.getDefaultInstance()) return this;
       if (!other.getManagementCidr().isEmpty()) {
         managementCidr_ = other.managementCidr_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVmwareEngineNetwork().isEmpty()) {
         vmwareEngineNetwork_ = other.vmwareEngineNetwork_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getVmwareEngineNetworkCanonical().isEmpty()) {
         vmwareEngineNetworkCanonical_ = other.vmwareEngineNetworkCanonical_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getManagementIpAddressLayoutVersion() != 0) {
@@ -623,25 +644,25 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 managementCidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             case 42:
               {
                 vmwareEngineNetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
               {
                 vmwareEngineNetworkCanonical_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 64:
               {
                 managementIpAddressLayoutVersion_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 64
             default:
@@ -660,6 +681,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object managementCidr_ = "";
     /**
@@ -722,8 +745,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       managementCidr_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +762,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManagementCidr() {
-
       managementCidr_ = getDefaultInstance().getManagementCidr();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -761,8 +784,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       managementCidr_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -843,8 +866,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmwareEngineNetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,8 +888,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmwareEngineNetwork() {
-
       vmwareEngineNetwork_ = getDefaultInstance().getVmwareEngineNetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -892,8 +915,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmwareEngineNetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -968,8 +991,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmwareEngineNetworkCanonical_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -988,8 +1011,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmwareEngineNetworkCanonical() {
-
       vmwareEngineNetworkCanonical_ = getDefaultInstance().getVmwareEngineNetworkCanonical();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1013,8 +1036,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmwareEngineNetworkCanonical_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1068,6 +1091,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setManagementIpAddressLayoutVersion(int value) {
 
       managementIpAddressLayoutVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1092,7 +1116,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManagementIpAddressLayoutVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       managementIpAddressLayoutVersion_ = 0;
       onChanged();
       return this;

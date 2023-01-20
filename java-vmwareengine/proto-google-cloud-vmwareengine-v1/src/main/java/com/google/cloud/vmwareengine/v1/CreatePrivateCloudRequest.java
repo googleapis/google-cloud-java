@@ -71,7 +71,9 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int PRIVATE_CLOUD_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object privateCloudId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateCloudId_ = "";
   /**
    *
    *
@@ -249,11 +253,15 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.PrivateCloudOrBuilder getPrivateCloudOrBuilder() {
-    return getPrivateCloud();
+    return privateCloud_ == null
+        ? com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance()
+        : privateCloud_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -304,7 +312,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -562,20 +570,16 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       privateCloudId_ = "";
-
-      if (privateCloudBuilder_ == null) {
-        privateCloud_ = null;
-      } else {
-        privateCloud_ = null;
+      privateCloud_ = null;
+      if (privateCloudBuilder_ != null) {
+        privateCloudBuilder_.dispose();
         privateCloudBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -603,17 +607,31 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     public com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest result =
           new com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest(this);
-      result.parent_ = parent_;
-      result.privateCloudId_ = privateCloudId_;
-      if (privateCloudBuilder_ == null) {
-        result.privateCloud_ = privateCloud_;
-      } else {
-        result.privateCloud_ = privateCloudBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateCloudId_ = privateCloudId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.privateCloud_ =
+            privateCloudBuilder_ == null ? privateCloud_ : privateCloudBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -664,10 +682,12 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPrivateCloudId().isEmpty()) {
         privateCloudId_ = other.privateCloudId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPrivateCloud()) {
@@ -675,6 +695,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -709,31 +730,31 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 privateCloudId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPrivateCloudFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -752,6 +773,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -832,8 +855,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -855,8 +878,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -883,8 +906,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -977,8 +1000,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateCloudId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1003,8 +1026,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPrivateCloudId() {
-
       privateCloudId_ = getDefaultInstance().getPrivateCloudId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1034,8 +1057,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateCloudId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1060,7 +1083,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * @return Whether the privateCloud field is set.
      */
     public boolean hasPrivateCloud() {
-      return privateCloudBuilder_ != null || privateCloud_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1101,11 +1124,11 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         privateCloud_ = value;
-        onChanged();
       } else {
         privateCloudBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1123,11 +1146,11 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         com.google.cloud.vmwareengine.v1.PrivateCloud.Builder builderForValue) {
       if (privateCloudBuilder_ == null) {
         privateCloud_ = builderForValue.build();
-        onChanged();
       } else {
         privateCloudBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1143,19 +1166,19 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      */
     public Builder mergePrivateCloud(com.google.cloud.vmwareengine.v1.PrivateCloud value) {
       if (privateCloudBuilder_ == null) {
-        if (privateCloud_ != null) {
-          privateCloud_ =
-              com.google.cloud.vmwareengine.v1.PrivateCloud.newBuilder(privateCloud_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && privateCloud_ != null
+            && privateCloud_
+                != com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance()) {
+          getPrivateCloudBuilder().mergeFrom(value);
         } else {
           privateCloud_ = value;
         }
-        onChanged();
       } else {
         privateCloudBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1170,14 +1193,13 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearPrivateCloud() {
-      if (privateCloudBuilder_ == null) {
-        privateCloud_ = null;
-        onChanged();
-      } else {
-        privateCloud_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      privateCloud_ = null;
+      if (privateCloudBuilder_ != null) {
+        privateCloudBuilder_.dispose();
         privateCloudBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1192,7 +1214,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.vmwareengine.v1.PrivateCloud.Builder getPrivateCloudBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPrivateCloudFieldBuilder().getBuilder();
     }
@@ -1308,8 +1330,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1326,8 +1348,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1349,8 +1371,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1388,6 +1410,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1404,7 +1427,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

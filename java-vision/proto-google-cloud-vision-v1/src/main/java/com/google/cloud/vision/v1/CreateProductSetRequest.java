@@ -69,7 +69,9 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.ProductSetOrBuilder getProductSetOrBuilder() {
-    return getProductSet();
+    return productSet_ == null
+        ? com.google.cloud.vision.v1.ProductSet.getDefaultInstance()
+        : productSet_;
   }
 
   public static final int PRODUCT_SET_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object productSetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productSetId_ = "";
   /**
    *
    *
@@ -452,16 +458,14 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (productSetBuilder_ == null) {
-        productSet_ = null;
-      } else {
-        productSet_ = null;
+      productSet_ = null;
+      if (productSetBuilder_ != null) {
+        productSetBuilder_.dispose();
         productSetBuilder_ = null;
       }
       productSetId_ = "";
-
       return this;
     }
 
@@ -489,15 +493,24 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     public com.google.cloud.vision.v1.CreateProductSetRequest buildPartial() {
       com.google.cloud.vision.v1.CreateProductSetRequest result =
           new com.google.cloud.vision.v1.CreateProductSetRequest(this);
-      result.parent_ = parent_;
-      if (productSetBuilder_ == null) {
-        result.productSet_ = productSet_;
-      } else {
-        result.productSet_ = productSetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.productSetId_ = productSetId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.CreateProductSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.productSet_ = productSetBuilder_ == null ? productSet_ : productSetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.productSetId_ = productSetId_;
+      }
     }
 
     @java.lang.Override
@@ -548,6 +561,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProductSet()) {
@@ -555,6 +569,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       }
       if (!other.getProductSetId().isEmpty()) {
         productSetId_ = other.productSetId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -586,19 +601,19 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProductSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 productSetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -617,6 +632,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -688,8 +705,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +725,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -733,8 +750,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,7 +776,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      * @return Whether the productSet field is set.
      */
     public boolean hasProductSet() {
-      return productSetBuilder_ != null || productSet_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +817,11 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         productSet_ = value;
-        onChanged();
       } else {
         productSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +838,11 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
     public Builder setProductSet(com.google.cloud.vision.v1.ProductSet.Builder builderForValue) {
       if (productSetBuilder_ == null) {
         productSet_ = builderForValue.build();
-        onChanged();
       } else {
         productSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,19 +858,18 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      */
     public Builder mergeProductSet(com.google.cloud.vision.v1.ProductSet value) {
       if (productSetBuilder_ == null) {
-        if (productSet_ != null) {
-          productSet_ =
-              com.google.cloud.vision.v1.ProductSet.newBuilder(productSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && productSet_ != null
+            && productSet_ != com.google.cloud.vision.v1.ProductSet.getDefaultInstance()) {
+          getProductSetBuilder().mergeFrom(value);
         } else {
           productSet_ = value;
         }
-        onChanged();
       } else {
         productSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,14 +884,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearProductSet() {
-      if (productSetBuilder_ == null) {
-        productSet_ = null;
-        onChanged();
-      } else {
-        productSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      productSet_ = null;
+      if (productSetBuilder_ != null) {
+        productSetBuilder_.dispose();
         productSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -890,7 +905,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.vision.v1.ProductSet.Builder getProductSetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProductSetFieldBuilder().getBuilder();
     }
@@ -1012,8 +1027,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       productSetId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1032,8 +1047,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProductSetId() {
-
       productSetId_ = getDefaultInstance().getProductSetId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1057,8 +1072,8 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productSetId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

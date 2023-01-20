@@ -227,7 +227,7 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FIRMWARE_FIELD_NUMBER = 1;
-  private int firmware_;
+  private int firmware_ = 0;
   /**
    *
    *
@@ -256,16 +256,15 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware getFirmware() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware result =
-        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.valueOf(firmware_);
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.forNumber(firmware_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.UNRECOGNIZED
         : result;
   }
 
   public static final int COMMITTED_STORAGE_BYTES_FIELD_NUMBER = 2;
-  private long committedStorageBytes_;
+  private long committedStorageBytes_ = 0L;
   /**
    *
    *
@@ -492,10 +491,9 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firmware_ = 0;
-
       committedStorageBytes_ = 0L;
-
       return this;
     }
 
@@ -523,10 +521,21 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vmmigration.v1.AwsSourceVmDetails buildPartial() {
       com.google.cloud.vmmigration.v1.AwsSourceVmDetails result =
           new com.google.cloud.vmmigration.v1.AwsSourceVmDetails(this);
-      result.firmware_ = firmware_;
-      result.committedStorageBytes_ = committedStorageBytes_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSourceVmDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firmware_ = firmware_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.committedStorageBytes_ = committedStorageBytes_;
+      }
     }
 
     @java.lang.Override
@@ -610,13 +619,13 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 firmware_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 committedStorageBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -635,6 +644,8 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int firmware_ = 0;
     /**
@@ -665,8 +676,8 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setFirmwareValue(int value) {
-
       firmware_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,9 +694,8 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware getFirmware() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware result =
-          com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.valueOf(firmware_);
+          com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.forNumber(firmware_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware.UNRECOGNIZED
           : result;
@@ -706,7 +716,7 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       firmware_ = value.getNumber();
       onChanged();
       return this;
@@ -723,7 +733,7 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFirmware() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       firmware_ = 0;
       onChanged();
       return this;
@@ -760,6 +770,7 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     public Builder setCommittedStorageBytes(long value) {
 
       committedStorageBytes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -775,7 +786,7 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCommittedStorageBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       committedStorageBytes_ = 0L;
       onChanged();
       return this;

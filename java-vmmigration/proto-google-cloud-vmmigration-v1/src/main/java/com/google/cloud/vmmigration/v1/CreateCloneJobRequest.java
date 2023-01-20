@@ -70,7 +70,9 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CLONE_JOB_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cloneJobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloneJobId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.CloneJobOrBuilder getCloneJobOrBuilder() {
-    return getCloneJob();
+    return cloneJob_ == null
+        ? com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance()
+        : cloneJob_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -524,18 +532,15 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       cloneJobId_ = "";
-
-      if (cloneJobBuilder_ == null) {
-        cloneJob_ = null;
-      } else {
-        cloneJob_ = null;
+      cloneJob_ = null;
+      if (cloneJobBuilder_ != null) {
+        cloneJobBuilder_.dispose();
         cloneJobBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -563,16 +568,27 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vmmigration.v1.CreateCloneJobRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateCloneJobRequest result =
           new com.google.cloud.vmmigration.v1.CreateCloneJobRequest(this);
-      result.parent_ = parent_;
-      result.cloneJobId_ = cloneJobId_;
-      if (cloneJobBuilder_ == null) {
-        result.cloneJob_ = cloneJob_;
-      } else {
-        result.cloneJob_ = cloneJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CreateCloneJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cloneJobId_ = cloneJobId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cloneJob_ = cloneJobBuilder_ == null ? cloneJob_ : cloneJobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -623,10 +639,12 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCloneJobId().isEmpty()) {
         cloneJobId_ = other.cloneJobId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCloneJob()) {
@@ -634,6 +652,7 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -665,25 +684,25 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cloneJobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCloneJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -702,6 +721,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -770,8 +791,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +810,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +834,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +901,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloneJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +918,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCloneJobId() {
-
       cloneJobId_ = getDefaultInstance().getCloneJobId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -919,8 +940,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloneJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +966,7 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the cloneJob field is set.
      */
     public boolean hasCloneJob() {
-      return cloneJobBuilder_ != null || cloneJob_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -986,11 +1007,11 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         cloneJob_ = value;
-        onChanged();
       } else {
         cloneJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,11 +1028,11 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
     public Builder setCloneJob(com.google.cloud.vmmigration.v1.CloneJob.Builder builderForValue) {
       if (cloneJobBuilder_ == null) {
         cloneJob_ = builderForValue.build();
-        onChanged();
       } else {
         cloneJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1027,19 +1048,18 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCloneJob(com.google.cloud.vmmigration.v1.CloneJob value) {
       if (cloneJobBuilder_ == null) {
-        if (cloneJob_ != null) {
-          cloneJob_ =
-              com.google.cloud.vmmigration.v1.CloneJob.newBuilder(cloneJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cloneJob_ != null
+            && cloneJob_ != com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance()) {
+          getCloneJobBuilder().mergeFrom(value);
         } else {
           cloneJob_ = value;
         }
-        onChanged();
       } else {
         cloneJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1054,14 +1074,13 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearCloneJob() {
-      if (cloneJobBuilder_ == null) {
-        cloneJob_ = null;
-        onChanged();
-      } else {
-        cloneJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cloneJob_ = null;
+      if (cloneJobBuilder_ != null) {
+        cloneJobBuilder_.dispose();
         cloneJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1076,7 +1095,7 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.vmmigration.v1.CloneJob.Builder getCloneJobBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCloneJobFieldBuilder().getBuilder();
     }
@@ -1219,8 +1238,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1246,8 +1265,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1278,8 +1297,8 @@ public final class CreateCloneJobRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

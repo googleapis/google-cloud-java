@@ -68,6 +68,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARAMETER_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList parameterNames_;
   /**
    *
@@ -333,6 +335,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parameterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -363,14 +366,26 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
     public com.google.cloud.websecurityscanner.v1beta.VulnerableParameters buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.VulnerableParameters result =
           new com.google.cloud.websecurityscanner.v1beta.VulnerableParameters(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1beta.VulnerableParameters result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         parameterNames_ = parameterNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.parameterNames_ = parameterNames_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1beta.VulnerableParameters result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

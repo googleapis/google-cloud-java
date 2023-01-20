@@ -279,7 +279,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -308,9 +308,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result =
-        com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
+        com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED
         : result;
@@ -359,7 +358,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
-    return getSubmitTime();
+    return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 3;
@@ -411,7 +410,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -646,18 +645,16 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-      } else {
-        submitTime_ = null;
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       return this;
@@ -687,19 +684,24 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata buildPartial() {
       com.google.cloud.vision.v1p3beta1.BatchOperationMetadata result =
           new com.google.cloud.vision.v1p3beta1.BatchOperationMetadata(this);
-      result.state_ = state_;
-      if (submitTimeBuilder_ == null) {
-        result.submitTime_ = submitTime_;
-      } else {
-        result.submitTime_ = submitTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.BatchOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -786,19 +788,19 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -817,6 +819,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -847,8 +851,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,9 +869,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result =
-          com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
+          com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED
           : result;
@@ -888,7 +891,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -905,7 +908,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -929,7 +932,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
-      return submitTimeBuilder_ != null || submitTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -966,11 +969,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         submitTime_ = value;
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -985,11 +988,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
         submitTime_ = builderForValue.build();
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1003,17 +1006,18 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
-        if (submitTime_ != null) {
-          submitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && submitTime_ != null
+            && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSubmitTimeBuilder().mergeFrom(value);
         } else {
           submitTime_ = value;
         }
-        onChanged();
       } else {
         submitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1026,14 +1030,13 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
      */
     public Builder clearSubmitTime() {
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-        onChanged();
-      } else {
-        submitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1046,7 +1049,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
@@ -1114,7 +1117,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1153,11 +1156,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1174,11 +1177,11 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1194,17 +1197,18 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1219,14 +1223,13 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1241,7 +1244,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }

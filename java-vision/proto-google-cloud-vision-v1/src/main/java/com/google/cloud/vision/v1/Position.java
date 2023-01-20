@@ -68,7 +68,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int X_FIELD_NUMBER = 1;
-  private float x_;
+  private float x_ = 0F;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int Y_FIELD_NUMBER = 2;
-  private float y_;
+  private float y_ = 0F;
   /**
    *
    *
@@ -104,7 +104,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int Z_FIELD_NUMBER = 3;
-  private float z_;
+  private float z_ = 0F;
   /**
    *
    *
@@ -339,12 +339,10 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       x_ = 0F;
-
       y_ = 0F;
-
       z_ = 0F;
-
       return this;
     }
 
@@ -371,11 +369,24 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vision.v1.Position buildPartial() {
       com.google.cloud.vision.v1.Position result = new com.google.cloud.vision.v1.Position(this);
-      result.x_ = x_;
-      result.y_ = y_;
-      result.z_ = z_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.Position result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.x_ = x_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.y_ = y_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.z_ = z_;
+      }
     }
 
     @java.lang.Override
@@ -461,19 +472,19 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
             case 13:
               {
                 x_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 y_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 z_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -492,6 +503,8 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float x_;
     /**
@@ -524,6 +537,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public Builder setX(float value) {
 
       x_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -539,7 +553,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearX() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       x_ = 0F;
       onChanged();
       return this;
@@ -576,6 +590,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public Builder setY(float value) {
 
       y_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -591,7 +606,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearY() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       y_ = 0F;
       onChanged();
       return this;
@@ -628,6 +643,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public Builder setZ(float value) {
 
       z_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -643,7 +659,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZ() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       z_ = 0F;
       onChanged();
       return this;

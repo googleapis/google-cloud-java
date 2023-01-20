@@ -337,7 +337,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextPropertyOrBuilder
       getPropertyOrBuilder() {
-    return getProperty();
+    return property_ == null
+        ? com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.getDefaultInstance()
+        : property_;
   }
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 2;
@@ -427,10 +429,14 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
-    return getBoundingBox();
+    return boundingBox_ == null
+        ? com.google.cloud.vision.v1p1beta1.BoundingPoly.getDefaultInstance()
+        : boundingBox_;
   }
 
   public static final int PARAGRAPHS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p1beta1.Paragraph> paragraphs_;
   /**
    *
@@ -500,7 +506,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLOCK_TYPE_FIELD_NUMBER = 4;
-  private int blockType_;
+  private int blockType_ = 0;
   /**
    *
    *
@@ -529,14 +535,13 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.Block.BlockType getBlockType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p1beta1.Block.BlockType result =
-        com.google.cloud.vision.v1p1beta1.Block.BlockType.valueOf(blockType_);
+        com.google.cloud.vision.v1p1beta1.Block.BlockType.forNumber(blockType_);
     return result == null ? com.google.cloud.vision.v1p1beta1.Block.BlockType.UNRECOGNIZED : result;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -798,16 +803,15 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (propertyBuilder_ == null) {
-        property_ = null;
-      } else {
-        property_ = null;
+      bitField0_ = 0;
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-      } else {
-        boundingBox_ = null;
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
       if (paragraphsBuilder_ == null) {
@@ -816,11 +820,9 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         paragraphs_ = null;
         paragraphsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       blockType_ = 0;
-
       confidence_ = 0F;
-
       return this;
     }
 
@@ -848,30 +850,41 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p1beta1.Block buildPartial() {
       com.google.cloud.vision.v1p1beta1.Block result =
           new com.google.cloud.vision.v1p1beta1.Block(this);
-      int from_bitField0_ = bitField0_;
-      if (propertyBuilder_ == null) {
-        result.property_ = property_;
-      } else {
-        result.property_ = propertyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (boundingBoxBuilder_ == null) {
-        result.boundingBox_ = boundingBox_;
-      } else {
-        result.boundingBox_ = boundingBoxBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1p1beta1.Block result) {
       if (paragraphsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           paragraphs_ = java.util.Collections.unmodifiableList(paragraphs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.paragraphs_ = paragraphs_;
       } else {
         result.paragraphs_ = paragraphsBuilder_.build();
       }
-      result.blockType_ = blockType_;
-      result.confidence_ = confidence_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p1beta1.Block result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.boundingBox_ =
+            boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.blockType_ = blockType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -929,7 +942,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         if (!other.paragraphs_.isEmpty()) {
           if (paragraphs_.isEmpty()) {
             paragraphs_ = other.paragraphs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParagraphsIsMutable();
             paragraphs_.addAll(other.paragraphs_);
@@ -942,7 +955,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             paragraphsBuilder_.dispose();
             paragraphsBuilder_ = null;
             paragraphs_ = other.paragraphs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             paragraphsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getParagraphsFieldBuilder()
@@ -987,13 +1000,13 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1012,13 +1025,13 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 blockType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 45:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 45
             default:
@@ -1058,7 +1071,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the property field is set.
      */
     public boolean hasProperty() {
-      return propertyBuilder_ != null || property_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1096,11 +1109,11 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         property_ = value;
-        onChanged();
       } else {
         propertyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1116,11 +1129,11 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.Builder builderForValue) {
       if (propertyBuilder_ == null) {
         property_ = builderForValue.build();
-        onChanged();
       } else {
         propertyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1135,19 +1148,20 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProperty(
         com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty value) {
       if (propertyBuilder_ == null) {
-        if (property_ != null) {
-          property_ =
-              com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.newBuilder(property_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && property_ != null
+            && property_
+                != com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty
+                    .getDefaultInstance()) {
+          getPropertyBuilder().mergeFrom(value);
         } else {
           property_ = value;
         }
-        onChanged();
       } else {
         propertyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1160,14 +1174,13 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
      */
     public Builder clearProperty() {
-      if (propertyBuilder_ == null) {
-        property_ = null;
-        onChanged();
-      } else {
-        property_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1181,7 +1194,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.Builder
         getPropertyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
@@ -1262,7 +1275,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
-      return boundingBoxBuilder_ != null || boundingBox_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1327,11 +1340,11 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         boundingBox_ = value;
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1361,11 +1374,11 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p1beta1.BoundingPoly.Builder builderForValue) {
       if (boundingBoxBuilder_ == null) {
         boundingBox_ = builderForValue.build();
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1393,19 +1406,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBoundingBox(com.google.cloud.vision.v1p1beta1.BoundingPoly value) {
       if (boundingBoxBuilder_ == null) {
-        if (boundingBox_ != null) {
-          boundingBox_ =
-              com.google.cloud.vision.v1p1beta1.BoundingPoly.newBuilder(boundingBox_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && boundingBox_ != null
+            && boundingBox_
+                != com.google.cloud.vision.v1p1beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingBoxBuilder().mergeFrom(value);
         } else {
           boundingBox_ = value;
         }
-        onChanged();
       } else {
         boundingBoxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1432,14 +1445,13 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_box = 2;</code>
      */
     public Builder clearBoundingBox() {
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-        onChanged();
-      } else {
-        boundingBox_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1466,7 +1478,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1p1beta1.BoundingPoly bounding_box = 2;</code>
      */
     public com.google.cloud.vision.v1p1beta1.BoundingPoly.Builder getBoundingBoxBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
@@ -1546,10 +1558,10 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParagraphsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         paragraphs_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p1beta1.Paragraph>(paragraphs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1765,7 +1777,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public Builder clearParagraphs() {
       if (paragraphsBuilder_ == null) {
         paragraphs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         paragraphsBuilder_.clear();
@@ -1887,7 +1899,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p1beta1.Paragraph,
                 com.google.cloud.vision.v1p1beta1.Paragraph.Builder,
                 com.google.cloud.vision.v1p1beta1.ParagraphOrBuilder>(
-                paragraphs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                paragraphs_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         paragraphs_ = null;
       }
       return paragraphsBuilder_;
@@ -1922,8 +1934,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBlockTypeValue(int value) {
-
       blockType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1940,9 +1952,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.Block.BlockType getBlockType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p1beta1.Block.BlockType result =
-          com.google.cloud.vision.v1p1beta1.Block.BlockType.valueOf(blockType_);
+          com.google.cloud.vision.v1p1beta1.Block.BlockType.forNumber(blockType_);
       return result == null
           ? com.google.cloud.vision.v1p1beta1.Block.BlockType.UNRECOGNIZED
           : result;
@@ -1963,7 +1974,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       blockType_ = value.getNumber();
       onChanged();
       return this;
@@ -1980,7 +1991,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlockType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       blockType_ = 0;
       onChanged();
       return this;
@@ -2017,6 +2028,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2032,7 +2044,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       confidence_ = 0F;
       onChanged();
       return this;

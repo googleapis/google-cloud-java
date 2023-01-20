@@ -118,7 +118,9 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.workflows.v1beta.WorkflowOrBuilder getWorkflowOrBuilder() {
-    return getWorkflow();
+    return workflow_ == null
+        ? com.google.cloud.workflows.v1beta.Workflow.getDefaultInstance()
+        : workflow_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -167,7 +169,7 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,16 +391,15 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (workflowBuilder_ == null) {
-        workflow_ = null;
-      } else {
-        workflow_ = null;
+      bitField0_ = 0;
+      workflow_ = null;
+      if (workflowBuilder_ != null) {
+        workflowBuilder_.dispose();
         workflowBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -428,18 +429,21 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.workflows.v1beta.UpdateWorkflowRequest buildPartial() {
       com.google.cloud.workflows.v1beta.UpdateWorkflowRequest result =
           new com.google.cloud.workflows.v1beta.UpdateWorkflowRequest(this);
-      if (workflowBuilder_ == null) {
-        result.workflow_ = workflow_;
-      } else {
-        result.workflow_ = workflowBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.workflows.v1beta.UpdateWorkflowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workflow_ = workflowBuilder_ == null ? workflow_ : workflowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -523,13 +527,13 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getWorkflowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +552,8 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.workflows.v1beta.Workflow workflow_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -569,7 +575,7 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the workflow field is set.
      */
     public boolean hasWorkflow() {
-      return workflowBuilder_ != null || workflow_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -610,11 +616,11 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         workflow_ = value;
-        onChanged();
       } else {
         workflowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,11 +637,11 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
     public Builder setWorkflow(com.google.cloud.workflows.v1beta.Workflow.Builder builderForValue) {
       if (workflowBuilder_ == null) {
         workflow_ = builderForValue.build();
-        onChanged();
       } else {
         workflowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,19 +657,18 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWorkflow(com.google.cloud.workflows.v1beta.Workflow value) {
       if (workflowBuilder_ == null) {
-        if (workflow_ != null) {
-          workflow_ =
-              com.google.cloud.workflows.v1beta.Workflow.newBuilder(workflow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && workflow_ != null
+            && workflow_ != com.google.cloud.workflows.v1beta.Workflow.getDefaultInstance()) {
+          getWorkflowBuilder().mergeFrom(value);
         } else {
           workflow_ = value;
         }
-        onChanged();
       } else {
         workflowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,14 +683,13 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearWorkflow() {
-      if (workflowBuilder_ == null) {
-        workflow_ = null;
-        onChanged();
-      } else {
-        workflow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      workflow_ = null;
+      if (workflowBuilder_ != null) {
+        workflowBuilder_.dispose();
         workflowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -700,7 +704,7 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.workflows.v1beta.Workflow.Builder getWorkflowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWorkflowFieldBuilder().getBuilder();
     }
@@ -771,7 +775,7 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +814,11 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,11 +834,11 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,17 +853,18 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -873,14 +878,13 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +898,7 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

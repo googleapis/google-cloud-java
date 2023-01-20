@@ -213,16 +213,18 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int THREAT_TYPES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> threatTypes_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>
         threatTypes_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>() {
               public com.google.webrisk.v1beta1.ThreatType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.webrisk.v1beta1.ThreatType result =
-                    com.google.webrisk.v1beta1.ThreatType.valueOf(from);
+                    com.google.webrisk.v1beta1.ThreatType.forNumber(from);
                 return result == null ? com.google.webrisk.v1beta1.ThreatType.UNRECOGNIZED : result;
               }
             };
@@ -354,7 +356,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-      return getExpireTime();
+      return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -588,12 +590,12 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         threatTypes_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-        } else {
-          expireTime_ = null;
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
         return this;
@@ -623,19 +625,29 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri buildPartial() {
         com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri result =
             new com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.threatTypes_ = threatTypes_;
-        if (expireTimeBuilder_ == null) {
-          result.expireTime_ = expireTime_;
-        } else {
-          result.expireTime_ = expireTimeBuilder_.build();
+      }
+
+      private void buildPartial0(com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expireTime_ =
+              expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -747,7 +759,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
               case 18:
                 {
                   input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1009,7 +1021,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the expireTime field is set.
        */
       public boolean hasExpireTime() {
-        return expireTimeBuilder_ != null || expireTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1048,11 +1060,11 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           expireTime_ = value;
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1068,11 +1080,11 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (expireTimeBuilder_ == null) {
           expireTime_ = builderForValue.build();
-          onChanged();
         } else {
           expireTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1087,19 +1099,18 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
         if (expireTimeBuilder_ == null) {
-          if (expireTime_ != null) {
-            expireTime_ =
-                com.google.protobuf.Timestamp.newBuilder(expireTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && expireTime_ != null
+              && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getExpireTimeBuilder().mergeFrom(value);
           } else {
             expireTime_ = value;
           }
-          onChanged();
         } else {
           expireTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1113,14 +1124,13 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
        */
       public Builder clearExpireTime() {
-        if (expireTimeBuilder_ == null) {
-          expireTime_ = null;
-          onChanged();
-        } else {
-          expireTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
           expireTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1134,7 +1144,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getExpireTimeFieldBuilder().getBuilder();
       }
@@ -1293,7 +1303,9 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUriOrBuilder getThreatOrBuilder() {
-    return getThreat();
+    return threat_ == null
+        ? com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.getDefaultInstance()
+        : threat_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1490,10 +1502,10 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (threatBuilder_ == null) {
-        threat_ = null;
-      } else {
-        threat_ = null;
+      bitField0_ = 0;
+      threat_ = null;
+      if (threatBuilder_ != null) {
+        threatBuilder_.dispose();
         threatBuilder_ = null;
       }
       return this;
@@ -1523,13 +1535,18 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     public com.google.webrisk.v1beta1.SearchUrisResponse buildPartial() {
       com.google.webrisk.v1beta1.SearchUrisResponse result =
           new com.google.webrisk.v1beta1.SearchUrisResponse(this);
-      if (threatBuilder_ == null) {
-        result.threat_ = threat_;
-      } else {
-        result.threat_ = threatBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.webrisk.v1beta1.SearchUrisResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.threat_ = threatBuilder_ == null ? threat_ : threatBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1609,7 +1626,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getThreatFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1629,6 +1646,8 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri,
@@ -1647,7 +1666,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the threat field is set.
      */
     public boolean hasThreat() {
-      return threatBuilder_ != null || threat_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1684,11 +1703,11 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         threat_ = value;
-        onChanged();
       } else {
         threatBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1704,11 +1723,11 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.Builder builderForValue) {
       if (threatBuilder_ == null) {
         threat_ = builderForValue.build();
-        onChanged();
       } else {
         threatBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1722,19 +1741,19 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeThreat(com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri value) {
       if (threatBuilder_ == null) {
-        if (threat_ != null) {
-          threat_ =
-              com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.newBuilder(threat_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && threat_ != null
+            && threat_
+                != com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.getDefaultInstance()) {
+          getThreatBuilder().mergeFrom(value);
         } else {
           threat_ = value;
         }
-        onChanged();
       } else {
         threatBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1747,14 +1766,13 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat = 1;</code>
      */
     public Builder clearThreat() {
-      if (threatBuilder_ == null) {
-        threat_ = null;
-        onChanged();
-      } else {
-        threat_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      threat_ = null;
+      if (threatBuilder_ != null) {
+        threatBuilder_.dispose();
         threatBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1767,7 +1785,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.webrisk.v1beta1.SearchUrisResponse.ThreatUri threat = 1;</code>
      */
     public com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.Builder getThreatBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getThreatFieldBuilder().getBuilder();
     }

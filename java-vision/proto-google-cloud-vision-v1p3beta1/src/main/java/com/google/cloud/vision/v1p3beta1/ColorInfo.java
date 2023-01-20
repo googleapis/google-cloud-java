@@ -109,11 +109,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.ColorOrBuilder getColorOrBuilder() {
-    return getColor();
+    return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
   }
 
   public static final int SCORE_FIELD_NUMBER = 2;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -131,7 +131,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PIXEL_FRACTION_FIELD_NUMBER = 3;
-  private float pixelFraction_;
+  private float pixelFraction_ = 0F;
   /**
    *
    *
@@ -372,16 +372,14 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (colorBuilder_ == null) {
-        color_ = null;
-      } else {
-        color_ = null;
+      bitField0_ = 0;
+      color_ = null;
+      if (colorBuilder_ != null) {
+        colorBuilder_.dispose();
         colorBuilder_ = null;
       }
       score_ = 0F;
-
       pixelFraction_ = 0F;
-
       return this;
     }
 
@@ -409,15 +407,24 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p3beta1.ColorInfo buildPartial() {
       com.google.cloud.vision.v1p3beta1.ColorInfo result =
           new com.google.cloud.vision.v1p3beta1.ColorInfo(this);
-      if (colorBuilder_ == null) {
-        result.color_ = color_;
-      } else {
-        result.color_ = colorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.score_ = score_;
-      result.pixelFraction_ = pixelFraction_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.ColorInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.color_ = colorBuilder_ == null ? color_ : colorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pixelFraction_ = pixelFraction_;
+      }
     }
 
     @java.lang.Override
@@ -503,19 +510,19 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getColorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 pixelFraction_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             default:
@@ -535,6 +542,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.Color color_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Color, com.google.type.Color.Builder, com.google.type.ColorOrBuilder>
@@ -551,7 +560,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the color field is set.
      */
     public boolean hasColor() {
-      return colorBuilder_ != null || color_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -586,11 +595,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         color_ = value;
-        onChanged();
       } else {
         colorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,11 +614,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setColor(com.google.type.Color.Builder builderForValue) {
       if (colorBuilder_ == null) {
         color_ = builderForValue.build();
-        onChanged();
       } else {
         colorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,16 +632,18 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeColor(com.google.type.Color value) {
       if (colorBuilder_ == null) {
-        if (color_ != null) {
-          color_ = com.google.type.Color.newBuilder(color_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && color_ != null
+            && color_ != com.google.type.Color.getDefaultInstance()) {
+          getColorBuilder().mergeFrom(value);
         } else {
           color_ = value;
         }
-        onChanged();
       } else {
         colorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -645,14 +656,13 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Color color = 1;</code>
      */
     public Builder clearColor() {
-      if (colorBuilder_ == null) {
-        color_ = null;
-        onChanged();
-      } else {
-        color_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      color_ = null;
+      if (colorBuilder_ != null) {
+        colorBuilder_.dispose();
         colorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -665,7 +675,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Color color = 1;</code>
      */
     public com.google.type.Color.Builder getColorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getColorFieldBuilder().getBuilder();
     }
@@ -739,6 +749,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -754,7 +765,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       score_ = 0F;
       onChanged();
       return this;
@@ -793,6 +804,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPixelFraction(float value) {
 
       pixelFraction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -809,7 +821,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPixelFraction() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pixelFraction_ = 0F;
       onChanged();
       return this;

@@ -483,7 +483,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -536,7 +538,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINDING_TYPE_FIELD_NUMBER = 2;
-  private int findingType_;
+  private int findingType_ = 0;
   /**
    *
    *
@@ -565,16 +567,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
-        com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
+        com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.forNumber(findingType_);
     return result == null
         ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED
         : result;
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object httpMethod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object httpMethod_ = "";
   /**
    *
    *
@@ -625,7 +628,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUZZED_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object fuzzedUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fuzzedUrl_ = "";
   /**
    *
    *
@@ -676,7 +681,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BODY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object body_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object body_ = "";
   /**
    *
    *
@@ -725,7 +732,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -774,7 +783,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPRODUCTION_URL_FIELD_NUMBER = 7;
-  private volatile java.lang.Object reproductionUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reproductionUrl_ = "";
   /**
    *
    *
@@ -825,7 +836,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FRAME_URL_FIELD_NUMBER = 8;
-  private volatile java.lang.Object frameUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object frameUrl_ = "";
   /**
    *
    *
@@ -876,7 +889,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FINAL_URL_FIELD_NUMBER = 9;
-  private volatile java.lang.Object finalUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object finalUrl_ = "";
   /**
    *
    *
@@ -925,7 +940,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACKING_ID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object trackingId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trackingId_ = "";
   /**
    *
    *
@@ -1021,7 +1038,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder
       getOutdatedLibraryOrBuilder() {
-    return getOutdatedLibrary();
+    return outdatedLibrary_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance()
+        : outdatedLibrary_;
   }
 
   public static final int VIOLATING_RESOURCE_FIELD_NUMBER = 12;
@@ -1076,7 +1095,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder
       getViolatingResourceOrBuilder() {
-    return getViolatingResource();
+    return violatingResource_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance()
+        : violatingResource_;
   }
 
   public static final int VULNERABLE_HEADERS_FIELD_NUMBER = 15;
@@ -1128,7 +1149,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.VulnerableHeadersOrBuilder
       getVulnerableHeadersOrBuilder() {
-    return getVulnerableHeaders();
+    return vulnerableHeaders_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.getDefaultInstance()
+        : vulnerableHeaders_;
   }
 
   public static final int VULNERABLE_PARAMETERS_FIELD_NUMBER = 13;
@@ -1184,7 +1207,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder
       getVulnerableParametersOrBuilder() {
-    return getVulnerableParameters();
+    return vulnerableParameters_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance()
+        : vulnerableParameters_;
   }
 
   public static final int XSS_FIELD_NUMBER = 14;
@@ -1232,7 +1257,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder getXssOrBuilder() {
-    return getXss();
+    return xss_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance()
+        : xss_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1589,54 +1616,40 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       findingType_ = 0;
-
       httpMethod_ = "";
-
       fuzzedUrl_ = "";
-
       body_ = "";
-
       description_ = "";
-
       reproductionUrl_ = "";
-
       frameUrl_ = "";
-
       finalUrl_ = "";
-
       trackingId_ = "";
-
-      if (outdatedLibraryBuilder_ == null) {
-        outdatedLibrary_ = null;
-      } else {
-        outdatedLibrary_ = null;
+      outdatedLibrary_ = null;
+      if (outdatedLibraryBuilder_ != null) {
+        outdatedLibraryBuilder_.dispose();
         outdatedLibraryBuilder_ = null;
       }
-      if (violatingResourceBuilder_ == null) {
-        violatingResource_ = null;
-      } else {
-        violatingResource_ = null;
+      violatingResource_ = null;
+      if (violatingResourceBuilder_ != null) {
+        violatingResourceBuilder_.dispose();
         violatingResourceBuilder_ = null;
       }
-      if (vulnerableHeadersBuilder_ == null) {
-        vulnerableHeaders_ = null;
-      } else {
-        vulnerableHeaders_ = null;
+      vulnerableHeaders_ = null;
+      if (vulnerableHeadersBuilder_ != null) {
+        vulnerableHeadersBuilder_.dispose();
         vulnerableHeadersBuilder_ = null;
       }
-      if (vulnerableParametersBuilder_ == null) {
-        vulnerableParameters_ = null;
-      } else {
-        vulnerableParameters_ = null;
+      vulnerableParameters_ = null;
+      if (vulnerableParametersBuilder_ != null) {
+        vulnerableParametersBuilder_.dispose();
         vulnerableParametersBuilder_ = null;
       }
-      if (xssBuilder_ == null) {
-        xss_ = null;
-      } else {
-        xss_ = null;
+      xss_ = null;
+      if (xssBuilder_ != null) {
+        xssBuilder_.dispose();
         xssBuilder_ = null;
       }
       return this;
@@ -1666,43 +1679,70 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1alpha.Finding buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.Finding result =
           new com.google.cloud.websecurityscanner.v1alpha.Finding(this);
-      result.name_ = name_;
-      result.findingType_ = findingType_;
-      result.httpMethod_ = httpMethod_;
-      result.fuzzedUrl_ = fuzzedUrl_;
-      result.body_ = body_;
-      result.description_ = description_;
-      result.reproductionUrl_ = reproductionUrl_;
-      result.frameUrl_ = frameUrl_;
-      result.finalUrl_ = finalUrl_;
-      result.trackingId_ = trackingId_;
-      if (outdatedLibraryBuilder_ == null) {
-        result.outdatedLibrary_ = outdatedLibrary_;
-      } else {
-        result.outdatedLibrary_ = outdatedLibraryBuilder_.build();
-      }
-      if (violatingResourceBuilder_ == null) {
-        result.violatingResource_ = violatingResource_;
-      } else {
-        result.violatingResource_ = violatingResourceBuilder_.build();
-      }
-      if (vulnerableHeadersBuilder_ == null) {
-        result.vulnerableHeaders_ = vulnerableHeaders_;
-      } else {
-        result.vulnerableHeaders_ = vulnerableHeadersBuilder_.build();
-      }
-      if (vulnerableParametersBuilder_ == null) {
-        result.vulnerableParameters_ = vulnerableParameters_;
-      } else {
-        result.vulnerableParameters_ = vulnerableParametersBuilder_.build();
-      }
-      if (xssBuilder_ == null) {
-        result.xss_ = xss_;
-      } else {
-        result.xss_ = xssBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1alpha.Finding result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.findingType_ = findingType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.httpMethod_ = httpMethod_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.fuzzedUrl_ = fuzzedUrl_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.body_ = body_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.reproductionUrl_ = reproductionUrl_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.frameUrl_ = frameUrl_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.finalUrl_ = finalUrl_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.trackingId_ = trackingId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.outdatedLibrary_ =
+            outdatedLibraryBuilder_ == null ? outdatedLibrary_ : outdatedLibraryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.violatingResource_ =
+            violatingResourceBuilder_ == null
+                ? violatingResource_
+                : violatingResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.vulnerableHeaders_ =
+            vulnerableHeadersBuilder_ == null
+                ? vulnerableHeaders_
+                : vulnerableHeadersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.vulnerableParameters_ =
+            vulnerableParametersBuilder_ == null
+                ? vulnerableParameters_
+                : vulnerableParametersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.xss_ = xssBuilder_ == null ? xss_ : xssBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1753,6 +1793,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.findingType_ != 0) {
@@ -1760,34 +1801,42 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHttpMethod().isEmpty()) {
         httpMethod_ = other.httpMethod_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getFuzzedUrl().isEmpty()) {
         fuzzedUrl_ = other.fuzzedUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getBody().isEmpty()) {
         body_ = other.body_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getReproductionUrl().isEmpty()) {
         reproductionUrl_ = other.reproductionUrl_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getFrameUrl().isEmpty()) {
         frameUrl_ = other.frameUrl_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getFinalUrl().isEmpty()) {
         finalUrl_ = other.finalUrl_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getTrackingId().isEmpty()) {
         trackingId_ = other.trackingId_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasOutdatedLibrary()) {
@@ -1834,94 +1883,94 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 findingType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 httpMethod_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 fuzzedUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 body_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 reproductionUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 frameUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 finalUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 trackingId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getOutdatedLibraryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getViolatingResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getVulnerableParametersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getXssFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getVulnerableHeadersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             default:
@@ -1940,6 +1989,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2008,8 +2059,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2027,8 +2078,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2051,8 +2102,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2086,8 +2137,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFindingTypeValue(int value) {
-
       findingType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2104,9 +2155,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
-          com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
+          com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.forNumber(findingType_);
       return result == null
           ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED
           : result;
@@ -2128,7 +2178,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       findingType_ = value.getNumber();
       onChanged();
       return this;
@@ -2145,7 +2195,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFindingType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       findingType_ = 0;
       onChanged();
       return this;
@@ -2215,8 +2265,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2233,8 +2283,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
-
       httpMethod_ = getDefaultInstance().getHttpMethod();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2256,8 +2306,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2326,8 +2376,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fuzzedUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2344,8 +2394,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFuzzedUrl() {
-
       fuzzedUrl_ = getDefaultInstance().getFuzzedUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2367,8 +2417,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fuzzedUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2434,8 +2484,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       body_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2451,8 +2501,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBody() {
-
       body_ = getDefaultInstance().getBody();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2473,8 +2523,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       body_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2540,8 +2590,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2557,8 +2607,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2579,8 +2629,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2649,8 +2699,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       reproductionUrl_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2667,8 +2717,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReproductionUrl() {
-
       reproductionUrl_ = getDefaultInstance().getReproductionUrl();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2690,8 +2740,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reproductionUrl_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2760,8 +2810,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       frameUrl_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2778,8 +2828,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFrameUrl() {
-
       frameUrl_ = getDefaultInstance().getFrameUrl();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2801,8 +2851,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       frameUrl_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2868,8 +2918,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       finalUrl_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2885,8 +2935,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFinalUrl() {
-
       finalUrl_ = getDefaultInstance().getFinalUrl();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2907,8 +2957,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       finalUrl_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2977,8 +3027,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       trackingId_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2995,8 +3045,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrackingId() {
-
       trackingId_ = getDefaultInstance().getTrackingId();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3018,8 +3068,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trackingId_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3042,7 +3092,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outdatedLibrary field is set.
      */
     public boolean hasOutdatedLibrary() {
-      return outdatedLibraryBuilder_ != null || outdatedLibrary_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3080,11 +3130,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         outdatedLibrary_ = value;
-        onChanged();
       } else {
         outdatedLibraryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3100,11 +3150,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder builderForValue) {
       if (outdatedLibraryBuilder_ == null) {
         outdatedLibrary_ = builderForValue.build();
-        onChanged();
       } else {
         outdatedLibraryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3119,20 +3169,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOutdatedLibrary(
         com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary value) {
       if (outdatedLibraryBuilder_ == null) {
-        if (outdatedLibrary_ != null) {
-          outdatedLibrary_ =
-              com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.newBuilder(
-                      outdatedLibrary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && outdatedLibrary_ != null
+            && outdatedLibrary_
+                != com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary
+                    .getDefaultInstance()) {
+          getOutdatedLibraryBuilder().mergeFrom(value);
         } else {
           outdatedLibrary_ = value;
         }
-        onChanged();
       } else {
         outdatedLibraryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3145,14 +3195,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
     public Builder clearOutdatedLibrary() {
-      if (outdatedLibraryBuilder_ == null) {
-        outdatedLibrary_ = null;
-        onChanged();
-      } else {
-        outdatedLibrary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      outdatedLibrary_ = null;
+      if (outdatedLibraryBuilder_ != null) {
+        outdatedLibraryBuilder_.dispose();
         outdatedLibraryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3166,7 +3215,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder
         getOutdatedLibraryBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getOutdatedLibraryFieldBuilder().getBuilder();
     }
@@ -3235,7 +3284,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the violatingResource field is set.
      */
     public boolean hasViolatingResource() {
-      return violatingResourceBuilder_ != null || violatingResource_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3277,11 +3326,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         violatingResource_ = value;
-        onChanged();
       } else {
         violatingResourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3299,11 +3348,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder builderForValue) {
       if (violatingResourceBuilder_ == null) {
         violatingResource_ = builderForValue.build();
-        onChanged();
       } else {
         violatingResourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3320,20 +3369,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeViolatingResource(
         com.google.cloud.websecurityscanner.v1alpha.ViolatingResource value) {
       if (violatingResourceBuilder_ == null) {
-        if (violatingResource_ != null) {
-          violatingResource_ =
-              com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.newBuilder(
-                      violatingResource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && violatingResource_ != null
+            && violatingResource_
+                != com.google.cloud.websecurityscanner.v1alpha.ViolatingResource
+                    .getDefaultInstance()) {
+          getViolatingResourceBuilder().mergeFrom(value);
         } else {
           violatingResource_ = value;
         }
-        onChanged();
       } else {
         violatingResourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3348,14 +3397,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearViolatingResource() {
-      if (violatingResourceBuilder_ == null) {
-        violatingResource_ = null;
-        onChanged();
-      } else {
-        violatingResource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      violatingResource_ = null;
+      if (violatingResourceBuilder_ != null) {
+        violatingResourceBuilder_.dispose();
         violatingResourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3371,7 +3419,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder
         getViolatingResourceBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getViolatingResourceFieldBuilder().getBuilder();
     }
@@ -3443,7 +3491,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vulnerableHeaders field is set.
      */
     public boolean hasVulnerableHeaders() {
-      return vulnerableHeadersBuilder_ != null || vulnerableHeaders_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3483,11 +3531,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vulnerableHeaders_ = value;
-        onChanged();
       } else {
         vulnerableHeadersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3504,11 +3552,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Builder builderForValue) {
       if (vulnerableHeadersBuilder_ == null) {
         vulnerableHeaders_ = builderForValue.build();
-        onChanged();
       } else {
         vulnerableHeadersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3524,20 +3572,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVulnerableHeaders(
         com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders value) {
       if (vulnerableHeadersBuilder_ == null) {
-        if (vulnerableHeaders_ != null) {
-          vulnerableHeaders_ =
-              com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.newBuilder(
-                      vulnerableHeaders_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && vulnerableHeaders_ != null
+            && vulnerableHeaders_
+                != com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders
+                    .getDefaultInstance()) {
+          getVulnerableHeadersBuilder().mergeFrom(value);
         } else {
           vulnerableHeaders_ = value;
         }
-        onChanged();
       } else {
         vulnerableHeadersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -3551,14 +3599,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVulnerableHeaders() {
-      if (vulnerableHeadersBuilder_ == null) {
-        vulnerableHeaders_ = null;
-        onChanged();
-      } else {
-        vulnerableHeaders_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      vulnerableHeaders_ = null;
+      if (vulnerableHeadersBuilder_ != null) {
+        vulnerableHeadersBuilder_.dispose();
         vulnerableHeadersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3573,7 +3620,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Builder
         getVulnerableHeadersBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getVulnerableHeadersFieldBuilder().getBuilder();
     }
@@ -3645,7 +3692,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vulnerableParameters field is set.
      */
     public boolean hasVulnerableParameters() {
-      return vulnerableParametersBuilder_ != null || vulnerableParameters_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3690,11 +3737,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vulnerableParameters_ = value;
-        onChanged();
       } else {
         vulnerableParametersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3713,11 +3760,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder builderForValue) {
       if (vulnerableParametersBuilder_ == null) {
         vulnerableParameters_ = builderForValue.build();
-        onChanged();
       } else {
         vulnerableParametersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3735,20 +3782,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVulnerableParameters(
         com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters value) {
       if (vulnerableParametersBuilder_ == null) {
-        if (vulnerableParameters_ != null) {
-          vulnerableParameters_ =
-              com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.newBuilder(
-                      vulnerableParameters_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && vulnerableParameters_ != null
+            && vulnerableParameters_
+                != com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters
+                    .getDefaultInstance()) {
+          getVulnerableParametersBuilder().mergeFrom(value);
         } else {
           vulnerableParameters_ = value;
         }
-        onChanged();
       } else {
         vulnerableParametersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -3764,14 +3811,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVulnerableParameters() {
-      if (vulnerableParametersBuilder_ == null) {
-        vulnerableParameters_ = null;
-        onChanged();
-      } else {
-        vulnerableParameters_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      vulnerableParameters_ = null;
+      if (vulnerableParametersBuilder_ != null) {
+        vulnerableParametersBuilder_.dispose();
         vulnerableParametersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3788,7 +3834,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder
         getVulnerableParametersBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getVulnerableParametersFieldBuilder().getBuilder();
     }
@@ -3861,7 +3907,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xss field is set.
      */
     public boolean hasXss() {
-      return xssBuilder_ != null || xss_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3898,11 +3944,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         xss_ = value;
-        onChanged();
       } else {
         xssBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3917,11 +3963,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder setXss(com.google.cloud.websecurityscanner.v1alpha.Xss.Builder builderForValue) {
       if (xssBuilder_ == null) {
         xss_ = builderForValue.build();
-        onChanged();
       } else {
         xssBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3935,19 +3981,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeXss(com.google.cloud.websecurityscanner.v1alpha.Xss value) {
       if (xssBuilder_ == null) {
-        if (xss_ != null) {
-          xss_ =
-              com.google.cloud.websecurityscanner.v1alpha.Xss.newBuilder(xss_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && xss_ != null
+            && xss_ != com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance()) {
+          getXssBuilder().mergeFrom(value);
         } else {
           xss_ = value;
         }
-        onChanged();
       } else {
         xssBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -3960,14 +4005,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
      */
     public Builder clearXss() {
-      if (xssBuilder_ == null) {
-        xss_ = null;
-        onChanged();
-      } else {
-        xss_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      xss_ = null;
+      if (xssBuilder_ != null) {
+        xssBuilder_.dispose();
         xssBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3980,7 +4024,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.Xss.Builder getXssBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getXssFieldBuilder().getBuilder();
     }

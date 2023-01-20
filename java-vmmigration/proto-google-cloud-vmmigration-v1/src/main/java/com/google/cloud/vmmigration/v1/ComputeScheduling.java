@@ -389,7 +389,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 1;
-  private int onHostMaintenance_;
+  private int onHostMaintenance_ = 0;
   /**
    *
    *
@@ -423,9 +423,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance
       getOnHostMaintenance() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance result =
-        com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.valueOf(
+        com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.forNumber(
             onHostMaintenance_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.UNRECOGNIZED
@@ -433,7 +432,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESTART_TYPE_FIELD_NUMBER = 5;
-  private int restartType_;
+  private int restartType_ = 0;
   /**
    *
    *
@@ -472,15 +471,16 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType getRestartType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType result =
-        com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.valueOf(restartType_);
+        com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.forNumber(restartType_);
     return result == null
         ? com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.UNRECOGNIZED
         : result;
   }
 
   public static final int NODE_AFFINITIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.SchedulingNodeAffinity> nodeAffinities_;
   /**
    *
@@ -557,7 +557,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 4;
-  private int minNodeCpus_;
+  private int minNodeCpus_ = 0;
   /**
    *
    *
@@ -813,19 +813,17 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       onHostMaintenance_ = 0;
-
       restartType_ = 0;
-
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
       } else {
         nodeAffinities_ = null;
         nodeAffinitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       minNodeCpus_ = 0;
-
       return this;
     }
 
@@ -853,21 +851,38 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.vmmigration.v1.ComputeScheduling buildPartial() {
       com.google.cloud.vmmigration.v1.ComputeScheduling result =
           new com.google.cloud.vmmigration.v1.ComputeScheduling(this);
-      int from_bitField0_ = bitField0_;
-      result.onHostMaintenance_ = onHostMaintenance_;
-      result.restartType_ = restartType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.ComputeScheduling result) {
       if (nodeAffinitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.nodeAffinities_ = nodeAffinities_;
       } else {
         result.nodeAffinities_ = nodeAffinitiesBuilder_.build();
       }
-      result.minNodeCpus_ = minNodeCpus_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.ComputeScheduling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.onHostMaintenance_ = onHostMaintenance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.restartType_ = restartType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
+      }
     }
 
     @java.lang.Override
@@ -926,7 +941,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         if (!other.nodeAffinities_.isEmpty()) {
           if (nodeAffinities_.isEmpty()) {
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureNodeAffinitiesIsMutable();
             nodeAffinities_.addAll(other.nodeAffinities_);
@@ -939,7 +954,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
             nodeAffinitiesBuilder_.dispose();
             nodeAffinitiesBuilder_ = null;
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             nodeAffinitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodeAffinitiesFieldBuilder()
@@ -981,7 +996,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 onHostMaintenance_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
@@ -1001,13 +1016,13 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 minNodeCpus_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 restartType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 40
             default:
@@ -1064,8 +1079,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setOnHostMaintenanceValue(int value) {
-
       onHostMaintenance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1086,9 +1101,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance
         getOnHostMaintenance() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance result =
-          com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.valueOf(
+          com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.forNumber(
               onHostMaintenance_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance.UNRECOGNIZED
@@ -1114,7 +1128,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       onHostMaintenance_ = value.getNumber();
       onChanged();
       return this;
@@ -1134,7 +1148,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOnHostMaintenance() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       onHostMaintenance_ = 0;
       onChanged();
       return this;
@@ -1179,8 +1193,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setRestartTypeValue(int value) {
-
       restartType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1202,9 +1216,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType getRestartType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType result =
-          com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.valueOf(restartType_);
+          com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.forNumber(restartType_);
       return result == null
           ? com.google.cloud.vmmigration.v1.ComputeScheduling.RestartType.UNRECOGNIZED
           : result;
@@ -1231,7 +1244,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       restartType_ = value.getNumber();
       onChanged();
       return this;
@@ -1253,7 +1266,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRestartType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       restartType_ = 0;
       onChanged();
       return this;
@@ -1263,11 +1276,11 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureNodeAffinitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         nodeAffinities_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.SchedulingNodeAffinity>(
                 nodeAffinities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1509,7 +1522,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public Builder clearNodeAffinities() {
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         nodeAffinitiesBuilder_.clear();
@@ -1651,7 +1664,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Builder,
                 com.google.cloud.vmmigration.v1.SchedulingNodeAffinityOrBuilder>(
                 nodeAffinities_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         nodeAffinities_ = null;
@@ -1694,6 +1707,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
     public Builder setMinNodeCpus(int value) {
 
       minNodeCpus_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1711,7 +1725,7 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCpus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       minNodeCpus_ = 0;
       onChanged();
       return this;

@@ -374,7 +374,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object accessKeyId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accessKeyId_ = "";
     /**
      *
      *
@@ -423,7 +425,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int SECRET_ACCESS_KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object secretAccessKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object secretAccessKey_ = "";
     /**
      *
      *
@@ -683,10 +687,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         accessKeyId_ = "";
-
         secretAccessKey_ = "";
-
         return this;
       }
 
@@ -717,10 +720,22 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.vmmigration.v1.AwsSourceDetails.AccessKeyCredentials buildPartial() {
         com.google.cloud.vmmigration.v1.AwsSourceDetails.AccessKeyCredentials result =
             new com.google.cloud.vmmigration.v1.AwsSourceDetails.AccessKeyCredentials(this);
-        result.accessKeyId_ = accessKeyId_;
-        result.secretAccessKey_ = secretAccessKey_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vmmigration.v1.AwsSourceDetails.AccessKeyCredentials result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accessKeyId_ = accessKeyId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.secretAccessKey_ = secretAccessKey_;
+        }
       }
 
       @java.lang.Override
@@ -777,10 +792,12 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
                 .getDefaultInstance()) return this;
         if (!other.getAccessKeyId().isEmpty()) {
           accessKeyId_ = other.accessKeyId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSecretAccessKey().isEmpty()) {
           secretAccessKey_ = other.secretAccessKey_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -812,13 +829,13 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   accessKeyId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   secretAccessKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -837,6 +854,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object accessKeyId_ = "";
       /**
@@ -899,8 +918,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         accessKeyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -916,8 +935,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAccessKeyId() {
-
         accessKeyId_ = getDefaultInstance().getAccessKeyId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -938,8 +957,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         accessKeyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1005,8 +1024,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         secretAccessKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1022,8 +1041,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearSecretAccessKey() {
-
         secretAccessKey_ = getDefaultInstance().getSecretAccessKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1044,8 +1063,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         secretAccessKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1224,7 +1243,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      *
      *
@@ -1273,7 +1294,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -1530,10 +1553,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
         value_ = "";
-
         return this;
       }
 
@@ -1561,10 +1583,21 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag buildPartial() {
         com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag result =
             new com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag(this);
-        result.key_ = key_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -1617,10 +1650,12 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1652,13 +1687,13 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   key_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1677,6 +1712,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object key_ = "";
       /**
@@ -1739,8 +1776,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1756,8 +1793,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1778,8 +1815,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1845,8 +1882,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1862,8 +1899,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1884,8 +1921,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2058,7 +2095,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AWS_REGION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object awsRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object awsRegion_ = "";
   /**
    *
    *
@@ -2107,7 +2146,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2140,9 +2179,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsSourceDetails.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsSourceDetails.State result =
-        com.google.cloud.vmmigration.v1.AwsSourceDetails.State.valueOf(state_);
+        com.google.cloud.vmmigration.v1.AwsSourceDetails.State.forNumber(state_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsSourceDetails.State.UNRECOGNIZED
         : result;
@@ -2194,10 +2232,12 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int INVENTORY_TAG_LIST_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag> inventoryTagList_;
   /**
    *
@@ -2274,6 +2314,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INVENTORY_SECURITY_GROUP_NAMES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList inventorySecurityGroupNames_;
   /**
    *
@@ -2351,6 +2393,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
       migrationResourcesUserTags_;
 
@@ -2420,8 +2463,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getMigrationResourcesUserTagsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMigrationResourcesUserTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2455,7 +2500,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PUBLIC_IP_FIELD_NUMBER = 9;
-  private volatile java.lang.Object publicIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicIp_ = "";
   /**
    *
    *
@@ -2838,17 +2885,15 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (accessKeyCredsBuilder_ != null) {
         accessKeyCredsBuilder_.clear();
       }
       awsRegion_ = "";
-
       state_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       if (inventoryTagListBuilder_ == null) {
@@ -2857,12 +2902,11 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         inventoryTagList_ = null;
         inventoryTagListBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableMigrationResourcesUserTags().clear();
       publicIp_ = "";
-
       credentialsTypeCase_ = 0;
       credentialsType_ = null;
       return this;
@@ -2892,41 +2936,59 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.AwsSourceDetails buildPartial() {
       com.google.cloud.vmmigration.v1.AwsSourceDetails result =
           new com.google.cloud.vmmigration.v1.AwsSourceDetails(this);
-      int from_bitField0_ = bitField0_;
-      if (credentialsTypeCase_ == 11) {
-        if (accessKeyCredsBuilder_ == null) {
-          result.credentialsType_ = credentialsType_;
-        } else {
-          result.credentialsType_ = accessKeyCredsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.awsRegion_ = awsRegion_;
-      result.state_ = state_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.AwsSourceDetails result) {
       if (inventoryTagListBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           inventoryTagList_ = java.util.Collections.unmodifiableList(inventoryTagList_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.inventoryTagList_ = inventoryTagList_;
       } else {
         result.inventoryTagList_ = inventoryTagListBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         inventorySecurityGroupNames_ = inventorySecurityGroupNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.inventorySecurityGroupNames_ = inventorySecurityGroupNames_;
-      result.migrationResourcesUserTags_ = internalGetMigrationResourcesUserTags();
-      result.migrationResourcesUserTags_.makeImmutable();
-      result.publicIp_ = publicIp_;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSourceDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.awsRegion_ = awsRegion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.migrationResourcesUserTags_ = internalGetMigrationResourcesUserTags();
+        result.migrationResourcesUserTags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.publicIp_ = publicIp_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vmmigration.v1.AwsSourceDetails result) {
       result.credentialsTypeCase_ = credentialsTypeCase_;
-      onBuilt();
-      return result;
+      result.credentialsType_ = this.credentialsType_;
+      if (credentialsTypeCase_ == 11 && accessKeyCredsBuilder_ != null) {
+        result.credentialsType_ = accessKeyCredsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2977,6 +3039,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getAwsRegion().isEmpty()) {
         awsRegion_ = other.awsRegion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2989,7 +3052,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         if (!other.inventoryTagList_.isEmpty()) {
           if (inventoryTagList_.isEmpty()) {
             inventoryTagList_ = other.inventoryTagList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureInventoryTagListIsMutable();
             inventoryTagList_.addAll(other.inventoryTagList_);
@@ -3002,7 +3065,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
             inventoryTagListBuilder_.dispose();
             inventoryTagListBuilder_ = null;
             inventoryTagList_ = other.inventoryTagList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             inventoryTagListBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInventoryTagListFieldBuilder()
@@ -3015,7 +3078,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (!other.inventorySecurityGroupNames_.isEmpty()) {
         if (inventorySecurityGroupNames_.isEmpty()) {
           inventorySecurityGroupNames_ = other.inventorySecurityGroupNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureInventorySecurityGroupNamesIsMutable();
           inventorySecurityGroupNames_.addAll(other.inventorySecurityGroupNames_);
@@ -3024,8 +3087,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableMigrationResourcesUserTags()
           .mergeFrom(other.internalGetMigrationResourcesUserTags());
+      bitField0_ |= 0x00000040;
       if (!other.getPublicIp().isEmpty()) {
         publicIp_ = other.publicIp_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       switch (other.getCredentialsTypeCase()) {
@@ -3068,19 +3133,19 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 awsRegion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 58:
@@ -3103,12 +3168,13 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
                     .put(
                         migrationResourcesUserTags__.getKey(),
                         migrationResourcesUserTags__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 publicIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
@@ -3405,7 +3471,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       credentialsTypeCase_ = 11;
       onChanged();
-      ;
       return accessKeyCredsBuilder_;
     }
 
@@ -3470,8 +3535,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       awsRegion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3487,8 +3552,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAwsRegion() {
-
       awsRegion_ = getDefaultInstance().getAwsRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3509,8 +3574,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       awsRegion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3548,8 +3613,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3568,9 +3633,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsSourceDetails.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsSourceDetails.State result =
-          com.google.cloud.vmmigration.v1.AwsSourceDetails.State.valueOf(state_);
+          com.google.cloud.vmmigration.v1.AwsSourceDetails.State.forNumber(state_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsSourceDetails.State.UNRECOGNIZED
           : result;
@@ -3593,7 +3657,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3612,7 +3676,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -3635,7 +3699,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3672,11 +3736,11 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3692,11 +3756,11 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3711,16 +3775,18 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3734,14 +3800,13 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3755,7 +3820,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -3804,11 +3869,11 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureInventoryTagListIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         inventoryTagList_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag>(
                 inventoryTagList_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -4038,7 +4103,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     public Builder clearInventoryTagList() {
       if (inventoryTagListBuilder_ == null) {
         inventoryTagList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         inventoryTagListBuilder_.clear();
@@ -4173,7 +4238,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vmmigration.v1.AwsSourceDetails.Tag.Builder,
                 com.google.cloud.vmmigration.v1.AwsSourceDetails.TagOrBuilder>(
                 inventoryTagList_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         inventoryTagList_ = null;
@@ -4185,10 +4250,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInventorySecurityGroupNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         inventorySecurityGroupNames_ =
             new com.google.protobuf.LazyStringArrayList(inventorySecurityGroupNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -4331,7 +4396,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearInventorySecurityGroupNames() {
       inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4373,8 +4438,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMigrationResourcesUserTags() {
-      onChanged();
-      ;
       if (migrationResourcesUserTags_ == null) {
         migrationResourcesUserTags_ =
             com.google.protobuf.MapField.newMapField(
@@ -4383,6 +4446,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (!migrationResourcesUserTags_.isMutable()) {
         migrationResourcesUserTags_ = migrationResourcesUserTags_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return migrationResourcesUserTags_;
     }
 
@@ -4443,8 +4508,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getMigrationResourcesUserTagsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMigrationResourcesUserTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4478,6 +4545,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearMigrationResourcesUserTags() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableMigrationResourcesUserTags().getMutableMap().clear();
       return this;
     }
@@ -4504,6 +4572,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableMigrationResourcesUserTags() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableMigrationResourcesUserTags().getMutableMap();
     }
     /**
@@ -4525,8 +4594,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMigrationResourcesUserTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -4544,6 +4613,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     public Builder putAllMigrationResourcesUserTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMigrationResourcesUserTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -4611,8 +4681,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicIp_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4629,8 +4699,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPublicIp() {
-
       publicIp_ = getDefaultInstance().getPublicIp();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4652,8 +4722,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicIp_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

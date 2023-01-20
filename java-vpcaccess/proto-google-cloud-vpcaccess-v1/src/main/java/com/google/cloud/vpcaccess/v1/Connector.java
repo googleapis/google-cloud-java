@@ -411,7 +411,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -466,7 +468,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -726,10 +730,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         projectId_ = "";
-
         return this;
       }
 
@@ -757,10 +760,21 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vpcaccess.v1.Connector.Subnet buildPartial() {
         com.google.cloud.vpcaccess.v1.Connector.Subnet result =
             new com.google.cloud.vpcaccess.v1.Connector.Subnet(this);
-        result.name_ = name_;
-        result.projectId_ = projectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vpcaccess.v1.Connector.Subnet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
       }
 
       @java.lang.Override
@@ -813,10 +827,12 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -848,13 +864,13 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -873,6 +889,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -944,8 +962,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -964,8 +982,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -989,8 +1007,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1062,8 +1080,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1081,8 +1099,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1105,8 +1123,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1176,7 +1194,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1225,7 +1245,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -1274,7 +1296,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -1325,7 +1349,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1358,14 +1382,13 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vpcaccess.v1.Connector.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vpcaccess.v1.Connector.State result =
-        com.google.cloud.vpcaccess.v1.Connector.State.valueOf(state_);
+        com.google.cloud.vpcaccess.v1.Connector.State.forNumber(state_);
     return result == null ? com.google.cloud.vpcaccess.v1.Connector.State.UNRECOGNIZED : result;
   }
 
   public static final int MIN_THROUGHPUT_FIELD_NUMBER = 5;
-  private int minThroughput_;
+  private int minThroughput_ = 0;
   /**
    *
    *
@@ -1383,7 +1406,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_THROUGHPUT_FIELD_NUMBER = 6;
-  private int maxThroughput_;
+  private int maxThroughput_ = 0;
   /**
    *
    *
@@ -1401,6 +1424,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONNECTED_PROJECTS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList connectedProjects_;
   /**
    *
@@ -1510,11 +1535,15 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vpcaccess.v1.Connector.SubnetOrBuilder getSubnetOrBuilder() {
-    return getSubnet();
+    return subnet_ == null
+        ? com.google.cloud.vpcaccess.v1.Connector.Subnet.getDefaultInstance()
+        : subnet_;
   }
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object machineType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
   /**
    *
    *
@@ -1563,7 +1592,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 11;
-  private int minInstances_;
+  private int minInstances_ = 0;
   /**
    *
    *
@@ -1581,7 +1610,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 12;
-  private int maxInstances_;
+  private int maxInstances_ = 0;
   /**
    *
    *
@@ -1896,32 +1925,23 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       network_ = "";
-
       ipCidrRange_ = "";
-
       state_ = 0;
-
       minThroughput_ = 0;
-
       maxThroughput_ = 0;
-
       connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (subnetBuilder_ == null) {
-        subnet_ = null;
-      } else {
-        subnet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      subnet_ = null;
+      if (subnetBuilder_ != null) {
+        subnetBuilder_.dispose();
         subnetBuilder_ = null;
       }
       machineType_ = "";
-
       minInstances_ = 0;
-
       maxInstances_ = 0;
-
       return this;
     }
 
@@ -1949,28 +1969,54 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vpcaccess.v1.Connector buildPartial() {
       com.google.cloud.vpcaccess.v1.Connector result =
           new com.google.cloud.vpcaccess.v1.Connector(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.network_ = network_;
-      result.ipCidrRange_ = ipCidrRange_;
-      result.state_ = state_;
-      result.minThroughput_ = minThroughput_;
-      result.maxThroughput_ = maxThroughput_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        connectedProjects_ = connectedProjects_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.connectedProjects_ = connectedProjects_;
-      if (subnetBuilder_ == null) {
-        result.subnet_ = subnet_;
-      } else {
-        result.subnet_ = subnetBuilder_.build();
-      }
-      result.machineType_ = machineType_;
-      result.minInstances_ = minInstances_;
-      result.maxInstances_ = maxInstances_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vpcaccess.v1.Connector result) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        connectedProjects_ = connectedProjects_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.connectedProjects_ = connectedProjects_;
+    }
+
+    private void buildPartial0(com.google.cloud.vpcaccess.v1.Connector result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.minThroughput_ = minThroughput_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.maxThroughput_ = maxThroughput_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.subnet_ = subnetBuilder_ == null ? subnet_ : subnetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.minInstances_ = minInstances_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.maxInstances_ = maxInstances_;
+      }
     }
 
     @java.lang.Override
@@ -2020,14 +2066,17 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vpcaccess.v1.Connector.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIpCidrRange().isEmpty()) {
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2042,7 +2091,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (!other.connectedProjects_.isEmpty()) {
         if (connectedProjects_.isEmpty()) {
           connectedProjects_ = other.connectedProjects_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureConnectedProjectsIsMutable();
           connectedProjects_.addAll(other.connectedProjects_);
@@ -2054,6 +2103,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getMinInstances() != 0) {
@@ -2091,37 +2141,37 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 minThroughput_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 maxThroughput_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
@@ -2134,25 +2184,25 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getSubnetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 82:
               {
                 machineType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 88:
               {
                 minInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             case 96:
               {
                 maxInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 96
             default:
@@ -2235,8 +2285,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2252,8 +2302,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2274,8 +2324,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2341,8 +2391,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2358,8 +2408,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2380,8 +2430,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2450,8 +2500,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2468,8 +2518,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2491,8 +2541,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2530,8 +2580,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2550,9 +2600,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vpcaccess.v1.Connector.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vpcaccess.v1.Connector.State result =
-          com.google.cloud.vpcaccess.v1.Connector.State.valueOf(state_);
+          com.google.cloud.vpcaccess.v1.Connector.State.forNumber(state_);
       return result == null ? com.google.cloud.vpcaccess.v1.Connector.State.UNRECOGNIZED : result;
     }
     /**
@@ -2573,7 +2622,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2592,7 +2641,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -2629,6 +2678,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinThroughput(int value) {
 
       minThroughput_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2644,7 +2694,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinThroughput() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       minThroughput_ = 0;
       onChanged();
       return this;
@@ -2681,6 +2731,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxThroughput(int value) {
 
       maxThroughput_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2696,7 +2747,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxThroughput() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxThroughput_ = 0;
       onChanged();
       return this;
@@ -2706,9 +2757,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureConnectedProjectsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         connectedProjects_ = new com.google.protobuf.LazyStringArrayList(connectedProjects_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2851,7 +2902,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearConnectedProjects() {
       connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2897,7 +2948,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subnet field is set.
      */
     public boolean hasSubnet() {
-      return subnetBuilder_ != null || subnet_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2934,11 +2985,11 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         subnet_ = value;
-        onChanged();
       } else {
         subnetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2954,11 +3005,11 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vpcaccess.v1.Connector.Subnet.Builder builderForValue) {
       if (subnetBuilder_ == null) {
         subnet_ = builderForValue.build();
-        onChanged();
       } else {
         subnetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2972,19 +3023,18 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSubnet(com.google.cloud.vpcaccess.v1.Connector.Subnet value) {
       if (subnetBuilder_ == null) {
-        if (subnet_ != null) {
-          subnet_ =
-              com.google.cloud.vpcaccess.v1.Connector.Subnet.newBuilder(subnet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && subnet_ != null
+            && subnet_ != com.google.cloud.vpcaccess.v1.Connector.Subnet.getDefaultInstance()) {
+          getSubnetBuilder().mergeFrom(value);
         } else {
           subnet_ = value;
         }
-        onChanged();
       } else {
         subnetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2997,14 +3047,13 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vpcaccess.v1.Connector.Subnet subnet = 8;</code>
      */
     public Builder clearSubnet() {
-      if (subnetBuilder_ == null) {
-        subnet_ = null;
-        onChanged();
-      } else {
-        subnet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      subnet_ = null;
+      if (subnetBuilder_ != null) {
+        subnetBuilder_.dispose();
         subnetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3017,7 +3066,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vpcaccess.v1.Connector.Subnet subnet = 8;</code>
      */
     public com.google.cloud.vpcaccess.v1.Connector.Subnet.Builder getSubnetBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSubnetFieldBuilder().getBuilder();
     }
@@ -3126,8 +3175,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3143,8 +3192,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
       machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3165,8 +3214,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3202,6 +3251,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinInstances(int value) {
 
       minInstances_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3217,7 +3267,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       minInstances_ = 0;
       onChanged();
       return this;
@@ -3254,6 +3304,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxInstances(int value) {
 
       maxInstances_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3269,7 +3320,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       maxInstances_ = 0;
       onChanged();
       return this;

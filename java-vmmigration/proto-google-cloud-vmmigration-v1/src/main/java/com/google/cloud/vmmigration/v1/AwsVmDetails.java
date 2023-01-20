@@ -812,7 +812,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VM_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmId_ = "";
   /**
    *
    *
@@ -861,7 +863,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -910,7 +914,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceId_ = "";
   /**
    *
    *
@@ -959,7 +965,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object sourceDescription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceDescription_ = "";
   /**
    *
    *
@@ -1008,7 +1016,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POWER_STATE_FIELD_NUMBER = 5;
-  private int powerState_;
+  private int powerState_ = 0;
   /**
    *
    *
@@ -1041,16 +1049,15 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState getPowerState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState result =
-        com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.valueOf(powerState_);
+        com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.forNumber(powerState_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.UNRECOGNIZED
         : result;
   }
 
   public static final int CPU_COUNT_FIELD_NUMBER = 6;
-  private int cpuCount_;
+  private int cpuCount_ = 0;
   /**
    *
    *
@@ -1068,7 +1075,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 7;
-  private int memoryMb_;
+  private int memoryMb_ = 0;
   /**
    *
    *
@@ -1086,7 +1093,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_COUNT_FIELD_NUMBER = 8;
-  private int diskCount_;
+  private int diskCount_ = 0;
   /**
    *
    *
@@ -1104,7 +1111,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMMITTED_STORAGE_MB_FIELD_NUMBER = 9;
-  private long committedStorageMb_;
+  private long committedStorageMb_ = 0L;
   /**
    *
    *
@@ -1122,7 +1129,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OS_DESCRIPTION_FIELD_NUMBER = 10;
-  private volatile java.lang.Object osDescription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object osDescription_ = "";
   /**
    *
    *
@@ -1171,7 +1180,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOT_OPTION_FIELD_NUMBER = 11;
-  private int bootOption_;
+  private int bootOption_ = 0;
   /**
    *
    *
@@ -1200,16 +1209,17 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption getBootOption() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption result =
-        com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.valueOf(bootOption_);
+        com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.forNumber(bootOption_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.UNRECOGNIZED
         : result;
   }
 
   public static final int INSTANCE_TYPE_FIELD_NUMBER = 12;
-  private volatile java.lang.Object instanceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceType_ = "";
   /**
    *
    *
@@ -1258,7 +1268,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPC_ID_FIELD_NUMBER = 13;
-  private volatile java.lang.Object vpcId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcId_ = "";
   /**
    *
    *
@@ -1307,6 +1319,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_GROUPS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.AwsSecurityGroup> securityGroups_;
   /**
    *
@@ -1389,6 +1403,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
@@ -1446,7 +1461,10 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; tags = 15;</code>
    */
   @java.lang.Override
-  public java.lang.String getTagsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1475,7 +1493,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_FIELD_NUMBER = 16;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -1524,7 +1544,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIRTUALIZATION_TYPE_FIELD_NUMBER = 17;
-  private int virtualizationType_;
+  private int virtualizationType_ = 0;
   /**
    *
    *
@@ -1555,9 +1575,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType getVirtualizationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType result =
-        com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.valueOf(
+        com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.forNumber(
             virtualizationType_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.UNRECOGNIZED
@@ -1565,7 +1584,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 18;
-  private int architecture_;
+  private int architecture_ = 0;
   /**
    *
    *
@@ -1594,9 +1613,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture getArchitecture() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture result =
-        com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.valueOf(architecture_);
+        com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.forNumber(architecture_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.UNRECOGNIZED
         : result;
@@ -2000,46 +2018,31 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vmId_ = "";
-
       displayName_ = "";
-
       sourceId_ = "";
-
       sourceDescription_ = "";
-
       powerState_ = 0;
-
       cpuCount_ = 0;
-
       memoryMb_ = 0;
-
       diskCount_ = 0;
-
       committedStorageMb_ = 0L;
-
       osDescription_ = "";
-
       bootOption_ = 0;
-
       instanceType_ = "";
-
       vpcId_ = "";
-
       if (securityGroupsBuilder_ == null) {
         securityGroups_ = java.util.Collections.emptyList();
       } else {
         securityGroups_ = null;
         securityGroupsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableTags().clear();
       zone_ = "";
-
       virtualizationType_ = 0;
-
       architecture_ = 0;
-
       return this;
     }
 
@@ -2067,36 +2070,80 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.AwsVmDetails buildPartial() {
       com.google.cloud.vmmigration.v1.AwsVmDetails result =
           new com.google.cloud.vmmigration.v1.AwsVmDetails(this);
-      int from_bitField0_ = bitField0_;
-      result.vmId_ = vmId_;
-      result.displayName_ = displayName_;
-      result.sourceId_ = sourceId_;
-      result.sourceDescription_ = sourceDescription_;
-      result.powerState_ = powerState_;
-      result.cpuCount_ = cpuCount_;
-      result.memoryMb_ = memoryMb_;
-      result.diskCount_ = diskCount_;
-      result.committedStorageMb_ = committedStorageMb_;
-      result.osDescription_ = osDescription_;
-      result.bootOption_ = bootOption_;
-      result.instanceType_ = instanceType_;
-      result.vpcId_ = vpcId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vmmigration.v1.AwsVmDetails result) {
       if (securityGroupsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           securityGroups_ = java.util.Collections.unmodifiableList(securityGroups_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.securityGroups_ = securityGroups_;
       } else {
         result.securityGroups_ = securityGroupsBuilder_.build();
       }
-      result.tags_ = internalGetTags();
-      result.tags_.makeImmutable();
-      result.zone_ = zone_;
-      result.virtualizationType_ = virtualizationType_;
-      result.architecture_ = architecture_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AwsVmDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vmId_ = vmId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceId_ = sourceId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourceDescription_ = sourceDescription_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.powerState_ = powerState_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cpuCount_ = cpuCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.memoryMb_ = memoryMb_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.diskCount_ = diskCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.committedStorageMb_ = committedStorageMb_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.osDescription_ = osDescription_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.bootOption_ = bootOption_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.instanceType_ = instanceType_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.vpcId_ = vpcId_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.virtualizationType_ = virtualizationType_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.architecture_ = architecture_;
+      }
     }
 
     @java.lang.Override
@@ -2146,18 +2193,22 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmmigration.v1.AwsVmDetails.getDefaultInstance()) return this;
       if (!other.getVmId().isEmpty()) {
         vmId_ = other.vmId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSourceId().isEmpty()) {
         sourceId_ = other.sourceId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSourceDescription().isEmpty()) {
         sourceDescription_ = other.sourceDescription_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.powerState_ != 0) {
@@ -2177,6 +2228,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOsDescription().isEmpty()) {
         osDescription_ = other.osDescription_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.bootOption_ != 0) {
@@ -2184,17 +2236,19 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInstanceType().isEmpty()) {
         instanceType_ = other.instanceType_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getVpcId().isEmpty()) {
         vpcId_ = other.vpcId_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (securityGroupsBuilder_ == null) {
         if (!other.securityGroups_.isEmpty()) {
           if (securityGroups_.isEmpty()) {
             securityGroups_ = other.securityGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSecurityGroupsIsMutable();
             securityGroups_.addAll(other.securityGroups_);
@@ -2207,7 +2261,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
             securityGroupsBuilder_.dispose();
             securityGroupsBuilder_ = null;
             securityGroups_ = other.securityGroups_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
             securityGroupsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecurityGroupsFieldBuilder()
@@ -2218,8 +2272,10 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00004000;
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.virtualizationType_ != 0) {
@@ -2257,79 +2313,79 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 vmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 sourceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 sourceDescription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 powerState_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 cpuCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 memoryMb_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 diskCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 committedStorageMb_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
               {
                 osDescription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 bootOption_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 instanceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 vpcId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
@@ -2352,24 +2408,25 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 136:
               {
                 virtualizationType_ = input.readEnum();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 136
             case 144:
               {
                 architecture_ = input.readEnum();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 144
             default:
@@ -2452,8 +2509,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2469,8 +2526,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVmId() {
-
       vmId_ = getDefaultInstance().getVmId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2491,8 +2548,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2558,8 +2615,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2575,8 +2632,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2597,8 +2654,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2664,8 +2721,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2681,8 +2738,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceId() {
-
       sourceId_ = getDefaultInstance().getSourceId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2703,8 +2760,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2770,8 +2827,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceDescription_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2787,8 +2844,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceDescription() {
-
       sourceDescription_ = getDefaultInstance().getSourceDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2809,8 +2866,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceDescription_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2848,8 +2905,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPowerStateValue(int value) {
-
       powerState_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2868,9 +2925,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState getPowerState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState result =
-          com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.valueOf(powerState_);
+          com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.forNumber(powerState_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsVmDetails.PowerState.UNRECOGNIZED
           : result;
@@ -2893,7 +2949,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       powerState_ = value.getNumber();
       onChanged();
       return this;
@@ -2912,7 +2968,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPowerState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       powerState_ = 0;
       onChanged();
       return this;
@@ -2949,6 +3005,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setCpuCount(int value) {
 
       cpuCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2964,7 +3021,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCpuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       cpuCount_ = 0;
       onChanged();
       return this;
@@ -3001,6 +3058,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setMemoryMb(int value) {
 
       memoryMb_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3016,7 +3074,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       memoryMb_ = 0;
       onChanged();
       return this;
@@ -3053,6 +3111,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskCount(int value) {
 
       diskCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3068,7 +3127,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       diskCount_ = 0;
       onChanged();
       return this;
@@ -3105,6 +3164,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setCommittedStorageMb(long value) {
 
       committedStorageMb_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3120,7 +3180,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCommittedStorageMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       committedStorageMb_ = 0L;
       onChanged();
       return this;
@@ -3187,8 +3247,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       osDescription_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3204,8 +3264,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOsDescription() {
-
       osDescription_ = getDefaultInstance().getOsDescription();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3226,8 +3286,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       osDescription_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3261,8 +3321,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBootOptionValue(int value) {
-
       bootOption_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3279,9 +3339,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption getBootOption() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption result =
-          com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.valueOf(bootOption_);
+          com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.forNumber(bootOption_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsVmDetails.BootOption.UNRECOGNIZED
           : result;
@@ -3302,7 +3361,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       bootOption_ = value.getNumber();
       onChanged();
       return this;
@@ -3319,7 +3378,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBootOption() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       bootOption_ = 0;
       onChanged();
       return this;
@@ -3386,8 +3445,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceType_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3403,8 +3462,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceType() {
-
       instanceType_ = getDefaultInstance().getInstanceType();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3425,8 +3484,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceType_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3492,8 +3551,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3509,8 +3568,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVpcId() {
-
       vpcId_ = getDefaultInstance().getVpcId();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3531,8 +3590,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3541,11 +3600,11 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecurityGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         securityGroups_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.AwsSecurityGroup>(
                 securityGroups_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -3764,7 +3823,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecurityGroups() {
       if (securityGroupsBuilder_ == null) {
         securityGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         securityGroupsBuilder_.clear();
@@ -3890,7 +3949,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.AwsSecurityGroup.Builder,
                 com.google.cloud.vmmigration.v1.AwsSecurityGroupOrBuilder>(
                 securityGroups_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         securityGroups_ = null;
@@ -3909,14 +3968,14 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableTags() {
-      onChanged();
-      ;
       if (tags_ == null) {
         tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
       }
       if (!tags_.isMutable()) {
         tags_ = tags_.copy();
       }
+      bitField0_ |= 0x00004000;
+      onChanged();
       return tags_;
     }
 
@@ -3968,7 +4027,10 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; tags = 15;</code>
      */
     @java.lang.Override
-    public java.lang.String getTagsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3997,6 +4059,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
@@ -4019,6 +4082,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00004000;
       return internalGetMutableTags().getMutableMap();
     }
     /**
@@ -4037,8 +4101,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4052,6 +4116,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -4116,8 +4181,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4133,8 +4198,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4155,8 +4220,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4194,8 +4259,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setVirtualizationTypeValue(int value) {
-
       virtualizationType_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4215,9 +4280,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType
         getVirtualizationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType result =
-          com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.valueOf(
+          com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.forNumber(
               virtualizationType_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsVmDetails.VmVirtualizationType.UNRECOGNIZED
@@ -4242,7 +4306,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       virtualizationType_ = value.getNumber();
       onChanged();
       return this;
@@ -4261,7 +4325,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVirtualizationType() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       virtualizationType_ = 0;
       onChanged();
       return this;
@@ -4296,8 +4360,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
-
       architecture_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4314,9 +4378,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture getArchitecture() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture result =
-          com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.valueOf(architecture_);
+          com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.forNumber(architecture_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.UNRECOGNIZED
           : result;
@@ -4338,7 +4401,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00020000;
       architecture_ = value.getNumber();
       onChanged();
       return this;
@@ -4355,7 +4418,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       architecture_ = 0;
       onChanged();
       return this;

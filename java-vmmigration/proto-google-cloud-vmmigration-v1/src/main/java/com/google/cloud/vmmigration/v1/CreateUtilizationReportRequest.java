@@ -71,7 +71,9 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.UtilizationReportOrBuilder
       getUtilizationReportOrBuilder() {
-    return getUtilizationReport();
+    return utilizationReport_ == null
+        ? com.google.cloud.vmmigration.v1.UtilizationReport.getDefaultInstance()
+        : utilizationReport_;
   }
 
   public static final int UTILIZATION_REPORT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object utilizationReportId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object utilizationReportId_ = "";
   /**
    *
    *
@@ -236,7 +242,9 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -534,18 +542,15 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (utilizationReportBuilder_ == null) {
-        utilizationReport_ = null;
-      } else {
-        utilizationReport_ = null;
+      utilizationReport_ = null;
+      if (utilizationReportBuilder_ != null) {
+        utilizationReportBuilder_.dispose();
         utilizationReportBuilder_ = null;
       }
       utilizationReportId_ = "";
-
       requestId_ = "";
-
       return this;
     }
 
@@ -574,16 +579,31 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
     public com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest result =
           new com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest(this);
-      result.parent_ = parent_;
-      if (utilizationReportBuilder_ == null) {
-        result.utilizationReport_ = utilizationReport_;
-      } else {
-        result.utilizationReport_ = utilizationReportBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.utilizationReportId_ = utilizationReportId_;
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.utilizationReport_ =
+            utilizationReportBuilder_ == null
+                ? utilizationReport_
+                : utilizationReportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.utilizationReportId_ = utilizationReportId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -635,6 +655,7 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUtilizationReport()) {
@@ -642,10 +663,12 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
       }
       if (!other.getUtilizationReportId().isEmpty()) {
         utilizationReportId_ = other.utilizationReportId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -677,26 +700,26 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getUtilizationReportFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 utilizationReportId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -715,6 +738,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -783,8 +808,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +827,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -826,8 +851,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,7 +877,7 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * @return Whether the utilizationReport field is set.
      */
     public boolean hasUtilizationReport() {
-      return utilizationReportBuilder_ != null || utilizationReport_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -893,11 +918,11 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         utilizationReport_ = value;
-        onChanged();
       } else {
         utilizationReportBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -915,11 +940,11 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
         com.google.cloud.vmmigration.v1.UtilizationReport.Builder builderForValue) {
       if (utilizationReportBuilder_ == null) {
         utilizationReport_ = builderForValue.build();
-        onChanged();
       } else {
         utilizationReportBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -935,19 +960,19 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUtilizationReport(com.google.cloud.vmmigration.v1.UtilizationReport value) {
       if (utilizationReportBuilder_ == null) {
-        if (utilizationReport_ != null) {
-          utilizationReport_ =
-              com.google.cloud.vmmigration.v1.UtilizationReport.newBuilder(utilizationReport_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && utilizationReport_ != null
+            && utilizationReport_
+                != com.google.cloud.vmmigration.v1.UtilizationReport.getDefaultInstance()) {
+          getUtilizationReportBuilder().mergeFrom(value);
         } else {
           utilizationReport_ = value;
         }
-        onChanged();
       } else {
         utilizationReportBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -962,14 +987,13 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearUtilizationReport() {
-      if (utilizationReportBuilder_ == null) {
-        utilizationReport_ = null;
-        onChanged();
-      } else {
-        utilizationReport_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      utilizationReport_ = null;
+      if (utilizationReportBuilder_ != null) {
+        utilizationReportBuilder_.dispose();
         utilizationReportBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -984,7 +1008,7 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.vmmigration.v1.UtilizationReport.Builder getUtilizationReportBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUtilizationReportFieldBuilder().getBuilder();
     }
@@ -1110,8 +1134,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       utilizationReportId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1131,8 +1155,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearUtilizationReportId() {
-
       utilizationReportId_ = getDefaultInstance().getUtilizationReportId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1157,8 +1181,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       utilizationReportId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1254,8 +1278,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1281,8 +1305,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1313,8 +1337,8 @@ public final class CreateUtilizationReportRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

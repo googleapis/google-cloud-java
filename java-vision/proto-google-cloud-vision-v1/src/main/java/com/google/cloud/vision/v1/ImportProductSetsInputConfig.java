@@ -376,6 +376,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -408,16 +409,25 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     public com.google.cloud.vision.v1.ImportProductSetsInputConfig buildPartial() {
       com.google.cloud.vision.v1.ImportProductSetsInputConfig result =
           new com.google.cloud.vision.v1.ImportProductSetsInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.ImportProductSetsInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.vision.v1.ImportProductSetsInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,6 +549,8 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1.ImportProductSetsGcsSource,
@@ -756,7 +768,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 

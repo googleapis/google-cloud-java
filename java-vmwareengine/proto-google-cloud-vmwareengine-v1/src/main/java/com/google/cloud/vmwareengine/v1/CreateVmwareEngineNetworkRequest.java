@@ -72,7 +72,9 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
   }
 
   public static final int VMWARE_ENGINE_NETWORK_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vmwareEngineNetworkId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vmwareEngineNetworkId_ = "";
   /**
    *
    *
@@ -261,11 +265,15 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.vmwareengine.v1.VmwareEngineNetworkOrBuilder
       getVmwareEngineNetworkOrBuilder() {
-    return getVmwareEngineNetwork();
+    return vmwareEngineNetwork_ == null
+        ? com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.getDefaultInstance()
+        : vmwareEngineNetwork_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -568,18 +576,15 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       vmwareEngineNetworkId_ = "";
-
-      if (vmwareEngineNetworkBuilder_ == null) {
-        vmwareEngineNetwork_ = null;
-      } else {
-        vmwareEngineNetwork_ = null;
+      vmwareEngineNetwork_ = null;
+      if (vmwareEngineNetworkBuilder_ != null) {
+        vmwareEngineNetworkBuilder_.dispose();
         vmwareEngineNetworkBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -608,16 +613,31 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
     public com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest buildPartial() {
       com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest result =
           new com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest(this);
-      result.parent_ = parent_;
-      result.vmwareEngineNetworkId_ = vmwareEngineNetworkId_;
-      if (vmwareEngineNetworkBuilder_ == null) {
-        result.vmwareEngineNetwork_ = vmwareEngineNetwork_;
-      } else {
-        result.vmwareEngineNetwork_ = vmwareEngineNetworkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vmwareEngineNetworkId_ = vmwareEngineNetworkId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vmwareEngineNetwork_ =
+            vmwareEngineNetworkBuilder_ == null
+                ? vmwareEngineNetwork_
+                : vmwareEngineNetworkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -670,10 +690,12 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVmwareEngineNetworkId().isEmpty()) {
         vmwareEngineNetworkId_ = other.vmwareEngineNetworkId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVmwareEngineNetwork()) {
@@ -681,6 +703,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -712,26 +735,26 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 vmwareEngineNetworkId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getVmwareEngineNetworkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -750,6 +773,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -836,8 +861,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,8 +886,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -891,8 +916,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -994,8 +1019,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       vmwareEngineNetworkId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1023,8 +1048,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearVmwareEngineNetworkId() {
-
       vmwareEngineNetworkId_ = getDefaultInstance().getVmwareEngineNetworkId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1057,8 +1082,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vmwareEngineNetworkId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1083,7 +1108,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return Whether the vmwareEngineNetwork field is set.
      */
     public boolean hasVmwareEngineNetwork() {
-      return vmwareEngineNetworkBuilder_ != null || vmwareEngineNetwork_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1125,11 +1150,11 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         vmwareEngineNetwork_ = value;
-        onChanged();
       } else {
         vmwareEngineNetworkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1147,11 +1172,11 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
         com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Builder builderForValue) {
       if (vmwareEngineNetworkBuilder_ == null) {
         vmwareEngineNetwork_ = builderForValue.build();
-        onChanged();
       } else {
         vmwareEngineNetworkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1168,19 +1193,19 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
     public Builder mergeVmwareEngineNetwork(
         com.google.cloud.vmwareengine.v1.VmwareEngineNetwork value) {
       if (vmwareEngineNetworkBuilder_ == null) {
-        if (vmwareEngineNetwork_ != null) {
-          vmwareEngineNetwork_ =
-              com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.newBuilder(vmwareEngineNetwork_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && vmwareEngineNetwork_ != null
+            && vmwareEngineNetwork_
+                != com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.getDefaultInstance()) {
+          getVmwareEngineNetworkBuilder().mergeFrom(value);
         } else {
           vmwareEngineNetwork_ = value;
         }
-        onChanged();
       } else {
         vmwareEngineNetworkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1195,14 +1220,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearVmwareEngineNetwork() {
-      if (vmwareEngineNetworkBuilder_ == null) {
-        vmwareEngineNetwork_ = null;
-        onChanged();
-      } else {
-        vmwareEngineNetwork_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      vmwareEngineNetwork_ = null;
+      if (vmwareEngineNetworkBuilder_ != null) {
+        vmwareEngineNetworkBuilder_.dispose();
         vmwareEngineNetworkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1218,7 +1242,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      */
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork.Builder
         getVmwareEngineNetworkBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVmwareEngineNetworkFieldBuilder().getBuilder();
     }
@@ -1365,8 +1389,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1393,8 +1417,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1426,8 +1450,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

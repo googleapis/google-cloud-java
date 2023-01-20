@@ -1099,7 +1099,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1128,9 +1128,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
-          com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
+          com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED
           : result;
@@ -1181,7 +1180,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.PositionOrBuilder getPositionOrBuilder() {
-      return getPosition();
+      return position_ == null
+          ? com.google.cloud.vision.v1.Position.getDefaultInstance()
+          : position_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1399,12 +1400,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
-        if (positionBuilder_ == null) {
-          position_ = null;
-        } else {
-          position_ = null;
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
         return this;
@@ -1434,14 +1434,21 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark buildPartial() {
         com.google.cloud.vision.v1.FaceAnnotation.Landmark result =
             new com.google.cloud.vision.v1.FaceAnnotation.Landmark(this);
-        result.type_ = type_;
-        if (positionBuilder_ == null) {
-          result.position_ = position_;
-        } else {
-          result.position_ = positionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vision.v1.FaceAnnotation.Landmark result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.position_ = positionBuilder_ == null ? position_ : positionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1527,13 +1534,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               case 24:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getPositionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -1552,6 +1559,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -1582,8 +1591,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1600,9 +1609,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
-            com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED
             : result;
@@ -1623,7 +1631,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1640,7 +1648,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -1664,7 +1672,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return positionBuilder_ != null || position_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1701,11 +1709,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           position_ = value;
-          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1720,11 +1728,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       public Builder setPosition(com.google.cloud.vision.v1.Position.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
-          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1738,19 +1746,18 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergePosition(com.google.cloud.vision.v1.Position value) {
         if (positionBuilder_ == null) {
-          if (position_ != null) {
-            position_ =
-                com.google.cloud.vision.v1.Position.newBuilder(position_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && position_ != null
+              && position_ != com.google.cloud.vision.v1.Position.getDefaultInstance()) {
+            getPositionBuilder().mergeFrom(value);
           } else {
             position_ = value;
           }
-          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1763,14 +1770,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
        */
       public Builder clearPosition() {
-        if (positionBuilder_ == null) {
-          position_ = null;
-          onChanged();
-        } else {
-          position_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1783,7 +1789,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
        */
       public com.google.cloud.vision.v1.Position.Builder getPositionBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -1958,7 +1964,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
-    return getBoundingPoly();
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
 
   public static final int FD_BOUNDING_POLY_FIELD_NUMBER = 2;
@@ -2021,10 +2029,14 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getFdBoundingPolyOrBuilder() {
-    return getFdBoundingPoly();
+    return fdBoundingPoly_ == null
+        ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+        : fdBoundingPoly_;
   }
 
   public static final int LANDMARKS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark> landmarks_;
   /**
    *
@@ -2095,7 +2107,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLL_ANGLE_FIELD_NUMBER = 4;
-  private float rollAngle_;
+  private float rollAngle_ = 0F;
   /**
    *
    *
@@ -2115,7 +2127,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAN_ANGLE_FIELD_NUMBER = 5;
-  private float panAngle_;
+  private float panAngle_ = 0F;
   /**
    *
    *
@@ -2135,7 +2147,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TILT_ANGLE_FIELD_NUMBER = 6;
-  private float tiltAngle_;
+  private float tiltAngle_ = 0F;
   /**
    *
    *
@@ -2154,7 +2166,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETECTION_CONFIDENCE_FIELD_NUMBER = 7;
-  private float detectionConfidence_;
+  private float detectionConfidence_ = 0F;
   /**
    *
    *
@@ -2172,7 +2184,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANDMARKING_CONFIDENCE_FIELD_NUMBER = 8;
-  private float landmarkingConfidence_;
+  private float landmarkingConfidence_ = 0F;
   /**
    *
    *
@@ -2190,7 +2202,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOY_LIKELIHOOD_FIELD_NUMBER = 9;
-  private int joyLikelihood_;
+  private int joyLikelihood_ = 0;
   /**
    *
    *
@@ -2219,14 +2231,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(joyLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int SORROW_LIKELIHOOD_FIELD_NUMBER = 10;
-  private int sorrowLikelihood_;
+  private int sorrowLikelihood_ = 0;
   /**
    *
    *
@@ -2255,14 +2266,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(sorrowLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int ANGER_LIKELIHOOD_FIELD_NUMBER = 11;
-  private int angerLikelihood_;
+  private int angerLikelihood_ = 0;
   /**
    *
    *
@@ -2291,14 +2301,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(angerLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int SURPRISE_LIKELIHOOD_FIELD_NUMBER = 12;
-  private int surpriseLikelihood_;
+  private int surpriseLikelihood_ = 0;
   /**
    *
    *
@@ -2327,14 +2336,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(surpriseLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int UNDER_EXPOSED_LIKELIHOOD_FIELD_NUMBER = 13;
-  private int underExposedLikelihood_;
+  private int underExposedLikelihood_ = 0;
   /**
    *
    *
@@ -2363,14 +2371,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(underExposedLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int BLURRED_LIKELIHOOD_FIELD_NUMBER = 14;
-  private int blurredLikelihood_;
+  private int blurredLikelihood_ = 0;
   /**
    *
    *
@@ -2399,14 +2406,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(blurredLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int HEADWEAR_LIKELIHOOD_FIELD_NUMBER = 15;
-  private int headwearLikelihood_;
+  private int headwearLikelihood_ = 0;
   /**
    *
    *
@@ -2435,9 +2441,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
-        com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
+        com.google.cloud.vision.v1.Likelihood.forNumber(headwearLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
@@ -2781,16 +2786,15 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = 0;
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-      if (fdBoundingPolyBuilder_ == null) {
-        fdBoundingPoly_ = null;
-      } else {
-        fdBoundingPoly_ = null;
+      fdBoundingPoly_ = null;
+      if (fdBoundingPolyBuilder_ != null) {
+        fdBoundingPolyBuilder_.dispose();
         fdBoundingPolyBuilder_ = null;
       }
       if (landmarksBuilder_ == null) {
@@ -2799,31 +2803,19 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         landmarks_ = null;
         landmarksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       rollAngle_ = 0F;
-
       panAngle_ = 0F;
-
       tiltAngle_ = 0F;
-
       detectionConfidence_ = 0F;
-
       landmarkingConfidence_ = 0F;
-
       joyLikelihood_ = 0;
-
       sorrowLikelihood_ = 0;
-
       angerLikelihood_ = 0;
-
       surpriseLikelihood_ = 0;
-
       underExposedLikelihood_ = 0;
-
       blurredLikelihood_ = 0;
-
       headwearLikelihood_ = 0;
-
       return this;
     }
 
@@ -2851,40 +2843,72 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.FaceAnnotation buildPartial() {
       com.google.cloud.vision.v1.FaceAnnotation result =
           new com.google.cloud.vision.v1.FaceAnnotation(this);
-      int from_bitField0_ = bitField0_;
-      if (boundingPolyBuilder_ == null) {
-        result.boundingPoly_ = boundingPoly_;
-      } else {
-        result.boundingPoly_ = boundingPolyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (fdBoundingPolyBuilder_ == null) {
-        result.fdBoundingPoly_ = fdBoundingPoly_;
-      } else {
-        result.fdBoundingPoly_ = fdBoundingPolyBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vision.v1.FaceAnnotation result) {
       if (landmarksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.landmarks_ = landmarks_;
       } else {
         result.landmarks_ = landmarksBuilder_.build();
       }
-      result.rollAngle_ = rollAngle_;
-      result.panAngle_ = panAngle_;
-      result.tiltAngle_ = tiltAngle_;
-      result.detectionConfidence_ = detectionConfidence_;
-      result.landmarkingConfidence_ = landmarkingConfidence_;
-      result.joyLikelihood_ = joyLikelihood_;
-      result.sorrowLikelihood_ = sorrowLikelihood_;
-      result.angerLikelihood_ = angerLikelihood_;
-      result.surpriseLikelihood_ = surpriseLikelihood_;
-      result.underExposedLikelihood_ = underExposedLikelihood_;
-      result.blurredLikelihood_ = blurredLikelihood_;
-      result.headwearLikelihood_ = headwearLikelihood_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.FaceAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.boundingPoly_ =
+            boundingPolyBuilder_ == null ? boundingPoly_ : boundingPolyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fdBoundingPoly_ =
+            fdBoundingPolyBuilder_ == null ? fdBoundingPoly_ : fdBoundingPolyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rollAngle_ = rollAngle_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.panAngle_ = panAngle_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.tiltAngle_ = tiltAngle_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.detectionConfidence_ = detectionConfidence_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.landmarkingConfidence_ = landmarkingConfidence_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.joyLikelihood_ = joyLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.sorrowLikelihood_ = sorrowLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.angerLikelihood_ = angerLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.surpriseLikelihood_ = surpriseLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.underExposedLikelihood_ = underExposedLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.blurredLikelihood_ = blurredLikelihood_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.headwearLikelihood_ = headwearLikelihood_;
+      }
     }
 
     @java.lang.Override
@@ -2942,7 +2966,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (!other.landmarks_.isEmpty()) {
           if (landmarks_.isEmpty()) {
             landmarks_ = other.landmarks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLandmarksIsMutable();
             landmarks_.addAll(other.landmarks_);
@@ -2955,7 +2979,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             landmarksBuilder_.dispose();
             landmarksBuilder_ = null;
             landmarks_ = other.landmarks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             landmarksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLandmarksFieldBuilder()
@@ -3030,13 +3054,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFdBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -3056,73 +3080,73 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             case 37:
               {
                 rollAngle_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 45:
               {
                 panAngle_ = input.readFloat();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 45
             case 53:
               {
                 tiltAngle_ = input.readFloat();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 53
             case 61:
               {
                 detectionConfidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 61
             case 69:
               {
                 landmarkingConfidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 69
             case 72:
               {
                 joyLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 sorrowLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 angerLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 96:
               {
                 surpriseLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 104:
               {
                 underExposedLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 112:
               {
                 blurredLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 120:
               {
                 headwearLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             default:
@@ -3168,7 +3192,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boundingPoly field is set.
      */
     public boolean hasBoundingPoly() {
-      return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3217,11 +3241,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         boundingPoly_ = value;
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3243,11 +3267,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1.BoundingPoly.Builder builderForValue) {
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         boundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3267,19 +3291,18 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBoundingPoly(com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
-        if (boundingPoly_ != null) {
-          boundingPoly_ =
-              com.google.cloud.vision.v1.BoundingPoly.newBuilder(boundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && boundingPoly_ != null
+            && boundingPoly_ != com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()) {
+          getBoundingPolyBuilder().mergeFrom(value);
         } else {
           boundingPoly_ = value;
         }
-        onChanged();
       } else {
         boundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3298,14 +3321,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
      */
     public Builder clearBoundingPoly() {
-      if (boundingPolyBuilder_ == null) {
-        boundingPoly_ = null;
-        onChanged();
-      } else {
-        boundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      boundingPoly_ = null;
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.dispose();
         boundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3324,7 +3346,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
@@ -3407,7 +3429,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fdBoundingPoly field is set.
      */
     public boolean hasFdBoundingPoly() {
-      return fdBoundingPolyBuilder_ != null || fdBoundingPoly_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3454,11 +3476,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fdBoundingPoly_ = value;
-        onChanged();
       } else {
         fdBoundingPolyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3479,11 +3501,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1.BoundingPoly.Builder builderForValue) {
       if (fdBoundingPolyBuilder_ == null) {
         fdBoundingPoly_ = builderForValue.build();
-        onChanged();
       } else {
         fdBoundingPolyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3502,19 +3524,18 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFdBoundingPoly(com.google.cloud.vision.v1.BoundingPoly value) {
       if (fdBoundingPolyBuilder_ == null) {
-        if (fdBoundingPoly_ != null) {
-          fdBoundingPoly_ =
-              com.google.cloud.vision.v1.BoundingPoly.newBuilder(fdBoundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && fdBoundingPoly_ != null
+            && fdBoundingPoly_ != com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()) {
+          getFdBoundingPolyBuilder().mergeFrom(value);
         } else {
           fdBoundingPoly_ = value;
         }
-        onChanged();
       } else {
         fdBoundingPolyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3532,14 +3553,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
      */
     public Builder clearFdBoundingPoly() {
-      if (fdBoundingPolyBuilder_ == null) {
-        fdBoundingPoly_ = null;
-        onChanged();
-      } else {
-        fdBoundingPoly_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fdBoundingPoly_ = null;
+      if (fdBoundingPolyBuilder_ != null) {
+        fdBoundingPolyBuilder_.dispose();
         fdBoundingPolyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3557,7 +3577,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getFdBoundingPolyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFdBoundingPolyFieldBuilder().getBuilder();
     }
@@ -3619,10 +3639,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLandmarksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         landmarks_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>(landmarks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3840,7 +3860,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLandmarks() {
       if (landmarksBuilder_ == null) {
         landmarks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         landmarksBuilder_.clear();
@@ -3966,7 +3986,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.FaceAnnotation.Landmark,
                 com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder,
                 com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>(
-                landmarks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                landmarks_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         landmarks_ = null;
       }
       return landmarksBuilder_;
@@ -4007,6 +4027,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setRollAngle(float value) {
 
       rollAngle_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4024,7 +4045,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRollAngle() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       rollAngle_ = 0F;
       onChanged();
       return this;
@@ -4065,6 +4086,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setPanAngle(float value) {
 
       panAngle_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4082,7 +4104,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPanAngle() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       panAngle_ = 0F;
       onChanged();
       return this;
@@ -4121,6 +4143,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setTiltAngle(float value) {
 
       tiltAngle_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4137,7 +4160,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTiltAngle() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       tiltAngle_ = 0F;
       onChanged();
       return this;
@@ -4174,6 +4197,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setDetectionConfidence(float value) {
 
       detectionConfidence_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4189,7 +4213,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetectionConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       detectionConfidence_ = 0F;
       onChanged();
       return this;
@@ -4226,6 +4250,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setLandmarkingConfidence(float value) {
 
       landmarkingConfidence_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4241,7 +4266,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLandmarkingConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       landmarkingConfidence_ = 0F;
       onChanged();
       return this;
@@ -4276,8 +4301,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJoyLikelihoodValue(int value) {
-
       joyLikelihood_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4294,9 +4319,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(joyLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4315,7 +4339,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       joyLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4332,7 +4356,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJoyLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       joyLikelihood_ = 0;
       onChanged();
       return this;
@@ -4367,8 +4391,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSorrowLikelihoodValue(int value) {
-
       sorrowLikelihood_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4385,9 +4409,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(sorrowLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4406,7 +4429,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       sorrowLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4423,7 +4446,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSorrowLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       sorrowLikelihood_ = 0;
       onChanged();
       return this;
@@ -4458,8 +4481,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAngerLikelihoodValue(int value) {
-
       angerLikelihood_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4476,9 +4499,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(angerLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4497,7 +4519,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       angerLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4514,7 +4536,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAngerLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       angerLikelihood_ = 0;
       onChanged();
       return this;
@@ -4549,8 +4571,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSurpriseLikelihoodValue(int value) {
-
       surpriseLikelihood_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4567,9 +4589,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(surpriseLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4588,7 +4609,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       surpriseLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4605,7 +4626,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSurpriseLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       surpriseLikelihood_ = 0;
       onChanged();
       return this;
@@ -4640,8 +4661,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUnderExposedLikelihoodValue(int value) {
-
       underExposedLikelihood_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4658,9 +4679,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(underExposedLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4679,7 +4699,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       underExposedLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4696,7 +4716,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnderExposedLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       underExposedLikelihood_ = 0;
       onChanged();
       return this;
@@ -4731,8 +4751,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBlurredLikelihoodValue(int value) {
-
       blurredLikelihood_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4749,9 +4769,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(blurredLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4770,7 +4789,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       blurredLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4787,7 +4806,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlurredLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       blurredLikelihood_ = 0;
       onChanged();
       return this;
@@ -4822,8 +4841,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHeadwearLikelihoodValue(int value) {
-
       headwearLikelihood_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4840,9 +4859,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
-          com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
+          com.google.cloud.vision.v1.Likelihood.forNumber(headwearLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
@@ -4861,7 +4879,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       headwearLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -4878,7 +4896,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeadwearLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       headwearLikelihood_ = 0;
       onChanged();
       return this;

@@ -66,7 +66,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INCLUDE_GEO_RESULTS_FIELD_NUMBER = 2;
-  private boolean includeGeoResults_;
+  private boolean includeGeoResults_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       includeGeoResults_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vision.v1.WebDetectionParams buildPartial() {
       com.google.cloud.vision.v1.WebDetectionParams result =
           new com.google.cloud.vision.v1.WebDetectionParams(this);
-      result.includeGeoResults_ = includeGeoResults_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.WebDetectionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.includeGeoResults_ = includeGeoResults_;
+      }
     }
 
     @java.lang.Override
@@ -391,7 +400,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
             case 16:
               {
                 includeGeoResults_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -410,6 +419,8 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean includeGeoResults_;
     /**
@@ -442,6 +453,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     public Builder setIncludeGeoResults(boolean value) {
 
       includeGeoResults_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -457,7 +469,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIncludeGeoResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       includeGeoResults_ = false;
       onChanged();
       return this;

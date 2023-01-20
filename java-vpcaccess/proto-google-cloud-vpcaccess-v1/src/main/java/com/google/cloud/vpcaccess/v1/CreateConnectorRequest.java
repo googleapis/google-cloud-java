@@ -69,7 +69,9 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONNECTOR_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object connectorId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectorId_ = "";
   /**
    *
    *
@@ -223,7 +227,9 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.vpcaccess.v1.ConnectorOrBuilder getConnectorOrBuilder() {
-    return getConnector();
+    return connector_ == null
+        ? com.google.cloud.vpcaccess.v1.Connector.getDefaultInstance()
+        : connector_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -446,14 +452,12 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       connectorId_ = "";
-
-      if (connectorBuilder_ == null) {
-        connector_ = null;
-      } else {
-        connector_ = null;
+      connector_ = null;
+      if (connectorBuilder_ != null) {
+        connectorBuilder_.dispose();
         connectorBuilder_ = null;
       }
       return this;
@@ -483,15 +487,24 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.vpcaccess.v1.CreateConnectorRequest buildPartial() {
       com.google.cloud.vpcaccess.v1.CreateConnectorRequest result =
           new com.google.cloud.vpcaccess.v1.CreateConnectorRequest(this);
-      result.parent_ = parent_;
-      result.connectorId_ = connectorId_;
-      if (connectorBuilder_ == null) {
-        result.connector_ = connector_;
-      } else {
-        result.connector_ = connectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vpcaccess.v1.CreateConnectorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.connectorId_ = connectorId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.connector_ = connectorBuilder_ == null ? connector_ : connectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -542,10 +555,12 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConnectorId().isEmpty()) {
         connectorId_ = other.connectorId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasConnector()) {
@@ -580,19 +595,19 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 connectorId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getConnectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -611,6 +626,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -682,8 +699,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +719,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -727,8 +744,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +811,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       connectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -811,8 +828,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearConnectorId() {
-
       connectorId_ = getDefaultInstance().getConnectorId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -833,8 +850,8 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       connectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,7 +876,7 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      * @return Whether the connector field is set.
      */
     public boolean hasConnector() {
-      return connectorBuilder_ != null || connector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -900,11 +917,11 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         connector_ = value;
-        onChanged();
       } else {
         connectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -921,11 +938,11 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
     public Builder setConnector(com.google.cloud.vpcaccess.v1.Connector.Builder builderForValue) {
       if (connectorBuilder_ == null) {
         connector_ = builderForValue.build();
-        onChanged();
       } else {
         connectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -941,19 +958,18 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeConnector(com.google.cloud.vpcaccess.v1.Connector value) {
       if (connectorBuilder_ == null) {
-        if (connector_ != null) {
-          connector_ =
-              com.google.cloud.vpcaccess.v1.Connector.newBuilder(connector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && connector_ != null
+            && connector_ != com.google.cloud.vpcaccess.v1.Connector.getDefaultInstance()) {
+          getConnectorBuilder().mergeFrom(value);
         } else {
           connector_ = value;
         }
-        onChanged();
       } else {
         connectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -968,14 +984,13 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearConnector() {
-      if (connectorBuilder_ == null) {
-        connector_ = null;
-        onChanged();
-      } else {
-        connector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      connector_ = null;
+      if (connectorBuilder_ != null) {
+        connectorBuilder_.dispose();
         connectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -990,7 +1005,7 @@ public final class CreateConnectorRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.vpcaccess.v1.Connector.Builder getConnectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConnectorFieldBuilder().getBuilder();
     }

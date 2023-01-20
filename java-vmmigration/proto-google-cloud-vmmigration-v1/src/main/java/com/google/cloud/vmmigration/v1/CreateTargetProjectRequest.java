@@ -70,7 +70,9 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetProjectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetProjectId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.TargetProjectOrBuilder getTargetProjectOrBuilder() {
-    return getTargetProject();
+    return targetProject_ == null
+        ? com.google.cloud.vmmigration.v1.TargetProject.getDefaultInstance()
+        : targetProject_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -524,18 +532,15 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       targetProjectId_ = "";
-
-      if (targetProjectBuilder_ == null) {
-        targetProject_ = null;
-      } else {
-        targetProject_ = null;
+      targetProject_ = null;
+      if (targetProjectBuilder_ != null) {
+        targetProjectBuilder_.dispose();
         targetProjectBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -563,16 +568,28 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     public com.google.cloud.vmmigration.v1.CreateTargetProjectRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateTargetProjectRequest result =
           new com.google.cloud.vmmigration.v1.CreateTargetProjectRequest(this);
-      result.parent_ = parent_;
-      result.targetProjectId_ = targetProjectId_;
-      if (targetProjectBuilder_ == null) {
-        result.targetProject_ = targetProject_;
-      } else {
-        result.targetProject_ = targetProjectBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CreateTargetProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetProjectId_ = targetProjectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetProject_ =
+            targetProjectBuilder_ == null ? targetProject_ : targetProjectBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -623,10 +640,12 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetProjectId().isEmpty()) {
         targetProjectId_ = other.targetProjectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTargetProject()) {
@@ -634,6 +653,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -665,25 +685,25 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetProjectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTargetProjectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -702,6 +722,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -770,8 +792,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +811,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +835,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +902,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetProjectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +919,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTargetProjectId() {
-
       targetProjectId_ = getDefaultInstance().getTargetProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -919,8 +941,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetProjectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +967,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * @return Whether the targetProject field is set.
      */
     public boolean hasTargetProject() {
-      return targetProjectBuilder_ != null || targetProject_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -986,11 +1008,11 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         targetProject_ = value;
-        onChanged();
       } else {
         targetProjectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1008,11 +1030,11 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         com.google.cloud.vmmigration.v1.TargetProject.Builder builderForValue) {
       if (targetProjectBuilder_ == null) {
         targetProject_ = builderForValue.build();
-        onChanged();
       } else {
         targetProjectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,19 +1050,19 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      */
     public Builder mergeTargetProject(com.google.cloud.vmmigration.v1.TargetProject value) {
       if (targetProjectBuilder_ == null) {
-        if (targetProject_ != null) {
-          targetProject_ =
-              com.google.cloud.vmmigration.v1.TargetProject.newBuilder(targetProject_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetProject_ != null
+            && targetProject_
+                != com.google.cloud.vmmigration.v1.TargetProject.getDefaultInstance()) {
+          getTargetProjectBuilder().mergeFrom(value);
         } else {
           targetProject_ = value;
         }
-        onChanged();
       } else {
         targetProjectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1055,14 +1077,13 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearTargetProject() {
-      if (targetProjectBuilder_ == null) {
-        targetProject_ = null;
-        onChanged();
-      } else {
-        targetProject_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      targetProject_ = null;
+      if (targetProjectBuilder_ != null) {
+        targetProjectBuilder_.dispose();
         targetProjectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1077,7 +1098,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.vmmigration.v1.TargetProject.Builder getTargetProjectBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetProjectFieldBuilder().getBuilder();
     }
@@ -1220,8 +1241,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1247,8 +1268,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1279,8 +1300,8 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

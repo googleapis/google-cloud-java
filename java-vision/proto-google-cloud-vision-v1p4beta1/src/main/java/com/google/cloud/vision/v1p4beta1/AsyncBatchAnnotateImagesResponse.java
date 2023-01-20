@@ -111,7 +111,9 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.vision.v1p4beta1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      bitField0_ = 0;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -354,13 +356,20 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
     public com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse buildPartial() {
       com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse result =
           new com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse(this);
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -444,7 +453,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
             case 10:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +473,8 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.vision.v1p4beta1.OutputConfig outputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.OutputConfig,
@@ -482,7 +493,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -519,11 +530,11 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -539,11 +550,11 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
         com.google.cloud.vision.v1p4beta1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,19 +568,19 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
      */
     public Builder mergeOutputConfig(com.google.cloud.vision.v1p4beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.vision.v1p4beta1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.vision.v1p4beta1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,14 +593,13 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
      * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 1;</code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +612,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
      * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 1;</code>
      */
     public com.google.cloud.vision.v1p4beta1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

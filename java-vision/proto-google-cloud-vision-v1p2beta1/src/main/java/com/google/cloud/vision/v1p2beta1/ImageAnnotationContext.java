@@ -69,7 +69,9 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_NUMBER_FIELD_NUMBER = 2;
-  private int pageNumber_;
+  private int pageNumber_ = 0;
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
       pageNumber_ = 0;
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
     public com.google.cloud.vision.v1p2beta1.ImageAnnotationContext buildPartial() {
       com.google.cloud.vision.v1p2beta1.ImageAnnotationContext result =
           new com.google.cloud.vision.v1p2beta1.ImageAnnotationContext(this);
-      result.uri_ = uri_;
-      result.pageNumber_ = pageNumber_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p2beta1.ImageAnnotationContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageNumber_ = pageNumber_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageNumber() != 0) {
@@ -463,13 +476,13 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -488,6 +501,8 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uri_ = "";
     /**
@@ -550,8 +565,8 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +582,8 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -589,8 +604,8 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -628,6 +643,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
     public Builder setPageNumber(int value) {
 
       pageNumber_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -644,7 +660,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageNumber_ = 0;
       onChanged();
       return this;

@@ -264,7 +264,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -510,16 +510,16 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (vmwareVmsBuilder_ != null) {
         vmwareVmsBuilder_.clear();
       }
       if (awsVmsBuilder_ != null) {
         awsVmsBuilder_.clear();
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       sourceVmsCase_ = 0;
@@ -551,28 +551,30 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.vmmigration.v1.FetchInventoryResponse buildPartial() {
       com.google.cloud.vmmigration.v1.FetchInventoryResponse result =
           new com.google.cloud.vmmigration.v1.FetchInventoryResponse(this);
-      if (sourceVmsCase_ == 1) {
-        if (vmwareVmsBuilder_ == null) {
-          result.sourceVms_ = sourceVms_;
-        } else {
-          result.sourceVms_ = vmwareVmsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceVmsCase_ == 3) {
-        if (awsVmsBuilder_ == null) {
-          result.sourceVms_ = sourceVms_;
-        } else {
-          result.sourceVms_ = awsVmsBuilder_.build();
-        }
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.sourceVmsCase_ = sourceVmsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.FetchInventoryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.vmmigration.v1.FetchInventoryResponse result) {
+      result.sourceVmsCase_ = sourceVmsCase_;
+      result.sourceVms_ = this.sourceVms_;
+      if (sourceVmsCase_ == 1 && vmwareVmsBuilder_ != null) {
+        result.sourceVms_ = vmwareVmsBuilder_.build();
+      }
+      if (sourceVmsCase_ == 3 && awsVmsBuilder_ != null) {
+        result.sourceVms_ = awsVmsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -675,7 +677,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -714,6 +716,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vmmigration.v1.VmwareVmsDetails,
@@ -922,7 +926,6 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       sourceVmsCase_ = 1;
       onChanged();
-      ;
       return vmwareVmsBuilder_;
     }
 
@@ -1132,7 +1135,6 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       sourceVmsCase_ = 3;
       onChanged();
-      ;
       return awsVmsBuilder_;
     }
 
@@ -1157,7 +1159,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1200,11 +1202,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1222,11 +1224,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1243,17 +1245,18 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1269,14 +1272,13 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1292,7 +1294,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

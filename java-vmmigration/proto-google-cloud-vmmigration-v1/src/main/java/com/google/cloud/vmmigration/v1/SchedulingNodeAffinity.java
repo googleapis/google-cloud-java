@@ -232,7 +232,9 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -281,7 +283,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
   }
 
   public static final int OPERATOR_FIELD_NUMBER = 2;
-  private int operator_;
+  private int operator_ = 0;
   /**
    *
    *
@@ -312,15 +314,16 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator getOperator() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator result =
-        com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.valueOf(operator_);
+        com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.forNumber(operator_);
     return result == null
         ? com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.UNRECOGNIZED
         : result;
   }
 
   public static final int VALUES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    *
@@ -610,12 +613,11 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       operator_ = 0;
-
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -643,16 +645,31 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
     public com.google.cloud.vmmigration.v1.SchedulingNodeAffinity buildPartial() {
       com.google.cloud.vmmigration.v1.SchedulingNodeAffinity result =
           new com.google.cloud.vmmigration.v1.SchedulingNodeAffinity(this);
-      int from_bitField0_ = bitField0_;
-      result.key_ = key_;
-      result.operator_ = operator_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.values_ = values_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.SchedulingNodeAffinity result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        values_ = values_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.values_ = values_;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.SchedulingNodeAffinity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.operator_ = operator_;
+      }
     }
 
     @java.lang.Override
@@ -703,6 +720,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.operator_ != 0) {
@@ -711,7 +729,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -747,13 +765,13 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 operator_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -843,8 +861,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,8 +878,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -882,8 +900,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -919,8 +937,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setOperatorValue(int value) {
-
       operator_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,9 +956,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator getOperator() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator result =
-          com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.valueOf(operator_);
+          com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.forNumber(operator_);
       return result == null
           ? com.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator.UNRECOGNIZED
           : result;
@@ -963,7 +980,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       operator_ = value.getNumber();
       onChanged();
       return this;
@@ -981,7 +998,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOperator() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       operator_ = 0;
       onChanged();
       return this;
@@ -991,9 +1008,9 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1128,7 +1145,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

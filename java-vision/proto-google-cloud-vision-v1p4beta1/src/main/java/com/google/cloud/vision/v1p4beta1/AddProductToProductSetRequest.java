@@ -69,7 +69,9 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
   }
 
   public static final int PRODUCT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object product_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object product_ = "";
   /**
    *
    *
@@ -389,10 +393,9 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       product_ = "";
-
       return this;
     }
 
@@ -421,10 +424,22 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
     public com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest buildPartial() {
       com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest result =
           new com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest(this);
-      result.name_ = name_;
-      result.product_ = product_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.product_ = product_;
+      }
     }
 
     @java.lang.Override
@@ -477,10 +492,12 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProduct().isEmpty()) {
         product_ = other.product_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -512,13 +529,13 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 product_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +554,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -611,8 +630,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -632,8 +651,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +677,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +756,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       product_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -758,8 +777,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProduct() {
-
       product_ = getDefaultInstance().getProduct();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -784,8 +803,8 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       product_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -110,7 +110,9 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder getDominantColorsOrBuilder() {
-    return getDominantColors();
+    return dominantColors_ == null
+        ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance()
+        : dominantColors_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dominantColorsBuilder_ == null) {
-        dominantColors_ = null;
-      } else {
-        dominantColors_ = null;
+      bitField0_ = 0;
+      dominantColors_ = null;
+      if (dominantColorsBuilder_ != null) {
+        dominantColorsBuilder_.dispose();
         dominantColorsBuilder_ = null;
       }
       return this;
@@ -348,13 +350,19 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.vision.v1.ImageProperties buildPartial() {
       com.google.cloud.vision.v1.ImageProperties result =
           new com.google.cloud.vision.v1.ImageProperties(this);
-      if (dominantColorsBuilder_ == null) {
-        result.dominantColors_ = dominantColors_;
-      } else {
-        result.dominantColors_ = dominantColorsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.ImageProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dominantColors_ =
+            dominantColorsBuilder_ == null ? dominantColors_ : dominantColorsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -434,7 +442,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getDominantColorsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +462,8 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.vision.v1.DominantColorsAnnotation dominantColors_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1.DominantColorsAnnotation,
@@ -472,7 +482,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      * @return Whether the dominantColors field is set.
      */
     public boolean hasDominantColors() {
-      return dominantColorsBuilder_ != null || dominantColors_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -509,11 +519,11 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         dominantColors_ = value;
-        onChanged();
       } else {
         dominantColorsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -529,11 +539,11 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.vision.v1.DominantColorsAnnotation.Builder builderForValue) {
       if (dominantColorsBuilder_ == null) {
         dominantColors_ = builderForValue.build();
-        onChanged();
       } else {
         dominantColorsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -547,19 +557,19 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeDominantColors(com.google.cloud.vision.v1.DominantColorsAnnotation value) {
       if (dominantColorsBuilder_ == null) {
-        if (dominantColors_ != null) {
-          dominantColors_ =
-              com.google.cloud.vision.v1.DominantColorsAnnotation.newBuilder(dominantColors_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dominantColors_ != null
+            && dominantColors_
+                != com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance()) {
+          getDominantColorsBuilder().mergeFrom(value);
         } else {
           dominantColors_ = value;
         }
-        onChanged();
       } else {
         dominantColorsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,14 +582,13 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
      */
     public Builder clearDominantColors() {
-      if (dominantColorsBuilder_ == null) {
-        dominantColors_ = null;
-        onChanged();
-      } else {
-        dominantColors_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dominantColors_ = null;
+      if (dominantColorsBuilder_ != null) {
+        dominantColorsBuilder_.dispose();
         dominantColorsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -592,7 +601,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
      */
     public com.google.cloud.vision.v1.DominantColorsAnnotation.Builder getDominantColorsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDominantColorsFieldBuilder().getBuilder();
     }

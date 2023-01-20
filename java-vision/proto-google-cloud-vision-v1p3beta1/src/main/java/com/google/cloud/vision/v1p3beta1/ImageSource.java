@@ -69,7 +69,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_IMAGE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gcsImageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsImageUri_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object imageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageUri_ = "";
   /**
    *
    *
@@ -406,10 +410,9 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gcsImageUri_ = "";
-
       imageUri_ = "";
-
       return this;
     }
 
@@ -437,10 +440,21 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1p3beta1.ImageSource buildPartial() {
       com.google.cloud.vision.v1p3beta1.ImageSource result =
           new com.google.cloud.vision.v1p3beta1.ImageSource(this);
-      result.gcsImageUri_ = gcsImageUri_;
-      result.imageUri_ = imageUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1p3beta1.ImageSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsImageUri_ = gcsImageUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.imageUri_ = imageUri_;
+      }
     }
 
     @java.lang.Override
@@ -490,10 +504,12 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vision.v1p3beta1.ImageSource.getDefaultInstance()) return this;
       if (!other.getGcsImageUri().isEmpty()) {
         gcsImageUri_ = other.gcsImageUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -525,13 +541,13 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 gcsImageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 imageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +566,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gcsImageUri_ = "";
     /**
@@ -624,8 +642,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsImageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +663,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGcsImageUri() {
-
       gcsImageUri_ = getDefaultInstance().getGcsImageUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -671,8 +689,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsImageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,8 +795,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -807,8 +825,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageUri() {
-
       imageUri_ = getDefaultInstance().getImageUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -842,8 +860,8 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -248,7 +248,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -277,16 +277,17 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.AppliedLicense.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.vmmigration.v1.AppliedLicense.Type result =
-        com.google.cloud.vmmigration.v1.AppliedLicense.Type.valueOf(type_);
+        com.google.cloud.vmmigration.v1.AppliedLicense.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.vmmigration.v1.AppliedLicense.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int OS_LICENSE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object osLicense_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object osLicense_ = "";
   /**
    *
    *
@@ -540,10 +541,9 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       osLicense_ = "";
-
       return this;
     }
 
@@ -571,10 +571,21 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.AppliedLicense buildPartial() {
       com.google.cloud.vmmigration.v1.AppliedLicense result =
           new com.google.cloud.vmmigration.v1.AppliedLicense(this);
-      result.type_ = type_;
-      result.osLicense_ = osLicense_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AppliedLicense result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.osLicense_ = osLicense_;
+      }
     }
 
     @java.lang.Override
@@ -627,6 +638,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOsLicense().isEmpty()) {
         osLicense_ = other.osLicense_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -658,13 +670,13 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 osLicense_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -683,6 +695,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -713,8 +727,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,9 +745,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.AppliedLicense.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.vmmigration.v1.AppliedLicense.Type result =
-          com.google.cloud.vmmigration.v1.AppliedLicense.Type.valueOf(type_);
+          com.google.cloud.vmmigration.v1.AppliedLicense.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.vmmigration.v1.AppliedLicense.Type.UNRECOGNIZED
           : result;
@@ -754,7 +767,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -771,7 +784,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -838,8 +851,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       osLicense_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -855,8 +868,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOsLicense() {
-
       osLicense_ = getDefaultInstance().getOsLicense();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -877,8 +890,8 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       osLicense_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

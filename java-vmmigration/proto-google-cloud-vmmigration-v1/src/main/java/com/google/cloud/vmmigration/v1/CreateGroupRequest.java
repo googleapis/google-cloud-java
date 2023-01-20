@@ -70,7 +70,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GROUP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object groupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupId_ = "";
   /**
    *
    *
@@ -217,11 +221,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.GroupOrBuilder getGroupOrBuilder() {
-    return getGroup();
+    return group_ == null ? com.google.cloud.vmmigration.v1.Group.getDefaultInstance() : group_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -518,18 +524,15 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       groupId_ = "";
-
-      if (groupBuilder_ == null) {
-        group_ = null;
-      } else {
-        group_ = null;
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -557,16 +560,27 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vmmigration.v1.CreateGroupRequest buildPartial() {
       com.google.cloud.vmmigration.v1.CreateGroupRequest result =
           new com.google.cloud.vmmigration.v1.CreateGroupRequest(this);
-      result.parent_ = parent_;
-      result.groupId_ = groupId_;
-      if (groupBuilder_ == null) {
-        result.group_ = group_;
-      } else {
-        result.group_ = groupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.CreateGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.groupId_ = groupId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.group_ = groupBuilder_ == null ? group_ : groupBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -617,10 +631,12 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGroupId().isEmpty()) {
         groupId_ = other.groupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasGroup()) {
@@ -628,6 +644,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -659,25 +676,25 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 groupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -696,6 +713,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -764,8 +783,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -783,8 +802,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -807,8 +826,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,8 +893,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       groupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,8 +910,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearGroupId() {
-
       groupId_ = getDefaultInstance().getGroupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -913,8 +932,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       groupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,7 +957,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the group field is set.
      */
     public boolean hasGroup() {
-      return groupBuilder_ != null || group_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -975,11 +994,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         group_ = value;
-        onChanged();
       } else {
         groupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -995,11 +1014,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public Builder setGroup(com.google.cloud.vmmigration.v1.Group.Builder builderForValue) {
       if (groupBuilder_ == null) {
         group_ = builderForValue.build();
-        onChanged();
       } else {
         groupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1014,19 +1033,18 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeGroup(com.google.cloud.vmmigration.v1.Group value) {
       if (groupBuilder_ == null) {
-        if (group_ != null) {
-          group_ =
-              com.google.cloud.vmmigration.v1.Group.newBuilder(group_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && group_ != null
+            && group_ != com.google.cloud.vmmigration.v1.Group.getDefaultInstance()) {
+          getGroupBuilder().mergeFrom(value);
         } else {
           group_ = value;
         }
-        onChanged();
       } else {
         groupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1058,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearGroup() {
-      if (groupBuilder_ == null) {
-        group_ = null;
-        onChanged();
-      } else {
-        group_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1061,7 +1078,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.vmmigration.v1.Group.Builder getGroupBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
@@ -1200,8 +1217,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1227,8 +1244,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1259,8 +1276,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

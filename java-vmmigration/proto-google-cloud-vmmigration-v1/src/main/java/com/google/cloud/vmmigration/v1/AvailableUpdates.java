@@ -117,7 +117,9 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ApplianceVersionOrBuilder
       getNewDeployableApplianceOrBuilder() {
-    return getNewDeployableAppliance();
+    return newDeployableAppliance_ == null
+        ? com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance()
+        : newDeployableAppliance_;
   }
 
   public static final int IN_PLACE_UPDATE_FIELD_NUMBER = 2;
@@ -171,7 +173,9 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.ApplianceVersionOrBuilder getInPlaceUpdateOrBuilder() {
-    return getInPlaceUpdate();
+    return inPlaceUpdate_ == null
+        ? com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance()
+        : inPlaceUpdate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,16 +395,15 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (newDeployableApplianceBuilder_ == null) {
-        newDeployableAppliance_ = null;
-      } else {
-        newDeployableAppliance_ = null;
+      bitField0_ = 0;
+      newDeployableAppliance_ = null;
+      if (newDeployableApplianceBuilder_ != null) {
+        newDeployableApplianceBuilder_.dispose();
         newDeployableApplianceBuilder_ = null;
       }
-      if (inPlaceUpdateBuilder_ == null) {
-        inPlaceUpdate_ = null;
-      } else {
-        inPlaceUpdate_ = null;
+      inPlaceUpdate_ = null;
+      if (inPlaceUpdateBuilder_ != null) {
+        inPlaceUpdateBuilder_.dispose();
         inPlaceUpdateBuilder_ = null;
       }
       return this;
@@ -430,18 +433,25 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.vmmigration.v1.AvailableUpdates buildPartial() {
       com.google.cloud.vmmigration.v1.AvailableUpdates result =
           new com.google.cloud.vmmigration.v1.AvailableUpdates(this);
-      if (newDeployableApplianceBuilder_ == null) {
-        result.newDeployableAppliance_ = newDeployableAppliance_;
-      } else {
-        result.newDeployableAppliance_ = newDeployableApplianceBuilder_.build();
-      }
-      if (inPlaceUpdateBuilder_ == null) {
-        result.inPlaceUpdate_ = inPlaceUpdate_;
-      } else {
-        result.inPlaceUpdate_ = inPlaceUpdateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vmmigration.v1.AvailableUpdates result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.newDeployableAppliance_ =
+            newDeployableApplianceBuilder_ == null
+                ? newDeployableAppliance_
+                : newDeployableApplianceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inPlaceUpdate_ =
+            inPlaceUpdateBuilder_ == null ? inPlaceUpdate_ : inPlaceUpdateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,13 +536,13 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getNewDeployableApplianceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInPlaceUpdateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -551,6 +561,8 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.vmmigration.v1.ApplianceVersion newDeployableAppliance_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -572,7 +584,7 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      * @return Whether the newDeployableAppliance field is set.
      */
     public boolean hasNewDeployableAppliance() {
-      return newDeployableApplianceBuilder_ != null || newDeployableAppliance_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -614,11 +626,11 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         newDeployableAppliance_ = value;
-        onChanged();
       } else {
         newDeployableApplianceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +648,11 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
         com.google.cloud.vmmigration.v1.ApplianceVersion.Builder builderForValue) {
       if (newDeployableApplianceBuilder_ == null) {
         newDeployableAppliance_ = builderForValue.build();
-        onChanged();
       } else {
         newDeployableApplianceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -657,19 +669,19 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
     public Builder mergeNewDeployableAppliance(
         com.google.cloud.vmmigration.v1.ApplianceVersion value) {
       if (newDeployableApplianceBuilder_ == null) {
-        if (newDeployableAppliance_ != null) {
-          newDeployableAppliance_ =
-              com.google.cloud.vmmigration.v1.ApplianceVersion.newBuilder(newDeployableAppliance_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && newDeployableAppliance_ != null
+            && newDeployableAppliance_
+                != com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance()) {
+          getNewDeployableApplianceBuilder().mergeFrom(value);
         } else {
           newDeployableAppliance_ = value;
         }
-        onChanged();
       } else {
         newDeployableApplianceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -684,14 +696,13 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.vmmigration.v1.ApplianceVersion new_deployable_appliance = 1;</code>
      */
     public Builder clearNewDeployableAppliance() {
-      if (newDeployableApplianceBuilder_ == null) {
-        newDeployableAppliance_ = null;
-        onChanged();
-      } else {
-        newDeployableAppliance_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      newDeployableAppliance_ = null;
+      if (newDeployableApplianceBuilder_ != null) {
+        newDeployableApplianceBuilder_.dispose();
         newDeployableApplianceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -707,7 +718,7 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.vmmigration.v1.ApplianceVersion.Builder
         getNewDeployableApplianceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNewDeployableApplianceFieldBuilder().getBuilder();
     }
@@ -780,7 +791,7 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      * @return Whether the inPlaceUpdate field is set.
      */
     public boolean hasInPlaceUpdate() {
-      return inPlaceUpdateBuilder_ != null || inPlaceUpdate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -821,11 +832,11 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         inPlaceUpdate_ = value;
-        onChanged();
       } else {
         inPlaceUpdateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -843,11 +854,11 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
         com.google.cloud.vmmigration.v1.ApplianceVersion.Builder builderForValue) {
       if (inPlaceUpdateBuilder_ == null) {
         inPlaceUpdate_ = builderForValue.build();
-        onChanged();
       } else {
         inPlaceUpdateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,19 +874,19 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInPlaceUpdate(com.google.cloud.vmmigration.v1.ApplianceVersion value) {
       if (inPlaceUpdateBuilder_ == null) {
-        if (inPlaceUpdate_ != null) {
-          inPlaceUpdate_ =
-              com.google.cloud.vmmigration.v1.ApplianceVersion.newBuilder(inPlaceUpdate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inPlaceUpdate_ != null
+            && inPlaceUpdate_
+                != com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance()) {
+          getInPlaceUpdateBuilder().mergeFrom(value);
         } else {
           inPlaceUpdate_ = value;
         }
-        onChanged();
       } else {
         inPlaceUpdateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +901,13 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.vmmigration.v1.ApplianceVersion in_place_update = 2;</code>
      */
     public Builder clearInPlaceUpdate() {
-      if (inPlaceUpdateBuilder_ == null) {
-        inPlaceUpdate_ = null;
-        onChanged();
-      } else {
-        inPlaceUpdate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inPlaceUpdate_ = null;
+      if (inPlaceUpdateBuilder_ != null) {
+        inPlaceUpdateBuilder_.dispose();
         inPlaceUpdateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -912,7 +922,7 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.vmmigration.v1.ApplianceVersion in_place_update = 2;</code>
      */
     public com.google.cloud.vmmigration.v1.ApplianceVersion.Builder getInPlaceUpdateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInPlaceUpdateFieldBuilder().getBuilder();
     }

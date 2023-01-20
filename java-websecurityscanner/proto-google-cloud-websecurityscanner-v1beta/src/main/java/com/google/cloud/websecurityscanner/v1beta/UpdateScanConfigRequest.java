@@ -122,7 +122,9 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigOrBuilder getScanConfigOrBuilder() {
-    return getScanConfig();
+    return scanConfig_ == null
+        ? com.google.cloud.websecurityscanner.v1beta.ScanConfig.getDefaultInstance()
+        : scanConfig_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -177,7 +179,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,16 +401,15 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (scanConfigBuilder_ == null) {
-        scanConfig_ = null;
-      } else {
-        scanConfig_ = null;
+      bitField0_ = 0;
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
         scanConfigBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -440,18 +441,22 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
     public com.google.cloud.websecurityscanner.v1beta.UpdateScanConfigRequest buildPartial() {
       com.google.cloud.websecurityscanner.v1beta.UpdateScanConfigRequest result =
           new com.google.cloud.websecurityscanner.v1beta.UpdateScanConfigRequest(this);
-      if (scanConfigBuilder_ == null) {
-        result.scanConfig_ = scanConfig_;
-      } else {
-        result.scanConfig_ = scanConfigBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.websecurityscanner.v1beta.UpdateScanConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scanConfig_ = scanConfigBuilder_ == null ? scanConfig_ : scanConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -538,13 +543,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
             case 18:
               {
                 input.readMessage(getScanConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -563,6 +568,8 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.websecurityscanner.v1beta.ScanConfig scanConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -586,7 +593,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * @return Whether the scanConfig field is set.
      */
     public boolean hasScanConfig() {
-      return scanConfigBuilder_ != null || scanConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -631,11 +638,11 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         scanConfig_ = value;
-        onChanged();
       } else {
         scanConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -655,11 +662,11 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
         com.google.cloud.websecurityscanner.v1beta.ScanConfig.Builder builderForValue) {
       if (scanConfigBuilder_ == null) {
         scanConfig_ = builderForValue.build();
-        onChanged();
       } else {
         scanConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,19 +684,19 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeScanConfig(com.google.cloud.websecurityscanner.v1beta.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
-        if (scanConfig_ != null) {
-          scanConfig_ =
-              com.google.cloud.websecurityscanner.v1beta.ScanConfig.newBuilder(scanConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && scanConfig_ != null
+            && scanConfig_
+                != com.google.cloud.websecurityscanner.v1beta.ScanConfig.getDefaultInstance()) {
+          getScanConfigBuilder().mergeFrom(value);
         } else {
           scanConfig_ = value;
         }
-        onChanged();
       } else {
         scanConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -706,14 +713,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearScanConfig() {
-      if (scanConfigBuilder_ == null) {
-        scanConfig_ = null;
-        onChanged();
-      } else {
-        scanConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
         scanConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -730,7 +736,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfig.Builder getScanConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getScanConfigFieldBuilder().getBuilder();
     }
@@ -807,7 +813,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -850,11 +856,11 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,11 +878,11 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -893,17 +899,18 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,14 +926,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -942,7 +948,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

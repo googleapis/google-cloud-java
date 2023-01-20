@@ -67,7 +67,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int X_FIELD_NUMBER = 1;
-  private int x_;
+  private int x_ = 0;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int Y_FIELD_NUMBER = 2;
-  private int y_;
+  private int y_ = 0;
   /**
    *
    *
@@ -307,10 +307,9 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       x_ = 0;
-
       y_ = 0;
-
       return this;
     }
 
@@ -337,10 +336,21 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vision.v1.Vertex buildPartial() {
       com.google.cloud.vision.v1.Vertex result = new com.google.cloud.vision.v1.Vertex(this);
-      result.x_ = x_;
-      result.y_ = y_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.Vertex result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.x_ = x_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.y_ = y_;
+      }
     }
 
     @java.lang.Override
@@ -423,13 +433,13 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 x_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 y_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -448,6 +458,8 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int x_;
     /**
@@ -480,6 +492,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     public Builder setX(int value) {
 
       x_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -495,7 +508,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearX() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       x_ = 0;
       onChanged();
       return this;
@@ -532,6 +545,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
     public Builder setY(int value) {
 
       y_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -547,7 +561,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearY() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       y_ = 0;
       onChanged();
       return this;

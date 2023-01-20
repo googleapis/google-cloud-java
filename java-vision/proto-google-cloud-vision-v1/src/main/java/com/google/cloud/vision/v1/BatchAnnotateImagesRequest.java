@@ -69,6 +69,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> requests_;
   /**
    *
@@ -148,7 +150,9 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -419,6 +423,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
@@ -427,7 +432,6 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       parent_ = "";
-
       return this;
     }
 
@@ -455,7 +459,16 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     public com.google.cloud.vision.v1.BatchAnnotateImagesRequest buildPartial() {
       com.google.cloud.vision.v1.BatchAnnotateImagesRequest result =
           new com.google.cloud.vision.v1.BatchAnnotateImagesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1.BatchAnnotateImagesRequest result) {
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -465,9 +478,13 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      result.parent_ = parent_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.BatchAnnotateImagesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +562,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -590,7 +608,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -1082,8 +1100,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1106,8 +1124,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1135,8 +1153,8 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

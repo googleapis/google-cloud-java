@@ -174,7 +174,9 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -223,7 +225,9 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -482,10 +486,9 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         value_ = "";
-
         return this;
       }
 
@@ -514,10 +517,22 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header buildPartial() {
         com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header result =
             new com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header(this);
-        result.name_ = name_;
-        result.value_ = value_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -572,10 +587,12 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -607,13 +624,13 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -632,6 +649,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -694,8 +713,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -711,8 +730,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -733,8 +752,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -800,8 +819,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -817,8 +836,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -839,8 +858,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -913,6 +932,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header> headers_;
   /**
    *
@@ -985,6 +1006,8 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MISSING_HEADERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Header>
       missingHeaders_;
   /**
@@ -1279,6 +1302,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
       } else {
@@ -1320,7 +1344,16 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.websecurityscanner.v1.VulnerableHeaders buildPartial() {
       com.google.cloud.websecurityscanner.v1.VulnerableHeaders result =
           new com.google.cloud.websecurityscanner.v1.VulnerableHeaders(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.websecurityscanner.v1.VulnerableHeaders result) {
       if (headersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           headers_ = java.util.Collections.unmodifiableList(headers_);
@@ -1339,8 +1372,10 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
       } else {
         result.missingHeaders_ = missingHeadersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.websecurityscanner.v1.VulnerableHeaders result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

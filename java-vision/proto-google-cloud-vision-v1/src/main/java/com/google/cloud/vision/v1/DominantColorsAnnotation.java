@@ -68,6 +68,8 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int COLORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.ColorInfo> colors_;
   /**
    *
@@ -335,6 +337,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (colorsBuilder_ == null) {
         colors_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.vision.v1.DominantColorsAnnotation buildPartial() {
       com.google.cloud.vision.v1.DominantColorsAnnotation result =
           new com.google.cloud.vision.v1.DominantColorsAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vision.v1.DominantColorsAnnotation result) {
       if (colorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           colors_ = java.util.Collections.unmodifiableList(colors_);
@@ -379,8 +391,10 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
       } else {
         result.colors_ = colorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vision.v1.DominantColorsAnnotation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -321,7 +321,6 @@ public interface AwsSourceDetailsOrBuilder
    *
    * <code>map&lt;string, string&gt; migration_resources_user_tags = 8;</code>
    */
-
   /* nullable */
   java.lang.String getMigrationResourcesUserTagsOrDefault(
       java.lang.String key,
