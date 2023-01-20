@@ -27,8 +27,8 @@ public interface GetDataSourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/dataSources/{data_source_id}` or
+   * Required. The field will contain name of the resource requested, for
+   * example: `projects/{project_id}/dataSources/{data_source_id}` or
    * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface GetDataSourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/dataSources/{data_source_id}` or
+   * Required. The field will contain name of the resource requested, for
+   * example: `projects/{project_id}/dataSources/{data_source_id}` or
    * `projects/{project_id}/locations/{location_id}/dataSources/{data_source_id}`
    * </pre>
    *

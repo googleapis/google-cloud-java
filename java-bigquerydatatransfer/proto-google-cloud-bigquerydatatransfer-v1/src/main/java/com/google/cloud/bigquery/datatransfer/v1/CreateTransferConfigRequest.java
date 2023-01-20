@@ -76,15 +76,18 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id} or
-   * projects/{project_id}. If specified location and location of the
-   * destination bigquery dataset do not match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should
+   * be created. Must be in the format
+   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+   * specified location and location of the destination bigquery dataset do not
+   * match - the request will fail.
    * </pre>
    *
    * <code>
@@ -109,10 +112,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id} or
-   * projects/{project_id}. If specified location and location of the
-   * destination bigquery dataset do not match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should
+   * be created. Must be in the format
+   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+   * specified location and location of the destination bigquery dataset do not
+   * match - the request will fail.
    * </pre>
    *
    * <code>
@@ -186,11 +190,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigOrBuilder() {
-    return getTransferConfig();
+    return transferConfig_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
+        : transferConfig_;
   }
 
   public static final int AUTHORIZATION_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object authorizationCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizationCode_ = "";
   /**
    *
    *
@@ -263,7 +271,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
   }
 
   public static final int VERSION_INFO_FIELD_NUMBER = 5;
-  private volatile java.lang.Object versionInfo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionInfo_ = "";
   /**
    *
    *
@@ -336,7 +346,9 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
   }
 
   public static final int SERVICE_ACCOUNT_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object serviceAccountName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountName_ = "";
   /**
    *
    *
@@ -644,20 +656,16 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (transferConfigBuilder_ == null) {
-        transferConfig_ = null;
-      } else {
-        transferConfig_ = null;
+      transferConfig_ = null;
+      if (transferConfigBuilder_ != null) {
+        transferConfigBuilder_.dispose();
         transferConfigBuilder_ = null;
       }
       authorizationCode_ = "";
-
       versionInfo_ = "";
-
       serviceAccountName_ = "";
-
       return this;
     }
 
@@ -687,17 +695,32 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     public com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest(this);
-      result.parent_ = parent_;
-      if (transferConfigBuilder_ == null) {
-        result.transferConfig_ = transferConfig_;
-      } else {
-        result.transferConfig_ = transferConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.authorizationCode_ = authorizationCode_;
-      result.versionInfo_ = versionInfo_;
-      result.serviceAccountName_ = serviceAccountName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.transferConfig_ =
+            transferConfigBuilder_ == null ? transferConfig_ : transferConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.authorizationCode_ = authorizationCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.versionInfo_ = versionInfo_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccountName_ = serviceAccountName_;
+      }
     }
 
     @java.lang.Override
@@ -751,6 +774,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTransferConfig()) {
@@ -758,14 +782,17 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       }
       if (!other.getAuthorizationCode().isEmpty()) {
         authorizationCode_ = other.authorizationCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getVersionInfo().isEmpty()) {
         versionInfo_ = other.versionInfo_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceAccountName().isEmpty()) {
         serviceAccountName_ = other.serviceAccountName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -797,31 +824,31 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTransferConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 authorizationCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 versionInfo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 serviceAccountName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -841,15 +868,18 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id} or
-     * projects/{project_id}. If specified location and location of the
-     * destination bigquery dataset do not match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should
+     * be created. Must be in the format
+     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+     * specified location and location of the destination bigquery dataset do not
+     * match - the request will fail.
      * </pre>
      *
      * <code>
@@ -873,10 +903,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id} or
-     * projects/{project_id}. If specified location and location of the
-     * destination bigquery dataset do not match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should
+     * be created. Must be in the format
+     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+     * specified location and location of the destination bigquery dataset do not
+     * match - the request will fail.
      * </pre>
      *
      * <code>
@@ -900,10 +931,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id} or
-     * projects/{project_id}. If specified location and location of the
-     * destination bigquery dataset do not match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should
+     * be created. Must be in the format
+     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+     * specified location and location of the destination bigquery dataset do not
+     * match - the request will fail.
      * </pre>
      *
      * <code>
@@ -917,8 +949,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -926,10 +958,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id} or
-     * projects/{project_id}. If specified location and location of the
-     * destination bigquery dataset do not match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should
+     * be created. Must be in the format
+     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+     * specified location and location of the destination bigquery dataset do not
+     * match - the request will fail.
      * </pre>
      *
      * <code>
@@ -939,8 +972,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -948,10 +981,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should be created.
-     * Must be in the format projects/{project_id}/locations/{location_id} or
-     * projects/{project_id}. If specified location and location of the
-     * destination bigquery dataset do not match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should
+     * be created. Must be in the format
+     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+     * specified location and location of the destination bigquery dataset do not
+     * match - the request will fail.
      * </pre>
      *
      * <code>
@@ -966,8 +1000,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -992,7 +1026,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * @return Whether the transferConfig field is set.
      */
     public boolean hasTransferConfig() {
-      return transferConfigBuilder_ != null || transferConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1034,11 +1068,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         transferConfig_ = value;
-        onChanged();
       } else {
         transferConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1056,11 +1090,11 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder builderForValue) {
       if (transferConfigBuilder_ == null) {
         transferConfig_ = builderForValue.build();
-        onChanged();
       } else {
         transferConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1077,19 +1111,19 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
     public Builder mergeTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
       if (transferConfigBuilder_ == null) {
-        if (transferConfig_ != null) {
-          transferConfig_ =
-              com.google.cloud.bigquery.datatransfer.v1.TransferConfig.newBuilder(transferConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && transferConfig_ != null
+            && transferConfig_
+                != com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()) {
+          getTransferConfigBuilder().mergeFrom(value);
         } else {
           transferConfig_ = value;
         }
-        onChanged();
       } else {
         transferConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1104,14 +1138,13 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearTransferConfig() {
-      if (transferConfigBuilder_ == null) {
-        transferConfig_ = null;
-        onChanged();
-      } else {
-        transferConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      transferConfig_ = null;
+      if (transferConfigBuilder_ != null) {
+        transferConfigBuilder_.dispose();
         transferConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1127,7 +1160,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
         getTransferConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTransferConfigFieldBuilder().getBuilder();
     }
@@ -1277,8 +1310,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       authorizationCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1306,8 +1339,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationCode() {
-
       authorizationCode_ = getDefaultInstance().getAuthorizationCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1340,8 +1373,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authorizationCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1443,8 +1476,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionInfo_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1472,8 +1505,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearVersionInfo() {
-
       versionInfo_ = getDefaultInstance().getVersionInfo();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1506,8 +1539,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionInfo_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1594,8 +1627,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1618,8 +1651,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountName() {
-
       serviceAccountName_ = getDefaultInstance().getServiceAccountName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1647,8 +1680,8 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

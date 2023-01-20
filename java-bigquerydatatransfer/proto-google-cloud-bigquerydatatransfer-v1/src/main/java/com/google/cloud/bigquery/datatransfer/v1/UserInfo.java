@@ -69,7 +69,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -334,8 +336,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       email_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -363,15 +365,21 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.datatransfer.v1.UserInfo buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.UserInfo result =
           new com.google.cloud.bigquery.datatransfer.v1.UserInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.datatransfer.v1.UserInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.email_ = email_;
         to_bitField0_ |= 0x00000001;
       }
-      result.email_ = email_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -421,8 +429,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.bigquery.datatransfer.v1.UserInfo.getDefaultInstance())
         return this;
       if (other.hasEmail()) {
-        bitField0_ |= 0x00000001;
         email_ = other.email_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -551,8 +559,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -568,8 +576,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -590,8 +598,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       email_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

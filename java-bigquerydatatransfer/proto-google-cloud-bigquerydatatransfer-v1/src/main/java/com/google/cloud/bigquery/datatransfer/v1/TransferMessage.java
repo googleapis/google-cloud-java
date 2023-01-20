@@ -294,11 +294,11 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getMessageTimeOrBuilder() {
-    return getMessageTime();
+    return messageTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : messageTime_;
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 2;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -329,9 +329,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity result =
-        com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.valueOf(
+        com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.forNumber(
             severity_);
     return result == null
         ? com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.UNRECOGNIZED
@@ -339,7 +338,9 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MESSAGE_TEXT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object messageText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object messageText_ = "";
   /**
    *
    *
@@ -614,16 +615,14 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (messageTimeBuilder_ == null) {
-        messageTime_ = null;
-      } else {
-        messageTime_ = null;
+      bitField0_ = 0;
+      messageTime_ = null;
+      if (messageTimeBuilder_ != null) {
+        messageTimeBuilder_.dispose();
         messageTimeBuilder_ = null;
       }
       severity_ = 0;
-
       messageText_ = "";
-
       return this;
     }
 
@@ -651,15 +650,25 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.TransferMessage result =
           new com.google.cloud.bigquery.datatransfer.v1.TransferMessage(this);
-      if (messageTimeBuilder_ == null) {
-        result.messageTime_ = messageTime_;
-      } else {
-        result.messageTime_ = messageTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.severity_ = severity_;
-      result.messageText_ = messageText_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.bigquery.datatransfer.v1.TransferMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.messageTime_ =
+            messageTimeBuilder_ == null ? messageTime_ : messageTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.messageText_ = messageText_;
+      }
     }
 
     @java.lang.Override
@@ -716,6 +725,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getMessageText().isEmpty()) {
         messageText_ = other.messageText_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -747,19 +757,19 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getMessageTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 messageText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -779,6 +789,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp messageTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -797,7 +809,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * @return Whether the messageTime field is set.
      */
     public boolean hasMessageTime() {
-      return messageTimeBuilder_ != null || messageTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -834,11 +846,11 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         messageTime_ = value;
-        onChanged();
       } else {
         messageTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -853,11 +865,11 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     public Builder setMessageTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (messageTimeBuilder_ == null) {
         messageTime_ = builderForValue.build();
-        onChanged();
       } else {
         messageTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -871,19 +883,18 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMessageTime(com.google.protobuf.Timestamp value) {
       if (messageTimeBuilder_ == null) {
-        if (messageTime_ != null) {
-          messageTime_ =
-              com.google.protobuf.Timestamp.newBuilder(messageTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && messageTime_ != null
+            && messageTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getMessageTimeBuilder().mergeFrom(value);
         } else {
           messageTime_ = value;
         }
-        onChanged();
       } else {
         messageTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -896,14 +907,13 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
      */
     public Builder clearMessageTime() {
-      if (messageTimeBuilder_ == null) {
-        messageTime_ = null;
-        onChanged();
-      } else {
-        messageTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      messageTime_ = null;
+      if (messageTimeBuilder_ != null) {
+        messageTimeBuilder_.dispose();
         messageTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -916,7 +926,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp message_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getMessageTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMessageTimeFieldBuilder().getBuilder();
     }
@@ -995,8 +1005,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1014,9 +1024,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity result =
-          com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.valueOf(
+          com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.forNumber(
               severity_);
       return result == null
           ? com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity.UNRECOGNIZED
@@ -1040,7 +1049,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -1058,7 +1067,7 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       severity_ = 0;
       onChanged();
       return this;
@@ -1125,8 +1134,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       messageText_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,8 +1151,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMessageText() {
-
       messageText_ = getDefaultInstance().getMessageText();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1164,8 +1173,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       messageText_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -27,8 +27,8 @@ public interface ListTransferRunsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be retrieved.
-   * Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be
+   * retrieved. Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
@@ -44,8 +44,8 @@ public interface ListTransferRunsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be retrieved.
-   * Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be
+   * retrieved. Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>

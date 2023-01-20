@@ -529,9 +529,9 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about the user whose credentials are used to transfer data.
-   * Populated only for `transferConfigs.get` requests. In case the user
-   * information is not available, this field will not be populated.
+   * Output only. Information about the user whose credentials are used to
+   * transfer data. Populated only for `transferConfigs.get` requests. In case
+   * the user information is not available, this field will not be populated.
    * </pre>
    *
    * <code>
@@ -545,9 +545,9 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about the user whose credentials are used to transfer data.
-   * Populated only for `transferConfigs.get` requests. In case the user
-   * information is not available, this field will not be populated.
+   * Output only. Information about the user whose credentials are used to
+   * transfer data. Populated only for `transferConfigs.get` requests. In case
+   * the user information is not available, this field will not be populated.
    * </pre>
    *
    * <code>
@@ -561,9 +561,9 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about the user whose credentials are used to transfer data.
-   * Populated only for `transferConfigs.get` requests. In case the user
-   * information is not available, this field will not be populated.
+   * Output only. Information about the user whose credentials are used to
+   * transfer data. Populated only for `transferConfigs.get` requests. In case
+   * the user information is not available, this field will not be populated.
    * </pre>
    *
    * <code>
