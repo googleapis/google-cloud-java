@@ -66,7 +66,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
   }
 
   public static final int HAS_VALID_CREDS_FIELD_NUMBER = 1;
-  private boolean hasValidCreds_;
+  private boolean hasValidCreds_ = false;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hasValidCreds_ = false;
-
       return this;
     }
 
@@ -313,9 +313,19 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse result =
           new com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse(this);
-      result.hasValidCreds_ = hasValidCreds_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hasValidCreds_ = hasValidCreds_;
+      }
     }
 
     @java.lang.Override
@@ -398,7 +408,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
             case 8:
               {
                 hasValidCreds_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -417,6 +427,8 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean hasValidCreds_;
     /**
@@ -449,6 +461,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
     public Builder setHasValidCreds(boolean value) {
 
       hasValidCreds_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -464,7 +477,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearHasValidCreds() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hasValidCreds_ = false;
       onChanged();
       return this;

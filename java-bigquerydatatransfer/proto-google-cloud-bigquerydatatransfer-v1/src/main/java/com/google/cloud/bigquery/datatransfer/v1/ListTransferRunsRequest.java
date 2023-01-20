@@ -208,13 +208,15 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be retrieved.
-   * Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be
+   * retrieved. Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
@@ -241,8 +243,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be retrieved.
-   * Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be
+   * retrieved. Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
@@ -267,7 +269,10 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   public static final int STATES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> states_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.bigquery.datatransfer.v1.TransferState>
       states_converter_ =
@@ -275,9 +280,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
               java.lang.Integer, com.google.cloud.bigquery.datatransfer.v1.TransferState>() {
             public com.google.cloud.bigquery.datatransfer.v1.TransferState convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.bigquery.datatransfer.v1.TransferState result =
-                  com.google.cloud.bigquery.datatransfer.v1.TransferState.valueOf(from);
+                  com.google.cloud.bigquery.datatransfer.v1.TransferState.forNumber(from);
               return result == null
                   ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED
                   : result;
@@ -366,7 +370,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   private int statesMemoizedSerializedSize;
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -423,7 +429,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -441,7 +447,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   public static final int RUN_ATTEMPT_FIELD_NUMBER = 5;
-  private int runAttempt_;
+  private int runAttempt_ = 0;
   /**
    *
    *
@@ -475,9 +481,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
       getRunAttempt() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt result =
-        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt.valueOf(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt.forNumber(
             runAttempt_);
     return result == null
         ? com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt.UNRECOGNIZED
@@ -742,16 +747,13 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageToken_ = "";
-
       pageSize_ = 0;
-
       runAttempt_ = 0;
-
       return this;
     }
 
@@ -780,18 +782,38 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        states_ = java.util.Collections.unmodifiableList(states_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.states_ = states_;
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
-      result.runAttempt_ = runAttempt_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        states_ = java.util.Collections.unmodifiableList(states_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.states_ = states_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.runAttempt_ = runAttempt_;
+      }
     }
 
     @java.lang.Override
@@ -844,12 +866,13 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.states_.isEmpty()) {
         if (states_.isEmpty()) {
           states_ = other.states_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureStatesIsMutable();
           states_.addAll(other.states_);
@@ -858,6 +881,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -895,7 +919,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
@@ -920,19 +944,19 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 runAttempt_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -959,8 +983,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be retrieved.
-     * Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be
+     * retrieved. Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -986,8 +1010,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be retrieved.
-     * Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be
+     * retrieved. Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -1013,8 +1037,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be retrieved.
-     * Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be
+     * retrieved. Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -1030,8 +1054,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1039,8 +1063,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be retrieved.
-     * Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be
+     * retrieved. Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -1052,8 +1076,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1061,8 +1085,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be retrieved.
-     * Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be
+     * retrieved. Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -1079,8 +1103,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1088,9 +1112,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     private java.util.List<java.lang.Integer> states_ = java.util.Collections.emptyList();
 
     private void ensureStatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         states_ = new java.util.ArrayList<java.lang.Integer>(states_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1217,7 +1241,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      */
     public Builder clearStates() {
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1381,8 +1405,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1402,8 +1426,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1428,8 +1452,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1465,6 +1489,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1480,7 +1505,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1519,8 +1544,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setRunAttemptValue(int value) {
-
       runAttempt_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1540,9 +1565,8 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
         getRunAttempt() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt result =
-          com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt.valueOf(
+          com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt.forNumber(
               runAttempt_);
       return result == null
           ? com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
@@ -1568,7 +1592,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       runAttempt_ = value.getNumber();
       onChanged();
       return this;
@@ -1587,7 +1611,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRunAttempt() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       runAttempt_ = 0;
       onChanged();
       return this;

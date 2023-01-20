@@ -27,10 +27,11 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id} or
-   * projects/{project_id}. If specified location and location of the
-   * destination bigquery dataset do not match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should
+   * be created. Must be in the format
+   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+   * specified location and location of the destination bigquery dataset do not
+   * match - the request will fail.
    * </pre>
    *
    * <code>
@@ -44,10 +45,11 @@ public interface CreateTransferConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should be created.
-   * Must be in the format projects/{project_id}/locations/{location_id} or
-   * projects/{project_id}. If specified location and location of the
-   * destination bigquery dataset do not match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should
+   * be created. Must be in the format
+   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
+   * specified location and location of the destination bigquery dataset do not
+   * match - the request will fail.
    * </pre>
    *
    * <code>

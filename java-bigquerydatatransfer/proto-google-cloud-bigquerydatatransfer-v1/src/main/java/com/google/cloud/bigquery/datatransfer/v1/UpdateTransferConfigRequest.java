@@ -122,11 +122,15 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigOrBuilder() {
-    return getTransferConfig();
+    return transferConfig_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
+        : transferConfig_;
   }
 
   public static final int AUTHORIZATION_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object authorizationCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizationCode_ = "";
   /**
    *
    *
@@ -244,11 +248,13 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VERSION_INFO_FIELD_NUMBER = 5;
-  private volatile java.lang.Object versionInfo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionInfo_ = "";
   /**
    *
    *
@@ -321,7 +327,9 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
   }
 
   public static final int SERVICE_ACCOUNT_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object serviceAccountName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountName_ = "";
   /**
    *
    *
@@ -630,24 +638,20 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (transferConfigBuilder_ == null) {
-        transferConfig_ = null;
-      } else {
-        transferConfig_ = null;
+      bitField0_ = 0;
+      transferConfig_ = null;
+      if (transferConfigBuilder_ != null) {
+        transferConfigBuilder_.dispose();
         transferConfigBuilder_ = null;
       }
       authorizationCode_ = "";
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       versionInfo_ = "";
-
       serviceAccountName_ = "";
-
       return this;
     }
 
@@ -677,21 +681,32 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
     public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest(this);
-      if (transferConfigBuilder_ == null) {
-        result.transferConfig_ = transferConfig_;
-      } else {
-        result.transferConfig_ = transferConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.authorizationCode_ = authorizationCode_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.versionInfo_ = versionInfo_;
-      result.serviceAccountName_ = serviceAccountName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.transferConfig_ =
+            transferConfigBuilder_ == null ? transferConfig_ : transferConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.authorizationCode_ = authorizationCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.versionInfo_ = versionInfo_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.serviceAccountName_ = serviceAccountName_;
+      }
     }
 
     @java.lang.Override
@@ -748,6 +763,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       }
       if (!other.getAuthorizationCode().isEmpty()) {
         authorizationCode_ = other.authorizationCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasUpdateMask()) {
@@ -755,10 +771,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       }
       if (!other.getVersionInfo().isEmpty()) {
         versionInfo_ = other.versionInfo_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getServiceAccountName().isEmpty()) {
         serviceAccountName_ = other.serviceAccountName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -790,31 +808,31 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getTransferConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 authorizationCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 versionInfo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 serviceAccountName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -833,6 +851,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.bigquery.datatransfer.v1.TransferConfig transferConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -854,7 +874,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * @return Whether the transferConfig field is set.
      */
     public boolean hasTransferConfig() {
-      return transferConfigBuilder_ != null || transferConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -896,11 +916,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         transferConfig_ = value;
-        onChanged();
       } else {
         transferConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -918,11 +938,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder builderForValue) {
       if (transferConfigBuilder_ == null) {
         transferConfig_ = builderForValue.build();
-        onChanged();
       } else {
         transferConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -939,19 +959,19 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
     public Builder mergeTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
       if (transferConfigBuilder_ == null) {
-        if (transferConfig_ != null) {
-          transferConfig_ =
-              com.google.cloud.bigquery.datatransfer.v1.TransferConfig.newBuilder(transferConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && transferConfig_ != null
+            && transferConfig_
+                != com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()) {
+          getTransferConfigBuilder().mergeFrom(value);
         } else {
           transferConfig_ = value;
         }
-        onChanged();
       } else {
         transferConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -966,14 +986,13 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearTransferConfig() {
-      if (transferConfigBuilder_ == null) {
-        transferConfig_ = null;
-        onChanged();
-      } else {
-        transferConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      transferConfig_ = null;
+      if (transferConfigBuilder_ != null) {
+        transferConfigBuilder_.dispose();
         transferConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -989,7 +1008,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
         getTransferConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTransferConfigFieldBuilder().getBuilder();
     }
@@ -1139,8 +1158,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       authorizationCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1168,8 +1187,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationCode() {
-
       authorizationCode_ = getDefaultInstance().getAuthorizationCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1202,8 +1221,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authorizationCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1227,7 +1246,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1266,11 +1285,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1286,11 +1305,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1305,17 +1324,18 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1329,14 +1349,13 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1350,7 +1369,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1497,8 +1516,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       versionInfo_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1526,8 +1545,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearVersionInfo() {
-
       versionInfo_ = getDefaultInstance().getVersionInfo();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1560,8 +1579,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       versionInfo_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1648,8 +1667,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1672,8 +1691,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountName() {
-
       serviceAccountName_ = getDefaultInstance().getServiceAccountName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1701,8 +1720,8 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

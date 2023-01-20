@@ -70,7 +70,9 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
   }
 
   public static final int DATA_SOURCE_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList dataSourceIds_;
   /**
    *
@@ -400,10 +404,10 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -433,15 +437,29 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
     public com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataSourceIds_ = dataSourceIds_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.dataSourceIds_ = dataSourceIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -495,12 +513,13 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.dataSourceIds_.isEmpty()) {
         if (dataSourceIds_.isEmpty()) {
           dataSourceIds_ = other.dataSourceIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDataSourceIdsIsMutable();
           dataSourceIds_.addAll(other.dataSourceIds_);
@@ -536,7 +555,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -626,8 +645,8 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,8 +662,8 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +684,8 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,9 +694,9 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDataSourceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dataSourceIds_ = new com.google.protobuf.LazyStringArrayList(dataSourceIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -820,7 +839,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      */
     public Builder clearDataSourceIds() {
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

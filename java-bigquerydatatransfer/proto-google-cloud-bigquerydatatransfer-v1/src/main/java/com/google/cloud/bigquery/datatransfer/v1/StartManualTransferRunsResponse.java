@@ -70,6 +70,8 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
   }
 
   public static final int RUNS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> runs_;
   /**
    *
@@ -343,6 +345,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (runsBuilder_ == null) {
         runs_ = java.util.Collections.emptyList();
       } else {
@@ -381,7 +384,16 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse result =
           new com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse result) {
       if (runsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           runs_ = java.util.Collections.unmodifiableList(runs_);
@@ -391,8 +403,11 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
       } else {
         result.runs_ = runsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
