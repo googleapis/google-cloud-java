@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
@@ -36,6 +37,8 @@ import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -388,6 +391,13 @@ public class HttpJsonSessionsStub extends SessionsStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
+      streamingDetectIntentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingDetectIntentCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

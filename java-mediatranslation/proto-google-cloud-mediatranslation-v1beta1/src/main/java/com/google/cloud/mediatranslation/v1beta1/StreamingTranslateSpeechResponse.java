@@ -275,7 +275,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int RESULT_FIELD_NUMBER = 2;
@@ -334,11 +334,14 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResultOrBuilder
       getResultOrBuilder() {
-    return getResult();
+    return result_ == null
+        ? com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
+            .getDefaultInstance()
+        : result_;
   }
 
   public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER = 3;
-  private int speechEventType_;
+  private int speechEventType_ = 0;
   /**
    *
    *
@@ -372,11 +375,10 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse.SpeechEventType
       getSpeechEventType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse.SpeechEventType
         result =
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse
-                .SpeechEventType.valueOf(speechEventType_);
+                .SpeechEventType.forNumber(speechEventType_);
     return result == null
         ? com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse.SpeechEventType
             .UNRECOGNIZED
@@ -625,20 +627,18 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      bitField0_ = 0;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       speechEventType_ = 0;
-
       return this;
     }
 
@@ -670,19 +670,25 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
         buildPartial() {
       com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse result =
           new com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse(this);
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
-      }
-      result.speechEventType_ = speechEventType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.speechEventType_ = speechEventType_;
+      }
     }
 
     @java.lang.Override
@@ -773,19 +779,19 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             case 10:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 speechEventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -805,6 +811,8 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -822,7 +830,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -859,11 +867,11 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -879,11 +887,11 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -898,16 +906,18 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -921,14 +931,13 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -942,7 +951,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -1008,7 +1017,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1053,11 +1062,11 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1077,11 +1086,11 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1099,20 +1108,20 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public Builder mergeResult(
         com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-              com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.newBuilder(
-                      result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && result_ != null
+            && result_
+                != com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
+                    .getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1128,14 +1137,13 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * </code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1152,7 +1160,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      */
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.Builder
         getResultBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
@@ -1241,8 +1249,8 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setSpeechEventTypeValue(int value) {
-
       speechEventType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1263,11 +1271,10 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse
             .SpeechEventType
         getSpeechEventType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse.SpeechEventType
           result =
               com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse
-                  .SpeechEventType.valueOf(speechEventType_);
+                  .SpeechEventType.forNumber(speechEventType_);
       return result == null
           ? com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse
               .SpeechEventType.UNRECOGNIZED
@@ -1293,7 +1300,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       speechEventType_ = value.getNumber();
       onChanged();
       return this;
@@ -1312,7 +1319,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearSpeechEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       speechEventType_ = 0;
       onChanged();
       return this;

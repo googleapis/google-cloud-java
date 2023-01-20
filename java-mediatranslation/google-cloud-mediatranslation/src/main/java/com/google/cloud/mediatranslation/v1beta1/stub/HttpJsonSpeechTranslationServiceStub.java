@@ -22,7 +22,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest;
+import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -94,6 +97,13 @@ public class HttpJsonSpeechTranslationServiceStub extends SpeechTranslationServi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     return methodDescriptors;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
+      streamingTranslateSpeechCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingTranslateSpeechCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

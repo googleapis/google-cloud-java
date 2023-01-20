@@ -22,7 +22,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -96,6 +99,13 @@ public class HttpJsonStreamingVideoIntelligenceServiceStub
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     return methodDescriptors;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse>
+      streamingAnnotateVideoCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingAnnotateVideoCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

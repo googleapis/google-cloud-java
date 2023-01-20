@@ -31,11 +31,17 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
+import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
+import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -309,6 +315,31 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     return deleteWorkloadCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateWorkloadCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getWorkloadCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeWorkloadMoveCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listWorkloadsCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

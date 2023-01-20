@@ -168,7 +168,9 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     }
 
     public static final int TRANSLATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object translation_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object translation_ = "";
     /**
      *
      *
@@ -217,7 +219,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     }
 
     public static final int IS_FINAL_FIELD_NUMBER = 2;
-    private boolean isFinal_;
+    private boolean isFinal_ = false;
     /**
      *
      *
@@ -479,10 +481,9 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         translation_ = "";
-
         isFinal_ = false;
-
         return this;
       }
 
@@ -522,10 +523,24 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
             result =
                 new com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
                     .TextTranslationResult(this);
-        result.translation_ = translation_;
-        result.isFinal_ = isFinal_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
+                  .TextTranslationResult
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.translation_ = translation_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isFinal_ = isFinal_;
+        }
       }
 
       @java.lang.Override
@@ -588,6 +603,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
                 .TextTranslationResult.getDefaultInstance()) return this;
         if (!other.getTranslation().isEmpty()) {
           translation_ = other.translation_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getIsFinal() != false) {
@@ -622,13 +638,13 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
               case 10:
                 {
                   translation_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   isFinal_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -647,6 +663,8 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object translation_ = "";
       /**
@@ -709,8 +727,8 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         if (value == null) {
           throw new NullPointerException();
         }
-
         translation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,8 +744,8 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearTranslation() {
-
         translation_ = getDefaultInstance().getTranslation();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -748,8 +766,8 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         translation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -795,6 +813,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       public Builder setIsFinal(boolean value) {
 
         isFinal_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -815,7 +834,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearIsFinal() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         isFinal_ = false;
         onChanged();
         return this;
@@ -1229,6 +1248,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textTranslationResultBuilder_ != null) {
         textTranslationResultBuilder_.clear();
       }
@@ -1264,16 +1284,26 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult buildPartial() {
       com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result =
           new com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult(this);
-      if (resultCase_ == 1) {
-        if (textTranslationResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = textTranslationResultBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resultCase_ = resultCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 1 && textTranslationResultBuilder_ != null) {
+        result.result_ = textTranslationResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1400,6 +1430,8 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
@@ -1664,7 +1696,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       }
       resultCase_ = 1;
       onChanged();
-      ;
       return textTranslationResultBuilder_;
     }
 

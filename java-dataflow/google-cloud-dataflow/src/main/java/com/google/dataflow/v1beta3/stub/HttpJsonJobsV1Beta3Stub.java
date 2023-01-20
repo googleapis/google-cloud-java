@@ -31,6 +31,8 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.dataflow.v1beta3.CheckActiveJobsRequest;
+import com.google.dataflow.v1beta3.CheckActiveJobsResponse;
 import com.google.dataflow.v1beta3.CreateJobRequest;
 import com.google.dataflow.v1beta3.GetJobRequest;
 import com.google.dataflow.v1beta3.Job;
@@ -465,6 +467,12 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
   @Override
   public UnaryCallable<SnapshotJobRequest, Snapshot> snapshotJobCallable() {
     return snapshotJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckActiveJobsRequest, CheckActiveJobsResponse> checkActiveJobsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: checkActiveJobsCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

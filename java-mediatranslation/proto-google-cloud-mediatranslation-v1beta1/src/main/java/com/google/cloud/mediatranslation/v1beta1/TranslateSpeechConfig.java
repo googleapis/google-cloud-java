@@ -72,7 +72,9 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
-  private volatile java.lang.Object audioEncoding_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object audioEncoding_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sourceLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceLanguageCode_ = "";
   /**
    *
    *
@@ -212,7 +216,9 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object targetLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetLanguageCode_ = "";
   /**
    *
    *
@@ -261,7 +267,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 4;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
@@ -282,7 +288,9 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int MODEL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -569,16 +577,12 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioEncoding_ = "";
-
       sourceLanguageCode_ = "";
-
       targetLanguageCode_ = "";
-
       sampleRateHertz_ = 0;
-
       model_ = "";
-
       return this;
     }
 
@@ -607,13 +611,31 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig buildPartial() {
       com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig result =
           new com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig(this);
-      result.audioEncoding_ = audioEncoding_;
-      result.sourceLanguageCode_ = sourceLanguageCode_;
-      result.targetLanguageCode_ = targetLanguageCode_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioEncoding_ = audioEncoding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceLanguageCode_ = sourceLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetLanguageCode_ = targetLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -666,14 +688,17 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getAudioEncoding().isEmpty()) {
         audioEncoding_ = other.audioEncoding_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSourceLanguageCode().isEmpty()) {
         sourceLanguageCode_ = other.sourceLanguageCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetLanguageCode().isEmpty()) {
         targetLanguageCode_ = other.targetLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSampleRateHertz() != 0) {
@@ -681,6 +706,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -712,31 +738,31 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 audioEncoding_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sourceLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 targetLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -755,6 +781,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object audioEncoding_ = "";
     /**
@@ -880,8 +908,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       audioEncoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +946,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAudioEncoding() {
-
       audioEncoding_ = getDefaultInstance().getAudioEncoding();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -961,8 +989,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       audioEncoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1056,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,8 +1073,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
-
       sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1067,8 +1095,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1134,8 +1162,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1151,8 +1179,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
-
       targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1173,8 +1201,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1216,6 +1244,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1234,7 +1263,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -1307,8 +1336,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1326,8 +1355,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1350,8 +1379,8 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

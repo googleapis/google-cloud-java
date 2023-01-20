@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -36,6 +37,8 @@ import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
 import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
 import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -242,6 +245,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     return longRunningRecognizeOperationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.AnalyzeContentRequest;
@@ -38,6 +39,8 @@ import com.google.cloud.dialogflow.v2.GetParticipantRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2.Participant;
+import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
@@ -696,6 +699,13 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
+      streamingAnalyzeContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

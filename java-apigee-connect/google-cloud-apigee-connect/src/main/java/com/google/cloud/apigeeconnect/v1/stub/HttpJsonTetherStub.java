@@ -22,7 +22,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.cloud.apigeeconnect.v1.EgressRequest;
+import com.google.cloud.apigeeconnect.v1.EgressResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -88,6 +91,12 @@ public class HttpJsonTetherStub extends TetherStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     return methodDescriptors;
+  }
+
+  @Override
+  public BidiStreamingCallable<EgressResponse, EgressRequest> egressCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: egressCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

@@ -118,11 +118,13 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfigOrBuilder
       getAudioConfigOrBuilder() {
-    return getAudioConfig();
+    return audioConfig_ == null
+        ? com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.getDefaultInstance()
+        : audioConfig_;
   }
 
   public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 2;
-  private boolean singleUtterance_;
+  private boolean singleUtterance_ = false;
   /**
    *
    *
@@ -367,14 +369,13 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (audioConfigBuilder_ == null) {
-        audioConfig_ = null;
-      } else {
-        audioConfig_ = null;
+      bitField0_ = 0;
+      audioConfig_ = null;
+      if (audioConfigBuilder_ != null) {
+        audioConfigBuilder_.dispose();
         audioConfigBuilder_ = null;
       }
       singleUtterance_ = false;
-
       return this;
     }
 
@@ -405,14 +406,23 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig buildPartial() {
       com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig result =
           new com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig(this);
-      if (audioConfigBuilder_ == null) {
-        result.audioConfig_ = audioConfig_;
-      } else {
-        result.audioConfig_ = audioConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.singleUtterance_ = singleUtterance_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioConfig_ =
+            audioConfigBuilder_ == null ? audioConfig_ : audioConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.singleUtterance_ = singleUtterance_;
+      }
     }
 
     @java.lang.Override
@@ -500,13 +510,13 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 singleUtterance_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -525,6 +535,8 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig audioConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -546,7 +558,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * @return Whether the audioConfig field is set.
      */
     public boolean hasAudioConfig() {
-      return audioConfigBuilder_ != null || audioConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -588,11 +600,11 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         audioConfig_ = value;
-        onChanged();
       } else {
         audioConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,11 +622,11 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
         com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.Builder builderForValue) {
       if (audioConfigBuilder_ == null) {
         audioConfig_ = builderForValue.build();
-        onChanged();
       } else {
         audioConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,20 +643,20 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     public Builder mergeAudioConfig(
         com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig value) {
       if (audioConfigBuilder_ == null) {
-        if (audioConfig_ != null) {
-          audioConfig_ =
-              com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.newBuilder(
-                      audioConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && audioConfig_ != null
+            && audioConfig_
+                != com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig
+                    .getDefaultInstance()) {
+          getAudioConfigBuilder().mergeFrom(value);
         } else {
           audioConfig_ = value;
         }
-        onChanged();
       } else {
         audioConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -659,14 +671,13 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearAudioConfig() {
-      if (audioConfigBuilder_ == null) {
-        audioConfig_ = null;
-        onChanged();
-      } else {
-        audioConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      audioConfig_ = null;
+      if (audioConfigBuilder_ != null) {
+        audioConfigBuilder_.dispose();
         audioConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -682,7 +693,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      */
     public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.Builder
         getAudioConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
@@ -790,6 +801,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     public Builder setSingleUtterance(boolean value) {
 
       singleUtterance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,7 +829,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearSingleUtterance() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       singleUtterance_ = false;
       onChanged();
       return this;

@@ -33,15 +33,21 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.GetViolationRequest;
 import com.google.cloud.assuredworkloads.v1.GetWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsResponse;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse;
 import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.Violation;
 import com.google.cloud.assuredworkloads.v1.Workload;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -485,6 +491,25 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listViolationsCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getViolationCallable(). REST transport is not implemented for this method yet.");
+  }
+
+  @Override
+  public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

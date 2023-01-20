@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -60,6 +61,8 @@ import com.google.cloud.speech.v2.PhraseSet;
 import com.google.cloud.speech.v2.RecognizeRequest;
 import com.google.cloud.speech.v2.RecognizeResponse;
 import com.google.cloud.speech.v2.Recognizer;
+import com.google.cloud.speech.v2.StreamingRecognizeRequest;
+import com.google.cloud.speech.v2.StreamingRecognizeResponse;
 import com.google.cloud.speech.v2.UndeleteCustomClassRequest;
 import com.google.cloud.speech.v2.UndeletePhraseSetRequest;
 import com.google.cloud.speech.v2.UndeleteRecognizerRequest;
@@ -1595,6 +1598,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
   public OperationCallable<UndeletePhraseSetRequest, PhraseSet, OperationMetadata>
       undeletePhraseSetOperationCallable() {
     return undeletePhraseSetOperationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override
