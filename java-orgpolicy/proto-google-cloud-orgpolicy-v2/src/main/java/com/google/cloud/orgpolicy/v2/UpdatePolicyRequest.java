@@ -112,7 +112,59 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.orgpolicy.v2.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.cloud.orgpolicy.v2.Policy.getDefaultInstance() : policy_;
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 3;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field mask used to specify the fields to be overwritten in the policy
+   * by the set. The fields specified in the update_mask are relative to the
+   * policy, not the full request.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -132,6 +184,9 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     if (policy_ != null) {
       output.writeMessage(1, getPolicy());
     }
+    if (updateMask_ != null) {
+      output.writeMessage(3, getUpdateMask());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -143,6 +198,9 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     size = 0;
     if (policy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPolicy());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateMask());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +222,10 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -178,6 +240,10 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -318,11 +384,16 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      bitField0_ = 0;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
+      }
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -351,13 +422,21 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.orgpolicy.v2.UpdatePolicyRequest buildPartial() {
       com.google.cloud.orgpolicy.v2.UpdatePolicyRequest result =
           new com.google.cloud.orgpolicy.v2.UpdatePolicyRequest(this);
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.UpdatePolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -409,6 +488,9 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       if (other.hasPolicy()) {
         mergePolicy(other.getPolicy());
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -438,9 +520,15 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -457,6 +545,8 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.orgpolicy.v2.Policy policy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -477,7 +567,7 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -516,11 +606,11 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -536,11 +626,11 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
     public Builder setPolicy(com.google.cloud.orgpolicy.v2.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -555,19 +645,18 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePolicy(com.google.cloud.orgpolicy.v2.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.cloud.orgpolicy.v2.Policy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && policy_ != null
+            && policy_ != com.google.cloud.orgpolicy.v2.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,14 +670,13 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +690,7 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.orgpolicy.v2.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -650,6 +738,207 @@ public final class UpdatePolicyRequest extends com.google.protobuf.GeneratedMess
         policy_ = null;
       }
       return policyBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field mask used to specify the fields to be overwritten in the policy
+     * by the set. The fields specified in the update_mask are relative to the
+     * policy, not the full request.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     @java.lang.Override

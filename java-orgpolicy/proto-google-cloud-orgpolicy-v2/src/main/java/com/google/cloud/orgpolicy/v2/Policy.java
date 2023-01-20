@@ -69,7 +69,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -178,7 +180,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder getSpecOrBuilder() {
-    return getSpec();
+    return spec_ == null ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance() : spec_;
   }
 
   public static final int ALTERNATE_FIELD_NUMBER = 3;
@@ -193,7 +195,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
@@ -211,7 +213,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
    * @return The alternate.
    */
   @java.lang.Override
@@ -233,7 +235,65 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.orgpolicy.v2.AlternatePolicySpecOrBuilder getAlternateOrBuilder() {
-    return getAlternate();
+    return alternate_ == null
+        ? com.google.cloud.orgpolicy.v2.AlternatePolicySpec.getDefaultInstance()
+        : alternate_;
+  }
+
+  public static final int DRY_RUN_SPEC_FIELD_NUMBER = 4;
+  private com.google.cloud.orgpolicy.v2.PolicySpec dryRunSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   *
+   * @return Whether the dryRunSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDryRunSpec() {
+    return dryRunSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   *
+   * @return The dryRunSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.orgpolicy.v2.PolicySpec getDryRunSpec() {
+    return dryRunSpec_ == null
+        ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
+        : dryRunSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * dry-run policy.
+   * Audit-only policy, can be used to monitor how the policy would have
+   * impacted the existing and future resources if it's enforced.
+   * </pre>
+   *
+   * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder getDryRunSpecOrBuilder() {
+    return dryRunSpec_ == null
+        ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
+        : dryRunSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -259,6 +319,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (alternate_ != null) {
       output.writeMessage(3, getAlternate());
     }
+    if (dryRunSpec_ != null) {
+      output.writeMessage(4, getDryRunSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -276,6 +339,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     if (alternate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAlternate());
+    }
+    if (dryRunSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDryRunSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -301,6 +367,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (hasAlternate()) {
       if (!getAlternate().equals(other.getAlternate())) return false;
     }
+    if (hasDryRunSpec() != other.hasDryRunSpec()) return false;
+    if (hasDryRunSpec()) {
+      if (!getDryRunSpec().equals(other.getDryRunSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -321,6 +391,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (hasAlternate()) {
       hash = (37 * hash) + ALTERNATE_FIELD_NUMBER;
       hash = (53 * hash) + getAlternate().hashCode();
+    }
+    if (hasDryRunSpec()) {
+      hash = (37 * hash) + DRY_RUN_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getDryRunSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -460,19 +534,22 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (specBuilder_ == null) {
-        spec_ = null;
-      } else {
-        spec_ = null;
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
-      if (alternateBuilder_ == null) {
-        alternate_ = null;
-      } else {
-        alternate_ = null;
+      alternate_ = null;
+      if (alternateBuilder_ != null) {
+        alternateBuilder_.dispose();
         alternateBuilder_ = null;
+      }
+      dryRunSpec_ = null;
+      if (dryRunSpecBuilder_ != null) {
+        dryRunSpecBuilder_.dispose();
+        dryRunSpecBuilder_ = null;
       }
       return this;
     }
@@ -500,19 +577,27 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.orgpolicy.v2.Policy buildPartial() {
       com.google.cloud.orgpolicy.v2.Policy result = new com.google.cloud.orgpolicy.v2.Policy(this);
-      result.name_ = name_;
-      if (specBuilder_ == null) {
-        result.spec_ = spec_;
-      } else {
-        result.spec_ = specBuilder_.build();
-      }
-      if (alternateBuilder_ == null) {
-        result.alternate_ = alternate_;
-      } else {
-        result.alternate_ = alternateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.Policy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.spec_ = specBuilder_ == null ? spec_ : specBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.alternate_ = alternateBuilder_ == null ? alternate_ : alternateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dryRunSpec_ = dryRunSpecBuilder_ == null ? dryRunSpec_ : dryRunSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -562,6 +647,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.orgpolicy.v2.Policy.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSpec()) {
@@ -569,6 +655,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAlternate()) {
         mergeAlternate(other.getAlternate());
+      }
+      if (other.hasDryRunSpec()) {
+        mergeDryRunSpec(other.getDryRunSpec());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -599,21 +688,27 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAlternateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDryRunSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -630,6 +725,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -719,8 +816,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -745,8 +842,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +873,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -800,7 +897,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
-      return specBuilder_ != null || spec_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -837,11 +934,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         spec_ = value;
-        onChanged();
       } else {
         specBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,11 +953,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpec(com.google.cloud.orgpolicy.v2.PolicySpec.Builder builderForValue) {
       if (specBuilder_ == null) {
         spec_ = builderForValue.build();
-        onChanged();
       } else {
         specBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,19 +971,18 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSpec(com.google.cloud.orgpolicy.v2.PolicySpec value) {
       if (specBuilder_ == null) {
-        if (spec_ != null) {
-          spec_ =
-              com.google.cloud.orgpolicy.v2.PolicySpec.newBuilder(spec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && spec_ != null
+            && spec_ != com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()) {
+          getSpecBuilder().mergeFrom(value);
         } else {
           spec_ = value;
         }
-        onChanged();
       } else {
         specBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,14 +995,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
      */
     public Builder clearSpec() {
-      if (specBuilder_ == null) {
-        spec_ = null;
-        onChanged();
-      } else {
-        spec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -919,7 +1014,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
      */
     public com.google.cloud.orgpolicy.v2.PolicySpec.Builder getSpecBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
@@ -984,12 +1079,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
      * @return Whether the alternate field is set.
      */
     @java.lang.Deprecated
     public boolean hasAlternate() {
-      return alternateBuilder_ != null || alternate_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1002,7 +1097,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
      * @return The alternate.
      */
     @java.lang.Deprecated
@@ -1032,11 +1127,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         alternate_ = value;
-        onChanged();
       } else {
         alternateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1054,11 +1149,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.orgpolicy.v2.AlternatePolicySpec.Builder builderForValue) {
       if (alternateBuilder_ == null) {
         alternate_ = builderForValue.build();
-        onChanged();
       } else {
         alternateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1074,19 +1169,19 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder mergeAlternate(com.google.cloud.orgpolicy.v2.AlternatePolicySpec value) {
       if (alternateBuilder_ == null) {
-        if (alternate_ != null) {
-          alternate_ =
-              com.google.cloud.orgpolicy.v2.AlternatePolicySpec.newBuilder(alternate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && alternate_ != null
+            && alternate_
+                != com.google.cloud.orgpolicy.v2.AlternatePolicySpec.getDefaultInstance()) {
+          getAlternateBuilder().mergeFrom(value);
         } else {
           alternate_ = value;
         }
-        onChanged();
       } else {
         alternateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1101,14 +1196,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearAlternate() {
-      if (alternateBuilder_ == null) {
-        alternate_ = null;
-        onChanged();
-      } else {
-        alternate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      alternate_ = null;
+      if (alternateBuilder_ != null) {
+        alternateBuilder_.dispose();
         alternateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1123,7 +1217,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public com.google.cloud.orgpolicy.v2.AlternatePolicySpec.Builder getAlternateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAlternateFieldBuilder().getBuilder();
     }
@@ -1172,6 +1266,207 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         alternate_ = null;
       }
       return alternateBuilder_;
+    }
+
+    private com.google.cloud.orgpolicy.v2.PolicySpec dryRunSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orgpolicy.v2.PolicySpec,
+            com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
+            com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>
+        dryRunSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     *
+     * @return Whether the dryRunSpec field is set.
+     */
+    public boolean hasDryRunSpec() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     *
+     * @return The dryRunSpec.
+     */
+    public com.google.cloud.orgpolicy.v2.PolicySpec getDryRunSpec() {
+      if (dryRunSpecBuilder_ == null) {
+        return dryRunSpec_ == null
+            ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
+            : dryRunSpec_;
+      } else {
+        return dryRunSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public Builder setDryRunSpec(com.google.cloud.orgpolicy.v2.PolicySpec value) {
+      if (dryRunSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dryRunSpec_ = value;
+      } else {
+        dryRunSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public Builder setDryRunSpec(com.google.cloud.orgpolicy.v2.PolicySpec.Builder builderForValue) {
+      if (dryRunSpecBuilder_ == null) {
+        dryRunSpec_ = builderForValue.build();
+      } else {
+        dryRunSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public Builder mergeDryRunSpec(com.google.cloud.orgpolicy.v2.PolicySpec value) {
+      if (dryRunSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && dryRunSpec_ != null
+            && dryRunSpec_ != com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()) {
+          getDryRunSpecBuilder().mergeFrom(value);
+        } else {
+          dryRunSpec_ = value;
+        }
+      } else {
+        dryRunSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public Builder clearDryRunSpec() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dryRunSpec_ = null;
+      if (dryRunSpecBuilder_ != null) {
+        dryRunSpecBuilder_.dispose();
+        dryRunSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public com.google.cloud.orgpolicy.v2.PolicySpec.Builder getDryRunSpecBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDryRunSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    public com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder getDryRunSpecOrBuilder() {
+      if (dryRunSpecBuilder_ != null) {
+        return dryRunSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return dryRunSpec_ == null
+            ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
+            : dryRunSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * dry-run policy.
+     * Audit-only policy, can be used to monitor how the policy would have
+     * impacted the existing and future resources if it's enforced.
+     * </pre>
+     *
+     * <code>.google.cloud.orgpolicy.v2.PolicySpec dry_run_spec = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orgpolicy.v2.PolicySpec,
+            com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
+            com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>
+        getDryRunSpecFieldBuilder() {
+      if (dryRunSpecBuilder_ == null) {
+        dryRunSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orgpolicy.v2.PolicySpec,
+                com.google.cloud.orgpolicy.v2.PolicySpec.Builder,
+                com.google.cloud.orgpolicy.v2.PolicySpecOrBuilder>(
+                getDryRunSpec(), getParentForChildren(), isClean());
+        dryRunSpec_ = null;
+      }
+      return dryRunSpecBuilder_;
     }
 
     @java.lang.Override

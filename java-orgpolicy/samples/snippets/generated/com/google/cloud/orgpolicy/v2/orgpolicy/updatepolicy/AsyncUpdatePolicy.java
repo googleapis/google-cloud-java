@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.orgpolicy.v2.OrgPolicyClient;
 import com.google.cloud.orgpolicy.v2.Policy;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
+import com.google.protobuf.FieldMask;
 
 public class AsyncUpdatePolicy {
 
@@ -36,7 +37,10 @@ public class AsyncUpdatePolicy {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
       UpdatePolicyRequest request =
-          UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
+          UpdatePolicyRequest.newBuilder()
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
       ApiFuture<Policy> future = orgPolicyClient.updatePolicyCallable().futureCall(request);
       // Do something.
       Policy response = future.get();

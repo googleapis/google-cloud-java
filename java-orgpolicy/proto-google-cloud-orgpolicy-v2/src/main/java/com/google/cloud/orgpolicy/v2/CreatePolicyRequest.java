@@ -69,13 +69,15 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that will parent the new Policy. Must be in
+   * one of the following forms:
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -104,8 +106,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that will parent the new Policy. Must be in
+   * one of the following forms:
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -177,7 +179,7 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.orgpolicy.v2.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.cloud.orgpolicy.v2.Policy.getDefaultInstance() : policy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +394,11 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
       return this;
@@ -427,14 +428,21 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.orgpolicy.v2.CreatePolicyRequest buildPartial() {
       com.google.cloud.orgpolicy.v2.CreatePolicyRequest result =
           new com.google.cloud.orgpolicy.v2.CreatePolicyRequest(this);
-      result.parent_ = parent_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.CreatePolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +493,7 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -519,13 +528,13 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -545,13 +554,15 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that will parent the new Policy. Must be in
+     * one of the following forms:
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -579,8 +590,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that will parent the new Policy. Must be in
+     * one of the following forms:
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -608,8 +619,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that will parent the new Policy. Must be in
+     * one of the following forms:
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -627,8 +638,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +647,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that will parent the new Policy. Must be in
+     * one of the following forms:
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -651,8 +662,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -660,8 +671,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that will parent the new Policy. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that will parent the new Policy. Must be in
+     * one of the following forms:
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -680,8 +691,8 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,7 +716,7 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -744,11 +755,11 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,11 +775,11 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
     public Builder setPolicy(com.google.cloud.orgpolicy.v2.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,19 +794,18 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePolicy(com.google.cloud.orgpolicy.v2.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.cloud.orgpolicy.v2.Policy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && policy_ != null
+            && policy_ != com.google.cloud.orgpolicy.v2.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -809,14 +819,13 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -830,7 +839,7 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.orgpolicy.v2.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }

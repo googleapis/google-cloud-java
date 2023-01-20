@@ -439,6 +439,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -479,6 +480,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -519,6 +521,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -559,6 +562,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -599,6 +603,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -642,6 +647,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -685,6 +691,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -728,6 +735,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -771,6 +779,7 @@ public class OrgPolicyClientTest {
             .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
+            .setDryRunSpec(PolicySpec.newBuilder().build())
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 

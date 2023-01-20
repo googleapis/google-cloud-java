@@ -335,7 +335,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUPPORTS_IN_FIELD_NUMBER = 1;
-    private boolean supportsIn_;
+    private boolean supportsIn_ = false;
     /**
      *
      *
@@ -355,7 +355,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUPPORTS_UNDER_FIELD_NUMBER = 2;
-    private boolean supportsUnder_;
+    private boolean supportsUnder_ = false;
     /**
      *
      *
@@ -585,10 +585,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         supportsIn_ = false;
-
         supportsUnder_ = false;
-
         return this;
       }
 
@@ -616,10 +615,21 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.orgpolicy.v2.Constraint.ListConstraint buildPartial() {
         com.google.cloud.orgpolicy.v2.Constraint.ListConstraint result =
             new com.google.cloud.orgpolicy.v2.Constraint.ListConstraint(this);
-        result.supportsIn_ = supportsIn_;
-        result.supportsUnder_ = supportsUnder_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.orgpolicy.v2.Constraint.ListConstraint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.supportsIn_ = supportsIn_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.supportsUnder_ = supportsUnder_;
+        }
       }
 
       @java.lang.Override
@@ -705,13 +715,13 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   supportsIn_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   supportsUnder_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -730,6 +740,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean supportsIn_;
       /**
@@ -766,6 +778,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public Builder setSupportsIn(boolean value) {
 
         supportsIn_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -783,7 +796,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSupportsIn() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         supportsIn_ = false;
         onChanged();
         return this;
@@ -826,6 +839,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       public Builder setSupportsUnder(boolean value) {
 
         supportsUnder_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -844,7 +858,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSupportsUnder() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         supportsUnder_ = false;
         onChanged();
         return this;
@@ -1399,7 +1413,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1458,7 +1474,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1509,7 +1527,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1562,7 +1582,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONSTRAINT_DEFAULT_FIELD_NUMBER = 4;
-  private int constraintDefault_;
+  private int constraintDefault_ = 0;
   /**
    *
    *
@@ -1591,9 +1611,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault getConstraintDefault() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault result =
-        com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.valueOf(constraintDefault_);
+        com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.forNumber(constraintDefault_);
     return result == null
         ? com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.UNRECOGNIZED
         : result;
@@ -1983,14 +2002,11 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       constraintDefault_ = 0;
-
       if (listConstraintBuilder_ != null) {
         listConstraintBuilder_.clear();
       }
@@ -2026,27 +2042,39 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orgpolicy.v2.Constraint buildPartial() {
       com.google.cloud.orgpolicy.v2.Constraint result =
           new com.google.cloud.orgpolicy.v2.Constraint(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.constraintDefault_ = constraintDefault_;
-      if (constraintTypeCase_ == 5) {
-        if (listConstraintBuilder_ == null) {
-          result.constraintType_ = constraintType_;
-        } else {
-          result.constraintType_ = listConstraintBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (constraintTypeCase_ == 6) {
-        if (booleanConstraintBuilder_ == null) {
-          result.constraintType_ = constraintType_;
-        } else {
-          result.constraintType_ = booleanConstraintBuilder_.build();
-        }
-      }
-      result.constraintTypeCase_ = constraintTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.orgpolicy.v2.Constraint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.constraintDefault_ = constraintDefault_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.orgpolicy.v2.Constraint result) {
+      result.constraintTypeCase_ = constraintTypeCase_;
+      result.constraintType_ = this.constraintType_;
+      if (constraintTypeCase_ == 5 && listConstraintBuilder_ != null) {
+        result.constraintType_ = listConstraintBuilder_.build();
+      }
+      if (constraintTypeCase_ == 6 && booleanConstraintBuilder_ != null) {
+        result.constraintType_ = booleanConstraintBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2096,14 +2124,17 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.orgpolicy.v2.Constraint.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.constraintDefault_ != 0) {
@@ -2154,25 +2185,25 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 constraintDefault_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -2218,6 +2249,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2295,8 +2328,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2317,8 +2350,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2344,8 +2377,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2414,8 +2447,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2432,8 +2465,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2455,8 +2488,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2528,8 +2561,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2547,8 +2580,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2571,8 +2604,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2606,8 +2639,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setConstraintDefaultValue(int value) {
-
       constraintDefault_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2624,9 +2657,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault getConstraintDefault() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault result =
-          com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.valueOf(constraintDefault_);
+          com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.forNumber(constraintDefault_);
       return result == null
           ? com.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault.UNRECOGNIZED
           : result;
@@ -2648,7 +2680,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       constraintDefault_ = value.getNumber();
       onChanged();
       return this;
@@ -2665,7 +2697,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConstraintDefault() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       constraintDefault_ = 0;
       onChanged();
       return this;
@@ -2883,7 +2915,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       constraintTypeCase_ = 5;
       onChanged();
-      ;
       return listConstraintBuilder_;
     }
 
@@ -3100,7 +3131,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       constraintTypeCase_ = 6;
       onChanged();
-      ;
       return booleanConstraintBuilder_;
     }
 

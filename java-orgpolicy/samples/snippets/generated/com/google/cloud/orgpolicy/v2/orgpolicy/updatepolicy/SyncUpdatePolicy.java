@@ -20,6 +20,7 @@ package com.google.cloud.orgpolicy.v2.samples;
 import com.google.cloud.orgpolicy.v2.OrgPolicyClient;
 import com.google.cloud.orgpolicy.v2.Policy;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
+import com.google.protobuf.FieldMask;
 
 public class SyncUpdatePolicy {
 
@@ -35,7 +36,10 @@ public class SyncUpdatePolicy {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
       UpdatePolicyRequest request =
-          UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
+          UpdatePolicyRequest.newBuilder()
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
       Policy response = orgPolicyClient.updatePolicy(request);
     }
   }
