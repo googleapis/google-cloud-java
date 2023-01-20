@@ -208,7 +208,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int MAX_SHARED_CLIENTS_PER_GPU_FIELD_NUMBER = 1;
-  private long maxSharedClientsPerGpu_;
+  private long maxSharedClientsPerGpu_ = 0L;
   /**
    *
    *
@@ -226,7 +226,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GPU_SHARING_STRATEGY_FIELD_NUMBER = 2;
-  private int gpuSharingStrategy_;
+  private int gpuSharingStrategy_ = 0;
   /**
    *
    *
@@ -276,9 +276,8 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy getGpuSharingStrategy() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy result =
-        com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.valueOf(
+        com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.forNumber(
             gpuSharingStrategy_);
     return result == null
         ? com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.UNRECOGNIZED
@@ -497,10 +496,9 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxSharedClientsPerGpu_ = 0L;
-
       gpuSharingStrategy_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -528,16 +526,24 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.GPUSharingConfig buildPartial() {
       com.google.container.v1beta1.GPUSharingConfig result =
           new com.google.container.v1beta1.GPUSharingConfig(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.maxSharedClientsPerGpu_ = maxSharedClientsPerGpu_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.gpuSharingStrategy_ = gpuSharingStrategy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.GPUSharingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.maxSharedClientsPerGpu_ = maxSharedClientsPerGpu_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gpuSharingStrategy_ = gpuSharingStrategy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -620,13 +626,13 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 maxSharedClientsPerGpu_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 gpuSharingStrategy_ = input.readEnum();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -679,6 +685,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     public Builder setMaxSharedClientsPerGpu(long value) {
 
       maxSharedClientsPerGpu_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,7 +701,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxSharedClientsPerGpu() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxSharedClientsPerGpu_ = 0L;
       onChanged();
       return this;
@@ -716,7 +723,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGpuSharingStrategy() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -750,8 +757,8 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setGpuSharingStrategyValue(int value) {
-      bitField0_ |= 0x00000001;
       gpuSharingStrategy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -771,9 +778,8 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy
         getGpuSharingStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy result =
-          com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.valueOf(
+          com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.forNumber(
               gpuSharingStrategy_);
       return result == null
           ? com.google.container.v1beta1.GPUSharingConfig.GPUSharingStrategy.UNRECOGNIZED
@@ -798,7 +804,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       gpuSharingStrategy_ = value.getNumber();
       onChanged();
       return this;
@@ -817,7 +823,7 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGpuSharingStrategy() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       gpuSharingStrategy_ = 0;
       onChanged();
       return this;

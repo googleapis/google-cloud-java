@@ -440,7 +440,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int NODE_METADATA_FIELD_NUMBER = 1;
-  private int nodeMetadata_;
+  private int nodeMetadata_ = 0;
   /**
    *
    *
@@ -454,7 +454,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4338
+   *     google/container/v1beta1/cluster_service.proto;l=4156
    * @return The enum numeric value on the wire for nodeMetadata.
    */
   @java.lang.Override
@@ -475,22 +475,21 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4338
+   *     google/container/v1beta1/cluster_service.proto;l=4156
    * @return The nodeMetadata.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata getNodeMetadata() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata result =
-        com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.valueOf(nodeMetadata_);
+        com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.forNumber(nodeMetadata_);
     return result == null
         ? com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.UNRECOGNIZED
         : result;
   }
 
   public static final int MODE_FIELD_NUMBER = 2;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -521,9 +520,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.container.v1beta1.WorkloadMetadataConfig.Mode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.WorkloadMetadataConfig.Mode result =
-        com.google.container.v1beta1.WorkloadMetadataConfig.Mode.valueOf(mode_);
+        com.google.container.v1beta1.WorkloadMetadataConfig.Mode.forNumber(mode_);
     return result == null
         ? com.google.container.v1beta1.WorkloadMetadataConfig.Mode.UNRECOGNIZED
         : result;
@@ -742,10 +740,9 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodeMetadata_ = 0;
-
       mode_ = 0;
-
       return this;
     }
 
@@ -773,10 +770,21 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1beta1.WorkloadMetadataConfig buildPartial() {
       com.google.container.v1beta1.WorkloadMetadataConfig result =
           new com.google.container.v1beta1.WorkloadMetadataConfig(this);
-      result.nodeMetadata_ = nodeMetadata_;
-      result.mode_ = mode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.WorkloadMetadataConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeMetadata_ = nodeMetadata_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -860,13 +868,13 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 nodeMetadata_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -886,6 +894,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private int nodeMetadata_ = 0;
     /**
      *
@@ -900,7 +910,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4338
+     *     google/container/v1beta1/cluster_service.proto;l=4156
      * @return The enum numeric value on the wire for nodeMetadata.
      */
     @java.lang.Override
@@ -921,14 +931,14 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4338
+     *     google/container/v1beta1/cluster_service.proto;l=4156
      * @param value The enum numeric value on the wire for nodeMetadata to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setNodeMetadataValue(int value) {
-
       nodeMetadata_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -945,15 +955,14 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4338
+     *     google/container/v1beta1/cluster_service.proto;l=4156
      * @return The nodeMetadata.
      */
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata getNodeMetadata() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata result =
-          com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.valueOf(nodeMetadata_);
+          com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.forNumber(nodeMetadata_);
       return result == null
           ? com.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata.UNRECOGNIZED
           : result;
@@ -971,7 +980,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4338
+     *     google/container/v1beta1/cluster_service.proto;l=4156
      * @param value The nodeMetadata to set.
      * @return This builder for chaining.
      */
@@ -981,7 +990,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       nodeMetadata_ = value.getNumber();
       onChanged();
       return this;
@@ -999,12 +1008,12 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4338
+     *     google/container/v1beta1/cluster_service.proto;l=4156
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNodeMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       nodeMetadata_ = 0;
       onChanged();
       return this;
@@ -1041,8 +1050,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1060,9 +1069,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.container.v1beta1.WorkloadMetadataConfig.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.WorkloadMetadataConfig.Mode result =
-          com.google.container.v1beta1.WorkloadMetadataConfig.Mode.valueOf(mode_);
+          com.google.container.v1beta1.WorkloadMetadataConfig.Mode.forNumber(mode_);
       return result == null
           ? com.google.container.v1beta1.WorkloadMetadataConfig.Mode.UNRECOGNIZED
           : result;
@@ -1084,7 +1092,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -1102,7 +1110,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mode_ = 0;
       onChanged();
       return this;

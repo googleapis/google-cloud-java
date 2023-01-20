@@ -343,7 +343,6 @@ public interface NodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,
@@ -484,7 +483,6 @@ public interface NodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -1355,7 +1353,6 @@ public interface NodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_labels = 37;</code>
    */
-
   /* nullable */
   java.lang.String getResourceLabelsOrDefault(
       java.lang.String key,

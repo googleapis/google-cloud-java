@@ -67,7 +67,7 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disabled_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.DefaultSnatStatus buildPartial() {
       com.google.container.v1beta1.DefaultSnatStatus result =
           new com.google.container.v1beta1.DefaultSnatStatus(this);
-      result.disabled_ = disabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.DefaultSnatStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disabled_ = disabled_;
+      }
     }
 
     @java.lang.Override
@@ -393,7 +402,7 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -412,6 +421,8 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean disabled_;
     /**
@@ -444,6 +455,7 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -459,7 +471,7 @@ public final class DefaultSnatStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       disabled_ = false;
       onChanged();
       return this;

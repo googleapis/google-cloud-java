@@ -68,6 +68,8 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.Jwk> keys_;
   /**
    *
@@ -340,6 +342,7 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,16 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     public com.google.container.v1beta1.GetJSONWebKeysResponse buildPartial() {
       com.google.container.v1beta1.GetJSONWebKeysResponse result =
           new com.google.container.v1beta1.GetJSONWebKeysResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1beta1.GetJSONWebKeysResponse result) {
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -384,8 +396,10 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.GetJSONWebKeysResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -227,7 +227,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -258,16 +258,17 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.Location.LocationType getType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.Location.LocationType result =
-        com.google.container.v1beta1.Location.LocationType.valueOf(type_);
+        com.google.container.v1beta1.Location.LocationType.forNumber(type_);
     return result == null
         ? com.google.container.v1beta1.Location.LocationType.UNRECOGNIZED
         : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -318,7 +319,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RECOMMENDED_FIELD_NUMBER = 3;
-  private boolean recommended_;
+  private boolean recommended_ = false;
   /**
    *
    *
@@ -553,12 +554,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       name_ = "";
-
       recommended_ = false;
-
       return this;
     }
 
@@ -586,11 +585,24 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.Location buildPartial() {
       com.google.container.v1beta1.Location result =
           new com.google.container.v1beta1.Location(this);
-      result.type_ = type_;
-      result.name_ = name_;
-      result.recommended_ = recommended_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.Location result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.recommended_ = recommended_;
+      }
     }
 
     @java.lang.Override
@@ -643,6 +655,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getRecommended() != false) {
@@ -677,19 +690,19 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 recommended_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -708,6 +721,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -740,8 +755,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,9 +774,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.Location.LocationType getType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.Location.LocationType result =
-          com.google.container.v1beta1.Location.LocationType.valueOf(type_);
+          com.google.container.v1beta1.Location.LocationType.forNumber(type_);
       return result == null
           ? com.google.container.v1beta1.Location.LocationType.UNRECOGNIZED
           : result;
@@ -783,7 +797,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -801,7 +815,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -871,8 +885,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -889,8 +903,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -912,8 +926,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -949,6 +963,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder setRecommended(boolean value) {
 
       recommended_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -964,7 +979,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRecommended() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       recommended_ = false;
       onChanged();
       return this;

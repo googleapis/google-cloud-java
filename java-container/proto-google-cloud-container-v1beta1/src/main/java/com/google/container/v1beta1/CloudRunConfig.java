@@ -227,7 +227,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -245,7 +245,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 3;
-  private int loadBalancerType_;
+  private int loadBalancerType_ = 0;
   /**
    *
    *
@@ -274,9 +274,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.CloudRunConfig.LoadBalancerType getLoadBalancerType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.CloudRunConfig.LoadBalancerType result =
-        com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.valueOf(loadBalancerType_);
+        com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.forNumber(loadBalancerType_);
     return result == null
         ? com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.UNRECOGNIZED
         : result;
@@ -494,10 +493,9 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disabled_ = false;
-
       loadBalancerType_ = 0;
-
       return this;
     }
 
@@ -525,10 +523,21 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.CloudRunConfig buildPartial() {
       com.google.container.v1beta1.CloudRunConfig result =
           new com.google.container.v1beta1.CloudRunConfig(this);
-      result.disabled_ = disabled_;
-      result.loadBalancerType_ = loadBalancerType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.CloudRunConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disabled_ = disabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.loadBalancerType_ = loadBalancerType_;
+      }
     }
 
     @java.lang.Override
@@ -611,13 +620,13 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 24:
               {
                 loadBalancerType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -636,6 +645,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean disabled_;
     /**
@@ -668,6 +679,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,7 +695,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       disabled_ = false;
       onChanged();
       return this;
@@ -720,8 +732,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLoadBalancerTypeValue(int value) {
-
       loadBalancerType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,9 +751,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.CloudRunConfig.LoadBalancerType getLoadBalancerType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.CloudRunConfig.LoadBalancerType result =
-          com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.valueOf(loadBalancerType_);
+          com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.forNumber(loadBalancerType_);
       return result == null
           ? com.google.container.v1beta1.CloudRunConfig.LoadBalancerType.UNRECOGNIZED
           : result;
@@ -764,7 +775,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       loadBalancerType_ = value.getNumber();
       onChanged();
       return this;
@@ -782,7 +793,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancerType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       loadBalancerType_ = 0;
       onChanged();
       return this;

@@ -204,7 +204,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 1;
-  private int provider_;
+  private int provider_ = 0;
   /**
    *
    *
@@ -233,14 +233,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NetworkPolicy.Provider getProvider() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.NetworkPolicy.Provider result =
-        com.google.container.v1.NetworkPolicy.Provider.valueOf(provider_);
+        com.google.container.v1.NetworkPolicy.Provider.forNumber(provider_);
     return result == null ? com.google.container.v1.NetworkPolicy.Provider.UNRECOGNIZED : result;
   }
 
   public static final int ENABLED_FIELD_NUMBER = 2;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -464,10 +463,9 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       provider_ = 0;
-
       enabled_ = false;
-
       return this;
     }
 
@@ -495,10 +493,21 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NetworkPolicy buildPartial() {
       com.google.container.v1.NetworkPolicy result =
           new com.google.container.v1.NetworkPolicy(this);
-      result.provider_ = provider_;
-      result.enabled_ = enabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NetworkPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.provider_ = provider_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -581,13 +590,13 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 provider_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -606,6 +615,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int provider_ = 0;
     /**
@@ -636,8 +647,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProviderValue(int value) {
-
       provider_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,9 +665,8 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.NetworkPolicy.Provider getProvider() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.NetworkPolicy.Provider result =
-          com.google.container.v1.NetworkPolicy.Provider.valueOf(provider_);
+          com.google.container.v1.NetworkPolicy.Provider.forNumber(provider_);
       return result == null ? com.google.container.v1.NetworkPolicy.Provider.UNRECOGNIZED : result;
     }
     /**
@@ -675,7 +685,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       provider_ = value.getNumber();
       onChanged();
       return this;
@@ -692,7 +702,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       provider_ = 0;
       onChanged();
       return this;
@@ -729,6 +739,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -744,7 +755,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enabled_ = false;
       onChanged();
       return this;

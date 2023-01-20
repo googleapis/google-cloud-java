@@ -69,6 +69,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLUSTERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.Cluster> clusters_;
   /**
    *
@@ -143,6 +145,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MISSING_ZONES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList missingZones_;
   /**
    *
@@ -422,6 +426,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (clustersBuilder_ == null) {
         clusters_ = java.util.Collections.emptyList();
       } else {
@@ -458,7 +463,15 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
     public com.google.container.v1.ListClustersResponse buildPartial() {
       com.google.container.v1.ListClustersResponse result =
           new com.google.container.v1.ListClustersResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.ListClustersResponse result) {
       if (clustersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           clusters_ = java.util.Collections.unmodifiableList(clusters_);
@@ -473,8 +486,10 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.missingZones_ = missingZones_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ListClustersResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

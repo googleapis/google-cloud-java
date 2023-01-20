@@ -66,7 +66,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
   }
 
   public static final int ISSUE_CLIENT_CERTIFICATE_FIELD_NUMBER = 1;
-  private boolean issueClientCertificate_;
+  private boolean issueClientCertificate_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issueClientCertificate_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
     public com.google.container.v1.ClientCertificateConfig buildPartial() {
       com.google.container.v1.ClientCertificateConfig result =
           new com.google.container.v1.ClientCertificateConfig(this);
-      result.issueClientCertificate_ = issueClientCertificate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ClientCertificateConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issueClientCertificate_ = issueClientCertificate_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
             case 8:
               {
                 issueClientCertificate_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean issueClientCertificate_;
     /**
@@ -443,6 +454,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
     public Builder setIssueClientCertificate(boolean value) {
 
       issueClientCertificate_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIssueClientCertificate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       issueClientCertificate_ = false;
       onChanged();
       return this;

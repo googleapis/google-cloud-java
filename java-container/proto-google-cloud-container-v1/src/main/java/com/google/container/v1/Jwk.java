@@ -75,7 +75,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KTY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kty_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kty_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object alg_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object alg_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object use_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object use_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object kid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kid_ = "";
   /**
    *
    *
@@ -271,7 +279,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int N_FIELD_NUMBER = 5;
-  private volatile java.lang.Object n_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object n_ = "";
   /**
    *
    *
@@ -320,7 +330,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int E_FIELD_NUMBER = 6;
-  private volatile java.lang.Object e_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object e_ = "";
   /**
    *
    *
@@ -369,7 +381,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int X_FIELD_NUMBER = 7;
-  private volatile java.lang.Object x_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object x_ = "";
   /**
    *
    *
@@ -418,7 +432,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int Y_FIELD_NUMBER = 8;
-  private volatile java.lang.Object y_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object y_ = "";
   /**
    *
    *
@@ -467,7 +483,9 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CRV_FIELD_NUMBER = 9;
-  private volatile java.lang.Object crv_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crv_ = "";
   /**
    *
    *
@@ -781,24 +799,16 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kty_ = "";
-
       alg_ = "";
-
       use_ = "";
-
       kid_ = "";
-
       n_ = "";
-
       e_ = "";
-
       x_ = "";
-
       y_ = "";
-
       crv_ = "";
-
       return this;
     }
 
@@ -825,17 +835,42 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.Jwk buildPartial() {
       com.google.container.v1.Jwk result = new com.google.container.v1.Jwk(this);
-      result.kty_ = kty_;
-      result.alg_ = alg_;
-      result.use_ = use_;
-      result.kid_ = kid_;
-      result.n_ = n_;
-      result.e_ = e_;
-      result.x_ = x_;
-      result.y_ = y_;
-      result.crv_ = crv_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.Jwk result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kty_ = kty_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.alg_ = alg_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.use_ = use_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kid_ = kid_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.n_ = n_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.e_ = e_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.x_ = x_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.y_ = y_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.crv_ = crv_;
+      }
     }
 
     @java.lang.Override
@@ -885,38 +920,47 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1.Jwk.getDefaultInstance()) return this;
       if (!other.getKty().isEmpty()) {
         kty_ = other.kty_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAlg().isEmpty()) {
         alg_ = other.alg_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUse().isEmpty()) {
         use_ = other.use_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getKid().isEmpty()) {
         kid_ = other.kid_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getN().isEmpty()) {
         n_ = other.n_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getE().isEmpty()) {
         e_ = other.e_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getX().isEmpty()) {
         x_ = other.x_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getY().isEmpty()) {
         y_ = other.y_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCrv().isEmpty()) {
         crv_ = other.crv_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -948,55 +992,55 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 kty_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 alg_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 use_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 kid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 n_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 e_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 x_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 y_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 crv_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1015,6 +1059,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object kty_ = "";
     /**
@@ -1077,8 +1123,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kty_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1094,8 +1140,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKty() {
-
       kty_ = getDefaultInstance().getKty();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1116,8 +1162,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kty_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1183,8 +1229,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       alg_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1200,8 +1246,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlg() {
-
       alg_ = getDefaultInstance().getAlg();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1222,8 +1268,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       alg_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1289,8 +1335,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       use_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1306,8 +1352,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUse() {
-
       use_ = getDefaultInstance().getUse();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1328,8 +1374,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       use_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1395,8 +1441,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kid_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1412,8 +1458,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKid() {
-
       kid_ = getDefaultInstance().getKid();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1434,8 +1480,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kid_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1501,8 +1547,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       n_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1518,8 +1564,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearN() {
-
       n_ = getDefaultInstance().getN();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1540,8 +1586,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       n_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1607,8 +1653,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       e_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1624,8 +1670,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearE() {
-
       e_ = getDefaultInstance().getE();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1646,8 +1692,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       e_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1713,8 +1759,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       x_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1730,8 +1776,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearX() {
-
       x_ = getDefaultInstance().getX();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1752,8 +1798,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       x_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1819,8 +1865,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       y_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1836,8 +1882,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearY() {
-
       y_ = getDefaultInstance().getY();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1858,8 +1904,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       y_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1925,8 +1971,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       crv_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1942,8 +1988,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrv() {
-
       crv_ = getDefaultInstance().getCrv();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1964,8 +2010,8 @@ public final class Jwk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crv_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

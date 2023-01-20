@@ -120,7 +120,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1beta1.NetworkTagsOrBuilder getNetworkTagsOrBuilder() {
-    return getNetworkTags();
+    return networkTags_ == null
+        ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
+        : networkTags_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -326,10 +328,10 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (networkTagsBuilder_ == null) {
-        networkTags_ = null;
-      } else {
-        networkTags_ = null;
+      bitField0_ = 0;
+      networkTags_ = null;
+      if (networkTagsBuilder_ != null) {
+        networkTagsBuilder_.dispose();
         networkTagsBuilder_ = null;
       }
       return this;
@@ -359,13 +361,19 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.NodePoolAutoConfig buildPartial() {
       com.google.container.v1beta1.NodePoolAutoConfig result =
           new com.google.container.v1beta1.NodePoolAutoConfig(this);
-      if (networkTagsBuilder_ == null) {
-        result.networkTags_ = networkTags_;
-      } else {
-        result.networkTags_ = networkTagsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodePoolAutoConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkTags_ =
+            networkTagsBuilder_ == null ? networkTags_ : networkTagsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -446,7 +454,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getNetworkTagsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +473,8 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.container.v1beta1.NetworkTags networkTags_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -487,7 +497,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the networkTags field is set.
      */
     public boolean hasNetworkTags() {
-      return networkTagsBuilder_ != null || networkTags_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -530,11 +540,11 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         networkTags_ = value;
-        onChanged();
       } else {
         networkTagsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -553,11 +563,11 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         com.google.container.v1beta1.NetworkTags.Builder builderForValue) {
       if (networkTagsBuilder_ == null) {
         networkTags_ = builderForValue.build();
-        onChanged();
       } else {
         networkTagsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,19 +584,18 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeNetworkTags(com.google.container.v1beta1.NetworkTags value) {
       if (networkTagsBuilder_ == null) {
-        if (networkTags_ != null) {
-          networkTags_ =
-              com.google.container.v1beta1.NetworkTags.newBuilder(networkTags_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && networkTags_ != null
+            && networkTags_ != com.google.container.v1beta1.NetworkTags.getDefaultInstance()) {
+          getNetworkTagsBuilder().mergeFrom(value);
         } else {
           networkTags_ = value;
         }
-        onChanged();
       } else {
         networkTagsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -602,14 +611,13 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1beta1.NetworkTags network_tags = 1;</code>
      */
     public Builder clearNetworkTags() {
-      if (networkTagsBuilder_ == null) {
-        networkTags_ = null;
-        onChanged();
-      } else {
-        networkTags_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      networkTags_ = null;
+      if (networkTagsBuilder_ != null) {
+        networkTagsBuilder_.dispose();
         networkTagsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -625,7 +633,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1beta1.NetworkTags network_tags = 1;</code>
      */
     public com.google.container.v1beta1.NetworkTags.Builder getNetworkTagsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNetworkTagsFieldBuilder().getBuilder();
     }

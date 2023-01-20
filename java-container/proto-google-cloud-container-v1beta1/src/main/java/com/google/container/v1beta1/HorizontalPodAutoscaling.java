@@ -68,7 +68,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
   }
 
   public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -287,8 +287,8 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disabled_ = false;
-
       return this;
     }
 
@@ -316,9 +316,18 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     public com.google.container.v1beta1.HorizontalPodAutoscaling buildPartial() {
       com.google.container.v1beta1.HorizontalPodAutoscaling result =
           new com.google.container.v1beta1.HorizontalPodAutoscaling(this);
-      result.disabled_ = disabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.HorizontalPodAutoscaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disabled_ = disabled_;
+      }
     }
 
     @java.lang.Override
@@ -399,7 +408,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
             case 8:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -418,6 +427,8 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean disabled_;
     /**
@@ -454,6 +465,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -471,7 +483,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       disabled_ = false;
       onChanged();
       return this;

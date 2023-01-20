@@ -71,7 +71,9 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -85,7 +87,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3283
+   *     google/container/v1beta1/cluster_service.proto;l=3171
    * @return The projectId.
    */
   @java.lang.Override
@@ -114,7 +116,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3283
+   *     google/container/v1beta1/cluster_service.proto;l=3171
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -132,7 +134,9 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -146,7 +150,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3292
+   *     google/container/v1beta1/cluster_service.proto;l=3178
    * @return The zone.
    */
   @java.lang.Override
@@ -175,7 +179,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3292
+   *     google/container/v1beta1/cluster_service.proto;l=3178
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -193,7 +197,9 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -206,7 +212,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3299
+   *     google/container/v1beta1/cluster_service.proto;l=3182
    * @return The clusterId.
    */
   @java.lang.Override
@@ -234,7 +240,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3299
+   *     google/container/v1beta1/cluster_service.proto;l=3182
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -252,7 +258,9 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -526,14 +534,11 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       zone_ = "";
-
       clusterId_ = "";
-
       parent_ = "";
-
       return this;
     }
 
@@ -561,12 +566,27 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
     public com.google.container.v1beta1.ListNodePoolsRequest buildPartial() {
       com.google.container.v1beta1.ListNodePoolsRequest result =
           new com.google.container.v1beta1.ListNodePoolsRequest(this);
-      result.projectId_ = projectId_;
-      result.zone_ = zone_;
-      result.clusterId_ = clusterId_;
-      result.parent_ = parent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ListNodePoolsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -617,18 +637,22 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -660,25 +684,25 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -698,6 +722,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object projectId_ = "";
     /**
      *
@@ -712,7 +738,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3283
+     *     google/container/v1beta1/cluster_service.proto;l=3171
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -740,7 +766,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3283
+     *     google/container/v1beta1/cluster_service.proto;l=3171
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -768,7 +794,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3283
+     *     google/container/v1beta1/cluster_service.proto;l=3171
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -777,8 +803,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,13 +821,13 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3283
+     *     google/container/v1beta1/cluster_service.proto;l=3171
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -818,7 +844,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3283
+     *     google/container/v1beta1/cluster_service.proto;l=3171
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -828,8 +854,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,7 +874,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3292
+     *     google/container/v1beta1/cluster_service.proto;l=3178
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -876,7 +902,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3292
+     *     google/container/v1beta1/cluster_service.proto;l=3178
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -904,7 +930,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3292
+     *     google/container/v1beta1/cluster_service.proto;l=3178
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -913,8 +939,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -931,13 +957,13 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3292
+     *     google/container/v1beta1/cluster_service.proto;l=3178
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -954,7 +980,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3292
+     *     google/container/v1beta1/cluster_service.proto;l=3178
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -964,8 +990,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -983,7 +1009,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3299
+     *     google/container/v1beta1/cluster_service.proto;l=3182
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1010,7 +1036,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3299
+     *     google/container/v1beta1/cluster_service.proto;l=3182
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1037,7 +1063,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3299
+     *     google/container/v1beta1/cluster_service.proto;l=3182
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1046,8 +1072,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,13 +1089,13 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3299
+     *     google/container/v1beta1/cluster_service.proto;l=3182
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1085,7 +1111,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3299
+     *     google/container/v1beta1/cluster_service.proto;l=3182
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1095,8 +1121,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1165,8 +1191,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1183,8 +1209,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1206,8 +1232,8 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

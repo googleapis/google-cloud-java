@@ -72,7 +72,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -85,7 +87,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2483
+   *     google/container/v1/cluster_service.proto;l=2506
    * @return The projectId.
    */
   @java.lang.Override
@@ -113,7 +115,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2483
+   *     google/container/v1/cluster_service.proto;l=2506
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -131,7 +133,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -145,7 +149,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2489
+   *     google/container/v1/cluster_service.proto;l=2512
    * @return The zone.
    */
   @java.lang.Override
@@ -174,7 +178,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2489
+   *     google/container/v1/cluster_service.proto;l=2512
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -192,7 +196,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -204,7 +210,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2493
+   *     google/container/v1/cluster_service.proto;l=2516
    * @return The clusterId.
    */
   @java.lang.Override
@@ -231,7 +237,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2493
+   *     google/container/v1/cluster_service.proto;l=2516
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -249,6 +255,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList locations_;
   /**
    *
@@ -330,7 +338,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -620,16 +630,13 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       zone_ = "";
-
       clusterId_ = "";
-
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-
       return this;
     }
 
@@ -657,18 +664,36 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public com.google.container.v1.SetLocationsRequest buildPartial() {
       com.google.container.v1.SetLocationsRequest result =
           new com.google.container.v1.SetLocationsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.zone_ = zone_;
-      result.clusterId_ = clusterId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.locations_ = locations_;
-      result.name_ = name_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.SetLocationsRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.locations_ = locations_;
+    }
+
+    private void buildPartial0(com.google.container.v1.SetLocationsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -718,20 +743,23 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.container.v1.SetLocationsRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -740,6 +768,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -771,19 +800,19 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -796,7 +825,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
             case 50:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -831,7 +860,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2483
+     *     google/container/v1/cluster_service.proto;l=2506
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -858,7 +887,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2483
+     *     google/container/v1/cluster_service.proto;l=2506
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -885,7 +914,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2483
+     *     google/container/v1/cluster_service.proto;l=2506
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -894,8 +923,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,13 +940,13 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2483
+     *     google/container/v1/cluster_service.proto;l=2506
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -933,7 +962,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2483
+     *     google/container/v1/cluster_service.proto;l=2506
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -943,8 +972,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -963,7 +992,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2489
+     *     google/container/v1/cluster_service.proto;l=2512
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -991,7 +1020,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2489
+     *     google/container/v1/cluster_service.proto;l=2512
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1019,7 +1048,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2489
+     *     google/container/v1/cluster_service.proto;l=2512
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1028,8 +1057,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1046,13 +1075,13 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2489
+     *     google/container/v1/cluster_service.proto;l=2512
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1069,7 +1098,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2489
+     *     google/container/v1/cluster_service.proto;l=2512
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1079,8 +1108,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1097,7 +1126,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2493
+     *     google/container/v1/cluster_service.proto;l=2516
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1123,7 +1152,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2493
+     *     google/container/v1/cluster_service.proto;l=2516
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1149,7 +1178,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2493
+     *     google/container/v1/cluster_service.proto;l=2516
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1158,8 +1187,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,13 +1203,13 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2493
+     *     google/container/v1/cluster_service.proto;l=2516
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1195,7 +1224,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2493
+     *     google/container/v1/cluster_service.proto;l=2516
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1205,8 +1234,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1215,9 +1244,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1392,7 +1421,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1488,8 +1517,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1506,8 +1535,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1529,8 +1558,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

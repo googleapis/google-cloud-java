@@ -282,7 +282,9 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
   }
 
   public static final int RANGE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object rangeName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rangeName_ = "";
   /**
    *
    *
@@ -333,7 +335,9 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
   }
 
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -382,7 +386,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -411,9 +415,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status result =
-        com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.valueOf(status_);
+        com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.forNumber(status_);
     return result == null
         ? com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.UNRECOGNIZED
         : result;
@@ -637,12 +640,10 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rangeName_ = "";
-
       ipCidrRange_ = "";
-
       status_ = 0;
-
       return this;
     }
 
@@ -670,11 +671,24 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     public com.google.container.v1beta1.UsableSubnetworkSecondaryRange buildPartial() {
       com.google.container.v1beta1.UsableSubnetworkSecondaryRange result =
           new com.google.container.v1beta1.UsableSubnetworkSecondaryRange(this);
-      result.rangeName_ = rangeName_;
-      result.ipCidrRange_ = ipCidrRange_;
-      result.status_ = status_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.UsableSubnetworkSecondaryRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rangeName_ = rangeName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+      }
     }
 
     @java.lang.Override
@@ -725,10 +739,12 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         return this;
       if (!other.getRangeName().isEmpty()) {
         rangeName_ = other.rangeName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIpCidrRange().isEmpty()) {
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.status_ != 0) {
@@ -763,19 +779,19 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
             case 10:
               {
                 rangeName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -794,6 +810,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object rangeName_ = "";
     /**
@@ -859,8 +877,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       rangeName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,8 +895,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRangeName() {
-
       rangeName_ = getDefaultInstance().getRangeName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -900,8 +918,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rangeName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -967,8 +985,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,8 +1002,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1006,8 +1024,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1041,8 +1059,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1059,9 +1077,8 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status result =
-          com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.valueOf(status_);
+          com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.forNumber(status_);
       return result == null
           ? com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Status.UNRECOGNIZED
           : result;
@@ -1083,7 +1100,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1100,7 +1117,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = 0;
       onChanged();
       return this;

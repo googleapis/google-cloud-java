@@ -247,7 +247,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -276,9 +276,8 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.container.v1beta1.ClusterTelemetry.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.ClusterTelemetry.Type result =
-        com.google.container.v1beta1.ClusterTelemetry.Type.valueOf(type_);
+        com.google.container.v1beta1.ClusterTelemetry.Type.forNumber(type_);
     return result == null
         ? com.google.container.v1beta1.ClusterTelemetry.Type.UNRECOGNIZED
         : result;
@@ -481,8 +480,8 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       return this;
     }
 
@@ -510,9 +509,18 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.ClusterTelemetry buildPartial() {
       com.google.container.v1beta1.ClusterTelemetry result =
           new com.google.container.v1beta1.ClusterTelemetry(this);
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ClusterTelemetry result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -592,7 +600,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -611,6 +619,8 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -641,8 +651,8 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -659,9 +669,8 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.container.v1beta1.ClusterTelemetry.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.ClusterTelemetry.Type result =
-          com.google.container.v1beta1.ClusterTelemetry.Type.valueOf(type_);
+          com.google.container.v1beta1.ClusterTelemetry.Type.forNumber(type_);
       return result == null
           ? com.google.container.v1beta1.ClusterTelemetry.Type.UNRECOGNIZED
           : result;
@@ -682,7 +691,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -699,7 +708,7 @@ public final class ClusterTelemetry extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;

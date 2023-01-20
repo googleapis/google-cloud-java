@@ -70,6 +70,8 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tags_;
   /**
    *
@@ -335,6 +337,7 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -364,14 +367,24 @@ public final class NetworkTags extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.NetworkTags buildPartial() {
       com.google.container.v1beta1.NetworkTags result =
           new com.google.container.v1beta1.NetworkTags(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1beta1.NetworkTags result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         tags_ = tags_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.tags_ = tags_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NetworkTags result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

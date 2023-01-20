@@ -71,7 +71,9 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-  private int resourceType_;
+  private int resourceType_ = 0;
   /**
    *
    *
@@ -149,9 +151,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.container.v1.UpgradeResourceType getResourceType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.UpgradeResourceType result =
-        com.google.container.v1.UpgradeResourceType.valueOf(resourceType_);
+        com.google.container.v1.UpgradeResourceType.forNumber(resourceType_);
     return result == null ? com.google.container.v1.UpgradeResourceType.UNRECOGNIZED : result;
   }
 
@@ -203,11 +204,15 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.container.v1.ReleaseChannelOrBuilder getReleaseChannelOrBuilder() {
-    return getReleaseChannel();
+    return releaseChannel_ == null
+        ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+        : releaseChannel_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -491,18 +496,15 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       resourceType_ = 0;
-
-      if (releaseChannelBuilder_ == null) {
-        releaseChannel_ = null;
-      } else {
-        releaseChannel_ = null;
+      releaseChannel_ = null;
+      if (releaseChannelBuilder_ != null) {
+        releaseChannelBuilder_.dispose();
         releaseChannelBuilder_ = null;
       }
       resource_ = "";
-
       return this;
     }
 
@@ -530,16 +532,28 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
     public com.google.container.v1.UpgradeAvailableEvent buildPartial() {
       com.google.container.v1.UpgradeAvailableEvent result =
           new com.google.container.v1.UpgradeAvailableEvent(this);
-      result.version_ = version_;
-      result.resourceType_ = resourceType_;
-      if (releaseChannelBuilder_ == null) {
-        result.releaseChannel_ = releaseChannel_;
-      } else {
-        result.releaseChannel_ = releaseChannelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resource_ = resource_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.UpgradeAvailableEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.releaseChannel_ =
+            releaseChannelBuilder_ == null ? releaseChannel_ : releaseChannelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resource_ = resource_;
+      }
     }
 
     @java.lang.Override
@@ -589,6 +603,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       if (other == com.google.container.v1.UpgradeAvailableEvent.getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.resourceType_ != 0) {
@@ -599,6 +614,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -630,25 +646,25 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 resourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getReleaseChannelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -667,6 +683,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -729,8 +747,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +764,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -768,8 +786,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +821,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setResourceTypeValue(int value) {
-
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -821,9 +839,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.container.v1.UpgradeResourceType getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.UpgradeResourceType result =
-          com.google.container.v1.UpgradeResourceType.valueOf(resourceType_);
+          com.google.container.v1.UpgradeResourceType.forNumber(resourceType_);
       return result == null ? com.google.container.v1.UpgradeResourceType.UNRECOGNIZED : result;
     }
     /**
@@ -842,7 +859,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       resourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -859,7 +876,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       resourceType_ = 0;
       onChanged();
       return this;
@@ -884,7 +901,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the releaseChannel field is set.
      */
     public boolean hasReleaseChannel() {
-      return releaseChannelBuilder_ != null || releaseChannel_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -923,11 +940,11 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         releaseChannel_ = value;
-        onChanged();
       } else {
         releaseChannelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -944,11 +961,11 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
         com.google.container.v1.ReleaseChannel.Builder builderForValue) {
       if (releaseChannelBuilder_ == null) {
         releaseChannel_ = builderForValue.build();
-        onChanged();
       } else {
         releaseChannelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -963,19 +980,18 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeReleaseChannel(com.google.container.v1.ReleaseChannel value) {
       if (releaseChannelBuilder_ == null) {
-        if (releaseChannel_ != null) {
-          releaseChannel_ =
-              com.google.container.v1.ReleaseChannel.newBuilder(releaseChannel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && releaseChannel_ != null
+            && releaseChannel_ != com.google.container.v1.ReleaseChannel.getDefaultInstance()) {
+          getReleaseChannelBuilder().mergeFrom(value);
         } else {
           releaseChannel_ = value;
         }
-        onChanged();
       } else {
         releaseChannelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -989,14 +1005,13 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1.ReleaseChannel release_channel = 3;</code>
      */
     public Builder clearReleaseChannel() {
-      if (releaseChannelBuilder_ == null) {
-        releaseChannel_ = null;
-        onChanged();
-      } else {
-        releaseChannel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      releaseChannel_ = null;
+      if (releaseChannelBuilder_ != null) {
+        releaseChannelBuilder_.dispose();
         releaseChannelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1025,7 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1.ReleaseChannel release_channel = 3;</code>
      */
     public com.google.container.v1.ReleaseChannel.Builder getReleaseChannelBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getReleaseChannelFieldBuilder().getBuilder();
     }
@@ -1124,8 +1139,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1142,8 +1157,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1165,8 +1180,8 @@ public final class UpgradeAvailableEvent extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

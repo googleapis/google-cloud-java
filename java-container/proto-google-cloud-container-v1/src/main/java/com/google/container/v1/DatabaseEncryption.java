@@ -228,7 +228,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -257,14 +257,15 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1.DatabaseEncryption.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.DatabaseEncryption.State result =
-        com.google.container.v1.DatabaseEncryption.State.valueOf(state_);
+        com.google.container.v1.DatabaseEncryption.State.forNumber(state_);
     return result == null ? com.google.container.v1.DatabaseEncryption.State.UNRECOGNIZED : result;
   }
 
   public static final int KEY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyName_ = "";
   /**
    *
    *
@@ -520,10 +521,9 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       keyName_ = "";
-
       return this;
     }
 
@@ -551,10 +551,21 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1.DatabaseEncryption buildPartial() {
       com.google.container.v1.DatabaseEncryption result =
           new com.google.container.v1.DatabaseEncryption(this);
-      result.state_ = state_;
-      result.keyName_ = keyName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.DatabaseEncryption result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyName_ = keyName_;
+      }
     }
 
     @java.lang.Override
@@ -607,6 +618,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getKeyName().isEmpty()) {
         keyName_ = other.keyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -638,13 +650,13 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 keyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -663,6 +675,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -693,8 +707,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,9 +725,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.container.v1.DatabaseEncryption.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.DatabaseEncryption.State result =
-          com.google.container.v1.DatabaseEncryption.State.valueOf(state_);
+          com.google.container.v1.DatabaseEncryption.State.forNumber(state_);
       return result == null
           ? com.google.container.v1.DatabaseEncryption.State.UNRECOGNIZED
           : result;
@@ -734,7 +747,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -751,7 +764,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -821,8 +834,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -839,8 +852,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKeyName() {
-
       keyName_ = getDefaultInstance().getKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -862,8 +875,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

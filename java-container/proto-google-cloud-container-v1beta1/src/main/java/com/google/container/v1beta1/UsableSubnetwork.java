@@ -73,7 +73,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NETWORK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipCidrRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCidrRange_ = "";
   /**
    *
    *
@@ -224,6 +230,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SECONDARY_IP_RANGES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1beta1.UsableSubnetworkSecondaryRange>
       secondaryIpRanges_;
   /**
@@ -308,7 +316,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object statusMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    *
    *
@@ -599,21 +609,18 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subnetwork_ = "";
-
       network_ = "";
-
       ipCidrRange_ = "";
-
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
       } else {
         secondaryIpRanges_ = null;
         secondaryIpRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       statusMessage_ = "";
-
       return this;
     }
 
@@ -641,22 +648,40 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.UsableSubnetwork buildPartial() {
       com.google.container.v1beta1.UsableSubnetwork result =
           new com.google.container.v1beta1.UsableSubnetwork(this);
-      int from_bitField0_ = bitField0_;
-      result.subnetwork_ = subnetwork_;
-      result.network_ = network_;
-      result.ipCidrRange_ = ipCidrRange_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1beta1.UsableSubnetwork result) {
       if (secondaryIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.secondaryIpRanges_ = secondaryIpRanges_;
       } else {
         result.secondaryIpRanges_ = secondaryIpRangesBuilder_.build();
       }
-      result.statusMessage_ = statusMessage_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.UsableSubnetwork result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipCidrRange_ = ipCidrRange_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
     }
 
     @java.lang.Override
@@ -706,21 +731,24 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       if (other == com.google.container.v1beta1.UsableSubnetwork.getDefaultInstance()) return this;
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIpCidrRange().isEmpty()) {
         ipCidrRange_ = other.ipCidrRange_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (secondaryIpRangesBuilder_ == null) {
         if (!other.secondaryIpRanges_.isEmpty()) {
           if (secondaryIpRanges_.isEmpty()) {
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSecondaryIpRangesIsMutable();
             secondaryIpRanges_.addAll(other.secondaryIpRanges_);
@@ -733,7 +761,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
             secondaryIpRangesBuilder_.dispose();
             secondaryIpRangesBuilder_ = null;
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             secondaryIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecondaryIpRangesFieldBuilder()
@@ -745,6 +773,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -776,19 +805,19 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -808,7 +837,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -894,8 +923,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -912,8 +941,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -935,8 +964,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1005,8 +1034,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1023,8 +1052,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1046,8 +1075,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1113,8 +1142,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1130,8 +1159,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1152,8 +1181,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipCidrRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1162,11 +1191,11 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         secondaryIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureSecondaryIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         secondaryIpRanges_ =
             new java.util.ArrayList<com.google.container.v1beta1.UsableSubnetworkSecondaryRange>(
                 secondaryIpRanges_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1412,7 +1441,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     public Builder clearSecondaryIpRanges() {
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         secondaryIpRangesBuilder_.clear();
@@ -1557,7 +1586,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1beta1.UsableSubnetworkSecondaryRange.Builder,
                 com.google.container.v1beta1.UsableSubnetworkSecondaryRangeOrBuilder>(
                 secondaryIpRanges_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryIpRanges_ = null;
@@ -1635,8 +1664,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1655,8 +1684,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1680,8 +1709,8 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -146,7 +146,9 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     }
 
     public static final int DATASET_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object datasetId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object datasetId_ = "";
     /**
      *
      *
@@ -403,8 +405,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         datasetId_ = "";
-
         return this;
       }
 
@@ -436,9 +438,19 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           buildPartial() {
         com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination result =
             new com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination(this);
-        result.datasetId_ = datasetId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.datasetId_ = datasetId_;
+        }
       }
 
       @java.lang.Override
@@ -495,6 +507,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
                 .getDefaultInstance()) return this;
         if (!other.getDatasetId().isEmpty()) {
           datasetId_ = other.datasetId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -526,7 +539,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
               case 10:
                 {
                   datasetId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -545,6 +558,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object datasetId_ = "";
       /**
@@ -607,8 +622,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-
         datasetId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -624,8 +639,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearDatasetId() {
-
         datasetId_ = getDefaultInstance().getDatasetId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -646,8 +661,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         datasetId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -791,7 +806,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     }
 
     public static final int ENABLED_FIELD_NUMBER = 1;
-    private boolean enabled_;
+    private boolean enabled_ = false;
     /**
      *
      *
@@ -1023,8 +1038,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enabled_ = false;
-
         return this;
       }
 
@@ -1058,9 +1073,19 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig result =
             new com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig(
                 this);
-        result.enabled_ = enabled_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
       }
 
       @java.lang.Override
@@ -1149,7 +1174,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
               case 8:
                 {
                   enabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -1168,6 +1193,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enabled_;
       /**
@@ -1204,6 +1231,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       public Builder setEnabled(boolean value) {
 
         enabled_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1221,7 +1249,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enabled_ = false;
         onChanged();
         return this;
@@ -1351,11 +1379,14 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder() {
-    return getBigqueryDestination();
+    return bigqueryDestination_ == null
+        ? com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination
+            .getDefaultInstance()
+        : bigqueryDestination_;
   }
 
   public static final int ENABLE_NETWORK_EGRESS_METERING_FIELD_NUMBER = 2;
-  private boolean enableNetworkEgressMetering_;
+  private boolean enableNetworkEgressMetering_ = false;
   /**
    *
    *
@@ -1428,7 +1459,10 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfigOrBuilder
       getConsumptionMeteringConfigOrBuilder() {
-    return getConsumptionMeteringConfig();
+    return consumptionMeteringConfig_ == null
+        ? com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig
+            .getDefaultInstance()
+        : consumptionMeteringConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1661,18 +1695,16 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-      } else {
-        bigqueryDestination_ = null;
+      bitField0_ = 0;
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
       enableNetworkEgressMetering_ = false;
-
-      if (consumptionMeteringConfigBuilder_ == null) {
-        consumptionMeteringConfig_ = null;
-      } else {
-        consumptionMeteringConfig_ = null;
+      consumptionMeteringConfig_ = null;
+      if (consumptionMeteringConfigBuilder_ != null) {
+        consumptionMeteringConfigBuilder_.dispose();
         consumptionMeteringConfigBuilder_ = null;
       }
       return this;
@@ -1702,19 +1734,30 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public com.google.container.v1beta1.ResourceUsageExportConfig buildPartial() {
       com.google.container.v1beta1.ResourceUsageExportConfig result =
           new com.google.container.v1beta1.ResourceUsageExportConfig(this);
-      if (bigqueryDestinationBuilder_ == null) {
-        result.bigqueryDestination_ = bigqueryDestination_;
-      } else {
-        result.bigqueryDestination_ = bigqueryDestinationBuilder_.build();
-      }
-      result.enableNetworkEgressMetering_ = enableNetworkEgressMetering_;
-      if (consumptionMeteringConfigBuilder_ == null) {
-        result.consumptionMeteringConfig_ = consumptionMeteringConfig_;
-      } else {
-        result.consumptionMeteringConfig_ = consumptionMeteringConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.ResourceUsageExportConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bigqueryDestination_ =
+            bigqueryDestinationBuilder_ == null
+                ? bigqueryDestination_
+                : bigqueryDestinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableNetworkEgressMetering_ = enableNetworkEgressMetering_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consumptionMeteringConfig_ =
+            consumptionMeteringConfigBuilder_ == null
+                ? consumptionMeteringConfig_
+                : consumptionMeteringConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1802,20 +1845,20 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
               {
                 input.readMessage(
                     getBigqueryDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 enableNetworkEgressMetering_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getConsumptionMeteringConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1834,6 +1877,8 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination
         bigqueryDestination_;
@@ -1856,7 +1901,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * @return Whether the bigqueryDestination field is set.
      */
     public boolean hasBigqueryDestination() {
-      return bigqueryDestinationBuilder_ != null || bigqueryDestination_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1900,11 +1945,11 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         bigqueryDestination_ = value;
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1923,11 +1968,11 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             builderForValue) {
       if (bigqueryDestinationBuilder_ == null) {
         bigqueryDestination_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1944,20 +1989,20 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public Builder mergeBigqueryDestination(
         com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination value) {
       if (bigqueryDestinationBuilder_ == null) {
-        if (bigqueryDestination_ != null) {
-          bigqueryDestination_ =
-              com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination.newBuilder(
-                      bigqueryDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && bigqueryDestination_ != null
+            && bigqueryDestination_
+                != com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination
+                    .getDefaultInstance()) {
+          getBigqueryDestinationBuilder().mergeFrom(value);
         } else {
           bigqueryDestination_ = value;
         }
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1972,14 +2017,13 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearBigqueryDestination() {
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-        onChanged();
-      } else {
-        bigqueryDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1995,7 +2039,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      */
     public com.google.container.v1beta1.ResourceUsageExportConfig.BigQueryDestination.Builder
         getBigqueryDestinationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
@@ -2083,6 +2127,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public Builder setEnableNetworkEgressMetering(boolean value) {
 
       enableNetworkEgressMetering_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2099,7 +2144,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnableNetworkEgressMetering() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableNetworkEgressMetering_ = false;
       onChanged();
       return this;
@@ -2128,7 +2173,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * @return Whether the consumptionMeteringConfig field is set.
      */
     public boolean hasConsumptionMeteringConfig() {
-      return consumptionMeteringConfigBuilder_ != null || consumptionMeteringConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2172,11 +2217,11 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         consumptionMeteringConfig_ = value;
-        onChanged();
       } else {
         consumptionMeteringConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2195,11 +2240,11 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
             builderForValue) {
       if (consumptionMeteringConfigBuilder_ == null) {
         consumptionMeteringConfig_ = builderForValue.build();
-        onChanged();
       } else {
         consumptionMeteringConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2216,20 +2261,20 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
     public Builder mergeConsumptionMeteringConfig(
         com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig value) {
       if (consumptionMeteringConfigBuilder_ == null) {
-        if (consumptionMeteringConfig_ != null) {
-          consumptionMeteringConfig_ =
-              com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig
-                  .newBuilder(consumptionMeteringConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && consumptionMeteringConfig_ != null
+            && consumptionMeteringConfig_
+                != com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig
+                    .getDefaultInstance()) {
+          getConsumptionMeteringConfigBuilder().mergeFrom(value);
         } else {
           consumptionMeteringConfig_ = value;
         }
-        onChanged();
       } else {
         consumptionMeteringConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2244,14 +2289,13 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearConsumptionMeteringConfig() {
-      if (consumptionMeteringConfigBuilder_ == null) {
-        consumptionMeteringConfig_ = null;
-        onChanged();
-      } else {
-        consumptionMeteringConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      consumptionMeteringConfig_ = null;
+      if (consumptionMeteringConfigBuilder_ != null) {
+        consumptionMeteringConfigBuilder_.dispose();
         consumptionMeteringConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2267,7 +2311,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      */
     public com.google.container.v1beta1.ResourceUsageExportConfig.ConsumptionMeteringConfig.Builder
         getConsumptionMeteringConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConsumptionMeteringConfigFieldBuilder().getBuilder();
     }

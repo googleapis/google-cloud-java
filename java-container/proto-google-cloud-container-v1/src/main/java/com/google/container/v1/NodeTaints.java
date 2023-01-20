@@ -69,6 +69,8 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.NodeTaint> taints_;
   /**
    *
@@ -335,6 +337,7 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
       } else {
@@ -368,7 +371,15 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.NodeTaints buildPartial() {
       com.google.container.v1.NodeTaints result = new com.google.container.v1.NodeTaints(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.NodeTaints result) {
       if (taintsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           taints_ = java.util.Collections.unmodifiableList(taints_);
@@ -378,8 +389,10 @@ public final class NodeTaints extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.taints_ = taintsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NodeTaints result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

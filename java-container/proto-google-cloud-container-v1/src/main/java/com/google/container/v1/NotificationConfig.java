@@ -381,7 +381,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int ENABLED_FIELD_NUMBER = 1;
-    private boolean enabled_;
+    private boolean enabled_ = false;
     /**
      *
      *
@@ -399,7 +399,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int TOPIC_FIELD_NUMBER = 2;
-    private volatile java.lang.Object topic_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
     /**
      *
      *
@@ -500,7 +502,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.container.v1.NotificationConfig.FilterOrBuilder getFilterOrBuilder() {
-      return getFilter();
+      return filter_ == null
+          ? com.google.container.v1.NotificationConfig.Filter.getDefaultInstance()
+          : filter_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -725,14 +729,12 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enabled_ = false;
-
         topic_ = "";
-
-        if (filterBuilder_ == null) {
-          filter_ = null;
-        } else {
-          filter_ = null;
+        filter_ = null;
+        if (filterBuilder_ != null) {
+          filterBuilder_.dispose();
           filterBuilder_ = null;
         }
         return this;
@@ -762,15 +764,24 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public com.google.container.v1.NotificationConfig.PubSub buildPartial() {
         com.google.container.v1.NotificationConfig.PubSub result =
             new com.google.container.v1.NotificationConfig.PubSub(this);
-        result.enabled_ = enabled_;
-        result.topic_ = topic_;
-        if (filterBuilder_ == null) {
-          result.filter_ = filter_;
-        } else {
-          result.filter_ = filterBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NotificationConfig.PubSub result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -826,6 +837,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         }
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasFilter()) {
@@ -860,19 +872,19 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               case 8:
                 {
                   enabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   topic_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -891,6 +903,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enabled_;
       /**
@@ -923,6 +937,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public Builder setEnabled(boolean value) {
 
         enabled_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -938,7 +953,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enabled_ = false;
         onChanged();
         return this;
@@ -1008,8 +1023,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         topic_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1026,8 +1041,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearTopic() {
-
         topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1049,8 +1064,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         topic_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1075,7 +1090,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * @return Whether the filter field is set.
        */
       public boolean hasFilter() {
-        return filterBuilder_ != null || filter_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1116,11 +1131,11 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           filter_ = value;
-          onChanged();
         } else {
           filterBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1138,11 +1153,11 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           com.google.container.v1.NotificationConfig.Filter.Builder builderForValue) {
         if (filterBuilder_ == null) {
           filter_ = builderForValue.build();
-          onChanged();
         } else {
           filterBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1158,19 +1173,19 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeFilter(com.google.container.v1.NotificationConfig.Filter value) {
         if (filterBuilder_ == null) {
-          if (filter_ != null) {
-            filter_ =
-                com.google.container.v1.NotificationConfig.Filter.newBuilder(filter_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && filter_ != null
+              && filter_
+                  != com.google.container.v1.NotificationConfig.Filter.getDefaultInstance()) {
+            getFilterBuilder().mergeFrom(value);
           } else {
             filter_ = value;
           }
-          onChanged();
         } else {
           filterBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1185,14 +1200,13 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * <code>.google.container.v1.NotificationConfig.Filter filter = 3;</code>
        */
       public Builder clearFilter() {
-        if (filterBuilder_ == null) {
-          filter_ = null;
-          onChanged();
-        } else {
-          filter_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        filter_ = null;
+        if (filterBuilder_ != null) {
+          filterBuilder_.dispose();
           filterBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1207,7 +1221,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * <code>.google.container.v1.NotificationConfig.Filter filter = 3;</code>
        */
       public com.google.container.v1.NotificationConfig.Filter.Builder getFilterBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getFilterFieldBuilder().getBuilder();
       }
@@ -1444,7 +1458,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int EVENT_TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> eventType_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer, com.google.container.v1.NotificationConfig.EventType>
         eventType_converter_ =
@@ -1452,9 +1469,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
                 java.lang.Integer, com.google.container.v1.NotificationConfig.EventType>() {
               public com.google.container.v1.NotificationConfig.EventType convert(
                   java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.container.v1.NotificationConfig.EventType result =
-                    com.google.container.v1.NotificationConfig.EventType.valueOf(from);
+                    com.google.container.v1.NotificationConfig.EventType.forNumber(from);
                 return result == null
                     ? com.google.container.v1.NotificationConfig.EventType.UNRECOGNIZED
                     : result;
@@ -1760,6 +1776,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         eventType_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1789,14 +1806,25 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public com.google.container.v1.NotificationConfig.Filter buildPartial() {
         com.google.container.v1.NotificationConfig.Filter result =
             new com.google.container.v1.NotificationConfig.Filter(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.container.v1.NotificationConfig.Filter result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           eventType_ = java.util.Collections.unmodifiableList(eventType_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.eventType_ = eventType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NotificationConfig.Filter result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2254,7 +2282,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.container.v1.NotificationConfig.PubSubOrBuilder getPubsubOrBuilder() {
-    return getPubsub();
+    return pubsub_ == null
+        ? com.google.container.v1.NotificationConfig.PubSub.getDefaultInstance()
+        : pubsub_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2459,10 +2489,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (pubsubBuilder_ == null) {
-        pubsub_ = null;
-      } else {
-        pubsub_ = null;
+      bitField0_ = 0;
+      pubsub_ = null;
+      if (pubsubBuilder_ != null) {
+        pubsubBuilder_.dispose();
         pubsubBuilder_ = null;
       }
       return this;
@@ -2492,13 +2522,18 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1.NotificationConfig buildPartial() {
       com.google.container.v1.NotificationConfig result =
           new com.google.container.v1.NotificationConfig(this);
-      if (pubsubBuilder_ == null) {
-        result.pubsub_ = pubsub_;
-      } else {
-        result.pubsub_ = pubsubBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NotificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pubsub_ = pubsubBuilder_ == null ? pubsub_ : pubsubBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2578,7 +2613,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getPubsubFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -2598,6 +2633,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.container.v1.NotificationConfig.PubSub pubsub_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NotificationConfig.PubSub,
@@ -2616,7 +2653,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the pubsub field is set.
      */
     public boolean hasPubsub() {
-      return pubsubBuilder_ != null || pubsub_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2653,11 +2690,11 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         pubsub_ = value;
-        onChanged();
       } else {
         pubsubBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2673,11 +2710,11 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         com.google.container.v1.NotificationConfig.PubSub.Builder builderForValue) {
       if (pubsubBuilder_ == null) {
         pubsub_ = builderForValue.build();
-        onChanged();
       } else {
         pubsubBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2691,19 +2728,18 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergePubsub(com.google.container.v1.NotificationConfig.PubSub value) {
       if (pubsubBuilder_ == null) {
-        if (pubsub_ != null) {
-          pubsub_ =
-              com.google.container.v1.NotificationConfig.PubSub.newBuilder(pubsub_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && pubsub_ != null
+            && pubsub_ != com.google.container.v1.NotificationConfig.PubSub.getDefaultInstance()) {
+          getPubsubBuilder().mergeFrom(value);
         } else {
           pubsub_ = value;
         }
-        onChanged();
       } else {
         pubsubBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2716,14 +2752,13 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.NotificationConfig.PubSub pubsub = 1;</code>
      */
     public Builder clearPubsub() {
-      if (pubsubBuilder_ == null) {
-        pubsub_ = null;
-        onChanged();
-      } else {
-        pubsub_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      pubsub_ = null;
+      if (pubsubBuilder_ != null) {
+        pubsubBuilder_.dispose();
         pubsubBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2736,7 +2771,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1.NotificationConfig.PubSub pubsub = 1;</code>
      */
     public com.google.container.v1.NotificationConfig.PubSub.Builder getPubsubBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPubsubFieldBuilder().getBuilder();
     }

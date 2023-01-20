@@ -257,7 +257,9 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -270,7 +272,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2566
+   *     google/container/v1/cluster_service.proto;l=2589
    * @return The projectId.
    */
   @java.lang.Override
@@ -298,7 +300,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2566
+   *     google/container/v1/cluster_service.proto;l=2589
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -316,7 +318,9 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -330,7 +334,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2572
+   *     google/container/v1/cluster_service.proto;l=2595
    * @return The zone.
    */
   @java.lang.Override
@@ -359,7 +363,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2572
+   *     google/container/v1/cluster_service.proto;l=2595
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -377,7 +381,9 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -389,7 +395,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2599
    * @return The clusterId.
    */
   @java.lang.Override
@@ -416,7 +422,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2599
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -434,7 +440,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ACTION_FIELD_NUMBER = 4;
-  private int action_;
+  private int action_ = 0;
   /**
    *
    *
@@ -467,9 +473,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.SetMasterAuthRequest.Action result =
-        com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
+        com.google.container.v1.SetMasterAuthRequest.Action.forNumber(action_);
     return result == null
         ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED
         : result;
@@ -521,11 +526,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.container.v1.MasterAuthOrBuilder getUpdateOrBuilder() {
-    return getUpdate();
+    return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -822,22 +829,17 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       zone_ = "";
-
       clusterId_ = "";
-
       action_ = 0;
-
-      if (updateBuilder_ == null) {
-        update_ = null;
-      } else {
-        update_ = null;
+      update_ = null;
+      if (updateBuilder_ != null) {
+        updateBuilder_.dispose();
         updateBuilder_ = null;
       }
       name_ = "";
-
       return this;
     }
 
@@ -865,18 +867,33 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     public com.google.container.v1.SetMasterAuthRequest buildPartial() {
       com.google.container.v1.SetMasterAuthRequest result =
           new com.google.container.v1.SetMasterAuthRequest(this);
-      result.projectId_ = projectId_;
-      result.zone_ = zone_;
-      result.clusterId_ = clusterId_;
-      result.action_ = action_;
-      if (updateBuilder_ == null) {
-        result.update_ = update_;
-      } else {
-        result.update_ = updateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.SetMasterAuthRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.update_ = updateBuilder_ == null ? update_ : updateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -926,14 +943,17 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (other == com.google.container.v1.SetMasterAuthRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.action_ != 0) {
@@ -944,6 +964,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -975,37 +996,37 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 action_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getUpdateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -1025,6 +1046,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object projectId_ = "";
     /**
      *
@@ -1038,7 +1061,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2566
+     *     google/container/v1/cluster_service.proto;l=2589
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -1065,7 +1088,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2566
+     *     google/container/v1/cluster_service.proto;l=2589
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -1092,7 +1115,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2566
+     *     google/container/v1/cluster_service.proto;l=2589
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -1101,8 +1124,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1118,13 +1141,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2566
+     *     google/container/v1/cluster_service.proto;l=2589
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1140,7 +1163,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2566
+     *     google/container/v1/cluster_service.proto;l=2589
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1150,8 +1173,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1170,7 +1193,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2572
+     *     google/container/v1/cluster_service.proto;l=2595
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1198,7 +1221,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2572
+     *     google/container/v1/cluster_service.proto;l=2595
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1226,7 +1249,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2572
+     *     google/container/v1/cluster_service.proto;l=2595
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1235,8 +1258,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1253,13 +1276,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2572
+     *     google/container/v1/cluster_service.proto;l=2595
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1276,7 +1299,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2572
+     *     google/container/v1/cluster_service.proto;l=2595
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1286,8 +1309,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1304,7 +1327,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2599
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1330,7 +1353,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2599
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1356,7 +1379,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2599
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1365,8 +1388,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1381,13 +1404,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2599
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1402,7 +1425,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2599
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1412,8 +1435,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1451,8 +1474,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
       action_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1471,9 +1494,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.SetMasterAuthRequest.Action result =
-          com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
+          com.google.container.v1.SetMasterAuthRequest.Action.forNumber(action_);
       return result == null
           ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED
           : result;
@@ -1496,7 +1518,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -1515,7 +1537,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       action_ = 0;
       onChanged();
       return this;
@@ -1540,7 +1562,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the update field is set.
      */
     public boolean hasUpdate() {
-      return updateBuilder_ != null || update_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1577,11 +1599,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         update_ = value;
-        onChanged();
       } else {
         updateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1597,11 +1619,11 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdate(com.google.container.v1.MasterAuth.Builder builderForValue) {
       if (updateBuilder_ == null) {
         update_ = builderForValue.build();
-        onChanged();
       } else {
         updateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1616,19 +1638,18 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdate(com.google.container.v1.MasterAuth value) {
       if (updateBuilder_ == null) {
-        if (update_ != null) {
-          update_ =
-              com.google.container.v1.MasterAuth.newBuilder(update_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && update_ != null
+            && update_ != com.google.container.v1.MasterAuth.getDefaultInstance()) {
+          getUpdateBuilder().mergeFrom(value);
         } else {
           update_ = value;
         }
-        onChanged();
       } else {
         updateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1642,14 +1663,13 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdate() {
-      if (updateBuilder_ == null) {
-        update_ = null;
-        onChanged();
-      } else {
-        update_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      update_ = null;
+      if (updateBuilder_ != null) {
+        updateBuilder_.dispose();
         updateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1663,7 +1683,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.container.v1.MasterAuth.Builder getUpdateBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateFieldBuilder().getBuilder();
     }
@@ -1775,8 +1795,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1793,8 +1813,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1816,8 +1836,8 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -279,7 +279,7 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int AUDIT_MODE_FIELD_NUMBER = 1;
-  private int auditMode_;
+  private int auditMode_ = 0;
   /**
    *
    *
@@ -323,9 +323,8 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1beta1.WorkloadConfig.Mode getAuditMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.WorkloadConfig.Mode result =
-        com.google.container.v1beta1.WorkloadConfig.Mode.valueOf(auditMode_);
+        com.google.container.v1beta1.WorkloadConfig.Mode.forNumber(auditMode_);
     return result == null ? com.google.container.v1beta1.WorkloadConfig.Mode.UNRECOGNIZED : result;
   }
 
@@ -532,8 +531,8 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       auditMode_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -561,15 +560,21 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.WorkloadConfig buildPartial() {
       com.google.container.v1beta1.WorkloadConfig result =
           new com.google.container.v1beta1.WorkloadConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.WorkloadConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.auditMode_ = auditMode_;
         to_bitField0_ |= 0x00000001;
       }
-      result.auditMode_ = auditMode_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -715,8 +720,8 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAuditModeValue(int value) {
-      bitField0_ |= 0x00000001;
       auditMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,9 +738,8 @@ public final class WorkloadConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1beta1.WorkloadConfig.Mode getAuditMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.WorkloadConfig.Mode result =
-          com.google.container.v1beta1.WorkloadConfig.Mode.valueOf(auditMode_);
+          com.google.container.v1beta1.WorkloadConfig.Mode.forNumber(auditMode_);
       return result == null
           ? com.google.container.v1beta1.WorkloadConfig.Mode.UNRECOGNIZED
           : result;

@@ -67,7 +67,7 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
 
   private int bitField0_;
   public static final int THREADS_PER_CORE_FIELD_NUMBER = 1;
-  private long threadsPerCore_;
+  private long threadsPerCore_ = 0L;
   /**
    *
    *
@@ -305,8 +305,8 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       threadsPerCore_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -334,15 +334,21 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public com.google.container.v1beta1.AdvancedMachineFeatures buildPartial() {
       com.google.container.v1beta1.AdvancedMachineFeatures result =
           new com.google.container.v1beta1.AdvancedMachineFeatures(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.AdvancedMachineFeatures result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.threadsPerCore_ = threadsPerCore_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -495,8 +501,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setThreadsPerCore(long value) {
-      bitField0_ |= 0x00000001;
+
       threadsPerCore_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

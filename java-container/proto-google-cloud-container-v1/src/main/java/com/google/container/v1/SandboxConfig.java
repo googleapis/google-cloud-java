@@ -203,7 +203,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -232,9 +232,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.SandboxConfig.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.SandboxConfig.Type result =
-        com.google.container.v1.SandboxConfig.Type.valueOf(type_);
+        com.google.container.v1.SandboxConfig.Type.forNumber(type_);
     return result == null ? com.google.container.v1.SandboxConfig.Type.UNRECOGNIZED : result;
   }
 
@@ -433,8 +432,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       return this;
     }
 
@@ -462,9 +461,18 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.SandboxConfig buildPartial() {
       com.google.container.v1.SandboxConfig result =
           new com.google.container.v1.SandboxConfig(this);
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.SandboxConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -544,7 +552,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -563,6 +571,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -593,8 +603,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,9 +621,8 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.SandboxConfig.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.SandboxConfig.Type result =
-          com.google.container.v1.SandboxConfig.Type.valueOf(type_);
+          com.google.container.v1.SandboxConfig.Type.forNumber(type_);
       return result == null ? com.google.container.v1.SandboxConfig.Type.UNRECOGNIZED : result;
     }
     /**
@@ -632,7 +641,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -649,7 +658,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;

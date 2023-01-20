@@ -92,7 +92,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1392
+   *     google/container/v1beta1/cluster_service.proto;l=1410
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1392
+   *     google/container/v1beta1/cluster_service.proto;l=1410
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1395
+   *     google/container/v1beta1/cluster_service.proto;l=1413
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -138,7 +138,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1395
+   *     google/container/v1beta1/cluster_service.proto;l=1413
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1398
+   *     google/container/v1beta1/cluster_service.proto;l=1416
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -169,7 +169,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1398
+   *     google/container/v1beta1/cluster_service.proto;l=1416
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -518,7 +518,8 @@ public interface IPAllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+   * pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -530,7 +531,8 @@ public interface IPAllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
+   * pods.
    * </pre>
    *
    * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

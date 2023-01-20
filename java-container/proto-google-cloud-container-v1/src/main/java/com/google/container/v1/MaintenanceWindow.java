@@ -247,6 +247,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
                     com.google.container.v1.TimeWindow.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
       maintenanceExclusions_;
 
@@ -312,8 +313,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
   @java.lang.Override
-  public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
-      java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
+  public /* nullable */ com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.container.v1.TimeWindow defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -613,6 +616,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dailyMaintenanceWindowBuilder_ != null) {
         dailyMaintenanceWindowBuilder_.clear();
       }
@@ -649,26 +653,31 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.MaintenanceWindow buildPartial() {
       com.google.container.v1.MaintenanceWindow result =
           new com.google.container.v1.MaintenanceWindow(this);
-      int from_bitField0_ = bitField0_;
-      if (policyCase_ == 2) {
-        if (dailyMaintenanceWindowBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = dailyMaintenanceWindowBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (policyCase_ == 3) {
-        if (recurringWindowBuilder_ == null) {
-          result.policy_ = policy_;
-        } else {
-          result.policy_ = recurringWindowBuilder_.build();
-        }
-      }
-      result.maintenanceExclusions_ = internalGetMaintenanceExclusions();
-      result.maintenanceExclusions_.makeImmutable();
-      result.policyCase_ = policyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.MaintenanceWindow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maintenanceExclusions_ = internalGetMaintenanceExclusions();
+        result.maintenanceExclusions_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.container.v1.MaintenanceWindow result) {
+      result.policyCase_ = policyCase_;
+      result.policy_ = this.policy_;
+      if (policyCase_ == 2 && dailyMaintenanceWindowBuilder_ != null) {
+        result.policy_ = dailyMaintenanceWindowBuilder_.build();
+      }
+      if (policyCase_ == 3 && recurringWindowBuilder_ != null) {
+        result.policy_ = recurringWindowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -717,6 +726,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.container.v1.MaintenanceWindow other) {
       if (other == com.google.container.v1.MaintenanceWindow.getDefaultInstance()) return this;
       internalGetMutableMaintenanceExclusions().mergeFrom(other.internalGetMaintenanceExclusions());
+      bitField0_ |= 0x00000004;
       switch (other.getPolicyCase()) {
         case DAILY_MAINTENANCE_WINDOW:
           {
@@ -782,6 +792,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
                 internalGetMutableMaintenanceExclusions()
                     .getMutableMap()
                     .put(maintenanceExclusions__.getKey(), maintenanceExclusions__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -1026,7 +1037,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       policyCase_ = 2;
       onChanged();
-      ;
       return dailyMaintenanceWindowBuilder_;
     }
 
@@ -1254,7 +1264,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       policyCase_ = 3;
       onChanged();
-      ;
       return recurringWindowBuilder_;
     }
 
@@ -1272,8 +1281,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, com.google.container.v1.TimeWindow>
         internalGetMutableMaintenanceExclusions() {
-      onChanged();
-      ;
       if (maintenanceExclusions_ == null) {
         maintenanceExclusions_ =
             com.google.protobuf.MapField.newMapField(
@@ -1282,6 +1289,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (!maintenanceExclusions_.isMutable()) {
         maintenanceExclusions_ = maintenanceExclusions_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return maintenanceExclusions_;
     }
 
@@ -1338,8 +1347,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
      */
     @java.lang.Override
-    public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
-        java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
+    public /* nullable */ com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.container.v1.TimeWindow defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1372,6 +1383,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearMaintenanceExclusions() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMaintenanceExclusions().getMutableMap().clear();
       return this;
     }
@@ -1396,6 +1408,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
         getMutableMaintenanceExclusions() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMaintenanceExclusions().getMutableMap();
     }
     /**
@@ -1416,8 +1429,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMaintenanceExclusions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1433,6 +1446,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public Builder putAllMaintenanceExclusions(
         java.util.Map<java.lang.String, com.google.container.v1.TimeWindow> values) {
       internalGetMutableMaintenanceExclusions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

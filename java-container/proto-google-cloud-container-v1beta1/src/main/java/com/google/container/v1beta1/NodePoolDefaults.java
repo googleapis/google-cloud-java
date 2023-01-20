@@ -110,7 +110,9 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.container.v1beta1.NodeConfigDefaultsOrBuilder getNodeConfigDefaultsOrBuilder() {
-    return getNodeConfigDefaults();
+    return nodeConfigDefaults_ == null
+        ? com.google.container.v1beta1.NodeConfigDefaults.getDefaultInstance()
+        : nodeConfigDefaults_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nodeConfigDefaultsBuilder_ == null) {
-        nodeConfigDefaults_ = null;
-      } else {
-        nodeConfigDefaults_ = null;
+      bitField0_ = 0;
+      nodeConfigDefaults_ = null;
+      if (nodeConfigDefaultsBuilder_ != null) {
+        nodeConfigDefaultsBuilder_.dispose();
         nodeConfigDefaultsBuilder_ = null;
       }
       return this;
@@ -348,13 +350,21 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.NodePoolDefaults buildPartial() {
       com.google.container.v1beta1.NodePoolDefaults result =
           new com.google.container.v1beta1.NodePoolDefaults(this);
-      if (nodeConfigDefaultsBuilder_ == null) {
-        result.nodeConfigDefaults_ = nodeConfigDefaults_;
-      } else {
-        result.nodeConfigDefaults_ = nodeConfigDefaultsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodePoolDefaults result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodeConfigDefaults_ =
+            nodeConfigDefaultsBuilder_ == null
+                ? nodeConfigDefaults_
+                : nodeConfigDefaultsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +445,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getNodeConfigDefaultsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +465,8 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.container.v1beta1.NodeConfigDefaults nodeConfigDefaults_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.NodeConfigDefaults,
@@ -473,7 +485,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeConfigDefaults field is set.
      */
     public boolean hasNodeConfigDefaults() {
-      return nodeConfigDefaultsBuilder_ != null || nodeConfigDefaults_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +522,11 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         nodeConfigDefaults_ = value;
-        onChanged();
       } else {
         nodeConfigDefaultsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -530,11 +542,11 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
         com.google.container.v1beta1.NodeConfigDefaults.Builder builderForValue) {
       if (nodeConfigDefaultsBuilder_ == null) {
         nodeConfigDefaults_ = builderForValue.build();
-        onChanged();
       } else {
         nodeConfigDefaultsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -548,19 +560,19 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeConfigDefaults(com.google.container.v1beta1.NodeConfigDefaults value) {
       if (nodeConfigDefaultsBuilder_ == null) {
-        if (nodeConfigDefaults_ != null) {
-          nodeConfigDefaults_ =
-              com.google.container.v1beta1.NodeConfigDefaults.newBuilder(nodeConfigDefaults_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nodeConfigDefaults_ != null
+            && nodeConfigDefaults_
+                != com.google.container.v1beta1.NodeConfigDefaults.getDefaultInstance()) {
+          getNodeConfigDefaultsBuilder().mergeFrom(value);
         } else {
           nodeConfigDefaults_ = value;
         }
-        onChanged();
       } else {
         nodeConfigDefaultsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,14 +585,13 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1beta1.NodeConfigDefaults node_config_defaults = 1;</code>
      */
     public Builder clearNodeConfigDefaults() {
-      if (nodeConfigDefaultsBuilder_ == null) {
-        nodeConfigDefaults_ = null;
-        onChanged();
-      } else {
-        nodeConfigDefaults_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nodeConfigDefaults_ = null;
+      if (nodeConfigDefaultsBuilder_ != null) {
+        nodeConfigDefaultsBuilder_.dispose();
         nodeConfigDefaultsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -593,7 +604,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1beta1.NodeConfigDefaults node_config_defaults = 1;</code>
      */
     public com.google.container.v1beta1.NodeConfigDefaults.Builder getNodeConfigDefaultsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNodeConfigDefaultsFieldBuilder().getBuilder();
     }

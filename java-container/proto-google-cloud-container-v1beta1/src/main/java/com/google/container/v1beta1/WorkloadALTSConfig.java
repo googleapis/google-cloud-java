@@ -120,7 +120,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getEnableAltsOrBuilder() {
-    return getEnableAlts();
+    return enableAlts_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableAlts_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +325,10 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (enableAltsBuilder_ == null) {
-        enableAlts_ = null;
-      } else {
-        enableAlts_ = null;
+      bitField0_ = 0;
+      enableAlts_ = null;
+      if (enableAltsBuilder_ != null) {
+        enableAltsBuilder_.dispose();
         enableAltsBuilder_ = null;
       }
       return this;
@@ -358,13 +358,18 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.WorkloadALTSConfig buildPartial() {
       com.google.container.v1beta1.WorkloadALTSConfig result =
           new com.google.container.v1beta1.WorkloadALTSConfig(this);
-      if (enableAltsBuilder_ == null) {
-        result.enableAlts_ = enableAlts_;
-      } else {
-        result.enableAlts_ = enableAltsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.WorkloadALTSConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableAlts_ = enableAltsBuilder_ == null ? enableAlts_ : enableAltsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +450,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getEnableAltsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +469,8 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.BoolValue enableAlts_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -487,7 +494,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the enableAlts field is set.
      */
     public boolean hasEnableAlts() {
-      return enableAltsBuilder_ != null || enableAlts_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -532,11 +539,11 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         enableAlts_ = value;
-        onChanged();
       } else {
         enableAltsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -555,11 +562,11 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
     public Builder setEnableAlts(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (enableAltsBuilder_ == null) {
         enableAlts_ = builderForValue.build();
-        onChanged();
       } else {
         enableAltsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -577,17 +584,18 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEnableAlts(com.google.protobuf.BoolValue value) {
       if (enableAltsBuilder_ == null) {
-        if (enableAlts_ != null) {
-          enableAlts_ =
-              com.google.protobuf.BoolValue.newBuilder(enableAlts_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && enableAlts_ != null
+            && enableAlts_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnableAltsBuilder().mergeFrom(value);
         } else {
           enableAlts_ = value;
         }
-        onChanged();
       } else {
         enableAltsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -604,14 +612,13 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.BoolValue enable_alts = 1;</code>
      */
     public Builder clearEnableAlts() {
-      if (enableAltsBuilder_ == null) {
-        enableAlts_ = null;
-        onChanged();
-      } else {
-        enableAlts_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      enableAlts_ = null;
+      if (enableAltsBuilder_ != null) {
+        enableAltsBuilder_.dispose();
         enableAltsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -628,7 +635,7 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.BoolValue enable_alts = 1;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnableAltsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEnableAltsFieldBuilder().getBuilder();
     }

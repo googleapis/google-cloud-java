@@ -66,7 +66,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
-  private boolean enableSecureBoot_;
+  private boolean enableSecureBoot_ = false;
   /**
    *
    *
@@ -87,7 +87,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 2;
-  private boolean enableIntegrityMonitoring_;
+  private boolean enableIntegrityMonitoring_ = false;
   /**
    *
    *
@@ -314,10 +314,9 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableSecureBoot_ = false;
-
       enableIntegrityMonitoring_ = false;
-
       return this;
     }
 
@@ -345,10 +344,21 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1.ShieldedInstanceConfig buildPartial() {
       com.google.container.v1.ShieldedInstanceConfig result =
           new com.google.container.v1.ShieldedInstanceConfig(this);
-      result.enableSecureBoot_ = enableSecureBoot_;
-      result.enableIntegrityMonitoring_ = enableIntegrityMonitoring_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ShieldedInstanceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableSecureBoot_ = enableSecureBoot_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableIntegrityMonitoring_ = enableIntegrityMonitoring_;
+      }
     }
 
     @java.lang.Override
@@ -431,13 +441,13 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 enableSecureBoot_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enableIntegrityMonitoring_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -456,6 +466,8 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableSecureBoot_;
     /**
@@ -494,6 +506,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public Builder setEnableSecureBoot(boolean value) {
 
       enableSecureBoot_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -512,7 +525,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnableSecureBoot() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableSecureBoot_ = false;
       onChanged();
       return this;
@@ -557,6 +570,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public Builder setEnableIntegrityMonitoring(boolean value) {
 
       enableIntegrityMonitoring_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -576,7 +590,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnableIntegrityMonitoring() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableIntegrityMonitoring_ = false;
       onChanged();
       return this;

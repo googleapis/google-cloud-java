@@ -74,7 +74,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -91,7 +93,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1059
+   *     google/container/v1beta1/cluster_service.proto;l=1077
    * @return The username.
    */
   @java.lang.Override
@@ -123,7 +125,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1059
+   *     google/container/v1beta1/cluster_service.proto;l=1077
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -141,7 +143,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object password_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object password_ = "";
   /**
    *
    *
@@ -159,7 +163,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1070
+   *     google/container/v1beta1/cluster_service.proto;l=1088
    * @return The password.
    */
   @java.lang.Override
@@ -192,7 +196,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1070
+   *     google/container/v1beta1/cluster_service.proto;l=1088
    * @return The bytes for password.
    */
   @java.lang.Override
@@ -261,11 +265,15 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1beta1.ClientCertificateConfigOrBuilder
       getClientCertificateConfigOrBuilder() {
-    return getClientCertificateConfig();
+    return clientCertificateConfig_ == null
+        ? com.google.container.v1beta1.ClientCertificateConfig.getDefaultInstance()
+        : clientCertificateConfig_;
   }
 
   public static final int CLUSTER_CA_CERTIFICATE_FIELD_NUMBER = 100;
-  private volatile java.lang.Object clusterCaCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterCaCertificate_ = "";
   /**
    * <code>string cluster_ca_certificate = 100;</code>
    *
@@ -302,7 +310,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_CERTIFICATE_FIELD_NUMBER = 101;
-  private volatile java.lang.Object clientCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientCertificate_ = "";
   /**
    *
    *
@@ -353,7 +363,9 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_KEY_FIELD_NUMBER = 102;
-  private volatile java.lang.Object clientKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientKey_ = "";
   /**
    *
    *
@@ -652,22 +664,17 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       password_ = "";
-
-      if (clientCertificateConfigBuilder_ == null) {
-        clientCertificateConfig_ = null;
-      } else {
-        clientCertificateConfig_ = null;
+      clientCertificateConfig_ = null;
+      if (clientCertificateConfigBuilder_ != null) {
+        clientCertificateConfigBuilder_.dispose();
         clientCertificateConfigBuilder_ = null;
       }
       clusterCaCertificate_ = "";
-
       clientCertificate_ = "";
-
       clientKey_ = "";
-
       return this;
     }
 
@@ -695,18 +702,36 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.MasterAuth buildPartial() {
       com.google.container.v1beta1.MasterAuth result =
           new com.google.container.v1beta1.MasterAuth(this);
-      result.username_ = username_;
-      result.password_ = password_;
-      if (clientCertificateConfigBuilder_ == null) {
-        result.clientCertificateConfig_ = clientCertificateConfig_;
-      } else {
-        result.clientCertificateConfig_ = clientCertificateConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.clusterCaCertificate_ = clusterCaCertificate_;
-      result.clientCertificate_ = clientCertificate_;
-      result.clientKey_ = clientKey_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.MasterAuth result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.password_ = password_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientCertificateConfig_ =
+            clientCertificateConfigBuilder_ == null
+                ? clientCertificateConfig_
+                : clientCertificateConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.clusterCaCertificate_ = clusterCaCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.clientCertificate_ = clientCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.clientKey_ = clientKey_;
+      }
     }
 
     @java.lang.Override
@@ -756,10 +781,12 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1beta1.MasterAuth.getDefaultInstance()) return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasClientCertificateConfig()) {
@@ -767,14 +794,17 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getClusterCaCertificate().isEmpty()) {
         clusterCaCertificate_ = other.clusterCaCertificate_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getClientCertificate().isEmpty()) {
         clientCertificate_ = other.clientCertificate_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getClientKey().isEmpty()) {
         clientKey_ = other.clientKey_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -806,38 +836,38 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 password_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getClientCertificateConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 802:
               {
                 clusterCaCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 802
             case 810:
               {
                 clientCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 810
             case 818:
               {
                 clientKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 818
             default:
@@ -857,6 +887,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object username_ = "";
     /**
      *
@@ -874,7 +906,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1059
+     *     google/container/v1beta1/cluster_service.proto;l=1077
      * @return The username.
      */
     @java.lang.Deprecated
@@ -905,7 +937,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1059
+     *     google/container/v1beta1/cluster_service.proto;l=1077
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -936,7 +968,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1059
+     *     google/container/v1beta1/cluster_service.proto;l=1077
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -945,8 +977,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -966,13 +998,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1059
+     *     google/container/v1beta1/cluster_service.proto;l=1077
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -992,7 +1024,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1059
+     *     google/container/v1beta1/cluster_service.proto;l=1077
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */
@@ -1002,8 +1034,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1026,7 +1058,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1070
+     *     google/container/v1beta1/cluster_service.proto;l=1088
      * @return The password.
      */
     @java.lang.Deprecated
@@ -1058,7 +1090,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1070
+     *     google/container/v1beta1/cluster_service.proto;l=1088
      * @return The bytes for password.
      */
     @java.lang.Deprecated
@@ -1090,7 +1122,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1070
+     *     google/container/v1beta1/cluster_service.proto;l=1088
      * @param value The password to set.
      * @return This builder for chaining.
      */
@@ -1099,8 +1131,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1121,13 +1153,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1070
+     *     google/container/v1beta1/cluster_service.proto;l=1088
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearPassword() {
-
       password_ = getDefaultInstance().getPassword();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1148,7 +1180,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1070
+     *     google/container/v1beta1/cluster_service.proto;l=1088
      * @param value The bytes for password to set.
      * @return This builder for chaining.
      */
@@ -1158,8 +1190,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       password_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1184,7 +1216,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clientCertificateConfig field is set.
      */
     public boolean hasClientCertificateConfig() {
-      return clientCertificateConfigBuilder_ != null || clientCertificateConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1226,11 +1258,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         clientCertificateConfig_ = value;
-        onChanged();
       } else {
         clientCertificateConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1248,11 +1280,11 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1beta1.ClientCertificateConfig.Builder builderForValue) {
       if (clientCertificateConfigBuilder_ == null) {
         clientCertificateConfig_ = builderForValue.build();
-        onChanged();
       } else {
         clientCertificateConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1269,20 +1301,19 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeClientCertificateConfig(
         com.google.container.v1beta1.ClientCertificateConfig value) {
       if (clientCertificateConfigBuilder_ == null) {
-        if (clientCertificateConfig_ != null) {
-          clientCertificateConfig_ =
-              com.google.container.v1beta1.ClientCertificateConfig.newBuilder(
-                      clientCertificateConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && clientCertificateConfig_ != null
+            && clientCertificateConfig_
+                != com.google.container.v1beta1.ClientCertificateConfig.getDefaultInstance()) {
+          getClientCertificateConfigBuilder().mergeFrom(value);
         } else {
           clientCertificateConfig_ = value;
         }
-        onChanged();
       } else {
         clientCertificateConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1297,14 +1328,13 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
     public Builder clearClientCertificateConfig() {
-      if (clientCertificateConfigBuilder_ == null) {
-        clientCertificateConfig_ = null;
-        onChanged();
-      } else {
-        clientCertificateConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      clientCertificateConfig_ = null;
+      if (clientCertificateConfigBuilder_ != null) {
+        clientCertificateConfigBuilder_.dispose();
         clientCertificateConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1320,7 +1350,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1beta1.ClientCertificateConfig.Builder
         getClientCertificateConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getClientCertificateConfigFieldBuilder().getBuilder();
     }
@@ -1416,8 +1446,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterCaCertificate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1427,8 +1457,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterCaCertificate() {
-
       clusterCaCertificate_ = getDefaultInstance().getClusterCaCertificate();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1443,8 +1473,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterCaCertificate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1513,8 +1543,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientCertificate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1531,8 +1561,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientCertificate() {
-
       clientCertificate_ = getDefaultInstance().getClientCertificate();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1554,8 +1584,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientCertificate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1624,8 +1654,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientKey_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1642,8 +1672,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientKey() {
-
       clientKey_ = getDefaultInstance().getClientKey();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1665,8 +1695,8 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientKey_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

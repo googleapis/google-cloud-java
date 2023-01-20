@@ -305,7 +305,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
     public static final int TOTAL_EGRESS_BANDWIDTH_TIER_FIELD_NUMBER = 1;
-    private int totalEgressBandwidthTier_;
+    private int totalEgressBandwidthTier_ = 0;
     /**
      *
      *
@@ -356,9 +356,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier
         getTotalEgressBandwidthTier() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier result =
-          com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.valueOf(
+          com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.forNumber(
               totalEgressBandwidthTier_);
       return result == null
           ? com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.UNRECOGNIZED
@@ -572,8 +571,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         totalEgressBandwidthTier_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -603,15 +602,22 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       public com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig buildPartial() {
         com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig result =
             new com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.totalEgressBandwidthTier_ = totalEgressBandwidthTier_;
           to_bitField0_ |= 0x00000001;
         }
-        result.totalEgressBandwidthTier_ = totalEgressBandwidthTier_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -769,8 +775,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setTotalEgressBandwidthTierValue(int value) {
-        bitField0_ |= 0x00000001;
         totalEgressBandwidthTier_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -790,9 +796,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier
           getTotalEgressBandwidthTier() {
-        @SuppressWarnings("deprecation")
         com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier result =
-            com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.valueOf(
+            com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.forNumber(
                 totalEgressBandwidthTier_);
         return result == null
             ? com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Tier.UNRECOGNIZED
@@ -911,7 +916,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   public static final int CREATE_POD_RANGE_FIELD_NUMBER = 4;
-  private boolean createPodRange_;
+  private boolean createPodRange_ = false;
   /**
    *
    *
@@ -936,7 +941,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int POD_RANGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object podRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object podRange_ = "";
   /**
    *
    *
@@ -995,7 +1002,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int POD_IPV4_CIDR_BLOCK_FIELD_NUMBER = 6;
-  private volatile java.lang.Object podIpv4CidrBlock_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object podIpv4CidrBlock_ = "";
   /**
    *
    *
@@ -1062,7 +1071,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENABLE_PRIVATE_NODES_FIELD_NUMBER = 9;
-  private boolean enablePrivateNodes_;
+  private boolean enablePrivateNodes_ = false;
   /**
    *
    *
@@ -1411,20 +1420,16 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       createPodRange_ = false;
-
       podRange_ = "";
-
       podIpv4CidrBlock_ = "";
-
       enablePrivateNodes_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (networkPerformanceConfigBuilder_ == null) {
-        networkPerformanceConfig_ = null;
-      } else {
-        networkPerformanceConfigBuilder_.clear();
+      networkPerformanceConfig_ = null;
+      if (networkPerformanceConfigBuilder_ != null) {
+        networkPerformanceConfigBuilder_.dispose();
+        networkPerformanceConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1452,26 +1457,37 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.NodeNetworkConfig buildPartial() {
       com.google.container.v1.NodeNetworkConfig result =
           new com.google.container.v1.NodeNetworkConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NodeNetworkConfig result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.createPodRange_ = createPodRange_;
-      result.podRange_ = podRange_;
-      result.podIpv4CidrBlock_ = podIpv4CidrBlock_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createPodRange_ = createPodRange_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.podRange_ = podRange_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.podIpv4CidrBlock_ = podIpv4CidrBlock_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enablePrivateNodes_ = enablePrivateNodes_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (networkPerformanceConfigBuilder_ == null) {
-          result.networkPerformanceConfig_ = networkPerformanceConfig_;
-        } else {
-          result.networkPerformanceConfig_ = networkPerformanceConfigBuilder_.build();
-        }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.networkPerformanceConfig_ =
+            networkPerformanceConfigBuilder_ == null
+                ? networkPerformanceConfig_
+                : networkPerformanceConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1524,10 +1540,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPodRange().isEmpty()) {
         podRange_ = other.podRange_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPodIpv4CidrBlock().isEmpty()) {
         podIpv4CidrBlock_ = other.podIpv4CidrBlock_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEnablePrivateNodes()) {
@@ -1565,32 +1583,32 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 createPodRange_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 32
             case 42:
               {
                 podRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
               {
                 podIpv4CidrBlock_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 72:
               {
                 enablePrivateNodes_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 72
             case 90:
               {
                 input.readMessage(
                     getNetworkPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 90
             default:
@@ -1657,6 +1675,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public Builder setCreatePodRange(boolean value) {
 
       createPodRange_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1679,7 +1698,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCreatePodRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       createPodRange_ = false;
       onChanged();
       return this;
@@ -1761,8 +1780,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       podRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1783,8 +1802,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPodRange() {
-
       podRange_ = getDefaultInstance().getPodRange();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1810,8 +1829,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       podRange_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1904,8 +1923,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       podIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1930,8 +1949,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPodIpv4CidrBlock() {
-
       podIpv4CidrBlock_ = getDefaultInstance().getPodIpv4CidrBlock();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1961,8 +1980,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       podIpv4CidrBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1983,7 +2002,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasEnablePrivateNodes() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2017,8 +2036,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEnablePrivateNodes(boolean value) {
-      bitField0_ |= 0x00000001;
+
       enablePrivateNodes_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2036,7 +2056,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnablePrivateNodes() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enablePrivateNodes_ = false;
       onChanged();
       return this;
@@ -2063,7 +2083,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the networkPerformanceConfig field is set.
      */
     public boolean hasNetworkPerformanceConfig() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2107,11 +2127,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         networkPerformanceConfig_ = value;
-        onChanged();
       } else {
         networkPerformanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2130,11 +2150,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
             builderForValue) {
       if (networkPerformanceConfigBuilder_ == null) {
         networkPerformanceConfig_ = builderForValue.build();
-        onChanged();
       } else {
         networkPerformanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2151,24 +2171,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeNetworkPerformanceConfig(
         com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig value) {
       if (networkPerformanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && networkPerformanceConfig_ != null
             && networkPerformanceConfig_
                 != com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig
                     .getDefaultInstance()) {
-          networkPerformanceConfig_ =
-              com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.newBuilder(
-                      networkPerformanceConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getNetworkPerformanceConfigBuilder().mergeFrom(value);
         } else {
           networkPerformanceConfig_ = value;
         }
-        onChanged();
       } else {
         networkPerformanceConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2183,13 +2199,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearNetworkPerformanceConfig() {
-      if (networkPerformanceConfigBuilder_ == null) {
-        networkPerformanceConfig_ = null;
-        onChanged();
-      } else {
-        networkPerformanceConfigBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      networkPerformanceConfig_ = null;
+      if (networkPerformanceConfigBuilder_ != null) {
+        networkPerformanceConfigBuilder_.dispose();
+        networkPerformanceConfigBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
       return this;
     }
     /**
@@ -2205,7 +2221,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Builder
         getNetworkPerformanceConfigBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getNetworkPerformanceConfigFieldBuilder().getBuilder();
     }

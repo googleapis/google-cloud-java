@@ -66,7 +66,7 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -278,8 +278,8 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       return this;
     }
 
@@ -307,9 +307,18 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.ShieldedNodes buildPartial() {
       com.google.container.v1.ShieldedNodes result =
           new com.google.container.v1.ShieldedNodes(this);
-      result.enabled_ = enabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.ShieldedNodes result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -389,7 +398,7 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -408,6 +417,8 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -440,6 +451,7 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -455,7 +467,7 @@ public final class ShieldedNodes extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;

@@ -633,12 +633,12 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (batchSoakDurationBuilder_ == null) {
-          batchSoakDuration_ = null;
-        } else {
-          batchSoakDurationBuilder_.clear();
+        bitField0_ = 0;
+        batchSoakDuration_ = null;
+        if (batchSoakDurationBuilder_ != null) {
+          batchSoakDurationBuilder_.dispose();
+          batchSoakDurationBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         updateBatchSizeCase_ = 0;
         updateBatchSize_ = null;
         return this;
@@ -671,26 +671,32 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy buildPartial() {
         com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy result =
             new com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (updateBatchSizeCase_ == 1) {
-          result.updateBatchSize_ = updateBatchSize_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (updateBatchSizeCase_ == 2) {
-          result.updateBatchSize_ = updateBatchSize_;
-        }
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (batchSoakDurationBuilder_ == null) {
-            result.batchSoakDuration_ = batchSoakDuration_;
-          } else {
-            result.batchSoakDuration_ = batchSoakDurationBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ = to_bitField0_;
-        result.updateBatchSizeCase_ = updateBatchSizeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.batchSoakDuration_ =
+              batchSoakDurationBuilder_ == null
+                  ? batchSoakDuration_
+                  : batchSoakDurationBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy result) {
+        result.updateBatchSizeCase_ = updateBatchSizeCase_;
+        result.updateBatchSize_ = this.updateBatchSize_;
       }
 
       @java.lang.Override
@@ -805,7 +811,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
                 {
                   input.readMessage(
                       getBatchSoakDurationFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -888,6 +894,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setBatchPercentage(float value) {
+
         updateBatchSizeCase_ = 1;
         updateBatchSize_ = value;
         onChanged();
@@ -958,6 +965,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setBatchNodeCount(int value) {
+
         updateBatchSizeCase_ = 2;
         updateBatchSize_ = value;
         onChanged();
@@ -1001,7 +1009,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        * @return Whether the batchSoakDuration field is set.
        */
       public boolean hasBatchSoakDuration() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1038,11 +1046,11 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           batchSoakDuration_ = value;
-          onChanged();
         } else {
           batchSoakDurationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1057,11 +1065,11 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public Builder setBatchSoakDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (batchSoakDurationBuilder_ == null) {
           batchSoakDuration_ = builderForValue.build();
-          onChanged();
         } else {
           batchSoakDurationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1075,21 +1083,18 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        */
       public Builder mergeBatchSoakDuration(com.google.protobuf.Duration value) {
         if (batchSoakDurationBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && batchSoakDuration_ != null
               && batchSoakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
-            batchSoakDuration_ =
-                com.google.protobuf.Duration.newBuilder(batchSoakDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+            getBatchSoakDurationBuilder().mergeFrom(value);
           } else {
             batchSoakDuration_ = value;
           }
-          onChanged();
         } else {
           batchSoakDurationBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1102,13 +1107,13 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        * <code>optional .google.protobuf.Duration batch_soak_duration = 3;</code>
        */
       public Builder clearBatchSoakDuration() {
-        if (batchSoakDurationBuilder_ == null) {
-          batchSoakDuration_ = null;
-          onChanged();
-        } else {
-          batchSoakDurationBuilder_.clear();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        batchSoakDuration_ = null;
+        if (batchSoakDurationBuilder_ != null) {
+          batchSoakDurationBuilder_.dispose();
+          batchSoakDurationBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
       /**
@@ -1121,7 +1126,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        * <code>optional .google.protobuf.Duration batch_soak_duration = 3;</code>
        */
       public com.google.protobuf.Duration.Builder getBatchSoakDurationBuilder() {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getBatchSoakDurationFieldBuilder().getBuilder();
       }
@@ -1634,15 +1639,15 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (standardRolloutPolicyBuilder_ != null) {
         standardRolloutPolicyBuilder_.clear();
       }
-      if (nodePoolSoakDurationBuilder_ == null) {
-        nodePoolSoakDuration_ = null;
-      } else {
-        nodePoolSoakDurationBuilder_.clear();
+      nodePoolSoakDuration_ = null;
+      if (nodePoolSoakDurationBuilder_ != null) {
+        nodePoolSoakDurationBuilder_.dispose();
+        nodePoolSoakDurationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       rolloutPolicyCase_ = 0;
       rolloutPolicy_ = null;
       return this;
@@ -1672,27 +1677,33 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.BlueGreenSettings buildPartial() {
       com.google.container.v1beta1.BlueGreenSettings result =
           new com.google.container.v1beta1.BlueGreenSettings(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (rolloutPolicyCase_ == 1) {
-        if (standardRolloutPolicyBuilder_ == null) {
-          result.rolloutPolicy_ = rolloutPolicy_;
-        } else {
-          result.rolloutPolicy_ = standardRolloutPolicyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (nodePoolSoakDurationBuilder_ == null) {
-          result.nodePoolSoakDuration_ = nodePoolSoakDuration_;
-        } else {
-          result.nodePoolSoakDuration_ = nodePoolSoakDurationBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bitField0_ = to_bitField0_;
-      result.rolloutPolicyCase_ = rolloutPolicyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.BlueGreenSettings result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodePoolSoakDuration_ =
+            nodePoolSoakDurationBuilder_ == null
+                ? nodePoolSoakDuration_
+                : nodePoolSoakDurationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.container.v1beta1.BlueGreenSettings result) {
+      result.rolloutPolicyCase_ = rolloutPolicyCase_;
+      result.rolloutPolicy_ = this.rolloutPolicy_;
+      if (rolloutPolicyCase_ == 1 && standardRolloutPolicyBuilder_ != null) {
+        result.rolloutPolicy_ = standardRolloutPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1791,7 +1802,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getNodePoolSoakDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2068,7 +2079,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       }
       rolloutPolicyCase_ = 1;
       onChanged();
-      ;
       return standardRolloutPolicyBuilder_;
     }
 
@@ -2091,7 +2101,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the nodePoolSoakDuration field is set.
      */
     public boolean hasNodePoolSoakDuration() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2130,11 +2140,11 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         nodePoolSoakDuration_ = value;
-        onChanged();
       } else {
         nodePoolSoakDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2150,11 +2160,11 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     public Builder setNodePoolSoakDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (nodePoolSoakDurationBuilder_ == null) {
         nodePoolSoakDuration_ = builderForValue.build();
-        onChanged();
       } else {
         nodePoolSoakDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2169,21 +2179,18 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeNodePoolSoakDuration(com.google.protobuf.Duration value) {
       if (nodePoolSoakDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && nodePoolSoakDuration_ != null
             && nodePoolSoakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
-          nodePoolSoakDuration_ =
-              com.google.protobuf.Duration.newBuilder(nodePoolSoakDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getNodePoolSoakDurationBuilder().mergeFrom(value);
         } else {
           nodePoolSoakDuration_ = value;
         }
-        onChanged();
       } else {
         nodePoolSoakDurationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2197,13 +2204,13 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.protobuf.Duration node_pool_soak_duration = 2;</code>
      */
     public Builder clearNodePoolSoakDuration() {
-      if (nodePoolSoakDurationBuilder_ == null) {
-        nodePoolSoakDuration_ = null;
-        onChanged();
-      } else {
-        nodePoolSoakDurationBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      nodePoolSoakDuration_ = null;
+      if (nodePoolSoakDurationBuilder_ != null) {
+        nodePoolSoakDurationBuilder_.dispose();
+        nodePoolSoakDurationBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -2217,7 +2224,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.protobuf.Duration node_pool_soak_duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getNodePoolSoakDurationBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNodePoolSoakDurationFieldBuilder().getBuilder();
     }

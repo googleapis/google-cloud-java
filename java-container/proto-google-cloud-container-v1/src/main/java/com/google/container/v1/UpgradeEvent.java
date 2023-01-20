@@ -73,7 +73,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
-  private int resourceType_;
+  private int resourceType_ = 0;
   /**
    *
    *
@@ -102,14 +102,15 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.UpgradeResourceType getResourceType() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.UpgradeResourceType result =
-        com.google.container.v1.UpgradeResourceType.valueOf(resourceType_);
+        com.google.container.v1.UpgradeResourceType.forNumber(resourceType_);
     return result == null ? com.google.container.v1.UpgradeResourceType.UNRECOGNIZED : result;
   }
 
   public static final int OPERATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object operation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operation_ = "";
   /**
    *
    *
@@ -202,11 +203,15 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getOperationStartTimeOrBuilder() {
-    return getOperationStartTime();
+    return operationStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : operationStartTime_;
   }
 
   public static final int CURRENT_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object currentVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentVersion_ = "";
   /**
    *
    *
@@ -255,7 +260,9 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object targetVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetVersion_ = "";
   /**
    *
    *
@@ -304,7 +311,9 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -604,22 +613,17 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceType_ = 0;
-
       operation_ = "";
-
-      if (operationStartTimeBuilder_ == null) {
-        operationStartTime_ = null;
-      } else {
-        operationStartTime_ = null;
+      operationStartTime_ = null;
+      if (operationStartTimeBuilder_ != null) {
+        operationStartTimeBuilder_.dispose();
         operationStartTimeBuilder_ = null;
       }
       currentVersion_ = "";
-
       targetVersion_ = "";
-
       resource_ = "";
-
       return this;
     }
 
@@ -646,18 +650,36 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.UpgradeEvent buildPartial() {
       com.google.container.v1.UpgradeEvent result = new com.google.container.v1.UpgradeEvent(this);
-      result.resourceType_ = resourceType_;
-      result.operation_ = operation_;
-      if (operationStartTimeBuilder_ == null) {
-        result.operationStartTime_ = operationStartTime_;
-      } else {
-        result.operationStartTime_ = operationStartTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.currentVersion_ = currentVersion_;
-      result.targetVersion_ = targetVersion_;
-      result.resource_ = resource_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.UpgradeEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.operation_ = operation_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.operationStartTime_ =
+            operationStartTimeBuilder_ == null
+                ? operationStartTime_
+                : operationStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.currentVersion_ = currentVersion_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetVersion_ = targetVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.resource_ = resource_;
+      }
     }
 
     @java.lang.Override
@@ -710,6 +732,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOperation().isEmpty()) {
         operation_ = other.operation_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasOperationStartTime()) {
@@ -717,14 +740,17 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCurrentVersion().isEmpty()) {
         currentVersion_ = other.currentVersion_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTargetVersion().isEmpty()) {
         targetVersion_ = other.targetVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -756,38 +782,38 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 resourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 operation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getOperationStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 currentVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 targetVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -806,6 +832,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int resourceType_ = 0;
     /**
@@ -836,8 +864,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResourceTypeValue(int value) {
-
       resourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,9 +882,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.UpgradeResourceType getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.UpgradeResourceType result =
-          com.google.container.v1.UpgradeResourceType.valueOf(resourceType_);
+          com.google.container.v1.UpgradeResourceType.forNumber(resourceType_);
       return result == null ? com.google.container.v1.UpgradeResourceType.UNRECOGNIZED : result;
     }
     /**
@@ -875,7 +902,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       resourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -892,7 +919,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       resourceType_ = 0;
       onChanged();
       return this;
@@ -959,8 +986,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -976,8 +1003,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-
       operation_ = getDefaultInstance().getOperation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -998,8 +1025,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operation_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1022,7 +1049,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operationStartTime field is set.
      */
     public boolean hasOperationStartTime() {
-      return operationStartTimeBuilder_ != null || operationStartTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1059,11 +1086,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         operationStartTime_ = value;
-        onChanged();
       } else {
         operationStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1078,11 +1105,11 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setOperationStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (operationStartTimeBuilder_ == null) {
         operationStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         operationStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1096,19 +1123,18 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOperationStartTime(com.google.protobuf.Timestamp value) {
       if (operationStartTimeBuilder_ == null) {
-        if (operationStartTime_ != null) {
-          operationStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(operationStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && operationStartTime_ != null
+            && operationStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getOperationStartTimeBuilder().mergeFrom(value);
         } else {
           operationStartTime_ = value;
         }
-        onChanged();
       } else {
         operationStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1121,14 +1147,13 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder clearOperationStartTime() {
-      if (operationStartTimeBuilder_ == null) {
-        operationStartTime_ = null;
-        onChanged();
-      } else {
-        operationStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      operationStartTime_ = null;
+      if (operationStartTimeBuilder_ != null) {
+        operationStartTimeBuilder_.dispose();
         operationStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1141,7 +1166,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getOperationStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOperationStartTimeFieldBuilder().getBuilder();
     }
@@ -1250,8 +1275,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       currentVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,8 +1292,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCurrentVersion() {
-
       currentVersion_ = getDefaultInstance().getCurrentVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1289,8 +1314,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currentVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1356,8 +1381,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1373,8 +1398,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetVersion() {
-
       targetVersion_ = getDefaultInstance().getTargetVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1395,8 +1420,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1465,8 +1490,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1483,8 +1508,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1506,8 +1531,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

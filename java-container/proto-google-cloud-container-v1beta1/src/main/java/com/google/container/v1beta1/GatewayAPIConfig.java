@@ -248,7 +248,7 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 1;
-  private int channel_;
+  private int channel_ = 0;
   /**
    *
    *
@@ -277,9 +277,8 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.container.v1beta1.GatewayAPIConfig.Channel getChannel() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.GatewayAPIConfig.Channel result =
-        com.google.container.v1beta1.GatewayAPIConfig.Channel.valueOf(channel_);
+        com.google.container.v1beta1.GatewayAPIConfig.Channel.forNumber(channel_);
     return result == null
         ? com.google.container.v1beta1.GatewayAPIConfig.Channel.UNRECOGNIZED
         : result;
@@ -484,8 +483,8 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       channel_ = 0;
-
       return this;
     }
 
@@ -513,9 +512,18 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.GatewayAPIConfig buildPartial() {
       com.google.container.v1beta1.GatewayAPIConfig result =
           new com.google.container.v1beta1.GatewayAPIConfig(this);
-      result.channel_ = channel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.GatewayAPIConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channel_ = channel_;
+      }
     }
 
     @java.lang.Override
@@ -595,7 +603,7 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 channel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -614,6 +622,8 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int channel_ = 0;
     /**
@@ -644,8 +654,8 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setChannelValue(int value) {
-
       channel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,9 +672,8 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.container.v1beta1.GatewayAPIConfig.Channel getChannel() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.GatewayAPIConfig.Channel result =
-          com.google.container.v1beta1.GatewayAPIConfig.Channel.valueOf(channel_);
+          com.google.container.v1beta1.GatewayAPIConfig.Channel.forNumber(channel_);
       return result == null
           ? com.google.container.v1beta1.GatewayAPIConfig.Channel.UNRECOGNIZED
           : result;
@@ -685,7 +694,7 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       channel_ = value.getNumber();
       onChanged();
       return this;
@@ -702,7 +711,7 @@ public final class GatewayAPIConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearChannel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       channel_ = 0;
       onChanged();
       return this;

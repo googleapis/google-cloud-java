@@ -69,7 +69,9 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CPU_MANAGER_POLICY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cpuManagerPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpuManagerPolicy_ = "";
   /**
    *
    *
@@ -195,11 +197,13 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getCpuCfsQuotaOrBuilder() {
-    return getCpuCfsQuota();
+    return cpuCfsQuota_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : cpuCfsQuota_;
   }
 
   public static final int CPU_CFS_QUOTA_PERIOD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object cpuCfsQuotaPeriod_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpuCfsQuotaPeriod_ = "";
   /**
    *
    *
@@ -256,7 +260,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int POD_PIDS_LIMIT_FIELD_NUMBER = 4;
-  private long podPidsLimit_;
+  private long podPidsLimit_ = 0L;
   /**
    *
    *
@@ -505,18 +509,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cpuManagerPolicy_ = "";
-
-      if (cpuCfsQuotaBuilder_ == null) {
-        cpuCfsQuota_ = null;
-      } else {
-        cpuCfsQuota_ = null;
+      cpuCfsQuota_ = null;
+      if (cpuCfsQuotaBuilder_ != null) {
+        cpuCfsQuotaBuilder_.dispose();
         cpuCfsQuotaBuilder_ = null;
       }
       cpuCfsQuotaPeriod_ = "";
-
       podPidsLimit_ = 0L;
-
       return this;
     }
 
@@ -544,16 +545,28 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.NodeKubeletConfig buildPartial() {
       com.google.container.v1beta1.NodeKubeletConfig result =
           new com.google.container.v1beta1.NodeKubeletConfig(this);
-      result.cpuManagerPolicy_ = cpuManagerPolicy_;
-      if (cpuCfsQuotaBuilder_ == null) {
-        result.cpuCfsQuota_ = cpuCfsQuota_;
-      } else {
-        result.cpuCfsQuota_ = cpuCfsQuotaBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.cpuCfsQuotaPeriod_ = cpuCfsQuotaPeriod_;
-      result.podPidsLimit_ = podPidsLimit_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.NodeKubeletConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cpuManagerPolicy_ = cpuManagerPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cpuCfsQuota_ =
+            cpuCfsQuotaBuilder_ == null ? cpuCfsQuota_ : cpuCfsQuotaBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cpuCfsQuotaPeriod_ = cpuCfsQuotaPeriod_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.podPidsLimit_ = podPidsLimit_;
+      }
     }
 
     @java.lang.Override
@@ -603,6 +616,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (other == com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()) return this;
       if (!other.getCpuManagerPolicy().isEmpty()) {
         cpuManagerPolicy_ = other.cpuManagerPolicy_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCpuCfsQuota()) {
@@ -610,6 +624,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getCpuCfsQuotaPeriod().isEmpty()) {
         cpuCfsQuotaPeriod_ = other.cpuCfsQuotaPeriod_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPodPidsLimit() != 0L) {
@@ -644,25 +659,25 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 cpuManagerPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCpuCfsQuotaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 cpuCfsQuotaPeriod_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 podPidsLimit_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -681,6 +696,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cpuManagerPolicy_ = "";
     /**
@@ -764,8 +781,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpuManagerPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,8 +805,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCpuManagerPolicy() {
-
       cpuManagerPolicy_ = getDefaultInstance().getCpuManagerPolicy();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +834,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpuManagerPolicy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,7 +865,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the cpuCfsQuota field is set.
      */
     public boolean hasCpuCfsQuota() {
-      return cpuCfsQuotaBuilder_ != null || cpuCfsQuota_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -899,11 +916,11 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         cpuCfsQuota_ = value;
-        onChanged();
       } else {
         cpuCfsQuotaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,11 +942,11 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder setCpuCfsQuota(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (cpuCfsQuotaBuilder_ == null) {
         cpuCfsQuota_ = builderForValue.build();
-        onChanged();
       } else {
         cpuCfsQuotaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,19 +967,18 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCpuCfsQuota(com.google.protobuf.BoolValue value) {
       if (cpuCfsQuotaBuilder_ == null) {
-        if (cpuCfsQuota_ != null) {
-          cpuCfsQuota_ =
-              com.google.protobuf.BoolValue.newBuilder(cpuCfsQuota_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cpuCfsQuota_ != null
+            && cpuCfsQuota_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getCpuCfsQuotaBuilder().mergeFrom(value);
         } else {
           cpuCfsQuota_ = value;
         }
-        onChanged();
       } else {
         cpuCfsQuotaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -982,14 +998,13 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue cpu_cfs_quota = 2;</code>
      */
     public Builder clearCpuCfsQuota() {
-      if (cpuCfsQuotaBuilder_ == null) {
-        cpuCfsQuota_ = null;
-        onChanged();
-      } else {
-        cpuCfsQuota_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cpuCfsQuota_ = null;
+      if (cpuCfsQuotaBuilder_ != null) {
+        cpuCfsQuotaBuilder_.dispose();
         cpuCfsQuotaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1009,7 +1024,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue cpu_cfs_quota = 2;</code>
      */
     public com.google.protobuf.BoolValue.Builder getCpuCfsQuotaBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCpuCfsQuotaFieldBuilder().getBuilder();
     }
@@ -1144,8 +1159,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpuCfsQuotaPeriod_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1165,8 +1180,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCpuCfsQuotaPeriod() {
-
       cpuCfsQuotaPeriod_ = getDefaultInstance().getCpuCfsQuotaPeriod();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,8 +1206,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpuCfsQuotaPeriod_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1234,6 +1249,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder setPodPidsLimit(long value) {
 
       podPidsLimit_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1252,7 +1268,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPodPidsLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       podPidsLimit_ = 0L;
       onChanged();
       return this;

@@ -235,7 +235,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int MODE_FIELD_NUMBER = 2;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -266,9 +266,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.container.v1.WorkloadMetadataConfig.Mode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.WorkloadMetadataConfig.Mode result =
-        com.google.container.v1.WorkloadMetadataConfig.Mode.valueOf(mode_);
+        com.google.container.v1.WorkloadMetadataConfig.Mode.forNumber(mode_);
     return result == null
         ? com.google.container.v1.WorkloadMetadataConfig.Mode.UNRECOGNIZED
         : result;
@@ -472,8 +471,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mode_ = 0;
-
       return this;
     }
 
@@ -501,9 +500,18 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     public com.google.container.v1.WorkloadMetadataConfig buildPartial() {
       com.google.container.v1.WorkloadMetadataConfig result =
           new com.google.container.v1.WorkloadMetadataConfig(this);
-      result.mode_ = mode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.WorkloadMetadataConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -583,7 +591,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
             case 16:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -602,6 +610,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int mode_ = 0;
     /**
@@ -634,8 +644,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -653,9 +663,8 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.container.v1.WorkloadMetadataConfig.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.WorkloadMetadataConfig.Mode result =
-          com.google.container.v1.WorkloadMetadataConfig.Mode.valueOf(mode_);
+          com.google.container.v1.WorkloadMetadataConfig.Mode.forNumber(mode_);
       return result == null
           ? com.google.container.v1.WorkloadMetadataConfig.Mode.UNRECOGNIZED
           : result;
@@ -677,7 +686,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -695,7 +704,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       mode_ = 0;
       onChanged();
       return this;

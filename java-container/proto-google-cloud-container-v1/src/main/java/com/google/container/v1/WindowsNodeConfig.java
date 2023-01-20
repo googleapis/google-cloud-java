@@ -227,7 +227,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OS_VERSION_FIELD_NUMBER = 1;
-  private int osVersion_;
+  private int osVersion_ = 0;
   /**
    *
    *
@@ -256,9 +256,8 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.container.v1.WindowsNodeConfig.OSVersion getOsVersion() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.WindowsNodeConfig.OSVersion result =
-        com.google.container.v1.WindowsNodeConfig.OSVersion.valueOf(osVersion_);
+        com.google.container.v1.WindowsNodeConfig.OSVersion.forNumber(osVersion_);
     return result == null
         ? com.google.container.v1.WindowsNodeConfig.OSVersion.UNRECOGNIZED
         : result;
@@ -465,8 +464,8 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       osVersion_ = 0;
-
       return this;
     }
 
@@ -494,9 +493,18 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1.WindowsNodeConfig buildPartial() {
       com.google.container.v1.WindowsNodeConfig result =
           new com.google.container.v1.WindowsNodeConfig(this);
-      result.osVersion_ = osVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.WindowsNodeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.osVersion_ = osVersion_;
+      }
     }
 
     @java.lang.Override
@@ -576,7 +584,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 osVersion_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -595,6 +603,8 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int osVersion_ = 0;
     /**
@@ -625,8 +635,8 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setOsVersionValue(int value) {
-
       osVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,9 +653,8 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.container.v1.WindowsNodeConfig.OSVersion getOsVersion() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.WindowsNodeConfig.OSVersion result =
-          com.google.container.v1.WindowsNodeConfig.OSVersion.valueOf(osVersion_);
+          com.google.container.v1.WindowsNodeConfig.OSVersion.forNumber(osVersion_);
       return result == null
           ? com.google.container.v1.WindowsNodeConfig.OSVersion.UNRECOGNIZED
           : result;
@@ -666,7 +675,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       osVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -683,7 +692,7 @@ public final class WindowsNodeConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOsVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       osVersion_ = 0;
       onChanged();
       return this;

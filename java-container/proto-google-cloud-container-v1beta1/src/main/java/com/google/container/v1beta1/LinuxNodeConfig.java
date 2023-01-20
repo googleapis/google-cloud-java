@@ -254,6 +254,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> sysctls_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetSysctls() {
@@ -350,7 +351,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
   @java.lang.Override
-  public java.lang.String getSysctlsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getSysctlsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -392,7 +396,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CGROUP_MODE_FIELD_NUMBER = 2;
-  private int cgroupMode_;
+  private int cgroupMode_ = 0;
   /**
    *
    *
@@ -421,9 +425,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.container.v1beta1.LinuxNodeConfig.CgroupMode getCgroupMode() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1beta1.LinuxNodeConfig.CgroupMode result =
-        com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.valueOf(cgroupMode_);
+        com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.forNumber(cgroupMode_);
     return result == null
         ? com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.UNRECOGNIZED
         : result;
@@ -667,9 +670,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableSysctls().clear();
       cgroupMode_ = 0;
-
       return this;
     }
 
@@ -697,12 +700,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.container.v1beta1.LinuxNodeConfig buildPartial() {
       com.google.container.v1beta1.LinuxNodeConfig result =
           new com.google.container.v1beta1.LinuxNodeConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.sysctls_ = internalGetSysctls();
-      result.sysctls_.makeImmutable();
-      result.cgroupMode_ = cgroupMode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.LinuxNodeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sysctls_ = internalGetSysctls();
+        result.sysctls_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cgroupMode_ = cgroupMode_;
+      }
     }
 
     @java.lang.Override
@@ -751,6 +764,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.container.v1beta1.LinuxNodeConfig other) {
       if (other == com.google.container.v1beta1.LinuxNodeConfig.getDefaultInstance()) return this;
       internalGetMutableSysctls().mergeFrom(other.internalGetSysctls());
+      bitField0_ |= 0x00000001;
       if (other.cgroupMode_ != 0) {
         setCgroupModeValue(other.getCgroupModeValue());
       }
@@ -789,12 +803,13 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableSysctls()
                     .getMutableMap()
                     .put(sysctls__.getKey(), sysctls__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 cgroupMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -827,14 +842,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableSysctls() {
-      onChanged();
-      ;
       if (sysctls_ == null) {
         sysctls_ = com.google.protobuf.MapField.newMapField(SysctlsDefaultEntryHolder.defaultEntry);
       }
       if (!sysctls_.isMutable()) {
         sysctls_ = sysctls_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return sysctls_;
     }
 
@@ -925,8 +940,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getSysctlsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getSysctlsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -968,6 +985,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearSysctls() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableSysctls().getMutableMap().clear();
       return this;
     }
@@ -1003,6 +1021,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSysctls() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableSysctls().getMutableMap();
     }
     /**
@@ -1034,8 +1053,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableSysctls().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1062,6 +1081,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllSysctls(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSysctls().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -1094,8 +1114,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCgroupModeValue(int value) {
-
       cgroupMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1112,9 +1132,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.container.v1beta1.LinuxNodeConfig.CgroupMode getCgroupMode() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1beta1.LinuxNodeConfig.CgroupMode result =
-          com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.valueOf(cgroupMode_);
+          com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.forNumber(cgroupMode_);
       return result == null
           ? com.google.container.v1beta1.LinuxNodeConfig.CgroupMode.UNRECOGNIZED
           : result;
@@ -1135,7 +1154,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       cgroupMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1152,7 +1171,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCgroupMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       cgroupMode_ = 0;
       onChanged();
       return this;

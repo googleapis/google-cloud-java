@@ -85,7 +85,9 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -99,7 +101,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4104
+   *     google/container/v1beta1/cluster_service.proto;l=3949
    * @return The projectId.
    */
   @java.lang.Override
@@ -128,7 +130,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4104
+   *     google/container/v1beta1/cluster_service.proto;l=3949
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -146,7 +148,9 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -160,7 +164,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4113
+   *     google/container/v1beta1/cluster_service.proto;l=3956
    * @return The zone.
    */
   @java.lang.Override
@@ -189,7 +193,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4113
+   *     google/container/v1beta1/cluster_service.proto;l=3956
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -207,7 +211,9 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterId_ = "";
   /**
    *
    *
@@ -220,7 +226,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4120
+   *     google/container/v1beta1/cluster_service.proto;l=3960
    * @return The clusterId.
    */
   @java.lang.Override
@@ -248,7 +254,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4120
+   *     google/container/v1beta1/cluster_service.proto;l=3960
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -278,6 +284,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -340,8 +347,10 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getResourceLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -371,7 +380,9 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object labelFingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object labelFingerprint_ = "";
   /**
    *
    *
@@ -430,7 +441,9 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -752,17 +765,13 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       zone_ = "";
-
       clusterId_ = "";
-
       internalGetMutableResourceLabels().clear();
       labelFingerprint_ = "";
-
       name_ = "";
-
       return this;
     }
 
@@ -790,16 +799,34 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     public com.google.container.v1beta1.SetLabelsRequest buildPartial() {
       com.google.container.v1beta1.SetLabelsRequest result =
           new com.google.container.v1beta1.SetLabelsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.zone_ = zone_;
-      result.clusterId_ = clusterId_;
-      result.resourceLabels_ = internalGetResourceLabels();
-      result.resourceLabels_.makeImmutable();
-      result.labelFingerprint_ = labelFingerprint_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.SetLabelsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resourceLabels_ = internalGetResourceLabels();
+        result.resourceLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -849,23 +876,29 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (other == com.google.container.v1beta1.SetLabelsRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getLabelFingerprint().isEmpty()) {
         labelFingerprint_ = other.labelFingerprint_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -897,19 +930,19 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -921,18 +954,19 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
                 internalGetMutableResourceLabels()
                     .getMutableMap()
                     .put(resourceLabels__.getKey(), resourceLabels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -968,7 +1002,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4104
+     *     google/container/v1beta1/cluster_service.proto;l=3949
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -996,7 +1030,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4104
+     *     google/container/v1beta1/cluster_service.proto;l=3949
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -1024,7 +1058,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4104
+     *     google/container/v1beta1/cluster_service.proto;l=3949
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -1033,8 +1067,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1051,13 +1085,13 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4104
+     *     google/container/v1beta1/cluster_service.proto;l=3949
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1074,7 +1108,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4104
+     *     google/container/v1beta1/cluster_service.proto;l=3949
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1084,8 +1118,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1104,7 +1138,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4113
+     *     google/container/v1beta1/cluster_service.proto;l=3956
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1132,7 +1166,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4113
+     *     google/container/v1beta1/cluster_service.proto;l=3956
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1160,7 +1194,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4113
+     *     google/container/v1beta1/cluster_service.proto;l=3956
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1169,8 +1203,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1187,13 +1221,13 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4113
+     *     google/container/v1beta1/cluster_service.proto;l=3956
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1210,7 +1244,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4113
+     *     google/container/v1beta1/cluster_service.proto;l=3956
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1220,8 +1254,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1239,7 +1273,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4120
+     *     google/container/v1beta1/cluster_service.proto;l=3960
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1266,7 +1300,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4120
+     *     google/container/v1beta1/cluster_service.proto;l=3960
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1293,7 +1327,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4120
+     *     google/container/v1beta1/cluster_service.proto;l=3960
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1302,8 +1336,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1319,13 +1353,13 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4120
+     *     google/container/v1beta1/cluster_service.proto;l=3960
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearClusterId() {
-
       clusterId_ = getDefaultInstance().getClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1341,7 +1375,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4120
+     *     google/container/v1beta1/cluster_service.proto;l=3960
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1351,8 +1385,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1370,8 +1404,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableResourceLabels() {
-      onChanged();
-      ;
       if (resourceLabels_ == null) {
         resourceLabels_ =
             com.google.protobuf.MapField.newMapField(ResourceLabelsDefaultEntryHolder.defaultEntry);
@@ -1379,6 +1411,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (!resourceLabels_.isMutable()) {
         resourceLabels_ = resourceLabels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return resourceLabels_;
     }
 
@@ -1436,8 +1470,10 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getResourceLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getResourceLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1468,6 +1504,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearResourceLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
@@ -1492,6 +1529,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableResourceLabels().getMutableMap();
     }
     /**
@@ -1512,8 +1550,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableResourceLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1529,6 +1567,7 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1608,8 +1647,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       labelFingerprint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1630,8 +1669,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLabelFingerprint() {
-
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1657,8 +1696,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       labelFingerprint_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1727,8 +1766,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1745,8 +1784,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1768,8 +1807,8 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

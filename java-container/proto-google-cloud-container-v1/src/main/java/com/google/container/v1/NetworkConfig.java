@@ -71,7 +71,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -181,7 +185,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_INTRA_NODE_VISIBILITY_FIELD_NUMBER = 5;
-  private boolean enableIntraNodeVisibility_;
+  private boolean enableIntraNodeVisibility_ = false;
   /**
    *
    *
@@ -253,11 +257,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.DefaultSnatStatusOrBuilder getDefaultSnatStatusOrBuilder() {
-    return getDefaultSnatStatus();
+    return defaultSnatStatus_ == null
+        ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+        : defaultSnatStatus_;
   }
 
   public static final int ENABLE_L4ILB_SUBSETTING_FIELD_NUMBER = 10;
-  private boolean enableL4IlbSubsetting_;
+  private boolean enableL4IlbSubsetting_ = false;
   /**
    *
    *
@@ -275,7 +281,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATAPATH_PROVIDER_FIELD_NUMBER = 11;
-  private int datapathProvider_;
+  private int datapathProvider_ = 0;
   /**
    *
    *
@@ -306,14 +312,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.DatapathProvider getDatapathProvider() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.DatapathProvider result =
-        com.google.container.v1.DatapathProvider.valueOf(datapathProvider_);
+        com.google.container.v1.DatapathProvider.forNumber(datapathProvider_);
     return result == null ? com.google.container.v1.DatapathProvider.UNRECOGNIZED : result;
   }
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 12;
-  private int privateIpv6GoogleAccess_;
+  private int privateIpv6GoogleAccess_ = 0;
   /**
    *
    *
@@ -346,9 +351,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.PrivateIPv6GoogleAccess getPrivateIpv6GoogleAccess() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.PrivateIPv6GoogleAccess result =
-        com.google.container.v1.PrivateIPv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
+        com.google.container.v1.PrivateIPv6GoogleAccess.forNumber(privateIpv6GoogleAccess_);
     return result == null ? com.google.container.v1.PrivateIPv6GoogleAccess.UNRECOGNIZED : result;
   }
 
@@ -395,7 +399,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.DNSConfigOrBuilder getDnsConfigOrBuilder() {
-    return getDnsConfig();
+    return dnsConfig_ == null ? com.google.container.v1.DNSConfig.getDefaultInstance() : dnsConfig_;
   }
 
   public static final int SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER = 15;
@@ -447,7 +451,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1.ServiceExternalIPsConfigOrBuilder
       getServiceExternalIpsConfigOrBuilder() {
-    return getServiceExternalIpsConfig();
+    return serviceExternalIpsConfig_ == null
+        ? com.google.container.v1.ServiceExternalIPsConfig.getDefaultInstance()
+        : serviceExternalIpsConfig_;
   }
 
   public static final int GATEWAY_API_CONFIG_FIELD_NUMBER = 16;
@@ -498,7 +504,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.GatewayAPIConfigOrBuilder getGatewayApiConfigOrBuilder() {
-    return getGatewayApiConfig();
+    return gatewayApiConfig_ == null
+        ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+        : gatewayApiConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -805,40 +813,31 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       subnetwork_ = "";
-
       enableIntraNodeVisibility_ = false;
-
-      if (defaultSnatStatusBuilder_ == null) {
-        defaultSnatStatus_ = null;
-      } else {
-        defaultSnatStatus_ = null;
+      defaultSnatStatus_ = null;
+      if (defaultSnatStatusBuilder_ != null) {
+        defaultSnatStatusBuilder_.dispose();
         defaultSnatStatusBuilder_ = null;
       }
       enableL4IlbSubsetting_ = false;
-
       datapathProvider_ = 0;
-
       privateIpv6GoogleAccess_ = 0;
-
-      if (dnsConfigBuilder_ == null) {
-        dnsConfig_ = null;
-      } else {
-        dnsConfig_ = null;
+      dnsConfig_ = null;
+      if (dnsConfigBuilder_ != null) {
+        dnsConfigBuilder_.dispose();
         dnsConfigBuilder_ = null;
       }
-      if (serviceExternalIpsConfigBuilder_ == null) {
-        serviceExternalIpsConfig_ = null;
-      } else {
-        serviceExternalIpsConfig_ = null;
+      serviceExternalIpsConfig_ = null;
+      if (serviceExternalIpsConfigBuilder_ != null) {
+        serviceExternalIpsConfigBuilder_.dispose();
         serviceExternalIpsConfigBuilder_ = null;
       }
-      if (gatewayApiConfigBuilder_ == null) {
-        gatewayApiConfig_ = null;
-      } else {
-        gatewayApiConfig_ = null;
+      gatewayApiConfig_ = null;
+      if (gatewayApiConfigBuilder_ != null) {
+        gatewayApiConfigBuilder_.dispose();
         gatewayApiConfigBuilder_ = null;
       }
       return this;
@@ -868,34 +867,52 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NetworkConfig buildPartial() {
       com.google.container.v1.NetworkConfig result =
           new com.google.container.v1.NetworkConfig(this);
-      result.network_ = network_;
-      result.subnetwork_ = subnetwork_;
-      result.enableIntraNodeVisibility_ = enableIntraNodeVisibility_;
-      if (defaultSnatStatusBuilder_ == null) {
-        result.defaultSnatStatus_ = defaultSnatStatus_;
-      } else {
-        result.defaultSnatStatus_ = defaultSnatStatusBuilder_.build();
-      }
-      result.enableL4IlbSubsetting_ = enableL4IlbSubsetting_;
-      result.datapathProvider_ = datapathProvider_;
-      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
-      if (dnsConfigBuilder_ == null) {
-        result.dnsConfig_ = dnsConfig_;
-      } else {
-        result.dnsConfig_ = dnsConfigBuilder_.build();
-      }
-      if (serviceExternalIpsConfigBuilder_ == null) {
-        result.serviceExternalIpsConfig_ = serviceExternalIpsConfig_;
-      } else {
-        result.serviceExternalIpsConfig_ = serviceExternalIpsConfigBuilder_.build();
-      }
-      if (gatewayApiConfigBuilder_ == null) {
-        result.gatewayApiConfig_ = gatewayApiConfig_;
-      } else {
-        result.gatewayApiConfig_ = gatewayApiConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableIntraNodeVisibility_ = enableIntraNodeVisibility_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultSnatStatus_ =
+            defaultSnatStatusBuilder_ == null
+                ? defaultSnatStatus_
+                : defaultSnatStatusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableL4IlbSubsetting_ = enableL4IlbSubsetting_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.datapathProvider_ = datapathProvider_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dnsConfig_ = dnsConfigBuilder_ == null ? dnsConfig_ : dnsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.serviceExternalIpsConfig_ =
+            serviceExternalIpsConfigBuilder_ == null
+                ? serviceExternalIpsConfig_
+                : serviceExternalIpsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.gatewayApiConfig_ =
+            gatewayApiConfigBuilder_ == null ? gatewayApiConfig_ : gatewayApiConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -945,10 +962,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1.NetworkConfig.getDefaultInstance()) return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getEnableIntraNodeVisibility() != false) {
@@ -1004,64 +1023,64 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 40:
               {
                 enableIntraNodeVisibility_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             case 58:
               {
                 input.readMessage(
                     getDefaultSnatStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 80:
               {
                 enableL4IlbSubsetting_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 80
             case 88:
               {
                 datapathProvider_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 88
             case 96:
               {
                 privateIpv6GoogleAccess_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 96
             case 106:
               {
                 input.readMessage(getDnsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(
                     getServiceExternalIpsConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     getGatewayApiConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 130
             default:
@@ -1080,6 +1099,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -1151,8 +1172,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1171,8 +1192,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1196,8 +1217,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1272,8 +1293,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1292,8 +1313,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1317,8 +1338,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1356,6 +1377,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableIntraNodeVisibility(boolean value) {
 
       enableIntraNodeVisibility_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1372,7 +1394,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableIntraNodeVisibility() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableIntraNodeVisibility_ = false;
       onChanged();
       return this;
@@ -1399,7 +1421,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultSnatStatus field is set.
      */
     public boolean hasDefaultSnatStatus() {
-      return defaultSnatStatusBuilder_ != null || defaultSnatStatus_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1442,11 +1464,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         defaultSnatStatus_ = value;
-        onChanged();
       } else {
         defaultSnatStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1465,11 +1487,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.DefaultSnatStatus.Builder builderForValue) {
       if (defaultSnatStatusBuilder_ == null) {
         defaultSnatStatus_ = builderForValue.build();
-        onChanged();
       } else {
         defaultSnatStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1486,19 +1508,19 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultSnatStatus(com.google.container.v1.DefaultSnatStatus value) {
       if (defaultSnatStatusBuilder_ == null) {
-        if (defaultSnatStatus_ != null) {
-          defaultSnatStatus_ =
-              com.google.container.v1.DefaultSnatStatus.newBuilder(defaultSnatStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && defaultSnatStatus_ != null
+            && defaultSnatStatus_
+                != com.google.container.v1.DefaultSnatStatus.getDefaultInstance()) {
+          getDefaultSnatStatusBuilder().mergeFrom(value);
         } else {
           defaultSnatStatus_ = value;
         }
-        onChanged();
       } else {
         defaultSnatStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1514,14 +1536,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
      */
     public Builder clearDefaultSnatStatus() {
-      if (defaultSnatStatusBuilder_ == null) {
-        defaultSnatStatus_ = null;
-        onChanged();
-      } else {
-        defaultSnatStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      defaultSnatStatus_ = null;
+      if (defaultSnatStatusBuilder_ != null) {
+        defaultSnatStatusBuilder_.dispose();
         defaultSnatStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1537,7 +1558,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
      */
     public com.google.container.v1.DefaultSnatStatus.Builder getDefaultSnatStatusBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDefaultSnatStatusFieldBuilder().getBuilder();
     }
@@ -1622,6 +1643,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableL4IlbSubsetting(boolean value) {
 
       enableL4IlbSubsetting_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1637,7 +1659,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableL4IlbSubsetting() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       enableL4IlbSubsetting_ = false;
       onChanged();
       return this;
@@ -1674,8 +1696,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDatapathProviderValue(int value) {
-
       datapathProvider_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1693,9 +1715,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.DatapathProvider getDatapathProvider() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.DatapathProvider result =
-          com.google.container.v1.DatapathProvider.valueOf(datapathProvider_);
+          com.google.container.v1.DatapathProvider.forNumber(datapathProvider_);
       return result == null ? com.google.container.v1.DatapathProvider.UNRECOGNIZED : result;
     }
     /**
@@ -1715,7 +1736,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       datapathProvider_ = value.getNumber();
       onChanged();
       return this;
@@ -1733,7 +1754,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatapathProvider() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       datapathProvider_ = 0;
       onChanged();
       return this;
@@ -1772,8 +1793,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrivateIpv6GoogleAccessValue(int value) {
-
       privateIpv6GoogleAccess_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1792,9 +1813,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.PrivateIPv6GoogleAccess getPrivateIpv6GoogleAccess() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.PrivateIPv6GoogleAccess result =
-          com.google.container.v1.PrivateIPv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
+          com.google.container.v1.PrivateIPv6GoogleAccess.forNumber(privateIpv6GoogleAccess_);
       return result == null ? com.google.container.v1.PrivateIPv6GoogleAccess.UNRECOGNIZED : result;
     }
     /**
@@ -1816,7 +1836,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       privateIpv6GoogleAccess_ = value.getNumber();
       onChanged();
       return this;
@@ -1835,7 +1855,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpv6GoogleAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       privateIpv6GoogleAccess_ = 0;
       onChanged();
       return this;
@@ -1859,7 +1879,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dnsConfig field is set.
      */
     public boolean hasDnsConfig() {
-      return dnsConfigBuilder_ != null || dnsConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1896,11 +1916,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dnsConfig_ = value;
-        onChanged();
       } else {
         dnsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1915,11 +1935,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setDnsConfig(com.google.container.v1.DNSConfig.Builder builderForValue) {
       if (dnsConfigBuilder_ == null) {
         dnsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         dnsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1933,19 +1953,18 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDnsConfig(com.google.container.v1.DNSConfig value) {
       if (dnsConfigBuilder_ == null) {
-        if (dnsConfig_ != null) {
-          dnsConfig_ =
-              com.google.container.v1.DNSConfig.newBuilder(dnsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && dnsConfig_ != null
+            && dnsConfig_ != com.google.container.v1.DNSConfig.getDefaultInstance()) {
+          getDnsConfigBuilder().mergeFrom(value);
         } else {
           dnsConfig_ = value;
         }
-        onChanged();
       } else {
         dnsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1958,14 +1977,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.DNSConfig dns_config = 13;</code>
      */
     public Builder clearDnsConfig() {
-      if (dnsConfigBuilder_ == null) {
-        dnsConfig_ = null;
-        onChanged();
-      } else {
-        dnsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dnsConfig_ = null;
+      if (dnsConfigBuilder_ != null) {
+        dnsConfigBuilder_.dispose();
         dnsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1978,7 +1996,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.DNSConfig dns_config = 13;</code>
      */
     public com.google.container.v1.DNSConfig.Builder getDnsConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDnsConfigFieldBuilder().getBuilder();
     }
@@ -2045,7 +2063,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceExternalIpsConfig field is set.
      */
     public boolean hasServiceExternalIpsConfig() {
-      return serviceExternalIpsConfigBuilder_ != null || serviceExternalIpsConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2085,11 +2103,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         serviceExternalIpsConfig_ = value;
-        onChanged();
       } else {
         serviceExternalIpsConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2106,11 +2124,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.ServiceExternalIPsConfig.Builder builderForValue) {
       if (serviceExternalIpsConfigBuilder_ == null) {
         serviceExternalIpsConfig_ = builderForValue.build();
-        onChanged();
       } else {
         serviceExternalIpsConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2126,19 +2144,19 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeServiceExternalIpsConfig(
         com.google.container.v1.ServiceExternalIPsConfig value) {
       if (serviceExternalIpsConfigBuilder_ == null) {
-        if (serviceExternalIpsConfig_ != null) {
-          serviceExternalIpsConfig_ =
-              com.google.container.v1.ServiceExternalIPsConfig.newBuilder(serviceExternalIpsConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && serviceExternalIpsConfig_ != null
+            && serviceExternalIpsConfig_
+                != com.google.container.v1.ServiceExternalIPsConfig.getDefaultInstance()) {
+          getServiceExternalIpsConfigBuilder().mergeFrom(value);
         } else {
           serviceExternalIpsConfig_ = value;
         }
-        onChanged();
       } else {
         serviceExternalIpsConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2152,14 +2170,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
      */
     public Builder clearServiceExternalIpsConfig() {
-      if (serviceExternalIpsConfigBuilder_ == null) {
-        serviceExternalIpsConfig_ = null;
-        onChanged();
-      } else {
-        serviceExternalIpsConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      serviceExternalIpsConfig_ = null;
+      if (serviceExternalIpsConfigBuilder_ != null) {
+        serviceExternalIpsConfigBuilder_.dispose();
         serviceExternalIpsConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2174,7 +2191,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1.ServiceExternalIPsConfig.Builder
         getServiceExternalIpsConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getServiceExternalIpsConfigFieldBuilder().getBuilder();
     }
@@ -2244,7 +2261,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gatewayApiConfig field is set.
      */
     public boolean hasGatewayApiConfig() {
-      return gatewayApiConfigBuilder_ != null || gatewayApiConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2283,11 +2300,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gatewayApiConfig_ = value;
-        onChanged();
       } else {
         gatewayApiConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2304,11 +2321,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.GatewayAPIConfig.Builder builderForValue) {
       if (gatewayApiConfigBuilder_ == null) {
         gatewayApiConfig_ = builderForValue.build();
-        onChanged();
       } else {
         gatewayApiConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2323,19 +2340,18 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGatewayApiConfig(com.google.container.v1.GatewayAPIConfig value) {
       if (gatewayApiConfigBuilder_ == null) {
-        if (gatewayApiConfig_ != null) {
-          gatewayApiConfig_ =
-              com.google.container.v1.GatewayAPIConfig.newBuilder(gatewayApiConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && gatewayApiConfig_ != null
+            && gatewayApiConfig_ != com.google.container.v1.GatewayAPIConfig.getDefaultInstance()) {
+          getGatewayApiConfigBuilder().mergeFrom(value);
         } else {
           gatewayApiConfig_ = value;
         }
-        onChanged();
       } else {
         gatewayApiConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2349,14 +2365,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
      */
     public Builder clearGatewayApiConfig() {
-      if (gatewayApiConfigBuilder_ == null) {
-        gatewayApiConfig_ = null;
-        onChanged();
-      } else {
-        gatewayApiConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      gatewayApiConfig_ = null;
+      if (gatewayApiConfigBuilder_ != null) {
+        gatewayApiConfigBuilder_.dispose();
         gatewayApiConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2370,7 +2385,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
      */
     public com.google.container.v1.GatewayAPIConfig.Builder getGatewayApiConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getGatewayApiConfigFieldBuilder().getBuilder();
     }

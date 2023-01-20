@@ -532,7 +532,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     public static final int MAX_SURGE_FIELD_NUMBER = 1;
-    private int maxSurge_;
+    private int maxSurge_ = 0;
     /**
      *
      *
@@ -551,7 +551,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 2;
-    private int maxUnavailable_;
+    private int maxUnavailable_ = 0;
     /**
      *
      *
@@ -571,7 +571,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STRATEGY_FIELD_NUMBER = 3;
-    private int strategy_;
+    private int strategy_ = 0;
     /**
      *
      *
@@ -615,9 +615,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.NodePoolUpdateStrategy getStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.NodePoolUpdateStrategy result =
-          com.google.container.v1.NodePoolUpdateStrategy.valueOf(strategy_);
+          com.google.container.v1.NodePoolUpdateStrategy.forNumber(strategy_);
       return result == null ? com.google.container.v1.NodePoolUpdateStrategy.UNRECOGNIZED : result;
     }
 
@@ -953,18 +952,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxSurge_ = 0;
-
         maxUnavailable_ = 0;
-
         strategy_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (blueGreenSettingsBuilder_ == null) {
-          blueGreenSettings_ = null;
-        } else {
-          blueGreenSettingsBuilder_.clear();
+        blueGreenSettings_ = null;
+        if (blueGreenSettingsBuilder_ != null) {
+          blueGreenSettingsBuilder_.dispose();
+          blueGreenSettingsBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -992,25 +988,34 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public com.google.container.v1.NodePool.UpgradeSettings buildPartial() {
         com.google.container.v1.NodePool.UpgradeSettings result =
             new com.google.container.v1.NodePool.UpgradeSettings(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.maxSurge_ = maxSurge_;
-        result.maxUnavailable_ = maxUnavailable_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.strategy_ = strategy_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (blueGreenSettingsBuilder_ == null) {
-            result.blueGreenSettings_ = blueGreenSettings_;
-          } else {
-            result.blueGreenSettings_ = blueGreenSettingsBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NodePool.UpgradeSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxSurge_ = maxSurge_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxUnavailable_ = maxUnavailable_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.strategy_ = strategy_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.blueGreenSettings_ =
+              blueGreenSettingsBuilder_ == null
+                  ? blueGreenSettings_
+                  : blueGreenSettingsBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1102,26 +1107,26 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   maxSurge_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   maxUnavailable_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   strategy_ = input.readEnum();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(
                       getBlueGreenSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -1176,6 +1181,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder setMaxSurge(int value) {
 
         maxSurge_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1192,7 +1198,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMaxSurge() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxSurge_ = 0;
         onChanged();
         return this;
@@ -1233,6 +1239,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder setMaxUnavailable(int value) {
 
         maxUnavailable_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1250,7 +1257,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMaxUnavailable() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         maxUnavailable_ = 0;
         onChanged();
         return this;
@@ -1270,7 +1277,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public boolean hasStrategy() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1300,8 +1307,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStrategyValue(int value) {
-        bitField0_ |= 0x00000001;
         strategy_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1318,9 +1325,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.container.v1.NodePoolUpdateStrategy getStrategy() {
-        @SuppressWarnings("deprecation")
         com.google.container.v1.NodePoolUpdateStrategy result =
-            com.google.container.v1.NodePoolUpdateStrategy.valueOf(strategy_);
+            com.google.container.v1.NodePoolUpdateStrategy.forNumber(strategy_);
         return result == null
             ? com.google.container.v1.NodePoolUpdateStrategy.UNRECOGNIZED
             : result;
@@ -1341,7 +1347,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         strategy_ = value.getNumber();
         onChanged();
         return this;
@@ -1358,7 +1364,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearStrategy() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         strategy_ = 0;
         onChanged();
         return this;
@@ -1382,7 +1388,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the blueGreenSettings field is set.
        */
       public boolean hasBlueGreenSettings() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1419,11 +1425,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           blueGreenSettings_ = value;
-          onChanged();
         } else {
           blueGreenSettingsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1439,11 +1445,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.BlueGreenSettings.Builder builderForValue) {
         if (blueGreenSettingsBuilder_ == null) {
           blueGreenSettings_ = builderForValue.build();
-          onChanged();
         } else {
           blueGreenSettingsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1457,22 +1463,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeBlueGreenSettings(com.google.container.v1.BlueGreenSettings value) {
         if (blueGreenSettingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && blueGreenSettings_ != null
               && blueGreenSettings_
                   != com.google.container.v1.BlueGreenSettings.getDefaultInstance()) {
-            blueGreenSettings_ =
-                com.google.container.v1.BlueGreenSettings.newBuilder(blueGreenSettings_)
-                    .mergeFrom(value)
-                    .buildPartial();
+            getBlueGreenSettingsBuilder().mergeFrom(value);
           } else {
             blueGreenSettings_ = value;
           }
-          onChanged();
         } else {
           blueGreenSettingsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1485,13 +1488,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * <code>optional .google.container.v1.BlueGreenSettings blue_green_settings = 4;</code>
        */
       public Builder clearBlueGreenSettings() {
-        if (blueGreenSettingsBuilder_ == null) {
-          blueGreenSettings_ = null;
-          onChanged();
-        } else {
-          blueGreenSettingsBuilder_.clear();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        blueGreenSettings_ = null;
+        if (blueGreenSettingsBuilder_ != null) {
+          blueGreenSettingsBuilder_.dispose();
+          blueGreenSettingsBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
         return this;
       }
       /**
@@ -1504,7 +1507,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * <code>optional .google.container.v1.BlueGreenSettings blue_green_settings = 4;</code>
        */
       public com.google.container.v1.BlueGreenSettings.Builder getBlueGreenSettingsBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getBlueGreenSettingsFieldBuilder().getBuilder();
       }
@@ -2228,7 +2231,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int PHASE_FIELD_NUMBER = 1;
-      private int phase_;
+      private int phase_ = 0;
       /**
        *
        *
@@ -2257,15 +2260,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase getPhase() {
-        @SuppressWarnings("deprecation")
         com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase result =
-            com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.valueOf(phase_);
+            com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.forNumber(phase_);
         return result == null
             ? com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.UNRECOGNIZED
             : result;
       }
 
       public static final int BLUE_INSTANCE_GROUP_URLS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList blueInstanceGroupUrls_;
       /**
        *
@@ -2335,6 +2339,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int GREEN_INSTANCE_GROUP_URLS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList greenInstanceGroupUrls_;
       /**
        *
@@ -2404,7 +2410,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BLUE_POOL_DELETION_START_TIME_FIELD_NUMBER = 4;
-      private volatile java.lang.Object bluePoolDeletionStartTime_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object bluePoolDeletionStartTime_ = "";
       /**
        *
        *
@@ -2455,7 +2463,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int GREEN_POOL_VERSION_FIELD_NUMBER = 5;
-      private volatile java.lang.Object greenPoolVersion_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object greenPoolVersion_ = "";
       /**
        *
        *
@@ -2764,16 +2774,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           phase_ = 0;
-
           blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000002);
+          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000004);
           bluePoolDeletionStartTime_ = "";
-
           greenPoolVersion_ = "";
-
           return this;
         }
 
@@ -2802,22 +2810,40 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         public com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo buildPartial() {
           com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo result =
               new com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo(this);
-          int from_bitField0_ = bitField0_;
-          result.phase_ = phase_;
-          if (((bitField0_ & 0x00000001) != 0)) {
-            blueInstanceGroupUrls_ = blueInstanceGroupUrls_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.blueInstanceGroupUrls_ = blueInstanceGroupUrls_;
-          if (((bitField0_ & 0x00000002) != 0)) {
-            greenInstanceGroupUrls_ = greenInstanceGroupUrls_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.greenInstanceGroupUrls_ = greenInstanceGroupUrls_;
-          result.bluePoolDeletionStartTime_ = bluePoolDeletionStartTime_;
-          result.greenPoolVersion_ = greenPoolVersion_;
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo result) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            blueInstanceGroupUrls_ = blueInstanceGroupUrls_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.blueInstanceGroupUrls_ = blueInstanceGroupUrls_;
+          if (((bitField0_ & 0x00000004) != 0)) {
+            greenInstanceGroupUrls_ = greenInstanceGroupUrls_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.greenInstanceGroupUrls_ = greenInstanceGroupUrls_;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.phase_ = phase_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.bluePoolDeletionStartTime_ = bluePoolDeletionStartTime_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.greenPoolVersion_ = greenPoolVersion_;
+          }
         }
 
         @java.lang.Override
@@ -2875,7 +2901,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (!other.blueInstanceGroupUrls_.isEmpty()) {
             if (blueInstanceGroupUrls_.isEmpty()) {
               blueInstanceGroupUrls_ = other.blueInstanceGroupUrls_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureBlueInstanceGroupUrlsIsMutable();
               blueInstanceGroupUrls_.addAll(other.blueInstanceGroupUrls_);
@@ -2885,7 +2911,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (!other.greenInstanceGroupUrls_.isEmpty()) {
             if (greenInstanceGroupUrls_.isEmpty()) {
               greenInstanceGroupUrls_ = other.greenInstanceGroupUrls_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureGreenInstanceGroupUrlsIsMutable();
               greenInstanceGroupUrls_.addAll(other.greenInstanceGroupUrls_);
@@ -2894,10 +2920,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           }
           if (!other.getBluePoolDeletionStartTime().isEmpty()) {
             bluePoolDeletionStartTime_ = other.bluePoolDeletionStartTime_;
+            bitField0_ |= 0x00000008;
             onChanged();
           }
           if (!other.getGreenPoolVersion().isEmpty()) {
             greenPoolVersion_ = other.greenPoolVersion_;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2929,7 +2957,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 case 8:
                   {
                     phase_ = input.readEnum();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 18:
@@ -2949,13 +2977,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 case 34:
                   {
                     bluePoolDeletionStartTime_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 34
                 case 42:
                   {
                     greenPoolVersion_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 42
                 default:
@@ -3006,8 +3034,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setPhaseValue(int value) {
-
           phase_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3024,9 +3052,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Override
         public com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase getPhase() {
-          @SuppressWarnings("deprecation")
           com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase result =
-              com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.valueOf(phase_);
+              com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.forNumber(phase_);
           return result == null
               ? com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Phase.UNRECOGNIZED
               : result;
@@ -3048,7 +3075,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
+          bitField0_ |= 0x00000001;
           phase_ = value.getNumber();
           onChanged();
           return this;
@@ -3065,7 +3092,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPhase() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           phase_ = 0;
           onChanged();
           return this;
@@ -3075,10 +3102,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureBlueInstanceGroupUrlsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             blueInstanceGroupUrls_ =
                 new com.google.protobuf.LazyStringArrayList(blueInstanceGroupUrls_);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
           }
         }
         /**
@@ -3229,7 +3256,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearBlueInstanceGroupUrls() {
           blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -3262,10 +3289,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureGreenInstanceGroupUrlsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000004) != 0)) {
             greenInstanceGroupUrls_ =
                 new com.google.protobuf.LazyStringArrayList(greenInstanceGroupUrls_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
           }
         }
         /**
@@ -3416,7 +3443,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearGreenInstanceGroupUrls() {
           greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -3509,8 +3536,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           bluePoolDeletionStartTime_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3527,8 +3554,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearBluePoolDeletionStartTime() {
-
           bluePoolDeletionStartTime_ = getDefaultInstance().getBluePoolDeletionStartTime();
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
         }
@@ -3550,8 +3577,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           bluePoolDeletionStartTime_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3617,8 +3644,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           greenPoolVersion_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3634,8 +3661,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearGreenPoolVersion() {
-
           greenPoolVersion_ = getDefaultInstance().getGreenPoolVersion();
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -3656,8 +3683,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           greenPoolVersion_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3773,7 +3800,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder
         getBlueGreenInfoOrBuilder() {
-      return getBlueGreenInfo();
+      return blueGreenInfo_ == null
+          ? com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.getDefaultInstance()
+          : blueGreenInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3981,10 +4010,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (blueGreenInfoBuilder_ == null) {
-          blueGreenInfo_ = null;
-        } else {
-          blueGreenInfo_ = null;
+        bitField0_ = 0;
+        blueGreenInfo_ = null;
+        if (blueGreenInfoBuilder_ != null) {
+          blueGreenInfoBuilder_.dispose();
           blueGreenInfoBuilder_ = null;
         }
         return this;
@@ -4014,13 +4043,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public com.google.container.v1.NodePool.UpdateInfo buildPartial() {
         com.google.container.v1.NodePool.UpdateInfo result =
             new com.google.container.v1.NodePool.UpdateInfo(this);
-        if (blueGreenInfoBuilder_ == null) {
-          result.blueGreenInfo_ = blueGreenInfo_;
-        } else {
-          result.blueGreenInfo_ = blueGreenInfoBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NodePool.UpdateInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.blueGreenInfo_ =
+              blueGreenInfoBuilder_ == null ? blueGreenInfo_ : blueGreenInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4102,7 +4137,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getBlueGreenInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -4122,6 +4157,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo blueGreenInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo,
@@ -4140,7 +4177,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the blueGreenInfo field is set.
        */
       public boolean hasBlueGreenInfo() {
-        return blueGreenInfoBuilder_ != null || blueGreenInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4178,11 +4215,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           blueGreenInfo_ = value;
-          onChanged();
         } else {
           blueGreenInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4198,11 +4235,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Builder builderForValue) {
         if (blueGreenInfoBuilder_ == null) {
           blueGreenInfo_ = builderForValue.build();
-          onChanged();
         } else {
           blueGreenInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4217,19 +4254,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeBlueGreenInfo(
           com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo value) {
         if (blueGreenInfoBuilder_ == null) {
-          if (blueGreenInfo_ != null) {
-            blueGreenInfo_ =
-                com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.newBuilder(blueGreenInfo_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && blueGreenInfo_ != null
+              && blueGreenInfo_
+                  != com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo
+                      .getDefaultInstance()) {
+            getBlueGreenInfoBuilder().mergeFrom(value);
           } else {
             blueGreenInfo_ = value;
           }
-          onChanged();
         } else {
           blueGreenInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4242,14 +4280,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
        */
       public Builder clearBlueGreenInfo() {
-        if (blueGreenInfoBuilder_ == null) {
-          blueGreenInfo_ = null;
-          onChanged();
-        } else {
-          blueGreenInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        blueGreenInfo_ = null;
+        if (blueGreenInfoBuilder_ != null) {
+          blueGreenInfoBuilder_.dispose();
           blueGreenInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4263,7 +4300,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.container.v1.NodePool.UpdateInfo.BlueGreenInfo.Builder
           getBlueGreenInfoBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getBlueGreenInfoFieldBuilder().getBuilder();
       }
@@ -4597,7 +4634,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -4626,9 +4663,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.NodePool.PlacementPolicy.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.NodePool.PlacementPolicy.Type result =
-          com.google.container.v1.NodePool.PlacementPolicy.Type.valueOf(type_);
+          com.google.container.v1.NodePool.PlacementPolicy.Type.forNumber(type_);
       return result == null
           ? com.google.container.v1.NodePool.PlacementPolicy.Type.UNRECOGNIZED
           : result;
@@ -4835,8 +4871,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         return this;
       }
 
@@ -4864,9 +4900,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public com.google.container.v1.NodePool.PlacementPolicy buildPartial() {
         com.google.container.v1.NodePool.PlacementPolicy result =
             new com.google.container.v1.NodePool.PlacementPolicy(this);
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NodePool.PlacementPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -4949,7 +4994,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -4968,6 +5013,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -4998,8 +5045,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5016,9 +5063,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.container.v1.NodePool.PlacementPolicy.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.container.v1.NodePool.PlacementPolicy.Type result =
-            com.google.container.v1.NodePool.PlacementPolicy.Type.valueOf(type_);
+            com.google.container.v1.NodePool.PlacementPolicy.Type.forNumber(type_);
         return result == null
             ? com.google.container.v1.NodePool.PlacementPolicy.Type.UNRECOGNIZED
             : result;
@@ -5039,7 +5085,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -5056,7 +5102,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -5127,7 +5173,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -5218,11 +5266,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodeConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
   }
 
   public static final int INITIAL_NODE_COUNT_FIELD_NUMBER = 3;
-  private int initialNodeCount_;
+  private int initialNodeCount_ = 0;
   /**
    *
    *
@@ -5243,6 +5291,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList locations_;
   /**
    *
@@ -5379,11 +5429,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodeNetworkConfigOrBuilder getNetworkConfigOrBuilder() {
-    return getNetworkConfig();
+    return networkConfig_ == null
+        ? com.google.container.v1.NodeNetworkConfig.getDefaultInstance()
+        : networkConfig_;
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 100;
-  private volatile java.lang.Object selfLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLink_ = "";
   /**
    *
    *
@@ -5432,7 +5486,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 101;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -5481,6 +5537,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_GROUP_URLS_FIELD_NUMBER = 102;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instanceGroupUrls_;
   /**
    *
@@ -5558,7 +5616,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 103;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -5587,14 +5645,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodePool.Status getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.container.v1.NodePool.Status result =
-        com.google.container.v1.NodePool.Status.valueOf(status_);
+        com.google.container.v1.NodePool.Status.forNumber(status_);
     return result == null ? com.google.container.v1.NodePool.Status.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 104;
-  private volatile java.lang.Object statusMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    *
    *
@@ -5607,7 +5666,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3118
+   *     google/container/v1/cluster_service.proto;l=3141
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -5635,7 +5694,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3118
+   *     google/container/v1/cluster_service.proto;l=3141
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -5700,7 +5759,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodePoolAutoscalingOrBuilder getAutoscalingOrBuilder() {
-    return getAutoscaling();
+    return autoscaling_ == null
+        ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+        : autoscaling_;
   }
 
   public static final int MANAGEMENT_FIELD_NUMBER = 5;
@@ -5748,7 +5809,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
-    return getManagement();
+    return management_ == null
+        ? com.google.container.v1.NodeManagement.getDefaultInstance()
+        : management_;
   }
 
   public static final int MAX_PODS_CONSTRAINT_FIELD_NUMBER = 6;
@@ -5799,10 +5862,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder() {
-    return getMaxPodsConstraint();
+    return maxPodsConstraint_ == null
+        ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
+        : maxPodsConstraint_;
   }
 
   public static final int CONDITIONS_FIELD_NUMBER = 105;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.StatusCondition> conditions_;
   /**
    *
@@ -5872,7 +5939,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POD_IPV4_CIDR_SIZE_FIELD_NUMBER = 7;
-  private int podIpv4CidrSize_;
+  private int podIpv4CidrSize_ = 0;
   /**
    *
    *
@@ -5934,7 +6001,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
-    return getUpgradeSettings();
+    return upgradeSettings_ == null
+        ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+        : upgradeSettings_;
   }
 
   public static final int PLACEMENT_POLICY_FIELD_NUMBER = 108;
@@ -5982,7 +6051,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodePool.PlacementPolicyOrBuilder getPlacementPolicyOrBuilder() {
-    return getPlacementPolicy();
+    return placementPolicy_ == null
+        ? com.google.container.v1.NodePool.PlacementPolicy.getDefaultInstance()
+        : placementPolicy_;
   }
 
   public static final int UPDATE_INFO_FIELD_NUMBER = 109;
@@ -5991,8 +6062,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
@@ -6009,8 +6080,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
@@ -6029,8 +6100,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output only] Update info contains relevant information during a node
-   * pool update.
+   * Output only. [Output only] Update info contains relevant information during
+   * a node pool update.
    * </pre>
    *
    * <code>
@@ -6039,11 +6110,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.container.v1.NodePool.UpdateInfoOrBuilder getUpdateInfoOrBuilder() {
-    return getUpdateInfo();
+    return updateInfo_ == null
+        ? com.google.container.v1.NodePool.UpdateInfo.getDefaultInstance()
+        : updateInfo_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 110;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -6513,50 +6588,40 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
       initialNodeCount_ = 0;
-
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (networkConfigBuilder_ == null) {
-        networkConfig_ = null;
-      } else {
-        networkConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
       selfLink_ = "";
-
       version_ = "";
-
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       status_ = 0;
-
       statusMessage_ = "";
-
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
-      } else {
-        autoscaling_ = null;
+      autoscaling_ = null;
+      if (autoscalingBuilder_ != null) {
+        autoscalingBuilder_.dispose();
         autoscalingBuilder_ = null;
       }
-      if (managementBuilder_ == null) {
-        management_ = null;
-      } else {
-        management_ = null;
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
         managementBuilder_ = null;
       }
-      if (maxPodsConstraintBuilder_ == null) {
-        maxPodsConstraint_ = null;
-      } else {
-        maxPodsConstraint_ = null;
+      maxPodsConstraint_ = null;
+      if (maxPodsConstraintBuilder_ != null) {
+        maxPodsConstraintBuilder_.dispose();
         maxPodsConstraintBuilder_ = null;
       }
       if (conditionsBuilder_ == null) {
@@ -6565,29 +6630,24 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00002000);
       podIpv4CidrSize_ = 0;
-
-      if (upgradeSettingsBuilder_ == null) {
-        upgradeSettings_ = null;
-      } else {
-        upgradeSettings_ = null;
+      upgradeSettings_ = null;
+      if (upgradeSettingsBuilder_ != null) {
+        upgradeSettingsBuilder_.dispose();
         upgradeSettingsBuilder_ = null;
       }
-      if (placementPolicyBuilder_ == null) {
-        placementPolicy_ = null;
-      } else {
-        placementPolicy_ = null;
+      placementPolicy_ = null;
+      if (placementPolicyBuilder_ != null) {
+        placementPolicyBuilder_.dispose();
         placementPolicyBuilder_ = null;
       }
-      if (updateInfoBuilder_ == null) {
-        updateInfo_ = null;
-      } else {
-        updateInfo_ = null;
+      updateInfo_ = null;
+      if (updateInfoBuilder_ != null) {
+        updateInfoBuilder_.dispose();
         updateInfoBuilder_ = null;
       }
       etag_ = "";
-
       return this;
     }
 
@@ -6614,76 +6674,93 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1.NodePool buildPartial() {
       com.google.container.v1.NodePool result = new com.google.container.v1.NodePool(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.initialNodeCount_ = initialNodeCount_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.container.v1.NodePool result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.locations_ = locations_;
-      if (networkConfigBuilder_ == null) {
-        result.networkConfig_ = networkConfig_;
-      } else {
-        result.networkConfig_ = networkConfigBuilder_.build();
-      }
-      result.selfLink_ = selfLink_;
-      result.version_ = version_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
-      result.status_ = status_;
-      result.statusMessage_ = statusMessage_;
-      if (autoscalingBuilder_ == null) {
-        result.autoscaling_ = autoscaling_;
-      } else {
-        result.autoscaling_ = autoscalingBuilder_.build();
-      }
-      if (managementBuilder_ == null) {
-        result.management_ = management_;
-      } else {
-        result.management_ = managementBuilder_.build();
-      }
-      if (maxPodsConstraintBuilder_ == null) {
-        result.maxPodsConstraint_ = maxPodsConstraint_;
-      } else {
-        result.maxPodsConstraint_ = maxPodsConstraintBuilder_.build();
-      }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      result.podIpv4CidrSize_ = podIpv4CidrSize_;
-      if (upgradeSettingsBuilder_ == null) {
-        result.upgradeSettings_ = upgradeSettings_;
-      } else {
-        result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.container.v1.NodePool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (placementPolicyBuilder_ == null) {
-        result.placementPolicy_ = placementPolicy_;
-      } else {
-        result.placementPolicy_ = placementPolicyBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
       }
-      if (updateInfoBuilder_ == null) {
-        result.updateInfo_ = updateInfo_;
-      } else {
-        result.updateInfo_ = updateInfoBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.initialNodeCount_ = initialNodeCount_;
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.selfLink_ = selfLink_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.autoscaling_ =
+            autoscalingBuilder_ == null ? autoscaling_ : autoscalingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.management_ = managementBuilder_ == null ? management_ : managementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.maxPodsConstraint_ =
+            maxPodsConstraintBuilder_ == null
+                ? maxPodsConstraint_
+                : maxPodsConstraintBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.podIpv4CidrSize_ = podIpv4CidrSize_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.upgradeSettings_ =
+            upgradeSettingsBuilder_ == null ? upgradeSettings_ : upgradeSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.placementPolicy_ =
+            placementPolicyBuilder_ == null ? placementPolicy_ : placementPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.updateInfo_ = updateInfoBuilder_ == null ? updateInfo_ : updateInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -6733,6 +6810,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1.NodePool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfig()) {
@@ -6744,7 +6822,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -6756,16 +6834,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -6777,6 +6857,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasAutoscaling()) {
@@ -6792,7 +6873,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -6805,7 +6886,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -6829,6 +6910,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6860,44 +6942,44 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 initialNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getManagementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getMaxPodsConstraintFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 50
             case 56:
               {
                 podIpv4CidrSize_ = input.readInt32();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 56
             case 106:
@@ -6910,19 +6992,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 114
             case 802:
               {
                 selfLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 802
             case 810:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 810
             case 818:
@@ -6935,13 +7017,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 824:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 824
             case 834:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 834
             case 842:
@@ -6960,25 +7042,25 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 858:
               {
                 input.readMessage(getUpgradeSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 858
             case 866:
               {
                 input.readMessage(getPlacementPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 866
             case 874:
               {
                 input.readMessage(getUpdateInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 874
             case 882:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 882
             default:
@@ -7061,8 +7143,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7078,8 +7160,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7100,8 +7182,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7124,7 +7206,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -7159,11 +7241,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7178,11 +7260,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfig(com.google.container.v1.NodeConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7196,19 +7278,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfig(com.google.container.v1.NodeConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.container.v1.NodeConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && config_ != null
+            && config_ != com.google.container.v1.NodeConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -7221,14 +7302,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig config = 2;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7241,7 +7321,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig config = 2;</code>
      */
     public com.google.container.v1.NodeConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -7324,6 +7404,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setInitialNodeCount(int value) {
 
       initialNodeCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7342,7 +7423,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInitialNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       initialNodeCount_ = 0;
       onChanged();
       return this;
@@ -7352,9 +7433,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -7545,7 +7626,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -7598,7 +7679,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkConfig field is set.
      */
     public boolean hasNetworkConfig() {
-      return networkConfigBuilder_ != null || networkConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -7637,11 +7718,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         networkConfig_ = value;
-        onChanged();
       } else {
         networkConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7658,11 +7739,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.NodeNetworkConfig.Builder builderForValue) {
       if (networkConfigBuilder_ == null) {
         networkConfig_ = builderForValue.build();
-        onChanged();
       } else {
         networkConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7677,19 +7758,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNetworkConfig(com.google.container.v1.NodeNetworkConfig value) {
       if (networkConfigBuilder_ == null) {
-        if (networkConfig_ != null) {
-          networkConfig_ =
-              com.google.container.v1.NodeNetworkConfig.newBuilder(networkConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && networkConfig_ != null
+            && networkConfig_ != com.google.container.v1.NodeNetworkConfig.getDefaultInstance()) {
+          getNetworkConfigBuilder().mergeFrom(value);
         } else {
           networkConfig_ = value;
         }
-        onChanged();
       } else {
         networkConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7703,14 +7783,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeNetworkConfig network_config = 14;</code>
      */
     public Builder clearNetworkConfig() {
-      if (networkConfigBuilder_ == null) {
-        networkConfig_ = null;
-        onChanged();
-      } else {
-        networkConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7724,7 +7803,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeNetworkConfig network_config = 14;</code>
      */
     public com.google.container.v1.NodeNetworkConfig.Builder getNetworkConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
@@ -7835,8 +7914,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       selfLink_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7852,8 +7931,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
       selfLink_ = getDefaultInstance().getSelfLink();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7874,8 +7953,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       selfLink_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7941,8 +8020,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7958,8 +8037,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -7980,8 +8059,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7990,9 +8069,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -8159,7 +8238,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -8219,8 +8298,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8237,9 +8316,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.container.v1.NodePool.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.container.v1.NodePool.Status result =
-          com.google.container.v1.NodePool.Status.valueOf(status_);
+          com.google.container.v1.NodePool.Status.forNumber(status_);
       return result == null ? com.google.container.v1.NodePool.Status.UNRECOGNIZED : result;
     }
     /**
@@ -8258,7 +8336,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -8275,7 +8353,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       status_ = 0;
       onChanged();
       return this;
@@ -8294,7 +8372,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3118
+     *     google/container/v1/cluster_service.proto;l=3141
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -8321,7 +8399,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3118
+     *     google/container/v1/cluster_service.proto;l=3141
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -8348,7 +8426,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3118
+     *     google/container/v1/cluster_service.proto;l=3141
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8357,8 +8435,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8374,13 +8452,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3118
+     *     google/container/v1/cluster_service.proto;l=3141
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearStatusMessage() {
-
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -8396,7 +8474,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3118
+     *     google/container/v1/cluster_service.proto;l=3141
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8406,8 +8484,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8431,7 +8509,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscaling field is set.
      */
     public boolean hasAutoscaling() {
-      return autoscalingBuilder_ != null || autoscaling_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -8470,11 +8548,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         autoscaling_ = value;
-        onChanged();
       } else {
         autoscalingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8491,11 +8569,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.NodePoolAutoscaling.Builder builderForValue) {
       if (autoscalingBuilder_ == null) {
         autoscaling_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8510,19 +8588,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAutoscaling(com.google.container.v1.NodePoolAutoscaling value) {
       if (autoscalingBuilder_ == null) {
-        if (autoscaling_ != null) {
-          autoscaling_ =
-              com.google.container.v1.NodePoolAutoscaling.newBuilder(autoscaling_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && autoscaling_ != null
+            && autoscaling_ != com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()) {
+          getAutoscalingBuilder().mergeFrom(value);
         } else {
           autoscaling_ = value;
         }
-        onChanged();
       } else {
         autoscalingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8536,14 +8613,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
      */
     public Builder clearAutoscaling() {
-      if (autoscalingBuilder_ == null) {
-        autoscaling_ = null;
-        onChanged();
-      } else {
-        autoscaling_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      autoscaling_ = null;
+      if (autoscalingBuilder_ != null) {
+        autoscalingBuilder_.dispose();
         autoscalingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8557,7 +8633,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
      */
     public com.google.container.v1.NodePoolAutoscaling.Builder getAutoscalingBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getAutoscalingFieldBuilder().getBuilder();
     }
@@ -8625,7 +8701,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the management field is set.
      */
     public boolean hasManagement() {
-      return managementBuilder_ != null || management_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -8662,11 +8738,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         management_ = value;
-        onChanged();
       } else {
         managementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -8681,11 +8757,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setManagement(com.google.container.v1.NodeManagement.Builder builderForValue) {
       if (managementBuilder_ == null) {
         management_ = builderForValue.build();
-        onChanged();
       } else {
         managementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -8699,19 +8775,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeManagement(com.google.container.v1.NodeManagement value) {
       if (managementBuilder_ == null) {
-        if (management_ != null) {
-          management_ =
-              com.google.container.v1.NodeManagement.newBuilder(management_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && management_ != null
+            && management_ != com.google.container.v1.NodeManagement.getDefaultInstance()) {
+          getManagementBuilder().mergeFrom(value);
         } else {
           management_ = value;
         }
-        onChanged();
       } else {
         managementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -8724,14 +8799,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeManagement management = 5;</code>
      */
     public Builder clearManagement() {
-      if (managementBuilder_ == null) {
-        management_ = null;
-        onChanged();
-      } else {
-        management_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
         managementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8744,7 +8818,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeManagement management = 5;</code>
      */
     public com.google.container.v1.NodeManagement.Builder getManagementBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getManagementFieldBuilder().getBuilder();
     }
@@ -8811,7 +8885,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxPodsConstraint field is set.
      */
     public boolean hasMaxPodsConstraint() {
-      return maxPodsConstraintBuilder_ != null || maxPodsConstraint_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -8850,11 +8924,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         maxPodsConstraint_ = value;
-        onChanged();
       } else {
         maxPodsConstraintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -8871,11 +8945,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.MaxPodsConstraint.Builder builderForValue) {
       if (maxPodsConstraintBuilder_ == null) {
         maxPodsConstraint_ = builderForValue.build();
-        onChanged();
       } else {
         maxPodsConstraintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -8890,19 +8964,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxPodsConstraint(com.google.container.v1.MaxPodsConstraint value) {
       if (maxPodsConstraintBuilder_ == null) {
-        if (maxPodsConstraint_ != null) {
-          maxPodsConstraint_ =
-              com.google.container.v1.MaxPodsConstraint.newBuilder(maxPodsConstraint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && maxPodsConstraint_ != null
+            && maxPodsConstraint_
+                != com.google.container.v1.MaxPodsConstraint.getDefaultInstance()) {
+          getMaxPodsConstraintBuilder().mergeFrom(value);
         } else {
           maxPodsConstraint_ = value;
         }
-        onChanged();
       } else {
         maxPodsConstraintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -8916,14 +8990,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
      */
     public Builder clearMaxPodsConstraint() {
-      if (maxPodsConstraintBuilder_ == null) {
-        maxPodsConstraint_ = null;
-        onChanged();
-      } else {
-        maxPodsConstraint_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      maxPodsConstraint_ = null;
+      if (maxPodsConstraintBuilder_ != null) {
+        maxPodsConstraintBuilder_.dispose();
         maxPodsConstraintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8937,7 +9010,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
      */
     public com.google.container.v1.MaxPodsConstraint.Builder getMaxPodsConstraintBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getMaxPodsConstraintFieldBuilder().getBuilder();
     }
@@ -8991,9 +9064,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.container.v1.StatusCondition>(conditions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -9208,7 +9281,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -9330,7 +9403,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.StatusCondition,
                 com.google.container.v1.StatusCondition.Builder,
                 com.google.container.v1.StatusConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -9367,6 +9440,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setPodIpv4CidrSize(int value) {
 
       podIpv4CidrSize_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9382,7 +9456,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPodIpv4CidrSize() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       podIpv4CidrSize_ = 0;
       onChanged();
       return this;
@@ -9406,7 +9480,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the upgradeSettings field is set.
      */
     public boolean hasUpgradeSettings() {
-      return upgradeSettingsBuilder_ != null || upgradeSettings_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -9443,11 +9517,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         upgradeSettings_ = value;
-        onChanged();
       } else {
         upgradeSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -9463,11 +9537,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.NodePool.UpgradeSettings.Builder builderForValue) {
       if (upgradeSettingsBuilder_ == null) {
         upgradeSettings_ = builderForValue.build();
-        onChanged();
       } else {
         upgradeSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -9481,19 +9555,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
       if (upgradeSettingsBuilder_ == null) {
-        if (upgradeSettings_ != null) {
-          upgradeSettings_ =
-              com.google.container.v1.NodePool.UpgradeSettings.newBuilder(upgradeSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && upgradeSettings_ != null
+            && upgradeSettings_
+                != com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()) {
+          getUpgradeSettingsBuilder().mergeFrom(value);
         } else {
           upgradeSettings_ = value;
         }
-        onChanged();
       } else {
         upgradeSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -9506,14 +9580,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
      */
     public Builder clearUpgradeSettings() {
-      if (upgradeSettingsBuilder_ == null) {
-        upgradeSettings_ = null;
-        onChanged();
-      } else {
-        upgradeSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      upgradeSettings_ = null;
+      if (upgradeSettingsBuilder_ != null) {
+        upgradeSettingsBuilder_.dispose();
         upgradeSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9526,7 +9599,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
      */
     public com.google.container.v1.NodePool.UpgradeSettings.Builder getUpgradeSettingsBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getUpgradeSettingsFieldBuilder().getBuilder();
     }
@@ -9592,7 +9665,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the placementPolicy field is set.
      */
     public boolean hasPlacementPolicy() {
-      return placementPolicyBuilder_ != null || placementPolicy_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -9629,11 +9702,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         placementPolicy_ = value;
-        onChanged();
       } else {
         placementPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -9649,11 +9722,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.NodePool.PlacementPolicy.Builder builderForValue) {
       if (placementPolicyBuilder_ == null) {
         placementPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         placementPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -9667,19 +9740,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePlacementPolicy(com.google.container.v1.NodePool.PlacementPolicy value) {
       if (placementPolicyBuilder_ == null) {
-        if (placementPolicy_ != null) {
-          placementPolicy_ =
-              com.google.container.v1.NodePool.PlacementPolicy.newBuilder(placementPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && placementPolicy_ != null
+            && placementPolicy_
+                != com.google.container.v1.NodePool.PlacementPolicy.getDefaultInstance()) {
+          getPlacementPolicyBuilder().mergeFrom(value);
         } else {
           placementPolicy_ = value;
         }
-        onChanged();
       } else {
         placementPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -9692,14 +9765,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePool.PlacementPolicy placement_policy = 108;</code>
      */
     public Builder clearPlacementPolicy() {
-      if (placementPolicyBuilder_ == null) {
-        placementPolicy_ = null;
-        onChanged();
-      } else {
-        placementPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      placementPolicy_ = null;
+      if (placementPolicyBuilder_ != null) {
+        placementPolicyBuilder_.dispose();
         placementPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9712,7 +9784,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodePool.PlacementPolicy placement_policy = 108;</code>
      */
     public com.google.container.v1.NodePool.PlacementPolicy.Builder getPlacementPolicyBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getPlacementPolicyFieldBuilder().getBuilder();
     }
@@ -9770,8 +9842,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9781,14 +9853,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateInfo field is set.
      */
     public boolean hasUpdateInfo() {
-      return updateInfoBuilder_ != null || updateInfo_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9810,8 +9882,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9824,19 +9896,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateInfo_ = value;
-        onChanged();
       } else {
         updateInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9847,19 +9919,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.container.v1.NodePool.UpdateInfo.Builder builderForValue) {
       if (updateInfoBuilder_ == null) {
         updateInfo_ = builderForValue.build();
-        onChanged();
       } else {
         updateInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9868,27 +9940,26 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateInfo(com.google.container.v1.NodePool.UpdateInfo value) {
       if (updateInfoBuilder_ == null) {
-        if (updateInfo_ != null) {
-          updateInfo_ =
-              com.google.container.v1.NodePool.UpdateInfo.newBuilder(updateInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && updateInfo_ != null
+            && updateInfo_ != com.google.container.v1.NodePool.UpdateInfo.getDefaultInstance()) {
+          getUpdateInfoBuilder().mergeFrom(value);
         } else {
           updateInfo_ = value;
         }
-        onChanged();
       } else {
         updateInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9896,22 +9967,21 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateInfo() {
-      if (updateInfoBuilder_ == null) {
-        updateInfo_ = null;
-        onChanged();
-      } else {
-        updateInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      updateInfo_ = null;
+      if (updateInfoBuilder_ != null) {
+        updateInfoBuilder_.dispose();
         updateInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9919,7 +9989,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.container.v1.NodePool.UpdateInfo.Builder getUpdateInfoBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getUpdateInfoFieldBuilder().getBuilder();
     }
@@ -9927,8 +9997,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -9948,8 +10018,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output only] Update info contains relevant information during a node
-     * pool update.
+     * Output only. [Output only] Update info contains relevant information during
+     * a node pool update.
      * </pre>
      *
      * <code>
@@ -10040,8 +10110,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10059,8 +10129,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -10083,8 +10153,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

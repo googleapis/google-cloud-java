@@ -36,7 +36,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2778
+   *     google/container/v1beta1/cluster_service.proto;l=2746
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2778
+   *     google/container/v1beta1/cluster_service.proto;l=2746
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2787
+   *     google/container/v1beta1/cluster_service.proto;l=2753
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2787
+   *     google/container/v1beta1/cluster_service.proto;l=2753
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2794
+   *     google/container/v1beta1/cluster_service.proto;l=2757
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2794
+   *     google/container/v1beta1/cluster_service.proto;l=2757
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -136,8 +136,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>
@@ -151,8 +151,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>
@@ -166,8 +166,8 @@ public interface SetAddonsConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>
